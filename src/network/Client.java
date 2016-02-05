@@ -25,6 +25,11 @@ public class Client implements Runnable {
 		return this.ID;
 	}
 	
+
+	public Object testMessages() {
+		return null;
+	}
+	
 	public Client(){
 		connectToServer(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
 	}
@@ -77,5 +82,6 @@ public class Client implements Runnable {
 	public void handle(String msg) {
 
 	}
+
 
 }
