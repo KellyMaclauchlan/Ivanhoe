@@ -42,4 +42,13 @@ public class Server {
 		}
 	}
 
+	public void handle(int id, String msg) {
+
+		
+	}
+
+	public void remove(int id) {
+		
+	}
+
 }

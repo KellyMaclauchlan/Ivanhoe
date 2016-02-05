@@ -29,34 +29,36 @@ public class Client implements Runnable {
 	
 	public boolean connectToServer(String serverIP, int serverPort) {
 		System.out.println(ID + ":Establishing connection. Please wait... ");
-		//log.info(ID + ":Establishing connection. Please wait... ");
+		log.info(ID + ":Establishing connection. Please wait... ");
 		boolean connected = false;
 		
 		try{
 			this.socket = new Socket(serverIP, serverPort);
 			this.ID = socket.getLocalPort(); 
 			
-			//log.info(ID + ": Connected to server: " + socket.getInetAddress());
-	    	//log.info(ID + ": Connected to portid: " + socket.getLocalPort());
+			log.info(ID + ": Connected to server: " + socket.getInetAddress());
+	    	log.info(ID + ": Connected to portid: " + socket.getLocalPort());
 	    	
 	    	this.start();
-	    	//log.info("Client has started");
+	    	log.info("Client has started");
 	    	connected = true;
 		}catch(IOException e){
 			connected = false;
-			//log.error(e);
+			log.error(e);
 		}
 		return connected;
 	}
 	private void start() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
+	}
+
+	public void handle(String msg) {
+
 	}
 
 }
