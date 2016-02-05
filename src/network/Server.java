@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import config.Config;
 
 public class Server implements Runnable {
+	public int players = 0;
 	public Thread thread = null;
 	public ServerSocket server = null;
 	public HashMap<Integer, ServerThread> clients;
@@ -53,7 +54,19 @@ public class Server implements Runnable {
 		
 	}
 
-	public void addThread(Socket accept) {
+	public void addThread(Socket socket) {
+		log.info("Client accepted: " + socket );
+		if(players < Config.MAX_PLAYERS){
+			try{
+				ServerThread sThread = new ServerThread(this, socket);
+				sThread.open();
+				sThread.start();
+				clients.put(sThread.getID(), sThread);
+				this.players++; 
+			}catch (IOException e){
+				log.error(e);
+			}
+		}
 		
 	}
 

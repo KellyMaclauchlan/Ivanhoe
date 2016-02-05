@@ -6,6 +6,8 @@ public class Config {
 	public static String DEFAULT_HOST = "127.0.0.1";
 	public static String HOST;
 	
+	public static int MAX_PLAYERS = 5; 
+	
 	/* Client to Server messages:  
 	 * Commands made by the players will send strings to the server and with those strings
 	 * the server will call the games engine to return a response */
