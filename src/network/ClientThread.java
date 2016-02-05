@@ -53,6 +53,7 @@ public class ClientThread extends Thread {
 	public void run() {
 		log.info("Client Thread " + socket.getLocalPort() + " running.");
 		while (!done) { 
+			System.out.println("In loop");
 			try {  
 				client.handle(streamIn.readLine());
 			} catch(IOException ioe) {  

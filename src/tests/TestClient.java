@@ -72,6 +72,7 @@ public class TestClient {
 		String message = "Test message 1";
 		int id = client1.getID();
 		server.handle(id, message);
+		//server.handle(client1.getID(), "Test message 1");
 		//client1.handle(message);
 		assertEquals(message, client1.testMessages());
 	}

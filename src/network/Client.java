@@ -80,7 +80,7 @@ public class Client implements Runnable {
 	}
 
 	public void handle(String msg) {
-		System.out.println("Msg: "+ msg);
+		System.out.println("Msg3333: "+ msg);
 		System.out.println("1: " + testing);
 	   	if (msg.equalsIgnoreCase("quit!")) {  
 				System.out.println(ID + "Good bye. Press RETURN to exit ...");

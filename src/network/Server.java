@@ -72,7 +72,6 @@ public class Server implements Runnable {
 
 
 	public void handle(int id, String msg) {
-		System.out.println("WHY AREN'T YOU WORKING !!!!!");
 		if (msg.equals("quit!")) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {
@@ -82,6 +81,7 @@ public class Server implements Runnable {
 		}else if (msg.equals("shutdown!")){ shutdown(); }
 
 		else {
+			//System.out.println("Size: " + clients.size());
 			ServerThread from = clients.get(id);
 			for (ServerThread to : clients.values()) {
 				//if (to.getID() != id) {
