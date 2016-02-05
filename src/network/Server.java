@@ -2,13 +2,14 @@ package network;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 
 import config.Config;
 
-public class Server {
+public class Server implements Runnable {
 	public Thread thread = null;
 	public ServerSocket server = null;
 	public HashMap<Integer, ServerThread> clients;
@@ -30,7 +31,29 @@ public class Server {
 			log.error(e);
 		}
 	}
-	private void start() {
+	
+	public void start() {
+		if(thread == null){
+			thread = new Thread(this);
+			log.info("New ServerThread created");
+			thread.start();
+		}
+	}
+
+	public void run() {
+		while(thread != null){
+			try{
+				System.out.println("Waiting for Clients");
+				log.info("Waiting for Clients");
+				addThread(server.accept());
+			}catch(IOException e){
+				log.error(e);
+			}
+		}
+		
+	}
+
+	public void addThread(Socket accept) {
 		
 	}
 
@@ -48,7 +71,15 @@ public class Server {
 	}
 
 	public void remove(int id) {
-		
+		if(clients.containsKey(id)){
+			ServerThread terminate = clients.get(id);
+			clients.remove(id);
+			log.info("Player " + id + " is being removed");
+			
+			terminate.close();
+			terminate = null;
+			log.info("Removed " + id);
+		}
 	}
 
 }

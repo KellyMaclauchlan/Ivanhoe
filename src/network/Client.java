@@ -3,6 +3,8 @@ package network;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.Socket;
 
 import config.Config;
@@ -48,8 +50,23 @@ public class Client implements Runnable {
 		}
 		return connected;
 	}
+	
 	private void start() {
-		
+		try{
+			console = new BufferedReader(new InputStreamReader(System.in));
+			inStream = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			outStream = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+			log.info("Initializing buffers");
+			
+			if(thread == null){
+				client = new ClientThread(this, socket);
+				thread = new Thread(this);
+				thread.start();
+				log.info("New ClientThread has started");
+			}
+		}catch (IOException e){
+			log.error(e);
+		}
 	}
 
 	@Override
