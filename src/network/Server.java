@@ -57,17 +57,27 @@ public class Server implements Runnable {
 		
 	}
 
-	public void shutdown() {
-		try {
-			server.close();
-		} catch (IOException e) {
-			log.error(e);
-		}
-	}
 
 	public void handle(int id, String msg) {
+		System.out.println("WHY AREN'T YOU WORKING !!!!!");
+		if (msg.equals("quit!")) {
+			log.info(String.format("Removing Client: %d", id));
+			if (clients.containsKey(id)) {
+				clients.get(id).send("quit!" + "\n");
+				remove(id);
+			}
+		}else if (msg.equals("shutdown!")){ shutdown(); }
 
-		
+		else {
+			ServerThread from = clients.get(id);
+			for (ServerThread to : clients.values()) {
+				//if (to.getID() != id) {
+				//		to.send(String.format("%5d: %s\n", id, input));
+				//		log.info(String.format("Sending Message from %s:%d to %s:%d: ",from.getSocketAddress(),from.getID(), to.getSocketAddress(), to.getID(), input));
+				//}
+				to.send(String.format("%s", msg));
+			}	
+		}
 	}
 
 	public void remove(int id) {
@@ -81,5 +91,12 @@ public class Server implements Runnable {
 			log.info("Removed " + id);
 		}
 	}
-
+	
+	public void shutdown() {
+		try {
+			server.close();
+		} catch (IOException e) {
+			log.error(e);
+		}
+	}
 }

@@ -27,7 +27,7 @@ public class Client implements Runnable {
 	
 
 	public Object testMessages() {
-		return null;
+		return testing;
 	}
 	
 	public Client(){
@@ -80,7 +80,20 @@ public class Client implements Runnable {
 	}
 
 	public void handle(String msg) {
+		System.out.println("Msg: "+ msg);
+		System.out.println("1: " + testing);
+	   	if (msg.equalsIgnoreCase("quit!")) {  
+				System.out.println(ID + "Good bye. Press RETURN to exit ...");
+				stop();
+			} else {
+				testing = msg;
+				System.out.println(msg);
+			}
+	}
 
+
+	public void stop() {
+		
 	}
 
 

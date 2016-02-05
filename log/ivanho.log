@@ -353,4 +353,903 @@
 @2016-Feb-05 11:59:11 ERROR Server:50 - java.net.SocketException: Socket is closed
 @2016-Feb-05 11:59:11 INFO  Server:47 - Waiting for Clients
 @2016-Feb-05 11:59:11 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:25 - Binding to port 3000, please wait...
+@2016-Feb-05 12:02:02 INFO  Server:38 - New ServerThread created
+@2016-Feb-05 12:02:02 INFO  Server:25 - Binding to port 3000, please wait...
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:31 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-05 12:02:02 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56130: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56130: Connected to portid: 56130
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:02:02 INFO  ClientThread:54 - Client Thread 56130 running.
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 INFO  Client:39 - 56130:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56131: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56131: Connected to portid: 56131
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56132: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56132: Connected to portid: 56132
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 INFO  ClientThread:54 - Client Thread 56132 running.
+@2016-Feb-05 12:02:02 INFO  Client:39 - 56132:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56133: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56133: Connected to portid: 56133
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56134: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56134: Connected to portid: 56134
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:02:02 INFO  ClientThread:54 - Client Thread 56134 running.
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 INFO  Client:39 - 56134:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56135: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56135: Connected to portid: 56135
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56136: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56136: Connected to portid: 56136
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 INFO  Client:39 - 56136:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56137: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56137: Connected to portid: 56137
+@2016-Feb-05 12:02:02 INFO  ClientThread:54 - Client Thread 56136 running.
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56138: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56138: Connected to portid: 56138
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:02:02 INFO  ClientThread:54 - Client Thread 56138 running.
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 INFO  Client:39 - 56138:Establishing connection. Please wait... 
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 INFO  Client:46 - 56139: Connected to server: /127.0.0.1
+@2016-Feb-05 12:02:02 INFO  Client:47 - 56139: Connected to portid: 56139
+@2016-Feb-05 12:02:02 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:02:02 INFO  Client:50 - Client has started
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: socket closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:02:02 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:02:02 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:25 - Binding to port 3000, please wait...
+@2016-Feb-05 12:03:45 INFO  Server:38 - New ServerThread created
+@2016-Feb-05 12:03:45 INFO  Server:25 - Binding to port 3000, please wait...
+@2016-Feb-05 12:03:45 ERROR Server:31 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-05 12:03:45 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56149: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56149: Connected to portid: 56149
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 INFO  Client:39 - 56149:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  ClientThread:54 - Client Thread 56149 running.
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56150: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56150: Connected to portid: 56150
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56151: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56151: Connected to portid: 56151
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:03:45 INFO  ClientThread:54 - Client Thread 56151 running.
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 INFO  Client:39 - 56151:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56152: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56152: Connected to portid: 56152
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56153: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56153: Connected to portid: 56153
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 INFO  ClientThread:54 - Client Thread 56153 running.
+@2016-Feb-05 12:03:45 INFO  Client:39 - 56153:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56154: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56154: Connected to portid: 56154
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56155: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56155: Connected to portid: 56155
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 INFO  Client:39 - 56155:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56156: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56156: Connected to portid: 56156
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 INFO  ClientThread:54 - Client Thread 56155 running.
+@2016-Feb-05 12:03:45 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56157: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56157: Connected to portid: 56157
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Client:70 - New ClientThread has started
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 INFO  ClientThread:54 - Client Thread 56157 running.
+@2016-Feb-05 12:03:45 INFO  Client:39 - 56157:Establishing connection. Please wait... 
+@2016-Feb-05 12:03:45 INFO  Client:46 - 56158: Connected to server: /127.0.0.1
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 INFO  Client:47 - 56158: Connected to portid: 56158
+@2016-Feb-05 12:03:45 INFO  Client:64 - Initializing buffers
+@2016-Feb-05 12:03:45 INFO  Client:50 - Client has started
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: socket closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
+@2016-Feb-05 12:03:45 ERROR Server:50 - java.net.SocketException: Socket is closed
+@2016-Feb-05 12:03:45 INFO  Server:47 - Waiting for Clients
 @
