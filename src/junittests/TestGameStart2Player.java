@@ -34,8 +34,8 @@ public class TestGameStart2Player {
     	game.startGame();
     	
     	//add 2 players to the game
-    	Player player1 = new Player();
-    	Player player2 = new Player();
+    	Player player1 = new Player("Katie");
+    	Player player2 = new Player("Kelly");
     	game.joinGame(player1);
     	game.joinGame(player2);
 	}

@@ -27,10 +27,6 @@ public class GameEngine {
 		//TO DO: current player is set to player at 0
 	}
 	
-
-	public void pickupCard(Player player) {
-		//TO DO: randomly assign a new card to the selected player 
-	}
 	
 	public void discard(Player player, Card card) {
 		//TO DO: discard a specific card for a specific player, to the discardDeck
@@ -60,6 +56,10 @@ public class GameEngine {
 	
 	public void removeAllFromDeck(ArrayList<Card> cards) {
 		//TO DO: remove a number of cards from the draw deck (mostly for testing after cards are dealt)
+	}
+	
+	public void addAllToDeck(ArrayList<Card> cards) {
+		//TO DO: add a number of cards to the draw deck (mostly for testing after cards are dealt)
 	}
 	
 	public Player getCurrentPlayer() {

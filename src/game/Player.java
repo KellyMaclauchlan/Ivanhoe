@@ -12,6 +12,11 @@ public class Player {
 	private int totalCardValue;
 	private boolean isStunned;
 	private boolean isShielded;
+	private boolean isWinner;
+	
+	public Player(String name) {
+		this.name = name;
+	}
 	
 	public String chooseTournamentColour(String colour) {
 		//TO DO: set tournament colour to chosen colour
@@ -49,7 +54,10 @@ public class Player {
 	public void setCards(ArrayList<Card> cards) {
 		this.cards = cards;
 	}
-
+	
+	public void addCard(Card card) {
+		//TO DO: Add a card to the current player's hand
+	}
 	public ArrayList<Card> getDisplay() {
 		return display;
 	}
@@ -88,6 +96,14 @@ public class Player {
 
 	public void setFront(ArrayList<Card> front) {
 		this.front = front;
+	}
+
+	public boolean isWinner() {
+		return isWinner;
+	}
+
+	public void setWinner(boolean isWinner) {
+		this.isWinner = isWinner;
 	}
 	
 
