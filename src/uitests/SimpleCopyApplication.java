@@ -1,4 +1,4 @@
-package tests;
+package uitests;
 
 import static javax.swing.SwingUtilities.invokeAndWait;
 

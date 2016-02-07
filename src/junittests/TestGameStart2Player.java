@@ -1,15 +1,19 @@
-package tests;
+package junittests;
 
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import game.Card;
 import game.GameEngine;
 import game.Player;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class TestGameStart2Player {
 	GameEngine game;
@@ -17,13 +21,13 @@ public class TestGameStart2Player {
 
 	@BeforeClass
     public static void BeforeClass() {
-        System.out.println("@BeforeClass: Testing the game Rules Engine and Player");
+        System.out.println("@BeforeClass: Testing startup of a new game");
+        //These tests choose available cards autotmatically and ensure proper setup of a game
     }
 	
     @Before
     public void setUp() {
-    	testNumber ++;
-		System.out.println("@Before(): Setting up 2 player test number " + testNumber);
+		System.out.println("@Before(): Setting up 2 player startup test");
 		game = new GameEngine();
 		
 		System.out.println("startGame");
@@ -42,7 +46,7 @@ public class TestGameStart2Player {
     }
     
     @Test
-    public void testStartGame() {
+    public void test1StartGame() {
     	System.out.println("@Test(): Starting game");
     	
     	//players randomly pick colour tokens to determine who starts the game
@@ -67,30 +71,30 @@ public class TestGameStart2Player {
     	assertNotEquals("purple", player2.getStartTokenColour());
     	
     	//make sure that the round does not yet have a colour
-    	assertNull(game.getRoundColour());
+    	assertNull(game.getTournamentColour());
     }
     
     @Test
-    public void testSetColour() {
+    public void test2SetColour() {
     	//the first player is the 0th item in the players list
     	Player player = game.getCurrentPlayer();
     	
     	//the first player should be prompted to pick a round colour
     	//for this test, we will choose the first of the possible choices that the player has based on their cards
-    	String colour = player.chooseRoundColour(player.getColourPossibilities().get(0));
+    	String colour = player.chooseTournamentColour(player.getColourPossibilities().get(0));
     	
     	//set the round colour and make sure that it is in fact the colour that was chosen by the player
-    	game.setRoundColour(colour);
-    	assertEquals(colour, game.getRoundColour());
+    	game.setTournamentColour(colour);
+    	assertEquals(colour, game.getTournamentColour());
     }
     
     @Test
-    public void testFirstPlay() {
+    public void test3FirstPlay() {
     	Player player = game.getCurrentPlayer();
     	
     	//for this test, we will choose the first playable card and all subsequent playable cards
     	for (Card cardToPlay: player.getPlayPossibilities()) {
-    		game.playCard(player, cardToPlay);
+    		game.playCard(cardToPlay);
     		player.getPlayPossibilities().remove(cardToPlay);
     	}
     	
@@ -99,16 +103,11 @@ public class TestGameStart2Player {
     	
     	//Test that the first player now has a total card value greater than 0
     	assertTrue(player.getTotalCardValue() > 0);
-    }
-    
-    @Test
-    public void testEndTurn() {
-    	Player player = game.getCurrentPlayer();
-    	game.endTurn(player);	
+    	
+    	game.endTurn();	
     	
     	//make sure that ending the first players turn shifts current player to the next player
     	assertTrue(game.getCurrentPlayer() != player);
     	assertEquals(game.getCurrentPlayer(), game.getPlayers().get(1));
     }
-
 }

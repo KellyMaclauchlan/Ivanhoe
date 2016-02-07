@@ -4,11 +4,10 @@ import java.util.ArrayList;
 
 public class GameEngine {
 	private int numPlayers;
-	private String roundColour;
+	private String tournamentColour;
 	private ArrayList<Player> players;
 	private ArrayList<String> tokens;
 	private ArrayList<Card> drawDeck;
-	private ArrayList<Card> discardDeck;
 	private Player currentPlayer;
  	
 	public void joinGame(Player player) {
@@ -25,6 +24,7 @@ public class GameEngine {
 	public void startGame() {
 		//TO DO: randomize drawDeck array and deal out 8 cards to each player
 		//TO DO: rearrange player array so that the player that picked purple is first and all others shift accordingly
+		//TO DO: current player is set to player at 0
 	}
 	
 
@@ -36,12 +36,30 @@ public class GameEngine {
 		//TO DO: discard a specific card for a specific player, to the discardDeck
 	}
 	
-	public void startTurn(Player player) {
-		//TO DO: prompt player to begin turn
+	public void startTurn() {
+		//TO DO: prompt current player to begin turn
+		//OR: if the current player does not have any playable cards, withdraw
+		//OR: if it is the first turn of the game, prompt the first player to pick a tournament colour
+		//OR: if the player is the only one left, call announceWinner
 	}
 	
-	public void playCard(Player player, Card card) {
-		//TO DO: play a specific card for a specific player, handle based on card rules
+	public void playCard(Card card) {
+		//TO DO: play a specific card for current player, handle based on card rules
+		//remove card from player hand
+		//add card to where it should be added (display, front, discard)
+		//
+	}
+	
+	public void pickupCard() {
+		//TO DO: Current player picks up top card
+	}
+	
+	public void removeCardfromDeck(Card card) {
+		//TO DO: remove a single card from draw deck (mostly for testing)
+	}
+	
+	public void removeAllFromDeck(ArrayList<Card> cards) {
+		//TO DO: remove a number of cards from the draw deck (mostly for testing after cards are dealt)
 	}
 	
 	public Player getCurrentPlayer() {
@@ -53,8 +71,17 @@ public class GameEngine {
 		this.currentPlayer = currentPlayer;
 	}
 	
-	public void endTurn(Player player) {
+	public void endTurn() {
 		//TO DO: end current player's turn and announce points, move to next player
+		//OR: If the current player has less points than another player, call withdraw
+	}
+	
+	public void withdraw() {
+		//TO DO: withdraw the current player from the game
+	}
+	
+	public void announceWinner() {
+		//TO DO: if the current player is the last remaining, announce that they won
 	}
 	
 	public int getNumPlayers() {
@@ -63,17 +90,25 @@ public class GameEngine {
 	public void setNumPlayers(int numPlayers) {
 		this.numPlayers = numPlayers;
 	}
-	public String getRoundColour() {
-		return roundColour;
+	public String getTournamentColour() {
+		return tournamentColour;
 	}
-	public void setRoundColour(String roundColour) {
-		this.roundColour = roundColour;
+	public void setTournamentColour(String tournamentColour) {
+		this.tournamentColour = tournamentColour;
 	}
 	public ArrayList<Player> getPlayers() {
 		return players;
 	}
 	public void setPlayers(ArrayList<Player> players) {
 		this.players = players;
+	}
+
+	public ArrayList<Card> getDrawDeck() {
+		return drawDeck;
+	}
+
+	public void setDrawDeck(ArrayList<Card> drawDeck) {
+		this.drawDeck = drawDeck;
 	}
 
 

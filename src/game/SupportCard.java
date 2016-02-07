@@ -2,7 +2,7 @@ package game;
 
 public class SupportCard extends Card {
 	
-	public SupportCard(int value, String supportType) {
+	public SupportCard(String supportType, int value) {
 		this.setValue(value);
 		this.setType(supportType);
 	}

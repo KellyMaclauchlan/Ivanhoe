@@ -8,11 +8,13 @@ public class Player {
 	private String startTokenColour;
 	private ArrayList<Card> cards;
 	private ArrayList<Card> display;
+	private ArrayList<Card> front;
 	private int totalCardValue;
 	private boolean isStunned;
 	private boolean isShielded;
 	
-	public String chooseRoundColour(String colour) {
+	public String chooseTournamentColour(String colour) {
+		//TO DO: set tournament colour to chosen colour
 		return colour;
 	}
 	
@@ -78,6 +80,14 @@ public class Player {
 
 	public void setShielded(boolean isShielded) {
 		this.isShielded = isShielded;
+	}
+
+	public ArrayList<Card> getFront() {
+		return front;
+	}
+
+	public void setFront(ArrayList<Card> front) {
+		this.front = front;
 	}
 	
 
