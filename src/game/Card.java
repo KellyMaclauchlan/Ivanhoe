@@ -1,21 +1,20 @@
 package game;
 
 public class Card {
-	
+	private String type;
 	private int value;
-	private String colour;
-	
+		
 	public int getValue() {
 		return value;
 	}
 	public void setValue(int value) {
 		this.value = value;
 	}
-	public String getColour() {
-		return colour;
+	public String getType() {
+		return type;
 	}
-	public void setColour(String colour) {
-		this.colour = colour;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

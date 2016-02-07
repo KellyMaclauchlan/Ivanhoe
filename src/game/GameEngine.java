@@ -15,6 +15,9 @@ public class GameEngine {
 		//TO DO: Add new player to players array
 	}
 	
+	public void createDeck() {
+		//TO DO: initialize the draw deck and add all necessary cards
+	}
 	public void pickTokens() {
 		//TO DO: initialize array of tokens the size of the number of players, one purple and each other another colour
 	}
@@ -22,7 +25,6 @@ public class GameEngine {
 	public void startGame() {
 		//TO DO: randomize drawDeck array and deal out 8 cards to each player
 		//TO DO: rearrange player array so that the player that picked purple is first and all others shift accordingly
-		//
 	}
 	
 

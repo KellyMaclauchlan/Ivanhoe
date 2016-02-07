@@ -9,6 +9,8 @@ public class Player {
 	private ArrayList<Card> cards;
 	private ArrayList<Card> display;
 	private int totalCardValue;
+	private boolean isStunned;
+	private boolean isShielded;
 	
 	public String chooseRoundColour(String colour) {
 		return colour;
@@ -60,6 +62,22 @@ public class Player {
 
 	public void setTotalCardValue(int totalCardValue) {
 		this.totalCardValue = totalCardValue;
+	}
+
+	public boolean isStunned() {
+		return isStunned;
+	}
+
+	public void setStunned(boolean isStunned) {
+		this.isStunned = isStunned;
+	}
+
+	public boolean isShielded() {
+		return isShielded;
+	}
+
+	public void setShielded(boolean isShielded) {
+		this.isShielded = isShielded;
 	}
 	
 
