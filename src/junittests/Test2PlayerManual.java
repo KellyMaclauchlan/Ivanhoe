@@ -54,7 +54,7 @@ public class Test2PlayerManual {
     	game.addAllToDeck(player1.getCards());
     	game.addAllToDeck(player2.getCards());
     	
-    	player1Cards = new ArrayList<>();
+    	ArrayList<Card> player1Cards = new ArrayList<>();
     	player1Cards.add(new ColourCard("blue", 4));
     	player1Cards.add(new ColourCard("purple", 5));
     	player1Cards.add(new ColourCard("yellow", 3));
@@ -66,7 +66,7 @@ public class Test2PlayerManual {
     	player1.setCards(player1Cards);
     	game.removeAllFromDeck(player1Cards);
     	
-    	player2Cards = new ArrayList<>();
+    	ArrayList<Card> player2Cards = new ArrayList<>();
     	player2Cards.add(new ColourCard("green", 1));
     	player2Cards.add(new ColourCard("green", 1));
     	player2Cards.add(new ColourCard("yellow", 4));
@@ -110,7 +110,7 @@ public class Test2PlayerManual {
     	assertEquals(2, players);
     	
     	//test that the draw deck has the correct number of cards
-    	assertEquals(94, game.getDrawDeck().size());
+    	assertEquals(93, game.getDrawDeck().size());
     	
     	//test that players have the right size hand
     	assertEquals(9, game.getCurrentPlayer().getCards().size());
@@ -127,7 +127,7 @@ public class Test2PlayerManual {
     	game.playCard(game.getCurrentPlayer().getCards().get(7));
     	
     	//test the current player's total card value and that it is greater than the value of the other player
-    	assertEquals(18, player1.getTotalCardValue());
+    	assertEquals(18, game.getCurrentPlayer().getTotalCardValue());
     	assertEquals(0, player2.getTotalCardValue());
     	assertTrue(player1.getTotalCardValue() > player2.getTotalCardValue());
     	
@@ -160,7 +160,6 @@ public class Test2PlayerManual {
     	
     	//test that the current player has the correct number of cards left
     	assertEquals(2, game.getCurrentPlayer().getCards().size());
-    	game.endTurn();
 
     	//test the current player's total card value and that it is greater than the value of the other player
     	assertEquals(5, player1.getTotalCardValue());
@@ -188,7 +187,6 @@ public class Test2PlayerManual {
     	
     	//test that the current player has the correct number of cards left
     	assertEquals(3, game.getCurrentPlayer().getCards().size());
-    	game.endTurn();
     	
     	//test the current player's total card value and that it is greater than the value of the other player
     	assertEquals(6, player1.getTotalCardValue());
@@ -196,7 +194,7 @@ public class Test2PlayerManual {
     	assertTrue(player2.getTotalCardValue() > player1.getTotalCardValue());
     	
     	//next player pickup card
-    	Card pickup = new ColourCard("red", 3);
+    	pickup = new ColourCard("red", 3);
     	
     }
     
@@ -213,13 +211,13 @@ public class Test2PlayerManual {
     	assertEquals(3, game.getCurrentPlayer().getCards().size());
     	
     	//current player has no playable cards and is withdrawn
-    	assertEquals(1, game.getPlayers().size());
     	pickup = new ColourCard("red", 3);
     }
     
     @Test
     public void test5Player1() {
     	System.out.println("@Test: Player1 wins the tournament");
+    	assertEquals(1, game.getPlayers().size());
 
     	//make sure that we have the correct current player
     	assertEquals(player1.getName(), game.getCurrentPlayer().getName());
@@ -231,6 +229,10 @@ public class Test2PlayerManual {
     	//player1 is the last remaining, and is announced as the winner
     	assertTrue(player1.isWinner());
     	assertFalse(player2.isWinner());
+    	
+    	//test that the winning player gets the correct token
+    	assertTrue(game.getCurrentPlayer().getCurrentTokens().contains(game.getTournamentColour()));
+
     }
     
     

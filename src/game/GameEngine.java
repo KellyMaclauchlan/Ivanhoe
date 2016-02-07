@@ -78,10 +78,12 @@ public class GameEngine {
 	
 	public void withdraw() {
 		//TO DO: withdraw the current player from the game
+		// displayed cards are discarded
 	}
 	
 	public void announceWinner() {
 		//TO DO: if the current player is the last remaining, announce that they won
+		// add tournament colour token to player's tokens
 	}
 	
 	public int getNumPlayers() {

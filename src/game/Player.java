@@ -13,6 +13,7 @@ public class Player {
 	private boolean isStunned;
 	private boolean isShielded;
 	private boolean isWinner;
+	private ArrayList<String> currentTokens;
 	
 	public Player(String name) {
 		this.name = name;
@@ -104,6 +105,14 @@ public class Player {
 
 	public void setWinner(boolean isWinner) {
 		this.isWinner = isWinner;
+	}
+
+	public ArrayList<String> getCurrentTokens() {
+		return currentTokens;
+	}
+
+	public void setCurrentTokens(ArrayList<String> currentTokens) {
+		this.currentTokens = currentTokens;
 	}
 	
 
