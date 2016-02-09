@@ -3,6 +3,8 @@ package ui;
 import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -43,7 +45,7 @@ public class MainWindow extends JFrame {
 	
 	GridBagConstraints c = new GridBagConstraints();
 	
-	
+	Boolean leftClick;
 	public MainWindow(){
 		super();
 		setTitle("Ivanho");
@@ -51,6 +53,7 @@ public class MainWindow extends JFrame {
 		setSize(300, 200);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		leftClick=false;
 		setUpScreen(this.getContentPane());
 		this.pack();
 	}
@@ -69,7 +72,23 @@ public class MainWindow extends JFrame {
 		setUpPoints(pane);
 		setUpPlayerCards(pane);
 		setUpOtherComponents(pane);
+		
+		addButtonListners();
 	}
+
+	private void addButtonListners() {
+		// TODO Auto-generated method stub
+		this.leftArrow.addActionListener(new ActionListener() {
+	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				leftClick=true;
+			}});
+	}
+
+
+
 
 	private void setUpOtherComponents(Container pane) {
 		// TODO Auto-generated method stub
