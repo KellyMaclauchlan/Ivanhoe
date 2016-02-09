@@ -36,6 +36,8 @@ public class MainscreenTest extends FestSwingJUnitTestCase  {
 	@Test
 	public void test() {
 		//editor.button();
+		editor.button("leftArrow").click();
+		assertTrue(editor.label("deck").text() =="left click");
 		assertTrue(true);
 		//fail("Not yet implemented");
 	}

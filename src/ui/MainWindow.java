@@ -78,12 +78,14 @@ public class MainWindow extends JFrame {
 
 	private void addButtonListners() {
 		// TODO Auto-generated method stub
+		this.leftArrow.setName("leftArrow");
+		this.deck.setName("deck");
 		this.leftArrow.addActionListener(new ActionListener() {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-				leftClick=true;
+				deck.setText("left click");
 			}});
 	}
 
