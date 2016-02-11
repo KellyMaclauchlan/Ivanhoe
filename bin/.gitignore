@@ -1,3 +1,5 @@
+/.DS_Store
+/junittests/
+/ui/
+/uitests/
 /network/
-/tests/
-/game/
