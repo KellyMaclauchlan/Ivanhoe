@@ -31,6 +31,7 @@ public class ServerThread extends Thread {
 	
 	/** The server processes the messages and passes it to the client to send it */
 	public void send(String msg) {
+		System.out.println("Sending: " + msg);
 		try {
 			streamOut.write(msg);
 			streamOut.flush();

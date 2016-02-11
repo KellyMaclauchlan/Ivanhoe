@@ -55,6 +55,7 @@ public class ClientThread extends Thread {
 		while (!done) { 
 			System.out.println("In loop");
 			try {  
+				System.out.println("streamin: " + streamIn.readLine());
 				client.handle(streamIn.readLine());
 			} catch(IOException ioe) {  
 	    }}

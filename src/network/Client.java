@@ -26,7 +26,7 @@ public class Client implements Runnable {
 	}
 	
 
-	public Object testMessages() {
+	public String testMessages() {
 		return testing;
 	}
 	
@@ -76,7 +76,21 @@ public class Client implements Runnable {
 
 	@Override
 	public void run() {
-		
+		System.out.println(ID + ": Client Started...");
+		while (thread != null) {  
+			try {  
+				if (outStream != null) {
+					outStream.flush();
+					outStream.write(console.readLine() + "\n");
+				} else {
+					System.out.println(ID + ": Stream Closed");
+				}
+         }
+         catch(IOException e) {  
+         	log.error(e);
+         	stop();
+         }}
+		System.out.println(ID + ": Client Stopped...");
 	}
 
 	public void handle(String msg) {
