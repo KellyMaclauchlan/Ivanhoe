@@ -1,9 +1,13 @@
 package junittests;
 
 import static org.junit.Assert.*;
+
+import java.io.IOException;
+
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.apache.log4j.Logger;
 import org.junit.After;
 
 import network.Server;
@@ -46,10 +50,10 @@ public class TestClient {
 		System.out.println("@Before: TestClient");
 	}
 	
-	@After
+	/*@After
 	public void tearDown(){
 		server.shutdown();
-	}
+	}*/
 	
 	@Test
 	public void test1Client(){
@@ -67,13 +71,13 @@ public class TestClient {
 	}
 	
 	@Test
-	public void testMessage1(){
+	public void testMessage1() throws IOException{
 		System.out.println("@Test: testMessage1");
+		assertTrue(c1);
+		
 		String message = "Test message 1";
 		int id = client1.getID();
 		server.handle(id, message);
-		//server.handle(client1.getID(), "Test message 1");
-		//client1.handle(message);
 		assertEquals(message, client1.testMessages());
 	}
 	
@@ -83,6 +87,7 @@ public class TestClient {
 		String message = "Test message 2";
 		int id = client2.getID();
 		server.handle(id, message);
+		server.handle(client2.getID(), "Test message 2");
 		assertEquals(message, client2.testMessages());
 	}
 	

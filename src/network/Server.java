@@ -89,6 +89,7 @@ public class Server implements Runnable {
 				//		log.info(String.format("Sending Message from %s:%d to %s:%d: ",from.getSocketAddress(),from.getID(), to.getSocketAddress(), to.getID(), input));
 				//}
 				to.send(String.format("%s", msg));
+				log.info("Message Sent: " + msg);
 			}	
 		}
 	}

@@ -25,11 +25,6 @@ public class Client implements Runnable {
 		return this.ID;
 	}
 	
-
-	public String testMessages() {
-		return testing;
-	}
-	
 	public Client(){
 		connectToServer(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
 	}
@@ -56,7 +51,7 @@ public class Client implements Runnable {
 		return connected;
 	}
 	
-	private void start() {
+	private void start() throws IOException{
 		try{
 			console = new BufferedReader(new InputStreamReader(System.in));
 			inStream = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -71,10 +66,10 @@ public class Client implements Runnable {
 			}
 		}catch (IOException e){
 			log.error(e);
+			throw e; 
 		}
 	}
 
-	@Override
 	public void run() {
 		System.out.println(ID + ": Client Started...");
 		while (thread != null) {  
@@ -83,6 +78,7 @@ public class Client implements Runnable {
 					outStream.flush();
 					outStream.write(console.readLine() + "\n");
 				} else {
+					log.info(ID + ": Stream Closed");
 					System.out.println(ID + ": Stream Closed");
 				}
          }
@@ -90,9 +86,8 @@ public class Client implements Runnable {
          	log.error(e);
          	stop();
          }}
-		System.out.println(ID + ": Client Stopped...");
 	}
-
+	
 	public void handle(String msg) {
 		System.out.println("Msg3333: "+ msg);
 		System.out.println("1: " + testing);
@@ -106,9 +101,28 @@ public class Client implements Runnable {
 	}
 
 
-	public void stop() {
-		
+	public String testMessages() {
+		return testing;
 	}
 
-
+	public void stop() {
+		try{
+			if(thread != null){
+				thread = null;
+				if(console != null){console.close();}
+				if(inStream != null){inStream.close();}
+				if(outStream != null){outStream.close();}
+				
+				if(socket != null){socket.close();}
+				
+				this.socket = null;
+				this.console = null;
+				this.inStream = null;
+				this.outStream = null; 
+			}
+		}catch (IOException e){
+			log.error(e);
+		}
+		client.close();
+	}
 }
