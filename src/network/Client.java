@@ -26,7 +26,7 @@ public class Client implements Runnable {
 	}
 	
 
-	public Object testMessages() {
+	public String testMessages() {
 		return testing;
 	}
 	
