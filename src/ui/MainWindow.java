@@ -72,14 +72,135 @@ public class MainWindow extends JFrame {
 		setUpPoints(pane);
 		setUpPlayerCards(pane);
 		setUpOtherComponents(pane);
-		
+		addNames();
 		addButtonListners();
 	}
+	
+	//adding names to the components for testing
+	private void addNames() {
+		// Individual Buttons
+		this.leftArrow.setName("leftArrow");
+		this.rightArrow.setName("rightArrow");
+		this.deck.setName("deck");
+		this.discardPile.setName("discard");
+		this.withdrawButton.setName("withdraw");
+		this.endTurnButton.setName("endTurn");
+		
+		// Player Names
+		this.playerNames[0].setName("player1name");
+		this.playerNames[1].setName("player2name");
+		this.playerNames[2].setName("player3name");
+		this.playerNames[3].setName("player4name");
+		this.playerNames[4].setName("player5name");
+		
+		// Player Scores
+		this.playerPoints[0].setName("player1points");
+		this.playerPoints[1].setName("player2points");
+		this.playerPoints[2].setName("player3points");
+		this.playerPoints[3].setName("player4points");
+		this.playerPoints[4].setName("player5points");
+		
+		// Player Tokens
+		//Player 1
+		this.tokens[0][0].setName("player1blue");
+		this.tokens[0][1].setName("player1red");
+		this.tokens[0][2].setName("player1yellow");
+		this.tokens[0][3].setName("player1green");
+		this.tokens[0][4].setName("player1purple");
+
+		//Player 2
+		this.tokens[1][0].setName("player2blue");
+		this.tokens[1][1].setName("player2red");
+		this.tokens[1][2].setName("player2yellow");
+		this.tokens[1][3].setName("player2green");
+		this.tokens[1][4].setName("player2purple");	
+		
+		//Player 3
+		this.tokens[2][0].setName("player3blue");
+		this.tokens[2][1].setName("player3red");
+		this.tokens[2][2].setName("player3yellow");
+		this.tokens[2][3].setName("player3green");
+		this.tokens[2][4].setName("player3purple");
+		
+		//Player 4
+		this.tokens[3][0].setName("player4blue");
+		this.tokens[3][1].setName("player4red");
+		this.tokens[3][2].setName("player4yellow");
+		this.tokens[3][3].setName("player4green");
+		this.tokens[3][4].setName("player4purple");
+	
+		//Player 5
+		this.tokens[4][0].setName("player5blue");
+		this.tokens[4][1].setName("player5red");
+		this.tokens[4][2].setName("player5yellow");
+		this.tokens[4][3].setName("player5green");
+		this.tokens[4][4].setName("player5purple");
+		
+		//Player's cards 
+		this.playerCards[0].setName("card1");
+		this.playerCards[1].setName("card2");
+		this.playerCards[2].setName("card3");
+		this.playerCards[3].setName("card4");
+		this.playerCards[4].setName("card5");
+		this.playerCards[5].setName("card6");
+		this.playerCards[6].setName("card7");
+		this.playerCards[7].setName("card8");
+		this.playerCards[8].setName("card9");
+		this.playerCards[9].setName("card10");
+		
+		//Played cards
+		//Player 1
+		this.playedCards[0][0].setName("player1card1");
+		this.playedCards[0][1].setName("player1card2");
+		this.playedCards[0][2].setName("player1card3");
+		this.playedCards[0][3].setName("player1card4");
+		this.playedCards[0][4].setName("player1card5");
+		this.playedCards[0][5].setName("player1card6");
+		this.playedCards[0][6].setName("player1card7");
+		
+		//Player 2
+		this.playedCards[1][0].setName("player2card1");
+		this.playedCards[1][1].setName("player2card2");
+		this.playedCards[1][2].setName("player2card3");
+		this.playedCards[1][3].setName("player2card4");
+		this.playedCards[1][4].setName("player2card5");
+		this.playedCards[1][5].setName("player2card6");
+		this.playedCards[1][6].setName("player2card7");
+		
+		//Player 3
+		this.playedCards[2][0].setName("player3card1");
+		this.playedCards[2][1].setName("player3card2");
+		this.playedCards[2][2].setName("player3card3");
+		this.playedCards[2][3].setName("player3card4");
+		this.playedCards[2][4].setName("player3card5");
+		this.playedCards[2][5].setName("player3card6");
+		this.playedCards[2][6].setName("player3card7");
+	
+		//Player 4
+		this.playedCards[3][0].setName("player4card1");
+		this.playedCards[3][1].setName("player4card2");
+		this.playedCards[3][2].setName("player4card3");
+		this.playedCards[3][3].setName("player4card4");
+		this.playedCards[3][4].setName("player4card5");
+		this.playedCards[3][5].setName("player4card6");
+		this.playedCards[3][6].setName("player4card7");
+		
+		//Player 5
+		this.playedCards[4][0].setName("player5card1");
+		this.playedCards[4][1].setName("player5card2");
+		this.playedCards[4][2].setName("player5card3");
+		this.playedCards[4][3].setName("player5card4");
+		this.playedCards[4][4].setName("player5card5");
+		this.playedCards[4][5].setName("player5card6");
+		this.playedCards[4][6].setName("player5card7");
+	}
+
+
+
 
 	private void addButtonListners() {
 		// TODO Auto-generated method stub
-		this.leftArrow.setName("leftArrow");
-		this.deck.setName("deck");
+		
 		this.leftArrow.addActionListener(new ActionListener() {
 	
 			@Override
