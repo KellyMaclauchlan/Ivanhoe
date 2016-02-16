@@ -13,6 +13,7 @@ public class Player {
 	private boolean isStunned;
 	private boolean isShielded;
 	private boolean isWinner;
+	private boolean hasWithdrawn;
 	private ArrayList<String> currentTokens;
 	
 	public Player(String name) {
@@ -113,6 +114,14 @@ public class Player {
 
 	public void setCurrentTokens(ArrayList<String> currentTokens) {
 		this.currentTokens = currentTokens;
+	}
+
+	public boolean hasWithdrawn() {
+		return hasWithdrawn;
+	}
+
+	public void setWithdrawn(boolean hasWithdrawn) {
+		this.hasWithdrawn = hasWithdrawn;
 	}
 	
 

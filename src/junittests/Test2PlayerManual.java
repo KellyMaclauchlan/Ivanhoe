@@ -32,7 +32,7 @@ public class Test2PlayerManual {
 
 	@BeforeClass
     public static void BeforeClass() {
-        System.out.println("@BeforeClass: Setting up tests for a manually set 2 player game, dealing cards, selecting tokens");
+        System.out.println("@BeforeClass: Setting up tests for a manually set 2 player round, dealing cards, selecting tokens");
         //These tests set the hands and played cards manually to test specific scenarios
         
 		game = new GameEngine();

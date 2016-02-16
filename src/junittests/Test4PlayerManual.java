@@ -33,7 +33,7 @@ public class Test4PlayerManual {
 
 	@BeforeClass
     public static void BeforeClass() {
-        System.out.println("@BeforeClass: Setting up tests for a manually set 4 player game, dealing cards, selecting tokens");
+        System.out.println("@BeforeClass: Setting up tests for a manually set 4 player round, dealing cards, selecting tokens");
         //These tests set the hands and played cards manually to test specific scenarios
         
 		game = new GameEngine();
@@ -72,7 +72,7 @@ public class Test4PlayerManual {
     	player1Cards.add(new ColourCard("yellow", 2));
     	player1Cards.add(new ActionCard("riposte"));
     	player1Cards.add(new SupportCard("squire", 2));
-    	player2.setCards(player1Cards);
+    	player1.setCards(player1Cards);
     	game.removeAllFromDeck(player1Cards);
     	
     	ArrayList<Card> player2Cards = new ArrayList<>();
@@ -84,7 +84,7 @@ public class Test4PlayerManual {
     	player2Cards.add(new ActionCard("unhorse"));
     	player2Cards.add(new SupportCard("squire", 2));
     	player2Cards.add(new SupportCard("squire", 3));
-    	player3.setCards(player2Cards);
+    	player2.setCards(player2Cards);
     	game.removeAllFromDeck(player2Cards);
     	
     	ArrayList<Card> player3Cards = new ArrayList<>();
@@ -97,7 +97,7 @@ public class Test4PlayerManual {
     	player3Cards.add(new ColourCard("blue", 4));
     	player3Cards.add(new ColourCard("green", 1));
     	
-    	player4.setCards(player3Cards);
+    	player3.setCards(player3Cards);
     	game.removeAllFromDeck(player3Cards);
     	
     	ArrayList<Card> player4Cards = new ArrayList<>();
@@ -109,7 +109,7 @@ public class Test4PlayerManual {
     	player4Cards.add(new ActionCard("drop weapon"));
     	player4Cards.add(new ColourCard("yellow", 4));
     	player4Cards.add(new ColourCard("blue", 4));
-    	player1.setCards(player4Cards);
+    	player4.setCards(player4Cards);
     	game.removeAllFromDeck(player4Cards);
     }
 	

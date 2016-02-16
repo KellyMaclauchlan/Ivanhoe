@@ -27,7 +27,6 @@ public class GameEngine {
 		//TO DO: current player is set to player at 0
 	}
 	
-	
 	public void discard(Player player, Card card) {
 		//TO DO: discard a specific card for a specific player, to the discardDeck
 	}
@@ -38,6 +37,7 @@ public class GameEngine {
 		//OR: if it is the first turn of the game, prompt the first player to pick a tournament colour
 		//OR: if the player is the only one left, call announceWinner
 	}
+	
 	
 	public void playCard(Card card) {
 		//TO DO: play a specific card for current player, handle based on card rules
@@ -78,12 +78,17 @@ public class GameEngine {
 	
 	public void withdraw() {
 		//TO DO: withdraw the current player from the game
-		// displayed cards are discarded
+		//TO DO: current player's displayed cards are discarded
+		//TO DO: current player is set to withdrawn
 	}
 	
 	public void announceWinner() {
 		//TO DO: if the current player is the last remaining, announce that they won
-		// add tournament colour token to player's tokens
+		//TO DO: add tournament colour token to player's tokens
+		//TO DO: if there is a winner of the entire game, announce that they won the game
+		//TO DO: if there is no game winner, arrange the player array so that the tournament winner
+		//       is first to play in the next tournament, and all other players arranged in their usual order accordingly
+		//TO DO: set all players to not withdrawn
 	}
 	
 	public int getNumPlayers() {
