@@ -35,33 +35,26 @@ public class MainscreenTest extends FestSwingJUnitTestCase  {
 	  }
 	
 	
-	@Test
-	public void test() {
-		//editor.button();
-		
-		editor.button("leftArrow").click();
-		assertTrue(editor.label("deck").text() =="left click");
-		assertTrue(true);
-		//fail("Not yet implemented");
-	}
+	
 	@Test
 	public void testLeftArrow() {
-		Icon old= editor.label("card2").target.getIcon();
+		Icon old= editor.button("card3").target.getIcon();
 		editor.button("leftArrow").click();
-		assertTrue(editor.label("card1").target.getIcon().equals(old));
-		assertTrue(true);
+		assertTrue(editor.button("card2").target.getIcon().equals(old));
+		//assertTrue(true);
 		//fail("Not yet implemented");
 	}
 	@Test
 	public void testRightArrow() {
-		Icon old= editor.label("card1").target.getIcon();
+		Icon old= editor.button("card1").target.getIcon();
 		editor.button("rightArrow").click();
-		assertTrue(editor.label("card2").target.getIcon().equals(old));
+		assertTrue(editor.button("card2").target.getIcon().equals(old));
 		//assertTrue(true);
 		//fail("Not yet implemented");
 	}
 	@Test
 	public void testWithdrawClick() {
+		editor.radioButton("player1name").target.setSelected(true);
 		editor.button("withdraw").click();
 		assertFalse(editor.radioButton("player1name").target.isSelected());
 		//assertTrue(true);
@@ -69,6 +62,7 @@ public class MainscreenTest extends FestSwingJUnitTestCase  {
 	}
 	@Test
 	public void testEndTurnClick() {
+		editor.radioButton("player1name").target.setSelected(true);
 		editor.button("endTurn").click();
 		assertFalse(editor.radioButton("player1name").target.isSelected());
 		//assertTrue(true);

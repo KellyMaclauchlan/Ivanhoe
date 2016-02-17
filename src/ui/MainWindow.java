@@ -6,6 +6,8 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -73,6 +75,7 @@ public class MainWindow extends JFrame {
 		setUpPlayerCards(pane);
 		setUpOtherComponents(pane);
 		addNames();
+		addDefaults();
 		addButtonListners();
 	}
 	
@@ -196,23 +199,82 @@ public class MainWindow extends JFrame {
 		this.playedCards[4][6].setName("player5card7");
 	}
 	
-	
+	private void addDefaults(){
+		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards"));
+		this.playerCards[1].setIcon(new ImageIcon("resources/cards_small/simpleCards1"));
+		this.playerCards[2].setIcon(new ImageIcon("resources/cards_small/simpleCards2"));
+		this.playerCards[3].setIcon(new ImageIcon("resources/cards_small/simpleCards3"));
+		this.playerCards[4].setIcon(new ImageIcon("resources/cards_small/simpleCards4"));
+		this.playerCards[5].setIcon(new ImageIcon("resources/cards_small/simpleCards5"));
+		this.playerCards[6].setIcon(new ImageIcon("resources/cards_small/simpleCards6"));
+		this.playerCards[7].setIcon(new ImageIcon("resources/cards_small/simpleCards7"));
+		this.playerCards[8].setIcon(new ImageIcon("resources/cards_small/simpleCards8"));
+		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards9"));
+		this.playerNames[0].setSelected(true);
+	}
 
 
  	private void addButtonListners() {
 		// TODO Auto-generated method stub
-		this.playerCards[0].getIcon();
 		this.leftArrow.addActionListener(new ActionListener() {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-				deck.setText("left click");
+				leftArrowClicked();
 			}});
+		this.rightArrow.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				rightArrowClicked();
+			}});
+		this.withdrawButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				withdrawClicked();
+			}});
+		this.endTurnButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				endTurnClicked();
+			}});
+	}
+ 	private void withdrawClicked() {
+		// TODO Auto-generated method stub
+		for(int i=0;i<5;i++){
+			if(this.playerNames[i].isSelected())
+				this.playerNames[i].setSelected(false);
+		}
+	}
+ 	private void endTurnClicked() {
+		// TODO Auto-generated method stub
+		for(int i=0;i<5;i++){
+			if(this.playerNames[i].isSelected())
+				this.playerNames[i].setSelected(false);
+		}
 	}
 
 
-	private void setUpOtherComponents(Container pane) {
+
+	private void leftArrowClicked(){
+		for(int i=0;i<9;i++){
+ 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
+ 		}
+ 		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards18"));
+ 	}
+ 	private void rightArrowClicked(){
+ 		for(int i=1;i<10;i++){
+ 			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
+ 		}
+ 		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards18"));
+ 	}
+ 	private void setUpOtherComponents(Container pane) {
 		// TODO Auto-generated method stub
 		// setup arrows
 		leftArrow= new JButton();
