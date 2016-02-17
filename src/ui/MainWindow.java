@@ -49,8 +49,8 @@ public class MainWindow extends JFrame {
 	public MainWindow(){
 		super();
 		setTitle("Ivanho");
-		this.setSize(684, 504);
-		setSize(300, 200);
+		this.setSize(1360, 840);
+		//setSize(300, 200);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		leftClick=false;
@@ -78,6 +78,7 @@ public class MainWindow extends JFrame {
 	
 	//adding names to the components for testing
 	private void addNames() {
+	
 		// Individual Buttons
 		this.leftArrow.setName("leftArrow");
 		this.rightArrow.setName("rightArrow");
@@ -194,13 +195,13 @@ public class MainWindow extends JFrame {
 		this.playedCards[4][5].setName("player5card6");
 		this.playedCards[4][6].setName("player5card7");
 	}
+	
+	
 
 
-
-
-	private void addButtonListners() {
+ 	private void addButtonListners() {
 		// TODO Auto-generated method stub
-		
+		this.playerCards[0].getIcon();
 		this.leftArrow.addActionListener(new ActionListener() {
 	
 			@Override
@@ -209,8 +210,6 @@ public class MainWindow extends JFrame {
 				deck.setText("left click");
 			}});
 	}
-
-
 
 
 	private void setUpOtherComponents(Container pane) {

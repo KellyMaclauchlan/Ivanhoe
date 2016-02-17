@@ -2,6 +2,8 @@ package uitests;
 
 import static org.junit.Assert.*;
 
+import javax.swing.Icon;
+
 import org.fest.swing.annotation.RunsInEDT;
 import org.fest.swing.edt.GuiQuery;
 import static org.fest.swing.edt.GuiActionRunner.execute;
@@ -36,10 +38,42 @@ public class MainscreenTest extends FestSwingJUnitTestCase  {
 	@Test
 	public void test() {
 		//editor.button();
+		
 		editor.button("leftArrow").click();
 		assertTrue(editor.label("deck").text() =="left click");
 		assertTrue(true);
 		//fail("Not yet implemented");
 	}
+	@Test
+	public void testLeftArrow() {
+		Icon old= editor.label("card2").target.getIcon();
+		editor.button("leftArrow").click();
+		assertTrue(editor.label("card1").target.getIcon().equals(old));
+		assertTrue(true);
+		//fail("Not yet implemented");
+	}
+	@Test
+	public void testRightArrow() {
+		Icon old= editor.label("card1").target.getIcon();
+		editor.button("rightArrow").click();
+		assertTrue(editor.label("card2").target.getIcon().equals(old));
+		//assertTrue(true);
+		//fail("Not yet implemented");
+	}
+	@Test
+	public void testWithdrawClick() {
+		editor.button("withdraw").click();
+		assertFalse(editor.radioButton("player1name").target.isSelected());
+		//assertTrue(true);
+		//fail("Not yet implemented");
+	}
+	@Test
+	public void testEndTurnClick() {
+		editor.button("endTurn").click();
+		assertFalse(editor.radioButton("player1name").target.isSelected());
+		//assertTrue(true);
+		//fail("Not yet implemented");
+	}
+	
 
 }
