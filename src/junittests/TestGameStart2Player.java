@@ -30,14 +30,15 @@ public class TestGameStart2Player {
 		System.out.println("@Before(): Setting up 2 player startup test");
 		game = new GameEngine();
 		
-		System.out.println("startGame");
-    	game.startGame();
-    	
     	//add 2 players to the game
     	Player player1 = new Player("Katie");
     	Player player2 = new Player("Kelly");
     	game.joinGame(player1);
     	game.joinGame(player2);
+    	
+		System.out.println("startGame");
+    	game.startGame();
+    	
 	}
     
     @After
@@ -65,10 +66,6 @@ public class TestGameStart2Player {
     	//make sure each player has 8 cards after the game has started
     	assertEquals(8, player1.getCards().size());
     	assertEquals(8, player2.getCards().size());
-    	
-    	//make sure that the first player in the players array is the one that picked purple, and the second player did not
-    	assertEquals("purple", player1.getStartTokenColour());
-    	assertNotEquals("purple", player2.getStartTokenColour());
     	
     	//make sure that the round does not yet have a colour
     	assertNull(game.getTournamentColour());

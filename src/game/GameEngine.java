@@ -1,30 +1,239 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class GameEngine {
 	private int numPlayers;
 	private String tournamentColour;
-	private ArrayList<Player> players;
+	private ArrayList<Player> players = new ArrayList<>();
 	private ArrayList<String> tokens;
 	private ArrayList<Card> drawDeck;
 	private Player currentPlayer;
- 	
-	public void joinGame(Player player) {
-		//TO DO: Add new player to players array
-	}
 	
 	public void createDeck() {
-		//TO DO: initialize the draw deck and add all necessary cards
+		drawDeck = new ArrayList<Card>();
+		//purple
+		drawDeck.add(new ColourCard("purple", 3));
+		drawDeck.add(new ColourCard("purple", 3));
+		drawDeck.add(new ColourCard("purple", 3));
+		drawDeck.add(new ColourCard("purple", 3));
+		drawDeck.add(new ColourCard("purple", 4));
+		drawDeck.add(new ColourCard("purple", 4));
+		drawDeck.add(new ColourCard("purple", 4));
+		drawDeck.add(new ColourCard("purple", 4));
+		drawDeck.add(new ColourCard("purple", 5));
+		drawDeck.add(new ColourCard("purple", 5));
+		drawDeck.add(new ColourCard("purple", 5));
+		drawDeck.add(new ColourCard("purple", 5));
+		drawDeck.add(new ColourCard("purple", 7));
+		drawDeck.add(new ColourCard("purple", 7));
+		
+		//red
+		drawDeck.add(new ColourCard("red", 3));
+		drawDeck.add(new ColourCard("red", 3));
+		drawDeck.add(new ColourCard("red", 3));
+		drawDeck.add(new ColourCard("red", 3));
+		drawDeck.add(new ColourCard("red", 3));
+		drawDeck.add(new ColourCard("red", 3));
+		drawDeck.add(new ColourCard("red", 4));
+		drawDeck.add(new ColourCard("red", 4));
+		drawDeck.add(new ColourCard("red", 4));
+		drawDeck.add(new ColourCard("red", 4));
+		drawDeck.add(new ColourCard("red", 4));
+		drawDeck.add(new ColourCard("red", 4));
+		drawDeck.add(new ColourCard("red", 5));
+		drawDeck.add(new ColourCard("red", 5));
+
+		//blue
+		drawDeck.add(new ColourCard("blue", 2));
+		drawDeck.add(new ColourCard("blue", 2));
+		drawDeck.add(new ColourCard("blue", 2));
+		drawDeck.add(new ColourCard("blue", 2));
+		drawDeck.add(new ColourCard("blue", 3));
+		drawDeck.add(new ColourCard("blue", 3));
+		drawDeck.add(new ColourCard("blue", 3));
+		drawDeck.add(new ColourCard("blue", 3));
+		drawDeck.add(new ColourCard("blue", 4));
+		drawDeck.add(new ColourCard("blue", 4));
+		drawDeck.add(new ColourCard("blue", 4));
+		drawDeck.add(new ColourCard("blue", 4));
+		drawDeck.add(new ColourCard("blue", 5));
+		drawDeck.add(new ColourCard("blue", 5));
+
+		//yellow
+		drawDeck.add(new ColourCard("yellow", 2));
+		drawDeck.add(new ColourCard("yellow", 2));
+		drawDeck.add(new ColourCard("yellow", 2));
+		drawDeck.add(new ColourCard("yellow", 2));
+		drawDeck.add(new ColourCard("yellow", 3));
+		drawDeck.add(new ColourCard("yellow", 3));
+		drawDeck.add(new ColourCard("yellow", 3));
+		drawDeck.add(new ColourCard("yellow", 3));
+		drawDeck.add(new ColourCard("yellow", 3));
+		drawDeck.add(new ColourCard("yellow", 3));
+		drawDeck.add(new ColourCard("yellow", 3));
+		drawDeck.add(new ColourCard("yellow", 3));
+		drawDeck.add(new ColourCard("yellow", 4));
+		drawDeck.add(new ColourCard("yellow", 4));
+		
+		//green
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard("green", 1));
+
+		//supporters
+		drawDeck.add(new SupportCard("maiden", 6));
+		drawDeck.add(new SupportCard("maiden", 6));
+		drawDeck.add(new SupportCard("maiden", 6));
+		drawDeck.add(new SupportCard("maiden", 6));
+		drawDeck.add(new SupportCard("squire", 2));
+		drawDeck.add(new SupportCard("squire", 2));
+		drawDeck.add(new SupportCard("squire", 2));
+		drawDeck.add(new SupportCard("squire", 2));
+		drawDeck.add(new SupportCard("squire", 2));
+		drawDeck.add(new SupportCard("squire", 2));
+		drawDeck.add(new SupportCard("squire", 2));
+		drawDeck.add(new SupportCard("squire", 2));
+		drawDeck.add(new SupportCard("squire", 3));
+		drawDeck.add(new SupportCard("squire", 3));
+		drawDeck.add(new SupportCard("squire", 3));
+		drawDeck.add(new SupportCard("squire", 3));
+		drawDeck.add(new SupportCard("squire", 3));
+		drawDeck.add(new SupportCard("squire", 3));
+		drawDeck.add(new SupportCard("squire", 3));
+		drawDeck.add(new SupportCard("squire", 3));
+
+		//action
+		drawDeck.add(new ActionCard("unhorse"));
+		drawDeck.add(new ActionCard("changeweapon"));
+		drawDeck.add(new ActionCard("dropweapon"));
+		drawDeck.add(new ActionCard("breaklance"));
+		drawDeck.add(new ActionCard("riposte"));
+		drawDeck.add(new ActionCard("riposte"));
+		drawDeck.add(new ActionCard("riposte"));
+		drawDeck.add(new ActionCard("dodge"));
+		drawDeck.add(new ActionCard("retreat"));
+		drawDeck.add(new ActionCard("knockdown"));
+		drawDeck.add(new ActionCard("knockdown"));
+		drawDeck.add(new ActionCard("outmaneuver"));
+		drawDeck.add(new ActionCard("charge"));
+		drawDeck.add(new ActionCard("countercharge"));
+		drawDeck.add(new ActionCard("disgrace"));
+		drawDeck.add(new ActionCard("adapt"));
+		drawDeck.add(new ActionCard("outwit"));
+		drawDeck.add(new ActionCard("shield"));
+		drawDeck.add(new ActionCard("stunned"));
+		drawDeck.add(new ActionCard("ivanhoe"));
 	}
+	
+	public void joinGame(Player player) {
+		players.add(player);
+	}
+
 	public void pickTokens() {
-		//TO DO: initialize array of tokens the size of the number of players, one purple and each other another colour
+		//add all tokens to token array, starting with purple
+		tokens = new ArrayList<String>();
+		tokens.add("purple");
+		tokens.add("red");
+		tokens.add("blue");
+		tokens.add("yellow");
+		tokens.add("green");
+		
+		//remove last token in tokens array as long as the number of tokens is greater than the number of players
+		for (int i = 0; i < tokens.size(); i++) {
+			if (tokens.size() > players.size()) {
+				tokens.remove(tokens.size()-1);
+			}
+		}
+		
+		//pick a random token for each player, and remove that token from the array
+		Random random = new Random();
+		for (Player p: players) {
+			int index = random.nextInt(tokens.size());
+			String token = tokens.get(index);
+			p.setStartTokenColour(token);
+			tokens.remove(index);
+		}	
 	}
 	
 	public void startGame() {
-		//TO DO: randomize drawDeck array and deal out 8 cards to each player
-		//TO DO: rearrange player array so that the player that picked purple is first and all others shift accordingly
-		//TO DO: current player is set to player at 0
+		numPlayers = players.size();
+		//randomly pick a token for each player
+		pickTokens();
+		
+		//arrange players in the correct order, starting with the player left of the one that chose purple
+		//and continuing with the person left of that one, and so on - in this case, next in the array of players
+		arrangePlayers();
+		
+		//create the drawDeck
+		createDeck();
+		
+		//shuffle drawDeck (twice to be safe)
+		Collections.shuffle(drawDeck);
+		Collections.shuffle(drawDeck);
+
+		//for each player, create a hand, add the first 8 cards to the hand and remove them from the drawDeck
+		for (Player p: players) {
+			ArrayList<Card> hand = new ArrayList<>();
+			hand.add(drawDeck.get(0));
+			drawDeck.remove(0);
+			hand.add(drawDeck.get(0));
+			drawDeck.remove(0);			
+			hand.add(drawDeck.get(0));
+			drawDeck.remove(0);
+			hand.add(drawDeck.get(0));
+			drawDeck.remove(0);
+			hand.add(drawDeck.get(0));
+			drawDeck.remove(0);
+			hand.add(drawDeck.get(0));
+			drawDeck.remove(0);
+			hand.add(drawDeck.get(0));
+			drawDeck.remove(0);
+			hand.add(drawDeck.get(0));
+			drawDeck.remove(0);
+
+			//set the current player's hand to the one created
+			p.setCards(hand);
+		}
+
+		currentPlayer = players.get(0);
+	}
+	
+	
+	public void arrangePlayers() {
+		//arrange players list so that the player left of the one that drew purple
+				ArrayList<Player> tempPlayers = players;
+				for (int i = 1; i < numPlayers; i++) {
+					if ((tempPlayers.get(i-1).getStartTokenColour().equals("purple"))
+							|| (tempPlayers.get(i).isWinner()) || (i == numPlayers)) {
+						players.set(0, tempPlayers.get(i));
+						for (int j = 1; j <= numPlayers; j++) {
+							i++;
+							if (i < tempPlayers.size()) {
+								players.set(j, tempPlayers.get(i));
+							} else {
+								for (int k = 0; k < numPlayers - j; k++) {
+									players.set(j, tempPlayers.get(k));
+									j++;
+								}
+							}
+						}
+					}
+					tempPlayers.get(i-1).setStartTokenColour("nil");
+				}
 	}
 	
 	public void discard(Player player, Card card) {
