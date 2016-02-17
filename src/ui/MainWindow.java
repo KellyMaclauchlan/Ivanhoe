@@ -200,16 +200,16 @@ public class MainWindow extends JFrame {
 	}
 	
 	private void addDefaults(){
-		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards"));
-		this.playerCards[1].setIcon(new ImageIcon("resources/cards_small/simpleCards1"));
-		this.playerCards[2].setIcon(new ImageIcon("resources/cards_small/simpleCards2"));
-		this.playerCards[3].setIcon(new ImageIcon("resources/cards_small/simpleCards3"));
-		this.playerCards[4].setIcon(new ImageIcon("resources/cards_small/simpleCards4"));
-		this.playerCards[5].setIcon(new ImageIcon("resources/cards_small/simpleCards5"));
-		this.playerCards[6].setIcon(new ImageIcon("resources/cards_small/simpleCards6"));
-		this.playerCards[7].setIcon(new ImageIcon("resources/cards_small/simpleCards7"));
-		this.playerCards[8].setIcon(new ImageIcon("resources/cards_small/simpleCards8"));
-		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards9"));
+		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards.jpg"));
+		this.playerCards[1].setIcon(new ImageIcon("resources/cards_small/simpleCards1.jpg"));
+		this.playerCards[2].setIcon(new ImageIcon("resources/cards_small/simpleCards2.jpg"));
+		this.playerCards[3].setIcon(new ImageIcon("resources/cards_small/simpleCards3.jpg"));
+		this.playerCards[4].setIcon(new ImageIcon("resources/cards_small/simpleCards4.jpg"));
+		this.playerCards[5].setIcon(new ImageIcon("resources/cards_small/simpleCards5.jpg"));
+		this.playerCards[6].setIcon(new ImageIcon("resources/cards_small/simpleCards6.jpg"));
+		this.playerCards[7].setIcon(new ImageIcon("resources/cards_small/simpleCards7.jpg"));
+		this.playerCards[8].setIcon(new ImageIcon("resources/cards_small/simpleCards8.jpg"));
+		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards9.jpg"));
 		this.playerNames[0].setSelected(true);
 	}
 
@@ -266,13 +266,13 @@ public class MainWindow extends JFrame {
 		for(int i=0;i<9;i++){
  			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
  		}
- 		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards18"));
+ 		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
  	}
  	private void rightArrowClicked(){
- 		for(int i=1;i<10;i++){
+ 		for(int i=9;i>0;i--){
  			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
  		}
- 		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards18"));
+ 		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
  	}
  	private void setUpOtherComponents(Container pane) {
 		// TODO Auto-generated method stub
