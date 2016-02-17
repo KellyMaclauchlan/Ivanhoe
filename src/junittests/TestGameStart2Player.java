@@ -22,7 +22,7 @@ public class TestGameStart2Player {
 	@BeforeClass
     public static void BeforeClass() {
         System.out.println("@BeforeClass: Testing startup of a new game");
-        //These tests choose available cards autotmatically and ensure proper setup of a game
+        //These tests choose available cards automatically and ensure proper setup of a game
     }
 	
     @Before
@@ -90,9 +90,9 @@ public class TestGameStart2Player {
     	Player player = game.getCurrentPlayer();
     	
     	//for this test, we will choose the first playable card and all subsequent playable cards
-    	for (Card cardToPlay: player.getPlayPossibilities()) {
+    	for (Card cardToPlay: player.getPlayPossibilities(game)) {
     		game.playCard(cardToPlay);
-    		player.getPlayPossibilities().remove(cardToPlay);
+    		player.getPlayPossibilities(game).remove(cardToPlay);
     	}
     	
     	//Test that the first player now has cards on their display

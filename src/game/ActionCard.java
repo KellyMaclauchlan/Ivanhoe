@@ -4,6 +4,7 @@ public class ActionCard extends Card {
 
 	public ActionCard(String actionType) {
 		this.setType(actionType);
+		setCardType("action");
 	}
 	
 	public void playUnhorse(String colour) {

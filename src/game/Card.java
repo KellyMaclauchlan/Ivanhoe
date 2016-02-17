@@ -3,6 +3,7 @@ package game;
 public class Card {
 	private String type;
 	private int value;
+	private String cardType;
 		
 	public int getValue() {
 		return value;
@@ -15,6 +16,12 @@ public class Card {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public String getCardType() {
+		return cardType;
+	}
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
 	}
 
 }

@@ -1,13 +1,12 @@
 package game;
 
 import java.util.ArrayList;
-
 public class Player {
 	
 	private String name;
 	private String startTokenColour;
 	private ArrayList<Card> cards;
-	private ArrayList<Card> display;
+	private ArrayList<Card> display = new ArrayList<>();
 	private ArrayList<Card> front;
 	private int totalCardValue;
 	private boolean isStunned;
@@ -28,14 +27,25 @@ public class Player {
 	public ArrayList<String> getColourPossibilities() {
 		//TO DO: determine which colours the player can choose based on the available cards in their deck;
 		ArrayList<String> colours = new ArrayList<>();
+		for (Card c: cards) {
+			if (c.getCardType().equals("colour")) {
+				colours.add(c.getType());
+			}
+		}
 		return colours;
 	}
 	
-	public ArrayList<Card> getPlayPossibilities() {
+	public ArrayList<Card> getPlayPossibilities(GameEngine game) {
 		//TO DO: determine what cards can be played from hand based on tournament colour
 		ArrayList<Card> playableCards = new ArrayList<>();
+		for (Card c: cards) {
+			if ((c.getType().equals(game.getTournamentColour())) 
+					|| (c.getCardType().equals("support")) 
+					|| (c.getCardType().equals("action"))) {
+				playableCards.add(c);
+			}
+		}
 		return playableCards;
-		
 	}
 	
 	public String getName() {
@@ -57,6 +67,10 @@ public class Player {
 		this.cards = cards;
 	}
 	
+	public void removeCard(Card card) {
+		cards.remove(card);
+	}
+	
 	public void addCard(Card card) {
 		//TO DO: Add a card to the current player's hand
 	}
@@ -64,16 +78,28 @@ public class Player {
 		return display;
 	}
 
-	public void setDisplay(ArrayList<Card> display) {
+	public void addToDisplay(Card card) {
+		display.add(card);
+	}
+	
+	public void setDisplay(ArrayList display) {
 		this.display = display;
+	}
+	
+	public void removeFromDisplay(Card card) {
+		display.remove(card);
 	}
 
 	public int getTotalCardValue() {
 		return totalCardValue;
 	}
 
-	public void setTotalCardValue(int totalCardValue) {
-		this.totalCardValue = totalCardValue;
+	public void setTotalCardValue() {
+		for (Card c: display) {
+			if (c.getCardType().equals("colour")
+					|| c.getCardType().equals("support"))
+				totalCardValue += c.getValue();
+		}
 	}
 
 	public boolean isStunned() {

@@ -10,6 +10,7 @@ public class GameEngine {
 	private ArrayList<Player> players = new ArrayList<>();
 	private ArrayList<String> tokens;
 	private ArrayList<Card> drawDeck;
+	private ArrayList<Card> discardPile = new ArrayList<>();
 	private Player currentPlayer;
 	
 	public void createDeck() {
@@ -249,6 +250,9 @@ public class GameEngine {
 	
 	
 	public void playCard(Card card) {
+		currentPlayer.addToDisplay(card);
+		currentPlayer.removeCard(card);
+		currentPlayer.setTotalCardValue();
 		//TO DO: play a specific card for current player, handle based on card rules
 		//remove card from player hand
 		//add card to where it should be added (display, front, discard)
@@ -281,14 +285,36 @@ public class GameEngine {
 	}
 	
 	public void endTurn() {
-		//TO DO: end current player's turn and announce points, move to next player
-		//OR: If the current player has less points than another player, call withdraw
+		System.out.println("Player total value: " + currentPlayer.getTotalCardValue());
+		for (Player p: players) {
+			if (currentPlayer.getTotalCardValue() < p.getTotalCardValue()) {
+				withdraw();
+			}
+		}
+		currentPlayer = getNext();
 	}
 	
+	private Player getNext() {
+		int index = 0;
+		for (int i = 0; i < players.size(); i++) {
+			if (players.get(i) == currentPlayer) {
+				if (i == players.size()-1) {
+					index = 0;
+				} else {
+					index = i + 1;
+				}
+			}
+		}
+		return players.get(index);
+	}
+
 	public void withdraw() {
-		//TO DO: withdraw the current player from the game
-		//TO DO: current player's displayed cards are discarded
-		//TO DO: current player is set to withdrawn
+		currentPlayer.setWithdrawn(true);
+		for (Card c: currentPlayer.getCards()) {
+			discardPile.add(c);
+			currentPlayer.removeFromDisplay(c);
+		}
+		currentPlayer.setDisplay(new ArrayList<Card>());
 	}
 	
 	public void announceWinner() {
