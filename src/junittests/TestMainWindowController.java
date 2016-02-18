@@ -6,16 +6,19 @@ import org.junit.Before;
 import org.junit.Test;
 
 import config.Config;
+import game.Card;
 import game.ColourCard;
 import ui.MainWindowController;
 
 public class TestMainWindowController {
 	MainWindowController controller;
 	Config config;
+	Card testCard;
 	@Before
 	public void setup(){
 		controller= new MainWindowController();
 		config=new Config();
+		testCard=new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg");
 	}
 	@Test
 	public void testPlayerNum() {
@@ -55,5 +58,36 @@ public class TestMainWindowController {
 		controller.window.endTurnClicked();
 		assertEquals(controller.lastMessege,config.END_TURN_CLICK);
 	}
+	@Test
+	public void testAddPlayedCard(){
+		controller.setNumPlayers(3);
+		controller.addPlayedCard(0, this.testCard);
+		assertEquals(controller.getPlayedCard(0,0),testCard);
+	}
+	@Test
+	public void testChangePlayerTurn(){
+		controller.setCurrPlayer(1);
+		assertEquals(controller.getCurrPlayer(),1);
+	}
+	@Test
+	public void testAddNumPlayers(){
+		controller.setNumPlayers(3);
+		assertEquals(controller.getTotalPlayers(),3);
+	}
+	@Test
+	public void testStartRound(){
+		controller.startRound();
+	}	
+	@Test
+	public void testchangePlayerScore(){
+		controller.SetScore(1,3);
+		assertEquals(controller.getScore(1),3);
+	}
+	@Test
+	public void testchangePlayerName(){
+		controller.SetName(1,"alex");
+		assertEquals(controller.getName(1),"alex");
+	}
+	
 
 }
