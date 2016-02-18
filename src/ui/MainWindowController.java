@@ -23,6 +23,8 @@ public class MainWindowController implements Observer{
 		window = new MainWindow();
 		window.registerObserver(this);
 		playedCards= new ArrayList<ArrayList<Card>>();
+		playerNames= new ArrayList<String>();
+		playerScores= new ArrayList<Integer>();
 		
 	}
 	public void showWindow(){
@@ -49,10 +51,12 @@ public class MainWindowController implements Observer{
 		this.setTotalPlayers(i);
 		for(int j=0;j<i;j++){
 			this.playedCards.add(new ArrayList<Card>());
+			this.playerNames.add("");
+			this.playerScores.add(0);
 		}
 	}
 	public void addPlayedCard(int player, Card card){
-		
+		this.playedCards.get(player).add(card);
 	}
 	
 
@@ -99,7 +103,8 @@ public class MainWindowController implements Observer{
 	}
 	public Card getPlayedCard(int player, int index) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.playedCards.get(player).get(index);
+		
 	}
 	public int getCurrPlayer() {
 		return currPlayer;
@@ -111,21 +116,23 @@ public class MainWindowController implements Observer{
 		// TODO Auto-generated method stub
 		
 	}
-	public void SetScore(int i, int j) {
+	public void SetScore(int player, int score) {
 		// TODO Auto-generated method stub
+		this.playerScores.set(player, score);		
+	}
+	public Object getScore(int player) {
+		// TODO Auto-generated method stub
+		return this.playerScores.get(player);
 		
 	}
-	public Object getScore(int i) {
+	public void SetName(int player, String name) {
 		// TODO Auto-generated method stub
-		return null;
+		this.playerNames.set(player, name);
 	}
-	public void SetName(int i, String string) {
+	public Object getName(int player) {
 		// TODO Auto-generated method stub
+		return this.playerNames.get(player);
 		
-	}
-	public Object getName(int i) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 	

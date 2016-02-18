@@ -59,10 +59,10 @@ public class TestMainWindowController {
 		assertEquals(controller.lastMessege,config.END_TURN_CLICK);
 	}
 	@Test
-	public void testAddPlayedCard(){
+	public void testAddPlayedCard(){		
 		controller.setNumPlayers(3);
-		controller.addPlayedCard(0, this.testCard);
-		assertEquals(controller.getPlayedCard(0,0),testCard);
+		controller.addPlayedCard(1, this.testCard);
+		assertEquals(controller.getPlayedCard(1,0),testCard);
 	}
 	@Test
 	public void testChangePlayerTurn(){
@@ -80,11 +80,13 @@ public class TestMainWindowController {
 	}	
 	@Test
 	public void testchangePlayerScore(){
+		controller.setNumPlayers(3);
 		controller.SetScore(1,3);
 		assertEquals(controller.getScore(1),3);
 	}
 	@Test
 	public void testchangePlayerName(){
+		controller.setNumPlayers(3);
 		controller.SetName(1,"alex");
 		assertEquals(controller.getName(1),"alex");
 	}
