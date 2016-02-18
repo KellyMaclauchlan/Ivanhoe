@@ -5,6 +5,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -13,11 +14,18 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
-public class MainWindow extends JFrame {
+import config.Config;
+import config.Observer;
+import config.Subject;
+
+public class MainWindow extends JFrame implements Subject {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	//observer pattern 
+	private ArrayList<Observer>observers =new ArrayList<Observer>();
+	private Config config= new Config();
 	//buttons
 	JButton withdrawButton;
 	JButton endTurnButton;
@@ -60,8 +68,25 @@ public class MainWindow extends JFrame {
 		this.pack();
 	}
 	
+	@Override
+	public void registerObserver(Observer observer) {
+		// TODO Auto-generated method stub
+		observers.add(observer);
+	}
 
-	
+	@Override
+	public void removeObserver(Observer observer) {
+		// TODO Auto-generated method stub
+		observers.remove(observer);
+	}
+
+	@Override
+	public void notifyObservers(String message) {
+		// TODO Auto-generated method stub
+		for(Observer ob:observers){
+			ob.update(message);
+		}
+	}
 	
 	public void setUpScreen(Container pane){
 		
@@ -222,6 +247,7 @@ public class MainWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 				leftArrowClicked();
+				
 			}});
 		this.rightArrow.addActionListener(new ActionListener() {
 			
@@ -235,44 +261,48 @@ public class MainWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-				withdrawClicked();
+				withdrawClicked();				
 			}});
 		this.endTurnButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-				endTurnClicked();
+				endTurnClicked();	
 			}});
 	}
- 	private void withdrawClicked() {
+ 	public void withdrawClicked() {
 		// TODO Auto-generated method stub
 		for(int i=0;i<5;i++){
 			if(this.playerNames[i].isSelected())
 				this.playerNames[i].setSelected(false);
 		}
+		notifyObservers(config.WITHDRAW_CLICK);
 	}
- 	private void endTurnClicked() {
+ 	public void endTurnClicked() {
 		// TODO Auto-generated method stub
 		for(int i=0;i<5;i++){
 			if(this.playerNames[i].isSelected())
 				this.playerNames[i].setSelected(false);
 		}
+		notifyObservers(config.END_TURN_CLICK);
 	}
 
 
 
-	private void leftArrowClicked(){
+	public void leftArrowClicked(){
 		for(int i=0;i<9;i++){
  			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
  		}
  		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+ 		notifyObservers(config.LEFT_CLICK);
  	}
- 	private void rightArrowClicked(){
+ 	public void rightArrowClicked(){
  		for(int i=9;i>0;i--){
  			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
  		}
  		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+ 		notifyObservers(config.RIGHT_CLICK);
  	}
  	private void setUpOtherComponents(Container pane) {
 		// TODO Auto-generated method stub
@@ -1016,6 +1046,5 @@ public class MainWindow extends JFrame {
 				pane.add(tokens[4][4], c);
 				
 	}
-
 
 }

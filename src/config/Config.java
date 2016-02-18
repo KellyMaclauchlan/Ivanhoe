@@ -27,4 +27,14 @@ public class Config {
 	public String PLAY_CARD = "p";
 	public boolean WITHDRAW = false; 
 	
+	/*Ui messages*/
+	public String LEFT_CLICK="leftclick";
+	public String RIGHT_CLICK="rightclick";
+	public String WITHDRAW_CLICK="withdrawclick";
+	public String END_TURN_CLICK="endturnclick";
+	//public String PLAYEDCARD="playedcard";
+	
+	
+	
+	
 }
