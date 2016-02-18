@@ -6,6 +6,11 @@ public class ActionCard extends Card {
 		this.setType(actionType);
 		setCardType("action");
 	}
+	public ActionCard(String actionType,String cardimg) {
+		this.setType(actionType);
+		setCardType("action");
+		this.setCardImage(cardimg);
+	}
 	
 	public void playUnhorse(String colour) {
 		//TO DO: change tournament colour to red blue or yellow if it is currently purple 

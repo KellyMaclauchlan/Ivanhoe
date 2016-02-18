@@ -7,4 +7,10 @@ public class SupportCard extends Card {
 		this.setType(supportType);
 		setCardType("support");
 	}
+	public SupportCard(String supportType, int value, String cardimg) {
+		this.setValue(value);
+		this.setType(supportType);
+		setCardType("support");
+		this.setCardImage(cardimg);
+	}
 }

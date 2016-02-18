@@ -4,6 +4,7 @@ public class Card {
 	private String type;
 	private int value;
 	private String cardType;
+	private String cardImage;
 		
 	public int getValue() {
 		return value;
@@ -22,6 +23,12 @@ public class Card {
 	}
 	public void setCardType(String cardType) {
 		this.cardType = cardType;
+	}
+	public String getCardImage() {
+		return cardImage;
+	}
+	public void setCardImage(String cardImage) {
+		this.cardImage = cardImage;
 	}
 
 }

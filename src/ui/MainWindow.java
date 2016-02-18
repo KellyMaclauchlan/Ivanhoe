@@ -198,7 +198,7 @@ public class MainWindow extends JFrame {
 		this.playedCards[4][5].setName("player5card6");
 		this.playedCards[4][6].setName("player5card7");
 	}
-	
+	//adds default cards for tests
 	private void addDefaults(){
 		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards.jpg"));
 		this.playerCards[1].setIcon(new ImageIcon("resources/cards_small/simpleCards1.jpg"));
