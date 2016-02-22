@@ -90,6 +90,12 @@ public class TestMainWindowController {
 		controller.SetName(1,"alex");
 		assertEquals(controller.getName(1),"alex");
 	}
-	
+	public void testSelectCard(){
+		controller.window.lastCard=1;		
+		int old=controller.getPlayerCardSize();
+		controller.playCard();
+		assertEquals(controller.getPlayerCardSize(),old-1);
+		
+	}
 
 }

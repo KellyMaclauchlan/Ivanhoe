@@ -68,6 +68,16 @@ public class MainscreenTest extends FestSwingJUnitTestCase  {
 		//assertTrue(true);
 		//fail("Not yet implemented");
 	}
-	
+	@Test
+	public void testCardClick() {
+		editor.button("card1").click();
+		assertEquals(editor.button("test").target.getText(),"1");
+	}
+	@Test
+	public void testPlayCardClick() {
+		editor.button("card1").click();
+		editor.button("playCard");
+		assertEquals(editor.button("test").target.getText(),"played 1");
+	}
 
 }

@@ -32,7 +32,7 @@ public class Config {
 	public String RIGHT_CLICK="rightclick";
 	public String WITHDRAW_CLICK="withdrawclick";
 	public String END_TURN_CLICK="endturnclick";
-	//public String PLAYEDCARD="playedcard";
+	public String PLAYEDCARD="playedcard";
 	
 	
 	

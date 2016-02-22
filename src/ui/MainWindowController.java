@@ -30,6 +30,9 @@ public class MainWindowController implements Observer{
 	public void showWindow(){
 		window.setVisible(true);
 	}
+	public int getPlayerCardSize(){
+		return this.playerCards.size();
+	}
 
 	public void setPlayerNum(int player) {
 		// TODO Auto-generated method stub
@@ -132,6 +135,10 @@ public class MainWindowController implements Observer{
 	public Object getName(int player) {
 		// TODO Auto-generated method stub
 		return this.playerNames.get(player);
+		
+	}
+	public void playCard() {
+		// TODO Auto-generated method stub
 		
 	}
 	

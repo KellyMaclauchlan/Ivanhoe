@@ -29,6 +29,7 @@ public class MainWindow extends JFrame implements Subject {
 	//buttons
 	JButton withdrawButton;
 	JButton endTurnButton;
+	JButton playCardButton;
 	
 	//radio buttons
 	JRadioButton[] playerNames;
@@ -54,8 +55,11 @@ public class MainWindow extends JFrame implements Subject {
 	JLabel discardPile;
 	
 	GridBagConstraints c = new GridBagConstraints();
-	
+	//testing variables
+	public int lastCard;
 	Boolean leftClick;
+	JLabel testLable=new JLabel();
+	
 	public MainWindow(){
 		super();
 		setTitle("Ivanho");
@@ -65,7 +69,7 @@ public class MainWindow extends JFrame implements Subject {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		leftClick=false;
 		setUpScreen(this.getContentPane());
-		this.pack();
+		//this.pack();
 	}
 	
 	@Override
@@ -114,6 +118,8 @@ public class MainWindow extends JFrame implements Subject {
 		this.discardPile.setName("discard");
 		this.withdrawButton.setName("withdraw");
 		this.endTurnButton.setName("endTurn");
+		this.playCardButton.setName("playCard");
+		this.testLable.setName("test");
 		
 		// Player Names
 		this.playerNames[0].setName("player1name");
@@ -270,8 +276,22 @@ public class MainWindow extends JFrame implements Subject {
 			// TODO Auto-generated method stub
 				endTurnClicked();	
 			}});
+		this.playCardButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				playCardClicked();	
+			}});
+	
+ 	}
+ 	protected void playCardClicked() {
+		// TODO Auto-generated method stub
+ 		
+		notifyObservers(config.PLAYEDCARD);
 	}
- 	public void withdrawClicked() {
+
+	public void withdrawClicked() {
 		// TODO Auto-generated method stub
 		for(int i=0;i<5;i++){
 			if(this.playerNames[i].isSelected())
@@ -287,8 +307,6 @@ public class MainWindow extends JFrame implements Subject {
 		}
 		notifyObservers(config.END_TURN_CLICK);
 	}
-
-
 
 	public void leftArrowClicked(){
 		for(int i=0;i<9;i++){
@@ -340,6 +358,15 @@ public class MainWindow extends JFrame implements Subject {
 		c.gridheight=2;
 		c.gridwidth=4;
 		pane.add(endTurnButton, c);
+		
+		//setup play card button
+		playCardButton = new JButton("Play Card");
+		c.fill=GridBagConstraints.HORIZONTAL;
+		c.gridx=30;
+		c.gridy=14;
+		c.gridheight=2;
+		c.gridwidth=4;
+				pane.add(endTurnButton, c);
 		
 		// set up draw pile
 		deck = new JLabel();
