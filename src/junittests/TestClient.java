@@ -73,7 +73,7 @@ public class TestClient {
 	@Test
 	public void testMessage1(){
 		System.out.println("@Test: testMessage1");
-		assertTrue(c1);
+		assertTrue(c1); 
 		
 		String message = "Test message 1";
 		int id = client1.getID();
@@ -84,16 +84,19 @@ public class TestClient {
 	@Test
 	public void testMessage2(){
 		System.out.println("@Test: testMessage2");
+		assertTrue(c2); 
+		
 		String message = "Test message 2";
 		int id = client2.getID();
 		server.handle(id, message);
-		server.handle(client2.getID(), "Test message 2");
 		assertEquals(message, client2.testMessages());
 	}
 	
 	@Test
 	public void testMessage3(){
 		System.out.println("@Test: testMessage3");
+		assertTrue(c3); 
+		
 		String message = "Test message 3";
 		int id = client3.getID();
 		server.handle(id, message);
@@ -103,6 +106,8 @@ public class TestClient {
 	@Test
 	public void testMessage4(){
 		System.out.println("@Test: testMessage4");
+		assertTrue(c4); 
+		
 		String message = "Test message 4";
 		int id = client4.getID();
 		server.handle(id, message);
@@ -112,7 +117,9 @@ public class TestClient {
 	@Test
 	public void testMessage5(){
 		System.out.println("@Test: testMessage5");
-		String message = "Test message 5";
+		assertTrue(c5); 
+		
+		String message = "Test message 2";
 		int id = client5.getID();
 		server.handle(id, message);
 		assertEquals(message, client5.testMessages());

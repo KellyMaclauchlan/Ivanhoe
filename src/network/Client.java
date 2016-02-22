@@ -6,9 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
-import java.util.Scanner;
-
-import config.Config;
 import org.apache.log4j.Logger;
 
 public class Client implements Runnable {
@@ -20,26 +17,14 @@ public class Client implements Runnable {
 	public BufferedReader inStream = null;
 	public BufferedWriter outStream = null;
 	
-	private static Scanner sc = new Scanner(System.in);
-	public static String ip;
-	public static int port; 
-	
-	String testing;
+	public String testing = null;
 	public Logger log = Logger.getLogger("Client");
 
 	public int getID(){
 		return this.ID;
 	}
 	
-	public Client(){
-		System.out.println("Enter the IP of the Server Machine: ");
-		ip = sc.nextLine();
-		System.out.println("Enter the Port Number of the server Machine: ");
-		port = sc.nextInt(); 
-		System.out.println("\n");
-		
-		connectToServer(ip, port);
-	}
+	public Client(){}
 	
 	public boolean connectToServer(String serverIP, int serverPort) {
 		System.out.println(ID + ":Establishing connection. Please wait... ");

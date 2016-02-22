@@ -4603,4 +4603,483 @@
 @2016-Feb-22 12:55:09 INFO  Server:94 - Message Sent: null
 @2016-Feb-22 12:55:09 ERROR ServerThread:52 - java.net.SocketException: Connection reset
 @2016-Feb-22 12:55:09 INFO  Server:110 - Player 60315 is being removed
+@2016-Feb-22 12:58:04 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 12:58:04 INFO  Server:39 - New ServerThread created
+@2016-Feb-22 12:58:04 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 12:58:04 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 12:58:04 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 12:58:11 INFO  Client:46 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 12:58:11 INFO  Client:53 - 60324: Connected to server: localhost/127.0.0.1
+@2016-Feb-22 12:58:11 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60324,localport=3000]
+@2016-Feb-22 12:58:11 INFO  Client:54 - 60324: Connected to portid: 60324
+@2016-Feb-22 12:58:11 INFO  Client:71 - Initializing buffers
+@2016-Feb-22 12:58:11 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 12:58:11 INFO  Client:77 - New ClientThread has started
+@2016-Feb-22 12:58:11 INFO  Client:57 - Client has started
+@2016-Feb-22 12:58:11 INFO  Client:46 - 60324:Establishing connection. Please wait... 
+@2016-Feb-22 12:58:11 INFO  Client:53 - 60325: Connected to server: /127.0.0.1
+@2016-Feb-22 12:58:11 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60325,localport=3000]
+@2016-Feb-22 12:58:11 INFO  Client:54 - 60325: Connected to portid: 60325
+@2016-Feb-22 12:58:11 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 12:58:11 INFO  Client:71 - Initializing buffers
+@2016-Feb-22 12:58:11 INFO  Client:57 - Client has started
+@2016-Feb-22 12:58:11 INFO  ClientThread:47 - Client Thread 60324 running.
+@2016-Feb-22 12:58:16 INFO  ClientThread:50 - Test Message 1
+@2016-Feb-22 12:58:16 INFO  Server:94 - Message Sent: Test Message 1
+@2016-Feb-22 12:58:32 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 12:58:32 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 12:58:32 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 12:58:32 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 12:59:28 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 12:59:28 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 12:59:28 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 12:59:28 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 12:59:35 INFO  Client:46 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 12:59:35 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60333,localport=3000]
+@2016-Feb-22 12:59:35 INFO  Client:53 - 60333: Connected to server: localhost/127.0.0.1
+@2016-Feb-22 12:59:35 INFO  Client:54 - 60333: Connected to portid: 60333
+@2016-Feb-22 12:59:35 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 12:59:35 INFO  Client:71 - Initializing buffers
+@2016-Feb-22 12:59:35 INFO  Client:77 - New ClientThread has started
+@2016-Feb-22 12:59:35 INFO  ClientThread:47 - Client Thread 60333 running.
+@2016-Feb-22 12:59:35 INFO  Client:57 - Client has started
+@2016-Feb-22 12:59:35 INFO  Client:46 - 60333:Establishing connection. Please wait... 
+@2016-Feb-22 12:59:35 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60334,localport=3000]
+@2016-Feb-22 12:59:35 INFO  Client:53 - 60334: Connected to server: /127.0.0.1
+@2016-Feb-22 12:59:35 INFO  Client:54 - 60334: Connected to portid: 60334
+@2016-Feb-22 12:59:35 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 12:59:35 INFO  Client:71 - Initializing buffers
+@2016-Feb-22 12:59:35 INFO  Client:57 - Client has started
+@2016-Feb-22 12:59:42 INFO  Client:46 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 12:59:42 INFO  ClientThread:50 - 
+@2016-Feb-22 12:59:42 INFO  Server:94 - Message Sent: 
+@2016-Feb-22 12:59:43 ERROR Client:61 - java.net.ConnectException: Connection refused: connect
+@2016-Feb-22 12:59:43 INFO  Client:46 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 12:59:43 INFO  Client:53 - 60336: Connected to server: /127.0.0.1
+@2016-Feb-22 12:59:43 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60336,localport=3000]
+@2016-Feb-22 12:59:43 INFO  Client:54 - 60336: Connected to portid: 60336
+@2016-Feb-22 12:59:43 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 12:59:43 INFO  Client:71 - Initializing buffers
+@2016-Feb-22 12:59:43 INFO  Client:77 - New ClientThread has started
+@2016-Feb-22 12:59:43 INFO  Client:57 - Client has started
+@2016-Feb-22 12:59:43 INFO  ClientThread:47 - Client Thread 60336 running.
+@2016-Feb-22 12:59:48 INFO  ClientThread:50 - localhost
+@2016-Feb-22 12:59:48 INFO  ClientThread:50 - localhost
+@2016-Feb-22 12:59:48 INFO  Server:94 - Message Sent: localhost
+@2016-Feb-22 12:59:51 INFO  Client:46 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 12:59:51 INFO  ClientThread:50 - 
+@2016-Feb-22 12:59:51 INFO  Server:94 - Message Sent: 
+@2016-Feb-22 12:59:51 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60337,localport=3000]
+@2016-Feb-22 12:59:51 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 12:59:51 INFO  Client:53 - 60337: Connected to server: localhost/127.0.0.1
+@2016-Feb-22 12:59:51 INFO  Client:54 - 60337: Connected to portid: 60337
+@2016-Feb-22 12:59:51 INFO  Client:71 - Initializing buffers
+@2016-Feb-22 12:59:51 INFO  Client:77 - New ClientThread has started
+@2016-Feb-22 12:59:51 INFO  Client:57 - Client has started
+@2016-Feb-22 12:59:51 INFO  ClientThread:47 - Client Thread 60337 running.
+@2016-Feb-22 12:59:51 INFO  Client:46 - 60337:Establishing connection. Please wait... 
+@2016-Feb-22 12:59:51 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60338,localport=3000]
+@2016-Feb-22 12:59:51 INFO  Client:53 - 60338: Connected to server: /127.0.0.1
+@2016-Feb-22 12:59:51 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 12:59:51 INFO  Client:54 - 60338: Connected to portid: 60338
+@2016-Feb-22 12:59:51 INFO  Client:71 - Initializing buffers
+@2016-Feb-22 12:59:51 INFO  Client:57 - Client has started
+@2016-Feb-22 12:59:58 INFO  ClientThread:50 - 
+@2016-Feb-22 12:59:58 INFO  ClientThread:50 - 
+@2016-Feb-22 12:59:58 INFO  Server:94 - Message Sent: 
+@2016-Feb-22 12:59:58 INFO  ClientThread:50 - localhost 
+@2016-Feb-22 12:59:58 INFO  Server:94 - Message Sent: localhost 
+@2016-Feb-22 13:03:52 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:03:52 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 13:03:55 ERROR ServerThread:52 - java.net.SocketException: Connection reset
+@2016-Feb-22 13:03:55 ERROR ServerThread:52 - java.net.SocketException: Connection reset
+@2016-Feb-22 13:03:55 ERROR ServerThread:52 - java.net.SocketException: Connection reset
+@2016-Feb-22 13:03:55 INFO  Server:110 - Player 60334 is being removed
+@2016-Feb-22 13:03:55 INFO  Server:110 - Player 60336 is being removed
+@2016-Feb-22 13:03:55 INFO  Server:110 - Player 60333 is being removed
+@2016-Feb-22 13:04:05 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:04:05 INFO  Server:39 - New ServerThread created
+@2016-Feb-22 13:04:05 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:04:11 INFO  Client:46 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:04:11 INFO  Client:53 - 60343: Connected to server: localhost/127.0.0.1
+@2016-Feb-22 13:04:11 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60343,localport=3000]
+@2016-Feb-22 13:04:11 INFO  Client:54 - 60343: Connected to portid: 60343
+@2016-Feb-22 13:04:11 INFO  Client:71 - Initializing buffers
+@2016-Feb-22 13:04:11 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:04:11 INFO  Client:77 - New ClientThread has started
+@2016-Feb-22 13:04:11 INFO  ClientThread:47 - Client Thread 60343 running.
+@2016-Feb-22 13:04:11 INFO  Client:57 - Client has started
+@2016-Feb-22 13:04:12 INFO  Server:94 - Message Sent: 
+@2016-Feb-22 13:04:12 INFO  ClientThread:50 - 
+@2016-Feb-22 13:04:14 INFO  Server:94 - Message Sent: kjad
+@2016-Feb-22 13:04:15 INFO  Server:94 - Message Sent: kad
+@2016-Feb-22 13:04:15 INFO  ClientThread:50 - kad
+@2016-Feb-22 13:04:16 INFO  Server:94 - Message Sent: kljad
+@2016-Feb-22 13:04:19 INFO  Server:94 - Message Sent: lkjad
+@2016-Feb-22 13:04:19 INFO  ClientThread:50 - lkjad
+@2016-Feb-22 13:04:20 INFO  Server:94 - Message Sent: lkjad
+@2016-Feb-22 13:04:22 INFO  ClientThread:50 - o
+@2016-Feb-22 13:04:22 INFO  Server:94 - Message Sent: o
+@2016-Feb-22 13:04:23 INFO  Server:94 - Message Sent: o
+@2016-Feb-22 13:04:25 INFO  Server:94 - Message Sent: p
+@2016-Feb-22 13:04:25 INFO  ClientThread:50 - p
+@2016-Feb-22 13:04:26 INFO  Server:94 - Message Sent: 
+@2016-Feb-22 13:04:28 INFO  ClientThread:50 - i
+@2016-Feb-22 13:04:28 INFO  Server:94 - Message Sent: i
+@2016-Feb-22 13:04:30 INFO  Server:94 - Message Sent: l
+@2016-Feb-22 13:04:31 INFO  ClientThread:50 - null
+@2016-Feb-22 13:04:31 INFO  Server:94 - Message Sent: null
+@2016-Feb-22 13:04:32 ERROR ServerThread:52 - java.net.SocketException: Connection reset
+@2016-Feb-22 13:04:32 INFO  Server:110 - Player 60343 is being removed
+@2016-Feb-22 13:05:02 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:05:02 INFO  Server:39 - New ServerThread created
+@2016-Feb-22 13:05:02 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:05:02 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:05:02 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 13:05:02 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:05:02 INFO  Client:41 - 60348: Connected to server: /127.0.0.1
+@2016-Feb-22 13:05:02 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60348,localport=3000]
+@2016-Feb-22 13:05:02 INFO  Client:42 - 60348: Connected to portid: 60348
+@2016-Feb-22 13:05:02 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:05:02 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:05:02 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:05:02 INFO  Client:45 - Client has started
+@2016-Feb-22 13:05:02 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:05:02 INFO  ClientThread:47 - Client Thread 60348 running.
+@2016-Feb-22 13:05:02 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60349,localport=3000]
+@2016-Feb-22 13:05:02 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:05:02 INFO  Client:41 - 60349: Connected to server: /127.0.0.1
+@2016-Feb-22 13:05:02 INFO  Client:42 - 60349: Connected to portid: 60349
+@2016-Feb-22 13:05:02 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:05:02 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:05:02 INFO  Client:45 - Client has started
+@2016-Feb-22 13:05:02 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:05:02 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60350,localport=3000]
+@2016-Feb-22 13:05:02 INFO  Client:41 - 60350: Connected to server: /127.0.0.1
+@2016-Feb-22 13:05:02 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:05:02 INFO  ClientThread:47 - Client Thread 60349 running.
+@2016-Feb-22 13:05:02 INFO  Client:42 - 60350: Connected to portid: 60350
+@2016-Feb-22 13:05:02 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:05:02 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:05:02 INFO  Client:45 - Client has started
+@2016-Feb-22 13:05:02 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:05:02 INFO  Client:41 - 60351: Connected to server: /127.0.0.1
+@2016-Feb-22 13:05:02 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60351,localport=3000]
+@2016-Feb-22 13:05:02 INFO  ClientThread:47 - Client Thread 60350 running.
+@2016-Feb-22 13:05:02 INFO  Client:42 - 60351: Connected to portid: 60351
+@2016-Feb-22 13:05:02 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:05:02 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:05:02 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:05:02 INFO  Client:45 - Client has started
+@2016-Feb-22 13:05:02 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:05:02 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60352,localport=3000]
+@2016-Feb-22 13:05:02 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:05:02 INFO  Client:41 - 60352: Connected to server: /127.0.0.1
+@2016-Feb-22 13:05:02 INFO  Client:42 - 60352: Connected to portid: 60352
+@2016-Feb-22 13:05:02 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:05:02 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:05:02 INFO  Client:45 - Client has started
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:05:02 INFO  Server:94 - Message Sent: Test message 1
+@2016-Feb-22 13:05:02 INFO  ClientThread:47 - Client Thread 60351 running.
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:05:02 INFO  ClientThread:47 - Client Thread 60352 running.
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:05:02 INFO  Server:94 - Message Sent: Test message 2
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:05:02 INFO  Server:94 - Message Sent: Test message 2
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:05:02 INFO  Server:94 - Message Sent: Test message 3
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 4
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 4
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 4
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 4
+@2016-Feb-22 13:05:02 INFO  ClientThread:50 - Test message 4
+@2016-Feb-22 13:05:02 INFO  Server:94 - Message Sent: Test message 4
+@2016-Feb-22 13:05:02 INFO  Server:94 - Message Sent: Test message 5
+@2016-Feb-22 13:06:39 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:06:39 INFO  Server:39 - New ServerThread created
+@2016-Feb-22 13:06:39 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:06:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:06:39 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 13:06:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:06:39 INFO  Client:41 - 60355: Connected to server: /127.0.0.1
+@2016-Feb-22 13:06:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60355,localport=3000]
+@2016-Feb-22 13:06:39 INFO  Client:42 - 60355: Connected to portid: 60355
+@2016-Feb-22 13:06:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:06:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:06:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:06:39 INFO  ClientThread:47 - Client Thread 60355 running.
+@2016-Feb-22 13:06:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:06:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:06:39 INFO  Client:41 - 60356: Connected to server: /127.0.0.1
+@2016-Feb-22 13:06:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60356,localport=3000]
+@2016-Feb-22 13:06:39 INFO  Client:42 - 60356: Connected to portid: 60356
+@2016-Feb-22 13:06:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:06:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:06:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:06:39 INFO  ClientThread:47 - Client Thread 60356 running.
+@2016-Feb-22 13:06:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:06:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:06:39 INFO  Client:41 - 60357: Connected to server: /127.0.0.1
+@2016-Feb-22 13:06:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60357,localport=3000]
+@2016-Feb-22 13:06:39 INFO  Client:42 - 60357: Connected to portid: 60357
+@2016-Feb-22 13:06:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:06:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:06:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:06:39 INFO  ClientThread:47 - Client Thread 60357 running.
+@2016-Feb-22 13:06:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:06:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:06:39 INFO  Client:41 - 60358: Connected to server: /127.0.0.1
+@2016-Feb-22 13:06:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60358,localport=3000]
+@2016-Feb-22 13:06:39 INFO  Client:42 - 60358: Connected to portid: 60358
+@2016-Feb-22 13:06:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:06:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:06:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:06:39 INFO  ClientThread:47 - Client Thread 60358 running.
+@2016-Feb-22 13:06:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:06:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:06:39 INFO  Client:41 - 60359: Connected to server: /127.0.0.1
+@2016-Feb-22 13:06:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60359,localport=3000]
+@2016-Feb-22 13:06:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:06:39 INFO  Client:42 - 60359: Connected to portid: 60359
+@2016-Feb-22 13:06:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:06:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:06:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:06:39 INFO  ClientThread:47 - Client Thread 60359 running.
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:06:39 INFO  Server:94 - Message Sent: Test message 1
+@2016-Feb-22 13:06:39 INFO  Server:94 - Message Sent: Test message 2
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:06:39 INFO  Server:94 - Message Sent: Test message 3
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:06:39 INFO  Server:94 - Message Sent: Test message 4
+@2016-Feb-22 13:06:39 INFO  ClientThread:50 - Test message 5
+@2016-Feb-22 13:06:40 INFO  ClientThread:50 - Test message 5
+@2016-Feb-22 13:06:40 INFO  ClientThread:50 - Test message 5
+@2016-Feb-22 13:06:40 INFO  ClientThread:50 - Test message 5
+@2016-Feb-22 13:06:40 INFO  ClientThread:50 - Test message 5
+@2016-Feb-22 13:06:40 INFO  Server:94 - Message Sent: Test message 5
+@2016-Feb-22 13:08:39 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:08:39 INFO  Server:39 - New ServerThread created
+@2016-Feb-22 13:08:39 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:08:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:08:39 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 13:08:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:08:39 INFO  Client:41 - 60365: Connected to server: /127.0.0.1
+@2016-Feb-22 13:08:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60365,localport=3000]
+@2016-Feb-22 13:08:39 INFO  Client:42 - 60365: Connected to portid: 60365
+@2016-Feb-22 13:08:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:08:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:08:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:08:39 INFO  ClientThread:47 - Client Thread 60365 running.
+@2016-Feb-22 13:08:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:08:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:08:39 INFO  Client:41 - 60366: Connected to server: /127.0.0.1
+@2016-Feb-22 13:08:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60366,localport=3000]
+@2016-Feb-22 13:08:39 INFO  Client:42 - 60366: Connected to portid: 60366
+@2016-Feb-22 13:08:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:08:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:08:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:08:39 INFO  ClientThread:47 - Client Thread 60366 running.
+@2016-Feb-22 13:08:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:08:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:08:39 INFO  Client:41 - 60367: Connected to server: /127.0.0.1
+@2016-Feb-22 13:08:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60367,localport=3000]
+@2016-Feb-22 13:08:39 INFO  Client:42 - 60367: Connected to portid: 60367
+@2016-Feb-22 13:08:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:08:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:08:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:08:39 INFO  ClientThread:47 - Client Thread 60367 running.
+@2016-Feb-22 13:08:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:08:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:08:39 INFO  Client:41 - 60368: Connected to server: /127.0.0.1
+@2016-Feb-22 13:08:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60368,localport=3000]
+@2016-Feb-22 13:08:39 INFO  Client:42 - 60368: Connected to portid: 60368
+@2016-Feb-22 13:08:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:08:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:08:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:08:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:08:39 INFO  ClientThread:47 - Client Thread 60368 running.
+@2016-Feb-22 13:08:39 INFO  Client:34 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:08:39 INFO  Client:41 - 60369: Connected to server: /127.0.0.1
+@2016-Feb-22 13:08:39 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60369,localport=3000]
+@2016-Feb-22 13:08:39 INFO  Client:42 - 60369: Connected to portid: 60369
+@2016-Feb-22 13:08:39 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:08:39 INFO  Client:59 - Initializing buffers
+@2016-Feb-22 13:08:39 INFO  Client:65 - New ClientThread has started
+@2016-Feb-22 13:08:39 INFO  Client:45 - Client has started
+@2016-Feb-22 13:08:39 INFO  ClientThread:47 - Client Thread 60369 running.
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:08:39 INFO  Server:94 - Message Sent: Test message 1
+@2016-Feb-22 13:08:39 INFO  Server:94 - Message Sent: Test message 2
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:08:39 INFO  Server:94 - Message Sent: Test message 3
+@2016-Feb-22 13:08:39 INFO  Server:94 - Message Sent: Test message 4
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:08:39 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:08:39 INFO  Server:94 - Message Sent: Test message 2
+@2016-Feb-22 13:10:32 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:10:32 INFO  Server:39 - New ServerThread created
+@2016-Feb-22 13:10:32 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:10:32 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:10:32 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 13:10:32 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:10:32 INFO  Client:38 - 60386: Connected to server: /127.0.0.1
+@2016-Feb-22 13:10:32 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60386,localport=3000]
+@2016-Feb-22 13:10:32 INFO  Client:39 - 60386: Connected to portid: 60386
+@2016-Feb-22 13:10:32 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:10:32 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:10:32 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:10:32 INFO  ClientThread:47 - Client Thread 60386 running.
+@2016-Feb-22 13:10:32 INFO  Client:42 - Client has started
+@2016-Feb-22 13:10:32 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:10:32 INFO  Client:38 - 60387: Connected to server: /127.0.0.1
+@2016-Feb-22 13:10:32 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60387,localport=3000]
+@2016-Feb-22 13:10:32 INFO  Client:39 - 60387: Connected to portid: 60387
+@2016-Feb-22 13:10:32 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:10:32 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:10:32 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:10:32 INFO  ClientThread:47 - Client Thread 60387 running.
+@2016-Feb-22 13:10:32 INFO  Client:42 - Client has started
+@2016-Feb-22 13:10:32 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:10:32 INFO  Client:38 - 60388: Connected to server: /127.0.0.1
+@2016-Feb-22 13:10:32 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60388,localport=3000]
+@2016-Feb-22 13:10:32 INFO  Client:39 - 60388: Connected to portid: 60388
+@2016-Feb-22 13:10:32 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:10:32 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:10:32 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:10:32 INFO  ClientThread:47 - Client Thread 60388 running.
+@2016-Feb-22 13:10:32 INFO  Client:42 - Client has started
+@2016-Feb-22 13:10:32 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:10:32 INFO  Client:38 - 60389: Connected to server: /127.0.0.1
+@2016-Feb-22 13:10:32 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60389,localport=3000]
+@2016-Feb-22 13:10:32 INFO  Client:39 - 60389: Connected to portid: 60389
+@2016-Feb-22 13:10:32 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:10:32 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:10:32 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:10:32 INFO  Client:42 - Client has started
+@2016-Feb-22 13:10:32 INFO  ClientThread:47 - Client Thread 60389 running.
+@2016-Feb-22 13:10:32 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:10:32 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60390,localport=3000]
+@2016-Feb-22 13:10:32 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:10:32 INFO  Client:38 - 60390: Connected to server: /127.0.0.1
+@2016-Feb-22 13:10:32 INFO  Client:39 - 60390: Connected to portid: 60390
+@2016-Feb-22 13:10:32 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:10:32 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:10:32 INFO  ClientThread:47 - Client Thread 60390 running.
+@2016-Feb-22 13:10:32 INFO  Client:42 - Client has started
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:10:32 INFO  Server:94 - Message Sent: Test message 1
+@2016-Feb-22 13:10:32 INFO  Server:94 - Message Sent: Test message 2
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:10:32 INFO  Server:94 - Message Sent: Test message 3
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:10:32 INFO  Server:94 - Message Sent: Test message 4
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:10:32 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:10:32 INFO  Server:94 - Message Sent: Test message 2
+@2016-Feb-22 13:12:34 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:12:34 INFO  Server:39 - New ServerThread created
+@2016-Feb-22 13:12:34 INFO  Server:26 - Binding to port 3000, please wait...
+@2016-Feb-22 13:12:34 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:12:34 ERROR Server:32 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Feb-22 13:12:34 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:12:34 INFO  Client:38 - 60399: Connected to server: /127.0.0.1
+@2016-Feb-22 13:12:34 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60399,localport=3000]
+@2016-Feb-22 13:12:34 INFO  Client:39 - 60399: Connected to portid: 60399
+@2016-Feb-22 13:12:34 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:12:34 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:12:34 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:12:34 INFO  ClientThread:47 - Client Thread 60399 running.
+@2016-Feb-22 13:12:34 INFO  Client:42 - Client has started
+@2016-Feb-22 13:12:34 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:12:34 INFO  Client:38 - 60400: Connected to server: /127.0.0.1
+@2016-Feb-22 13:12:34 INFO  Client:39 - 60400: Connected to portid: 60400
+@2016-Feb-22 13:12:34 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60400,localport=3000]
+@2016-Feb-22 13:12:34 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:12:34 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:12:34 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:12:34 INFO  Client:42 - Client has started
+@2016-Feb-22 13:12:34 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:12:34 INFO  ClientThread:47 - Client Thread 60400 running.
+@2016-Feb-22 13:12:34 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60401,localport=3000]
+@2016-Feb-22 13:12:34 INFO  Client:38 - 60401: Connected to server: /127.0.0.1
+@2016-Feb-22 13:12:34 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:12:34 INFO  Client:39 - 60401: Connected to portid: 60401
+@2016-Feb-22 13:12:34 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:12:34 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:12:34 INFO  Client:42 - Client has started
+@2016-Feb-22 13:12:34 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:12:34 INFO  ClientThread:47 - Client Thread 60401 running.
+@2016-Feb-22 13:12:34 INFO  Client:38 - 60402: Connected to server: /127.0.0.1
+@2016-Feb-22 13:12:34 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60402,localport=3000]
+@2016-Feb-22 13:12:34 INFO  Client:39 - 60402: Connected to portid: 60402
+@2016-Feb-22 13:12:34 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:12:34 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:12:34 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:12:34 INFO  Client:42 - Client has started
+@2016-Feb-22 13:12:34 INFO  Client:31 - 0:Establishing connection. Please wait... 
+@2016-Feb-22 13:12:34 INFO  Client:38 - 60403: Connected to server: /127.0.0.1
+@2016-Feb-22 13:12:34 INFO  Server:58 - Client accepted: Socket[addr=/127.0.0.1,port=60403,localport=3000]
+@2016-Feb-22 13:12:34 INFO  Server:48 - Waiting for Clients
+@2016-Feb-22 13:12:34 INFO  Client:39 - 60403: Connected to portid: 60403
+@2016-Feb-22 13:12:34 INFO  Client:56 - Initializing buffers
+@2016-Feb-22 13:12:34 INFO  Client:62 - New ClientThread has started
+@2016-Feb-22 13:12:34 INFO  Client:42 - Client has started
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:12:34 INFO  Server:94 - Message Sent: Test message 1
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:12:34 INFO  ClientThread:47 - Client Thread 60402 running.
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:12:34 INFO  ClientThread:47 - Client Thread 60403 running.
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 1
+@2016-Feb-22 13:12:34 INFO  Server:94 - Message Sent: Test message 2
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 3
+@2016-Feb-22 13:12:34 INFO  Server:94 - Message Sent: Test message 3
+@2016-Feb-22 13:12:34 INFO  Server:94 - Message Sent: Test message 4
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:12:34 INFO  ClientThread:50 - Test message 2
+@2016-Feb-22 13:12:34 INFO  Server:94 - Message Sent: Test message 2
 @
