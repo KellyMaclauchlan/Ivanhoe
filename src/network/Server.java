@@ -72,25 +72,34 @@ public class Server implements Runnable {
 
 
 	public void handle(int id, String msg) {
-		if (msg.equals("quit!")) {
+		System.out.println("Message Received: " + msg);
+		if (msg.equals("quit")) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {
 				clients.get(id).send("quit!" + "\n");
 				remove(id);
 			}
-		}else if (msg.equals("shutdown!")){ shutdown(); }
+		}else if (msg.equals("shutdown")){ shutdown(); }
 
 		else {
-			//System.out.println("Size: " + clients.size());
-			ServerThread from = clients.get(id);
-			for (ServerThread to : clients.values()) {
+			System.out.println("Size: " + clients.size());
+			//ServerThread from = clients.get(id);
+			//for (ServerThread to : clients.values()) {
 				//if (to.getID() != id) {
 				//		to.send(String.format("%5d: %s\n", id, input));
 				//		log.info(String.format("Sending Message from %s:%d to %s:%d: ",from.getSocketAddress(),from.getID(), to.getSocketAddress(), to.getID(), input));
 				//}
-				to.send(String.format("%s", msg));
+				//to.send(String.format("%s", msg));
+				send2Clients(msg);
 				log.info("Message Sent: " + msg);
-			}	
+			//}	
+		}
+	}
+	
+	public void send2Clients(String msg){
+		for(ServerThread to : clients.values()){
+			System.out.println("SEnding to clients");
+			to.send(String.format("%s\n", msg));
 		}
 	}
 

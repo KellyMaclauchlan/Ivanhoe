@@ -71,7 +71,7 @@ public class TestClient {
 	}
 	
 	@Test
-	public void testMessage1() throws IOException{
+	public void testMessage1(){
 		System.out.println("@Test: testMessage1");
 		assertTrue(c1);
 		

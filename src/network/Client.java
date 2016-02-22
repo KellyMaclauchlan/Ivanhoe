@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.util.Scanner;
 
 import config.Config;
 import org.apache.log4j.Logger;
@@ -18,6 +19,11 @@ public class Client implements Runnable {
 	public BufferedReader console = null;
 	public BufferedReader inStream = null;
 	public BufferedWriter outStream = null;
+	
+	private static Scanner sc = new Scanner(System.in);
+	public static String ip;
+	public static int port; 
+	
 	String testing;
 	public Logger log = Logger.getLogger("Client");
 
@@ -26,7 +32,13 @@ public class Client implements Runnable {
 	}
 	
 	public Client(){
-		connectToServer(Config.DEFAULT_HOST, Config.DEFAULT_PORT);
+		System.out.println("Enter the IP of the Server Machine: ");
+		ip = sc.nextLine();
+		System.out.println("Enter the Port Number of the server Machine: ");
+		port = sc.nextInt(); 
+		System.out.println("\n");
+		
+		connectToServer(ip, port);
 	}
 	
 	public boolean connectToServer(String serverIP, int serverPort) {
@@ -72,6 +84,7 @@ public class Client implements Runnable {
 
 	public void run() {
 		System.out.println(ID + ": Client Started...");
+		System.out.println("\n Hit 'ENTER' to start");
 		while (thread != null) {  
 			try {  
 				if (outStream != null) {
@@ -88,9 +101,11 @@ public class Client implements Runnable {
          }}
 	}
 	
+	/* Client has to send something twice and then will receive its echo
+	 * 
+	 */
+	
 	public void handle(String msg) {
-		System.out.println("Msg3333: "+ msg);
-		System.out.println("1: " + testing);
 	   	if (msg.equalsIgnoreCase("quit!")) {  
 				System.out.println(ID + "Good bye. Press RETURN to exit ...");
 				stop();
