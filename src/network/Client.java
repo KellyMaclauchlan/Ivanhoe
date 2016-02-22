@@ -96,7 +96,7 @@ public class Client implements Runnable {
 				stop();
 			} else {
 				testing = msg;
-				System.out.println(msg);
+				System.out.println("Message Received: " + msg);
 			}
 	}
 

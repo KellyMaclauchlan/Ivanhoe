@@ -43,6 +43,7 @@ public class ClientThread extends Thread {
 	   log.info("Closing Thread" + socket.getLocalPort());
 	}
 	
+	
 	public void run() {
 		log.info("Client Thread " + socket.getLocalPort() + " running.");
 		while (!done) { 

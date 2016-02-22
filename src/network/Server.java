@@ -82,23 +82,14 @@ public class Server implements Runnable {
 		}else if (msg.equals("shutdown")){ shutdown(); }
 
 		else {
-			System.out.println("Size: " + clients.size());
-			//ServerThread from = clients.get(id);
-			//for (ServerThread to : clients.values()) {
-				//if (to.getID() != id) {
-				//		to.send(String.format("%5d: %s\n", id, input));
-				//		log.info(String.format("Sending Message from %s:%d to %s:%d: ",from.getSocketAddress(),from.getID(), to.getSocketAddress(), to.getID(), input));
-				//}
-				//to.send(String.format("%s", msg));
-				send2Clients(msg);
-				log.info("Message Sent: " + msg);
-			//}	
+			send2Clients(msg);
+			log.info("Message Sent: " + msg);
 		}
 	}
 	
 	public void send2Clients(String msg){
 		for(ServerThread to : clients.values()){
-			System.out.println("SEnding to clients");
+			System.out.println("Sending to clients");
 			to.send(String.format("%s\n", msg));
 		}
 	}
