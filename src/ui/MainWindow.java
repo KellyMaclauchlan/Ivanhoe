@@ -242,6 +242,36 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerCards[8].setIcon(new ImageIcon("resources/cards_small/simpleCards8.jpg"));
 		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards9.jpg"));
 		this.playerNames[0].setSelected(true);
+		
+		this.tokens[0][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
+		this.tokens[1][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
+		this.tokens[2][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
+		this.tokens[3][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
+		this.tokens[4][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
+		
+		this.tokens[0][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
+		this.tokens[1][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
+		this.tokens[2][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
+		this.tokens[3][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
+		this.tokens[4][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
+		
+		this.tokens[0][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
+		this.tokens[1][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
+		this.tokens[2][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
+		this.tokens[3][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
+		this.tokens[4][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
+		
+		this.tokens[0][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
+		this.tokens[1][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
+		this.tokens[2][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
+		this.tokens[3][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
+		this.tokens[4][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
+		
+		this.tokens[0][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		this.tokens[1][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		this.tokens[2][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		this.tokens[3][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		this.tokens[4][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
 	}
 
 
@@ -283,13 +313,94 @@ public class MainWindow extends JFrame implements Subject {
 			// TODO Auto-generated method stub
 				playCardClicked();	
 			}});
-	
+		this.playerCards[0].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				lastCard=0;	
+				deck.setText(lastCard+"");
+			}});
+		this.playerCards[1].addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+					lastCard=1;
+					deck.setText(lastCard+"");
+				}});
+		this.playerCards[2].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				lastCard=2;	
+				deck.setText(lastCard+"");
+			}});
+		this.playerCards[3].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				lastCard=3;	
+				deck.setText(lastCard+"");
+			}});
+		this.playerCards[4].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				lastCard=4;	
+			}});
+		this.playerCards[5].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				lastCard=5;	
+				deck.setText(lastCard+"");
+			}});
+		this.playerCards[6].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				lastCard=6;	
+				deck.setText(lastCard+"");
+			}});
+		this.playerCards[7].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				lastCard=7;	
+				deck.setText(lastCard+"");
+			}});
+		this.playerCards[8].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				lastCard=8;	
+				deck.setText(lastCard+"");
+			}});
+		this.playerCards[9].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+				lastCard=9;
+				deck.setText(lastCard+"");
+			}});
+		
  	}
  	protected void playCardClicked() {
-		// TODO Auto-generated method stub
- 		
+		// TODO Auto-generated method stub		
 		notifyObservers(config.PLAYEDCARD);
+		deck.setText("played "+lastCard+"");
+		//this.testLable.setText("played "+this.lastCard+"");
 	}
+ 	
 
 	public void withdrawClicked() {
 		// TODO Auto-generated method stub
@@ -366,7 +477,7 @@ public class MainWindow extends JFrame implements Subject {
 		c.gridy=14;
 		c.gridheight=2;
 		c.gridwidth=4;
-				pane.add(endTurnButton, c);
+		pane.add(playCardButton, c);
 		
 		// set up draw pile
 		deck = new JLabel();

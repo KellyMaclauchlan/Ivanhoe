@@ -90,8 +90,12 @@ public class TestMainWindowController {
 		controller.SetName(1,"alex");
 		assertEquals(controller.getName(1),"alex");
 	}
+	@Test
 	public void testSelectCard(){
-		controller.window.lastCard=1;		
+		controller.window.lastCard=1;
+		ColourCard card= new ColourCard("purple",4);
+		controller.addCard(card);
+		controller.addCard(card);
 		int old=controller.getPlayerCardSize();
 		controller.playCard();
 		assertEquals(controller.getPlayerCardSize(),old-1);

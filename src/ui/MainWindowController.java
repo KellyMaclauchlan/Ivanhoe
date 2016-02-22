@@ -15,6 +15,7 @@ public class MainWindowController implements Observer{
 	private int playerNum;
 	private static Config config;
 	private int currPlayer;
+	private int moved;
 	public MainWindow window;
 	public String lastMessege;
 	public MainWindowController(){
@@ -25,6 +26,7 @@ public class MainWindowController implements Observer{
 		playedCards= new ArrayList<ArrayList<Card>>();
 		playerNames= new ArrayList<String>();
 		playerScores= new ArrayList<Integer>();
+		moved=0;
 		
 	}
 	public void showWindow(){
@@ -139,7 +141,9 @@ public class MainWindowController implements Observer{
 	}
 	public void playCard() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("played card "+this.window.lastCard+"");
+		this.removeCard(this.window.lastCard+moved);
+		//signal to the client
 	}
 	
 	
