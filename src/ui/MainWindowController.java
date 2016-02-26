@@ -99,10 +99,14 @@ public class MainWindowController implements Observer{
 	public void rightClick() {
 		// TODO Auto-generated method stub
 		System.out.println("right click");
+		if(moved<playerCards.size()-10)
+			moved++;
 	}
 
 	public void leftClick(){
 		System.out.println("left click");
+		if(moved!=0)
+			moved--;
 		
 	}
 	public int getTotalPlayers() {

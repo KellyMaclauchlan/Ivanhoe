@@ -105,7 +105,7 @@ public class TestMainWindowController {
 	}
 	@Test
 	public void testClickLeft(){
-		controller.moved=5;
+		controller.moved=2;
 		int old = controller.moved;
 		controller.leftClick();
 		assertEquals(controller.moved,old-1);
@@ -113,11 +113,18 @@ public class TestMainWindowController {
 	}
 	@Test
 	public void testClickRight(){
-		controller.moved=5;
+		addCards(15);
+		controller.moved=0;
 		int old = controller.moved;
 		controller.rightClick();
 		assertEquals(controller.moved,old+1);
 		
+	}
+	public void addCards(int i){
+		ColourCard card= new ColourCard("purple",4);
+		for(i=i;i>=0;i--){
+			controller.addCard(card);
+		}
 	}
 	
 
