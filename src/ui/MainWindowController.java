@@ -22,6 +22,7 @@ public class MainWindowController implements Observer{
 	public String lastMessege;
 	public MainWindowController(){
 		playerCards= new ArrayList<Card>();
+		playerCards.clear();
 		config=new Config();
 		window = new MainWindow();
 		window.registerObserver(this);
@@ -48,10 +49,19 @@ public class MainWindowController implements Observer{
 	}
 	public void addCard(Card newCard){
 		playerCards.add(newCard);
+		if(playerCards.size()<11){
+			
+			this.window.addPlayerCard(playerCards.size()-1, newCard.getCardImage());
+		}
 	}
 	public void removeCard(int i){
+		if(playerCards.size()>10){
+			if(moved!=0)
+				moved--;
+		}
 		System.out.println(i);
 		playerCards.remove(i);
+		this.resetCards();
 	}
 	public int numCards(){
 		return playerCards.size();
@@ -67,6 +77,7 @@ public class MainWindowController implements Observer{
 
 	public void addPlayedCard(int player, Card card){
 		this.playedCards.get(player).add(card);
+		this.window.addPlayedCard(player, card.getCardImage());
 	}
 	
 
@@ -180,6 +191,17 @@ public class MainWindowController implements Observer{
 		this.currPlayer=i;
 		
 	}
+	public void resetCards(){		
+		int maxx=Math.min(10, playerCards.size());
+		int i;
+		for(i=0;i<maxx;i++){
+			this.window.addPlayerCard(i, playerCards.get(i+moved).getCardImage());
+		}
+		for(i=i;i<10;i++){
+			this.window.playerCards[i].setIcon(null);
+		}
+	}
+	
 
 	
 }

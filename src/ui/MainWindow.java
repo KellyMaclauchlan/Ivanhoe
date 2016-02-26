@@ -388,17 +388,18 @@ public class MainWindow extends JFrame implements Subject {
 	}
 
 	public void leftArrowClicked(String imageStr){
-		for(int i=0;i<9;i++){
- 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
- 		}
- 		this.playerCards[9].setIcon(new ImageIcon(imageStr));
- 		
- 	}
- 	public void rightArrowClicked(String imageStr){
- 		for(int i=9;i>0;i--){
+		
+		for(int i=9;i>0;i--){
  			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
  		}
  		this.playerCards[0].setIcon(new ImageIcon(imageStr));
+ 		
+ 	}
+ 	public void rightArrowClicked(String imageStr){
+ 		for(int i=0;i<9;i++){
+ 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
+ 		}
+ 		this.playerCards[9].setIcon(new ImageIcon(imageStr));
  		
  	}
  	public void addPlayerCard(int index, String imageStr){
