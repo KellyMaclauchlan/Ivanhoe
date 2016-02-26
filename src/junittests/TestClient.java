@@ -119,7 +119,7 @@ public class TestClient {
 		System.out.println("@Test: testMessage5");
 		assertTrue(c5); 
 		
-		String message = "Test message 2";
+		String message = "Test message 5";
 		int id = client5.getID();
 		server.handle(id, message);
 		assertEquals(message, client5.testMessages());
