@@ -2,6 +2,8 @@ package ui;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import config.Config;
 import config.Observer;
 import game.Card;
@@ -78,6 +80,7 @@ public class MainWindowController implements Observer{
 			break;
 			case "endturnclick": endturnClick();
 			break;
+			case "playedcard":playCard();
 			
 		}
 		
@@ -142,9 +145,13 @@ public class MainWindowController implements Observer{
 	public void playCard() {
 		// TODO Auto-generated method stub
 		System.out.println("played card "+this.window.lastCard+"");
-		this.removeCard(this.window.lastCard+moved);
+		if(this.window.lastCard<this.playedCards.size())
+			this.removeCard(this.window.lastCard+moved);
 		//signal to the client
 	}
 	
+	public String getNameFromPlayer(){
+		return JOptionPane.showInputDialog("Enter your name");
+	}
 	
 }

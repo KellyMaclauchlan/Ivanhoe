@@ -356,7 +356,7 @@ public class MainWindow extends JFrame implements Subject {
  	protected void playCardClicked() {
 		// TODO Auto-generated method stub		
 		notifyObservers(config.PLAYEDCARD);
-		deck.setText("played "+lastCard+"");
+		this.textLabel.setText("played "+lastCard+"");
 		//this.testLable.setText("played "+this.lastCard+"");
 	}
  	
