@@ -38,26 +38,7 @@ public class TestMainWindowController {
 		controller.removeCard(0);
 		assertEquals(controller.numCards(),0);
 	}
-	@Test
-	public void testPlayerClickLeft() {
-		controller.window.leftArrowClicked();
-		assertEquals(controller.lastMessege,config.LEFT_CLICK);
-	}
-	@Test
-	public void testPlayerClickRight() {
-		controller.window.rightArrowClicked();
-		assertEquals(controller.lastMessege,config.RIGHT_CLICK);
-	}
-	@Test
-	public void testPlayerWithdrawLeft() {
-		controller.window.withdrawClicked();
-		assertEquals(controller.lastMessege,config.WITHDRAW_CLICK);
-	}
-	@Test
-	public void testPlayerEndTurnLeft() {
-		controller.window.endTurnClicked();
-		assertEquals(controller.lastMessege,config.END_TURN_CLICK);
-	}
+	
 	@Test
 	public void testAddPlayedCard(){		
 		controller.setNumPlayers(3);
@@ -76,18 +57,19 @@ public class TestMainWindowController {
 	}
 	@Test
 	public void testStartRound(){
+		controller.setNumPlayers(3);
 		controller.startRound();
 	}	
 	@Test
 	public void testchangePlayerScore(){
 		controller.setNumPlayers(3);
-		controller.SetScore(1,3);
+		controller.setScore(1,3);
 		assertEquals(controller.getScore(1),3);
 	}
 	@Test
 	public void testchangePlayerName(){
 		controller.setNumPlayers(3);
-		controller.SetName(1,"alex");
+		controller.setName(1,"alex");
 		assertEquals(controller.getName(1),"alex");
 	}
 	@Test
@@ -105,6 +87,7 @@ public class TestMainWindowController {
 	}
 	@Test
 	public void testClickLeft(){
+		addCards(15);
 		controller.moved=2;
 		int old = controller.moved;
 		controller.leftClick();
@@ -118,6 +101,15 @@ public class TestMainWindowController {
 		int old = controller.moved;
 		controller.rightClick();
 		assertEquals(controller.moved,old+1);
+		
+	}
+	@Test
+	public void testClickRightMax(){
+		addCards(12);
+		controller.moved=3;
+		int old = controller.moved;
+		controller.rightClick();
+		assertEquals(controller.moved,old);
 		
 	}
 	public void addCards(int i){

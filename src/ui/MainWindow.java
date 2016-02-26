@@ -61,7 +61,7 @@ public class MainWindow extends JFrame implements Subject {
 	JLabel testLable=new JLabel();
 	JLabel textLabel;
 	JLabel cardTextLabel;
-	
+	public Boolean testing;
 	public MainWindow(){
 		super();
 		setTitle("Ivanho");
@@ -70,6 +70,7 @@ public class MainWindow extends JFrame implements Subject {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		leftClick=false;
+		testing=true;
 		setUpScreen(this.getContentPane());
 		//this.pack();
 	}
@@ -242,36 +243,45 @@ public class MainWindow extends JFrame implements Subject {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-				leftArrowClicked();
-				
+				if(testing)
+					leftArrowClicked("resources/cards_small/simpleCards18.jpg");
+				notifyObservers(config.LEFT_CLICK);
 			}});
 		this.rightArrow.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-				rightArrowClicked();
+				if(testing)
+					rightArrowClicked("resources/cards_small/simpleCards18.jpg");
+				notifyObservers(config.RIGHT_CLICK);
 			}});
 		this.withdrawButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-				withdrawClicked();				
+				if(testing)
+					withdrawClicked();
+				notifyObservers(config.WITHDRAW_CLICK);
 			}});
 		this.endTurnButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-				endTurnClicked();	
+				if(testing)
+					endTurnClicked();
+				notifyObservers(config.END_TURN_CLICK);
 			}});
 		this.playCardButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-				playCardClicked();	
+				if(testing)
+					playCardClicked();
+				notifyObservers(config.PLAYEDCARD);
 			}});
 		this.playerCards[0].addActionListener(new ActionListener() {
 			
@@ -355,8 +365,7 @@ public class MainWindow extends JFrame implements Subject {
 		
  	}
  	protected void playCardClicked() {
-		// TODO Auto-generated method stub		
-		notifyObservers(config.PLAYEDCARD);
+		// TODO Auto-generated method stub				
 		this.textLabel.setText("played "+lastCard+"");
 		//this.testLable.setText("played "+this.lastCard+"");
 	}
@@ -368,7 +377,7 @@ public class MainWindow extends JFrame implements Subject {
 			if(this.playerNames[i].isSelected())
 				this.playerNames[i].setSelected(false);
 		}
-		notifyObservers(config.WITHDRAW_CLICK);
+		
 	}
  	public void endTurnClicked() {
 		// TODO Auto-generated method stub
@@ -376,22 +385,27 @@ public class MainWindow extends JFrame implements Subject {
 			if(this.playerNames[i].isSelected())
 				this.playerNames[i].setSelected(false);
 		}
-		notifyObservers(config.END_TURN_CLICK);
 	}
 
-	public void leftArrowClicked(){
+	public void leftArrowClicked(String imageStr){
 		for(int i=0;i<9;i++){
  			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
  		}
- 		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
- 		notifyObservers(config.LEFT_CLICK);
+ 		this.playerCards[9].setIcon(new ImageIcon(imageStr));
+ 		
  	}
- 	public void rightArrowClicked(){
+ 	public void rightArrowClicked(String imageStr){
  		for(int i=9;i>0;i--){
  			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
  		}
- 		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
- 		notifyObservers(config.RIGHT_CLICK);
+ 		this.playerCards[0].setIcon(new ImageIcon(imageStr));
+ 		
+ 	}
+ 	public void addPlayerCard(int index, String imageStr){
+ 		this.playerCards[index].setIcon(new ImageIcon(imageStr));
+ 	}
+ 	public void addPlayedCard(int index, String imageStr){
+ 		this.playedCards[index].setIcon(new ImageIcon(imageStr));
  	}
  	
 

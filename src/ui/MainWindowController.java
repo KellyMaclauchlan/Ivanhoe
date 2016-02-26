@@ -25,6 +25,7 @@ public class MainWindowController implements Observer{
 		config=new Config();
 		window = new MainWindow();
 		window.registerObserver(this);
+		window.testing=false;
 		playedCards= new ArrayList<ArrayList<Card>>();
 		playerNames= new ArrayList<String>();
 		playerScores= new ArrayList<Integer>();
@@ -63,6 +64,7 @@ public class MainWindowController implements Observer{
 			this.playerScores.add(0);
 		}
 	}
+
 	public void addPlayedCard(int player, Card card){
 		this.playedCards.get(player).add(card);
 	}
@@ -94,19 +96,25 @@ public class MainWindowController implements Observer{
 	public void withdrawClick() {
 		// TODO Auto-generated method stub
 		System.out.println("withdraw click");
+		this.window.withdrawClicked();
 	}
 
 	public void rightClick() {
 		// TODO Auto-generated method stub
 		System.out.println("right click");
-		if(moved<playerCards.size()-10)
+		if(moved<playerCards.size()-10){
 			moved++;
+			this.window.rightArrowClicked(playerCards.get(moved+9).getCardImage());
+		}
+		
 	}
 
 	public void leftClick(){
 		System.out.println("left click");
-		if(moved!=0)
+		if(moved!=0){
 			moved--;
+			this.window.leftArrowClicked(playerCards.get(moved).getCardImage());
+		}
 		
 	}
 	public int getTotalPlayers() {
@@ -128,20 +136,27 @@ public class MainWindowController implements Observer{
 	}
 	public void startRound() {
 		// TODO Auto-generated method stub
-		
+		for(int i=0;i<this.playerNum;i++){
+			setScore(i,0);
+			this.window.addPlayedCard(i, "resources/cards_small/simpleCards18.jpg");
+			this.playedCards.get(i).clear();
+		}	
 	}
-	public void SetScore(int player, int score) {
+	
+	public void setScore(int player, int score) {
 		// TODO Auto-generated method stub
-		this.playerScores.set(player, score);		
+		this.playerScores.set(player, score);	
+		window.playerPoints[player].setText(""+score);
 	}
 	public Object getScore(int player) {
 		// TODO Auto-generated method stub
 		return this.playerScores.get(player);
 		
 	}
-	public void SetName(int player, String name) {
+	public void setName(int player, String name) {
 		// TODO Auto-generated method stub
 		this.playerNames.set(player, name);
+		window.playerNames[player].setText(name);
 	}
 	public Object getName(int player) {
 		// TODO Auto-generated method stub
@@ -159,5 +174,12 @@ public class MainWindowController implements Observer{
 	public String getNameFromPlayer(){
 		return JOptionPane.showInputDialog("Enter your name");
 	}
+	
+	public void setPlayerTurn(int i){
+		
+		this.currPlayer=i;
+		
+	}
+
 	
 }
