@@ -57,6 +57,7 @@ public class MainWindow extends JFrame implements Subject {
 	GridBagConstraints c = new GridBagConstraints();
 	//testing variables
 	public int lastCard;
+	public int playedCard;
 	Boolean leftClick;
 	JLabel testLable=new JLabel();
 	JLabel textLabel;
@@ -363,6 +364,43 @@ public class MainWindow extends JFrame implements Subject {
 				deck.setText(lastCard+"");
 			}});
 		
+		
+		this.playedCards[0].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			playedCardsClick(0);
+			}});
+		this.playedCards[1].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			playedCardsClick(1);
+			}});
+		this.playedCards[2].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			playedCardsClick(2);
+			}});
+		this.playedCards[3].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			playedCardsClick(3);
+			}});
+		this.playedCards[4].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			playedCardsClick(4);
+			}});
+		
  	}
  	protected void playCardClicked() {
 		// TODO Auto-generated method stub				
@@ -401,6 +439,10 @@ public class MainWindow extends JFrame implements Subject {
  		}
  		this.playerCards[9].setIcon(new ImageIcon(imageStr));
  		
+ 	}
+ 	public void playedCardsClick(int i){
+ 		this.playedCard=i;
+ 		notifyObservers(config.VIEWDISPLAY);
  	}
  	public void addPlayerCard(int index, String imageStr){
  		this.playerCards[index].setIcon(new ImageIcon(imageStr));

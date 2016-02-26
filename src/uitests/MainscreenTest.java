@@ -38,17 +38,18 @@ public class MainscreenTest extends FestSwingJUnitTestCase  {
 	
 	@Test
 	public void testLeftArrow() {
-		Icon old= editor.button("card3").target.getIcon();
+		editor.button("rightArrow").click();
+		Icon old= editor.button("card2").target.getIcon();
 		editor.button("leftArrow").click();
-		assertTrue(editor.button("card2").target.getIcon().equals(old));
+		assertTrue(editor.button("card3").target.getIcon().equals(old));
 		//assertTrue(true);
 		//fail("Not yet implemented");
 	}
 	@Test
 	public void testRightArrow() {
-		Icon old= editor.button("card1").target.getIcon();
+		Icon old= editor.button("card2").target.getIcon();
 		editor.button("rightArrow").click();
-		assertTrue(editor.button("card2").target.getIcon().equals(old));
+		assertTrue(editor.button("card1").target.getIcon().equals(old));
 		//assertTrue(true);
 		//fail("Not yet implemented");
 	}

@@ -95,9 +95,17 @@ public class MainWindowController implements Observer{
 			case "endturnclick": endturnClick();
 			break;
 			case "playedcard":playCard();
+			break;
+			case "viewdisplay":displayCards();
+			break;
 			
 		}
 		
+	}
+	public void displayCards() {
+		// TODO Auto-generated method stub
+		CardDisplayPopUp popup= new CardDisplayPopUp(this.playedCards.get(this.window.playedCard));
+		popup.setVisible(true);
 	}
 	public void endturnClick() {
 		// TODO Auto-generated method stub
