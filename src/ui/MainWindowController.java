@@ -17,7 +17,7 @@ public class MainWindowController implements Observer{
 	private int playerNum;
 	private static Config config;
 	private int currPlayer;
-	private int moved;
+	public int moved;
 	public MainWindow window;
 	public String lastMessege;
 	public MainWindowController(){
@@ -49,6 +49,7 @@ public class MainWindowController implements Observer{
 		playerCards.add(newCard);
 	}
 	public void removeCard(int i){
+		System.out.println(i);
 		playerCards.remove(i);
 	}
 	public int numCards(){
@@ -85,23 +86,24 @@ public class MainWindowController implements Observer{
 		}
 		
 	}
-	private void endturnClick() {
+	public void endturnClick() {
 		// TODO Auto-generated method stub
 		System.out.println("endTurn click");
 	}
 
-	private void withdrawClick() {
+	public void withdrawClick() {
 		// TODO Auto-generated method stub
 		System.out.println("withdraw click");
 	}
 
-	private void rightClick() {
+	public void rightClick() {
 		// TODO Auto-generated method stub
 		System.out.println("right click");
 	}
 
 	public void leftClick(){
 		System.out.println("left click");
+		
 	}
 	public int getTotalPlayers() {
 		return totalPlayers;
@@ -145,8 +147,8 @@ public class MainWindowController implements Observer{
 	public void playCard() {
 		// TODO Auto-generated method stub
 		System.out.println("played card "+this.window.lastCard+"");
-		if(this.window.lastCard<this.playedCards.size())
-			this.removeCard(this.window.lastCard+moved);
+		if(this.window.lastCard<this.playerCards.size())
+			this.removeCard(this.window.lastCard+this.moved);
 		//signal to the client
 	}
 	

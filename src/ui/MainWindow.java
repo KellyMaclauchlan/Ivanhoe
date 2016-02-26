@@ -112,6 +112,7 @@ public class MainWindow extends JFrame implements Subject {
 		this.endTurnButton.setName("endTurn");
 		this.playCardButton.setName("playCard");
 		this.testLable.setName("test");
+		this.textLabel.setName("text");
 		
 		// Player Names
 		this.playerNames[0].setName("player1name");

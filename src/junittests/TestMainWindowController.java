@@ -98,8 +98,27 @@ public class TestMainWindowController {
 		controller.addCard(card);
 		int old=controller.getPlayerCardSize();
 		controller.playCard();
+		System.out.println(old);
+		System.out.println(controller.getPlayerCardSize());
 		assertEquals(controller.getPlayerCardSize(),old-1);
 		
 	}
+	@Test
+	public void testClickLeft(){
+		controller.moved=5;
+		int old = controller.moved;
+		controller.leftClick();
+		assertEquals(controller.moved,old-1);
+		
+	}
+	@Test
+	public void testClickRight(){
+		controller.moved=5;
+		int old = controller.moved;
+		controller.rightClick();
+		assertEquals(controller.moved,old+1);
+		
+	}
+	
 
 }
