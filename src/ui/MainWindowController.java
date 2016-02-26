@@ -20,6 +20,8 @@ public class MainWindowController implements Observer{
 	public int moved;
 	public MainWindow window;
 	public String lastMessege;
+	public ArrayList<String>tokenStrings;
+	
 	public MainWindowController(){
 		playerCards= new ArrayList<Card>();
 		playerCards.clear();
@@ -31,6 +33,12 @@ public class MainWindowController implements Observer{
 		playerNames= new ArrayList<String>();
 		playerScores= new ArrayList<Integer>();
 		moved=0;
+		tokenStrings= new ArrayList<String>();
+		tokenStrings.add("resources/icons/blue_full.png");
+		tokenStrings.add("resources/icons/red_full.png");
+		tokenStrings.add("resources/icons/yellow_full.png");
+		tokenStrings.add("resources/icons/green_full.png");
+		tokenStrings.add("resources/icons/purple_full.png");
 		
 	}
 	public void showWindow(){
@@ -210,6 +218,8 @@ public class MainWindowController implements Observer{
 		}
 	}
 	
-
+	public void addToken(int player, int token){
+		this.window.setToken(player, token, tokenStrings.get(token));
+	}
 	
 }

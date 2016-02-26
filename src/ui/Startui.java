@@ -48,6 +48,11 @@ public class Startui {
 		control.addPlayedCard(0, new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
 		control.addPlayedCard(0, new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
 		control.addPlayedCard(0, new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
+		control.addToken(0, 1);
+		control.addToken(0, 3);
+		control.addToken(0, 4);
+		control.addToken(1, 0);
+		control.addToken(1, 2);
 		//System.out.println();
 		//window.setVisible(true);
 	}

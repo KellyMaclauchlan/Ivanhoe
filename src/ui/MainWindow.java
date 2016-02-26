@@ -1047,6 +1047,8 @@ public class MainWindow extends JFrame implements Subject {
 		
 	}
 
-
+	public void setToken(int player,int token,String pic){
+		this.tokens[player][token].setIcon(new ImageIcon(pic));
+	}
 
 }
