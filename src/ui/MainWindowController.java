@@ -164,6 +164,9 @@ public class MainWindowController implements Observer{
 	}
 	public void setCurrPlayer(int currPlayer) {
 		this.currPlayer = currPlayer;
+		if(currPlayer==this.playerNum){
+			window.startTurn();
+		}
 	}
 	public void startRound() {
 		// TODO Auto-generated method stub
@@ -172,6 +175,7 @@ public class MainWindowController implements Observer{
 			this.window.addPlayedCard(i, "resources/cards_small/simpleCards18.jpg");
 			this.playedCards.get(i).clear();
 		}	
+		this.window.endedTurn();
 	}
 	
 	public void setScore(int player, int score) {
@@ -228,7 +232,7 @@ public class MainWindowController implements Observer{
 	
 	public int setTournament(){
 		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
-	    int response = JOptionPane.showOptionDialog(null, "Message", "Title",
+	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",
 	        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
 	        null, options, options[0]);
 		return response;
