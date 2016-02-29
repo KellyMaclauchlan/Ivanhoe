@@ -1,5 +1,7 @@
 package network;
 
+import ui.MainWindow;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -19,7 +21,8 @@ public class Client implements Runnable {
 	
 	public String testing = null;
 	public Logger log = Logger.getLogger("Client");
-
+	public MainWindow gameUI;
+	
 	public int getID(){
 		return this.ID;
 	}
@@ -61,6 +64,8 @@ public class Client implements Runnable {
 				thread.start();
 				log.info("New ClientThread has started");
 			}
+			
+			gameUI = new MainWindow();
 		}catch (IOException e){
 			log.error(e);
 			throw e; 
@@ -69,7 +74,8 @@ public class Client implements Runnable {
 
 	public void run() {
 		System.out.println(ID + ": Client Started...");
-		System.out.println("\n Hit 'ENTER' to start");
+		//System.out.println("\n Hit 'ENTER' to start");
+		
 		while (thread != null) {  
 			try {  
 				if (outStream != null) {
@@ -99,6 +105,8 @@ public class Client implements Runnable {
 				System.out.println("Message Received: " + msg);
 			}
 	}
+	
+	
 
 
 	public String testMessages() {
