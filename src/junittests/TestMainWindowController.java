@@ -118,6 +118,36 @@ public class TestMainWindowController {
 			controller.addCard(card);
 		}
 	}
+	@Test
+	public void testchangeBackgroundBlue(){
+		controller.setTournamnetColour(0);
+		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[0]);
+		
+	}
+	@Test
+	public void testchangeBackgroundRed(){
+		controller.setTournamnetColour(1);
+		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[1]);
+		
+	}
+	@Test
+	public void testchangeBackgroundYellow(){
+		controller.setTournamnetColour(2);
+		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[2]);
+		
+	}
+	@Test
+	public void testchangeBackgroundGreen(){
+		controller.setTournamnetColour(3);
+		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[3]);
+		
+	}
+	@Test
+	public void testchangeBackgroundPurple(){
+		controller.setTournamnetColour(4);
+		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[4]);
+		
+	}
 	
 
 }

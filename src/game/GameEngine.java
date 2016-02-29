@@ -4,140 +4,148 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import config.Config;
+
 public class GameEngine {
 	private int numPlayers;
 	private String tournamentColour;
-	private ArrayList<Player> players = new ArrayList<>();
+	private ArrayList<Player> players;
 	private ArrayList<String> tokens;
-	private ArrayList<Card> drawDeck;
-	private ArrayList<Card> discardPile = new ArrayList<>();
+	private static ArrayList<Card> drawDeck;
+	private ArrayList<Card> discardPile;
 	private Player currentPlayer;
+	private int turnNumber = 0;
+	
+	public GameEngine() {
+		players = new ArrayList<>();
+		discardPile = new ArrayList<>();
+	}
 	
 	public void createDeck() {
 		drawDeck = new ArrayList<Card>();
 		//purple
-		drawDeck.add(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		drawDeck.add(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		drawDeck.add(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		drawDeck.add(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		drawDeck.add(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		drawDeck.add(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		drawDeck.add(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		drawDeck.add(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		drawDeck.add(new ColourCard("purple", 5,"resources/cards_small/simpleCards16.jpg"));
-		drawDeck.add(new ColourCard("purple", 5,"resources/cards_small/simpleCards16.jpg"));
-		drawDeck.add(new ColourCard("purple", 5,"resources/cards_small/simpleCards16.jpg"));
-		drawDeck.add(new ColourCard("purple", 5,"resources/cards_small/simpleCards16.jpg"));
-		drawDeck.add(new ColourCard("purple", 7,"resources/cards_small/simpleCards17.jpg"));
-		drawDeck.add(new ColourCard("purple", 7,"resources/cards_small/simpleCards17.jpg"));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 4));
+		drawDeck.add(new ColourCard(Config.PURPLE, 4));
+		drawDeck.add(new ColourCard(Config.PURPLE, 4));
+		drawDeck.add(new ColourCard(Config.PURPLE, 4));
+		drawDeck.add(new ColourCard(Config.PURPLE, 5));
+		drawDeck.add(new ColourCard(Config.PURPLE, 5));
+		drawDeck.add(new ColourCard(Config.PURPLE, 5));
+		drawDeck.add(new ColourCard(Config.PURPLE, 5));
+		drawDeck.add(new ColourCard(Config.PURPLE, 7));
+		drawDeck.add(new ColourCard(Config.PURPLE, 7));
 		
 		//red
-		drawDeck.add(new ColourCard("red", 3,"resources/cards_small/simpleCards7.jpg"));
-		drawDeck.add(new ColourCard("red", 3,"resources/cards_small/simpleCards7.jpg"));
-		drawDeck.add(new ColourCard("red", 3,"resources/cards_small/simpleCards7.jpg"));
-		drawDeck.add(new ColourCard("red", 3,"resources/cards_small/simpleCards7.jpg"));
-		drawDeck.add(new ColourCard("red", 3,"resources/cards_small/simpleCards7.jpg"));
-		drawDeck.add(new ColourCard("red", 3,"resources/cards_small/simpleCards7.jpg"));
-		drawDeck.add(new ColourCard("red", 4,"resources/cards_small/simpleCards8.jpg"));
-		drawDeck.add(new ColourCard("red", 4,"resources/cards_small/simpleCards8.jpg"));
-		drawDeck.add(new ColourCard("red", 4,"resources/cards_small/simpleCards8.jpg"));
-		drawDeck.add(new ColourCard("red", 4,"resources/cards_small/simpleCards8.jpg"));
-		drawDeck.add(new ColourCard("red", 4,"resources/cards_small/simpleCards8.jpg"));
-		drawDeck.add(new ColourCard("red", 4,"resources/cards_small/simpleCards8.jpg"));
-		drawDeck.add(new ColourCard("red", 5,"resources/cards_small/simpleCards9.jpg"));
-		drawDeck.add(new ColourCard("red", 5,"resources/cards_small/simpleCards9.jpg"));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 5));
+		drawDeck.add(new ColourCard(Config.RED, 5));
 
 		//blue
-		drawDeck.add(new ColourCard("blue", 2,"resources/cards_small/simpleCards10.jpg"));
-		drawDeck.add(new ColourCard("blue", 2,"resources/cards_small/simpleCards10.jpg"));
-		drawDeck.add(new ColourCard("blue", 2,"resources/cards_small/simpleCards10.jpg"));
-		drawDeck.add(new ColourCard("blue", 2,"resources/cards_small/simpleCards10.jpg"));
-		drawDeck.add(new ColourCard("blue", 3,"resources/cards_small/simpleCards11.jpg"));
-		drawDeck.add(new ColourCard("blue", 3,"resources/cards_small/simpleCards11.jpg"));
-		drawDeck.add(new ColourCard("blue", 3,"resources/cards_small/simpleCards11.jpg"));
-		drawDeck.add(new ColourCard("blue", 3,"resources/cards_small/simpleCards11.jpg"));
-		drawDeck.add(new ColourCard("blue", 4,"resources/cards_small/simpleCards12.jpg"));
-		drawDeck.add(new ColourCard("blue", 4,"resources/cards_small/simpleCards12.jpg"));
-		drawDeck.add(new ColourCard("blue", 4,"resources/cards_small/simpleCards12.jpg"));
-		drawDeck.add(new ColourCard("blue", 4,"resources/cards_small/simpleCards12.jpg"));
-		drawDeck.add(new ColourCard("blue", 5,"resources/cards_small/simpleCards13.jpg"));
-		drawDeck.add(new ColourCard("blue", 5,"resources/cards_small/simpleCards13.jpg"));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 3));
+		drawDeck.add(new ColourCard(Config.BLUE, 3));
+		drawDeck.add(new ColourCard(Config.BLUE, 3));
+		drawDeck.add(new ColourCard(Config.BLUE, 3));
+		drawDeck.add(new ColourCard(Config.BLUE, 4));
+		drawDeck.add(new ColourCard(Config.BLUE, 4));
+		drawDeck.add(new ColourCard(Config.BLUE, 4));
+		drawDeck.add(new ColourCard(Config.BLUE, 4));
+		drawDeck.add(new ColourCard(Config.BLUE, 5));
+		drawDeck.add(new ColourCard(Config.BLUE, 5));
 
 		//yellow
-		drawDeck.add(new ColourCard("yellow", 2,"resources/cards_small/simpleCards4.jpg"));
-		drawDeck.add(new ColourCard("yellow", 2,"resources/cards_small/simpleCards4.jpg"));
-		drawDeck.add(new ColourCard("yellow", 2,"resources/cards_small/simpleCards4.jpg"));
-		drawDeck.add(new ColourCard("yellow", 2,"resources/cards_small/simpleCards4.jpg"));
-		drawDeck.add(new ColourCard("yellow", 3,"resources/cards_small/simpleCards5.jpg"));
-		drawDeck.add(new ColourCard("yellow", 3,"resources/cards_small/simpleCards5.jpg"));
-		drawDeck.add(new ColourCard("yellow", 3,"resources/cards_small/simpleCards5.jpg"));
-		drawDeck.add(new ColourCard("yellow", 3,"resources/cards_small/simpleCards5.jpg"));
-		drawDeck.add(new ColourCard("yellow", 3,"resources/cards_small/simpleCards5.jpg"));
-		drawDeck.add(new ColourCard("yellow", 3,"resources/cards_small/simpleCards5.jpg"));
-		drawDeck.add(new ColourCard("yellow", 3,"resources/cards_small/simpleCards5.jpg"));
-		drawDeck.add(new ColourCard("yellow", 3,"resources/cards_small/simpleCards5.jpg"));
-		drawDeck.add(new ColourCard("yellow", 4,"resources/cards_small/simpleCards6.jpg"));
-		drawDeck.add(new ColourCard("yellow", 4,"resources/cards_small/simpleCards6.jpg"));
+		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 4));
+		drawDeck.add(new ColourCard(Config.YELLOW, 4));
 		
 		//green
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
-		drawDeck.add(new ColourCard("green", 1,"resources/cards_small/simpleCards3.jpg"));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
 
 		//supporters
-		drawDeck.add(new SupportCard("maiden", 6,"resources/cards_small/simpleCards2.jpg"));
-		drawDeck.add(new SupportCard("maiden", 6,"resources/cards_small/simpleCards2.jpg"));
-		drawDeck.add(new SupportCard("maiden", 6,"resources/cards_small/simpleCards2.jpg"));
-		drawDeck.add(new SupportCard("maiden", 6,"resources/cards_small/simpleCards2.jpg"));
-		drawDeck.add(new SupportCard("squire", 2,"resources/cards_small/simpleCards.jpg"));
-		drawDeck.add(new SupportCard("squire", 2,"resources/cards_small/simpleCards.jpg"));
-		drawDeck.add(new SupportCard("squire", 2,"resources/cards_small/simpleCards.jpg"));
-		drawDeck.add(new SupportCard("squire", 2,"resources/cards_small/simpleCards.jpg"));
-		drawDeck.add(new SupportCard("squire", 2,"resources/cards_small/simpleCards.jpg"));
-		drawDeck.add(new SupportCard("squire", 2,"resources/cards_small/simpleCards.jpg"));
-		drawDeck.add(new SupportCard("squire", 2,"resources/cards_small/simpleCards.jpg"));
-		drawDeck.add(new SupportCard("squire", 2,"resources/cards_small/simpleCards.jpg"));
-		drawDeck.add(new SupportCard("squire", 3,"resources/cards_small/simpleCards1.jpg"));
-		drawDeck.add(new SupportCard("squire", 3,"resources/cards_small/simpleCards1.jpg"));
-		drawDeck.add(new SupportCard("squire", 3,"resources/cards_small/simpleCards1.jpg"));
-		drawDeck.add(new SupportCard("squire", 3,"resources/cards_small/simpleCards1.jpg"));
-		drawDeck.add(new SupportCard("squire", 3,"resources/cards_small/simpleCards1.jpg"));
-		drawDeck.add(new SupportCard("squire", 3,"resources/cards_small/simpleCards1.jpg"));
-		drawDeck.add(new SupportCard("squire", 3,"resources/cards_small/simpleCards1.jpg"));
-		drawDeck.add(new SupportCard("squire", 3,"resources/cards_small/simpleCards1.jpg"));
+		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 
 		//action
-		drawDeck.add(new ActionCard("unhorse"));
-		drawDeck.add(new ActionCard("changeweapon"));
-		drawDeck.add(new ActionCard("dropweapon"));
-		drawDeck.add(new ActionCard("breaklance"));
-		drawDeck.add(new ActionCard("riposte"));
-		drawDeck.add(new ActionCard("riposte"));
-		drawDeck.add(new ActionCard("riposte"));
-		drawDeck.add(new ActionCard("dodge"));
-		drawDeck.add(new ActionCard("retreat"));
-		drawDeck.add(new ActionCard("knockdown"));
-		drawDeck.add(new ActionCard("knockdown"));
-		drawDeck.add(new ActionCard("outmaneuver"));
-		drawDeck.add(new ActionCard("charge"));
-		drawDeck.add(new ActionCard("countercharge"));
-		drawDeck.add(new ActionCard("disgrace"));
-		drawDeck.add(new ActionCard("adapt"));
-		drawDeck.add(new ActionCard("outwit"));
-		drawDeck.add(new ActionCard("shield"));
-		drawDeck.add(new ActionCard("stunned"));
-		drawDeck.add(new ActionCard("ivanhoe"));
+		drawDeck.add(new ActionCard(Config.UNHORSE));
+		drawDeck.add(new ActionCard(Config.CHANGEWEAPON));
+		drawDeck.add(new ActionCard(Config.DROPWEAPON));
+		drawDeck.add(new ActionCard(Config.BREAKLANCE));
+		drawDeck.add(new ActionCard(Config.RIPOSTE));
+		drawDeck.add(new ActionCard(Config.RIPOSTE));
+		drawDeck.add(new ActionCard(Config.RIPOSTE));
+		drawDeck.add(new ActionCard(Config.DODGE));
+		drawDeck.add(new ActionCard(Config.RETREAT));
+		drawDeck.add(new ActionCard(Config.KNOCKDOWN));
+		drawDeck.add(new ActionCard(Config.KNOCKDOWN));
+		drawDeck.add(new ActionCard(Config.OUTMANEUVER));
+		drawDeck.add(new ActionCard(Config.CHARGE));
+		drawDeck.add(new ActionCard(Config.COUNTERCHARGE));
+		drawDeck.add(new ActionCard(Config.DISGRACE));
+		drawDeck.add(new ActionCard(Config.ADAPT));
+		drawDeck.add(new ActionCard(Config.OUTWIT));
+		drawDeck.add(new ActionCard(Config.SHIELD));
+		drawDeck.add(new ActionCard(Config.STUNNED));
+		drawDeck.add(new ActionCard(Config.IVANHOE));
 	}
 	
 	public void joinGame(Player player) {
@@ -147,11 +155,11 @@ public class GameEngine {
 	public void pickTokens() {
 		//add all tokens to token array, starting with purple
 		tokens = new ArrayList<String>();
-		tokens.add("purple");
-		tokens.add("red");
-		tokens.add("blue");
-		tokens.add("yellow");
-		tokens.add("green");
+		tokens.add(Config.PURPLE);
+		tokens.add(Config.RED);
+		tokens.add(Config.BLUE);
+		tokens.add(Config.YELLOW);
+		tokens.add(Config.GREEN);
 		
 		//remove last token in tokens array as long as the number of tokens is greater than the number of players
 		for (int i = 0; i < tokens.size(); i++) {
@@ -210,15 +218,14 @@ public class GameEngine {
 			p.setCards(hand);
 		}
 
-		currentPlayer = players.get(0);
 	}
-	
 	
 	public void arrangePlayers() {
 		//arrange players list so that the player left of the one that drew purple
 				ArrayList<Player> tempPlayers = players;
-				for (int i = 1; i < numPlayers; i++) {
-					if ((tempPlayers.get(i-1).getStartTokenColour().equals("purple"))
+				for (int i = 0; i < numPlayers; i++) {
+					if ((i == 0 && tempPlayers.get(tempPlayers.size() - 1).getStartTokenColour().equals(Config.PURPLE)) ||
+							(i != 0 && (tempPlayers.get(i-1).getStartTokenColour().equals(Config.PURPLE)))
 							|| (tempPlayers.get(i).isWinner()) || (i == numPlayers)) {
 						players.set(0, tempPlayers.get(i));
 						for (int j = 1; j <= numPlayers; j++) {
@@ -233,56 +240,86 @@ public class GameEngine {
 							}
 						}
 					}
-					tempPlayers.get(i-1).setStartTokenColour("nil");
 				}
-	}
-	
-	public void discard(Player player, Card card) {
-		//TO DO: discard a specific card for a specific player, to the discardDeck
+				currentPlayer = players.get(0);
 	}
 	
 	public void startTurn() {
 		//TO DO: prompt current player to begin turn
-		//OR: if the current player does not have any playable cards, withdraw
-		//OR: if it is the first turn of the game, prompt the first player to pick a tournament colour
-		//OR: if the player is the only one left, call announceWinner
+		turnNumber ++;
+		//if it is the first turn of the game, prompt the first player to pick a tournament colour
+		if (turnNumber == 1) {
+			//TO DO: Prompt user to choose a tournament colour
+			tournamentColour = currentPlayer.getTournamentColour();
+		} else if (currentPlayer.getPlayPossibilities(this).size() < 1) {
+			//if the current player does not have any playable cards, withdraw
+			withdraw();
+		} else {
+			int playersLeft = 0;
+			for (Player p: players) {
+				if (!p.hasWithdrawn())
+					playersLeft ++;
+			}
+			if (playersLeft == 1) {
+				//if the player is the only one left, call announceWinner
+				announceWinner();
+			}
+		}
 	}
 	
+	public void discard(Player player, Card card) {
+		// discard a specific card for a specific player, to the discardPile
+		player.removeCard(card);
+		discardPile.add(card);
+	}
 	
 	public void playCard(Card card) {
+		// play a specific card for current player, handle based on card rules
 		currentPlayer.addToDisplay(card);
-		currentPlayer.removeCard(card);
-		currentPlayer.setTotalCardValue();
-		//TO DO: play a specific card for current player, handle based on card rules
 		//remove card from player hand
+		currentPlayer.removeCard(card);
 		//add card to where it should be added (display, front, discard)
-		//
+		currentPlayer.setTotalCardValue();
 	}
 	
 	public void pickupCard() {
-		//TO DO: Current player picks up top card
+		//current player picks up top card
+		currentPlayer.addCard(drawDeck.get(0));
+		drawDeck.remove(0);
 	}
 	
 	public void removeCardfromDeck(Card card) {
-		//TO DO: remove a single card from draw deck (mostly for testing)
-	}
+		//remove a single card from draw deck (mostly for testing)
+		for (int i = 0; i < drawDeck.size(); i++) {
+			if (card.getType().equals(drawDeck.get(i).getType()) && (card.getValue() == drawDeck.get(i).getValue())) {
+				drawDeck.remove(i);
+				break;
+			}
+		}	}
 	
 	public void removeAllFromDeck(ArrayList<Card> cards) {
-		//TO DO: remove a number of cards from the draw deck (mostly for testing after cards are dealt)
+		// remove a number of cards from the draw deck (mostly for testing after cards are dealt)
+		int temp = 0;
+		for (Card c: cards) {
+			System.out.print("\n Card c: " + c.getType() + " " + c.getValue());
+			temp++;
+			for (int i = 0; i < drawDeck.size(); i++) {
+				if (c.getType().equals(drawDeck.get(i).getType()) && (c.getValue() == drawDeck.get(i).getValue())) {
+					System.out.println("\n Removed Card number " + temp + ": " + drawDeck.get(i).getType() + " " + drawDeck.get(i).getValue());
+					drawDeck.remove(i);
+					break;
+				}
+			}
+		}
 	}
 	
 	public void addAllToDeck(ArrayList<Card> cards) {
-		//TO DO: add a number of cards to the draw deck (mostly for testing after cards are dealt)
+		//add a number of cards to the draw deck (mostly for testing after cards are dealt)
+		for (Card c: cards) {
+				drawDeck.add(c);
+		}
 	}
 	
-	public Player getCurrentPlayer() {
-		return currentPlayer;
-	}
-	
-	public void setCurrentPlayer(Player currentPlayer) {
-		//TO DO: Set currentPlayer to the correct player in order of game rules
-		this.currentPlayer = currentPlayer;
-	}
 	
 	public void endTurn() {
 		System.out.println("Player total value: " + currentPlayer.getTotalCardValue());
@@ -318,14 +355,46 @@ public class GameEngine {
 	}
 	
 	public void announceWinner() {
-		//TO DO: if the current player is the last remaining, announce that they won
+		// if the current player is the last remaining set them to "winner"
+		currentPlayer.setWinner(true);
 		//TO DO: add tournament colour token to player's tokens
-		//TO DO: if there is a winner of the entire game, announce that they won the game
-		//TO DO: if there is no game winner, arrange the player array so that the tournament winner
-		//       is first to play in the next tournament, and all other players arranged in their usual order accordingly
-		//TO DO: set all players to not withdrawn
+		if (tournamentColour == Config.PURPLE) {
+			//TO DO: prompt user to choose a token colour 
+		} else if (!currentPlayer.getCurrentTokens().contains(tournamentColour)){
+			currentPlayer.addToken(tournamentColour);
+		}
+		if ((numPlayers <= 3) && (currentPlayer.getCurrentTokens().size() == 5)) {
+			//TO DO: Announce winner of whole game
+		} else if ((numPlayers >= 4) && (currentPlayer.getCurrentTokens().size() == 4)) {
+			//TO DO: Announce winner of whole game
+		} else {
+			//if there is no game winner, arrange the player array so that the tournament winner
+			//is first to play in the next tournament, and all other players arranged in their usual order accordingly
+			arrangePlayers();
+			//Prepare players for a new tournament
+			resetPlayers();
+		}
 	}
 	
+	public void resetPlayers() {
+		for (Player p: players) {
+			p.setWithdrawn(false);
+			p.setWinner(false);
+			p.setDisplay(new ArrayList<>());
+			p.setStartTokenColour("nil");
+		}
+		turnNumber = 0;
+	}
+	
+	public Player getCurrentPlayer() {
+		return currentPlayer;
+	}
+	
+	public void setCurrentPlayer(Player currentPlayer) {
+		//TO DO: Set currentPlayer to the correct player in order of game rules
+		this.currentPlayer = currentPlayer;
+	}
+
 	public int getNumPlayers() {
 		return numPlayers;
 	}

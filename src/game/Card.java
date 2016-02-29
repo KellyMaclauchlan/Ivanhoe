@@ -5,6 +5,13 @@ public class Card {
 	private int value;
 	private String cardType;
 	private String cardImage;
+	
+	public Card() {
+		type = "";
+		value = 0;
+		cardType = "";
+		cardImage = "";
+	}
 		
 	public int getValue() {
 		return value;

@@ -11,7 +11,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-
+import config.Config;
 import game.ActionCard;
 import game.Card;
 import game.ColourCard;
@@ -28,7 +28,7 @@ public class Test2PlayerManual {
 	static Player player2;
 	static ArrayList<Card> player1Cards;
 	static ArrayList<Card> player2Cards;
-	private Card pickup = new ColourCard("yellow", 4);
+	private Card pickup = new ColourCard(Config.YELLOW, 4);
 
 	@BeforeClass
     public static void BeforeClass() {
@@ -37,44 +37,45 @@ public class Test2PlayerManual {
         
 		game = new GameEngine();
 		
-    	game.startGame();
     	
     	//add 2 players to the game
     	player1 = new Player("Katie");
     	player2 = new Player("Kelly");
     	game.joinGame(player1);
     	game.joinGame(player2);
-    	
-    	//select tokens
-       	player1.setStartTokenColour("purple");
-    	player2.setStartTokenColour("blue");
+
     	
     	//begin game, deal cards
     	game.startGame(); //will automatically deal cards to players, but we will replace them with specific cards for testing
     	game.addAllToDeck(player1.getCards());
     	game.addAllToDeck(player2.getCards());
     	
+    	//select tokens (should have been automatically done, but setting manually for tests)
+       	player1.setStartTokenColour(Config.BLUE);
+    	player2.setStartTokenColour(Config.PURPLE);
+    	game.arrangePlayers();
+    	
     	ArrayList<Card> player1Cards = new ArrayList<>();
-    	player1Cards.add(new ColourCard("blue", 4));
-    	player1Cards.add(new ColourCard("purple", 5));
-    	player1Cards.add(new ColourCard("yellow", 3));
-    	player1Cards.add(new ColourCard("red", 4));
-    	player1Cards.add(new ColourCard("yellow", 3));
-    	player1Cards.add(new ColourCard("yellow", 2));
-    	player1Cards.add(new ActionCard("riposte"));
-    	player1Cards.add(new SupportCard("maiden", 6));
+    	player1Cards.add(new ColourCard(Config.BLUE, 4));
+    	player1Cards.add(new ColourCard(Config.PURPLE, 5));
+    	player1Cards.add(new ColourCard(Config.YELLOW, 3));
+    	player1Cards.add(new ColourCard(Config.RED, 4));
+    	player1Cards.add(new ColourCard(Config.YELLOW, 3));
+    	player1Cards.add(new ColourCard(Config.YELLOW, 2));
+    	player1Cards.add(new ActionCard(Config.RIPOSTE));
+    	player1Cards.add(new SupportCard(Config.MAIDEN, 6));
     	player1.setCards(player1Cards);
     	game.removeAllFromDeck(player1Cards);
     	
     	ArrayList<Card> player2Cards = new ArrayList<>();
-    	player2Cards.add(new ColourCard("green", 1));
-    	player2Cards.add(new ColourCard("green", 1));
-    	player2Cards.add(new ColourCard("yellow", 4));
-    	player2Cards.add(new ColourCard("blue", 4));
-    	player2Cards.add(new ColourCard("green", 1));
-    	player2Cards.add(new ActionCard("drop weapon"));
-    	player2Cards.add(new SupportCard("squire", 2));
-    	player2Cards.add(new SupportCard("squire", 3));
+    	player2Cards.add(new ColourCard(Config.GREEN, 1));
+    	player2Cards.add(new ColourCard(Config.GREEN, 1));
+    	player2Cards.add(new ColourCard(Config.YELLOW, 4));
+    	player2Cards.add(new ColourCard(Config.BLUE, 4));
+    	player2Cards.add(new ColourCard(Config.GREEN, 1));
+    	player2Cards.add(new ActionCard(Config.DROPWEAPON));
+    	player2Cards.add(new SupportCard(Config.SQUIRE, 2));
+    	player2Cards.add(new SupportCard(Config.SQUIRE, 3));
     	player2.setCards(player2Cards);
     	game.removeAllFromDeck(player2Cards);
     }
@@ -83,9 +84,12 @@ public class Test2PlayerManual {
     public void setUp() {
     	testNumber++;
 		System.out.println("@Before: Start turn " + testNumber);
-    	//test that the current player picks up a card at the beginning of their turn
+    	//test that the current player picks up a card at the beginning of their turn 
+		// (adding card instead of using pickup function so that I can specify a card)
+			game.getCurrentPlayer().addCard(pickup);
 			game.removeCardfromDeck(pickup);
-	    	game.getCurrentPlayer().addCard(pickup);
+			if (testNumber == 1)
+		    	player1.chooseTournamentColour(Config.YELLOW);
 	    	game.startTurn();
     }
     
@@ -102,8 +106,8 @@ public class Test2PlayerManual {
     	assertEquals(player1.getName(), game.getCurrentPlayer().getName());
     	
     	//make sure that the first player in the players array is the one that picked purple, and the second player did not
-    	assertEquals("purple", game.getPlayers().get(0).getStartTokenColour());
-    	assertNotEquals("purple", game.getPlayers().get(1).getStartTokenColour());
+    	assertEquals(Config.BLUE, game.getPlayers().get(0).getStartTokenColour());
+    	assertEquals(Config.PURPLE, game.getPlayers().get(1).getStartTokenColour());
     	
     	//test correct number of players
     	int players = game.getNumPlayers();
@@ -117,14 +121,13 @@ public class Test2PlayerManual {
     	assertEquals(8, player2.getCards().size());
     	
     	//test that the first player chooses the tournament colour
-    	player1.chooseTournamentColour("yellow");
-    	assertEquals("yellow", game.getTournamentColour());  	
+    	assertEquals(Config.YELLOW, game.getTournamentColour());  	
     	
     	game.playCard(game.getCurrentPlayer().getCards().get(2));
-    	game.playCard(game.getCurrentPlayer().getCards().get(4));
-    	game.playCard(game.getCurrentPlayer().getCards().get(5));
+    	game.playCard(game.getCurrentPlayer().getCards().get(3));
+    	game.playCard(game.getCurrentPlayer().getCards().get(3));
     	game.playCard(pickup);
-    	game.playCard(game.getCurrentPlayer().getCards().get(7));
+    	game.playCard(game.getCurrentPlayer().getCards().get(4));
     	
     	//test the current player's total card value and that it is greater than the value of the other player
     	assertEquals(18, game.getCurrentPlayer().getTotalCardValue());
@@ -135,7 +138,7 @@ public class Test2PlayerManual {
     	assertEquals(4, game.getCurrentPlayer().getCards().size());
     	
     	//next player card to pick up 
-    	pickup = new ColourCard("green", 1);
+    	pickup = new ColourCard(Config.GREEN, 1);
 
     }
     
@@ -155,8 +158,8 @@ public class Test2PlayerManual {
     	game.playCard(game.getCurrentPlayer().getCards().get(1));
     	game.playCard(game.getCurrentPlayer().getCards().get(4));
     	game.playCard(pickup);
-    	game.playCard(game.getCurrentPlayer().getCards().get(6));
-    	game.playCard(game.getCurrentPlayer().getCards().get(7));
+    	game.playCard(game.getCurrentPlayer().getCards().get(2));
+    	game.playCard(game.getCurrentPlayer().getCards().get(2));
     	
     	//test that the current player has the correct number of cards left
     	assertEquals(2, game.getCurrentPlayer().getCards().size());
@@ -165,10 +168,9 @@ public class Test2PlayerManual {
     	assertEquals(5, player1.getTotalCardValue());
     	assertEquals(6, player2.getTotalCardValue());
     	assertTrue(player2.getTotalCardValue() > player1.getTotalCardValue());
-    	
 
     	//next player card to pick up
-    	pickup = new ColourCard("blue", 4);
+    	pickup = new ColourCard(Config.BLUE, 4);
 
     }
     
@@ -194,7 +196,7 @@ public class Test2PlayerManual {
     	assertTrue(player2.getTotalCardValue() > player1.getTotalCardValue());
     	
     	//next player pickup card
-    	pickup = new ColourCard("red", 3);
+    	pickup = new ColourCard(Config.RED, 3);
     	
     }
     
@@ -211,7 +213,7 @@ public class Test2PlayerManual {
     	assertEquals(3, game.getCurrentPlayer().getCards().size());
     	
     	//current player has no playable cards and is withdrawn
-    	pickup = new ColourCard("red", 3);
+    	pickup = new ColourCard(Config.RED, 3);
     }
     
     @Test

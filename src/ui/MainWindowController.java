@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -21,6 +22,8 @@ public class MainWindowController implements Observer{
 	public MainWindow window;
 	public String lastMessege;
 	public ArrayList<String>tokenStrings;
+	public Color backgroundColours[]={new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};
+	private int tournamentColour;
 	
 	public MainWindowController(){
 		playerCards= new ArrayList<Card>();
@@ -161,6 +164,9 @@ public class MainWindowController implements Observer{
 	}
 	public void setCurrPlayer(int currPlayer) {
 		this.currPlayer = currPlayer;
+		if(currPlayer==this.playerNum){
+			window.startTurn();
+		}
 	}
 	public void startRound() {
 		// TODO Auto-generated method stub
@@ -169,6 +175,7 @@ public class MainWindowController implements Observer{
 			this.window.addPlayedCard(i, "resources/cards_small/simpleCards18.jpg");
 			this.playedCards.get(i).clear();
 		}	
+		this.window.endedTurn();
 	}
 	
 	public void setScore(int player, int score) {
@@ -225,11 +232,16 @@ public class MainWindowController implements Observer{
 	
 	public int setTournament(){
 		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
-	    int response = JOptionPane.showOptionDialog(null, "Message", "Title",
+	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",
 	        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
 	        null, options, options[0]);
 		return response;
 		
+	}
+	public void setTournamnetColour(int i) {
+		// TODO Auto-generated method stub
+		this.tournamentColour=i;
+		this.window.getContentPane().setBackground(this.backgroundColours[i]);
 	}
 	
 }

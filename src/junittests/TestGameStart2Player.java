@@ -78,7 +78,8 @@ public class TestGameStart2Player {
     	
     	//the first player should be prompted to pick a round colour
     	//for this test, we will choose the first of the possible choices that the player has based on their cards
-    	String colour = player.chooseTournamentColour(player.getColourPossibilities().get(0));
+    	String colour = player.getColourPossibilities().get(0);
+    	player.chooseTournamentColour(colour);
     	
     	//set the round colour and make sure that it is in fact the colour that was chosen by the player
     	game.setTournamentColour(colour);
@@ -106,5 +107,19 @@ public class TestGameStart2Player {
     	//make sure that ending the first players turn shifts current player to the next player
     	assertTrue(game.getCurrentPlayer() != player);
     	assertEquals(game.getCurrentPlayer(), game.getPlayers().get(1));
+    }
+    
+    @Test
+    public void test4SecondPlay() {
+    	Player player = game.getCurrentPlayer();
+    	
+    	//for this test, we will choose the first playable card and all subsequent playable cards
+    	for (Card cardToPlay: player.getPlayPossibilities(game)) {
+    		game.playCard(cardToPlay);
+    		player.getPlayPossibilities(game).remove(cardToPlay);
+    	}
+    	
+    	
+    	game.endTurn();	
     }
 }
