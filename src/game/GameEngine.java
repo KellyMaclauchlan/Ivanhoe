@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import config.Config;
+
 public class GameEngine {
 	private int numPlayers;
 	private String tournamentColour;
@@ -22,128 +24,128 @@ public class GameEngine {
 	public void createDeck() {
 		drawDeck = new ArrayList<Card>();
 		//purple
-		drawDeck.add(new ColourCard("purple", 3));
-		drawDeck.add(new ColourCard("purple", 3));
-		drawDeck.add(new ColourCard("purple", 3));
-		drawDeck.add(new ColourCard("purple", 3));
-		drawDeck.add(new ColourCard("purple", 4));
-		drawDeck.add(new ColourCard("purple", 4));
-		drawDeck.add(new ColourCard("purple", 4));
-		drawDeck.add(new ColourCard("purple", 4));
-		drawDeck.add(new ColourCard("purple", 5));
-		drawDeck.add(new ColourCard("purple", 5));
-		drawDeck.add(new ColourCard("purple", 5));
-		drawDeck.add(new ColourCard("purple", 5));
-		drawDeck.add(new ColourCard("purple", 7));
-		drawDeck.add(new ColourCard("purple", 7));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 4));
+		drawDeck.add(new ColourCard(Config.PURPLE, 4));
+		drawDeck.add(new ColourCard(Config.PURPLE, 4));
+		drawDeck.add(new ColourCard(Config.PURPLE, 4));
+		drawDeck.add(new ColourCard(Config.PURPLE, 5));
+		drawDeck.add(new ColourCard(Config.PURPLE, 5));
+		drawDeck.add(new ColourCard(Config.PURPLE, 5));
+		drawDeck.add(new ColourCard(Config.PURPLE, 5));
+		drawDeck.add(new ColourCard(Config.PURPLE, 7));
+		drawDeck.add(new ColourCard(Config.PURPLE, 7));
 		
 		//red
-		drawDeck.add(new ColourCard("red", 3));
-		drawDeck.add(new ColourCard("red", 3));
-		drawDeck.add(new ColourCard("red", 3));
-		drawDeck.add(new ColourCard("red", 3));
-		drawDeck.add(new ColourCard("red", 3));
-		drawDeck.add(new ColourCard("red", 3));
-		drawDeck.add(new ColourCard("red", 4));
-		drawDeck.add(new ColourCard("red", 4));
-		drawDeck.add(new ColourCard("red", 4));
-		drawDeck.add(new ColourCard("red", 4));
-		drawDeck.add(new ColourCard("red", 4));
-		drawDeck.add(new ColourCard("red", 4));
-		drawDeck.add(new ColourCard("red", 5));
-		drawDeck.add(new ColourCard("red", 5));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 4));
+		drawDeck.add(new ColourCard(Config.RED, 5));
+		drawDeck.add(new ColourCard(Config.RED, 5));
 
 		//blue
-		drawDeck.add(new ColourCard("blue", 2));
-		drawDeck.add(new ColourCard("blue", 2));
-		drawDeck.add(new ColourCard("blue", 2));
-		drawDeck.add(new ColourCard("blue", 2));
-		drawDeck.add(new ColourCard("blue", 3));
-		drawDeck.add(new ColourCard("blue", 3));
-		drawDeck.add(new ColourCard("blue", 3));
-		drawDeck.add(new ColourCard("blue", 3));
-		drawDeck.add(new ColourCard("blue", 4));
-		drawDeck.add(new ColourCard("blue", 4));
-		drawDeck.add(new ColourCard("blue", 4));
-		drawDeck.add(new ColourCard("blue", 4));
-		drawDeck.add(new ColourCard("blue", 5));
-		drawDeck.add(new ColourCard("blue", 5));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 3));
+		drawDeck.add(new ColourCard(Config.BLUE, 3));
+		drawDeck.add(new ColourCard(Config.BLUE, 3));
+		drawDeck.add(new ColourCard(Config.BLUE, 3));
+		drawDeck.add(new ColourCard(Config.BLUE, 4));
+		drawDeck.add(new ColourCard(Config.BLUE, 4));
+		drawDeck.add(new ColourCard(Config.BLUE, 4));
+		drawDeck.add(new ColourCard(Config.BLUE, 4));
+		drawDeck.add(new ColourCard(Config.BLUE, 5));
+		drawDeck.add(new ColourCard(Config.BLUE, 5));
 
 		//yellow
-		drawDeck.add(new ColourCard("yellow", 2));
-		drawDeck.add(new ColourCard("yellow", 2));
-		drawDeck.add(new ColourCard("yellow", 2));
-		drawDeck.add(new ColourCard("yellow", 2));
-		drawDeck.add(new ColourCard("yellow", 3));
-		drawDeck.add(new ColourCard("yellow", 3));
-		drawDeck.add(new ColourCard("yellow", 3));
-		drawDeck.add(new ColourCard("yellow", 3));
-		drawDeck.add(new ColourCard("yellow", 3));
-		drawDeck.add(new ColourCard("yellow", 3));
-		drawDeck.add(new ColourCard("yellow", 3));
-		drawDeck.add(new ColourCard("yellow", 3));
-		drawDeck.add(new ColourCard("yellow", 4));
-		drawDeck.add(new ColourCard("yellow", 4));
+		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
+		drawDeck.add(new ColourCard(Config.YELLOW, 4));
+		drawDeck.add(new ColourCard(Config.YELLOW, 4));
 		
 		//green
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
-		drawDeck.add(new ColourCard("green", 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
 
 		//supporters
-		drawDeck.add(new SupportCard("maiden", 6));
-		drawDeck.add(new SupportCard("maiden", 6));
-		drawDeck.add(new SupportCard("maiden", 6));
-		drawDeck.add(new SupportCard("maiden", 6));
-		drawDeck.add(new SupportCard("squire", 2));
-		drawDeck.add(new SupportCard("squire", 2));
-		drawDeck.add(new SupportCard("squire", 2));
-		drawDeck.add(new SupportCard("squire", 2));
-		drawDeck.add(new SupportCard("squire", 2));
-		drawDeck.add(new SupportCard("squire", 2));
-		drawDeck.add(new SupportCard("squire", 2));
-		drawDeck.add(new SupportCard("squire", 2));
-		drawDeck.add(new SupportCard("squire", 3));
-		drawDeck.add(new SupportCard("squire", 3));
-		drawDeck.add(new SupportCard("squire", 3));
-		drawDeck.add(new SupportCard("squire", 3));
-		drawDeck.add(new SupportCard("squire", 3));
-		drawDeck.add(new SupportCard("squire", 3));
-		drawDeck.add(new SupportCard("squire", 3));
-		drawDeck.add(new SupportCard("squire", 3));
+		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 
 		//action
-		drawDeck.add(new ActionCard("unhorse"));
-		drawDeck.add(new ActionCard("changeweapon"));
-		drawDeck.add(new ActionCard("dropweapon"));
-		drawDeck.add(new ActionCard("breaklance"));
-		drawDeck.add(new ActionCard("riposte"));
-		drawDeck.add(new ActionCard("riposte"));
-		drawDeck.add(new ActionCard("riposte"));
-		drawDeck.add(new ActionCard("dodge"));
-		drawDeck.add(new ActionCard("retreat"));
-		drawDeck.add(new ActionCard("knockdown"));
-		drawDeck.add(new ActionCard("knockdown"));
-		drawDeck.add(new ActionCard("outmaneuver"));
-		drawDeck.add(new ActionCard("charge"));
-		drawDeck.add(new ActionCard("countercharge"));
-		drawDeck.add(new ActionCard("disgrace"));
-		drawDeck.add(new ActionCard("adapt"));
-		drawDeck.add(new ActionCard("outwit"));
-		drawDeck.add(new ActionCard("shield"));
-		drawDeck.add(new ActionCard("stunned"));
-		drawDeck.add(new ActionCard("ivanhoe"));
+		drawDeck.add(new ActionCard(Config.UNHORSE));
+		drawDeck.add(new ActionCard(Config.CHANGEWEAPON));
+		drawDeck.add(new ActionCard(Config.DROPWEAPON));
+		drawDeck.add(new ActionCard(Config.BREAKLANCE));
+		drawDeck.add(new ActionCard(Config.RIPOSTE));
+		drawDeck.add(new ActionCard(Config.RIPOSTE));
+		drawDeck.add(new ActionCard(Config.RIPOSTE));
+		drawDeck.add(new ActionCard(Config.DODGE));
+		drawDeck.add(new ActionCard(Config.RETREAT));
+		drawDeck.add(new ActionCard(Config.KNOCKDOWN));
+		drawDeck.add(new ActionCard(Config.KNOCKDOWN));
+		drawDeck.add(new ActionCard(Config.OUTMANEUVER));
+		drawDeck.add(new ActionCard(Config.CHARGE));
+		drawDeck.add(new ActionCard(Config.COUNTERCHARGE));
+		drawDeck.add(new ActionCard(Config.DISGRACE));
+		drawDeck.add(new ActionCard(Config.ADAPT));
+		drawDeck.add(new ActionCard(Config.OUTWIT));
+		drawDeck.add(new ActionCard(Config.SHIELD));
+		drawDeck.add(new ActionCard(Config.STUNNED));
+		drawDeck.add(new ActionCard(Config.IVANHOE));
 	}
 	
 	public void joinGame(Player player) {
@@ -153,11 +155,11 @@ public class GameEngine {
 	public void pickTokens() {
 		//add all tokens to token array, starting with purple
 		tokens = new ArrayList<String>();
-		tokens.add("purple");
-		tokens.add("red");
-		tokens.add("blue");
-		tokens.add("yellow");
-		tokens.add("green");
+		tokens.add(Config.PURPLE);
+		tokens.add(Config.RED);
+		tokens.add(Config.BLUE);
+		tokens.add(Config.YELLOW);
+		tokens.add(Config.GREEN);
 		
 		//remove last token in tokens array as long as the number of tokens is greater than the number of players
 		for (int i = 0; i < tokens.size(); i++) {
@@ -222,8 +224,8 @@ public class GameEngine {
 		//arrange players list so that the player left of the one that drew purple
 				ArrayList<Player> tempPlayers = players;
 				for (int i = 0; i < numPlayers; i++) {
-					if ((i == 0 && tempPlayers.get(tempPlayers.size() - 1).getStartTokenColour().equals("purple")) ||
-							(i != 0 && (tempPlayers.get(i-1).getStartTokenColour().equals("purple")))
+					if ((i == 0 && tempPlayers.get(tempPlayers.size() - 1).getStartTokenColour().equals(Config.PURPLE)) ||
+							(i != 0 && (tempPlayers.get(i-1).getStartTokenColour().equals(Config.PURPLE)))
 							|| (tempPlayers.get(i).isWinner()) || (i == numPlayers)) {
 						players.set(0, tempPlayers.get(i));
 						for (int j = 1; j <= numPlayers; j++) {
@@ -238,7 +240,6 @@ public class GameEngine {
 							}
 						}
 					}
-//					tempPlayers.get(i-1).setStartTokenColour("nil");
 				}
 				currentPlayer = players.get(0);
 	}
@@ -247,9 +248,9 @@ public class GameEngine {
 		//TO DO: prompt current player to begin turn
 		turnNumber ++;
 		//if it is the first turn of the game, prompt the first player to pick a tournament colour
-		if (turnNumber > 1) {
+		if (turnNumber == 1) {
 			//TO DO: Prompt user to choose a tournament colour
-			
+			tournamentColour = currentPlayer.getTournamentColour();
 		} else if (currentPlayer.getPlayPossibilities(this).size() < 1) {
 			//if the current player does not have any playable cards, withdraw
 			withdraw();
@@ -289,8 +290,12 @@ public class GameEngine {
 	
 	public void removeCardfromDeck(Card card) {
 		//remove a single card from draw deck (mostly for testing)
-		drawDeck.remove(card);
-	}
+		for (int i = 0; i < drawDeck.size(); i++) {
+			if (card.getType().equals(drawDeck.get(i).getType()) && (card.getValue() == drawDeck.get(i).getValue())) {
+				drawDeck.remove(i);
+				break;
+			}
+		}	}
 	
 	public void removeAllFromDeck(ArrayList<Card> cards) {
 		// remove a number of cards from the draw deck (mostly for testing after cards are dealt)
@@ -353,7 +358,7 @@ public class GameEngine {
 		// if the current player is the last remaining set them to "winner"
 		currentPlayer.setWinner(true);
 		//TO DO: add tournament colour token to player's tokens
-		if (tournamentColour == "purple") {
+		if (tournamentColour == Config.PURPLE) {
 			//TO DO: prompt user to choose a token colour 
 		} else if (!currentPlayer.getCurrentTokens().contains(tournamentColour)){
 			currentPlayer.addToken(tournamentColour);

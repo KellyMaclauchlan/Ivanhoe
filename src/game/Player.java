@@ -14,6 +14,7 @@ public class Player {
 	private boolean isWinner;
 	private boolean hasWithdrawn;
 	private ArrayList<String> currentTokens;
+	private String tournamentColour;
 	
 	public Player(String name) {
 		this.name = name;
@@ -21,9 +22,12 @@ public class Player {
 		display = new ArrayList<>();
 	}
 	
-	public String chooseTournamentColour(String colour) {
-		//TO DO: set tournament colour to chosen colour
-		return colour;
+	public void chooseTournamentColour(String colour) {
+		this.tournamentColour = colour;
+	}
+	
+	public String getTournamentColour() {
+		return tournamentColour;
 	}
 	
 	public ArrayList<String> getColourPossibilities() {
@@ -74,7 +78,8 @@ public class Player {
 	}
 	
 	public void addCard(Card card) {
-		//TO DO: Add a card to the current player's hand
+		//Add a card to the current player's hand
+		cards.add(card);
 	}
 	public ArrayList<Card> getDisplay() {
 		return display;
@@ -84,7 +89,7 @@ public class Player {
 		display.add(card);
 	}
 	
-	public void setDisplay(ArrayList display) {
+	public void setDisplay(ArrayList<Card> display) {
 		this.display = display;
 	}
 	
@@ -97,6 +102,7 @@ public class Player {
 	}
 
 	public void setTotalCardValue() {
+		totalCardValue = 0;
 		for (Card c: display) {
 			if (c.getCardType().equals("colour")
 					|| c.getCardType().equals("support"))
