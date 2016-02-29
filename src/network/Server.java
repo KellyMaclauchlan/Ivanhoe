@@ -1,12 +1,8 @@
 package network;
 
-import game.GameEngine;
-import game.Player;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
@@ -14,14 +10,11 @@ import org.apache.log4j.Logger;
 import config.Config;
 
 public class Server implements Runnable {
-	//public int players = 0;
+	public int players = 0;
 	public Thread thread = null;
 	public ServerSocket server = null;
 	public HashMap<Integer, ServerThread> clients;
 	public Logger log = Logger.getLogger("Server");
-	
-	public ArrayList<Player> players; 
-	public GameEngine game;
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
@@ -45,8 +38,6 @@ public class Server implements Runnable {
 			thread = new Thread(this);
 			log.info("New ServerThread created");
 			thread.start();
-			game = new GameEngine();
-			
 		}
 	}
 
@@ -65,14 +56,13 @@ public class Server implements Runnable {
 
 	public void addThread(Socket socket) {
 		log.info("Client accepted: " + socket );
-		if(players.size() < Config.MAX_PLAYERS){
+		if(players < Config.MAX_PLAYERS){
 			try{
 				ServerThread sThread = new ServerThread(this, socket);
 				sThread.open();
 				sThread.start();
 				clients.put(sThread.getID(), sThread);
-				//Player p = new Player();
-				//this.players.add(p);
+				this.players++; 
 			}catch (IOException e){
 				log.error(e);
 			}
@@ -82,7 +72,6 @@ public class Server implements Runnable {
 
 
 	public void handle(int id, String msg) {
-		String action; 
 		System.out.println("Message Received: " + msg);
 		if (msg.equals("quit")) {
 			log.info(String.format("Removing Client: %d", id));
@@ -93,15 +82,14 @@ public class Server implements Runnable {
 		}else if (msg.equals("shutdown")){ shutdown(); }
 
 		else {
-			action = game.processInput(msg); 
-			send2Clients(action);
-			log.info("Message Sent: " + action);
+			send2Clients(msg);
+			log.info("Message Sent: " + msg);
 		}
 	}
 	
 	public void send2Clients(String msg){
 		for(ServerThread to : clients.values()){
-			System.out.println("Sending to clients: " + msg);
+			System.out.println("Sending to clients");
 			to.send(String.format("%s\n", msg));
 		}
 	}
