@@ -118,6 +118,7 @@ public class MainWindowController implements Observer{
 	public void endturnClick() {
 		// TODO Auto-generated method stub
 		System.out.println("endTurn click");
+		this.window.endTurnClicked();
 	}
 
 	public void withdrawClick() {
@@ -220,6 +221,15 @@ public class MainWindowController implements Observer{
 	
 	public void addToken(int player, int token){
 		this.window.setToken(player, token, tokenStrings.get(token));
+	}
+	
+	public int setTournament(){
+		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
+	    int response = JOptionPane.showOptionDialog(null, "Message", "Title",
+	        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
+	        null, options, options[0]);
+		return response;
+		
 	}
 	
 }
