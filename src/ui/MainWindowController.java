@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -21,6 +22,8 @@ public class MainWindowController implements Observer{
 	public MainWindow window;
 	public String lastMessege;
 	public ArrayList<String>tokenStrings;
+	public Color backgroundColours[]={new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};
+	private int tournamentColour;
 	
 	public MainWindowController(){
 		playerCards= new ArrayList<Card>();
@@ -230,6 +233,11 @@ public class MainWindowController implements Observer{
 	        null, options, options[0]);
 		return response;
 		
+	}
+	public void setTournamnetColour(int i) {
+		// TODO Auto-generated method stub
+		this.tournamentColour=i;
+		this.window.getContentPane().setBackground(this.backgroundColours[i]);
 	}
 	
 }
