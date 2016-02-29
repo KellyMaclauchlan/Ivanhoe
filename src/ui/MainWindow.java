@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
-
+import config.*;
 import config.Config;
 import config.Observer;
 import config.Subject;
@@ -24,6 +24,7 @@ public class MainWindow extends JFrame implements Subject {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	//observer pattern 
 	private ArrayList<Observer>observers =new ArrayList<Observer>();
 	private Config config= new Config();
@@ -415,7 +416,7 @@ public class MainWindow extends JFrame implements Subject {
 			if(this.playerNames[i].isSelected())
 				this.playerNames[i].setSelected(false);
 		}
-		
+		this.endedTurn();
 	}
  	public void endTurnClicked() {
 		// TODO Auto-generated method stub
@@ -423,6 +424,7 @@ public class MainWindow extends JFrame implements Subject {
 			if(this.playerNames[i].isSelected())
 				this.playerNames[i].setSelected(false);
 		}
+		this.endedTurn();
 	}
 
 	public void leftArrowClicked(String imageStr){
@@ -1028,6 +1030,9 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerNames[2]=name3;
 		this.playerNames[3]=name4;
 		this.playerNames[4]=name5;
+		for(int i=0;i<5;i++){
+			this.playerNames[i].setEnabled(false);
+		}
 		
 		this.playedCards= new JButton[5];
 		this.playedCards[0]= p1d;
@@ -1050,5 +1055,21 @@ public class MainWindow extends JFrame implements Subject {
 	public void setToken(int player,int token,String pic){
 		this.tokens[player][token].setIcon(new ImageIcon(pic));
 	}
+	public void startTurn(){
+		for (int i=0;i<10;i++){
+			this.playerCards[i].setEnabled(true);
+		}
+		this.withdrawButton.setEnabled(true);
+		this.endTurnButton.setEnabled(true);
+		this.playCardButton.setEnabled(true);
+	}
 
+	public void endedTurn(){
+		for (int i=0;i<10;i++){
+			this.playerCards[i].setEnabled(false);
+		}
+		this.withdrawButton.setEnabled(false);
+		this.endTurnButton.setEnabled(false);
+		this.playCardButton.setEnabled(false);
+	}
 }
