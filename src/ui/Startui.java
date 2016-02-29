@@ -53,6 +53,7 @@ public class Startui {
 		control.addToken(0, 4);
 		control.addToken(1, 0);
 		control.addToken(1, 2);
+		System.out.println(control.setTournament());
 		//System.out.println();
 		//window.setVisible(true);
 	}
