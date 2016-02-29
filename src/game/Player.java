@@ -6,7 +6,7 @@ public class Player {
 	private String name;
 	private String startTokenColour;
 	private ArrayList<Card> cards;
-	private ArrayList<Card> display = new ArrayList<>();
+	private ArrayList<Card> display;
 	private ArrayList<Card> front;
 	private int totalCardValue;
 	private boolean isStunned;
@@ -17,6 +17,8 @@ public class Player {
 	
 	public Player(String name) {
 		this.name = name;
+		currentTokens = new ArrayList<>();
+		display = new ArrayList<>();
 	}
 	
 	public String chooseTournamentColour(String colour) {
@@ -138,8 +140,8 @@ public class Player {
 		return currentTokens;
 	}
 
-	public void setCurrentTokens(ArrayList<String> currentTokens) {
-		this.currentTokens = currentTokens;
+	public void addToken(String token) {
+		currentTokens.add(token);
 	}
 
 	public boolean hasWithdrawn() {

@@ -107,4 +107,18 @@ public class TestGameStart2Player {
     	assertTrue(game.getCurrentPlayer() != player);
     	assertEquals(game.getCurrentPlayer(), game.getPlayers().get(1));
     }
+    
+    @Test
+    public void test4SecondPlay() {
+    	Player player = game.getCurrentPlayer();
+    	
+    	//for this test, we will choose the first playable card and all subsequent playable cards
+    	for (Card cardToPlay: player.getPlayPossibilities(game)) {
+    		game.playCard(cardToPlay);
+    		player.getPlayPossibilities(game).remove(cardToPlay);
+    	}
+    	
+    	
+    	game.endTurn();	
+    }
 }
