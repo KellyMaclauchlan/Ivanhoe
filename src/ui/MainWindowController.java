@@ -232,9 +232,7 @@ public class MainWindowController implements Observer{
 	
 	public int setTournament(){
 		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
-	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",
-	        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
-	        null, options, options[0]);
+	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		return response;
 		
 	}
