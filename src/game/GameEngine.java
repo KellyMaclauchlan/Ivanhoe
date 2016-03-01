@@ -21,6 +21,63 @@ public class GameEngine {
 		discardPile = new ArrayList<>();
 	}
 	
+	public String processInput(String input) {
+		String output = "waiting";
+
+			if (input.contains(Config.START)) {
+				//Start command should include number of players
+				String[] start = input.split(" ");
+				numPlayers = Integer.valueOf(start[1]);
+				if (numPlayers > Config.MAX_PLAYERS) {
+					output = "Maximum of " + Config.MAX_PLAYERS + " players allowed";
+				}
+				output = Config.PROMPT_JOIN;
+			} else if (input.contains(Config.JOIN)) {
+				String[] join = input.split(" ");
+				String name = join[1];
+				Player player = new Player(name);
+				joinGame(player);
+				if (players.size() < numPlayers) 
+					output = Config.NEED_PLAYERS;
+				else if (players.size() == numPlayers)
+					startGame();
+					//prompt first player to start their turn
+					output = currentPlayer.getName() + " " + Config.START_TURN;
+					pickupCard();
+					//will pick a card and add to the player's hand
+					output = Config.PICK_COLOUR;
+			} else if (input.contains(Config.COLOUR_PICKED)) {
+				String[] pick = input.split(" ");
+				String colour = pick[1];
+				currentPlayer.chooseTournamentColour(colour);
+				startTurn();
+				output = Config.PLAY;
+			} else if (input.contains(Config.PLAY)) {
+				// play string should contain card type and value
+				String[] play = input.split(" ");
+				String type = play[1];
+				String value = play[2];
+				Card card = null;
+				for (Card c: currentPlayer.getCards()) {
+					if (type.equals(c.getValue()) && value.equals(c.getValue())) {
+						card = c;
+					}
+				}
+				playCard(card);
+				// user presses end turn button
+			} else if (input.contains(Config.END_TURN)) {
+				output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
+				if (currentPlayer.isWinner()) {
+					output += Config.TOURNAMENT_WINNER;
+				}
+				// move to next player to start turn
+				endTurn();
+			} 
+		
+		return output;
+	}
+	
+	
 	public void createDeck() {
 		drawDeck = new ArrayList<Card>();
 		//purple
@@ -179,7 +236,6 @@ public class GameEngine {
 	}
 	
 	public void startGame() {
-		numPlayers = players.size();
 		//randomly pick a token for each player
 		pickTokens();
 		

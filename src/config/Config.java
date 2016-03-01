@@ -13,6 +13,19 @@ public class Config {
 	/* Client to Server messages:  
 	 * Commands made by the players will send strings to the server and with those strings
 	 * the server will call the games engine to return a response */
+	public static String START = "start";
+	public static String PROMPT_JOIN = "Prompt join";
+	public static String JOIN = "join";
+	public static String NEED_PLAYERS = "need players";
+	public static String START_TURN = "start turn";
+	public static String PLAY = "play"; 
+	public static String END_TURN = "end turn";
+	public static String POINTS = "points";
+	public static String TOURNAMENT_WINNER = "tournament winner";
+	public static String PICK_COLOUR = "pick a colour";
+	public static String COLOUR_PICKED = "colour picked";
+	
+	
 	
 	/* STARTING THE TOURNAMENT */
 	public static String DRAW_TOKEN = "t";

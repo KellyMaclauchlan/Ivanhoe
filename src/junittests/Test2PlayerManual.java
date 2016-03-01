@@ -36,7 +36,6 @@ public class Test2PlayerManual {
         //These tests set the hands and played cards manually to test specific scenarios
         
 		game = new GameEngine();
-		
     	
     	//add 2 players to the game
     	player1 = new Player("Katie");
