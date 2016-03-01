@@ -6,8 +6,8 @@ import java.net.Socket;
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
-
 import config.Config;
+import game.GameEngine;
 
 public class Server implements Runnable {
 	public int players = 0;
@@ -15,6 +15,7 @@ public class Server implements Runnable {
 	public ServerSocket server = null;
 	public HashMap<Integer, ServerThread> clients;
 	public Logger log = Logger.getLogger("Server");
+	public GameEngine game;
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
@@ -38,6 +39,7 @@ public class Server implements Runnable {
 			thread = new Thread(this);
 			log.info("New ServerThread created");
 			thread.start();
+			game = new GameEngine();
 		}
 	}
 
@@ -72,7 +74,9 @@ public class Server implements Runnable {
 
 
 	public void handle(int id, String msg) {
-		System.out.println("Message Received: " + msg);
+		System.out.println("Message Receieved: " + msg);
+		log.info("Message Received: " + msg);
+		String send = "";
 		if (msg.equals("quit")) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {
@@ -82,8 +86,10 @@ public class Server implements Runnable {
 		}else if (msg.equals("shutdown")){ shutdown(); }
 
 		else {
-			send2Clients(msg);
-			log.info("Message Sent: " + msg);
+			send = game.processInput(msg);
+			
+			send2Clients(send);
+			log.info("Message Sent: " + send);
 		}
 	}
 	

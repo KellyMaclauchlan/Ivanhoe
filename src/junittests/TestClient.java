@@ -17,7 +17,7 @@ import config.Config;
 public class TestClient {
 
 	static Server server;
-	static Client client1;
+	static Client client1; 
 	static Client client2;
 	static Client client3;
 	static Client client4;
