@@ -42,24 +42,26 @@ public class GameEngine {
 				joinGame(player);
 				if (players.size() < numPlayers) 
 					output = Config.NEED_PLAYERS;
-				else if (players.size() == numPlayers)
+				else if (players.size() == numPlayers) {
 					//prompt first player to start their turn
-					startGame();
 					//pick tokens happens automatically 
+					startGame();
+					pickupCard();
+
 					String purple = "";
 					for (Player p: players) {
 						if (p.getStartTokenColour() == Config.PURPLE)
 							purple = p.getName();
 					}
 					output = purple + " picked the purple token. " + 	currentPlayer.getName() + " " + Config.START_TURN;
-					pickupCard();
 					//will pick a card and add to the player's hand
-					output += "\n" + Config.PICK_COLOUR;
+					output += "\n" + currentPlayer.getName() + " " + Config.PICK_COLOUR;
 					//TEMP for text testing
 					System.out.println(currentPlayer.getName() + "'s hand: \n");
 					for (Card c: currentPlayer.getCards()) {
 						System.out.println("\nCard: " + c.getType() + " " + c.getValue());
 					}
+				}
 			} else if (input.contains(Config.COLOUR_PICKED)) {
 				//input should be "colour picked <colour>"
 				//colour picked red
@@ -76,7 +78,7 @@ public class GameEngine {
 				String value = play[2];
 				Card card = null;
 				for (Card c: currentPlayer.getCards()) {
-					if (type.equals(c.getValue()) && value.equals(c.getValue())) {
+					if (type.equals(c.getType()) && value.equals(Integer.toString(c.getValue()))) {
 						card = c;
 					}
 				}

@@ -401,4 +401,284 @@ pick a colour
 @2016-Mar-02 10:38:24 INFO  Server:95 - Message Sent: play
 @2016-Mar-02 10:38:24 INFO  Client:110 - Message Received: play
 @2016-Mar-02 10:41:05 INFO  Server:79 - Message Received: play red 4
+@2016-Mar-02 11:00:12 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:00:12 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:00:12 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:00:20 INFO  Client:35 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 11:00:20 INFO  Client:42 - 57529: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 11:00:20 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57529,localport=3000]
+@2016-Mar-02 11:00:20 INFO  Client:43 - 57529: Connected to portid: 57529
+@2016-Mar-02 11:00:20 INFO  Client:60 - Initializing buffers
+@2016-Mar-02 11:00:20 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:00:20 INFO  ClientThread:48 - Client Thread 57529 running.
+@2016-Mar-02 11:00:20 INFO  Client:66 - New ClientThread has started
+@2016-Mar-02 11:00:22 INFO  Client:46 - Client has started
+@2016-Mar-02 11:00:50 INFO  Server:79 - Message Received: start 2
+@2016-Mar-02 11:00:50 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:00:50 INFO  ClientThread:51 - Prompt join
+@2016-Mar-02 11:00:57 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:01:40 INFO  Client:110 - Message Received: null
+@2016-Mar-02 11:01:49 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:01:49 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:01:49 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:01:56 INFO  Client:35 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 11:01:56 INFO  Client:42 - 57538: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 11:01:56 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57538,localport=3000]
+@2016-Mar-02 11:01:56 INFO  Client:43 - 57538: Connected to portid: 57538
+@2016-Mar-02 11:01:56 INFO  Client:60 - Initializing buffers
+@2016-Mar-02 11:01:56 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:01:56 INFO  Client:66 - New ClientThread has started
+@2016-Mar-02 11:01:56 INFO  ClientThread:48 - Client Thread 57538 running.
+@2016-Mar-02 11:01:58 INFO  Client:46 - Client has started
+@2016-Mar-02 11:01:59 INFO  Server:79 - Message Received: start1
+@2016-Mar-02 11:02:11 INFO  ClientThread:51 - 
+@2016-Mar-02 11:02:11 INFO  Client:110 - Message Received: null
+@2016-Mar-02 11:02:20 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:02:20 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:02:20 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:02:28 INFO  Client:35 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 11:02:28 INFO  Client:42 - 57542: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 11:02:28 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57542,localport=3000]
+@2016-Mar-02 11:02:28 INFO  Client:43 - 57542: Connected to portid: 57542
+@2016-Mar-02 11:02:28 INFO  Client:60 - Initializing buffers
+@2016-Mar-02 11:02:28 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:02:28 INFO  ClientThread:48 - Client Thread 57542 running.
+@2016-Mar-02 11:02:28 INFO  Client:66 - New ClientThread has started
+@2016-Mar-02 11:02:30 INFO  Client:46 - Client has started
+@2016-Mar-02 11:02:39 INFO  Server:79 - Message Received: start 1
+@2016-Mar-02 11:02:39 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:02:39 INFO  ClientThread:51 - Prompt join
+@2016-Mar-02 11:02:41 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:02:41 INFO  Server:95 - Message Sent: Brit picked the purple token. Brit start turn
+pick a colour
+@2016-Mar-02 11:02:41 INFO  Client:110 - Message Received: Brit picked the purple token. Brit start turn
+@2016-Mar-02 11:02:41 INFO  ClientThread:51 - pick a colour
+@2016-Mar-02 11:04:19 INFO  Server:79 - Message Received: blue
+@2016-Mar-02 11:04:19 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-02 11:04:19 INFO  Client:110 - Message Received: waiting
+@2016-Mar-02 11:04:24 INFO  Server:79 - Message Received: 2
+@2016-Mar-02 11:04:24 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-02 11:04:24 INFO  ClientThread:51 - waiting
+@2016-Mar-02 11:04:30 INFO  Client:110 - Message Received: null
+@2016-Mar-02 11:05:48 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:05:48 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:05:48 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:05:56 INFO  Client:35 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 11:05:56 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57548,localport=3000]
+@2016-Mar-02 11:05:56 INFO  Client:42 - 57548: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 11:05:56 INFO  Client:43 - 57548: Connected to portid: 57548
+@2016-Mar-02 11:05:56 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:05:56 INFO  Client:60 - Initializing buffers
+@2016-Mar-02 11:05:56 INFO  Client:66 - New ClientThread has started
+@2016-Mar-02 11:05:56 INFO  ClientThread:48 - Client Thread 57548 running.
+@2016-Mar-02 11:05:58 INFO  Client:46 - Client has started
+@2016-Mar-02 11:06:31 INFO  Server:79 - Message Received: start 1
+@2016-Mar-02 11:06:31 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:06:31 INFO  ClientThread:51 - Prompt join
+@2016-Mar-02 11:06:34 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:06:34 INFO  Server:95 - Message Sent:  picked the purple token. Brit start turn
+pick a colour
+@2016-Mar-02 11:06:34 INFO  Client:110 - Message Received:  picked the purple token. Brit start turn
+@2016-Mar-02 11:06:34 INFO  ClientThread:51 - pick a colour
+@2016-Mar-02 11:06:50 INFO  Server:79 - Message Received: play blue 3
+@2016-Mar-02 11:10:03 INFO  Client:110 - Message Received: null
+@2016-Mar-02 11:10:11 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:10:11 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:10:11 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:10:18 INFO  Client:35 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 11:10:18 INFO  Client:42 - 57550: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 11:10:18 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57550,localport=3000]
+@2016-Mar-02 11:10:18 INFO  Client:43 - 57550: Connected to portid: 57550
+@2016-Mar-02 11:10:18 INFO  Client:60 - Initializing buffers
+@2016-Mar-02 11:10:18 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:10:18 INFO  ClientThread:48 - Client Thread 57550 running.
+@2016-Mar-02 11:10:18 INFO  Client:66 - New ClientThread has started
+@2016-Mar-02 11:10:20 INFO  Client:46 - Client has started
+@2016-Mar-02 11:10:22 INFO  Server:79 - Message Received: start 1
+@2016-Mar-02 11:10:22 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:10:22 INFO  ClientThread:51 - Prompt join
+@2016-Mar-02 11:10:25 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:10:25 INFO  Server:95 - Message Sent:  picked the purple token. Brit start turn
+pick a colour
+@2016-Mar-02 11:10:25 INFO  Client:110 - Message Received:  picked the purple token. Brit start turn
+@2016-Mar-02 11:10:25 INFO  ClientThread:51 - pick a colour
+@2016-Mar-02 11:10:38 INFO  Server:79 - Message Received: play red 5
+@2016-Mar-02 11:10:50 INFO  Client:110 - Message Received: null
+@2016-Mar-02 11:11:04 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:11:04 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:11:04 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:11:12 INFO  Client:35 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 11:11:12 INFO  Client:42 - 57557: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 11:11:12 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57557,localport=3000]
+@2016-Mar-02 11:11:12 INFO  Client:43 - 57557: Connected to portid: 57557
+@2016-Mar-02 11:11:12 INFO  Client:60 - Initializing buffers
+@2016-Mar-02 11:11:12 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:11:12 INFO  Client:66 - New ClientThread has started
+@2016-Mar-02 11:11:12 INFO  ClientThread:48 - Client Thread 57557 running.
+@2016-Mar-02 11:11:14 INFO  Client:46 - Client has started
+@2016-Mar-02 11:11:17 INFO  Server:79 - Message Received: start 1
+@2016-Mar-02 11:11:17 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:11:17 INFO  ClientThread:51 - Prompt join
+@2016-Mar-02 11:11:19 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:11:19 INFO  Server:95 - Message Sent:  picked the purple token. Brit start turn
+pick a colour
+@2016-Mar-02 11:11:19 INFO  Client:110 - Message Received:  picked the purple token. Brit start turn
+@2016-Mar-02 11:11:19 INFO  ClientThread:51 - pick a colour
+@2016-Mar-02 11:11:23 INFO  Server:79 - Message Received: colour picked red
+@2016-Mar-02 11:11:23 INFO  Server:95 - Message Sent: play
+@2016-Mar-02 11:11:23 INFO  Client:110 - Message Received: play
+@2016-Mar-02 11:11:34 INFO  Server:79 - Message Received: play red 4
+@2016-Mar-02 11:12:57 INFO  ClientThread:51 - 
+@2016-Mar-02 11:12:57 INFO  Client:110 - Message Received: null
+@2016-Mar-02 11:13:05 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:13:05 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:13:05 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:15:06 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57604,localport=3000]
+@2016-Mar-02 11:15:06 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:15:49 INFO  Server:79 - Message Received: start 1
+@2016-Mar-02 11:15:49 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:15:54 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:15:54 INFO  Server:95 - Message Sent:  picked the purple token. Brit start turn
+pick a colour
+@2016-Mar-02 11:16:04 INFO  Server:79 - Message Received: colour picked yellow
+@2016-Mar-02 11:16:04 INFO  Server:95 - Message Sent: play
+@2016-Mar-02 11:18:53 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:18:53 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:18:53 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:19:05 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57615,localport=3000]
+@2016-Mar-02 11:19:05 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:19:13 INFO  Server:79 - Message Received: start 1
+@2016-Mar-02 11:19:13 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:19:16 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:19:16 INFO  Server:95 - Message Sent:  picked the purple token. Brit start turn
+pick a colour
+@2016-Mar-02 11:19:23 INFO  Server:79 - Message Received: colour picked red
+@2016-Mar-02 11:19:23 INFO  Server:95 - Message Sent: play
+@2016-Mar-02 11:19:30 INFO  Server:79 - Message Received: play red 4
+@2016-Mar-02 11:20:55 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:20:55 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:20:55 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:21:03 INFO  Client:35 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 11:21:03 INFO  Client:42 - 57618: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 11:21:03 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57618,localport=3000]
+@2016-Mar-02 11:21:03 INFO  Client:43 - 57618: Connected to portid: 57618
+@2016-Mar-02 11:21:03 INFO  Client:60 - Initializing buffers
+@2016-Mar-02 11:21:03 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:21:03 INFO  Client:66 - New ClientThread has started
+@2016-Mar-02 11:21:03 INFO  ClientThread:48 - Client Thread 57618 running.
+@2016-Mar-02 11:21:05 INFO  Client:46 - Client has started
+@2016-Mar-02 11:21:06 INFO  Server:79 - Message Received: start 1
+@2016-Mar-02 11:21:06 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:21:06 INFO  ClientThread:51 - Prompt join
+@2016-Mar-02 11:21:09 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:21:09 INFO  Server:95 - Message Sent: Brit picked the purple token. Brit start turn
+pick a colour
+@2016-Mar-02 11:21:09 INFO  Client:110 - Message Received: Brit picked the purple token. Brit start turn
+@2016-Mar-02 11:21:09 INFO  ClientThread:51 - pick a colour
+@2016-Mar-02 11:21:17 INFO  Server:79 - Message Received: colour picked blue
+@2016-Mar-02 11:21:17 INFO  Server:95 - Message Sent: play
+@2016-Mar-02 11:21:17 INFO  Client:110 - Message Received: play
+@2016-Mar-02 11:21:33 INFO  Server:79 - Message Received: play blue 4
+@2016-Mar-02 11:23:03 INFO  ClientThread:51 - 
+@2016-Mar-02 11:23:03 INFO  Client:110 - Message Received: null
+@2016-Mar-02 11:23:30 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:23:30 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:23:30 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:23:40 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57665,localport=3000]
+@2016-Mar-02 11:23:40 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:23:45 INFO  Server:79 - Message Received: null
+@2016-Mar-02 11:24:00 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:24:00 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:24:00 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:24:06 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57666,localport=3000]
+@2016-Mar-02 11:24:06 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:24:14 INFO  Server:79 - Message Received: start 1
+@2016-Mar-02 11:24:14 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:24:17 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:24:17 INFO  Server:95 - Message Sent:  picked the purple token. Brit start turn
+pick a colour
+@2016-Mar-02 11:24:25 INFO  Server:79 - Message Received: colour picked blue
+@2016-Mar-02 11:24:25 INFO  Server:95 - Message Sent: play
+@2016-Mar-02 11:24:28 INFO  Server:79 - Message Received: play blue 3
+@2016-Mar-02 11:24:28 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-02 11:24:32 INFO  Server:79 - Message Received: play blue 2
+@2016-Mar-02 11:24:32 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-02 11:24:46 INFO  Server:79 - Message Received: end turn
+@2016-Mar-02 11:24:46 INFO  Server:95 - Message Sent: Brit points 5
+@2016-Mar-02 11:27:35 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:27:35 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:27:35 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:27:43 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57672,localport=3000]
+@2016-Mar-02 11:27:43 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:27:52 INFO  Server:79 - Message Received: start 2
+@2016-Mar-02 11:27:52 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:27:55 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:29:15 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:29:15 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:29:15 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:29:25 INFO  Client:35 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 11:29:25 INFO  Client:42 - 57676: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 11:29:25 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57676,localport=3000]
+@2016-Mar-02 11:29:25 INFO  Client:43 - 57676: Connected to portid: 57676
+@2016-Mar-02 11:29:25 INFO  Client:60 - Initializing buffers
+@2016-Mar-02 11:29:25 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:29:25 INFO  Client:66 - New ClientThread has started
+@2016-Mar-02 11:29:25 INFO  ClientThread:48 - Client Thread 57676 running.
+@2016-Mar-02 11:29:27 INFO  Client:46 - Client has started
+@2016-Mar-02 11:29:29 INFO  Server:79 - Message Received: start 2
+@2016-Mar-02 11:29:29 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:29:29 INFO  ClientThread:51 - Prompt join
+@2016-Mar-02 11:29:45 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:29:52 INFO  Client:110 - Message Received: null
+@2016-Mar-02 11:30:08 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:30:08 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:30:08 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:30:19 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57679,localport=3000]
+@2016-Mar-02 11:30:19 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:30:28 INFO  Server:79 - Message Received: start 2
+@2016-Mar-02 11:30:28 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:30:31 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:32:06 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:32:06 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:32:06 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:32:15 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57681,localport=3000]
+@2016-Mar-02 11:32:15 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:32:22 INFO  Server:79 - Message Received: start 2
+@2016-Mar-02 11:32:22 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:32:27 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:32:27 INFO  Server:95 - Message Sent: need players
+@2016-Mar-02 11:33:08 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57682,localport=3000]
+@2016-Mar-02 11:33:08 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:33:14 INFO  Server:79 - Message Received: join Katie
+@2016-Mar-02 11:33:14 INFO  Server:95 - Message Sent: Katie picked the purple token. Brit start turn
+pick a colour
+@2016-Mar-02 11:33:27 INFO  Server:79 - Message Received: null
+@2016-Mar-02 11:33:28 INFO  Server:79 - Message Received: null
+@2016-Mar-02 11:34:30 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 11:34:30 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 11:34:30 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:34:38 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57685,localport=3000]
+@2016-Mar-02 11:34:38 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:34:45 INFO  Server:79 - Message Received: start 2
+@2016-Mar-02 11:34:45 INFO  Server:95 - Message Sent: Prompt join
+@2016-Mar-02 11:34:52 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=57686,localport=3000]
+@2016-Mar-02 11:34:52 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 11:34:59 INFO  Server:79 - Message Received: join Brit
+@2016-Mar-02 11:34:59 INFO  Server:95 - Message Sent: need players
+@2016-Mar-02 11:35:02 INFO  Server:79 - Message Received: join Katie
+@2016-Mar-02 11:35:02 INFO  Server:95 - Message Sent:  picked the purple token. Katie start turn
+Katie pick a colour
+@2016-Mar-02 11:35:42 INFO  Server:79 - Message Received: colour picked yellow
+@2016-Mar-02 11:35:42 INFO  Server:95 - Message Sent: play
+@2016-Mar-02 11:35:47 INFO  Server:79 - Message Received: play yellow 3
+@2016-Mar-02 11:35:47 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-02 11:35:58 INFO  Server:79 - Message Received: play yellow 2
+@2016-Mar-02 11:35:58 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-02 11:36:04 INFO  Server:79 - Message Received: play yellow 2
+@2016-Mar-02 11:36:04 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-02 11:36:11 INFO  Server:79 - Message Received: play squire 2
+@2016-Mar-02 11:36:11 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-02 11:36:13 INFO  Server:79 - Message Received: end turn
+@2016-Mar-02 11:36:13 INFO  Server:95 - Message Sent: Katie points 9
+@2016-Mar-02 11:36:44 INFO  Server:79 - Message Received: play yellow 2
 @
