@@ -122,11 +122,13 @@ public class MainWindowController implements Observer, Subject{
 	public void endturnClick() {
 		System.out.println("endTurn click");
 		this.window.endTurnClicked();
+		this.update(config.END_TURN);
 	}
 
 	public void withdrawClick() {
 		System.out.println("withdraw click");
 		this.window.withdrawClicked();
+		this.update(config.DROP_OUT);
 	}
 
 	public void rightClick() {
@@ -193,8 +195,12 @@ public class MainWindowController implements Observer, Subject{
 	}
 	public void playCard() {
 		System.out.println("played card "+this.window.lastCard+"");
-		if(this.window.lastCard<this.playerCards.size())
+		
+		if(this.window.lastCard<this.playerCards.size()){
+			this.lastCard= this.playerCards.get(this.window.lastCard+this.moved);
+			this.notifyObservers(config.PLAYEDCARD);
 			this.removeCard(this.window.lastCard+this.moved);
+		}
 		//signal to the client
 	}
 	
