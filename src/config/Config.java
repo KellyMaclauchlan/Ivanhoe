@@ -23,9 +23,9 @@ public class Config {
 	public static String START = "start";
 	public static String PROMPT_JOIN = "Prompt join";
 	public static String JOIN = "join";
-	public static String PLAYER_NAMES = "names of players";
+	public static String PLAYER_NAMES = "names";
 	public static String NEED_PLAYERS = "need players";
-	public static String START_TURN = "start turn";
+	public static String START_TURN = "begin turn";
 	public static String PLAY = "play"; 
 	public static String END_TURN = "end turn";
 	public static String POINTS = "points";

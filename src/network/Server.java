@@ -44,10 +44,6 @@ public class Server implements Runnable {
 		game = new GameEngine();
 		log.info("Game has started");
 		
-		System.out.println("How many players in the game? (2 to 5 players only)\n");
-		numPlayers = sc.nextInt();
-		handle(0, Config.START + " " + numPlayers);
-		
 		if(thread == null){
 			thread = new Thread(this);
 			log.info("New ServerThread created");

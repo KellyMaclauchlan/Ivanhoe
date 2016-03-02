@@ -34,7 +34,7 @@ public class GameEngine {
 				}
 				output = Config.PROMPT_JOIN;
 			} else if (input.contains(Config.JOIN)) {
-				// join command should have "join <player name>
+				// join command should have "join <player name>"
 				// join Brit
 				String[] join = input.split(" ");
 				String name = join[1];
@@ -46,29 +46,35 @@ public class GameEngine {
 					//prompt first player to start their turn
 					//pick tokens happens automatically 
 					startGame();
-					pickupCard();
-					
-					
-					/* BRITTTTTT!!!!!!!!!!!!
-					 * We need to send all the names  !!!!!! 
-					 */
-
-					String purple = "";
 					for (Player p: players) {
-						if (p.getStartTokenColour() == Config.PURPLE)
-							purple = p.getName();
-					}
-					
-					/*********************************************************/
-					output = purple + " picked the purple token. " + 	currentPlayer.getName() + " " + Config.START_TURN;
-					//will pick a card and add to the player's hand
-					output += "\n" + currentPlayer.getName() + " " + Config.PICK_COLOUR;
-					//TEMP for text testing
-					System.out.println(currentPlayer.getName() + "'s hand: \n");
-					for (Card c: currentPlayer.getCards()) {
-						System.out.println("\nCard: " + c.getType() + " " + c.getValue());
+						output = Config.PLAYER_NAMES;
+						output += " " + p.getName(); 
+						//will add cards in here for Katie to parse on server side
 					}
 				}
+			} else if (input.contains(Config.START_TURN)) {	
+				//will pick a card and add to the player's hand
+				pickupCard();
+
+				//get the name of the player that picked purple
+				String purple = "";
+				for (Player p: players) {
+					if (p.getStartTokenColour() == Config.PURPLE)
+						purple = p.getName();
+				}
+				
+				output = purple + " picked the purple token. " + 	currentPlayer.getName() + " " + Config.START_TURN;
+				output += "\n" + currentPlayer.getName() + " " + Config.PICK_COLOUR;
+				
+				//TEMP for text testing
+				System.out.println(currentPlayer.getName() + "'s hand: \n");
+				for (Player p: players) {
+					System.out.println("\n" + p.getName() + "'s cards: \n");
+					for (Card c: p.getCards()) {
+						System.out.println("Card: " + c.getType() + " " + c.getValue());
+					}
+				}
+			
 			} else if (input.contains(Config.COLOUR_PICKED)) {
 				//input should be "colour picked <colour>"
 				//colour picked red
