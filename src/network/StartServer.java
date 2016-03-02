@@ -10,19 +10,19 @@ public class StartServer {
 	private static Server server = null; 
 	
 	public static void main(String[] args){
-		System.out.println("start | shutdown");
+		System.out.println("type run | shutdown");
 		
 		do{
 			String input = sc.nextLine();
 			
-			if(input.equalsIgnoreCase("START") && !started){
+			if(input.equalsIgnoreCase(Config.RUN) && !started){
 				System.out.println("Starting server...");
 				//log.info("Starting server");
 				server = new Server();
 				started = Boolean.TRUE; 
 			}
 			
-			if(input.equalsIgnoreCase("SHUTDOWN") && started){
+			if(input.equalsIgnoreCase(Config.SHUTDOWN) && started){
 				System.out.println("Shutting down server...");
 				//log.info("Shutting down server");
 				server.shutdown();;

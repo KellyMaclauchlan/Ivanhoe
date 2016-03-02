@@ -10,6 +10,10 @@ public class Config {
 	
 	public static int MAX_PLAYERS = 5; 
 	
+	/* Network Messages */
+	public static String RUN = "run";
+	public static String SHUTDOWN = "shutdown";
+	
 	/* Client to Server messages:  
 	 * Commands made by the players will send strings to the server and with those strings
 	 * the server will call the games engine to return a response */
