@@ -40,7 +40,7 @@ public class Server implements Runnable {
 			log.info("New ServerThread created");
 			thread.start();
 			game = new GameEngine();
-			game.processInput(Config.START);
+			game.processInput(Config.RUN);
 		}
 	}
 
@@ -93,6 +93,7 @@ public class Server implements Runnable {
 			
 			send2Clients(send);
 			log.info("Message Sent: " + send);
+			System.out.println(send);
 		}
 	}
 	

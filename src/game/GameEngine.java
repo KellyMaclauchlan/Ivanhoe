@@ -25,7 +25,8 @@ public class GameEngine {
 		String output = "waiting";
 
 			if (input.contains(Config.START)) {
-				//Start command should include number of players
+				//Start command should have "start <number of players>
+				// start 2
 				String[] start = input.split(" ");
 				numPlayers = Integer.valueOf(start[1]);
 				if (numPlayers > Config.MAX_PLAYERS) {
@@ -33,6 +34,8 @@ public class GameEngine {
 				}
 				output = Config.PROMPT_JOIN;
 			} else if (input.contains(Config.JOIN)) {
+				// join command should have "join <player name>
+				// join Brit
 				String[] join = input.split(" ");
 				String name = join[1];
 				Player player = new Player(name);
@@ -40,20 +43,34 @@ public class GameEngine {
 				if (players.size() < numPlayers) 
 					output = Config.NEED_PLAYERS;
 				else if (players.size() == numPlayers)
-					startGame();
 					//prompt first player to start their turn
-					output = currentPlayer.getName() + " " + Config.START_TURN;
+					startGame();
+					//pick tokens happens automatically 
+					String purple = "";
+					for (Player p: players) {
+						if (p.getStartTokenColour() == Config.PURPLE)
+							purple = p.getName();
+					}
+					output = purple + " picked the purple token. " + 	currentPlayer.getName() + " " + Config.START_TURN;
 					pickupCard();
 					//will pick a card and add to the player's hand
-					output = Config.PICK_COLOUR;
+					output += "\n" + Config.PICK_COLOUR;
+					//TEMP for text testing
+					System.out.println(currentPlayer.getName() + "'s hand: \n");
+					for (Card c: currentPlayer.getCards()) {
+						System.out.println("\nCard: " + c.getType() + " " + c.getValue());
+					}
 			} else if (input.contains(Config.COLOUR_PICKED)) {
+				//input should be "colour picked <colour>"
+				//colour picked red
+				
 				String[] pick = input.split(" ");
 				String colour = pick[1];
 				currentPlayer.chooseTournamentColour(colour);
 				startTurn();
 				output = Config.PLAY;
 			} else if (input.contains(Config.PLAY)) {
-				// play string should contain card type and value
+				// input should have "play <card type> <card value>
 				String[] play = input.split(" ");
 				String type = play[1];
 				String value = play[2];
@@ -66,6 +83,7 @@ public class GameEngine {
 				playCard(card);
 				// user presses end turn button
 			} else if (input.contains(Config.END_TURN)) {
+				// input should have "end turn"
 				output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
 				if (currentPlayer.isWinner()) {
 					output += Config.TOURNAMENT_WINNER;
