@@ -47,12 +47,19 @@ public class GameEngine {
 					//pick tokens happens automatically 
 					startGame();
 					pickupCard();
+					
+					
+					/* BRITTTTTT!!!!!!!!!!!!
+					 * We need to send all the names  !!!!!! 
+					 */
 
 					String purple = "";
 					for (Player p: players) {
 						if (p.getStartTokenColour() == Config.PURPLE)
 							purple = p.getName();
 					}
+					
+					/*********************************************************/
 					output = purple + " picked the purple token. " + 	currentPlayer.getName() + " " + Config.START_TURN;
 					//will pick a card and add to the player's hand
 					output += "\n" + currentPlayer.getName() + " " + Config.PICK_COLOUR;

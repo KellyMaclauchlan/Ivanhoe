@@ -7,9 +7,10 @@ import javax.swing.JOptionPane;
 
 import config.Config;
 import config.Observer;
+import config.Subject;
 import game.Card;
 
-public class MainWindowController implements Observer{
+public class MainWindowController implements Observer, Subject{
 	private ArrayList<Card> playerCards;
 	private ArrayList<ArrayList<Card>> playedCards;
 	private ArrayList<Integer>playerScores;
@@ -24,6 +25,9 @@ public class MainWindowController implements Observer{
 	public ArrayList<String>tokenStrings;
 	public Color backgroundColours[]={new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};
 	private int tournamentColour;
+	public Card lastCard;
+	
+	private ArrayList<Observer>observers =new ArrayList<Observer>();
 	
 	public MainWindowController(){
 		playerCards= new ArrayList<Card>();
@@ -52,7 +56,6 @@ public class MainWindowController implements Observer{
 	}
 
 	public void setPlayerNum(int player) {
-		// TODO Auto-generated method stub
 		playerNum=player;
 	}
 	public int getPlayerNum() {
@@ -94,7 +97,6 @@ public class MainWindowController implements Observer{
 
 	@Override
 	public void update(String message) {
-		// TODO Auto-generated method stub
 		lastMessege= message;
 		switch(message){
 			case "leftclick": leftClick();
@@ -114,24 +116,20 @@ public class MainWindowController implements Observer{
 		
 	}
 	public void displayCards() {
-		// TODO Auto-generated method stub
 		CardDisplayPopUp popup= new CardDisplayPopUp(this.playedCards.get(this.window.playedCard));
 		popup.setVisible(true);
 	}
 	public void endturnClick() {
-		// TODO Auto-generated method stub
 		System.out.println("endTurn click");
 		this.window.endTurnClicked();
 	}
 
 	public void withdrawClick() {
-		// TODO Auto-generated method stub
 		System.out.println("withdraw click");
 		this.window.withdrawClicked();
 	}
 
 	public void rightClick() {
-		// TODO Auto-generated method stub
 		System.out.println("right click");
 		if(moved<playerCards.size()-10){
 			moved++;
@@ -169,7 +167,6 @@ public class MainWindowController implements Observer{
 		}
 	}
 	public void startRound() {
-		// TODO Auto-generated method stub
 		for(int i=0;i<this.playerNum;i++){
 			setScore(i,0);
 			this.window.addPlayedCard(i, "resources/cards_small/simpleCards18.jpg");
@@ -179,27 +176,22 @@ public class MainWindowController implements Observer{
 	}
 	
 	public void setScore(int player, int score) {
-		// TODO Auto-generated method stub
 		this.playerScores.set(player, score);	
 		window.playerPoints[player].setText(""+score);
 	}
 	public Object getScore(int player) {
-		// TODO Auto-generated method stub
 		return this.playerScores.get(player);
 		
 	}
 	public void setName(int player, String name) {
-		// TODO Auto-generated method stub
 		this.playerNames.set(player, name);
 		window.playerNames[player].setText(name);
 	}
 	public Object getName(int player) {
-		// TODO Auto-generated method stub
 		return this.playerNames.get(player);
 		
 	}
 	public void playCard() {
-		// TODO Auto-generated method stub
 		System.out.println("played card "+this.window.lastCard+"");
 		if(this.window.lastCard<this.playerCards.size())
 			this.removeCard(this.window.lastCard+this.moved);
@@ -237,9 +229,25 @@ public class MainWindowController implements Observer{
 		
 	}
 	public void setTournamnetColour(int i) {
-		// TODO Auto-generated method stub
 		this.tournamentColour=i;
 		this.window.getContentPane().setBackground(this.backgroundColours[i]);
+	}
+	
+	@Override
+	public void registerObserver(Observer observer) {
+		observers.add(observer);
+	}
+	
+	@Override
+	public void removeObserver(Observer observer) {
+		observers.remove(observer);
+	}
+	
+	@Override
+	public void notifyObservers(String message) {
+		for (Observer ob : observers){
+			ob.update(message);
+		}
 	}
 	
 }

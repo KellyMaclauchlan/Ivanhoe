@@ -3,6 +3,8 @@ import config.Config;
 import network.Server;
 import java.util.Scanner;
 
+import game.GameEngine;
+
 public class StartServer {	
 	private static Boolean done = Boolean.FALSE; 
 	private static Boolean started = Boolean.FALSE;

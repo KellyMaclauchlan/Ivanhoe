@@ -6,12 +6,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+
 import org.apache.log4j.Logger;
 
 import config.Config;
 import ui.MainWindowController;
+import config.Observer;
 
-public class Client implements Runnable {
+public class Client implements Runnable, Observer {
 	public int ID = 0;
 	public Socket socket = null;
 	public Thread thread = null;
@@ -23,6 +25,8 @@ public class Client implements Runnable {
 	public String testing = null;
 	public Logger log = Logger.getLogger("Client");
 	public MainWindowController window;
+	
+	public String playedCards = null;
 
 	public int getID(){
 		return this.ID;
@@ -68,6 +72,8 @@ public class Client implements Runnable {
 			
 			window = new MainWindowController();
 			window.showWindow();
+			//startGame();
+			handle(Config.START);
 		}catch (IOException e){
 			log.error(e);
 			throw e; 
@@ -124,6 +130,20 @@ public class Client implements Runnable {
 	public String testMessages() {
 		return testing;
 	}
+
+	@Override
+	public void update(String message) {
+		if(message.equals(Config.PLAYEDCARD)){
+			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
+		}
+		
+		else if (message.equals(Config.DROP_OUT)){
+			
+		}
+		else if(message.equals(Config.END_TURN)){
+			
+		}
+	}
 	
 	
 	/*
@@ -150,7 +170,13 @@ public class Client implements Runnable {
 		String output = "result";
 		
 		if(msg.equals(Config.PROMPT_JOIN)){
-			
+			return output = Config.JOIN + window.getNameFromPlayer();	
+		}
+		
+		else if (msg.contains(Config.START_TURN)){
+			if (msg.equals(Config.PICK_COLOUR)){
+				output = Config.COLOUR_PICKED + " " + Config.colours.get(window.setTournament());
+			}
 		}
 		
 		else if (msg.equals(Config.NEED_PLAYERS)){
@@ -158,15 +184,15 @@ public class Client implements Runnable {
 			
 		}
 		
-		else if (msg.equals(Config.PICK_COLOUR)){
-			
-		}
+		
 		
 		else if (msg.equals(Config.PLAY)){
-			
+			while(playedCards == null){}
+			output = Config.PLAY + " " + playedCards;	
+			playedCards = null;
 		}
 		
-		return msg; 
+		return output; 
 	}
 
 	public void stop() {

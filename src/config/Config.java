@@ -1,5 +1,8 @@
 package config;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import game.ActionCard;
 
 public class Config {
@@ -20,6 +23,7 @@ public class Config {
 	public static String START = "start";
 	public static String PROMPT_JOIN = "Prompt join";
 	public static String JOIN = "join";
+	public static String PLAYER_NAMES = "names of players";
 	public static String NEED_PLAYERS = "need players";
 	public static String START_TURN = "start turn";
 	public static String PLAY = "play"; 
@@ -45,6 +49,7 @@ public class Config {
 	public static String DRAW_CARD = "c";
 	public static String PLAY_CARD = "p";
 	public static boolean WITHDRAW = false; 
+	public static String DROP_OUT = "withdraw";
 	
 	/*UI messages*/
 	public static String LEFT_CLICK="leftclick";
@@ -61,6 +66,10 @@ public class Config {
 	public static String BLUE = "blue";
 	public static String YELLOW = "yellow";
 	public static String GREEN = "green";
+	
+	/* Arrary of colours */
+	public static ArrayList<String> colours = new ArrayList<String>(Arrays.asList(BLUE, RED, YELLOW, GREEN, PURPLE));
+	
 
 	//supporters
 	public static String MAIDEN = "maiden";

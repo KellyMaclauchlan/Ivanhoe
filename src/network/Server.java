@@ -3,19 +3,25 @@ package network;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 import config.Config;
 import game.GameEngine;
+import game.Player;
 
 public class Server implements Runnable {
-	public int players = 0;
+	public int numPlayers = 0;
 	public Thread thread = null;
 	public ServerSocket server = null;
 	public HashMap<Integer, ServerThread> clients;
 	public Logger log = Logger.getLogger("Server");
 	public GameEngine game;
+	public Scanner sc = new Scanner(System.in);
+	
+	public ArrayList<Player> players = new ArrayList<Player>();
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
@@ -35,12 +41,17 @@ public class Server implements Runnable {
 	}
 	
 	public void start() {
+		game = new GameEngine();
+		log.info("Game has started");
+		
+		System.out.println("How many players in the game? (2 to 5 players only)\n");
+		numPlayers = sc.nextInt();
+		handle(0, Config.START + " " + numPlayers);
+		
 		if(thread == null){
 			thread = new Thread(this);
 			log.info("New ServerThread created");
 			thread.start();
-			game = new GameEngine();
-			game.processInput(Config.RUN);
 		}
 	}
 
@@ -59,13 +70,13 @@ public class Server implements Runnable {
 
 	public void addThread(Socket socket) {
 		log.info("Client accepted: " + socket );
-		if(players < Config.MAX_PLAYERS){
+		if(players.size() <= numPlayers/*Config.MAX_PLAYERS*/){
 			try{
 				ServerThread sThread = new ServerThread(this, socket);
 				sThread.open();
 				sThread.start();
 				clients.put(sThread.getID(), sThread);
-				this.players++; 
+				this.numPlayers++; 
 			}catch (IOException e){
 				log.error(e);
 			}
@@ -87,8 +98,19 @@ public class Server implements Runnable {
 				remove(id);
 			}
 		}else if (msg.equals("shutdown")){ shutdown(); }
+		
+		else if (msg.contains(Config.JOIN)){
+			String[] text = msg.split(" "); 
+			Player newPlayer = new Player(text[1]); 
+			players.add(newPlayer); 
+			
+			send = game.processInput(msg);
+			send2Clients(send);
+			log.info("Message Sent: " + send);
+			System.out.println(send);
+		}
 
-		else {
+		else {			
 			send = game.processInput(msg);
 			
 			send2Clients(send);

@@ -5194,4 +5194,74 @@
 @2016-Feb-22 13:26:20 INFO  Server:94 - Message Sent: null
 @2016-Feb-22 13:26:20 ERROR ServerThread:52 - java.net.SocketException: Connection reset
 @2016-Feb-22 13:26:20 INFO  Server:110 - Player 60482 is being removed
+@2016-Mar-02 12:42:48 INFO  Server:27 - Binding to port 3000, please wait...
+@2016-Mar-02 12:42:48 INFO  Server:40 - New ServerThread created
+@2016-Mar-02 12:42:48 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 12:43:00 INFO  Client:35 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 12:43:00 INFO  Client:42 - 50000: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 12:43:00 INFO  Server:61 - Client accepted: Socket[addr=/127.0.0.1,port=50000,localport=3000]
+@2016-Mar-02 12:43:00 INFO  Client:43 - 50000: Connected to portid: 50000
+@2016-Mar-02 12:43:00 INFO  Client:60 - Initializing buffers
+@2016-Mar-02 12:43:00 INFO  Server:51 - Waiting for Clients
+@2016-Mar-02 12:43:00 INFO  Client:66 - New ClientThread has started
+@2016-Mar-02 12:43:00 INFO  ClientThread:48 - Client Thread 50000 running.
+@2016-Mar-02 12:43:01 INFO  Client:46 - Client has started
+@2016-Mar-02 12:43:24 ERROR ServerThread:52 - java.net.SocketException: Connection reset
+@2016-Mar-02 12:43:24 INFO  Server:111 - Player 50000 is being removed
+@2016-Mar-02 13:05:42 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-02 13:05:42 INFO  Server:44 - New ServerThread created
+@2016-Mar-02 13:05:42 INFO  Server:55 - Waiting for Clients
+@2016-Mar-02 13:05:44 INFO  Server:83 - Message Received: start2
+@2016-Mar-02 13:06:04 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-02 13:06:04 ERROR Server:37 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Mar-02 13:06:06 INFO  Server:83 - Message Received: start 2
+@2016-Mar-02 13:07:00 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-02 13:07:00 ERROR Server:37 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Mar-02 13:07:01 INFO  Server:85 - Message Received: start 2
+@2016-Mar-02 13:09:11 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 13:09:11 ERROR Server:39 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Mar-02 13:10:07 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 13:10:07 INFO  Server:45 - Game has started
+@2016-Mar-02 13:10:09 INFO  Server:94 - Message Received: start 2
+@2016-Mar-02 13:10:09 INFO  Server:121 - Message Sent: Prompt join
+@2016-Mar-02 13:10:09 INFO  Server:57 - New ServerThread created
+@2016-Mar-02 13:10:09 INFO  Server:66 - Waiting for Clients
+@2016-Mar-02 13:12:11 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 13:12:11 ERROR Server:39 - java.net.BindException: Address already in use: JVM_Bind
+@2016-Mar-02 13:12:21 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 13:12:21 INFO  Server:45 - Game has started
+@2016-Mar-02 13:12:22 INFO  Server:90 - Message Received: start 3
+@2016-Mar-02 13:12:22 INFO  Server:117 - Message Sent: Prompt join
+@2016-Mar-02 13:12:22 INFO  Server:53 - New ServerThread created
+@2016-Mar-02 13:12:22 INFO  Server:62 - Waiting for Clients
+@2016-Mar-02 13:12:33 INFO  Client:36 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 13:12:34 INFO  Client:43 - 50219: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 13:12:34 INFO  Server:72 - Client accepted: Socket[addr=/127.0.0.1,port=50219,localport=3000]
+@2016-Mar-02 13:12:34 INFO  Client:44 - 50219: Connected to portid: 50219
+@2016-Mar-02 13:12:34 INFO  Client:61 - Initializing buffers
+@2016-Mar-02 13:12:34 INFO  Server:62 - Waiting for Clients
+@2016-Mar-02 13:12:34 INFO  Client:67 - New ClientThread has started
+@2016-Mar-02 13:12:34 INFO  ClientThread:48 - Client Thread 50219 running.
+@2016-Mar-02 13:12:34 INFO  Client:113 - Message Received: start
+@2016-Mar-02 13:12:34 INFO  Client:47 - Client has started
+@2016-Mar-02 13:12:36 ERROR ServerThread:52 - java.net.SocketException: Connection reset
+@2016-Mar-02 13:12:36 INFO  Server:133 - Player 50219 is being removed
+@2016-Mar-02 13:55:22 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 13:55:22 INFO  Server:45 - Game has started
+@2016-Mar-02 13:55:23 INFO  Server:90 - Message Received: start 3
+@2016-Mar-02 13:55:23 INFO  Server:117 - Message Sent: Prompt join
+@2016-Mar-02 13:55:23 INFO  Server:53 - New ServerThread created
+@2016-Mar-02 13:55:23 INFO  Server:62 - Waiting for Clients
+@2016-Mar-02 13:55:34 INFO  Client:39 - 0:Establishing connection. Please wait... 
+@2016-Mar-02 13:55:34 INFO  Server:72 - Client accepted: Socket[addr=/127.0.0.1,port=50944,localport=3000]
+@2016-Mar-02 13:55:34 INFO  Client:46 - 50944: Connected to server: localhost/127.0.0.1
+@2016-Mar-02 13:55:34 INFO  Client:47 - 50944: Connected to portid: 50944
+@2016-Mar-02 13:55:34 INFO  Client:64 - Initializing buffers
+@2016-Mar-02 13:55:34 INFO  Server:62 - Waiting for Clients
+@2016-Mar-02 13:55:34 INFO  Client:70 - New ClientThread has started
+@2016-Mar-02 13:55:34 INFO  ClientThread:48 - Client Thread 50944 running.
+@2016-Mar-02 13:55:35 INFO  Client:116 - Message Received: start
+@2016-Mar-02 13:55:35 INFO  Client:50 - Client has started
+@2016-Mar-02 13:55:47 ERROR ServerThread:52 - java.net.SocketException: Connection reset
+@2016-Mar-02 13:55:47 INFO  Server:133 - Player 50944 is being removed
 @
