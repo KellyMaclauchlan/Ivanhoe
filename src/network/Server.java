@@ -40,6 +40,7 @@ public class Server implements Runnable {
 			log.info("New ServerThread created");
 			thread.start();
 			game = new GameEngine();
+			game.processInput(Config.START);
 		}
 	}
 
@@ -76,7 +77,9 @@ public class Server implements Runnable {
 	public void handle(int id, String msg) {
 		System.out.println("Message Receieved: " + msg);
 		log.info("Message Received: " + msg);
-		String send = "";
+		String send = "waiting";
+		
+		
 		if (msg.equals("quit")) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {

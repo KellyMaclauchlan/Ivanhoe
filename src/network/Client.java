@@ -8,6 +8,9 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 import org.apache.log4j.Logger;
 
+import config.Config;
+import ui.MainWindowController;
+
 public class Client implements Runnable {
 	public int ID = 0;
 	public Socket socket = null;
@@ -19,6 +22,7 @@ public class Client implements Runnable {
 	
 	public String testing = null;
 	public Logger log = Logger.getLogger("Client");
+	public MainWindowController window;
 
 	public int getID(){
 		return this.ID;
@@ -61,6 +65,9 @@ public class Client implements Runnable {
 				thread.start();
 				log.info("New ClientThread has started");
 			}
+			
+			window = new MainWindowController();
+			window.showWindow();
 		}catch (IOException e){
 			log.error(e);
 			throw e; 
@@ -69,7 +76,14 @@ public class Client implements Runnable {
 
 	public void run() {
 		System.out.println(ID + ": Client Started...");
-		System.out.println("\n Hit 'ENTER' to start");
+		//System.out.println("\n Hit 'ENTER' to start");
+		
+		/*
+		 * check number of clients currently connected first
+		 * prompt user for name
+		 * send user name to server, add server to arraylist of players 
+		 * 
+		 */
 		while (thread != null) {  
 			try {  
 				if (outStream != null) {
@@ -91,18 +105,47 @@ public class Client implements Runnable {
 	 */
 	
 	public void handle(String msg) {
+		String send = "waiting";
+		
+		log.info("Message Received: " + msg);
+		
 	   	if (msg.equalsIgnoreCase("quit!")) {  
 				System.out.println(ID + "Good bye. Press RETURN to exit ...");
 				stop();
 			} else {
 				testing = msg;
-				System.out.println("Message Received: " + msg);
+				//System.out.println("Message Received: " + msg);
+				send = processInput(msg);
+				System.out.println(msg);
 			}
 	}
 
 
 	public String testMessages() {
 		return testing;
+	}
+	
+	public String processInput(String msg){
+		String output = "result";
+		
+		if(msg.equals(Config.PROMPT_JOIN)){
+			
+		}
+		
+		else if (msg.equals(Config.NEED_PLAYERS)){
+			
+			
+		}
+		
+		else if (msg.equals(Config.PICK_COLOUR)){
+			
+		}
+		
+		else if (msg.equals(Config.PLAY)){
+			
+		}
+		
+		return msg; 
 	}
 
 	public void stop() {
