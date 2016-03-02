@@ -125,6 +125,27 @@ public class Client implements Runnable {
 		return testing;
 	}
 	
+	
+	/*
+	controller methods and what they do :
+		show window 
+		  -> shows the game window
+		setNumPlayers(int i) 
+		  -> gets the number of players for the game and sets everything up for them
+		addPlayedCard( int player, Card c) 
+		  -> takes a player and a card and adds that card to that players display
+		setCurrPlayer(int player)
+		  -> changes that player to be current player
+		startRound() 
+		 -> clears all played cards, resets the scores resets the played card image 
+		setScore (int player int score)
+		 -> sets that players score to the new one; 
+		setName (int player, string name)
+		  -> sets that players name
+		addToken(int player, int token)
+		 ->set the token for the player to be filled  
+	  
+	 */
 	public String processInput(String msg){
 		String output = "result";
 		
