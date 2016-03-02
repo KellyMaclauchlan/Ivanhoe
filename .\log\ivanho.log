@@ -1,0 +1,93 @@
+2016-Mar-02 17:02:39 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 17:02:39 INFO  Server:45 - Game has started
+@2016-Mar-02 17:04:21 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 17:04:21 INFO  Server:45 - Game has started
+@2016-Mar-02 17:04:21 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 17:04:21 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:04:37 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=54398,localport=3000]
+@2016-Mar-02 17:04:37 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:04:43 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 17:04:43 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 17:04:49 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 17:04:49 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 17:04:56 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=54414,localport=3000]
+@2016-Mar-02 17:04:56 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:05:03 INFO  Server:86 - Message Received: join Katie
+@2016-Mar-02 17:05:03 INFO  Server:105 - Message Sent: names Katie Katie
+@2016-Mar-02 17:05:27 INFO  Server:86 - Message Received: start turn
+@2016-Mar-02 17:06:19 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 17:06:19 INFO  Server:45 - Game has started
+@2016-Mar-02 17:06:19 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 17:06:19 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:06:29 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=54503,localport=3000]
+@2016-Mar-02 17:06:29 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:06:54 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 17:06:54 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 17:06:58 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 17:06:58 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 17:07:05 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=54534,localport=3000]
+@2016-Mar-02 17:07:05 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:07:16 INFO  Server:86 - Message Received: join Katie
+@2016-Mar-02 17:07:16 INFO  Server:105 - Message Sent: names Brit Katie
+@2016-Mar-02 17:07:56 INFO  Server:86 - Message Received: start turn
+@2016-Mar-02 17:08:21 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 17:08:21 INFO  Server:45 - Game has started
+@2016-Mar-02 17:08:21 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 17:08:21 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:08:28 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=54614,localport=3000]
+@2016-Mar-02 17:08:28 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:08:45 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=54636,localport=3000]
+@2016-Mar-02 17:08:45 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:08:53 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 17:08:53 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 17:08:58 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 17:08:58 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 17:09:01 INFO  Server:86 - Message Received: join Katie
+@2016-Mar-02 17:09:01 INFO  Server:105 - Message Sent: names Katie Katie
+@2016-Mar-02 17:09:11 INFO  Server:86 - Message Received: begin turn
+@2016-Mar-02 17:09:11 INFO  Server:113 - Message Sent: waiting
+@2016-Mar-02 17:11:12 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 17:11:12 INFO  Server:45 - Game has started
+@2016-Mar-02 17:11:12 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 17:11:12 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:11:27 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=54791,localport=3000]
+@2016-Mar-02 17:11:27 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:11:33 INFO  Server:86 - Message Received: null
+@2016-Mar-02 17:12:17 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 17:12:17 INFO  Server:45 - Game has started
+@2016-Mar-02 17:12:17 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 17:12:17 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:12:25 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=54846,localport=3000]
+@2016-Mar-02 17:12:25 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:12:37 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=54857,localport=3000]
+@2016-Mar-02 17:12:37 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 17:12:41 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 17:12:41 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 17:12:46 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 17:12:46 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 17:12:58 INFO  Server:86 - Message Received: join Katie
+@2016-Mar-02 17:12:58 INFO  Server:105 - Message Sent: names Brit Katie
+@2016-Mar-02 17:13:17 INFO  Server:86 - Message Received: begin turn
+@2016-Mar-02 17:13:17 INFO  Server:113 - Message Sent: Katie picked the purple token. Brit begin turn
+Brit pick a colour
+@2016-Mar-02 17:13:42 INFO  Server:86 - Message Received: colour picked red
+@2016-Mar-02 17:13:42 INFO  Server:113 - Message Sent: play
+@2016-Mar-02 17:13:49 INFO  Server:86 - Message Received: play red 4
+@2016-Mar-02 17:13:49 INFO  Server:113 - Message Sent: waiting
+@2016-Mar-02 17:13:59 INFO  Server:86 - Message Received: play red 3
+@2016-Mar-02 17:13:59 INFO  Server:113 - Message Sent: waiting
+@2016-Mar-02 17:14:20 INFO  Server:86 - Message Received: play maiden 6
+@2016-Mar-02 17:14:20 INFO  Server:113 - Message Sent: waiting
+@2016-Mar-02 17:14:29 INFO  Server:86 - Message Received: play squire 2
+@2016-Mar-02 17:14:29 INFO  Server:113 - Message Sent: waiting
+@2016-Mar-02 17:14:34 INFO  Server:86 - Message Received: end turn
+@2016-Mar-02 17:14:34 INFO  Server:113 - Message Sent: Brit points 15
+@2016-Mar-02 17:14:59 INFO  Server:86 - Message Received: play squire 3
+@2016-Mar-02 17:14:59 INFO  Server:113 - Message Sent: waiting
+@2016-Mar-02 17:15:08 INFO  Server:86 - Message Received: play squire 2
+@2016-Mar-02 17:15:08 INFO  Server:113 - Message Sent: waiting
+@2016-Mar-02 17:15:17 INFO  Server:86 - Message Received: play red 3
+@2016-Mar-02 17:15:17 INFO  Server:113 - Message Sent: waiting
+@2016-Mar-02 17:15:20 INFO  Server:86 - Message Received: end turn
+@2016-Mar-02 17:15:20 INFO  Server:113 - Message Sent: Katie points 8
+@

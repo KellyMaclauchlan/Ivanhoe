@@ -35,7 +35,7 @@ public class Client implements Runnable, Observer {
 	public Client(){}
 	
 	public boolean connectToServer(String serverIP, int serverPort) {
-		System.out.println(ID + ":Establishing connection. Please wait... ");
+		//System.out.println(ID + ":Establishing connection. Please wait... ");
 		log.info(ID + ":Establishing connection. Please wait... ");
 		boolean connected = false;
 		
@@ -71,7 +71,7 @@ public class Client implements Runnable, Observer {
 			}
 			
 			window = new MainWindowController();
-			window.showWindow();
+			//window.showWindow();
 			//startGame();
 			handle(Config.START);
 		}catch (IOException e){
@@ -81,7 +81,7 @@ public class Client implements Runnable, Observer {
 	}
 
 	public void run() {
-		System.out.println(ID + ": Client Started...");
+		//System.out.println(ID + ": Client Started...");
 		//System.out.println("\n Hit 'ENTER' to start");
 		
 		/*
@@ -148,22 +148,22 @@ public class Client implements Runnable, Observer {
 	
 	/*
 	controller methods and what they do :
-		show window 
-		  -> shows the game window
-		setNumPlayers(int i) 
-		  -> gets the number of players for the game and sets everything up for them
-		addPlayedCard( int player, Card c) 
-		  -> takes a player and a card and adds that card to that players display
+		show windowï¿½
+		 ï¿½-> shows the game window
+		setNumPlayers(int i)ï¿½
+		 ï¿½-> gets the number of players for the game and sets everything up for them
+		addPlayedCard( int player, Card c)ï¿½
+		 ï¿½-> takes a player and a card and adds that card to that players display
 		setCurrPlayer(int player)
-		  -> changes that player to be current player
+		 ï¿½-> changes that player to be current player
 		startRound() 
-		 -> clears all played cards, resets the scores resets the played card image 
+		 -> clears all played cards, resets the scores resets the played card imageï¿½
 		setScore (int player int score)
-		 -> sets that players score to the new one; 
+		 -> sets that players score to the new one;ï¿½
 		setName (int player, string name)
-		  -> sets that players name
+		 ï¿½-> sets that players name
 		addToken(int player, int token)
-		 ->set the token for the player to be filled  
+		 ->set the token for the player to be filledï¿½ 
 	  
 	 */
 	public String processInput(String msg){
