@@ -24,6 +24,7 @@ public class Config {
 	public static String PROMPT_JOIN = "Prompt join";
 	public static String JOIN = "join";
 	public static String PLAYER_NAMES = "names";
+	public static String PLAYER_CARDS = "cards";
 	public static String NEED_PLAYERS = "need players";
 	public static String START_TURN = "begin turn";
 	public static String PLAY = "play"; 
@@ -31,7 +32,7 @@ public class Config {
 	public static String POINTS = "points";
 	public static String TOURNAMENT_WINNER = "tournament winner";
 	public static String PICK_COLOUR = "pick a colour";
-	public static String COLOUR_PICKED = "colour picked";
+	public static String COLOUR_PICKED = "colour";
 	
 	
 	

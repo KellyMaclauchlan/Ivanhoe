@@ -90,4 +90,113 @@ Brit pick a colour
 @2016-Mar-02 17:15:17 INFO  Server:113 - Message Sent: waiting
 @2016-Mar-02 17:15:20 INFO  Server:86 - Message Received: end turn
 @2016-Mar-02 17:15:20 INFO  Server:113 - Message Sent: Katie points 8
+@2016-Mar-02 18:41:07 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 18:41:08 INFO  Server:45 - Game has started
+@2016-Mar-02 18:41:08 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 18:41:08 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:41:48 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49468,localport=3000]
+@2016-Mar-02 18:41:48 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:42:15 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49470,localport=3000]
+@2016-Mar-02 18:42:15 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:42:28 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 18:42:28 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 18:42:31 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 18:42:31 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 18:42:34 INFO  Server:86 - Message Received: join Katie
+@2016-Mar-02 18:42:34 INFO  Server:105 - Message Sent: names Katie cards yellow_3 yellow_3 yellow_3 breaklance_0 yellow_4 purple_3 purple_7 red_4
+@2016-Mar-02 18:43:54 INFO  Server:86 - Message Received: null
+@2016-Mar-02 18:43:55 INFO  Server:86 - Message Received: null
+@2016-Mar-02 18:44:05 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 18:44:05 INFO  Server:45 - Game has started
+@2016-Mar-02 18:44:05 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 18:44:05 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:44:17 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49473,localport=3000]
+@2016-Mar-02 18:44:17 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:44:24 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49475,localport=3000]
+@2016-Mar-02 18:44:24 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:44:28 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 18:44:28 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 18:44:31 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 18:44:31 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 18:44:36 INFO  Server:86 - Message Received: join Katie
+@2016-Mar-02 18:44:36 INFO  Server:105 - Message Sent: names Katie cards green_1 yellow_3 maiden_6 green_1 blue_2 purple_5 yellow_2 squire_3
+@2016-Mar-02 18:46:05 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 18:46:05 INFO  Server:45 - Game has started
+@2016-Mar-02 18:46:05 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 18:46:05 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:46:14 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49477,localport=3000]
+@2016-Mar-02 18:46:14 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:46:24 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49478,localport=3000]
+@2016-Mar-02 18:46:24 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:46:27 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 18:46:27 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 18:46:29 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 18:46:29 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 18:46:32 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 18:46:32 INFO  Server:105 - Message Sent: names Brit cards outwit_0 red_3 yellow_3 blue_5 blue_4 green_1 squire_2 yellow_3
+@2016-Mar-02 18:49:05 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 18:49:05 INFO  Server:45 - Game has started
+@2016-Mar-02 18:49:05 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 18:49:05 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:49:30 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49485,localport=3000]
+@2016-Mar-02 18:49:30 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:49:43 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49486,localport=3000]
+@2016-Mar-02 18:49:43 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:49:51 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 18:49:51 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 18:49:54 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 18:49:54 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 18:49:58 INFO  Server:86 - Message Received: join Katie
+@2016-Mar-02 18:52:18 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 18:52:18 INFO  Server:45 - Game has started
+@2016-Mar-02 18:52:18 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 18:52:18 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:52:26 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49488,localport=3000]
+@2016-Mar-02 18:52:26 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:52:38 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49489,localport=3000]
+@2016-Mar-02 18:52:38 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:52:46 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 18:52:46 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 18:52:49 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 18:52:49 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 18:52:52 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 18:52:52 INFO  Server:105 - Message Sent: names Brit cards squire_3 purple_3 yellow_3 green_1 blue_5 breaklance_0 green_1 red_3names Brit cards yellow_3 yellow_3 squire_3 dropweapon_0 blue_2 blue_2 charge_0 green_1
+@2016-Mar-02 18:53:37 INFO  Server:86 - Message Received: null
+@2016-Mar-02 18:53:39 INFO  Server:86 - Message Received: null
+@2016-Mar-02 18:53:49 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 18:53:49 INFO  Server:45 - Game has started
+@2016-Mar-02 18:53:49 INFO  Server:49 - New ServerThread created
+@2016-Mar-02 18:53:49 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:54:02 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49490,localport=3000]
+@2016-Mar-02 18:54:02 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:54:09 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49491,localport=3000]
+@2016-Mar-02 18:54:09 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 18:54:12 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 18:54:12 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 18:54:16 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 18:54:16 INFO  Server:105 - Message Sent: need players
+@2016-Mar-02 18:54:18 INFO  Server:86 - Message Received: join Katie
+@2016-Mar-02 18:54:18 INFO  Server:105 - Message Sent: names Brit cards yellow_2 blue_3 blue_4 squire_2 yellow_2 stunned_0 green_1 squire_2names Katie cards blue_3 yellow_3 squire_2 red_5 red_5 purple_5 yellow_3 squire_2
+@2016-Mar-02 19:18:32 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 19:18:32 ERROR Server:39 - java.net.BindException: Address already in use
+@2016-Mar-02 19:18:39 INFO  Server:86 - Message Received: null
+@2016-Mar-02 19:18:40 INFO  Server:86 - Message Received: null
+@2016-Mar-02 19:18:48 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 19:18:48 ERROR Server:39 - java.net.BindException: Address already in use
+@2016-Mar-02 19:19:00 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49525,localport=3000]
+@2016-Mar-02 19:19:00 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 19:19:04 INFO  Server:68 - Client accepted: Socket[addr=/127.0.0.1,port=49526,localport=3000]
+@2016-Mar-02 19:19:04 INFO  Server:58 - Waiting for Clients
+@2016-Mar-02 19:19:09 INFO  Server:86 - Message Received: start 2
+@2016-Mar-02 19:19:09 INFO  Server:113 - Message Sent: Prompt join
+@2016-Mar-02 19:19:13 INFO  Server:86 - Message Received: join Brit
+@2016-Mar-02 19:19:13 ERROR ServerThread:38 - java.net.SocketException: Broken pipe
+@2016-Mar-02 19:19:13 INFO  Server:129 - Player 49490 is being removed
+@2016-Mar-02 19:19:22 INFO  Server:86 - Message Received: null
+@2016-Mar-02 19:20:30 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 19:20:30 ERROR Server:39 - java.net.BindException: Address already in use
+@2016-Mar-02 19:21:30 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 19:21:30 ERROR Server:39 - java.net.BindException: Address already in use
+@2016-Mar-02 19:25:26 INFO  Server:33 - Binding to port 3000, please wait...
+@2016-Mar-02 19:25:26 ERROR Server:39 - java.net.BindException: Address already in use
 @

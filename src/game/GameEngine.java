@@ -46,10 +46,14 @@ public class GameEngine {
 					//prompt first player to start their turn
 					//pick tokens happens automatically 
 					startGame();
+					output = "";
 					for (Player p: players) {
-						output = Config.PLAYER_NAMES;
-						output += " " + p.getName(); 
+						output += Config.PLAYER_NAMES;
+						output += " " + p.getName() + " " + Config.PLAYER_CARDS; 
 						//will add cards in here for Katie to parse on server side
+						for (Card c: p.getCards()) {
+							output += " " + c.getType() + "_" + c.getValue();
+						}
 					}
 				}
 			} else if (input.contains(Config.START_TURN)) {	
