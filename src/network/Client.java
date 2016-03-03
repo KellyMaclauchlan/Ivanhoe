@@ -124,7 +124,6 @@ public class Client implements Runnable, Observer {
 		}
 		
 		else if (message.equals(Config.WITHDRAW)){
-			processInput(Config.WITHDRAW);
 		}
 		
 		else if(message.equals(Config.END_TURN)){
@@ -157,7 +156,7 @@ public class Client implements Runnable, Observer {
 					window.addCard(newCard);
 				}
 			}
-			output = Config.START_TURN;
+			output = Config.START_TOURNAMENT;
 		}
 		
 		else if (msg.contains(Config.PICKED_PURPLE)){
