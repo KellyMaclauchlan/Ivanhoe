@@ -48,6 +48,7 @@ public class MainWindow extends JFrame implements Subject {
 	
 	//tokens [player][token]
 	JLabel[][] tokens;
+	public boolean[][] hasTokens;
 	
 	//decks
 	JLabel deck;
@@ -73,6 +74,12 @@ public class MainWindow extends JFrame implements Subject {
 		testing = true;
 		setUpScreen(this.getContentPane());
 		//this.pack();
+		this.hasTokens=new boolean[5][5];
+		for (int i=0;i<5;i++){
+			for (int j=0;j<5;j++){
+				this.hasTokens[i][j]=false;
+			}
+		}
 	}
 	
 	@Override
@@ -991,6 +998,9 @@ public class MainWindow extends JFrame implements Subject {
 		this.tokens[4][3]=token54;
 		this.tokens[4][4]=token55;
 		
+		
+		
+		
 		this.playerNames= new JRadioButton[5];
 		this.playerNames[0]=name1;
 		this.playerNames[1]=name2;
@@ -1018,7 +1028,9 @@ public class MainWindow extends JFrame implements Subject {
 
 	public void setToken(int player,int token,String pic){
 		this.tokens[player][token].setIcon(new ImageIcon(pic));
+		this.hasTokens[player][token]=true;
 	}
+	
 	
 	public void startTurn(){
 		for (int i = 0; i < 10; i++){
