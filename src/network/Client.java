@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
-
+import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import config.Config;
@@ -18,15 +18,15 @@ public class Client implements Runnable, Observer {
 	public Socket socket = null;
 	public Thread thread = null;
 	public ClientThread client = null;
+	public MainWindowController window = null;
 	public BufferedReader console = null;
 	public BufferedReader inStream = null;
 	public BufferedWriter outStream = null;
-	
 	public String testing = null;
-	public Logger log = Logger.getLogger("Client");
-	public MainWindowController window;
 	
 	public String playedCards = null;
+	public Logger log = Logger.getLogger("Client");
+	public ArrayList<String> hand = new ArrayList<String>();
 
 	public int getID(){
 		return this.ID;
@@ -35,7 +35,6 @@ public class Client implements Runnable, Observer {
 	public Client(){}
 	
 	public boolean connectToServer(String serverIP, int serverPort) {
-		//System.out.println(ID + ":Establishing connection. Please wait... ");
 		log.info(ID + ":Establishing connection. Please wait... ");
 		boolean connected = false;
 		
@@ -88,7 +87,6 @@ public class Client implements Runnable, Observer {
 					outStream.write(console.readLine() + "\n");
 				} else {
 					log.info(ID + ": Stream Closed");
-					System.out.println(ID + ": Stream Closed");
 				}
          }
          catch(IOException e) {  
@@ -103,7 +101,7 @@ public class Client implements Runnable, Observer {
 		log.info("Message Received: " + msg);
 		
 	   	if (msg.equalsIgnoreCase("quit!")) {  
-				System.out.println(ID + "Good bye. Press RETURN to exit ...");
+				log.info(ID + " has left the game");
 				stop();
 		} else {
 			testing = msg;
@@ -123,61 +121,49 @@ public class Client implements Runnable, Observer {
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
 		}
 		
-		else if (message.equals(Config.DROP_OUT)){
-			
+		else if (message.equals(Config.WITHDRAW)){
+			processInput(Config.WITHDRAW);
 		}
+		
 		else if(message.equals(Config.END_TURN)){
-			
+			processInput(Config.END_TURN);
 		}
 	}
-	
-	
-	/*
-	controller methods and what they do :
-		show window�
-		 �-> shows the game window
-		setNumPlayers(int i)�
-		 �-> gets the number of players for the game and sets everything up for them
-		addPlayedCard( int player, Card c)�
-		 �-> takes a player and a card and adds that card to that players display
-		setCurrPlayer(int player)
-		 �-> changes that player to be current player
-		startRound() 
-		 -> clears all played cards, resets the scores resets the played card image�
-		setScore (int player int score)
-		 -> sets that players score to the new one;�
-		setName (int player, string name)
-		 �-> sets that players name
-		addToken(int player, int token)
-		 ->set the token for the player to be filled� 
-	  
-	 */
+
 	public String processInput(String msg){
 		String output = "result";
 		
-		if(msg.equals(Config.PROMPT_JOIN)){
+		if(msg.contains(Config.PROMPT_JOIN)){
 			return output = Config.JOIN + window.getNameFromPlayer();	
 		}
 		
-		else if (msg.contains(Config.START_TURN)){
-			if (msg.equals(Config.PICK_COLOUR)){
-				output = Config.COLOUR_PICKED + " " + Config.colours.get(window.setTournament());
+		else if (msg.contains(Config.PLAYER_NAME)){
+			String name[] = msg.split("name");
+			String card[];
+			
+			for(int i = 0; i < name.length; i++){
+				card = name[i].split(" ");
+				
+				for(int k = 0; k < card.length; k++){
+					hand.add(card[i]);
+					// send hand to GUI
+				}
 			}
+			output = Config.START_TURN;
 		}
 		
-		else if (msg.equals(Config.NEED_PLAYERS)){
-			
-			
+		else if (msg.contains(Config.PICKED_PURPLE)){
+			output = Config.COLOUR_PICKED + " " + Config.colours.get(window.setTournament());
 		}
 		
-		
-		
-		else if (msg.equals(Config.PLAY)){
-			while(playedCards == null){}
+		else if (msg.contains(Config.PLAY) || msg.contains(Config.CONTINUE)){
+			// want to send: play <type> <value>
 			output = Config.PLAY + " " + playedCards;	
-			playedCards = null;
 		}
 		
+		else if (msg.contains(Config.WITHDRAW)){
+			output = Config.END_TURN;
+		}
 		return output; 
 	}
 

@@ -183,7 +183,7 @@ public class MainWindowController implements Observer, Subject{
 	public void withdrawClick() {
 		System.out.println("withdraw click");
 		this.window.withdrawClicked();
-		this.update(Config.DROP_OUT);
+		this.update(Config.WITHDRAW);
 		log.info("Player has withdrawed");
 	}
 

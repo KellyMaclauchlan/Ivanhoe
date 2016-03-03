@@ -21,9 +21,10 @@ public class Config {
 	 * Commands made by the players will send strings to the server and with those strings
 	 * the server will call the games engine to return a response */
 	public static String START = "start";
-	public static String PROMPT_JOIN = "Prompt join";
+	public static String PROMPT_JOIN = "prompt join";
 	public static String JOIN = "join";
-	public static String PLAYER_NAMES = "names";
+	public static String PLAYER_NAME = "name";
+	public static String PLAYER_CARDS = "cards";
 	public static String NEED_PLAYERS = "need players";
 	public static String START_TURN = "begin turn";
 	public static String PLAY = "play"; 
@@ -31,25 +32,19 @@ public class Config {
 	public static String POINTS = "points";
 	public static String TOURNAMENT_WINNER = "tournament winner";
 	public static String PICK_COLOUR = "pick a colour";
-	public static String COLOUR_PICKED = "colour picked";
-	
-	
-	
+	public static String COLOUR_PICKED = "colour";
+	public static String PICKED_PURPLE = "purple";
+	public static String TURN = "turn";
+	public static String CONTINUE = "continue";
+	 
 	/* STARTING THE TOURNAMENT */
 	public static String DRAW_TOKEN = "t";
 	public static String DEAL = "d";
 	
-	/* STARTING A TOURNAMENT */
-	// TURN returns true when it is a player's turn
-	public static boolean TURN = false;
-	// PLAYED returns true when a player has played their cards
-	public static boolean PLAYED = false;
-	
 	/* PLAYING IN A TOURNAMENT */
 	public static String DRAW_CARD = "draw card";
 	public static String PLAY_CARD = "play card";
-	public static boolean WITHDRAW = false; 
-	public static String DROP_OUT = "withdraw";
+	public static String WITHDRAW = "withdraw";
 	
 	/*UI messages*/
 	public static String LEFT_CLICK="leftclick";
