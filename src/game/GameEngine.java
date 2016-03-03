@@ -23,33 +23,33 @@ public class GameEngine {
 	
 	public String processInput(String input) {
 		String output = "waiting";
-			// start 2
+			// start <number of players>
 			if (input.contains(Config.START)) {
-				output = processStart(input);
-			// join Brit
+				output = processStart(input); // output = prompt join OR output = max 5 (if number of players is too high)
+			// input = join <player name>
 			} else if (input.contains(Config.JOIN)) {
-				output = processJoin(input);
-			// begin tournament
+				output = processJoin(input); // output = need players OR output = name <player name> cards <type_value> <type_value> ...
+			// input = begin tournament
 			} else if (input.contains(Config.START_TOURNAMENT)) {	
 			// TO DO: send card picked to clients 
-				output = processStartTournament(input);
-			// colour red	
+				output = processStartTournament(input); // output = purple <player name> turn <player name> (first turn) OR turn <player name>  (subsequent turns)
+			// input = colour red	
 			} else if (input.contains(Config.COLOUR_PICKED)) {
 			// TO DO: send colour picked to clients
-				output = processColourPicked(input);
-			// play red 4 (can be continued on input at a time for as many cards as available)
+				output = processColourPicked(input); // output = play <colour picked> <card picked up>
+			// input = play red 4 (can be continued on input at a time for as many cards as available)
 			} else if (input.contains(Config.PLAY)) {
 			// TO DO: send client card played
-			// TO DO: run check for playable cards
-				output = processPlay(input);
-			// end turn
+			// TO DO: run check for playable cards - send unplayable to client
+				output = processPlay(input); // output = waiting <card played> OR output = waiting <unplayable>
+			// input = end turn
 			} else if (input.contains(Config.END_TURN)) {
-			// input should have "end turn"
-				output = processEndTurn(input);
-			// withdraw
+				output = processEndTurn(input); // output = <player name> points <player points> [continue OR withdraw] <next player>
+												// IF tournament is won, add: tournament winner <winner name>
+			// input = withdraw
 			} else if (input.contains(Config.WITHDRAW)) {
 				withdraw();				
-				output = processEndTurn(input);	
+				output = processEndTurn(input);	// see above: only change is that the player has chosen to withdraw instead of being forced
 			}
 		return output;
 	}
@@ -60,7 +60,7 @@ public class GameEngine {
 		String[] start = input.split(" ");
 		numPlayers = Integer.valueOf(start[1]);
 		if (numPlayers > Config.MAX_PLAYERS) {
-			output = "Maximum of " + Config.MAX_PLAYERS + " players allowed";
+			output = Config.MAX;
 		}
 		output = Config.PROMPT_JOIN;
 		return output;
@@ -105,7 +105,8 @@ public class GameEngine {
 		}
 		return output;
 	}
-
+	
+	//TO DO: send client picked up card
 	public String processColourPicked(String input) {
 		String output = "";
 		String[] pick = input.split(" ");
@@ -130,7 +131,8 @@ public class GameEngine {
 		playCard(card);
 		return output; 
 	}
-	
+
+	//TO DO: send client picked up card
 	public String processEndTurn(String input) {
 		String output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
 		// move to next player to start turn
@@ -385,7 +387,7 @@ public class GameEngine {
 		for (Player p: players) {
 			p.setWithdrawn(false);
 			p.setWinner(false);
-			p.setDisplay(new ArrayList<>());
+			p.setDisplay(new ArrayList<Card>());
 			p.setStartTokenColour("nil");
 		}
 		turnNumber = 0;

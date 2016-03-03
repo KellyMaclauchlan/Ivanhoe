@@ -36,6 +36,7 @@ public class Config {
 	public static String PICKED_PURPLE = "purple";
 	public static String TURN = "turn";
 	public static String CONTINUE = "continue";
+	public static String MAX = "maximum " + MAX_PLAYERS;
 	
 	/* STARTING THE TOURNAMENT */
 	public static String DRAW_TOKEN = "t";
