@@ -34,8 +34,7 @@ public class Client implements Runnable, Observer {
 		return this.ID;
 	}
 	
-	public Client(){}
-	
+	/* Used for Testing to check when the Client conencts to the server */
 	public boolean connectToServer(String serverIP, int serverPort) {
 		log.info(ID + ":Establishing connection. Please wait... ");
 		boolean connected = false;
@@ -97,6 +96,7 @@ public class Client implements Runnable, Observer {
          }}
 	}
 	
+	/* Handles all the input and output to and from the server */
 	public void handle(String msg) {
 		String send = "waiting";
 		
@@ -124,6 +124,7 @@ public class Client implements Runnable, Observer {
 		}
 		
 		else if (message.equals(Config.WITHDRAW)){
+			processInput(Config.WITHDRAW);
 		}
 		
 		else if(message.equals(Config.END_TURN)){
@@ -173,7 +174,7 @@ public class Client implements Runnable, Observer {
 		return output; 
 	}
 	
-	/* Convert brit's string into resources */
+	/* Convert the String message of cards to actual images for the GUI */
 	public String getCardImage(String type, String value){
 		String output = "";
 		
@@ -248,7 +249,6 @@ public class Client implements Runnable, Observer {
 				output = Config.IMG_SQUIRE_3;
 			}
 		}
-		
 		return output; 
 	}
 
