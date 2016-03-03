@@ -47,7 +47,7 @@ public class MainWindowController implements Observer, Subject{
 		tokenStrings.add("resources/icons/green_full.png");
 		tokenStrings.add("resources/icons/purple_full.png");
 	}
-	
+	/* displays the main window */
 	public void showWindow(){window.setVisible(true);}
 	
 	/* GETTERS */
@@ -142,6 +142,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Updated Subjects");
 	}
 
+	/*ADD CARD TO PLAYERS HAND*/
 	public void addCard(Card newCard){
 		playerCards.add(newCard);
 		if(playerCards.size()<11){
@@ -150,6 +151,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Adding new card");
 	}
 	
+	/*REMOVE CARD FROM PLAYERS HAND*/
 	public void removeCard(int i){
 		if(playerCards.size()>10){
 			if(moved != 0){moved--;}
@@ -161,18 +163,21 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Card removed");
 	}
 	
+	/*ADD A CARD TO THE GIVEN PLAYERS PLAYED CARDS AND SHOWS IT ON THE BUTTON*/
 	public void addPlayedCard(int player, Card card){
 		this.playedCards.get(player).add(card);
 		this.window.addPlayedCard(player, card.getCardImage());
 		log.info("Player "+ this.playedCards.get(player) + " added " + card + " to their hand");
 	}
 	
+	/*SHOW DISPLAY FOR POPUUP OF OTHER PLAYERS DISPLAY*/
 	public void displayCards() {
 		CardDisplayPopUp popup = new CardDisplayPopUp(this.playedCards.get(this.window.playedCard));
 		popup.setVisible(true);
 		log.info("Cards are being displayed");
 	}
 	
+	/*SENDS END TURN NOTIFICAITON AND COMMAND TO NETWORK AND UI*/
 	public void endturnClick() {
 		System.out.println("endTurn click");
 		this.window.endTurnClicked();
@@ -180,6 +185,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Player has ended their turn");
 	}
 
+	/*SENDS WITHDRAW NOTIFICAITON AND COMMAND TO NETWORK AND UI*/
 	public void withdrawClick() {
 		System.out.println("withdraw click");
 		this.window.withdrawClicked();
@@ -187,6 +193,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Player has withdrawed");
 	}
 
+	/*MOVES THE PLAYERS CARDS ONE TO THE LEFT TO SHOW THE CARD TO THE RIGHT SIDE*/
 	public void rightClick() {
 		System.out.println("right click");
 		if(moved < playerCards.size()-10){
@@ -195,6 +202,7 @@ public class MainWindowController implements Observer, Subject{
 		}
 	}
 
+	/*MOVES THE PLAYERS CARDS ONE TO THE RIGHT TO SHOW THE CARD TO THE LEFT SIDE*/
 	public void leftClick(){
 		System.out.println("left click");
 		if(moved != 0){
@@ -203,6 +211,7 @@ public class MainWindowController implements Observer, Subject{
 		}
 	}
 	
+	/*STARTS A NEW ROUND WITH TH UI*/
 	public void startRound() {
 		for(int i = 0; i < this.playerNum; i++){
 			setScore(i,0);
@@ -212,7 +221,7 @@ public class MainWindowController implements Observer, Subject{
 		}	
 		this.window.endedTurn();
 	}
-	
+	/*PLAYER PLAYS THE CARD AND NOTIFIES */
 	public void playCard() {
 		System.out.println("played card "+this.window.lastCard+"");
 		log.info("Played card " + this.window.lastCard+"");
@@ -221,9 +230,9 @@ public class MainWindowController implements Observer, Subject{
 			this.notifyObservers(Config.PLAYEDCARD);
 			this.removeCard(this.window.lastCard+this.moved);
 		}
-		//signal to the client
 	}
-	
+
+	/*RESETS THE CARDS AFTER ONE WAS PLAYED*/
 	public void resetCards(){		
 		int maxx = Math.min(10, playerCards.size());
 		int i;
@@ -237,6 +246,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Cards have been reset");
 	}
 	
+	/*ADDS A TOKEN FOR THE PLAYER FOR A ROUND*/
 	public void addToken(int player, int token){
 		this.window.setToken(player, token, tokenStrings.get(token));
 		log.info("Adding " + tokenStrings.get(token) + " token");
