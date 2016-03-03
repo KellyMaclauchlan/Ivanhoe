@@ -36,7 +36,11 @@ public class Config {
 	public static String PICKED_PURPLE = "purple";
 	public static String TURN = "turn";
 	public static String CONTINUE = "continue";
+<<<<<<< HEAD
 	
+=======
+	 
+>>>>>>> 13edb13886a8a04b57f99ccb6dc848fe6a9351c8
 	/* STARTING THE TOURNAMENT */
 	public static String DRAW_TOKEN = "t";
 	public static String DEAL = "d";

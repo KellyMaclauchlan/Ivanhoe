@@ -6,27 +6,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
-
+import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import config.Config;
 import ui.MainWindowController;
 import config.Observer;
+import game.Card;
+import game.ColourCard;
 
 public class Client implements Runnable, Observer {
 	public int ID = 0;
 	public Socket socket = null;
 	public Thread thread = null;
 	public ClientThread client = null;
+	public MainWindowController window = null;
 	public BufferedReader console = null;
 	public BufferedReader inStream = null;
 	public BufferedWriter outStream = null;
-	
 	public String testing = null;
-	public Logger log = Logger.getLogger("Client");
-	public MainWindowController window;
 	
 	public String playedCards = null;
+	public Logger log = Logger.getLogger("Client");
+	public ArrayList<String> hand = new ArrayList<String>();
 
 	public int getID(){
 		return this.ID;
@@ -35,7 +37,6 @@ public class Client implements Runnable, Observer {
 	public Client(){}
 	
 	public boolean connectToServer(String serverIP, int serverPort) {
-		//System.out.println(ID + ":Establishing connection. Please wait... ");
 		log.info(ID + ":Establishing connection. Please wait... ");
 		boolean connected = false;
 		
@@ -88,7 +89,6 @@ public class Client implements Runnable, Observer {
 					outStream.write(console.readLine() + "\n");
 				} else {
 					log.info(ID + ": Stream Closed");
-					System.out.println(ID + ": Stream Closed");
 				}
          }
          catch(IOException e) {  
@@ -103,7 +103,7 @@ public class Client implements Runnable, Observer {
 		log.info("Message Received: " + msg);
 		
 	   	if (msg.equalsIgnoreCase("quit!")) {  
-				System.out.println(ID + "Good bye. Press RETURN to exit ...");
+				log.info(ID + " has left the game");
 				stop();
 		} else {
 			testing = msg;
@@ -124,58 +124,134 @@ public class Client implements Runnable, Observer {
 		}
 		
 		else if (message.equals(Config.WITHDRAW)){
+<<<<<<< HEAD
 			
+=======
+			processInput(Config.WITHDRAW);
+>>>>>>> 13edb13886a8a04b57f99ccb6dc848fe6a9351c8
 		}
+		
 		else if(message.equals(Config.END_TURN)){
-			
+			processInput(Config.END_TURN);
 		}
 	}
-	
-	
-	/*
-	controller methods and what they do :
-		show window�
-		 �-> shows the game window
-		setNumPlayers(int i)�
-		 �-> gets the number of players for the game and sets everything up for them
-		addPlayedCard( int player, Card c)�
-		 �-> takes a player and a card and adds that card to that players display
-		setCurrPlayer(int player)
-		 �-> changes that player to be current player
-		startRound() 
-		 -> clears all played cards, resets the scores resets the played card image�
-		setScore (int player int score)
-		 -> sets that players score to the new one;�
-		setName (int player, string name)
-		 �-> sets that players name
-		addToken(int player, int token)
-		 ->set the token for the player to be filled� 
-	  
-	 */
+
 	public String processInput(String msg){
 		String output = "result";
 		
-		if(msg.equals(Config.PROMPT_JOIN)){
+		if(msg.contains(Config.PROMPT_JOIN)){
 			return output = Config.JOIN + window.getNameFromPlayer();	
 		}
 		
-		else if (msg.contains(Config.START_TURN)){
-			if (msg.equals(Config.PICK_COLOUR)){
-				output = Config.COLOUR_PICKED + " " + Config.colours.get(window.setTournament());
+		else if (msg.contains(Config.PLAYER_NAME)){
+			String name[] = msg.split("name");
+			String card[];
+			String value[];
+			
+			for(int i = 0; i < name.length; i++){
+				card = name[i].split(" ");
+				
+				for(int k = 0; k < card.length; k++){
+					hand.add(card[i]);
+					
+					value = card[i].split("_");
+					String pic = getCardImage(value[0], value[1]);
+					
+					Card newCard = new ColourCard(value[0], Integer.parseInt(value[1]), pic);
+					window.addCard(newCard);
+				}
+			}
+			output = Config.START_TURN;
+		}
+		
+		else if (msg.contains(Config.PICKED_PURPLE)){
+			output = Config.COLOUR_PICKED + " " + Config.colours.get(window.setTournament());
+		}
+		
+		else if (msg.contains(Config.PLAY) || msg.contains(Config.CONTINUE)){
+			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+		}
+		
+		else if (msg.contains(Config.WITHDRAW)){
+			output = Config.END_TURN;
+		}
+		return output; 
+	}
+	
+	/* Convert brit's string into resources */
+	public String getCardImage(String type, String value){
+		String output = "";
+		
+		/* Coloured Cards */
+		if(type.equals("purple")){
+			if(value.equals("3")){
+				output = Config.IMG_PURPLE_3; 
+			}
+			else if (value.equals("4")){
+				output = Config.IMG_PURPLE_4;	
+			}
+			else if(value.equals("5")){
+				output = Config.IMG_PURPLE_5;
+			}
+			else if(value.equals("7")){
+				output = Config.IMG_PURPLE_7;
+			}
+		}
+		else if(type.equals("red")){
+			if(value.equals("3")){
+				output = Config.IMG_RED_3;
+			}
+			else if(type.equals("4")){
+				output = Config.IMG_RED_4;
+			}
+			else if(type.equals("5")){
+				output = Config.IMG_RED_5;
+			}
+			
+		}
+		
+		else if (type.equals("blue")){
+			if(value.equals("2")){
+				output = Config.IMG_BLUE_2;
+			}
+			else if(value.equals("3")){
+				output = Config.IMG_BLUE_3;
+			}
+			else if(value.equals("4")){
+				output = Config.IMG_BLUE_4;
+			}
+			else if(value.equals("5")){
+				output = Config.IMG_BLUE_5;
 			}
 		}
 		
-		else if (msg.equals(Config.NEED_PLAYERS)){
-			
-			
+		else if (type.equals("yellow")){
+			if(value.equals("2")){
+				output = Config.IMG_YELLOW_2;
+			}
+			else if(value.equals("3")){
+				output = Config.IMG_YELLOW_3;
+			}
+			else if(value.equals("4")){
+				output = Config.IMG_YELLOW_4;
+			}
 		}
 		
+		else if (type.equals("green")){
+			output = Config.IMG_GREEN_1;
+		}
 		
-		
-		else if (msg.equals(Config.PLAY)){
-			while(playedCards == null){}
-			output = Config.PLAY + " " + playedCards;	
-			playedCards = null;
+		/* ACTION CARDS*/
+		if(type.equals("maiden")){
+			output = Config.IMG_MAIDEN_6;
+		}
+		else if(type.equals("squire")){
+			if(value.equals("2")){
+				output = Config.IMG_SQUIRE_2;
+			}
+			else if(value.equals("3")){
+				output = Config.IMG_SQUIRE_3;
+			}
 		}
 		
 		return output; 
