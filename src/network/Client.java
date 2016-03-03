@@ -81,15 +81,6 @@ public class Client implements Runnable, Observer {
 	}
 
 	public void run() {
-		//System.out.println(ID + ": Client Started...");
-		//System.out.println("\n Hit 'ENTER' to start");
-		
-		/*
-		 * check number of clients currently connected first
-		 * prompt user for name
-		 * send user name to server, add server to arraylist of players 
-		 * 
-		 */
 		while (thread != null) {  
 			try {  
 				if (outStream != null) {
@@ -106,10 +97,6 @@ public class Client implements Runnable, Observer {
          }}
 	}
 	
-	/* Client has to send something twice and then will receive its echo
-	 * 
-	 */
-	
 	public void handle(String msg) {
 		String send = "waiting";
 		
@@ -118,12 +105,11 @@ public class Client implements Runnable, Observer {
 	   	if (msg.equalsIgnoreCase("quit!")) {  
 				System.out.println(ID + "Good bye. Press RETURN to exit ...");
 				stop();
-			} else {
-				testing = msg;
-				//System.out.println("Message Received: " + msg);
-				send = processInput(msg);
-				System.out.println(msg);
-			}
+		} else {
+			testing = msg;
+			send = processInput(msg);
+			System.out.println(msg);
+		}
 	}
 
 

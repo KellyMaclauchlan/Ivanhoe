@@ -20,8 +20,6 @@ public class Server implements Runnable {
 	public Logger log = Logger.getLogger("Server");
 	public GameEngine game;
 	public Scanner sc = new Scanner(System.in);
-	
-	public ArrayList<Player> players = new ArrayList<Player>();
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
@@ -43,7 +41,6 @@ public class Server implements Runnable {
 	public void start() {
 		game = new GameEngine();
 		log.info("Game has started");
-		
 		if(thread == null){
 			thread = new Thread(this);
 			log.info("New ServerThread created");
@@ -66,18 +63,15 @@ public class Server implements Runnable {
 
 	public void addThread(Socket socket) {
 		log.info("Client accepted: " + socket );
-		if(players.size() <= numPlayers/*Config.MAX_PLAYERS*/){
-			try{
-				ServerThread sThread = new ServerThread(this, socket);
-				sThread.open();
-				sThread.start();
-				clients.put(sThread.getID(), sThread);
-				this.numPlayers++; 
-			}catch (IOException e){
-				log.error(e);
-			}
+		try{
+			ServerThread sThread = new ServerThread(this, socket);
+			sThread.open();
+			sThread.start();
+			clients.put(sThread.getID(), sThread);
+			this.numPlayers++; 
+		}catch (IOException e){
+			log.error(e);
 		}
-		
 	}
 
 
@@ -86,7 +80,6 @@ public class Server implements Runnable {
 		log.info("Message Received: " + msg);
 		String send = "waiting";
 		
-		
 		if (msg.equals("quit")) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {
@@ -94,17 +87,6 @@ public class Server implements Runnable {
 				remove(id);
 			}
 		}else if (msg.equals("shutdown")){ shutdown(); }
-		
-		else if (msg.contains(Config.JOIN)){
-			String[] text = msg.split(" "); 
-			Player newPlayer = new Player(text[1]); 
-			players.add(newPlayer); 
-			
-			send = game.processInput(msg);
-			send2Clients(send);
-			log.info("Message Sent: " + send);
-			System.out.println(send);
-		}
 
 		else {			
 			send = game.processInput(msg);
