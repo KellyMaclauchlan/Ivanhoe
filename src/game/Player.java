@@ -15,6 +15,7 @@ public class Player {
 	private boolean hasWithdrawn;
 	private ArrayList<String> currentTokens;
 	private String tournamentColour;
+	private boolean gameWinner = false;
 	
 	public Player(String name) {
 		this.name = name;
@@ -156,6 +157,14 @@ public class Player {
 
 	public void setWithdrawn(boolean hasWithdrawn) {
 		this.hasWithdrawn = hasWithdrawn;
+	}
+
+	public boolean isGameWinner() {
+		return gameWinner;
+	}
+
+	public void setGameWinner(boolean gameWinner) {
+		this.gameWinner = gameWinner;
 	}
 	
 

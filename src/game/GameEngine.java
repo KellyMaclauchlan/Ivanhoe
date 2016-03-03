@@ -29,23 +29,21 @@ public class GameEngine {
 			// input = join <player name>
 			} else if (input.contains(Config.JOIN)) {
 				output = processJoin(input); // output = need players OR output = name <player name> cards <type_value> <type_value> ...
-			// input = begin tournament
+			// input = begin tournament	
 			} else if (input.contains(Config.START_TOURNAMENT)) {	
-			// TO DO: send card picked to clients 
-				output = processStartTournament(input); // output = purple <player name> turn <player name> (first turn) OR turn <player name>  (subsequent turns)
-			// input = colour red	
+				output = processStartTournament(input); // output = purple <player name> turn <player name> (first turn) <card picked up> 
+														// OR output = turn <player name> <card picked up> (subsequent turns)
+			// input = colour <colour>	
 			} else if (input.contains(Config.COLOUR_PICKED)) {
-			// TO DO: send colour picked to clients
-				output = processColourPicked(input); // output = play <colour picked> <card picked up>
+				output = processColourPicked(input); // output = play <colour picked>
 			// input = play red 4 (can be continued on input at a time for as many cards as available)
 			} else if (input.contains(Config.PLAY)) {
-			// TO DO: send client card played
-			// TO DO: run check for playable cards - send unplayable to client
 				output = processPlay(input); // output = waiting <card played> OR output = waiting <unplayable>
 			// input = end turn
 			} else if (input.contains(Config.END_TURN)) {
-				output = processEndTurn(input); // output = <player name> points <player points> [continue OR withdraw] <next player>
+				output = processEndTurn(input); // output = <player name> points <player points> [continue OR withdraw] <next player> <card picked up>
 												// IF tournament is won, add: tournament winner <winner name>
+												// IF game is won, add: game winner <winner name>
 			// input = withdraw
 			} else if (input.contains(Config.WITHDRAW)) {
 				withdraw();				
@@ -89,31 +87,31 @@ public class GameEngine {
 	
 	public String processStartTournament(String input) {
 		String output = "";
-		pickupCard();
-
-		//get the name of the player that picked purple
+		Card picked = pickupCard();
 		String purple = "";
 		for (Player p: players) {
 			if (p.getStartTokenColour() == Config.PURPLE) {
 				purple = p.getName();
-				output = Config.PURPLE + " " + purple + " " + Config.TURN + " " +	currentPlayer.getName();
+				output = Config.PURPLE + " " + purple + " " 
+						+ Config.TURN + " " + currentPlayer.getName() 
+						+ " " + picked.getType() + "_" + picked.getValue();
 			} else {
 				arrangePlayers();
 				resetPlayers();
-				output = Config.TURN + " " + currentPlayer.getName();
+				output = Config.TURN + " " + currentPlayer.getName()
+				+ " " + picked.getType() + "_" + picked.getValue();
 			}
 		}
 		return output;
 	}
 	
-	//TO DO: send client picked up card
 	public String processColourPicked(String input) {
 		String output = "";
 		String[] pick = input.split(" ");
 		String colour = pick[1];
 		currentPlayer.chooseTournamentColour(colour);
 		startTurn();
-		output = Config.PLAY;
+		output = Config.PLAY + " " + colour;
 		return output;
 	}
 	
@@ -128,20 +126,25 @@ public class GameEngine {
 				card = c;
 			}
 		}
-		playCard(card);
+		if (card.getType().equals(tournamentColour) 
+				|| card.getCardType().equals(Config.ACTION) 
+				|| card.getCardType().equals(Config.SUPPORT)) {
+			playCard(card);
+		} else {
+			output = Config.UNPLAYABLE;
+		}
 		return output; 
 	}
 
-	//TO DO: send client picked up card
 	public String processEndTurn(String input) {
 		String output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
-		// move to next player to start turn
+		Player prevPlayer = currentPlayer;
+		endTurn();
 		String withdraw = Config.CONTINUE;
-		if (currentPlayer.hasWithdrawn()) {
+		if (prevPlayer.hasWithdrawn()) {
 			withdraw = Config.WITHDRAW;
 		}
-		endTurn();
-		//Gives name of next player appended to score of previous player
+		Card picked = pickupCard();
 		output += " " + withdraw + " " + currentPlayer.getName();
 		startTurn();
 		for (Player p: players) {
@@ -149,8 +152,12 @@ public class GameEngine {
 				output += " " + Config.TOURNAMENT_WINNER + " " + p.getName();
 				arrangePlayers();
 				resetPlayers();
-			}	
+			}
+			if (p.isGameWinner()) {
+				output += " " + Config.GAME_WINNER + " " + p.getName();
+			}
 		}
+		output += " " + picked.getType() + "_" + picked.getValue();
 		return output;
 	}
 	
@@ -187,11 +194,8 @@ public class GameEngine {
 	public void startGame() {
 		//randomly pick a token for each player
 		pickTokens();
-		
-		//arrange players in the correct order, starting with the player left of the one that chose purple
-		//and continuing with the person left of that one, and so on - in this case, next in the array of players
+		//arange players according to picked token
 		arrangePlayers();
-		
 		//create the drawDeck
 		createDeck();
 		
@@ -226,7 +230,6 @@ public class GameEngine {
 	}
 	
 	public void arrangePlayers() {
-		//arrange players list so that the player left of the one that drew purple
 				ArrayList<Player> tempPlayers = new ArrayList<Player>();
 				for (Player p: players) {
 					tempPlayers.add(p);
@@ -253,30 +256,23 @@ public class GameEngine {
 	}
 	
 	public void startTurn() {
-		//TO DO: prompt current player to begin turn
 		turnNumber ++;
-		//if it is the first turn of the game, prompt the first player to pick a tournament colour
 		if (turnNumber == 1) {
-			//TO DO: Prompt user to choose a tournament colour
 			tournamentColour = currentPlayer.getTournamentColour();
 		} else if (currentPlayer.getPlayPossibilities(this).size() < 1) {
-			//if the current player does not have any playable cards, withdraw
 			withdraw();
-		} else {
-			int playersLeft = 0;
-			for (Player p: players) {
-				if (!p.hasWithdrawn())
-					playersLeft ++;
-			}
-			if (playersLeft == 1) {
-				//if the player is the only one left, call announceWinner
-				announceWinner();
-			}
+		} 
+		int playersLeft = 0;
+		for (Player p: players) {
+			if (!p.hasWithdrawn())
+				playersLeft ++;
+		}
+		if (playersLeft == 1) {
+			announceWinner();
 		}
 	}
 	
 	public void discard(Player player, Card card) {
-		// discard a specific card for a specific player, to the discardPile
 		player.removeCard(card);
 		discardPile.add(card);
 	}
@@ -290,10 +286,12 @@ public class GameEngine {
 		currentPlayer.setTotalCardValue();
 	}
 	
-	public void pickupCard() {
+	public Card pickupCard() {
 		//current player picks up top card
-		currentPlayer.addCard(drawDeck.get(0));
+		Card picked = drawDeck.get(0);
+		currentPlayer.addCard(picked);
 		drawDeck.remove(0);
+		return picked;
 	}
 	
 	public void removeCardfromDeck(Card card) {
@@ -362,24 +360,15 @@ public class GameEngine {
 	}
 	
 	public void announceWinner() {
-		// if the current player is the last remaining set them to "winner"
 		currentPlayer.setWinner(true);
-		//TO DO: add tournament colour token to player's tokens
 		if (tournamentColour == Config.PURPLE) {
-			//TO DO: prompt user to choose a token colour 
 		} else if (!currentPlayer.getCurrentTokens().contains(tournamentColour)){
 			currentPlayer.addToken(tournamentColour);
 		}
 		if ((numPlayers <= 3) && (currentPlayer.getCurrentTokens().size() == 5)) {
-			//TO DO: Announce winner of whole game
+			currentPlayer.setGameWinner(true);
 		} else if ((numPlayers >= 4) && (currentPlayer.getCurrentTokens().size() == 4)) {
-			//TO DO: Announce winner of whole game
-		} else {
-			//if there is no game winner, arrange the player array so that the tournament winner
-			//is first to play in the next tournament, and all other players arranged in their usual order accordingly
-			arrangePlayers();
-			//Prepare players for a new tournament
-			resetPlayers();
+			currentPlayer.setGameWinner(true);
 		}
 	}
 	

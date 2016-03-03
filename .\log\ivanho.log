@@ -1,0 +1,199 @@
+2016-Mar-03 17:24:04 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-03 17:24:04 INFO  Server:43 - Game has started
+@2016-Mar-03 17:24:04 INFO  Server:46 - New ServerThread created
+@2016-Mar-03 17:24:04 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:24:12 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51784,localport=3000]
+@2016-Mar-03 17:24:12 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:24:18 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51785,localport=3000]
+@2016-Mar-03 17:24:18 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:24:20 INFO  Server:80 - Message Received: start 2
+@2016-Mar-03 17:24:20 INFO  Server:95 - Message Sent: prompt join
+@2016-Mar-03 17:24:23 INFO  Server:80 - Message Received: join Brit
+@2016-Mar-03 17:24:23 INFO  Server:95 - Message Sent: need players
+@2016-Mar-03 17:24:26 INFO  Server:80 - Message Received: join Katie
+@2016-Mar-03 17:24:26 INFO  Server:95 - Message Sent:  name Katie cards green_1 purple_3 blue_2 squire_2 yellow_3 outwit_0 blue_5 blue_4 name Brit cards stunned_0 green_1 red_3 squire_3 purple_3 squire_2 purple_3 squire_2
+@2016-Mar-03 17:24:32 INFO  Server:80 - Message Received: begin tournament
+@2016-Mar-03 17:24:32 INFO  Server:95 - Message Sent: turn Katie purple_7
+@2016-Mar-03 17:24:46 INFO  Server:80 - Message Received: colour purple
+@2016-Mar-03 17:24:46 INFO  Server:95 - Message Sent: play purple
+@2016-Mar-03 17:25:03 INFO  Server:80 - Message Received: play purple 7
+@2016-Mar-03 17:25:03 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:25:09 INFO  Server:80 - Message Received: play purple 3
+@2016-Mar-03 17:25:09 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:25:15 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 17:25:15 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:25:54 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 17:25:54 INFO  Server:95 - Message Sent: Katie points 12 continue Brit yellow_3
+@2016-Mar-03 17:26:12 INFO  Server:80 - Message Received: play purple 3
+@2016-Mar-03 17:26:12 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:26:20 INFO  Server:80 - Message Received: play purple 3
+@2016-Mar-03 17:26:20 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:26:25 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 17:26:25 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:26:28 INFO  Server:80 - Message Received: play squire 3
+@2016-Mar-03 17:26:28 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:26:48 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 17:26:48 INFO  Server:95 - Message Sent: Brit points 11 continue Katie red_3
+@2016-Mar-03 17:35:17 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-03 17:35:17 INFO  Server:43 - Game has started
+@2016-Mar-03 17:35:17 INFO  Server:46 - New ServerThread created
+@2016-Mar-03 17:35:17 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:35:28 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51802,localport=3000]
+@2016-Mar-03 17:35:28 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:35:35 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51803,localport=3000]
+@2016-Mar-03 17:35:35 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:35:38 INFO  Server:80 - Message Received: start 2
+@2016-Mar-03 17:35:38 INFO  Server:95 - Message Sent: prompt join
+@2016-Mar-03 17:35:42 INFO  Server:80 - Message Received: join Brit
+@2016-Mar-03 17:35:42 INFO  Server:95 - Message Sent: need players
+@2016-Mar-03 17:35:45 INFO  Server:80 - Message Received: join Katie
+@2016-Mar-03 17:35:45 INFO  Server:95 - Message Sent:  name Katie cards squire_2 red_4 blue_3 green_1 red_4 yellow_4 green_1 countercharge_0 name Brit cards knockdown_0 red_5 blue_2 blue_4 squire_3 red_3 blue_2 dropweapon_0
+@2016-Mar-03 17:35:53 INFO  Server:80 - Message Received: begin tournament
+@2016-Mar-03 17:35:53 INFO  Server:95 - Message Sent: turn Katie red_3
+@2016-Mar-03 17:36:14 INFO  Server:80 - Message Received: play green 1
+@2016-Mar-03 17:36:14 INFO  Server:95 - Message Sent: unplayable
+@2016-Mar-03 17:36:35 INFO  Server:80 - Message Received: colour red
+@2016-Mar-03 17:36:35 INFO  Server:95 - Message Sent: play red
+@2016-Mar-03 17:36:40 INFO  Server:80 - Message Received: play green 1
+@2016-Mar-03 17:36:40 INFO  Server:95 - Message Sent: unplayable
+@2016-Mar-03 17:36:44 INFO  Server:80 - Message Received: play red 4
+@2016-Mar-03 17:36:44 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:36:47 INFO  Server:80 - Message Received: play red 4
+@2016-Mar-03 17:36:47 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:37:01 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 17:37:01 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:37:06 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 17:37:06 INFO  Server:95 - Message Sent: Katie points 10 continue Brit blue_4
+@2016-Mar-03 17:37:17 INFO  Server:80 - Message Received: play red 5
+@2016-Mar-03 17:37:17 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:37:23 INFO  Server:80 - Message Received: play squire 3
+@2016-Mar-03 17:37:23 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:37:25 INFO  Server:80 - Message Received: play red 3
+@2016-Mar-03 17:37:25 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:37:27 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 17:37:27 INFO  Server:95 - Message Sent: Brit points 11 continue Katie squire_2
+@2016-Mar-03 17:37:47 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 17:37:47 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:37:52 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 17:37:52 INFO  Server:95 - Message Sent: Katie points 12 continue Brit yellow_3
+@2016-Mar-03 17:44:18 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-03 17:44:18 INFO  Server:43 - Game has started
+@2016-Mar-03 17:44:18 INFO  Server:46 - New ServerThread created
+@2016-Mar-03 17:44:18 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:44:26 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51815,localport=3000]
+@2016-Mar-03 17:44:26 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:44:31 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51816,localport=3000]
+@2016-Mar-03 17:44:31 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:44:33 INFO  Server:80 - Message Received: start 2
+@2016-Mar-03 17:44:33 INFO  Server:95 - Message Sent: prompt join
+@2016-Mar-03 17:44:36 INFO  Server:80 - Message Received: join Brit
+@2016-Mar-03 17:44:36 INFO  Server:95 - Message Sent: need players
+@2016-Mar-03 17:44:38 INFO  Server:80 - Message Received: join Katie
+@2016-Mar-03 17:44:38 INFO  Server:95 - Message Sent:  name Katie cards squire_2 yellow_3 knockdown_0 disgrace_0 green_1 riposte_0 red_3 yellow_2 name Brit cards purple_5 yellow_4 green_1 blue_2 green_1 purple_4 blue_3 countercharge_0
+@2016-Mar-03 17:44:45 INFO  Server:80 - Message Received: begin tournament
+@2016-Mar-03 17:44:45 INFO  Server:95 - Message Sent: turn Katie green_1
+@2016-Mar-03 17:44:55 INFO  Server:80 - Message Received: colour yellow
+@2016-Mar-03 17:44:55 INFO  Server:95 - Message Sent: play yellow
+@2016-Mar-03 17:45:05 INFO  Server:80 - Message Received: play yellow 3
+@2016-Mar-03 17:45:05 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:45:12 INFO  Server:80 - Message Received: play yellow 2
+@2016-Mar-03 17:45:12 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:45:17 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 17:45:17 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:45:22 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 17:45:22 INFO  Server:95 - Message Sent: Katie points 7 continue Brit riposte_0
+@2016-Mar-03 17:45:33 INFO  Server:80 - Message Received: play yellow 4
+@2016-Mar-03 17:45:33 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:45:42 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 17:45:42 INFO  Server:95 - Message Sent: Brit points 4 withdraw Katie green_1
+@2016-Mar-03 17:57:16 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-03 17:57:16 INFO  Server:43 - Game has started
+@2016-Mar-03 17:57:16 INFO  Server:46 - New ServerThread created
+@2016-Mar-03 17:57:16 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:57:25 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51834,localport=3000]
+@2016-Mar-03 17:57:25 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:57:41 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51835,localport=3000]
+@2016-Mar-03 17:57:41 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 17:57:46 INFO  Server:80 - Message Received: start 2
+@2016-Mar-03 17:57:46 INFO  Server:95 - Message Sent: prompt join
+@2016-Mar-03 17:57:50 INFO  Server:80 - Message Received: join Brit
+@2016-Mar-03 17:57:50 INFO  Server:95 - Message Sent: need players
+@2016-Mar-03 17:57:53 INFO  Server:80 - Message Received: join Katie
+@2016-Mar-03 17:57:53 INFO  Server:95 - Message Sent:  name Brit cards stunned_0 maiden_6 red_4 squire_2 yellow_3 yellow_3 squire_3 purple_3 name Katie cards outmaneuver_0 squire_2 squire_2 dodge_0 blue_5 green_1 green_1 green_1
+@2016-Mar-03 17:58:01 INFO  Server:80 - Message Received: begin tournament
+@2016-Mar-03 17:58:01 INFO  Server:95 - Message Sent: turn Brit red_3
+@2016-Mar-03 17:58:18 INFO  Server:80 - Message Received: colour yellow
+@2016-Mar-03 17:58:18 INFO  Server:95 - Message Sent: play yellow
+@2016-Mar-03 17:58:25 INFO  Server:80 - Message Received: play yellow 3
+@2016-Mar-03 17:58:25 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:58:28 INFO  Server:80 - Message Received: play maiden 6
+@2016-Mar-03 17:58:28 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:58:32 INFO  Server:80 - Message Received: play yellow 3
+@2016-Mar-03 17:58:32 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:58:36 INFO  Server:80 - Message Received: play squire 3
+@2016-Mar-03 17:58:36 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:58:42 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 17:58:42 INFO  Server:95 - Message Sent: Brit points 15 continue Katie red_3
+@2016-Mar-03 17:58:51 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 17:58:51 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:58:53 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 17:58:53 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 17:59:00 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 17:59:00 INFO  Server:95 - Message Sent: Katie points 4 withdraw Brit yellow_3
+@2016-Mar-03 18:00:27 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-03 18:00:27 INFO  Server:43 - Game has started
+@2016-Mar-03 18:00:27 INFO  Server:46 - New ServerThread created
+@2016-Mar-03 18:00:27 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 18:00:35 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51839,localport=3000]
+@2016-Mar-03 18:00:35 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 18:00:42 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51840,localport=3000]
+@2016-Mar-03 18:00:42 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 18:00:44 INFO  Server:80 - Message Received: start 2
+@2016-Mar-03 18:00:44 INFO  Server:95 - Message Sent: prompt join
+@2016-Mar-03 18:01:05 INFO  Server:80 - Message Received: join Brit
+@2016-Mar-03 18:01:05 INFO  Server:95 - Message Sent: need players
+@2016-Mar-03 18:01:09 INFO  Server:80 - Message Received: join Katie
+@2016-Mar-03 18:01:09 INFO  Server:95 - Message Sent:  name Brit cards green_1 squire_3 adapt_0 unhorse_0 stunned_0 yellow_3 squire_2 red_3 name Katie cards red_4 blue_4 outwit_0 purple_3 blue_2 blue_4 green_1 breaklance_0
+@2016-Mar-03 18:01:14 INFO  Server:80 - Message Received: begin tournament
+@2016-Mar-03 18:01:14 INFO  Server:95 - Message Sent: turn Brit yellow_2
+@2016-Mar-03 18:01:19 INFO  Server:80 - Message Received: withdraw
+@2016-Mar-03 18:01:19 INFO  Server:95 - Message Sent: Brit points 0 withdraw Katie green_1
+@2016-Mar-03 18:04:27 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-03 18:04:27 INFO  Server:43 - Game has started
+@2016-Mar-03 18:04:27 INFO  Server:46 - New ServerThread created
+@2016-Mar-03 18:04:27 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 18:04:37 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51852,localport=3000]
+@2016-Mar-03 18:04:37 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 18:04:44 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51854,localport=3000]
+@2016-Mar-03 18:04:44 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 18:04:46 INFO  Server:80 - Message Received: start 2
+@2016-Mar-03 18:04:46 INFO  Server:95 - Message Sent: prompt join
+@2016-Mar-03 18:04:49 INFO  Server:80 - Message Received: join Brit
+@2016-Mar-03 18:04:49 INFO  Server:95 - Message Sent: need players
+@2016-Mar-03 18:04:54 INFO  Server:80 - Message Received: join Katie
+@2016-Mar-03 18:04:54 INFO  Server:95 - Message Sent:  name Brit cards dropweapon_0 purple_5 green_1 green_1 breaklance_0 green_1 squire_2 red_5 name Katie cards squire_3 squire_2 shield_0 squire_2 squire_3 squire_3 riposte_0 blue_2
+@2016-Mar-03 18:05:04 INFO  Server:80 - Message Received: begin tournament
+@2016-Mar-03 18:05:04 INFO  Server:95 - Message Sent: turn Brit squire_3
+@2016-Mar-03 18:05:09 INFO  Server:80 - Message Received: withdraw
+@2016-Mar-03 18:05:09 INFO  Server:95 - Message Sent: Brit points 0 withdraw Katie tournament winner Katie dodge_0
+@2016-Mar-03 18:06:24 INFO  Server:80 - Message Received: colour blue
+@2016-Mar-03 18:06:24 INFO  Server:95 - Message Sent: play blue
+@2016-Mar-03 18:06:32 INFO  Server:80 - Message Received: play blue 2
+@2016-Mar-03 18:06:32 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 18:06:35 INFO  Server:80 - Message Received: play squire 3
+@2016-Mar-03 18:06:35 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 18:06:38 INFO  Server:80 - Message Received: play squire 3
+@2016-Mar-03 18:06:38 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 18:06:43 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 18:06:43 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 18:06:48 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 18:06:48 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 18:06:51 INFO  Server:80 - Message Received: play squire 3
+@2016-Mar-03 18:06:51 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 18:06:54 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 18:06:54 INFO  Server:95 - Message Sent: Katie points 15 continue Brit knockdown_0
+@2016-Mar-03 18:08:02 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 18:08:02 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 18:08:12 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 18:08:12 INFO  Server:95 - Message Sent: Brit points 2 withdraw Katie tournament winner Katie stunned_0
+@

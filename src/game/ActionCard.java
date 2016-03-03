@@ -1,14 +1,16 @@
 package game;
 
+import config.Config;
+
 public class ActionCard extends Card {
 
 	public ActionCard(String actionType) {
 		this.setType(actionType);
-		setCardType("action");
+		setCardType(Config.ACTION);
 	}
 	public ActionCard(String actionType,String cardimg) {
 		this.setType(actionType);
-		setCardType("action");
+		setCardType(Config.ACTION);
 		this.setCardImage(cardimg);
 	}
 	

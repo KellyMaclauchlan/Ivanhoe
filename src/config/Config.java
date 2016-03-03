@@ -31,12 +31,14 @@ public class Config {
 	public static String END_TURN = "end turn";
 	public static String POINTS = "points";
 	public static String TOURNAMENT_WINNER = "tournament winner";
+	public static String GAME_WINNER = "game winner";
 	public static String PICK_COLOUR = "pick a colour";
 	public static String COLOUR_PICKED = "colour";
 	public static String PICKED_PURPLE = "purple";
 	public static String TURN = "turn";
 	public static String CONTINUE = "continue";
 	public static String MAX = "maximum " + MAX_PLAYERS;
+	public static String UNPLAYABLE = "unplayable";
 	
 	/* STARTING THE TOURNAMENT */
 	public static String DRAW_TOKEN = "t";
@@ -55,6 +57,7 @@ public class Config {
 	public static String PLAYEDCARD="playedcard";
 	public static String VIEWDISPLAY="viewdisplay";
 	
+	
 	/* Card names */
 	//colours
 	public static String PURPLE = "purple";
@@ -68,10 +71,12 @@ public class Config {
 	
 
 	//supporters
+	public static String SUPPORT = "support";
 	public static String MAIDEN = "maiden";
 	public static String SQUIRE = "squire";
 
 	//action
+	public static String ACTION = "action";
 	public static String UNHORSE = "unhorse";
 	public static String CHANGEWEAPON = "changeweapon";
 	public static String DROPWEAPON = "dropweapon";
