@@ -9,7 +9,7 @@ public class Startui {
 		control.showWindow();
 		control.setNumPlayers(3);
 		control.setName(0, control.getNameFromPlayer());
-		
+		control.setPlayerNum(0);
 		control.addCard(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
 		control.addCard(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
 		control.addCard(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
@@ -53,7 +53,11 @@ public class Startui {
 		control.addToken(1, 0);
 		control.addToken(1, 2);
 		control.setTournamnetColour(control.setTournament());
-		//System.out.println();
+		System.out.println(control.playerPickToken() );
+		control.showWaiting();
+		System.out.println(control.getIPPortFromPlayer());
+		control.hideWaitng();
+		System.out.println(control.getNumberOfPlayersFromPlayer());
 		//window.setVisible(true);
 	}
 }

@@ -18,6 +18,7 @@ public class MainWindowController implements Observer, Subject{
 	
 	public int moved;
 	public MainWindow window;
+	private WaitingPopUp waitingPopUp;
 	public String lastMessege;
 	public ArrayList<String>tokenStrings;
 	public Color backgroundColours[] = {new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};
@@ -52,6 +53,8 @@ public class MainWindowController implements Observer, Subject{
 	
 	/* GETTERS */
 	public String getNameFromPlayer(){return JOptionPane.showInputDialog("Enter your name");}
+	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter your IP address and Port ie: localhost 3000");}
+	public String getNumberOfPlayersFromPlayer(){return JOptionPane.showInputDialog("Enter the number of players in this game (2-5)");}
 	public Object getScore(int player) {return this.playerScores.get(player);}
 	public Object getName(int player) {return this.playerNames.get(player);}
 	public int numCards(){return playerCards.size();}
@@ -102,6 +105,28 @@ public class MainWindowController implements Observer, Subject{
 			this.playerScores.add(0);
 		}
 		log.info("Total number of players is: " + i);
+	}
+	
+	/* POPUPS*/
+	public void cantPlayCardPopup(){ JOptionPane.showMessageDialog(null, "You cannot play that card.");}
+	public void automaticWithdrawPopup(){ JOptionPane.showMessageDialog(null, "You cannot play any cards, you have automatically withdrawn from the tournament.");}
+	public void showWaiting(){
+		this.waitingPopUp= new WaitingPopUp();
+		this.waitingPopUp.setVisible(true);
+	};
+	public void hideWaitng(){ this.waitingPopUp.dispose();};
+	public String playerPickToken(){
+		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
+		String have ="";
+		for (int i=0;i<5;i++){
+			if(window.hasTokens[playerNum][i]){
+				have+=options[i]+" ";
+			}
+		}
+	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour, you already have:"+have, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+		String output= options[response];
+	    log.info("the player picked " + output);
+	    return output;
 	}
 	
 	/* OBSERVER PATTERN */
