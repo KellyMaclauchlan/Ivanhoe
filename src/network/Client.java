@@ -12,6 +12,8 @@ import org.apache.log4j.Logger;
 import config.Config;
 import ui.MainWindowController;
 import config.Observer;
+import game.Card;
+import game.ColourCard;
 
 public class Client implements Runnable, Observer {
 	public int ID = 0;
@@ -140,13 +142,19 @@ public class Client implements Runnable, Observer {
 		else if (msg.contains(Config.PLAYER_NAME)){
 			String name[] = msg.split("name");
 			String card[];
+			String value[];
 			
 			for(int i = 0; i < name.length; i++){
 				card = name[i].split(" ");
 				
 				for(int k = 0; k < card.length; k++){
 					hand.add(card[i]);
-					// send hand to GUI
+					
+					value = card[i].split("_");
+					String pic = getCardImage(value[0], value[1]);
+					
+					Card newCard = new ColourCard(value[0], Integer.parseInt(value[1]), pic);
+					window.addCard(newCard);
 				}
 			}
 			output = Config.START_TURN;
@@ -157,13 +165,19 @@ public class Client implements Runnable, Observer {
 		}
 		
 		else if (msg.contains(Config.PLAY) || msg.contains(Config.CONTINUE)){
-			// want to send: play <type> <value>
-			output = Config.PLAY + " " + playedCards;	
+			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
 		}
 		
 		else if (msg.contains(Config.WITHDRAW)){
 			output = Config.END_TURN;
 		}
+		return output; 
+	}
+	
+	/* Convert brit's string into resources */
+	public String getCardImage(String type, String value){
+		String output = "";
+		
 		return output; 
 	}
 
