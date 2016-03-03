@@ -47,11 +47,8 @@ public class GameEngine {
 					startGame();
 					output = " ";
 					for (Player p: players) {
-<<<<<<< HEAD
 						output += " " + Config.PLAYER_NAME;
-=======
 						output += Config.PLAYER_NAME;
->>>>>>> 13edb13886a8a04b57f99ccb6dc848fe6a9351c8
 						output += " " + p.getName() + " " + Config.PLAYER_CARDS; 
 						//will add cards in here for Katie to parse on server side
 						for (Card c: p.getCards()) {
