@@ -47,45 +47,36 @@ public class GameEngine {
 					startGame();
 					output = " ";
 					for (Player p: players) {
-						output += " " + Config.PLAYER_NAME;
-						output += Config.PLAYER_NAME;
-						output += " " + p.getName() + " " + Config.PLAYER_CARDS; 
-						//will add cards in here for Katie to parse on server side
+						output += " " + Config.PLAYER_NAME + " " + p.getName() + " " + Config.PLAYER_CARDS; 
 						for (Card c: p.getCards()) {
 							output += " " + c.getType() + "_" + c.getValue();
 						}
-					}
-					//TEMP for testing
-					for (int i = 0; i < players.size(); i++) 
-						System.out.println("Player" + i + " after hands: " + players.get(i).getName());
+					}					
 				}
-			} else if (input.contains(Config.START_TURN)) {	
+				//Reminder for testing
+				System.out.println("type " + Config.START_TOURNAMENT);
+			} else if (input.contains(Config.START_TOURNAMENT)) {	
 				//will pick a card and add to the player's hand
 				pickupCard();
 
 				//get the name of the player that picked purple
 				String purple = "";
 				for (Player p: players) {
-					if (p.getStartTokenColour() == Config.PURPLE)
+					if (p.getStartTokenColour() == Config.PURPLE) {
 						purple = p.getName();
-				}
-				
-				output = Config.PURPLE + " " + purple + " " + Config.TURN + " " +	currentPlayer.getName();
-				//don't need this line in gui but might for text testing
-				//output += "\n" + currentPlayer.getName() + " " + Config.PICK_COLOUR;
-				
-				//TEMP for text testing
-				for (Player p: players) {
-					System.out.println("\n" + p.getName() + "'s cards: \n");
-					for (Card c: p.getCards()) {
-						System.out.println("Card: " + c.getType() + " " + c.getValue());
+						output = Config.PURPLE + " " + purple + " " + Config.TURN + " " +	currentPlayer.getName();
+					} else {
+						arrangePlayers();
+						resetPlayers();
+						output = Config.TURN + " " + currentPlayer.getName();
 					}
 				}
-			
+				//Reminder for testing
+				System.out.println("type colour <colour>");
+				
 			} else if (input.contains(Config.COLOUR_PICKED)) {
 				//input should be "colour picked <colour>"
 				//colour picked red
-				
 				String[] pick = input.split(" ");
 				String colour = pick[1];
 				currentPlayer.chooseTournamentColour(colour);
@@ -106,30 +97,59 @@ public class GameEngine {
 				// user presses end turn button
 			} else if (input.contains(Config.END_TURN)) {
 				// input should have "end turn"
-
 				output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
-				if (currentPlayer.isWinner()) {
-					output += Config.TOURNAMENT_WINNER;
-				}
 				// move to next player to start turn
-				endTurn();
 				String withdraw = Config.CONTINUE;
 				if (currentPlayer.hasWithdrawn()) {
 					withdraw = Config.WITHDRAW;
 				}
+				endTurn();
 				//Gives name of next player appended to score of previous player
 				output += " " + withdraw + " " + currentPlayer.getName();
+
+				for (Player p: players) {
+					if (p.isWinner()) {
+						output += " " + Config.TOURNAMENT_WINNER + " " + p.getName();
+						arrangePlayers();
+						resetPlayers();
+					}	
+				}
+				startTurn();
+			} else if (input.contains(Config.WITHDRAW)) {
+				withdraw();				
+				
+				/**** repeat code: make function ****/
+				// input should have "end turn"
+				output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
+				// move to next player to start turn
+				String withdraw = Config.CONTINUE;
+				if (currentPlayer.hasWithdrawn()) {
+					withdraw = Config.WITHDRAW;
+				}
+				endTurn();
+				//Gives name of next player appended to score of previous player
+				output += " " + withdraw + " " + currentPlayer.getName();
+
+				for (Player p: players) {
+					if (p.isWinner()) {
+						output += " " + Config.TOURNAMENT_WINNER + " " + p.getName();
+						arrangePlayers();
+						resetPlayers();
+					}	
+				}
+				startTurn();
+				
+				
+				/*****************************/
+				
+				
 			}
 		
 		return output;
 	}
 	
-
-	
 	public void joinGame(Player player) {
 		players.add(player);
-		for (int i = 0; i < players.size(); i++) 
-			System.out.println("Player" + i + ": " + players.get(i).getName());
 	}
 
 	public void pickTokens() {
@@ -201,8 +221,10 @@ public class GameEngine {
 	
 	public void arrangePlayers() {
 		//arrange players list so that the player left of the one that drew purple
-
-				ArrayList<Player> tempPlayers = players;
+				ArrayList<Player> tempPlayers = new ArrayList<Player>();
+				for (Player p: players) {
+					tempPlayers.add(p);
+				}
 				for (int i = 0; i < numPlayers; i++) {
 					if ((i == 0 && tempPlayers.get(tempPlayers.size() - 1).getStartTokenColour().equals(Config.PURPLE)) ||
 							(i != 0 && (tempPlayers.get(i-1).getStartTokenColour().equals(Config.PURPLE)))
@@ -222,9 +244,6 @@ public class GameEngine {
 					}
 				}
 				currentPlayer = players.get(0);
-				//TEMP for testing
-				for (int i = 0; i < players.size(); i++) 
-					System.out.println("Player" + i + " in arrange players: " + players.get(i).getName());
 	}
 	
 	public void startTurn() {
@@ -302,7 +321,6 @@ public class GameEngine {
 				drawDeck.add(c);
 		}
 	}
-	
 	
 	public void endTurn() {
 		System.out.println("Player total value: " + currentPlayer.getTotalCardValue());
