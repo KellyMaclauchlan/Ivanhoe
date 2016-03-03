@@ -237,7 +237,7 @@ public class Client implements Runnable, Observer {
 			output = Config.IMG_GREEN_1;
 		}
 		
-		/* ACTION CARDS*/
+		/* SUPPORTER */
 		if(type.equals("maiden")){
 			output = Config.IMG_MAIDEN_6;
 		}
