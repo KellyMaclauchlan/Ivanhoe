@@ -14,6 +14,7 @@ import ui.MainWindowController;
 import config.Observer;
 import game.Card;
 import game.ColourCard;
+import game.SupportCard;
 
 public class Client implements Runnable, Observer {
 	public int ID = 0;
@@ -147,13 +148,9 @@ public class Client implements Runnable, Observer {
 				card = name[i].split(" ");
 				
 				for(int k = 0; k < card.length; k++){
-					hand.add(card[i]);
-					
+					hand.add(card[i]);					
 					value = card[i].split("_");
-					String pic = getCardImage(value[0], value[1]);
-					
-					Card newCard = new ColourCard(value[0], Integer.parseInt(value[1]), pic);
-					window.addCard(newCard);
+					window.addCard(getCardFromTypeValue(value[0],value[1]));
 				}
 			}
 			output = Config.START_TOURNAMENT;
@@ -174,7 +171,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	/* Convert brit's string into resources */
-	public String getCardImage(String type, String value){
+	public Card getCardFromTypeValue(String type, String value){
 		String output = "";
 		
 		/* Coloured Cards */
@@ -235,8 +232,12 @@ public class Client implements Runnable, Observer {
 		else if (type.equals("green")){
 			output = Config.IMG_GREEN_1;
 		}
+		/*creates a coloured card*/
+		if(!output.equals("")){
+			return new ColourCard(type,Integer.parseInt(value),output);
+		}
 		
-		/* ACTION CARDS*/
+		/* SUPPORTER */
 		if(type.equals("maiden")){
 			output = Config.IMG_MAIDEN_6;
 		}
@@ -248,8 +249,10 @@ public class Client implements Runnable, Observer {
 				output = Config.IMG_SQUIRE_3;
 			}
 		}
-		
-		return output; 
+		if(!output.equals("")){
+			return new SupportCard(type,Integer.parseInt(value),output);
+		} 
+		return null;
 	}
 
 	public void stop() {
