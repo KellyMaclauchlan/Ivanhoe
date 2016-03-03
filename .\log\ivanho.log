@@ -1032,4 +1032,38 @@ Katie pick a colour
 @2016-Mar-03 14:48:44 INFO  Server:95 - Message Sent: Brit points 17 continue Katie
 @2016-Mar-03 14:49:02 INFO  Server:80 - Message Received: withdraw
 @2016-Mar-03 14:49:02 INFO  Server:95 - Message Sent: withdraw Katie end turnKatie points 11 withdraw Brit
+@2016-Mar-03 15:26:08 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-03 15:26:08 ERROR Server:37 - java.net.BindException: Address already in use
+@2016-Mar-03 15:26:43 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-03 15:26:43 INFO  Server:43 - Game has started
+@2016-Mar-03 15:26:43 INFO  Server:46 - New ServerThread created
+@2016-Mar-03 15:26:43 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 15:26:55 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51299,localport=3000]
+@2016-Mar-03 15:26:55 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 15:26:59 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=51300,localport=3000]
+@2016-Mar-03 15:26:59 INFO  Server:55 - Waiting for Clients
+@2016-Mar-03 15:27:15 INFO  Server:80 - Message Received: start 2
+@2016-Mar-03 15:27:15 INFO  Server:95 - Message Sent: prompt join
+@2016-Mar-03 15:27:20 INFO  Server:80 - Message Received: join Brit
+@2016-Mar-03 15:27:20 INFO  Server:95 - Message Sent: need players
+@2016-Mar-03 15:27:23 INFO  Server:80 - Message Received: join Katie
+@2016-Mar-03 15:27:23 INFO  Server:95 - Message Sent:  name Brit cards green_1 knockdown_0 squire_2 yellow_3 stunned_0 squire_3 red_3 maiden_6 name Katie cards riposte_0 squire_3 green_1 green_1 red_5 blue_5 squire_2 purple_7
+@2016-Mar-03 15:27:36 INFO  Server:80 - Message Received: begin tournament
+@2016-Mar-03 15:27:36 INFO  Server:95 - Message Sent: turn Brit
+@2016-Mar-03 15:27:51 INFO  Server:80 - Message Received: colour red
+@2016-Mar-03 15:27:51 INFO  Server:95 - Message Sent: play
+@2016-Mar-03 15:27:58 INFO  Server:80 - Message Received: play squire 2
+@2016-Mar-03 15:27:58 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 15:28:01 INFO  Server:80 - Message Received: play red 3
+@2016-Mar-03 15:28:01 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 15:28:03 INFO  Server:80 - Message Received: play squire 3
+@2016-Mar-03 15:28:03 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 15:28:08 INFO  Server:80 - Message Received: play maiden 6
+@2016-Mar-03 15:28:08 INFO  Server:95 - Message Sent: waiting
+@2016-Mar-03 15:28:10 INFO  Server:80 - Message Received: end turn
+@2016-Mar-03 15:28:10 INFO  Server:95 - Message Sent: Brit points 14 continue Katie
+@2016-Mar-03 15:28:33 INFO  Server:80 - Message Received: withdraw
+@2016-Mar-03 15:28:33 INFO  Server:95 - Message Sent: Katie points 0 withdraw Brit
+@2016-Mar-03 15:31:04 INFO  Server:80 - Message Received: null
+@2016-Mar-03 15:31:05 INFO  Server:80 - Message Received: null
 @
