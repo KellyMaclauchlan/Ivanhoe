@@ -123,7 +123,7 @@ public class Client implements Runnable, Observer {
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
 		}
 		
-		else if (message.equals(Config.DROP_OUT)){
+		else if (message.equals(Config.WITHDRAW)){
 			
 		}
 		else if(message.equals(Config.END_TURN)){
