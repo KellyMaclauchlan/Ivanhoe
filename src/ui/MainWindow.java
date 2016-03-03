@@ -20,14 +20,11 @@ import config.Observer;
 import config.Subject;
 
 public class MainWindow extends JFrame implements Subject {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	//observer pattern 
 	private ArrayList<Observer>observers =new ArrayList<Observer>();
-	private Config config= new Config();
+	
 	//buttons
 	JButton withdrawButton;
 	JButton endTurnButton;
@@ -60,10 +57,11 @@ public class MainWindow extends JFrame implements Subject {
 	public int lastCard;
 	public int playedCard;
 	Boolean leftClick;
-	JLabel testLable=new JLabel();
+	JLabel testLable = new JLabel();
 	JLabel textLabel;
 	JLabel cardTextLabel;
 	public Boolean testing;
+	
 	public MainWindow(){
 		super();
 		setTitle("Ivanho");
@@ -71,27 +69,24 @@ public class MainWindow extends JFrame implements Subject {
 		//setSize(300, 200);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		leftClick=false;
-		testing=true;
+		leftClick = false;
+		testing = true;
 		setUpScreen(this.getContentPane());
 		//this.pack();
 	}
 	
 	@Override
 	public void registerObserver(Observer observer) {
-		// TODO Auto-generated method stub
 		observers.add(observer);
 	}
 
 	@Override
 	public void removeObserver(Observer observer) {
-		// TODO Auto-generated method stub
 		observers.remove(observer);
 	}
 
 	@Override
 	public void notifyObservers(String message) {
-		// TODO Auto-generated method stub
 		for(Observer ob:observers){
 			ob.update(message);
 		}
@@ -186,6 +181,7 @@ public class MainWindow extends JFrame implements Subject {
 		this.playedCards[3].setName("player4played");
 		this.playedCards[4].setName("player5played");
 	}
+	
 	//adds default cards for tests
 	private void addDefaults(){
 		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards.jpg"));
@@ -232,195 +228,166 @@ public class MainWindow extends JFrame implements Subject {
 		
 		this.deck.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
 		
-		for(int i=0;i<5;i++){
+		for(int i = 0; i < 5; i++){
 				this.playedCards[i].setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
 		}
 	}
 
 
  	private void addButtonListners() {
-		// TODO Auto-generated method stub
 		this.leftArrow.addActionListener(new ActionListener() {
 	
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				if(testing)
-					leftArrowClicked("resources/cards_small/simpleCards18.jpg");
-				notifyObservers(config.LEFT_CLICK);
-			}});
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){leftArrowClicked("resources/cards_small/simpleCards18.jpg");}
+			notifyObservers(Config.LEFT_CLICK);
+		}});
 		this.rightArrow.addActionListener(new ActionListener() {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				if(testing)
-					rightArrowClicked("resources/cards_small/simpleCards18.jpg");
-				notifyObservers(config.RIGHT_CLICK);
-			}});
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){rightArrowClicked("resources/cards_small/simpleCards18.jpg");}
+			notifyObservers(Config.RIGHT_CLICK);
+		}});
 		this.withdrawButton.addActionListener(new ActionListener() {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				if(testing)
-					withdrawClicked();
-				notifyObservers(config.WITHDRAW_CLICK);
-			}});
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){withdrawClicked();}
+			notifyObservers(Config.WITHDRAW_CLICK);
+		}});
 		this.endTurnButton.addActionListener(new ActionListener() {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				if(testing)
-					endTurnClicked();
-				notifyObservers(config.END_TURN_CLICK);
-			}});
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){endTurnClicked();}
+			notifyObservers(Config.END_TURN_CLICK);
+		}});
 		this.playCardButton.addActionListener(new ActionListener() {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				if(testing)
-					playCardClicked();
-				notifyObservers(config.PLAYEDCARD);
-			}});
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){playCardClicked();}
+			notifyObservers(Config.PLAYEDCARD);
+		}});
 		this.playerCards[0].addActionListener(new ActionListener() {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				lastCard=0;	
-				deck.setText(lastCard+"");
-			}});
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 0;	
+			deck.setText(lastCard + "");
+		}});
 		this.playerCards[1].addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-					lastCard=1;
-					deck.setText(lastCard+"");
-				}});
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 1;
+			deck.setText(lastCard + "");
+		}});
 		this.playerCards[2].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				lastCard=2;	
-				deck.setText(lastCard+"");
-			}});
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 2;	
+			deck.setText(lastCard + "");
+		}});
 		this.playerCards[3].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				lastCard=3;	
-				deck.setText(lastCard+"");
-			}});
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 3;	
+			deck.setText(lastCard + "");
+		}});
 		this.playerCards[4].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				lastCard=4;	
-			}});
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 4;	
+			deck.setText(lastCard + "");
+		}});
 		this.playerCards[5].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				lastCard=5;	
-				deck.setText(lastCard+"");
-			}});
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 5;	
+			deck.setText(lastCard + "");
+		}});
 		this.playerCards[6].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				lastCard=6;	
-				deck.setText(lastCard+"");
-			}});
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 6;	
+			deck.setText(lastCard + "");
+		}});
 		this.playerCards[7].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				lastCard=7;	
-				deck.setText(lastCard+"");
-			}});
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 7;	
+			deck.setText(lastCard + "");
+		}});
 		this.playerCards[8].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				lastCard=8;	
-				deck.setText(lastCard+"");
-			}});
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 8;	
+			deck.setText(lastCard + "");
+		}});
 		this.playerCards[9].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				lastCard=9;
-				deck.setText(lastCard+"");
-			}});
 		
-		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 9;
+			deck.setText(lastCard + "");
+		}});
 		this.playedCards[0].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			playedCardsClick(0);
-			}});
-		this.playedCards[1].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			playedCardsClick(1);
-			}});
-		this.playedCards[2].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			playedCardsClick(2);
-			}});
-		this.playedCards[3].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			playedCardsClick(3);
-			}});
-		this.playedCards[4].addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			playedCardsClick(4);
-			}});
 		
- 	}
- 	protected void playCardClicked() {
-		// TODO Auto-generated method stub				
-		this.textLabel.setText("played "+lastCard+"");
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		playedCardsClick(0);
+		}});
+		this.playedCards[1].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(1);
+		}});
+		this.playedCards[2].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(2);
+		}});
+		this.playedCards[3].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(3);
+		}});
+		this.playedCards[4].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(4);
+		}});	
+	}
+ 	
+ 	protected void playCardClicked() {			
+		this.textLabel.setText("played " + lastCard + "");
 		//this.testLable.setText("played "+this.lastCard+"");
 	}
  	
 
 	public void withdrawClicked() {
-		// TODO Auto-generated method stub
-		for(int i=0;i<5;i++){
+		for(int i = 0; i < 5; i++){
 			if(this.playerNames[i].isSelected())
 				this.playerNames[i].setSelected(false);
 		}
 		this.endedTurn();
 	}
+	
  	public void endTurnClicked() {
-		// TODO Auto-generated method stub
-		for(int i=0;i<5;i++){
+		for(int i = 0; i < 5; i++){
 			if(this.playerNames[i].isSelected())
 				this.playerNames[i].setSelected(false);
 		}
@@ -428,32 +395,32 @@ public class MainWindow extends JFrame implements Subject {
 	}
 
 	public void leftArrowClicked(String imageStr){
-		
-		for(int i=9;i>0;i--){
+		for(int i = 9; i > 0;i--){
  			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
  		}
  		this.playerCards[0].setIcon(new ImageIcon(imageStr));
  		
  	}
  	public void rightArrowClicked(String imageStr){
- 		for(int i=0;i<9;i++){
+ 		for(int i = 0; i < 9; i++){
  			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
  		}
- 		this.playerCards[9].setIcon(new ImageIcon(imageStr));
- 		
+ 		this.playerCards[9].setIcon(new ImageIcon(imageStr));	
  	}
+ 	
  	public void playedCardsClick(int i){
- 		this.playedCard=i;
- 		notifyObservers(config.VIEWDISPLAY);
+ 		this.playedCard = i;
+ 		notifyObservers(Config.VIEWDISPLAY);
  	}
+ 	
  	public void addPlayerCard(int index, String imageStr){
  		this.playerCards[index].setIcon(new ImageIcon(imageStr));
  	}
+ 	
  	public void addPlayedCard(int index, String imageStr){
  		this.playedCards[index].setIcon(new ImageIcon(imageStr));
  	}
  	
-
 	public void setup2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1360, 840);
@@ -1030,7 +997,7 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerNames[2]=name3;
 		this.playerNames[3]=name4;
 		this.playerNames[4]=name5;
-		for(int i=0;i<5;i++){
+		for(int i = 0; i < 5; i++){
 			this.playerNames[i].setEnabled(false);
 		}
 		
@@ -1047,16 +1014,14 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerPoints[2]=points3;
 		this.playerPoints[3]=points4;
 		this.playerPoints[4]=points5;
-		
-		
-		
 	}
 
 	public void setToken(int player,int token,String pic){
 		this.tokens[player][token].setIcon(new ImageIcon(pic));
 	}
+	
 	public void startTurn(){
-		for (int i=0;i<10;i++){
+		for (int i = 0; i < 10; i++){
 			this.playerCards[i].setEnabled(true);
 		}
 		this.withdrawButton.setEnabled(true);
@@ -1065,7 +1030,7 @@ public class MainWindow extends JFrame implements Subject {
 	}
 
 	public void endedTurn(){
-		for (int i=0;i<10;i++){
+		for (int i = 0; i < 10; i++){
 			this.playerCards[i].setEnabled(false);
 		}
 		this.withdrawButton.setEnabled(false);

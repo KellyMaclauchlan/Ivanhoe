@@ -47,8 +47,8 @@ public class Config {
 	public static boolean PLAYED = false;
 	
 	/* PLAYING IN A TOURNAMENT */
-	public static String DRAW_CARD = "c";
-	public static String PLAY_CARD = "p";
+	public static String DRAW_CARD = "draw card";
+	public static String PLAY_CARD = "play card";
 	public static boolean WITHDRAW = false; 
 	public static String DROP_OUT = "withdraw";
 	

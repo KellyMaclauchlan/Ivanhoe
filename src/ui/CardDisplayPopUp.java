@@ -20,18 +20,20 @@ public class CardDisplayPopUp extends JFrame{
 	//players cards
 	JButton[] playerCards;
 	ArrayList<Card>cards;
+	
 	public CardDisplayPopUp(ArrayList<Card> cards){
-		this.cards=cards;
-		moved=0;
+		this.cards = cards;
+		moved = 0;
 		setUp();
 		addButtonListners();
 		placeCards();
 		name();
-		
 	}
+	
 	public void name(){
 		this.leftArrow.setName("leftArrow");
 		this.rightArrow.setName("rightArrow");
+		
 		//Player's cards 
 		this.playerCards[0].setName("card1");
 		this.playerCards[1].setName("card2");
@@ -44,50 +46,47 @@ public class CardDisplayPopUp extends JFrame{
 		this.playerCards[8].setName("card9");
 		this.playerCards[9].setName("card10");
 	}
+	
 	public void placeCards(){
-		int max= Math.min(10, cards.size());
-		for(int i=0;i<max;i++){
+		int max = Math.min(10, cards.size());
+		for(int i = 0; i < max; i++){
 			this.playerCards[i].setIcon(new ImageIcon(cards.get(i+moved).getCardImage()));
 		}
 	}
+	
 	private void addButtonListners() {
-		// TODO Auto-generated method stub
 		this.leftArrow.addActionListener(new ActionListener() {
 	
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				leftArrowClicked();
-			}});
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			leftArrowClicked();
+		}});
 		this.rightArrow.addActionListener(new ActionListener() {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-				rightArrowClicked();
-			}});
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			rightArrowClicked();
+		}});
 	}
+	
 	public void leftArrowClicked(){
-		if(moved!=0){
+		if(moved != 0){
 			moved--;
-			for(int i=9;i>0;i--){
+			for(int i = 9; i > 0; i--){
 				this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
 			}
 			this.playerCards[0].setIcon(new ImageIcon(cards.get(moved).getCardImage()));
-			
 		}
- 		
  	}
+	
  	public void rightArrowClicked(){
- 		if(moved<cards.size()-10){
+ 		if(moved < cards.size()-10){
 			moved++;
-			for(int i=0;i<9;i++){
+			for(int i = 0; i < 9; i++){
 	 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
 	 		}
 	 		this.playerCards[9].setIcon(new ImageIcon(cards.get(moved+9).getCardImage()));
 		}
- 		
- 		
  	}
 	
 	public void setUp() {
@@ -220,19 +219,18 @@ public class CardDisplayPopUp extends JFrame{
 		gbc_rightArrow.gridy = 1;
 		getContentPane().add(rightArrow, gbc_rightArrow);
 		
-		this.leftArrow=leftArrow;
-		this.rightArrow=rightArrow;
-		this.playerCards= new JButton[10];
-		this.playerCards[0]=card1;
-		this.playerCards[1]=card2;
-		this.playerCards[2]=card3;
-		this.playerCards[3]=card4;
-		this.playerCards[4]=card5;
-		this.playerCards[5]=card6;
-		this.playerCards[6]=card7;
-		this.playerCards[7]=card8;
-		this.playerCards[8]=card9;
-		this.playerCards[9]=card10;
+		this.leftArrow = leftArrow;
+		this.rightArrow = rightArrow;
+		this.playerCards = new JButton[10];
+		this.playerCards[0] = card1;
+		this.playerCards[1] = card2;
+		this.playerCards[2] = card3;
+		this.playerCards[3] = card4;
+		this.playerCards[4] = card5;
+		this.playerCards[5] = card6;
+		this.playerCards[6] = card7;
+		this.playerCards[7] = card8;
+		this.playerCards[8] = card9;
+		this.playerCards[9] = card10;
 	}
-
 }
