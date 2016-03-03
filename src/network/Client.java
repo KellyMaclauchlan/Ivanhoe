@@ -178,6 +178,78 @@ public class Client implements Runnable, Observer {
 	public String getCardImage(String type, String value){
 		String output = "";
 		
+		/* Coloured Cards */
+		if(type.equals("purple")){
+			if(value.equals("3")){
+				output = Config.IMG_PURPLE_3; 
+			}
+			else if (value.equals("4")){
+				output = Config.IMG_PURPLE_4;	
+			}
+			else if(value.equals("5")){
+				output = Config.IMG_PURPLE_5;
+			}
+			else if(value.equals("7")){
+				output = Config.IMG_PURPLE_7;
+			}
+		}
+		else if(type.equals("red")){
+			if(value.equals("3")){
+				output = Config.IMG_RED_3;
+			}
+			else if(type.equals("4")){
+				output = Config.IMG_RED_4;
+			}
+			else if(type.equals("5")){
+				output = Config.IMG_RED_5;
+			}
+			
+		}
+		
+		else if (type.equals("blue")){
+			if(value.equals("2")){
+				output = Config.IMG_BLUE_2;
+			}
+			else if(value.equals("3")){
+				output = Config.IMG_BLUE_3;
+			}
+			else if(value.equals("4")){
+				output = Config.IMG_BLUE_4;
+			}
+			else if(value.equals("5")){
+				output = Config.IMG_BLUE_5;
+			}
+		}
+		
+		else if (type.equals("yellow")){
+			if(value.equals("2")){
+				output = Config.IMG_YELLOW_2;
+			}
+			else if(value.equals("3")){
+				output = Config.IMG_YELLOW_3;
+			}
+			else if(value.equals("4")){
+				output = Config.IMG_YELLOW_4;
+			}
+		}
+		
+		else if (type.equals("green")){
+			output = Config.IMG_GREEN_1;
+		}
+		
+		/* ACTION CARDS*/
+		if(type.equals("maiden")){
+			output = Config.IMG_MAIDEN_6;
+		}
+		else if(type.equals("squire")){
+			if(value.equals("2")){
+				output = Config.IMG_SQUIRE_2;
+			}
+			else if(value.equals("3")){
+				output = Config.IMG_SQUIRE_3;
+			}
+		}
+		
 		return output; 
 	}
 
