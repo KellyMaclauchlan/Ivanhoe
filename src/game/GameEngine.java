@@ -132,6 +132,9 @@ public class GameEngine {
 		}
 		if (card.getType().equals(tournamentColour) 
 				|| card.getCardType().equals(Config.SUPPORT)) {
+			if (tournamentColour.equals(Config.GREEN) && card.getValue() > 1) {
+				card.setValue(1);
+			}
 			playCard(card);
 			output += " " + type + "_" + value;
 		} else if (card.getType().equals(Config.ACTION)) {

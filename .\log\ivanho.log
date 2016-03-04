@@ -489,4 +489,6 @@
 @2016-Mar-04 15:11:54 INFO  Client:128 - Message Received: start
 @2016-Mar-04 15:11:54 INFO  Client:137 - Information sent to server: result
 @2016-Mar-04 15:11:54 INFO  Client:57 - Client has started
+@2016-Mar-04 17:06:05 INFO  ClientThread:51 - 
+@2016-Mar-04 17:06:05 INFO  Client:128 - Message Received: null
 @
