@@ -316,62 +316,85 @@ public class Client implements Runnable, Observer {
 			
 			if(window.getCurrPlayer() == window.getPlayerNum()){
 				while(this.playedCards == null){}
-				output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();				
+				
+				// if the player choose to withdraw
+				if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
+					output = Config.WITHDRAW;
+				}
+				
+				// if the player has finished their turn 
+				else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
+					output = Config.END_TURN;
+				}
+				else{
+					output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+				}
+				this.playedCards = null;			
 			}
 		}
 		
 		/* When the currentPlayer has finished playing their turn and does not withdraw
 		 * Input: <currentPlayer's name> points <# of points> continue <next player>
+		 * or :IF tournament is won, add: tournament winner <winner name>
+		 * OR IF tournament is won and tournamentColour is purple, add: purple win <winner name> 
+		 * IF game is won, add: game winner <winner name>
 		 * Output:
 		 * 	Tournament Winner: begin tournament 
 		 * 	Game Winner: Nothing (game winner popup) 
 		 * 	Next Player's turn: currentPlayer has switched to the next player 
 		 * */
-		else if(msg.contains(Config.CONTINUE)){
+		else if(msg.contains(Config.CONTINUE)||msg.contains(Config.WITHDRAW)){
 			
 			String input[] = msg.split(" ");
 			int old = window.getCurrPlayer();
-			window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
-			if(window.getPlayerNum() == old){
-				window.window.endTurnClicked();
-			}
-			
-			/* At the end of the currentPlayer's turn, they are the tournament winner */
-			if(msg.contains(Config.TOURNAMENT_WINNER)){
-				for(int i = 0; i < window.playerNames.size(); i++){
-					
-					if(window.playerNames.get(i).equalsIgnoreCase(input[5])){
-						if(msg.contains(Config.PURPLE_WIN)){
-							String chose = window.playerPickToken();
-						}
-						else{
-							window.addToken(i, window.getTournamentColour());	
-						}
-						output = Config.START_TOURNAMENT + " " + input[3];
-					}
+			window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
+			if(msg.contains(Config.PURPLE_WIN)){
+				if(window.getPlayerNum()==window.getCurrPlayer())
+					output = Config.PURPLE_WIN+" "+ window.playerPickToken();
+			}else{
+				if(msg.contains(Config.TOURNAMENT_WINNER)){
+					window.addToken(window.getCurrPlayer(), window.getTournamentColour());
+					output= Config.START_TOURNAMENT;
 				}
-			}
-			
-			/* At the end of the currentPlayer's turn, there is a game winner */
-			if(msg.contains(Config.GAME_WINNER)){
-				//the game is over
-				window.GameOverPopup(input[5]);
-			}
-			
-			if(!msg.contains(Config.TOURNAMENT_WINNER)){
-				for(int i = 0; i < window.playerNames.size(); i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){						
-						window.setCurrPlayer(i);	
-						
-						if(window.getPlayerNum() == window.getCurrPlayer()){
-							String value[] = input[4].split("_");
-							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-							output = Config.COLOUR_PICKED + window.setTournament();
-						}
+				if(msg.contains(Config.GAME_WINNER)){
+					window.GameOverPopup(input[0]);
+				}
+				if(!msg.contains(Config.TOURNAMENT_WINNER)){
+					window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
+					
+					if(window.getPlayerNum() == old){
+						window.window.endedTurn();
 					}
 					
+					for(int i = 0; i < window.playerNames.size(); i++){
+						if(window.playerNames.get(i).equalsIgnoreCase(input[4])){						
+							window.setCurrPlayer(i);
+							
+							if(window.getPlayerNum() == window.getCurrPlayer()){
+								String value[] = input[5].split("_");
+								window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+								while(this.playedCards == null){}
+								
+								// if the player choose to withdraw
+								if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
+									output = Config.WITHDRAW;
+								}
+								
+								// if the player has finished their turn 
+								else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
+									output = Config.END_TURN;
+								}
+								else{
+									output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+								}
+								this.playedCards = null;
+							}
+						}
+					}
 				}
+				
 			}
+			
 		}
 		
 		/* When the currentPlayer has finished playing their turn and withdraws
@@ -381,49 +404,12 @@ public class Client implements Runnable, Observer {
 		 * 	Game Winner: Nothing (game winner popup) 
 		 * 	Next Player's turn: currentPlayer has switched to the next player 
 		 * */
-		else if (msg.contains(Config.WITHDRAW)){			
-			String input[] = msg.split(" ");
+		//else if (msg.contains(Config.WITHDRAW)){			
+			//String input[] = msg.split(" ");
 			
-			if(msg.contains(Config.TOURNAMENT_WINNER)){
-				for(int i = 0; i < window.playerNames.size(); i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(input[5])){
-						if(msg.contains(Config.PURPLE_WIN)){
-							String chose =window.playerPickToken();
-						}else{
-							window.addToken(i, window.getTournamentColour());	
-						}
-						output= Config.START_TOURNAMENT +" "+input[3];
-					}
-				}
-				
-			}
-			if(msg.contains(Config.GAME_WINNER)){
-				//the game is over
-				window.GameOverPopup(input[5]);
-			}
 			
-			if(!msg.contains(Config.TOURNAMENT_WINNER)){
-				int old = window.getCurrPlayer();
-				window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
-				
-				if(window.getPlayerNum() == old){
-					window.window.endTurnClicked();
-				}
-				
-				for(int i = 0; i < window.playerNames.size(); i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){						
-						window.setCurrPlayer(i);
-						
-						if(window.getPlayerNum() == window.getCurrPlayer()){
-							String value[] = input[4].split("_");
-							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-							output = Config.COLOUR_PICKED + window.setTournament();
-						}
-					}
-				}
-			}
 			//output = Config.END_TURN;
-		}
+		//}
 		return output; 
 	}
 	
