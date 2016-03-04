@@ -62,12 +62,17 @@ public class MainWindowController implements Observer, Subject{
 	public int getPlayerNum() {return playerNum;}
 	public int getTotalPlayers() {return totalPlayers;}
 	public Card getPlayedCard(int player, int index) {return this.playedCards.get(player).get(index);}
+	public int getTournamentColour() {
+		return tournamentColour;
+	}
 	public int getCurrPlayer() {return currPlayer;}
 	
 	/* SETTERS */
 	public void setPlayerTurn(int i){this.currPlayer = i;}
 	public void setPlayerNum(int player) {playerNum = player;}
 	public void setTotalPlayers(int totalPlayers) {this.totalPlayers = totalPlayers;}
+	//public void setTournamentColour(int tournamentColour) {this.tournamentColour = tournamentColour;}
+	
 	public void setScore(int player, int score) {
 		this.playerScores.set(player, score);	
 		window.playerPoints[player].setText(""+score);
@@ -86,7 +91,7 @@ public class MainWindowController implements Observer, Subject{
 	}
 	
 	public void setTournamnetColour(int i) {
-		this.tournamentColour = i;
+		this.tournamentColour=i;
 		this.window.getContentPane().setBackground(this.backgroundColours[i]);
 	}
 	

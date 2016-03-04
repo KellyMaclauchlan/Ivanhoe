@@ -210,7 +210,8 @@ public class Client implements Runnable, Observer {
 			String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
 			for(int i=0;i<5;i++){
 				if (input[1].equalsIgnoreCase(options[i])){
-					window.setTournamnetColour(i);
+					if(window.getTournamentColour()!=i)
+						window.setTournamnetColour(i);
 				}
 			}
 			if(window.getPlayerNum()==window.getCurrPlayer()){
