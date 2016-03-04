@@ -20,6 +20,7 @@ public class Config {
 	/* Client to Server messages:  
 	 * Commands made by the players will send strings to the server and with those strings
 	 * the server will call the games engine to return a response */
+	public static String CLIENT_START = "client";
 	public static String START = "start";
 	public static String PROMPT_JOIN = "prompt join";
 	public static String JOIN = "join";
@@ -40,8 +41,9 @@ public class Config {
 	public static String MAX = "maximum " + MAX_PLAYERS;
 	public static String UNPLAYABLE = "unplayable";
 	public static String FIRSTPLAYER = "firstplayer";
-	public static String WAITING="waiting";
-	public static String PURPLE_WIN="purple win";
+	public static String WAITING = "waiting";
+	public static String PURPLE_WIN = "purple win";
+
 	
 	/* STARTING THE TOURNAMENT */
 	public static String DRAW_TOKEN = "token";
