@@ -71,6 +71,8 @@ public class Server implements Runnable {
 			this.numPlayers++; 
 			if(numPlayers == 1){
 				send1Client(sThread.getID(), Config.FIRSTPLAYER);
+			}else{
+				send1Client(sThread.getID(), Config.PROMPT_JOIN);
 			}
 		}catch (IOException e){
 			log.error(e);
@@ -93,6 +95,7 @@ public class Server implements Runnable {
 		}else if (msg.equals("shutdown")){ shutdown(); }
 		
 		else if (msg.equals(Config.CLIENT_START)){
+			System.out.println("in client start");
 			if(numPlayers == 1){
 				send1Client(id, Config.FIRSTPLAYER);
 			}else{
