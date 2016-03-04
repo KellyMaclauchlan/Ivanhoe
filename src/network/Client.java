@@ -32,8 +32,8 @@ public class Client implements Runnable, Observer {
 	public ArrayList<String> hand = new ArrayList<String>();
 	public Client(){
 		window = new MainWindowController();
-		String ipAndPort=window.getIPPortFromPlayer();
-		String seperate[]=ipAndPort.split(" ");
+		String ipAndPort = window.getIPPortFromPlayer();
+		String seperate[] = ipAndPort.split(" ");
 		this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
 	}
 
@@ -165,12 +165,18 @@ public class Client implements Runnable, Observer {
 	public String processInput(String msg){
 		String output = "result";
 		
-		/* Prompts the first player for the number of players in the game */
+		/* Prompts the first player for the number of players in the game 
+		 * Input: firstplayer
+		 * Output: start #
+		 * */
 		if(msg.contains(Config.FIRSTPLAYER)){
 			return Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
 		}
 
-		/* Once the player is connected, prompts that player for their name */
+		/* Once the player is connected, prompts that player for their name 
+		 * Input:  prompt join 
+		 * Output: join <name>
+		 * */
 		else if(msg.contains(Config.PROMPT_JOIN)){
 			String name = window.getNameFromPlayer();
 			window.playerName = name;
@@ -182,7 +188,10 @@ public class Client implements Runnable, Observer {
 			this.window.showWaiting();
 		}
 		
-		/* Receives each player and their hand */
+		/* Receives each player and their hand
+		 * Input:  name <player1> card [player1's card] name <player2> cards [player2's card] ... 
+		 * Output: begin tournament 
+		 * */
 		else if (msg.contains(Config.PLAYER_NAME)){
 			String name[] = msg.split("name");
 			String card[];
@@ -209,7 +218,13 @@ public class Client implements Runnable, Observer {
 			output = Config.START_TOURNAMENT;
 		}
 		
-		/* It is the currentPlayer's turn */
+		/* It is the start currentPlayer's turn 
+		 * Input: 
+		 * 	First tournament purple <player that picked purple> turn <1st player> <1st player's card> picked
+		 * 	Player's turn: turn <name> <card picked> picked 
+		 * Output: 
+		 * 	Start of new tournament: colour <colour picked>
+		 * */
 		else if (msg.contains(Config.TURN)){
 			String input[] = msg.split(" ");
 			
@@ -242,7 +257,10 @@ public class Client implements Runnable, Observer {
 			}
 		}
 		
-		/* When the player has chosen which card(s) they wish to play */
+		/* When the player has chosen which card(s) they wish to play
+		 * Input: play <colour of tournament>
+		 * Output: play <card type> <card value> 
+		 * */
 		else if (msg.contains(Config.PLAY) ){
 			String input[] = msg.split(" ");
 			String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
@@ -273,7 +291,14 @@ public class Client implements Runnable, Observer {
 			}
 		}
 		
-		/* Server is waiting for the next card to be played */
+		/* Server is waiting for the next card to be played 
+		 * Input:
+		 * 	Card picked is playable: waiting <card played> 
+		 *  Card picked is unplayable: waiting <card played> unplayable 
+		 * Output:
+		 * 	Card playable: play <card type> <card value> 
+		 *  Card unplayable: informs players of unplayable card 
+		 * */
 		else if(msg.contains(Config.WAITING)){
 			
 			// if the client cannot play that card 
@@ -295,7 +320,13 @@ public class Client implements Runnable, Observer {
 			}
 		}
 		
-		/* When the currentPlayer has finished playing their turn */
+		/* When the currentPlayer has finished playing their turn and does not withdraw
+		 * Input: <currentPlayer's name> points <# of points> continue <next player>
+		 * Output:
+		 * 	Tournament Winner: begin tournament 
+		 * 	Game Winner: Nothing (game winner popup) 
+		 * 	Next Player's turn: currentPlayer has switched to the next player 
+		 * */
 		else if(msg.contains(Config.CONTINUE)){
 			
 			String input[] = msg.split(" ");
@@ -343,6 +374,13 @@ public class Client implements Runnable, Observer {
 			}
 		}
 		
+		/* When the currentPlayer has finished playing their turn and withdraws
+		 * Input: <currentPlayer's name> points <# of points> withdraw <next player>
+		 * Output:
+		 * 	Tournament Winner: begin tournament 
+		 * 	Game Winner: Nothing (game winner popup) 
+		 * 	Next Player's turn: currentPlayer has switched to the next player 
+		 * */
 		else if (msg.contains(Config.WITHDRAW)){			
 			String input[] = msg.split(" ");
 			
@@ -458,7 +496,7 @@ public class Client implements Runnable, Observer {
 			return new ColourCard(type,Integer.parseInt(value),output);
 		}
 		
-		/* SUPPORTER */
+		/* Supporter */
 		if(type.equals("maiden")){
 			output = Config.IMG_MAIDEN_6;
 		}
