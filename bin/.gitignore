@@ -1,7 +1,6 @@
 /config/
 /game/
 /junittests/
-/log4j.properties
 /network/
 /ui/
 /uitests/
