@@ -69,6 +69,9 @@ public class Server implements Runnable {
 			sThread.start();
 			clients.put(sThread.getID(), sThread);
 			this.numPlayers++; 
+			if(numPlayers==1){
+				handle(sThread.getID(),Config.FIRSTPLAYER);
+			}
 		}catch (IOException e){
 			log.error(e);
 		}

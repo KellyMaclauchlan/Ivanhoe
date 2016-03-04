@@ -15,7 +15,7 @@ public class MainWindowController implements Observer, Subject{
 	private int playerNum;
 	private int tournamentColour;
 	private int currPlayer;
-	
+	public String playerName;
 	public int moved;
 	public MainWindow window;
 	private WaitingPopUp waitingPopUp;
@@ -28,7 +28,7 @@ public class MainWindowController implements Observer, Subject{
 	private ArrayList<Card> playerCards;
 	private ArrayList<ArrayList<Card>> playedCards;
 	private ArrayList<Integer>playerScores;
-	private ArrayList<String>playerNames;
+	public ArrayList<String>playerNames;
 	private ArrayList<Observer>observers = new ArrayList<Observer>();
 	
 	public MainWindowController(){
@@ -78,11 +78,11 @@ public class MainWindowController implements Observer, Subject{
 		window.playerNames[player].setText(name);
 	}
 	
-	public int setTournament(){
+	public String setTournament(){
 		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
 	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
-		log.info("Tournament colour has been set to " + response);
-	    return response;
+		log.info("Tournament colour has been set to " + options[response]);
+	    return options[response];
 	}
 	
 	public void setTournamnetColour(int i) {

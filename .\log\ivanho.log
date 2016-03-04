@@ -333,4 +333,6 @@
 @2016-Mar-03 18:03:44 INFO  UI:84 - Tournament colour has been set to 0
 @2016-Mar-03 18:03:47 INFO  UI:128 - the player picked Blue
 >>>>>>> 4664ba05fe8eb4d453fc478281543f4bd7b044f1
+@2016-Mar-03 18:24:35 INFO  Client:46 - 0:Establishing connection. Please wait... 
+@2016-Mar-03 18:24:35 ERROR Client:61 - java.net.ConnectException: Connection refused
 @

@@ -39,6 +39,7 @@ public class Config {
 	public static String CONTINUE = "continue";
 	public static String MAX = "maximum " + MAX_PLAYERS;
 	public static String UNPLAYABLE = "unplayable";
+	public static String FIRSTPLAYER = "firstplayer";
 	
 	/* STARTING THE TOURNAMENT */
 	public static String DRAW_TOKEN = "t";
