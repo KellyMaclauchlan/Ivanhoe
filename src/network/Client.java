@@ -41,7 +41,7 @@ public class Client implements Runnable, Observer {
 		return this.ID;
 	}
 	
-	/* Used for Testing to check when the Client conencts to the server */
+	/* Used for Testing to check when the Client connects to the server */
 	public boolean connectToServer(String serverIP, int serverPort) {
 		log.info(ID + ":Establishing connection. Please wait... ");
 		boolean connected = false;
@@ -76,9 +76,7 @@ public class Client implements Runnable, Observer {
 				thread.start();
 				log.info("New ClientThread has started");
 			}
-			
-			
-			//startGame();
+
 			handle(Config.START);
 		}catch (IOException e){
 			log.error(e);
@@ -102,6 +100,27 @@ public class Client implements Runnable, Observer {
          }}
 	}
 	
+	public void stop() {
+		try{
+			if(thread != null){
+				thread = null;
+				if(console != null){console.close();}
+				if(inStream != null){inStream.close();}
+				if(outStream != null){outStream.close();}
+				
+				if(socket != null){socket.close();}
+				
+				this.socket = null;
+				this.console = null;
+				this.inStream = null;
+				this.outStream = null; 
+			}
+		}catch (IOException e){
+			log.error(e);
+		}
+		client.close();
+	}
+	
 	/* Handles all the input and output to and from the server */
 	public void handle(String msg) {
 		String send = "waiting";
@@ -114,11 +133,12 @@ public class Client implements Runnable, Observer {
 		} else {
 			testing = msg;
 			send = processInput(msg);
-			System.out.println(msg);
+			//System.out.println(msg);
+			log.info("Information sent to server: " + send);
 		}
 	}
 
-
+	/* Used for testing the strings sent from the server to the client */
 	public String testMessages() {
 		return testing;
 	}
@@ -131,34 +151,44 @@ public class Client implements Runnable, Observer {
 		
 		else if (message.equals(Config.WITHDRAW)){
 			//processInput(Config.WITHDRAW);
-			playedCards=Config.WITHDRAW;
+			playedCards = Config.WITHDRAW;
 		}
 		
 		else if(message.equals(Config.END_TURN)){
 			//processInput(Config.END_TURN);
-			playedCards=Config.END_TURN;
+			playedCards = Config.END_TURN;
 		}
 	}
 
+	/* Handles what the server has sent from the Game Engine and processes
+	 * what buttons/popups/commands the client and GUI must send back */
 	public String processInput(String msg){
 		String output = "result";
-		if(msg.contains(Config.FIRSTPLAYER)){
-			return Config.START+" "+this.window.getNumberOfPlayersFromPlayer();
-		}
 		
+		/* Prompts the first player for the number of players in the game */
+		if(msg.contains(Config.FIRSTPLAYER)){
+			return Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
+		}
+
+		/* Once the player is connected, prompts that player for their name */
 		else if(msg.contains(Config.PROMPT_JOIN)){
-			String name =window.getNameFromPlayer();
-			window.playerName=name;
+			String name = window.getNameFromPlayer();
+			window.playerName = name;
 			return output = Config.JOIN + name;	
 		}
+		
+		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
 		else if(msg.contains(Config.NEED_PLAYERS)){
 			this.window.showWaiting();
-		}		
+		}
+		
+		/* Receives each player and their hand */
 		else if (msg.contains(Config.PLAYER_NAME)){
 			String name[] = msg.split("name");
 			String card[];
 			String value[];
 			window.setNumPlayers(name.length);
+			
 			for(int i = 0; i < name.length; i++){
 				card = name[i].split(" ");
 				//if this player is the user
@@ -179,120 +209,145 @@ public class Client implements Runnable, Observer {
 			output = Config.START_TOURNAMENT;
 		}
 		
+		/* It is the currentPlayer's turn */
 		else if (msg.contains(Config.TURN)){
-			String input[]=msg.split(" ");
+			String input[] = msg.split(" ");
+			
+			// if it is the first tournament 
 			if(msg.contains(Config.PICKED_PURPLE)){
+				
 				if(input[3].equalsIgnoreCase(window.playerName)){
-					String value[]=input[4].split("_");
+					String value[] = input[4].split("_");
 					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
 					output = Config.COLOUR_PICKED + " " + window.setTournament();
 				}
-				for (int i=0;i< window.getTotalPlayers();i++){
+				for (int i = 0; i < window.getTotalPlayers();i++){
 					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){
 						window.setCurrPlayer(i);
 					}
 				}
+				
 			}else{
 				if(input[1].equalsIgnoreCase(window.playerName)){
 					String value[]=input[2].split("_");
 					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
 					output = Config.COLOUR_PICKED + " " + window.setTournament();	
 				}
-				for (int i=0;i< window.getTotalPlayers();i++){
+				
+				for (int i = 0; i < window.getTotalPlayers(); i++){
 					if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
 						window.setCurrPlayer(i);
 					}
 				}
 			}
-
 		}
 		
+		/* When the player has chosen which card(s) they wish to play */
 		else if (msg.contains(Config.PLAY) ){
-			String input[]=msg.split(" ");
+			String input[] = msg.split(" ");
 			String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
-			for(int i=0;i<5;i++){
+			
+			for(int i = 0; i < 5; i++){
 				if (input[1].equalsIgnoreCase(options[i])){
 					if(window.getTournamentColour()!=i)
 						window.setTournamnetColour(i);
 				}
 			}
-			if(window.getPlayerNum()==window.getCurrPlayer()){
-				while(this.playedCards==null){}
+			
+			if(window.getPlayerNum() == window.getCurrPlayer()){
+				while(this.playedCards == null){}
+				
+				// if the player choose to withdraw
 				if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
-					output= Config.WITHDRAW;
-				}else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
-					output= Config.END_TURN;
-				}else{
+					output = Config.WITHDRAW;
+				}
+				
+				// if the player has finished their turn 
+				else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
+					output = Config.END_TURN;
+				}
+				else{
 					output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
 				}
-				this.playedCards=null;
+				this.playedCards = null;
 			}
 		}
+		
+		/* Server is waiting for the next card to be played */
 		else if(msg.contains(Config.WAITING)){
+			
+			// if the client cannot play that card 
 			if(msg.contains(Config.UNPLAYABLE)){
 				window.cantPlayCardPopup();
-			}else{
-				String input[]=msg.split(" ");
-				Card card=this.getCardFromTypeValue(input[1], input[2]);
+			}
+			else{
+				String input[] = msg.split(" ");
+				Card card = this.getCardFromTypeValue(input[1], input[2]);
 				window.addPlayedCard(window.getCurrPlayer(), card);
-				if(window.getCurrPlayer()==window.getPlayerNum()){
+				if(window.getCurrPlayer() == window.getPlayerNum()){
 					window.removeCard(card);
 				}
 			}
 			
-			if(window.getCurrPlayer()==window.getPlayerNum()){
-				while(this.playedCards==null){}
+			if(window.getCurrPlayer() == window.getPlayerNum()){
+				while(this.playedCards == null){}
 				output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();				
 			}
 		}
+		
+		/* When the currentPlayer has finished playing their turn */
 		else if(msg.contains(Config.CONTINUE)){
 			
-			String input[]=msg.split(" ");
-			int old= window.getCurrPlayer();
+			String input[] = msg.split(" ");
+			int old = window.getCurrPlayer();
 			window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
-			if(window.getPlayerNum()==old){
+			if(window.getPlayerNum() == old){
 				window.window.endTurnClicked();
 			}
 			
+			/* At the end of the currentPlayer's turn, they are the tournament winner */
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
-				for(int i=0;i<window.playerNames.size();i++){
+				for(int i = 0; i < window.playerNames.size(); i++){
+					
 					if(window.playerNames.get(i).equalsIgnoreCase(input[5])){
 						if(msg.contains(Config.PURPLE_WIN)){
-							String chose =window.playerPickToken();
-						}else{
+							String chose = window.playerPickToken();
+						}
+						else{
 							window.addToken(i, window.getTournamentColour());	
 						}
-						output= Config.START_TOURNAMENT +" "+input[3];
+						output = Config.START_TOURNAMENT + " " + input[3];
 					}
 				}
-				
 			}
+			
+			/* At the end of the currentPlayer's turn, there is a game winner */
 			if(msg.contains(Config.GAME_WINNER)){
 				//the game is over
 				window.GameOverPopup(input[5]);
 			}
 			
 			if(!msg.contains(Config.TOURNAMENT_WINNER)){
-				
-				for(int i=0;i<window.playerNames.size();i++){
+				for(int i = 0; i < window.playerNames.size(); i++){
 					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){						
 						window.setCurrPlayer(i);	
-						if(window.getPlayerNum()==window.getCurrPlayer()){
-							String value[]=input[4].split("_");
+						
+						if(window.getPlayerNum() == window.getCurrPlayer()){
+							String value[] = input[4].split("_");
 							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-							output = Config.COLOUR_PICKED +window.setTournament();
+							output = Config.COLOUR_PICKED + window.setTournament();
 						}
 					}
 					
 				}
 			}
-				
 		}
 		
 		else if (msg.contains(Config.WITHDRAW)){			
-			String input[]=msg.split(" ");
+			String input[] = msg.split(" ");
+			
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
-				for(int i=0;i<window.playerNames.size();i++){
+				for(int i = 0; i < window.playerNames.size(); i++){
 					if(window.playerNames.get(i).equalsIgnoreCase(input[5])){
 						if(msg.contains(Config.PURPLE_WIN)){
 							String chose =window.playerPickToken();
@@ -310,21 +365,23 @@ public class Client implements Runnable, Observer {
 			}
 			
 			if(!msg.contains(Config.TOURNAMENT_WINNER)){
-				int old= window.getCurrPlayer();
+				int old = window.getCurrPlayer();
 				window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
-				if(window.getPlayerNum()==old){
+				
+				if(window.getPlayerNum() == old){
 					window.window.endTurnClicked();
 				}
-				for(int i=0;i<window.playerNames.size();i++){
+				
+				for(int i = 0; i < window.playerNames.size(); i++){
 					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){						
-						window.setCurrPlayer(i);	
-						if(window.getPlayerNum()==window.getCurrPlayer()){
-							String value[]=input[4].split("_");
+						window.setCurrPlayer(i);
+						
+						if(window.getPlayerNum() == window.getCurrPlayer()){
+							String value[] = input[4].split("_");
 							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-							output = Config.COLOUR_PICKED +window.setTournament();
+							output = Config.COLOUR_PICKED + window.setTournament();
 						}
 					}
-					
 				}
 			}
 			//output = Config.END_TURN;
@@ -420,24 +477,4 @@ public class Client implements Runnable, Observer {
 		return null;
 	}
 
-	public void stop() {
-		try{
-			if(thread != null){
-				thread = null;
-				if(console != null){console.close();}
-				if(inStream != null){inStream.close();}
-				if(outStream != null){outStream.close();}
-				
-				if(socket != null){socket.close();}
-				
-				this.socket = null;
-				this.console = null;
-				this.inStream = null;
-				this.outStream = null; 
-			}
-		}catch (IOException e){
-			log.error(e);
-		}
-		client.close();
-	}
 }

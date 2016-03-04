@@ -112,7 +112,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Total number of players is: " + i);
 	}
 	
-	/* POPUPS*/
+	/* Popups */
 	public void cantPlayCardPopup(){ JOptionPane.showMessageDialog(null, "You cannot play that card.");}
 	public void automaticWithdrawPopup(){ JOptionPane.showMessageDialog(null, "You cannot play any cards, you have automatically withdrawn from the tournament.");}
 	public void showWaiting(){
@@ -136,7 +136,7 @@ public class MainWindowController implements Observer, Subject{
 	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
 	
 	
-	/* OBSERVER PATTERN */
+	/* Observer Pattern */
 	@Override
 	public void registerObserver(Observer observer) {
 		observers.add(observer);
@@ -174,7 +174,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Updated Subjects");
 	}
 
-	/*ADD CARD TO PLAYERS HAND*/
+	/* Add card to Player's hand */
 	public void addCard(Card newCard){
 		playerCards.add(newCard);
 		if(playerCards.size()<11){
@@ -183,7 +183,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Adding new card");
 	}
 	
-	/*REMOVE CARD FROM PLAYERS HAND*/
+	/* Remove card from Player's hand */
 	public void removeCard(int i){
 		if(playerCards.size()>10){
 			if(moved != 0){moved--;}
@@ -200,14 +200,14 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Card removed");
 	}
 	
-	/*ADD A CARD TO THE GIVEN PLAYERS PLAYED CARDS AND SHOWS IT ON THE BUTTON*/
+	/* Add a card to the given Player's played cards and show it on the button */
 	public void addPlayedCard(int player, Card card){
 		this.playedCards.get(player).add(card);
 		this.window.addPlayedCard(player, card.getCardImage());
 		log.info("Player "+ this.playedCards.get(player) + " added " + card + " to their hand");
 	}
 	
-	/*SHOW DISPLAY FOR POPUUP OF OTHER PLAYERS DISPLAY*/
+	/* Show display for popup of other Player's display */
 	public void displayCards() {
 		CardDisplayPopUp popup = new CardDisplayPopUp(this.playedCards.get(this.window.playedCard));
 		popup.setVisible(true);
@@ -222,7 +222,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Player has ended their turn");
 	}
 
-	/*SENDS WITHDRAW NOTIFICAITON AND COMMAND TO NETWORK AND UI*/
+	/* Send withdraw notification and command to network and UI */
 	public void withdrawClick() {
 		System.out.println("withdraw click");
 		this.window.withdrawClicked();
@@ -230,7 +230,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Player has withdrawed");
 	}
 
-	/*MOVES THE PLAYERS CARDS ONE TO THE LEFT TO SHOW THE CARD TO THE RIGHT SIDE*/
+	/* Moves the Player's cards one to the left to show the cards on the right side that were hidden */
 	public void rightClick() {
 		System.out.println("right click");
 		if(moved < playerCards.size()-10){
@@ -239,7 +239,7 @@ public class MainWindowController implements Observer, Subject{
 		}
 	}
 
-	/*MOVES THE PLAYERS CARDS ONE TO THE RIGHT TO SHOW THE CARD TO THE LEFT SIDE*/
+	/* Moves the Player's cards one to the right to show the cards on the left side that were hidden*/
 	public void leftClick(){
 		System.out.println("left click");
 		if(moved != 0){
@@ -248,7 +248,7 @@ public class MainWindowController implements Observer, Subject{
 		}
 	}
 	
-	/*STARTS A NEW ROUND WITH TH UI*/
+	/* Starts a new round with the UI */
 	public void startRound() {
 		for(int i = 0; i < this.playerNum; i++){
 			setScore(i,0);
@@ -258,7 +258,8 @@ public class MainWindowController implements Observer, Subject{
 		}	
 		this.window.endedTurn();
 	}
-	/*PLAYER PLAYS THE CARD AND NOTIFIES */
+	
+	/* Player plays a cards and notifies */
 	public void playCard() {
 		System.out.println("played card "+this.window.lastCard+"");
 		log.info("Played card " + this.window.lastCard+"");
@@ -269,7 +270,7 @@ public class MainWindowController implements Observer, Subject{
 		}
 	}
 
-	/*RESETS THE CARDS AFTER ONE WAS PLAYED*/
+	/* Resets the Player's hand after a card has been played */
 	public void resetCards(){		
 		int maxx = Math.min(10, playerCards.size());
 		int i;
@@ -283,7 +284,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Cards have been reset");
 	}
 	
-	/*ADDS A TOKEN FOR THE PLAYER FOR A ROUND*/
+	/* Adds a token for Player after that round */
 	public void addToken(int player, int token){
 		this.window.setToken(player, token, tokenStrings.get(token));
 		log.info("Adding " + tokenStrings.get(token) + " token");

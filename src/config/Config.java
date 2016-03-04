@@ -44,8 +44,8 @@ public class Config {
 	public static String PURPLE_WIN="purplewin";
 	
 	/* STARTING THE TOURNAMENT */
-	public static String DRAW_TOKEN = "t";
-	public static String DEAL = "d";
+	public static String DRAW_TOKEN = "token";
+	public static String DEAL = "deal";
 	
 	/* PLAYING IN A TOURNAMENT */
 	public static String DRAW_CARD = "draw card";
@@ -61,8 +61,7 @@ public class Config {
 	public static String VIEWDISPLAY="viewdisplay";
 	
 	
-	/* Card names */
-	//colours
+	/* Coloured Cards */
 	public static String PURPLE = "purple";
 	public static String RED = "red";
 	public static String BLUE = "blue";
@@ -73,12 +72,12 @@ public class Config {
 	public static ArrayList<String> colours = new ArrayList<String>(Arrays.asList(BLUE, RED, YELLOW, GREEN, PURPLE));
 	
 
-	//supporters
+	/* Supporters */
 	public static String SUPPORT = "support";
 	public static String MAIDEN = "maiden";
 	public static String SQUIRE = "squire";
 
-	//action
+	/* Action */
 	public static String ACTION = "action";
 	public static String UNHORSE = "unhorse";
 	public static String CHANGEWEAPON = "changeweapon";
