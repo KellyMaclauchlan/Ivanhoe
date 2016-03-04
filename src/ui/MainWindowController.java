@@ -133,6 +133,8 @@ public class MainWindowController implements Observer, Subject{
 	    log.info("the player picked " + output);
 	    return output;
 	}
+	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
+	
 	
 	/* OBSERVER PATTERN */
 	@Override
@@ -189,6 +191,11 @@ public class MainWindowController implements Observer, Subject{
 		
 		System.out.println(i);
 		playerCards.remove(i);
+		this.resetCards();
+		log.info("Card removed");
+	}
+	public void removeCard(Card card){
+		playerCards.remove(card);
 		this.resetCards();
 		log.info("Card removed");
 	}
@@ -258,7 +265,7 @@ public class MainWindowController implements Observer, Subject{
 		if(this.window.lastCard<this.playerCards.size()){
 			this.lastCard= this.playerCards.get(this.window.lastCard+this.moved);
 			this.notifyObservers(Config.PLAYEDCARD);
-			this.removeCard(this.window.lastCard+this.moved);
+			//this.removeCard(this.window.lastCard+this.moved);
 		}
 	}
 

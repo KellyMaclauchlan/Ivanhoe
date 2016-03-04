@@ -116,7 +116,7 @@ public class GameEngine {
 	}
 	
 	public String processPlay(String input) {
-		String output = "waiting";
+		String output = Config.WAITING;
 		String[] play = input.split(" ");
 		String type = play[1];
 		String value = play[2];
@@ -130,8 +130,9 @@ public class GameEngine {
 				|| card.getCardType().equals(Config.ACTION) 
 				|| card.getCardType().equals(Config.SUPPORT)) {
 			playCard(card);
+			output+=" "+type+" "+value;
 		} else {
-			output = Config.UNPLAYABLE;
+			output +=" "+ Config.UNPLAYABLE;
 		}
 		return output; 
 	}
@@ -144,20 +145,27 @@ public class GameEngine {
 		if (prevPlayer.hasWithdrawn()) {
 			withdraw = Config.WITHDRAW;
 		}
-		Card picked = pickupCard();
+		
 		output += " " + withdraw + " " + currentPlayer.getName();
 		startTurn();
+		String status="";
 		for (Player p: players) {
 			if (p.isWinner()) {
-				output += " " + Config.TOURNAMENT_WINNER + " " + p.getName();
+				status= " " + Config.TOURNAMENT_WINNER + " " + p.getName();
 				arrangePlayers();
 				resetPlayers();
 			}
 			if (p.isGameWinner()) {
-				output += " " + Config.GAME_WINNER + " " + p.getName();
+				status+= " " + Config.GAME_WINNER + " " + p.getName();
 			}
 		}
-		output += " " + picked.getType() + "_" + picked.getValue();
+		
+		if(status.equalsIgnoreCase("")){
+			Card picked = pickupCard();
+			currentPlayer.addCard(picked);
+			status=" " + picked.getType() + "_" + picked.getValue();
+		}
+		output += status;
 		return output;
 	}
 	
