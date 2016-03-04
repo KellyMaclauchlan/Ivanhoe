@@ -130,11 +130,13 @@ public class Client implements Runnable, Observer {
 		}
 		
 		else if (message.equals(Config.WITHDRAW)){
-			processInput(Config.WITHDRAW);
+			//processInput(Config.WITHDRAW);
+			playedCards=Config.WITHDRAW;
 		}
 		
 		else if(message.equals(Config.END_TURN)){
-			processInput(Config.END_TURN);
+			//processInput(Config.END_TURN);
+			playedCards=Config.END_TURN;
 		}
 	}
 
@@ -216,7 +218,14 @@ public class Client implements Runnable, Observer {
 			}
 			if(window.getPlayerNum()==window.getCurrPlayer()){
 				while(this.playedCards==null){}
-				output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+				if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
+					output= Config.WITHDRAW;
+				}else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
+					output= Config.END_TURN;
+				}else{
+					output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+				}
+				this.playedCards=null;
 			}
 		}
 		else if(msg.contains(Config.WAITING)){
