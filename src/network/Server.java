@@ -70,9 +70,7 @@ public class Server implements Runnable {
 			clients.put(sThread.getID(), sThread);
 			this.numPlayers++; 
 			if(numPlayers == 1){
-				//handle(sThread.getID(),Config.FIRSTPLAYER);
 				send1Client(sThread.getID(), Config.FIRSTPLAYER);
-				//System.out.println);
 			}
 		}catch (IOException e){
 			log.error(e);
@@ -82,7 +80,7 @@ public class Server implements Runnable {
 
 	public void handle(int id, String msg) {
 		System.out.println("Message Receieved: " + msg);
-		System.out.println("Numplayers " + numPlayers);
+
 		log.info("Message Received: " + msg);
 		String send = "waiting";
 		
@@ -97,14 +95,16 @@ public class Server implements Runnable {
 		else if (msg.equals(Config.CLIENT_START)){
 			if(numPlayers == 1){
 				send1Client(id, Config.FIRSTPLAYER);
-			}	
+			}else{
+				send1Client(id, Config.PROMPT_JOIN);
+			}
 		}
 		
 		send = game.processInput(msg);
 		
 		send2Clients(send);
 		log.info("Message Sent: " + send);
-		System.out.println(send);
+		System.out.println("Message sent: " + send);
 	}
 	
 	public void send1Client(int id, String msg){
