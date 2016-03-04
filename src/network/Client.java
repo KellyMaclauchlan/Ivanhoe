@@ -30,6 +30,12 @@ public class Client implements Runnable, Observer {
 	public String playedCards = null;
 	public Logger log = Logger.getLogger("Client");
 	public ArrayList<String> hand = new ArrayList<String>();
+	public Client(){
+		window = new MainWindowController();
+		String ipAndPort=window.getIPPortFromPlayer();
+		String seperate[]=ipAndPort.split(" ");
+		this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
+	}
 
 	public int getID(){
 		return this.ID;
@@ -71,8 +77,7 @@ public class Client implements Runnable, Observer {
 				log.info("New ClientThread has started");
 			}
 			
-			window = new MainWindowController();
-			//window.showWindow();
+			
 			//startGame();
 			handle(Config.START);
 		}catch (IOException e){
@@ -125,48 +130,204 @@ public class Client implements Runnable, Observer {
 		}
 		
 		else if (message.equals(Config.WITHDRAW)){
-			processInput(Config.WITHDRAW);
+			//processInput(Config.WITHDRAW);
+			playedCards=Config.WITHDRAW;
 		}
 		
 		else if(message.equals(Config.END_TURN)){
-			processInput(Config.END_TURN);
+			//processInput(Config.END_TURN);
+			playedCards=Config.END_TURN;
 		}
 	}
 
 	public String processInput(String msg){
 		String output = "result";
-		
-		if(msg.contains(Config.PROMPT_JOIN)){
-			return output = Config.JOIN + window.getNameFromPlayer();	
+		if(msg.contains(Config.FIRSTPLAYER)){
+			return Config.START+" "+this.window.getNumberOfPlayersFromPlayer();
 		}
 		
+		else if(msg.contains(Config.PROMPT_JOIN)){
+			String name =window.getNameFromPlayer();
+			window.playerName=name;
+			return output = Config.JOIN + name;	
+		}
+		else if(msg.contains(Config.NEED_PLAYERS)){
+			this.window.showWaiting();
+		}		
 		else if (msg.contains(Config.PLAYER_NAME)){
 			String name[] = msg.split("name");
 			String card[];
 			String value[];
-			
+			window.setNumPlayers(name.length);
 			for(int i = 0; i < name.length; i++){
 				card = name[i].split(" ");
-				
-				for(int k = 0; k < card.length; k++){
-					hand.add(card[i]);					
-					value = card[i].split("_");
-					window.addCard(getCardFromTypeValue(value[0],value[1]));
+				//if this player is the user
+				if(card[0].equalsIgnoreCase(window.playerName)){
+					for(int k = 2; k < card.length; k++){
+						hand.add(card[i]);					
+						value = card[i].split("_");
+						window.addCard(getCardFromTypeValue(value[0],value[1]));
+					}
+					window.setPlayerNum(i);
 				}
+				//set name on gui
+				window.setName(i, card[0]);
+				//set name in array
+				window.playerNames.add(card[0]);
+				
 			}
 			output = Config.START_TOURNAMENT;
 		}
 		
-		else if (msg.contains(Config.PICKED_PURPLE)){
-			output = Config.COLOUR_PICKED + " " + Config.colours.get(window.setTournament());
+		else if (msg.contains(Config.TURN)){
+			String input[]=msg.split(" ");
+			if(msg.contains(Config.PICKED_PURPLE)){
+				if(input[3].equalsIgnoreCase(window.playerName)){
+					String value[]=input[4].split("_");
+					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+					output = Config.COLOUR_PICKED + " " + window.setTournament();
+				}
+				for (int i=0;i< window.getTotalPlayers();i++){
+					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){
+						window.setCurrPlayer(i);
+					}
+				}
+			}else{
+				if(input[1].equalsIgnoreCase(window.playerName)){
+					String value[]=input[2].split("_");
+					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+					output = Config.COLOUR_PICKED + " " + window.setTournament();	
+				}
+				for (int i=0;i< window.getTotalPlayers();i++){
+					if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
+						window.setCurrPlayer(i);
+					}
+				}
+			}
+
 		}
 		
-		else if (msg.contains(Config.PLAY) || msg.contains(Config.CONTINUE)){
-			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+		else if (msg.contains(Config.PLAY) ){
+			String input[]=msg.split(" ");
+			String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
+			for(int i=0;i<5;i++){
+				if (input[1].equalsIgnoreCase(options[i])){
+					if(window.getTournamentColour()!=i)
+						window.setTournamnetColour(i);
+				}
+			}
+			if(window.getPlayerNum()==window.getCurrPlayer()){
+				while(this.playedCards==null){}
+				if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
+					output= Config.WITHDRAW;
+				}else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
+					output= Config.END_TURN;
+				}else{
+					output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+				}
+				this.playedCards=null;
+			}
+		}
+		else if(msg.contains(Config.WAITING)){
+			if(msg.contains(Config.UNPLAYABLE)){
+				window.cantPlayCardPopup();
+			}else{
+				String input[]=msg.split(" ");
+				Card card=this.getCardFromTypeValue(input[1], input[2]);
+				window.addPlayedCard(window.getCurrPlayer(), card);
+				if(window.getCurrPlayer()==window.getPlayerNum()){
+					window.removeCard(card);
+				}
+			}
+			
+			if(window.getCurrPlayer()==window.getPlayerNum()){
+				while(this.playedCards==null){}
+				output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();				
+			}
+		}
+		else if(msg.contains(Config.CONTINUE)){
+			
+			String input[]=msg.split(" ");
+			int old= window.getCurrPlayer();
+			window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
+			if(window.getPlayerNum()==old){
+				window.window.endTurnClicked();
+			}
+			
+			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				for(int i=0;i<window.playerNames.size();i++){
+					if(window.playerNames.get(i).equalsIgnoreCase(input[5])){
+						if(msg.contains(Config.PURPLE_WIN)){
+							String chose =window.playerPickToken();
+						}else{
+							window.addToken(i, window.getTournamentColour());	
+						}
+						output= Config.START_TOURNAMENT +" "+input[3];
+					}
+				}
+				
+			}
+			if(msg.contains(Config.GAME_WINNER)){
+				//the game is over
+				window.GameOverPopup(input[5]);
+			}
+			
+			if(!msg.contains(Config.TOURNAMENT_WINNER)){
+				
+				for(int i=0;i<window.playerNames.size();i++){
+					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){						
+						window.setCurrPlayer(i);	
+						if(window.getPlayerNum()==window.getCurrPlayer()){
+							String value[]=input[4].split("_");
+							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+							output = Config.COLOUR_PICKED +window.setTournament();
+						}
+					}
+					
+				}
+			}
+				
 		}
 		
-		else if (msg.contains(Config.WITHDRAW)){
-			output = Config.END_TURN;
+		else if (msg.contains(Config.WITHDRAW)){			
+			String input[]=msg.split(" ");
+			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				for(int i=0;i<window.playerNames.size();i++){
+					if(window.playerNames.get(i).equalsIgnoreCase(input[5])){
+						if(msg.contains(Config.PURPLE_WIN)){
+							String chose =window.playerPickToken();
+						}else{
+							window.addToken(i, window.getTournamentColour());	
+						}
+						output= Config.START_TOURNAMENT +" "+input[3];
+					}
+				}
+				
+			}
+			if(msg.contains(Config.GAME_WINNER)){
+				//the game is over
+				window.GameOverPopup(input[5]);
+			}
+			
+			if(!msg.contains(Config.TOURNAMENT_WINNER)){
+				int old= window.getCurrPlayer();
+				window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
+				if(window.getPlayerNum()==old){
+					window.window.endTurnClicked();
+				}
+				for(int i=0;i<window.playerNames.size();i++){
+					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){						
+						window.setCurrPlayer(i);	
+						if(window.getPlayerNum()==window.getCurrPlayer()){
+							String value[]=input[4].split("_");
+							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+							output = Config.COLOUR_PICKED +window.setTournament();
+						}
+					}
+					
+				}
+			}
+			//output = Config.END_TURN;
 		}
 		return output; 
 	}

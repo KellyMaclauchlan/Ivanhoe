@@ -15,7 +15,7 @@ public class MainWindowController implements Observer, Subject{
 	private int playerNum;
 	private int tournamentColour;
 	private int currPlayer;
-	
+	public String playerName;
 	public int moved;
 	public MainWindow window;
 	private WaitingPopUp waitingPopUp;
@@ -28,7 +28,7 @@ public class MainWindowController implements Observer, Subject{
 	private ArrayList<Card> playerCards;
 	private ArrayList<ArrayList<Card>> playedCards;
 	private ArrayList<Integer>playerScores;
-	private ArrayList<String>playerNames;
+	public ArrayList<String>playerNames;
 	private ArrayList<Observer>observers = new ArrayList<Observer>();
 	
 	public MainWindowController(){
@@ -62,12 +62,17 @@ public class MainWindowController implements Observer, Subject{
 	public int getPlayerNum() {return playerNum;}
 	public int getTotalPlayers() {return totalPlayers;}
 	public Card getPlayedCard(int player, int index) {return this.playedCards.get(player).get(index);}
+	public int getTournamentColour() {
+		return tournamentColour;
+	}
 	public int getCurrPlayer() {return currPlayer;}
 	
 	/* SETTERS */
 	public void setPlayerTurn(int i){this.currPlayer = i;}
 	public void setPlayerNum(int player) {playerNum = player;}
 	public void setTotalPlayers(int totalPlayers) {this.totalPlayers = totalPlayers;}
+	//public void setTournamentColour(int tournamentColour) {this.tournamentColour = tournamentColour;}
+	
 	public void setScore(int player, int score) {
 		this.playerScores.set(player, score);	
 		window.playerPoints[player].setText(""+score);
@@ -78,15 +83,15 @@ public class MainWindowController implements Observer, Subject{
 		window.playerNames[player].setText(name);
 	}
 	
-	public int setTournament(){
+	public String setTournament(){
 		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
 	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
-		log.info("Tournament colour has been set to " + response);
-	    return response;
+		log.info("Tournament colour has been set to " + options[response]);
+	    return options[response];
 	}
 	
 	public void setTournamnetColour(int i) {
-		this.tournamentColour = i;
+		this.tournamentColour=i;
 		this.window.getContentPane().setBackground(this.backgroundColours[i]);
 	}
 	
@@ -128,6 +133,8 @@ public class MainWindowController implements Observer, Subject{
 	    log.info("the player picked " + output);
 	    return output;
 	}
+	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
+	
 	
 	/* OBSERVER PATTERN */
 	@Override
@@ -184,6 +191,11 @@ public class MainWindowController implements Observer, Subject{
 		
 		System.out.println(i);
 		playerCards.remove(i);
+		this.resetCards();
+		log.info("Card removed");
+	}
+	public void removeCard(Card card){
+		playerCards.remove(card);
 		this.resetCards();
 		log.info("Card removed");
 	}
@@ -253,7 +265,7 @@ public class MainWindowController implements Observer, Subject{
 		if(this.window.lastCard<this.playerCards.size()){
 			this.lastCard= this.playerCards.get(this.window.lastCard+this.moved);
 			this.notifyObservers(Config.PLAYEDCARD);
-			this.removeCard(this.window.lastCard+this.moved);
+			//this.removeCard(this.window.lastCard+this.moved);
 		}
 	}
 

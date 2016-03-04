@@ -11,13 +11,13 @@ public class StartClient {
 	
 	public static void main(String[] args){
 		
-		System.out.println("Enter the IP of the Server Machine: ");
+		/*System.out.println("Enter the IP of the Server Machine: ");
 		ip = sc.nextLine();
 		System.out.println("Enter the Port Number of the server Machine: ");
 		port = sc.nextInt(); 
 		System.out.println("\n");
-		
+		*/
 		client = new Client();
-		client.connectToServer(ip, port);
+		//client.connectToServer(ip, port);
 	}
 }
