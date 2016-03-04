@@ -52,7 +52,7 @@ public class Startui {
 		control.addToken(0, 4);
 		control.addToken(1, 0);
 		control.addToken(1, 2);
-		control.setTournamnetColour(control.setTournament());
+		//control.setTournamnetColour(control.setTournament());
 		System.out.println(control.playerPickToken() );
 		control.showWaiting();
 		System.out.println(control.getIPPortFromPlayer());

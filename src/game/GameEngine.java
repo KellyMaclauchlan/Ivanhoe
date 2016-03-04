@@ -96,8 +96,6 @@ public class GameEngine {
 						+ Config.TURN + " " + currentPlayer.getName() 
 						+ " " + picked.getType() + "_" + picked.getValue();
 			} else {
-				arrangePlayers();
-				resetPlayers();
 				output = Config.TURN + " " + currentPlayer.getName()
 				+ " " + picked.getType() + "_" + picked.getValue();
 			}
@@ -130,9 +128,9 @@ public class GameEngine {
 				|| card.getCardType().equals(Config.ACTION) 
 				|| card.getCardType().equals(Config.SUPPORT)) {
 			playCard(card);
-			output+=" "+type+" "+value;
+			output += " " + type + "_" + value;
 		} else {
-			output +=" "+ Config.UNPLAYABLE;
+			output += " " + Config.UNPLAYABLE;
 		}
 		return output; 
 	}
@@ -145,25 +143,22 @@ public class GameEngine {
 		if (prevPlayer.hasWithdrawn()) {
 			withdraw = Config.WITHDRAW;
 		}
-		
 		output += " " + withdraw + " " + currentPlayer.getName();
 		startTurn();
-		String status="";
+		String status = "";
 		for (Player p: players) {
 			if (p.isWinner()) {
-				status= " " + Config.TOURNAMENT_WINNER + " " + p.getName();
+				status = " " + Config.TOURNAMENT_WINNER + " " + p.getName();
 				arrangePlayers();
 				resetPlayers();
 			}
 			if (p.isGameWinner()) {
-				status+= " " + Config.GAME_WINNER + " " + p.getName();
+				status += " " + Config.GAME_WINNER + " " + p.getName();
 			}
 		}
-		
 		if(status.equalsIgnoreCase("")){
 			Card picked = pickupCard();
-			currentPlayer.addCard(picked);
-			status=" " + picked.getType() + "_" + picked.getValue();
+			status = " " + picked.getType() + "_" + picked.getValue();
 		}
 		output += status;
 		return output;
