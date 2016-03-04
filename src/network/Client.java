@@ -123,7 +123,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	/* Handles all the input and output to and from the server */
-	public void handle(String msg) {
+	public void handle(String msg) throws IOException {
 		String send = "waiting";
 		
 		log.info("Message Received: " + msg);
@@ -136,6 +136,9 @@ public class Client implements Runnable, Observer {
 			send = processInput(msg);
 			System.out.println("Message received: " + msg);
 			log.info("Information sent to server: " + send);
+			outStream.write(send);
+			outStream.write("\n");
+			outStream.flush();
 		}
 	}
 
