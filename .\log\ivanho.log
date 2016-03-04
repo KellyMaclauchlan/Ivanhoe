@@ -335,4 +335,122 @@
 >>>>>>> 4664ba05fe8eb4d453fc478281543f4bd7b044f1
 @2016-Mar-03 18:24:35 INFO  Client:46 - 0:Establishing connection. Please wait... 
 @2016-Mar-03 18:24:35 ERROR Client:61 - java.net.ConnectException: Connection refused
+@2016-Mar-04 11:11:30 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-04 11:11:30 INFO  Server:43 - Game has started
+@2016-Mar-04 11:11:30 INFO  Server:46 - New ServerThread created
+@2016-Mar-04 11:11:30 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 11:12:05 INFO  Client:46 - 0:Establishing connection. Please wait... 
+@2016-Mar-04 11:12:05 INFO  Client:53 - 49474: Connected to server: localhost/127.0.0.1
+@2016-Mar-04 11:12:05 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=49474,localport=3000]
+@2016-Mar-04 11:12:05 INFO  Client:54 - 49474: Connected to portid: 49474
+@2016-Mar-04 11:12:05 INFO  Server:83 - Message Received: firstplayer
+@2016-Mar-04 11:12:05 INFO  Client:71 - Initializing buffers
+@2016-Mar-04 11:12:05 INFO  Client:77 - New ClientThread has started
+@2016-Mar-04 11:12:05 INFO  ClientThread:48 - Client Thread 49474 running.
+@2016-Mar-04 11:12:05 INFO  Client:109 - Message Received: start
+@2016-Mar-04 11:12:05 INFO  Client:57 - Client has started
+@2016-Mar-04 13:08:27 INFO  ClientThread:51 - 
+@2016-Mar-04 13:08:27 INFO  Client:109 - Message Received: null
+@2016-Mar-04 13:08:45 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-04 13:08:45 INFO  Server:43 - Game has started
+@2016-Mar-04 13:08:45 INFO  Server:46 - New ServerThread created
+@2016-Mar-04 13:08:45 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 13:09:25 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=49597,localport=3000]
+@2016-Mar-04 13:09:25 INFO  Server:83 - Message Received: firstplayer
+@2016-Mar-04 13:09:34 INFO  Server:83 - Message Received: start 2
+@2016-Mar-04 13:09:34 INFO  Server:98 - Message Sent: prompt join
+@2016-Mar-04 13:09:37 INFO  Server:83 - Message Received: join Brit
+@2016-Mar-04 13:09:37 INFO  Server:98 - Message Sent: need players
+@2016-Mar-04 13:09:39 INFO  Server:83 - Message Received: join Katie
+@2016-Mar-04 13:09:39 INFO  Server:98 - Message Sent:  name Katie cards green_1 green_1 retreat_0 stunned_0 blue_2 dodge_0 purple_7 squire_3 name Brit cards blue_5 red_4 green_1 blue_4 blue_3 green_1 countercharge_0 riposte_0
+@2016-Mar-04 13:09:48 INFO  Server:83 - Message Received: begin tournament
+@2016-Mar-04 13:09:48 INFO  Server:98 - Message Sent: purple Brit turn Katie yellow_4
+@2016-Mar-04 13:10:03 INFO  Server:83 - Message Received: colour purple
+@2016-Mar-04 13:10:03 INFO  Server:98 - Message Sent: play purple
+@2016-Mar-04 13:10:08 INFO  Server:83 - Message Received: play purple 7
+@2016-Mar-04 13:10:08 INFO  Server:98 - Message Sent: waiting purple_7
+@2016-Mar-04 13:10:15 INFO  Server:83 - Message Received: play squire 3
+@2016-Mar-04 13:10:15 INFO  Server:98 - Message Sent: waiting squire_3
+@2016-Mar-04 13:10:21 INFO  Server:83 - Message Received: end turn
+@2016-Mar-04 13:10:21 INFO  Server:98 - Message Sent: Katie points 10 continue Brit blue_2
+@2016-Mar-04 13:10:28 INFO  Server:83 - Message Received: withdraw
+@2016-Mar-04 13:10:28 INFO  Server:98 - Message Sent: Brit points 0 withdraw Katie purple win Katie
+@2016-Mar-04 13:10:45 INFO  Server:83 - Message Received: purple win red
+@2016-Mar-04 13:10:45 INFO  Server:98 - Message Sent: waiting
+@2016-Mar-04 13:12:45 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-04 13:12:45 INFO  Server:43 - Game has started
+@2016-Mar-04 13:12:45 INFO  Server:46 - New ServerThread created
+@2016-Mar-04 13:12:45 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 13:12:54 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=49598,localport=3000]
+@2016-Mar-04 13:12:54 INFO  Server:83 - Message Received: firstplayer
+@2016-Mar-04 13:12:57 INFO  Server:83 - Message Received: start 2
+@2016-Mar-04 13:12:57 INFO  Server:98 - Message Sent: prompt join
+@2016-Mar-04 13:13:00 INFO  Server:83 - Message Received: join Brit
+@2016-Mar-04 13:13:00 INFO  Server:98 - Message Sent: need players
+@2016-Mar-04 13:13:02 INFO  Server:83 - Message Received: join Katie
+@2016-Mar-04 13:13:02 INFO  Server:98 - Message Sent:  name Katie cards yellow_3 green_1 green_1 riposte_0 red_3 knockdown_0 green_1 squire_2 name Brit cards green_1 yellow_2 blue_2 blue_4 yellow_3 purple_4 outmaneuver_0 purple_4
+@2016-Mar-04 13:13:06 INFO  Server:83 - Message Received: begin tournament
+@2016-Mar-04 13:13:06 INFO  Server:98 - Message Sent: purple Brit turn Katie red_4
+@2016-Mar-04 13:13:24 INFO  Server:83 - Message Received: colour purple
+@2016-Mar-04 13:13:24 INFO  Server:98 - Message Sent: play purple
+@2016-Mar-04 13:13:32 INFO  Server:83 - Message Received: play squire 2
+@2016-Mar-04 13:13:32 INFO  Server:98 - Message Sent: waiting squire_2
+@2016-Mar-04 13:13:35 INFO  Server:83 - Message Received: withdraw
+@2016-Mar-04 13:13:35 INFO  Server:98 - Message Sent: Katie points 2 withdraw Brit purple win Brit
+@2016-Mar-04 13:13:48 INFO  Server:83 - Message Received: purple win red
+@2016-Mar-04 13:13:48 INFO  Server:98 - Message Sent: Brit points 0 withdraw Katie tournament winner Brit
+@2016-Mar-04 13:18:03 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-04 13:18:03 INFO  Server:43 - Game has started
+@2016-Mar-04 13:18:03 INFO  Server:46 - New ServerThread created
+@2016-Mar-04 13:18:03 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 13:18:10 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=49601,localport=3000]
+@2016-Mar-04 13:18:10 INFO  Server:83 - Message Received: firstplayer
+@2016-Mar-04 13:18:13 INFO  Server:83 - Message Received: start 2
+@2016-Mar-04 13:18:13 INFO  Server:98 - Message Sent: prompt join
+@2016-Mar-04 13:18:16 INFO  Server:83 - Message Received: join Brit
+@2016-Mar-04 13:18:16 INFO  Server:98 - Message Sent: need players
+@2016-Mar-04 13:18:17 INFO  Server:83 - Message Received: join Katie
+@2016-Mar-04 13:18:17 INFO  Server:98 - Message Sent:  name Katie cards green_1 countercharge_0 green_1 maiden_6 blue_3 purple_7 yellow_2 squire_3 name Brit cards purple_7 red_3 stunned_0 purple_4 red_5 yellow_2 purple_3 squire_3
+@2016-Mar-04 13:18:21 INFO  Server:83 - Message Received: begin tournament
+@2016-Mar-04 13:18:21 INFO  Server:98 - Message Sent: purple Brit turn Katie riposte_0
+@2016-Mar-04 13:18:29 INFO  Server:83 - Message Received: colour purple
+@2016-Mar-04 13:18:29 INFO  Server:98 - Message Sent: play purple
+@2016-Mar-04 13:18:33 INFO  Server:83 - Message Received: play purple 7
+@2016-Mar-04 13:18:33 INFO  Server:98 - Message Sent: waiting purple_7
+@2016-Mar-04 13:18:40 INFO  Server:83 - Message Received: play squire 3
+@2016-Mar-04 13:18:40 INFO  Server:98 - Message Sent: waiting squire_3
+@2016-Mar-04 13:18:46 INFO  Server:83 - Message Received: play maiden 6
+@2016-Mar-04 13:18:46 INFO  Server:98 - Message Sent: waiting maiden_6
+@2016-Mar-04 13:18:51 INFO  Server:83 - Message Received: end turn
+@2016-Mar-04 13:18:51 INFO  Server:98 - Message Sent: Katie points 16 continue Brit red_3
+@2016-Mar-04 13:19:06 INFO  Server:83 - Message Received: withdraw
+@2016-Mar-04 13:19:06 INFO  Server:98 - Message Sent: Brit points 0 withdraw Katie purple win Katie
+@2016-Mar-04 13:19:21 INFO  Server:83 - Message Received: purple win red
+@2016-Mar-04 13:19:21 INFO  Server:98 - Message Sent: Katie points 16 continue Brit tournament winner Katie
+@2016-Mar-04 13:28:54 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-04 13:28:54 INFO  Server:43 - Game has started
+@2016-Mar-04 13:28:54 INFO  Server:46 - New ServerThread created
+@2016-Mar-04 13:28:54 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 13:29:02 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=49612,localport=3000]
+@2016-Mar-04 13:29:02 INFO  Server:83 - Message Received: firstplayer
+@2016-Mar-04 13:29:04 INFO  Server:83 - Message Received: start 2
+@2016-Mar-04 13:29:04 INFO  Server:98 - Message Sent: prompt join
+@2016-Mar-04 13:29:07 INFO  Server:83 - Message Received: join Brit
+@2016-Mar-04 13:29:07 INFO  Server:98 - Message Sent: need players
+@2016-Mar-04 13:29:09 INFO  Server:83 - Message Received: join Katie
+@2016-Mar-04 13:29:09 INFO  Server:98 - Message Sent:  name Katie cards squire_2 red_3 green_1 red_3 red_4 adapt_0 yellow_4 yellow_2 name Brit cards knockdown_0 red_5 red_4 blue_2 red_4 riposte_0 green_1 red_5
+@2016-Mar-04 13:29:12 INFO  Server:83 - Message Received: begin tournament
+@2016-Mar-04 13:29:12 INFO  Server:98 - Message Sent: purple Brit turn Katie purple_3
+@2016-Mar-04 13:29:20 INFO  Server:83 - Message Received: colour purple
+@2016-Mar-04 13:29:20 INFO  Server:98 - Message Sent: play purple
+@2016-Mar-04 13:29:25 INFO  Server:83 - Message Received: play purple 3
+@2016-Mar-04 13:29:25 INFO  Server:98 - Message Sent: waiting purple_3
+@2016-Mar-04 13:29:31 INFO  Server:83 - Message Received: play squire 2
+@2016-Mar-04 13:29:31 INFO  Server:98 - Message Sent: waiting squire_2
+@2016-Mar-04 13:29:36 INFO  Server:83 - Message Received: end turn
+@2016-Mar-04 13:29:36 INFO  Server:98 - Message Sent: Katie points 5 continue Brit maiden_6
+@2016-Mar-04 13:29:42 INFO  Server:83 - Message Received: withdraw
+@2016-Mar-04 13:29:42 INFO  Server:98 - Message Sent: Brit points 0 withdraw Katie purple win Katie
+@2016-Mar-04 13:29:48 INFO  Server:83 - Message Received: purple win purple
+@2016-Mar-04 13:29:48 INFO  Server:98 - Message Sent: Katie points 5 continue Brit tournament winner Katie
 @

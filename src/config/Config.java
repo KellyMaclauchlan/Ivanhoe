@@ -41,7 +41,7 @@ public class Config {
 	public static String UNPLAYABLE = "unplayable";
 	public static String FIRSTPLAYER = "firstplayer";
 	public static String WAITING="waiting";
-	public static String PURPLE_WIN="purplewin";
+	public static String PURPLE_WIN="purple win";
 	
 	/* STARTING THE TOURNAMENT */
 	public static String DRAW_TOKEN = "t";
@@ -63,6 +63,7 @@ public class Config {
 	
 	/* Card names */
 	//colours
+	public static String COLOUR = "colour";
 	public static String PURPLE = "purple";
 	public static String RED = "red";
 	public static String BLUE = "blue";
