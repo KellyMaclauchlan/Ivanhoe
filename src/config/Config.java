@@ -40,8 +40,15 @@ public class Config {
 	public static String MAX = "maximum " + MAX_PLAYERS;
 	public static String UNPLAYABLE = "unplayable";
 	public static String FIRSTPLAYER = "firstplayer";
+<<<<<<< HEAD
 	public static String WAITING="waiting";
 	public static String PURPLE_WIN="purple win";
+=======
+
+	public static String WAITING="waiting";
+	public static String PURPLE_WIN="purple win";
+
+>>>>>>> f5bfdd5d3eb013eabd0936a3308ca138e48f9897
 	
 	/* STARTING THE TOURNAMENT */
 	public static String DRAW_TOKEN = "token";
@@ -61,11 +68,20 @@ public class Config {
 	public static String VIEWDISPLAY="viewdisplay";
 	
 	
+<<<<<<< HEAD
 	/* Card names */
 	//colours
 	public static String COLOUR = "colour";
 	/* Coloured Cards */
 
+=======
+
+	/* Card names */
+	//colours
+	public static String COLOUR = "colour";
+
+	/* Coloured Cards */
+>>>>>>> f5bfdd5d3eb013eabd0936a3308ca138e48f9897
 	public static String PURPLE = "purple";
 	public static String RED = "red";
 	public static String BLUE = "blue";

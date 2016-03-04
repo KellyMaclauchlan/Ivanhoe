@@ -43,8 +43,8 @@ public class GameEngine {
 			// input = end turn
 			} else if (input.contains(Config.END_TURN)) {
 				output = processEndTurn(); // output = <player name> points <player points> [continue OR withdraw] <next player> <card picked up>
-												// IF tournament is won, add: tournament winner <winner name>
-												// OR IF tournament is won and tournamentColour is purple, add: purple win <winnr name> 
+												// IF tournament is won, add: tournament winner <winner name> 
+												// OR IF tournament is won and tournamentColour is purple, add: purple win <winner name>  
 												// IF game is won, add: game winner <winner name>
 												
 			// input = purple win <colour>
