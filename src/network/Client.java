@@ -158,7 +158,7 @@ public class Client implements Runnable, Observer {
 			String name[] = msg.split("name");
 			String card[];
 			String value[];
-			
+			window.setNumPlayers(name.length);
 			for(int i = 0; i < name.length; i++){
 				card = name[i].split(" ");
 				//if this player is the user
