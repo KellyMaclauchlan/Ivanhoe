@@ -15,6 +15,7 @@ public class GameEngine {
 	private ArrayList<Card> discardPile;
 	private Player currentPlayer;
 	private int turnNumber = 0;
+	private boolean choosePurple = false;
 	
 	public GameEngine() {
 		players = new ArrayList<>();
@@ -41,13 +42,18 @@ public class GameEngine {
 				output = processPlay(input); // output = waiting <card played> OR output = waiting <unplayable>
 			// input = end turn
 			} else if (input.contains(Config.END_TURN)) {
-				output = processEndTurn(input); // output = <player name> points <player points> [continue OR withdraw] <next player> <card picked up>
-												// IF tournament is won, add: tournament winner <winner name>
+				output = processEndTurn(); // output = <player name> points <player points> [continue OR withdraw] <next player> <card picked up>
+												// IF tournament is won, add: tournament winner <winner name> 
+												// OR IF tournament is won and tournamentColour is purple, add: purple win <winner name>  
 												// IF game is won, add: game winner <winner name>
+												
+			// input = purple win <colour>
+			} else if (input.contains(Config.PURPLE_WIN)) {
+				output = processPurpleWin(input); // output = same as a normal tournament win of any colour
 			// input = withdraw
 			} else if (input.contains(Config.WITHDRAW)) {
 				withdraw();				
-				output = processEndTurn(input);	// see above: only change is that the player has chosen to withdraw instead of being forced
+				output = processEndTurn();	// see above: only change is that the player has chosen to withdraw instead of being forced
 			}
 		return output;
 	}
@@ -125,17 +131,39 @@ public class GameEngine {
 			}
 		}
 		if (card.getType().equals(tournamentColour) 
-				|| card.getCardType().equals(Config.ACTION) 
 				|| card.getCardType().equals(Config.SUPPORT)) {
 			playCard(card);
 			output += " " + type + "_" + value;
+		} else if (card.getType().equals(Config.ACTION)) {
+			output += processActionCard((ActionCard) card, input);
 		} else {
 			output += " " + Config.UNPLAYABLE;
 		}
 		return output; 
 	}
+	
+	public String processActionCard(ActionCard card, String input) {
+		String output = "";
+		if (card.getType().equals(Config.UNHORSE)) {
+			//TO DO: parse input to get colour
+			if (tournamentColour.equals(Config.PURPLE)) {
+				card.playUnhorse(this, input);
+			}
+		}
+		return output;
+	}
 
-	public String processEndTurn(String input) {
+	public String processPurpleWin(String input) {
+		String output = "";
+		String[] purpleWin = input.split(" ");
+		String chosenColour = purpleWin[2];
+		if (chosenColour.equals(Config.PURPLE)) choosePurple = true;
+		setTournamentColour(chosenColour);
+		output = processEndTurn();
+		return output;
+	}
+	
+	public String processEndTurn() {
 		String output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
 		Player prevPlayer = currentPlayer;
 		endTurn();
@@ -147,10 +175,15 @@ public class GameEngine {
 		startTurn();
 		String status = "";
 		for (Player p: players) {
-			if (p.isWinner()) {
-				status = " " + Config.TOURNAMENT_WINNER + " " + p.getName();
+			if (p.isWinner() && tournamentColour.equals(Config.PURPLE) && choosePurple == false) {
+				status = " " + Config.PURPLE_WIN + " " + p.getName();
+				currentPlayer = p;
+			}
+			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple == true)) {
 				arrangePlayers();
 				resetPlayers();
+				status = " " + Config.TOURNAMENT_WINNER + " " + p.getName();
+				choosePurple = false;
 			}
 			if (p.isGameWinner()) {
 				status += " " + Config.GAME_WINNER + " " + p.getName();
@@ -282,7 +315,9 @@ public class GameEngine {
 	
 	public void playCard(Card card) {
 		// play a specific card for current player, handle based on card rules
-		currentPlayer.addToDisplay(card);
+		if (card.getCardType().equals(Config.COLOUR) || card.getCardType().equals(Config.SUPPORT)) {
+			currentPlayer.addToDisplay(card);
+		} 
 		//remove card from player hand
 		currentPlayer.removeCard(card);
 		//add card to where it should be added (display, front, discard)
@@ -296,6 +331,7 @@ public class GameEngine {
 		drawDeck.remove(0);
 		return picked;
 	}
+	
 	
 	public void removeCardfromDeck(Card card) {
 		//remove a single card from draw deck (mostly for testing)
@@ -364,8 +400,8 @@ public class GameEngine {
 	
 	public void announceWinner() {
 		currentPlayer.setWinner(true);
-		if (tournamentColour == Config.PURPLE) {
-		} else if (!currentPlayer.getCurrentTokens().contains(tournamentColour)){
+		if ((((tournamentColour == Config.PURPLE) && choosePurple == true) || (tournamentColour != Config.PURPLE)) 
+			&& (!currentPlayer.getCurrentTokens().contains(tournamentColour))) {
 			currentPlayer.addToken(tournamentColour);
 		}
 		if ((numPlayers <= 3) && (currentPlayer.getCurrentTokens().size() == 5)) {

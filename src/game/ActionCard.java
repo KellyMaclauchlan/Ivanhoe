@@ -14,8 +14,9 @@ public class ActionCard extends Card {
 		this.setCardImage(cardimg);
 	}
 	
-	public void playUnhorse(String colour) {
-		//TO DO: change tournament colour to red blue or yellow if it is currently purple 
+	public void playUnhorse(GameEngine game, String colour) {
+		//change tournament colour to red blue or yellow if it is currently purple
+		game.setTournamentColour(colour);
 	}
 	
 	public void playChangeWeapon(String colour) {
