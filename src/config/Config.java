@@ -40,12 +40,17 @@ public class Config {
 	public static String MAX = "maximum " + MAX_PLAYERS;
 	public static String UNPLAYABLE = "unplayable";
 	public static String FIRSTPLAYER = "firstplayer";
+<<<<<<< HEAD
 	public static String WAITING="waiting";
 	public static String PURPLE_WIN="purple win";
+=======
+	public static String WAITING = "waiting";
+	public static String PURPLE_WIN = "purplewin";
+>>>>>>> be4574669e22b7284cf237ecf937092c7b88d1b8
 	
 	/* STARTING THE TOURNAMENT */
-	public static String DRAW_TOKEN = "t";
-	public static String DEAL = "d";
+	public static String DRAW_TOKEN = "token";
+	public static String DEAL = "deal";
 	
 	/* PLAYING IN A TOURNAMENT */
 	public static String DRAW_CARD = "draw card";
@@ -61,9 +66,13 @@ public class Config {
 	public static String VIEWDISPLAY="viewdisplay";
 	
 	
+<<<<<<< HEAD
 	/* Card names */
 	//colours
 	public static String COLOUR = "colour";
+=======
+	/* Coloured Cards */
+>>>>>>> be4574669e22b7284cf237ecf937092c7b88d1b8
 	public static String PURPLE = "purple";
 	public static String RED = "red";
 	public static String BLUE = "blue";
@@ -74,12 +83,12 @@ public class Config {
 	public static ArrayList<String> colours = new ArrayList<String>(Arrays.asList(BLUE, RED, YELLOW, GREEN, PURPLE));
 	
 
-	//supporters
+	/* Supporters */
 	public static String SUPPORT = "support";
 	public static String MAIDEN = "maiden";
 	public static String SQUIRE = "squire";
 
-	//action
+	/* Action */
 	public static String ACTION = "action";
 	public static String UNHORSE = "unhorse";
 	public static String CHANGEWEAPON = "changeweapon";
