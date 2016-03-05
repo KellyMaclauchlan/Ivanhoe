@@ -176,6 +176,8 @@ public class Server implements Runnable {
 			
 		}
 		
+		
+		// CHECK BRIT'S GAME ENGINE CHANGE ! 
 		else if (send.contains(Config.PLAY)){
 			sendAllClients(send);
 		}

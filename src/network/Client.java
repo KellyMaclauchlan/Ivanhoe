@@ -129,10 +129,6 @@ public class Client implements Runnable, Observer {
 		} else {
 			testing = msg;
 			send = processInput(msg);
-<<<<<<< HEAD
-=======
-			//System.out.println(msg);
->>>>>>> 6628c6476c7640b297a8922d0c6c2966245aa338
 			log.info("Information sent to server: " + send);
 			
 			outStream.write(send);
@@ -167,14 +163,6 @@ public class Client implements Runnable, Observer {
 	 * what buttons/popups/commands the client and GUI must send back */
 	public String processInput(String msg){
 		String output = "result";
-		
-<<<<<<< HEAD
-		if(msg.equals(Config.CLIENT_START)){
-			output = Config.CLIENT_START;
-		}
-		
-=======
->>>>>>> 6628c6476c7640b297a8922d0c6c2966245aa338
 		/* Prompts the first player for the number of players in the game 
 		 * Input: firstplayer
 		 * Output: start #
@@ -262,11 +250,6 @@ public class Client implements Runnable, Observer {
 			
 			//output = Config.END_TURN;
 		//}
-<<<<<<< HEAD
-		
-		//System.out.println("Sending: " + output);
-=======
->>>>>>> 6628c6476c7640b297a8922d0c6c2966245aa338
 		return output; 
 	}
 	
