@@ -168,8 +168,10 @@ public class Client implements Runnable, Observer {
 			playedCards = Config.END_TURN;
 			send=" "+Config.END_TURN;
 		}
+
 		this.processInput(send);
 		// send the text send to the server here
+
 		
 		
 	}
