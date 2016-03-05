@@ -203,7 +203,7 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards9.jpg"));
 		*/this.playerNames[0].setSelected(true);
 		
-		this.tokens[0][0].setIcon(new ImageIcon("resources\\icons\\blue_empty.png"));
+		this.tokens[0][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
 		this.tokens[1][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
 		this.tokens[2][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
 		this.tokens[3][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
