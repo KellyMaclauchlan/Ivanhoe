@@ -235,7 +235,7 @@ public class MainWindowController implements Observer, Subject{
 	public void endturnClick() {
 		System.out.println("endTurn click");
 		this.window.endTurnClicked();
-		this.update(Config.END_TURN);
+		this.notifyObservers(Config.END_TURN);
 		log.info("Player has ended their turn");
 	}
 
@@ -243,7 +243,7 @@ public class MainWindowController implements Observer, Subject{
 	public void withdrawClick() {
 		System.out.println("withdraw click");
 		this.window.withdrawClicked();
-		this.update(Config.WITHDRAW);
+		this.notifyObservers(Config.WITHDRAW);
 		log.info("Player has withdrawed");
 	}
 
@@ -277,12 +277,13 @@ public class MainWindowController implements Observer, Subject{
 	}
 	
 	/* Player plays a cards and notifies */
-	public void playCard() {
-		System.out.println("played card "+this.window.lastCard+"");
-		log.info("Played card " + this.window.lastCard+"");
+	public void playCard() {		
 		if(this.window.lastCard<this.playerCards.size()){
 			this.lastCard= this.playerCards.get(this.window.lastCard+this.moved);
+			System.out.println("played card "+this.window.lastCard+"");
+			log.info("Played card " + this.lastCard.getType()+" "+ this.lastCard.getValue());
 			this.notifyObservers(Config.PLAYEDCARD);
+			
 			//this.removeCard(this.window.lastCard+this.moved);
 		}
 	}

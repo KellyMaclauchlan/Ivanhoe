@@ -32,6 +32,7 @@ public class Client implements Runnable, Observer {
 
 	public Client(){
 		window = new MainWindowController();
+		window.registerObserver(this);
 		String ipAndPort = window.getIPPortFromPlayer();
 		String seperate[] = ipAndPort.split(" ");
 		this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
@@ -149,19 +150,35 @@ public class Client implements Runnable, Observer {
 
 	@Override
 	public void update(String message) {
-		if(message.equals(Config.PLAYEDCARD)){
+		System.out.println("clinet got from player:"+message);
+		if(message.contains(Config.PLAYEDCARD)){
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
 		}
 		
-		else if (message.equals(Config.WITHDRAW)){
+		else if (message.contains(Config.WITHDRAW)){
 			//processInput(Config.WITHDRAW);
 			playedCards = Config.WITHDRAW;
 		}
 		
-		else if(message.equals(Config.END_TURN)){
+		else if(message.contains(Config.END_TURN)){
 			//processInput(Config.END_TURN);
 			playedCards = Config.END_TURN;
 		}
+		String send =this.playACard();
+		log.info("Information sent to server: " + send);
+		// send this to the server some how 
+		log.info("Information sent to server: " + send);
+		
+		try {
+			outStream.write(send);
+			outStream.write("\n");
+			outStream.flush();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	/* Handles what the server has sent from the Game Engine and processes
@@ -353,15 +370,14 @@ public class Client implements Runnable, Observer {
 		}
 		
 		if(window.getPlayerNum() == window.getCurrPlayer()){
-			output = playACard();
+			//output = playACard();
 		}
 		return output;
 	}
 
 	private String playACard() {
 		String output;
-		while(this.playedCards == null){}
-		
+				
 		// if the player choose to withdraw
 		if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
 			output = Config.WITHDRAW;
@@ -399,7 +415,7 @@ public class Client implements Runnable, Observer {
 		}
 		
 		if(window.getCurrPlayer() == window.getPlayerNum()){
-			output = playACard();			
+			//output = playACard();			
 		}
 		return output;
 	}
@@ -458,7 +474,7 @@ public class Client implements Runnable, Observer {
 						if(window.getPlayerNum() == window.getCurrPlayer()){
 							String value[] = input[5].split("_");
 							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-							output = playACard();
+							//output = playACard();
 						}
 					}
 				}
