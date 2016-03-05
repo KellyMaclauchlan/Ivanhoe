@@ -75,7 +75,7 @@ public class Client implements Runnable, Observer {
 				log.info("New ClientThread has started");
 			}
 
-			handle(Config.START);
+			handle(Config.CLIENT_START);
 		}catch (IOException e){
 			log.error(e);
 			throw e; 
@@ -163,12 +163,17 @@ public class Client implements Runnable, Observer {
 	 * what buttons/popups/commands the client and GUI must send back */
 	public String processInput(String msg){
 		String output = "result";
+		
+		if(msg.contains(Config.CLIENT_START)){
+			output = Config.CLIENT_START;
+		}
+		
 		/* Prompts the first player for the number of players in the game 
 		 * Input: firstplayer
 		 * Output: start #
 		 * */
-		if(msg.contains(Config.FIRSTPLAYER)){
-			return Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
+		else if(msg.contains(Config.FIRSTPLAYER)){
+			output = Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
 		}
 
 		/* Once the player is connected, prompts that player for their name 
@@ -265,13 +270,17 @@ public class Client implements Runnable, Observer {
 		String value[];
 		window.setNumPlayers(name.length);
 		
+		
 		for(int i = 0; i < name.length; i++){
 			card = name[i].split(" ");
 			//if this player is the user
+			System.out.println("Current name: " + name[i]);
 			if(card[0].equalsIgnoreCase(window.playerName)){
 				for(int k = 2; k < card.length; k++){
 					hand.add(card[i]);					
 					value = card[i].split("_");
+					
+					System.out.println("Card " + value[0] + " " + value[1]);
 					window.addCard(getCardFromTypeValue(value[0],value[1]));
 				}
 				window.setPlayerNum(i);

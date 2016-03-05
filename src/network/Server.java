@@ -69,11 +69,6 @@ public class Server implements Runnable {
 			sThread.start();
 			clients.put(sThread.getID(), sThread);
 			this.numPlayers++; 
-			/*if(numPlayers == 1){
-				handle(sThread.getID(), Config.FIRSTPLAYER);
-			}else{
-				handle(sThread.getID(), Config.PROMPT_JOIN);
-			}*/
 			handle(sThread.getID(), Config.CLIENT_START);
 		}catch (IOException e){
 			log.error(e);
@@ -124,7 +119,7 @@ public class Server implements Runnable {
 		
 		else {
 			send = game.processInput(msg);
-			//send2Clients(send);
+			//sendAllClients(send);
 			//log.info("Message Sent: " + send);
 			//System.out.println("Message sent: " + send);
 			processInput(id, send);
@@ -134,6 +129,7 @@ public class Server implements Runnable {
 	
 	public void send1Client(int id, String msg){
 		ServerThread to = clients.get(id);
+		System.out.println("sending from server: " + msg);
 		to.send(String.format("%s\n", msg));
 	}
 	
@@ -151,7 +147,7 @@ public class Server implements Runnable {
 		}
 		
 		else if (send.contains(Config.MAX)){
-			sendAllClients(send);
+			send1Client(id, send);
 		}
 		
 		else if(send.contains(Config.PLAYER_NAME)){
@@ -164,20 +160,19 @@ public class Server implements Runnable {
 		
 		// output = purple <player name> turn <player name> (first turn) <card picked up> 
 		// OR output = turn <player name> <card picked up> (subsequent turns)
-		else if(send.contains(Config.TURN)){
-			String s[] = send.split(" ");
-			String message = "nothing";
-			
-			if(send.contains(Config.PICKED_PURPLE)){
-
+		else if(send.contains(Config.TURN)){			
+			/*if(send.contains(Config.PICKED_PURPLE)){
+				send1Client(id, send);
 			}else{
 				
-			}
+			}*/
+			send1Client(id, send);
 			
 		}
 		
 		
 		// CHECK BRIT'S GAME ENGINE CHANGE ! 
+		// KATIE TO DO: If output = stunned <card played> then send me end turn
 		else if (send.contains(Config.PLAY)){
 			sendAllClients(send);
 		}
@@ -187,32 +182,11 @@ public class Server implements Runnable {
 		}
 		
 		else if(send.contains(Config.POINTS)){
-			String s[] = send.split(" ");
-			
-			if(send.contains(Config.CONTINUE)){
-				
-			}
-			
-			else if(send.contains(Config.WITHDRAW)){
-				
-			}
-			
-			else if(send.contains(Config.TOURNAMENT_WINNER)){
-				
-			}
-			
-			else if(send.contains(Config.PURPLE_WIN)){
-				
-			}
-			
-			else if(send.contains(Config.GAME_WINNER)){
-				
-			}
-			
+			sendAllClients(send);
 		}
 		
-		else if(send.contains(Config.WITHDRAW)){
-			
+		else {
+			sendAllClients(send);
 		}
 	}
 }
