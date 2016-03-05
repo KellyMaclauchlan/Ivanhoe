@@ -317,6 +317,7 @@ public class Client implements Runnable, Observer {
 			
 		}
 		window.showWindow();
+		this.window.window.endedTurn();
 		return Config.START_TOURNAMENT;
 		
 	}
@@ -326,7 +327,7 @@ public class Client implements Runnable, Observer {
 		String input[] = msg.split(" ");
 		
 		this.window.showWindow();
-		this.window.window.endedTurn();
+		this.window.window.startTurn();
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
 			
@@ -472,6 +473,7 @@ public class Client implements Runnable, Observer {
 						window.setCurrPlayer(i);
 						
 						if(window.getPlayerNum() == window.getCurrPlayer()){
+							window.window.startTurn();
 							String value[] = input[5].split("_");
 							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
 							//output = playACard();
