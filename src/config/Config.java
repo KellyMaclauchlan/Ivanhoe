@@ -131,7 +131,4 @@ public class Config {
 	public static String IMG_SHIELD = "resources/cards_small/actionCards14.jpg";
 	public static String IMG_STUNNED = "resources/cards_small/actionCards15.jpg";
 	public static String IMG_IVANHOE = "resources/cards_small/actionCards16.jpg";
-	
-	
-	
 }
