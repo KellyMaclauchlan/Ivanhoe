@@ -200,9 +200,7 @@ public class Client implements Runnable, Observer {
 		 * Output: begin tournament 
 		 * */
 		else if (msg.contains(Config.PLAYER_NAME)){
-			if(this.window.waitingPopUp.isVisible()){
 				this.window.hideWaitng();
-			}
 			output = processPlayerName(msg);
 		}
 		
