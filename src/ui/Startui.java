@@ -52,12 +52,19 @@ public class Startui {
 		control.addToken(0, 4);
 		control.addToken(1, 0);
 		control.addToken(1, 2);
+		control.playerNames.add("kelly");
+		control.playerNames.add("katie");
+		control.playerNames.add("brit");
+		//testing various pop ups
 		//control.setTournamnetColour(control.setTournament());
-		System.out.println(control.playerPickToken() );
-		control.showWaiting();
-		System.out.println(control.getIPPortFromPlayer());
-		control.hideWaitng();
-		System.out.println(control.getNumberOfPlayersFromPlayer());
-		//window.setVisible(true);
+		//System.out.println(control.playerPickToken() );
+		//control.showWaiting();
+		//System.out.println(control.getIPPortFromPlayer());
+		//control.hideWaitng();
+		//System.out.println(control.getNumberOfPlayersFromPlayer());
+		System.out.println(control.changeColour());
+		System.out.println(control.pickAName("testing to pick a name."));
+				//System.out.println(
+		
 	}
 }

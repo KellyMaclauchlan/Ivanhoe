@@ -120,7 +120,7 @@ public class MainWindowController implements Observer, Subject{
 	}
 	public String pickAName(String action){
 
-		String[] options = (String[]) this.playerNames.toArray();
+		String[] options = this.playerNames.toArray(new String[0]);
 	    int response = JOptionPane.showOptionDialog(null, "Pick a Player to "+action, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		log.info("Player picked was " + options[response]);
 	    return options[response];
