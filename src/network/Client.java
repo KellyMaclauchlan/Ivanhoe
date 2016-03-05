@@ -22,14 +22,18 @@ public class Client implements Runnable, Observer {
 	public Thread thread = null;
 	public ClientThread client = null;
 	public MainWindowController window = null;
-	public BufferedReader console = null;
 	public BufferedReader inStream = null;
 	public BufferedWriter outStream = null;
 	public String testing = null;
-	
-	public String playedCards = null;
-	public Logger log = Logger.getLogger("Client");
 	public ArrayList<String> hand = new ArrayList<String>();
+	public String playedCards = null;
+	
+	public Logger log = Logger.getLogger("Client");
+<<<<<<< HEAD
+	public ArrayList<String> hand = new ArrayList<String>();
+=======
+	
+>>>>>>> 69dc90c47caf92180ade4983c2f9ff2524f54202
 	public Client(){
 		window = new MainWindowController();
 		String ipAndPort = window.getIPPortFromPlayer();
@@ -65,7 +69,6 @@ public class Client implements Runnable, Observer {
 	
 	private void start() throws IOException{
 		try{
-			console = new BufferedReader(new InputStreamReader(System.in));
 			inStream = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			outStream = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 			log.info("Initializing buffers");
@@ -89,7 +92,7 @@ public class Client implements Runnable, Observer {
 			try {  
 				if (outStream != null) {
 					outStream.flush();
-					outStream.write(console.readLine() + "\n");
+					//outStream.write(console.readLine() + "\n");
 				} else {
 					log.info(ID + ": Stream Closed");
 				}
@@ -104,14 +107,12 @@ public class Client implements Runnable, Observer {
 		try{
 			if(thread != null){
 				thread = null;
-				if(console != null){console.close();}
 				if(inStream != null){inStream.close();}
 				if(outStream != null){outStream.close();}
 				
 				if(socket != null){socket.close();}
 				
 				this.socket = null;
-				this.console = null;
 				this.inStream = null;
 				this.outStream = null; 
 			}
@@ -122,7 +123,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	/* Handles all the input and output to and from the server */
-	public void handle(String msg) {
+	public void handle(String msg) throws IOException {
 		String send = "waiting";
 		
 		log.info("Message Received: " + msg);
@@ -135,6 +136,10 @@ public class Client implements Runnable, Observer {
 			send = processInput(msg);
 			//System.out.println(msg);
 			log.info("Information sent to server: " + send);
+			
+			outStream.write(send);
+			outStream.write("\n");
+			outStream.flush();
 		}
 	}
 
@@ -180,7 +185,7 @@ public class Client implements Runnable, Observer {
 		else if(msg.contains(Config.PROMPT_JOIN)){
 			String name = window.getNameFromPlayer();
 			window.playerName = name;
-			return output = Config.JOIN + name;	
+			return output = Config.JOIN + " " + name;	
 		}
 		
 		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
@@ -500,5 +505,4 @@ public class Client implements Runnable, Observer {
 		} 
 		return null;
 	}
-
 }
