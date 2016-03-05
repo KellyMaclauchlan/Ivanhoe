@@ -21,6 +21,7 @@ public class Player {
 		this.name = name;
 		currentTokens = new ArrayList<>();
 		display = new ArrayList<>();
+		front = new ArrayList<>();
 	}
 	
 	public void chooseTournamentColour(String colour) {
