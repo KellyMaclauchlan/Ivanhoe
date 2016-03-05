@@ -38,6 +38,8 @@ public class GameEngine {
 			} else if (input.contains(Config.COLOUR_PICKED)) {
 				output = processColourPicked(input); // output = play <colour picked>
 			// input = play red 4 (can be continued on input at a time for as many cards as available)
+			//OR IF action card, input = play action param_1 ... param_n depending on action
+			// talked to Kelly about this. Can get popups where necessary and append variables necessary for action cards to card play string
 			} else if (input.contains(Config.PLAY)) {
 				output = processPlay(input); // output = waiting <card played> OR output = waiting <unplayable>
 			// input = end turn
@@ -147,12 +149,73 @@ public class GameEngine {
 	
 	public String processActionCard(ActionCard card, String input) {
 		String output = "";
+		String[] cardString = input.split(" ");
 		if (card.getType().equals(Config.UNHORSE)) {
-			//TO DO: parse input to get colour
-			if (tournamentColour.equals(Config.PURPLE)) {
-				card.playUnhorse(this, input);
+			//input = play unhorse <colour>
+			String colour = cardString[2];
+			if (tournamentColour.equals(Config.PURPLE)) card.playUnhorse(this, colour);
+		
+		} else if (card.getType().equals(Config.CHANGEWEAPON)) {
+				//input = play changeweapon <colour>
+				String colour = cardString[2];
+				if (tournamentColour.equals(Config.RED) 
+						|| tournamentColour.equals(Config.BLUE) 
+						|| tournamentColour.equals(Config.YELLOW)) {
+					card.playChangeWeapon(this, colour);
+				}
+			} else if (card.getType().equals(Config.DROPWEAPON)) {
+				if (tournamentColour.equals(Config.RED) 
+						|| tournamentColour.equals(Config.BLUE) 
+						|| tournamentColour.equals(Config.YELLOW)) {
+					card.playDropWeapon(this);
+				}
+			} else if (card.getType().equals(Config.BREAKLANCE)) {
+				//input = play breaklance <player name>
+				String playerName = cardString[2];
+				Player player = getPlayerByName(playerName);
+				card.playBreakLance(player);
+			} else if (card.getType().equals(Config.RIPOSTE)) {
+				//input = play riposte <player name>
+				String playerName = cardString[2];
+				Player player = getPlayerByName(playerName);
+				Card cardToSteal = card.playRiposte(player);
+				currentPlayer.addToDisplay(cardToSteal);
+			} else if (card.getType().equals(Config.DODGE)) {
+				// input = play dodge <player name> <card type> <card value>
+				String playerName = cardString[2];
+				String type = cardString[3];
+				String value = cardString[4];
+				Player player = getPlayerByName(playerName);
+				for (Card c: player.getDisplay()) {
+					if (c.getType().equals(type) && Integer.valueOf(c.getValue()).equals(value)) {
+						card.playDodge(player, c);
+						break;
+					}
+				}
+			} else if (card.getType().equals(Config.RETREAT)) {
+				
+			} else if (card.getType().equals(Config.KNOCKDOWN)) {
+				
+			} else if (card.getType().equals(Config.OUTMANEUVER)) {
+				
+			} else if (card.getType().equals(Config.CHARGE)) {
+				
+			} else if (card.getType().equals(Config.COUNTERCHARGE)) {
+				
+			} else if (card.getType().equals(Config.DISGRACE)) {
+				
+			} else if (card.getType().equals(Config.ADAPT)) {
+				
+			} else if (card.getType().equals(Config.OUTWIT)) {
+				
+			} else if (card.getType().equals(Config.SHIELD)) {
+				
+			} else if (card.getType().equals(Config.STUNNED)) {
+				
+			} else if (card.getType().equals(Config.IVANHOE)) {
+				
 			}
-		}
+		
 		return output;
 	}
 
@@ -422,6 +485,16 @@ public class GameEngine {
 			p.setStartTokenColour("nil");
 		}
 		turnNumber = 0;
+	}
+	
+	public Player getPlayerByName(String name) {
+		Player player = null;
+		for (Player p: players) {
+			if (p.getName().equals(name)) {
+				player = p;
+			}
+		}
+		return player;
 	}
 	
 	public Player getCurrentPlayer() {

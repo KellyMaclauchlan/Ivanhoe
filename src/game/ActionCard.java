@@ -15,28 +15,40 @@ public class ActionCard extends Card {
 	}
 	
 	public void playUnhorse(GameEngine game, String colour) {
-		//change tournament colour to red blue or yellow if it is currently purple
+		// change tournament colour to red blue or yellow if it is currently purple
 		game.setTournamentColour(colour);
 	}
 	
-	public void playChangeWeapon(String colour) {
-		//TO DO: change tournament colour to red blue or yellow if it is currently red blue or yellow
+	public void playChangeWeapon(GameEngine game, String colour) {
+		// change tournament colour to red blue or yellow if it is currently red blue or yellow
+		game.setTournamentColour(colour);
 	}
 	
-	public void playDropWeapon() {
-		//TO DO: change tournament colour to green if it is currently red blue or yellow 
+	public void playDropWeapon(GameEngine game) {
+		// change tournament colour to green if it is currently red blue or yellow 
+		game.setTournamentColour(Config.GREEN);
+		
 	}
 	
 	public void playBreakLance(Player player) {
-		//TO DO: rid given player of all purple cards, leave one if they only have purple cards
+		// rid given player's display of all purple cards, leave one if they only have purple cards
+		for (Card c: player.getDisplay()) {
+			if (c.getType().equals(Config.PURPLE) && player.getDisplay().size() > 1) {
+				player.removeFromDisplay(c);
+			}
+		}
 	}
 	
-	public void playRiposte(Player player) {
-		//TO DO: take the last played card of given player and put it in deck of current player
+	public Card playRiposte(Player player) {
+		// take the last played card of given player and put it in deck of current player
+		Card cardToSteal = player.getDisplay().get(player.getDisplay().size() - 1);
+		player.removeFromDisplay(cardToSteal);
+		return cardToSteal;
 	}
 
-	public void playDodge(Player player) {
-		//TO DO: discard any one of the given player's cards
+	public void playDodge(Player player, Card card) {
+		// discard any one of the given player's cards
+		player.removeFromDisplay(card);
 	}
 	
 	public void playRetreat(Card card) {

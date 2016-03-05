@@ -15,4 +15,55 @@
 @2016-Mar-04 17:06:33 INFO  Client:57 - Client has started
 @2016-Mar-04 17:06:33 INFO  ClientThread:51 - firstplayer
 @2016-Mar-04 17:06:49 INFO  Server:84 - Message Received: null
+@2016-Mar-04 17:16:22 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-04 17:16:22 INFO  Server:43 - Game has started
+@2016-Mar-04 17:16:22 INFO  Server:46 - New ServerThread created
+@2016-Mar-04 17:16:22 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 17:16:31 INFO  Client:47 - 0:Establishing connection. Please wait... 
+@2016-Mar-04 17:16:31 INFO  Client:54 - 50045: Connected to server: localhost/127.0.0.1
+@2016-Mar-04 17:16:31 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=50045,localport=3000]
+@2016-Mar-04 17:16:31 INFO  Client:55 - 50045: Connected to portid: 50045
+@2016-Mar-04 17:16:31 INFO  Client:72 - Initializing buffers
+@2016-Mar-04 17:16:31 INFO  ClientThread:48 - Client Thread 50045 running.
+@2016-Mar-04 17:16:31 INFO  Client:78 - New ClientThread has started
+@2016-Mar-04 17:16:31 INFO  Client:129 - Message Received: client
+@2016-Mar-04 17:16:45 INFO  ClientThread:51 - firstplayer
+@2016-Mar-04 17:16:51 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 17:17:16 INFO  Client:129 - Message Received: null
+@2016-Mar-04 17:17:40 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-04 17:17:40 INFO  Server:43 - Game has started
+@2016-Mar-04 17:17:40 INFO  Server:46 - New ServerThread created
+@2016-Mar-04 17:17:40 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 17:17:49 INFO  Client:47 - 0:Establishing connection. Please wait... 
+@2016-Mar-04 17:17:49 INFO  Client:54 - 50046: Connected to server: localhost/127.0.0.1
+@2016-Mar-04 17:17:49 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=50046,localport=3000]
+@2016-Mar-04 17:17:49 INFO  Client:55 - 50046: Connected to portid: 50046
+@2016-Mar-04 17:17:49 INFO  Client:72 - Initializing buffers
+@2016-Mar-04 17:17:49 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 17:17:49 INFO  Client:78 - New ClientThread has started
+@2016-Mar-04 17:17:49 INFO  ClientThread:48 - Client Thread 50046 running.
+@2016-Mar-04 17:17:49 INFO  Client:129 - Message Received: client
+@2016-Mar-04 17:17:49 INFO  Client:138 - Information sent to server: client
+@2016-Mar-04 17:17:49 INFO  Client:58 - Client has started
+@2016-Mar-04 17:17:49 INFO  ClientThread:51 - firstplayer
+@2016-Mar-04 17:46:42 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-04 17:46:42 ERROR Server:37 - java.net.BindException: Address already in use
+@2016-Mar-04 17:46:47 INFO  Server:86 - Message Received: null
+@2016-Mar-04 17:46:53 INFO  Server:31 - Binding to port 3000, please wait...
+@2016-Mar-04 17:46:53 INFO  Server:43 - Game has started
+@2016-Mar-04 17:46:53 INFO  Server:46 - New ServerThread created
+@2016-Mar-04 17:46:53 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 17:47:02 INFO  Client:46 - 0:Establishing connection. Please wait... 
+@2016-Mar-04 17:47:02 INFO  Client:53 - 50066: Connected to server: localhost/127.0.0.1
+@2016-Mar-04 17:47:02 INFO  Server:65 - Client accepted: Socket[addr=/127.0.0.1,port=50066,localport=3000]
+@2016-Mar-04 17:47:02 INFO  Client:54 - 50066: Connected to portid: 50066
+@2016-Mar-04 17:47:02 INFO  Client:71 - Initializing buffers
+@2016-Mar-04 17:47:02 INFO  Client:77 - New ClientThread has started
+@2016-Mar-04 17:47:02 INFO  Server:55 - Waiting for Clients
+@2016-Mar-04 17:47:02 INFO  ClientThread:48 - Client Thread 50066 running.
+@2016-Mar-04 17:47:02 INFO  Client:128 - Message Received: start
+@2016-Mar-04 17:47:02 INFO  Client:137 - Information sent to server: result
+@2016-Mar-04 17:47:02 INFO  Client:57 - Client has started
+@2016-Mar-04 17:47:02 INFO  ClientThread:51 - firstplayer
+@2016-Mar-04 17:47:17 INFO  Client:128 - Message Received: null
 @
