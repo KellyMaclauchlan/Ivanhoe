@@ -64,7 +64,7 @@ public class ActionCard extends Card {
 	}
 
 	public void playDodge(Player player, Card card) {
-		// discard any one of the given player's cards
+		// discard any one of the given player's displayed cards
 		boolean hasShield = false;
 		for (Card c: player.getFront()) {
 			if (c.getType().equals(Config.SHIELD)) {
@@ -153,7 +153,7 @@ public class ActionCard extends Card {
 	}
 	
 	public void playAdapt(GameEngine game) {
-		// remove all duplicate cards from each opponent's hand, leaving only one of each card
+		// remove all duplicate cards from each opponent's display, leaving only one of each card
 		for (Player p: game.getActionablePlayers()) {
 			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
 				for (Card c: p.getDisplay()) {
