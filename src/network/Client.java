@@ -405,6 +405,27 @@ public class Client implements Runnable, Observer {
 		return output;
 	}
 	
+	public String processActionCard(){
+		String output= "";
+		String cardType= window.lastCard.getType();
+		output = " "+cardType+" ";
+		//note Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
+		if(cardType.equalsIgnoreCase(Config.KNOCKDOWN)){
+			output+= window.pickAName("take a card from.");
+		}
+		else if(cardType.equalsIgnoreCase(Config.RIPOSTE)){
+			output+= window.pickAName("take the last card on their display and add it to yours.");
+		}
+		else if(cardType.equalsIgnoreCase(Config.BREAKLANCE)){
+			output+= window.pickAName("remove all purple cards from their display.");
+		}
+		
+		else if(cardType.equalsIgnoreCase(Config.CHANGEWEAPON)||cardType.equalsIgnoreCase(Config.UNHORSE)){
+			output +=window.changeColour();
+		}
+		return output;
+	}
+	
 	public String processContinueWithdraw(String msg){
 		String output = "result";
 		String input[] = msg.split(" ");
