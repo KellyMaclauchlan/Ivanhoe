@@ -166,8 +166,6 @@ public class Client implements Runnable, Observer {
 		}
 		String send =this.playACard();
 		log.info("Information sent to server: " + send);
-		// send this to the server some how 
-		log.info("Information sent to server: " + send);
 		
 		try {
 			outStream.write(send);
