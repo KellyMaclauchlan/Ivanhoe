@@ -23,7 +23,7 @@ public class GameEngine {
 	}
 	
 	public String processInput(String input) {
-		String output = "waiting";
+		String output = "input";
 			// input = start <number of players>
 			if (input.contains(Config.START)) {
 				output = processStart(input); // output = prompt join OR output = max 5 (if number of players is too high)

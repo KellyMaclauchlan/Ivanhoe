@@ -74,9 +74,7 @@ public class Client implements Runnable, Observer {
 				thread.start();
 				log.info("New ClientThread has started");
 			}
-
-			System.out.println("sending client from client");
-			//handle(Config.CLIENT_START);
+			
 			outStream.write(Config.CLIENT_START + "\n");
 			outStream.flush();
 		}catch (IOException e){
@@ -90,7 +88,6 @@ public class Client implements Runnable, Observer {
 			try {  
 				if (outStream != null) {
 					outStream.flush();
-					//outStream.write(console.readLine() + "\n");
 				} else {
 					log.info(ID + ": Stream Closed");
 				}
@@ -129,6 +126,9 @@ public class Client implements Runnable, Observer {
 	   	if (msg.equalsIgnoreCase("quit!")) {  
 				log.info(ID + " has left the game");
 				stop();
+				
+	   	}else if(msg.contains("input")){
+	   		System.out.println(msg);
 		} else {
 			testing = msg;
 			send = processInput(msg);
@@ -190,6 +190,8 @@ public class Client implements Runnable, Observer {
 		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
 		else if(msg.contains(Config.NEED_PLAYERS)){
 			this.window.showWaiting();
+			// TO DO: make client in waiting state? 
+			
 		}
 		
 		/* Receives each player and their hand

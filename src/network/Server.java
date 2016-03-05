@@ -3,14 +3,12 @@ package network;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-
 import org.apache.log4j.Logger;
+
 import config.Config;
 import game.GameEngine;
-import game.Player;
 
 public class Server implements Runnable {
 	public int numPlayers = 0;
@@ -98,7 +96,7 @@ public class Server implements Runnable {
 		System.out.println("Message Receieved: " + msg);
 
 		log.info("Message Received: " + msg);
-		String send = "waiting";
+		String send = "input";
 		
 		if (msg.equals("quit")) {
 			log.info(String.format("Removing Client: %d", id));
@@ -118,16 +116,7 @@ public class Server implements Runnable {
 		
 		else {
 			send = game.processInput(msg);
-			//sendAllClients(send);
-			//log.info("Message Sent: " + send);
-			//System.out.println("Message sent: " + send);
 			processInput(id, send);
-			
-			
-			/*if(send.contains(Config.PROMPT_JOIN)){
-				send1Client(id, send);
-			}*/
-			
 		}
 	}
 	
