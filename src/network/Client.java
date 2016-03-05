@@ -285,7 +285,6 @@ public class Client implements Runnable, Observer {
 			//if this player is the user
 			if(card[1].equalsIgnoreCase(window.playerName)){
 				for(int k = 3; k < card.length; k++){
-					System.out.println("Card: " + card[k]);
 					
 					hand.add(card[k]);					
 					value = card[k].split("_");
@@ -373,12 +372,14 @@ public class Client implements Runnable, Observer {
 			output = Config.END_TURN;
 		}
 		else if(window.lastCard.getCardType().equalsIgnoreCase(Config.ACTION)){
-			output = Config.PLAY+ this.processActionCard();
+			output = Config.PLAY + this.processActionCard();
 		}
 		else{
 			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
 		}
 		this.playedCards = null;
+		System.out.println("card played: " + output);
+		
 		return output;
 	}
 	
@@ -605,6 +606,6 @@ public class Client implements Runnable, Observer {
 			return new ActionCard(type, output);
 		}
 		
-		return null;
+		return new Card();
 	}
 }
