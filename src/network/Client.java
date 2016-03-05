@@ -279,10 +279,13 @@ public class Client implements Runnable, Observer {
 
 		for(int i = 1; i < name.length; i++){
 			card = name[i].split(" ");
+			System.out.println("Name Array: " + name[i] + "\n");
 			
 			//if this player is the user
 			if(card[2].equalsIgnoreCase(window.playerName)){
 				for(int k = 3; k < card.length; k++){
+					System.out.println("Card Arrary: " + card[k] + "\n");
+					
 					hand.add(card[i]);					
 					value = card[i].split("_");
 					
