@@ -150,25 +150,25 @@ public class Client implements Runnable, Observer {
 
 	@Override
 	public void update(String message) {
-		System.out.println("clinet got from player:"+message);
-		String send="";
+		System.out.println("client got from player:"+message);
+		String send=Config.FROMUPDATE;
 		if(message.contains(Config.PLAYEDCARD)){
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
-			send=this.playACard();
+			send=" "+this.playACard();
 		}
 		
 		else if (message.contains(Config.WITHDRAW)){
 			//processInput(Config.WITHDRAW);
 			playedCards = Config.WITHDRAW;
-			send=Config.WITHDRAW;
+			send=" "+Config.WITHDRAW;
 		}
 		
 		else{
 			//processInput(Config.END_TURN);
 			playedCards = Config.END_TURN;
-			send=Config.END_TURN;
+			send=" "+Config.END_TURN;
 		}
-		
+		this.processInput(send);
 		// send the text send to the server here
 		
 		
@@ -178,8 +178,11 @@ public class Client implements Runnable, Observer {
 	 * what buttons/popups/commands the client and GUI must send back */
 	public String processInput(String msg){
 		String output = "result";
+		if(msg.contains(Config.FROMUPDATE)){
+			output= msg.substring(Config.FROMUPDATE.length());
+		}
 		
-		if(msg.contains(Config.CLIENT_START)){
+		else if(msg.contains(Config.CLIENT_START)){
 			output = Config.CLIENT_START;
 		}
 		

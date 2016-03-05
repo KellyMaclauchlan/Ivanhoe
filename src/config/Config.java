@@ -40,6 +40,7 @@ public class Config {
 	public static String WAITING = "waiting";
 	public static String PURPLE_WIN = "purple win";
 	public static String WITHDRAW = "withdraw";
+	public static String FROMUPDATE="update";
 	
 	/*UI messages*/
 	public static String LEFT_CLICK="leftclick";
