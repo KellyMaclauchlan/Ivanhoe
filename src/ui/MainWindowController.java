@@ -18,7 +18,7 @@ public class MainWindowController implements Observer, Subject{
 	public String playerName;
 	public int moved;
 	public MainWindow window;
-	private WaitingPopUp waitingPopUp;
+	public WaitingPopUp waitingPopUp;
 	public String lastMessege;
 	public ArrayList<String>tokenStrings;
 	public Color backgroundColours[] = {new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};

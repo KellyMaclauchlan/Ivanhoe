@@ -128,7 +128,8 @@ public class Client implements Runnable, Observer {
 				stop();
 				
 	   	}else if(msg.contains("input")){
-	   		System.out.println(msg);
+	   		// do nothing and wait for more players to arrive 
+	   		//System.out.println(msg);
 		} else {
 			testing = msg;
 			send = processInput(msg);
@@ -199,6 +200,9 @@ public class Client implements Runnable, Observer {
 		 * Output: begin tournament 
 		 * */
 		else if (msg.contains(Config.PLAYER_NAME)){
+			if(this.window.waitingPopUp.isVisible()){
+				this.window.hideWaitng();
+			}
 			output = processPlayerName(msg);
 		}
 		
@@ -270,10 +274,19 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processPlayerName(String msg){
-		String name[] = msg.split("name");
+		String name[] = msg.split(" name");
 		String card[];
 		String value[];
 		window.setNumPlayers(name.length);
+		
+		for(int i = 0; i < name.length; i++){
+			System.out.println("Name array: " + name[i]);
+			card = name[i].split(" ");
+			
+			for(int k = 0; k < card.length; k++){
+				System.out.println("Card array: " + card[k]);
+			}
+		}
 		
 		
 		for(int i = 0; i < name.length; i++){
