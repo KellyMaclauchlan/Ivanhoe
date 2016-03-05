@@ -26,10 +26,9 @@ public class Client implements Runnable, Observer {
 	public BufferedWriter outStream = null;
 	public String testing = null;
 	public ArrayList<String> hand = new ArrayList<String>();
-	public String playedCards = null;
-	
+	public String playedCards = null;	
 	public Logger log = Logger.getLogger("Client");
-	
+
 	public Client(){
 		window = new MainWindowController();
 		String ipAndPort = window.getIPPortFromPlayer();
@@ -76,7 +75,7 @@ public class Client implements Runnable, Observer {
 				log.info("New ClientThread has started");
 			}
 
-			handle(Config.CLIENT_START);
+			handle(Config.START);
 		}catch (IOException e){
 			log.error(e);
 			throw e; 
@@ -130,6 +129,10 @@ public class Client implements Runnable, Observer {
 		} else {
 			testing = msg;
 			send = processInput(msg);
+<<<<<<< HEAD
+=======
+			//System.out.println(msg);
+>>>>>>> 6628c6476c7640b297a8922d0c6c2966245aa338
 			log.info("Information sent to server: " + send);
 			
 			outStream.write(send);
@@ -165,15 +168,18 @@ public class Client implements Runnable, Observer {
 	public String processInput(String msg){
 		String output = "result";
 		
+<<<<<<< HEAD
 		if(msg.equals(Config.CLIENT_START)){
 			output = Config.CLIENT_START;
 		}
 		
+=======
+>>>>>>> 6628c6476c7640b297a8922d0c6c2966245aa338
 		/* Prompts the first player for the number of players in the game 
 		 * Input: firstplayer
 		 * Output: start #
 		 * */
-		else if(msg.contains(Config.FIRSTPLAYER)){
+		if(msg.contains(Config.FIRSTPLAYER)){
 			return Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
 		}
 
@@ -256,8 +262,11 @@ public class Client implements Runnable, Observer {
 			
 			//output = Config.END_TURN;
 		//}
+<<<<<<< HEAD
 		
 		//System.out.println("Sending: " + output);
+=======
+>>>>>>> 6628c6476c7640b297a8922d0c6c2966245aa338
 		return output; 
 	}
 	
