@@ -279,13 +279,11 @@ public class Client implements Runnable, Observer {
 
 		for(int i = 1; i < name.length; i++){
 			card = name[i].split(" ");
-			System.out.println("Name Array: " + name[i] + "\n");
+			
 			
 			//if this player is the user
 			if(card[2].equalsIgnoreCase(window.playerName)){
 				for(int k = 3; k < card.length; k++){
-					System.out.println("Card Arrary: " + card[k] + "\n");
-					
 					hand.add(card[i]);					
 					value = card[i].split("_");
 					
@@ -295,9 +293,7 @@ public class Client implements Runnable, Observer {
 				window.setPlayerNum(i);
 			}
 			//set name on gui
-			window.setName(i, card[0]);
-			//set name in array
-			window.playerNames.add(card[0]);
+			window.setName(i, card[1]);
 			
 		}
 		window.showWindow();
