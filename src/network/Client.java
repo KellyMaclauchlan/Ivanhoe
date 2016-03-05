@@ -299,7 +299,9 @@ public class Client implements Runnable, Observer {
 			window.playerNames.add(card[0]);
 			
 		}
+		window.showWindow();
 		return Config.START_TOURNAMENT;
+		
 	}
 	
 	public String processPlayerTurn(String msg){
