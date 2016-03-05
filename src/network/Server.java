@@ -122,12 +122,10 @@ public class Server implements Runnable {
 	
 	public void send1Client(int id, String msg){
 		ServerThread to = clients.get(id);
-		System.out.println("sending from server: " + msg);
 		to.send(String.format("%s\n", msg));
 	}
 	
 	public void sendAllClients(String msg){
-		System.out.println("Send to clients");
 		for(ServerThread to : clients.values()){
 			to.send(String.format("%s\n", msg));
 		}

@@ -274,27 +274,17 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processPlayerName(String msg){
-		String name[] = msg.split(" name");
+		String name[] = msg.split("name");
 		String card[];
 		String value[];
 		window.setNumPlayers(name.length);
-		
-		for(int i = 0; i < name.length; i++){
-			System.out.println("Name array: " + name[i]);
+
+		for(int i = 1; i < name.length; i++){
 			card = name[i].split(" ");
 			
-			for(int k = 0; k < card.length; k++){
-				System.out.println("Card array: " + card[k]);
-			}
-		}
-		
-		
-		for(int i = 0; i < name.length; i++){
-			card = name[i].split(" ");
 			//if this player is the user
-			System.out.println("Current name: " + name[i]);
-			if(card[0].equalsIgnoreCase(window.playerName)){
-				for(int k = 2; k < card.length; k++){
+			if(card[2].equalsIgnoreCase(window.playerName)){
+				for(int k = 3; k < card.length; k++){
 					hand.add(card[i]);					
 					value = card[i].split("_");
 					
@@ -315,6 +305,8 @@ public class Client implements Runnable, Observer {
 	public String processPlayerTurn(String msg){
 		String output = "result";
 		String input[] = msg.split(" ");
+		
+		this.window.showWindow();
 		
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
