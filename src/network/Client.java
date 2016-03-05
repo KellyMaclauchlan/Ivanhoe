@@ -326,7 +326,7 @@ public class Client implements Runnable, Observer {
 		String input[] = msg.split(" ");
 		
 		this.window.showWindow();
-		
+		this.window.window.endedTurn();
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
 			
@@ -461,7 +461,7 @@ public class Client implements Runnable, Observer {
 				window.GameOverPopup(input[0]);
 			}
 			if(!msg.contains(Config.TOURNAMENT_WINNER)){
-				window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
+				window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
 				
 				if(window.getPlayerNum() == old){
 					window.window.endedTurn();
