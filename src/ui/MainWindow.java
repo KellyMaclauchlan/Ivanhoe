@@ -191,7 +191,7 @@ public class MainWindow extends JFrame implements Subject {
 	
 	//adds default cards for tests
 	private void addDefaults(){
-		this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards.jpg"));
+		/*this.playerCards[0].setIcon(new ImageIcon("resources/cards_small/simpleCards.jpg"));
 		this.playerCards[1].setIcon(new ImageIcon("resources/cards_small/simpleCards1.jpg"));
 		this.playerCards[2].setIcon(new ImageIcon("resources/cards_small/simpleCards2.jpg"));
 		this.playerCards[3].setIcon(new ImageIcon("resources/cards_small/simpleCards3.jpg"));
@@ -201,7 +201,7 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerCards[7].setIcon(new ImageIcon("resources/cards_small/simpleCards7.jpg"));
 		this.playerCards[8].setIcon(new ImageIcon("resources/cards_small/simpleCards8.jpg"));
 		this.playerCards[9].setIcon(new ImageIcon("resources/cards_small/simpleCards9.jpg"));
-		this.playerNames[0].setSelected(true);
+		*/this.playerNames[0].setSelected(true);
 		
 		this.tokens[0][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
 		this.tokens[1][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));

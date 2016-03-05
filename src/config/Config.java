@@ -114,4 +114,24 @@ public class Config {
 	public static String IMG_MAIDEN_6 = "resources/cards_small/simpleCards2.jpg";
 	public static String IMG_SQUIRE_2 = "resources/cards_small/simpleCards.jpg";
 	public static String IMG_SQUIRE_3 = "resources/cards_small/simpleCards1.jpg";
+	
+	public static String IMG_DODGE = "resources/cards_small/actionCards.jpg";
+	public static String IMG_DISGRACE = "resources/cards_small/actionCards1.jgp";
+	public static String IMG_RETREAT = "resources/cards_small/actionCards2.jpg";
+	public static String IMG_RIPOSTE = "resources/cards_small/actionCards3.jpg";
+	public static String IMG_OUTMANEUVER = "resources/cards_small/actionCards4.jpg";
+	public static String IMG_COUNTER_CHARGE = "resources/cards_small/actionCards5.jpg";
+	public static String IMG_CHARGE = "resources/cards_small/actionCards6.jpg";
+	public static String IMG_BREAK_LANCE = "resources/cards_small/actionCards7.jpg";
+	public static String IMG_ADAPT = "resources/cards_small/actionCards8.jpg";
+	public static String IMG_DROP_WEAPON = "resources/cards_small/actionCards9.jpg";
+	public static String IMG_CHANGE_WEAPON = "resources/cards_small/actionCards10.jpg";
+	public static String IMG_UNHORSE = "resources/cards_small/actionCards11.jpg";
+	public static String IMG_KNOCK_DOWN = "resources/cards_small/actionCards12.jpg";
+	public static String IMG_SHIELD = "resources/cards_small/actionCards14.jpg";
+	public static String IMG_STUNNED = "resources/cards_small/actionCards15.jpg";
+	public static String IMG_IVANHOE = "resources/cards_small/actionCards16.jpg";
+	
+	
+	
 }

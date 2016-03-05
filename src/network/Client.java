@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import config.Config;
 import ui.MainWindowController;
 import config.Observer;
+import game.ActionCard;
 import game.Card;
 import game.ColourCard;
 import game.SupportCard;
@@ -280,16 +281,19 @@ public class Client implements Runnable, Observer {
 		for(int i = 1; i < name.length; i++){
 			card = name[i].split(" ");
 			
-			
+			System.out.println("Name Array: " + name[i]);
 			//if this player is the user
-			if(card[2].equalsIgnoreCase(window.playerName)){
+			if(card[1].equalsIgnoreCase(window.playerName)){
 				for(int k = 3; k < card.length; k++){
-					hand.add(card[i]);					
-					value = card[i].split("_");
+					System.out.println("Card: " + card[k]);
+					
+					hand.add(card[k]);					
+					value = card[k].split("_");
 					
 					System.out.println("Card " + value[0] + " " + value[1]);
 					window.addCard(getCardFromTypeValue(value[0],value[1]));
 				}
+				window.resetCards();
 				window.setPlayerNum(i);
 			}
 			//set name on gui
@@ -468,7 +472,7 @@ public class Client implements Runnable, Observer {
 		String output = "";
 		
 		/* Coloured Cards */
-		if(type.equals("purple")){
+		if(type.equals(Config.PURPLE)){
 			if(value.equals("3")){
 				output = Config.IMG_PURPLE_3; 
 			}
@@ -482,7 +486,7 @@ public class Client implements Runnable, Observer {
 				output = Config.IMG_PURPLE_7;
 			}
 		}
-		else if(type.equals("red")){
+		else if(type.equals(Config.RED)){
 			if(value.equals("3")){
 				output = Config.IMG_RED_3;
 			}
@@ -495,7 +499,7 @@ public class Client implements Runnable, Observer {
 			
 		}
 		
-		else if (type.equals("blue")){
+		else if (type.equals(Config.BLUE)){
 			if(value.equals("2")){
 				output = Config.IMG_BLUE_2;
 			}
@@ -510,7 +514,7 @@ public class Client implements Runnable, Observer {
 			}
 		}
 		
-		else if (type.equals("yellow")){
+		else if (type.equals(Config.YELLOW)){
 			if(value.equals("2")){
 				output = Config.IMG_YELLOW_2;
 			}
@@ -522,7 +526,7 @@ public class Client implements Runnable, Observer {
 			}
 		}
 		
-		else if (type.equals("green")){
+		else if (type.equals(Config.GREEN)){
 			output = Config.IMG_GREEN_1;
 		}
 		/*creates a coloured card*/
@@ -531,10 +535,10 @@ public class Client implements Runnable, Observer {
 		}
 		
 		/* Supporter */
-		if(type.equals("maiden")){
+		if(type.equals(Config.MAIDEN)){
 			output = Config.IMG_MAIDEN_6;
 		}
-		else if(type.equals("squire")){
+		else if(type.equals(Config.SQUIRE)){
 			if(value.equals("2")){
 				output = Config.IMG_SQUIRE_2;
 			}
@@ -546,6 +550,61 @@ public class Client implements Runnable, Observer {
 		if(!output.equals("")){
 			return new SupportCard(type,Integer.parseInt(value),output);
 		} 
+		
+		/* Action */
+		if(type.equals(Config.DODGE)){
+			output = Config.IMG_DODGE;
+		}
+		else if (type.equals(Config.DISGRACE)){
+			output = Config.IMG_DISGRACE;
+		}
+		else if (type.equals(Config.RETREAT)){
+			output = Config.IMG_RETREAT;
+		}
+		else if(type.equals(Config.RIPOSTE)){
+			output = Config.IMG_RIPOSTE;
+		}
+		else if(type.equals(Config.OUTMANEUVER)){
+			output = Config.IMG_OUTMANEUVER;
+		}
+		else if(type.equals(Config.COUNTERCHARGE)){
+			output = Config.IMG_COUNTER_CHARGE;
+		}
+		else if(type.equals(Config.CHARGE)){
+			output = Config.IMG_CHARGE;
+		}
+		else if(type.equals(Config.BREAKLANCE)){
+			output = Config.IMG_BREAK_LANCE;
+		}
+		else if(type.equals(Config.ADAPT)){
+			output = Config.IMG_ADAPT;
+		}
+		else if (type.equals(Config.DROPWEAPON)){
+			output = Config.IMG_DROP_WEAPON;
+		}
+		else if(type.equals(Config.CHANGEWEAPON)){
+			output = Config.IMG_CHANGE_WEAPON;
+		}
+		else if(type.equals(Config.UNHORSE)){
+			output = Config.IMG_UNHORSE;
+		}
+		else if(type.equals(Config.KNOCKDOWN)){
+			output = Config.IMG_KNOCK_DOWN;
+		}
+		else if(type.equals(Config.SHIELD)){
+			output = Config.IMG_SHIELD;
+		}
+		else if(type.equals(Config.STUNNED)){
+			output = Config.IMG_STUNNED;
+		}
+		else if(type.equals(Config.IVANHOE)){
+			output = Config.IMG_IVANHOE;
+		}
+		
+		if(!output.equals("")){
+			return new ActionCard(type, output);
+		}
+		
 		return null;
 	}
 }
