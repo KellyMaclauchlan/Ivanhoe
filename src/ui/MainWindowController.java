@@ -132,7 +132,10 @@ public class MainWindowController implements Observer, Subject{
 		this.waitingPopUp= new WaitingPopUp();
 		this.waitingPopUp.setVisible(true);
 	};
-	public void hideWaitng(){ this.waitingPopUp.dispose();};
+	public void hideWaitng(){ 
+		if(this.waitingPopUp!=null)
+			this.waitingPopUp.dispose();
+		};
 	public String playerPickToken(){
 		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
 		String have ="";
