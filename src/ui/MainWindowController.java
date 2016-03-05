@@ -81,14 +81,7 @@ public class MainWindowController implements Observer, Subject{
 	public void setName(int player, String name) {
 		this.playerNames.set(player, name);
 		window.playerNames[player].setText(name);
-	}
-	
-	public String setTournament(){
-		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
-	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
-		log.info("Tournament colour has been set to " + options[response]);
-	    return options[response];
-	}
+	}	
 	
 	public void setTournamnetColour(int i) {
 		this.tournamentColour=i;
@@ -113,6 +106,26 @@ public class MainWindowController implements Observer, Subject{
 	}
 	
 	/* Popups */
+	public String setTournament(){
+		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
+	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+		log.info("Tournament colour has been set to " + options[response]);
+	    return options[response];
+	}
+	public String changeColour(){
+		String[] options = new String[] {"Blue", "Red", "Yellow"};
+	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+		log.info("Tournament colour has been set to " + options[response]);
+	    return options[response];
+	}
+	public String pickAName(String action){
+
+		String[] options = (String[]) this.playerNames.toArray();
+	    int response = JOptionPane.showOptionDialog(null, "Pick a Player to "+action, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+		log.info("Player picked was " + options[response]);
+	    return options[response];
+	}
+
 	public void cantPlayCardPopup(){ JOptionPane.showMessageDialog(null, "You cannot play that card.");}
 	public void automaticWithdrawPopup(){ JOptionPane.showMessageDialog(null, "You cannot play any cards, you have automatically withdrawn from the tournament.");}
 	public void showWaiting(){
@@ -134,6 +147,7 @@ public class MainWindowController implements Observer, Subject{
 	    return output;
 	}
 	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
+	
 	
 	
 	/* Observer Pattern */
@@ -289,4 +303,5 @@ public class MainWindowController implements Observer, Subject{
 		this.window.setToken(player, token, tokenStrings.get(token));
 		log.info("Adding " + tokenStrings.get(token) + " token");
 	}
+	
 }
