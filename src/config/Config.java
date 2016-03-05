@@ -3,13 +3,9 @@ package config;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import game.ActionCard;
-
 public class Config {
 	public static int DEFAULT_PORT = 3000; 
-	public static int PORT; 
 	public static String DEFAULT_HOST = "127.0.0.1";
-	public static String HOST;
 	
 	public static int MAX_PLAYERS = 5; 
 	
@@ -43,15 +39,6 @@ public class Config {
 	public static String FIRSTPLAYER = "firstplayer";
 	public static String WAITING = "waiting";
 	public static String PURPLE_WIN = "purple win";
-
-	
-	/* STARTING THE TOURNAMENT */
-	public static String DRAW_TOKEN = "token";
-	public static String DEAL = "deal";
-	
-	/* PLAYING IN A TOURNAMENT */
-	public static String DRAW_CARD = "draw card";
-	public static String PLAY_CARD = "play card";
 	public static String WITHDRAW = "withdraw";
 	
 	/*UI messages*/
@@ -127,6 +114,4 @@ public class Config {
 	public static String IMG_MAIDEN_6 = "resources/cards_small/simpleCards2.jpg";
 	public static String IMG_SQUIRE_2 = "resources/cards_small/simpleCards.jpg";
 	public static String IMG_SQUIRE_3 = "resources/cards_small/simpleCards1.jpg";
-
-	
 }

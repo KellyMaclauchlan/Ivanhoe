@@ -69,60 +69,17 @@ public class Server implements Runnable {
 			sThread.start();
 			clients.put(sThread.getID(), sThread);
 			this.numPlayers++; 
-			if(numPlayers == 1){
-				send1Client(sThread.getID(), Config.FIRSTPLAYER);
+			/*if(numPlayers == 1){
+				handle(sThread.getID(), Config.FIRSTPLAYER);
 			}else{
-				send1Client(sThread.getID(), Config.PROMPT_JOIN);
-			}
+				handle(sThread.getID(), Config.PROMPT_JOIN);
+			}*/
+			handle(sThread.getID(), Config.CLIENT_START);
 		}catch (IOException e){
 			log.error(e);
 		}
 	}
-
-
-	public void handle(int id, String msg) {
-		System.out.println("Message Receieved: " + msg);
-
-		log.info("Message Received: " + msg);
-		String send = "waiting";
-		
-		if (msg.equals("quit")) {
-			log.info(String.format("Removing Client: %d", id));
-			if (clients.containsKey(id)) {
-				clients.get(id).send("quit!" + "\n");
-				remove(id);
-			}
-		}else if (msg.equals("shutdown")){ shutdown(); }
-		
-		else if (msg.equals(Config.CLIENT_START)){
-			System.out.println("in client start");
-			if(numPlayers == 1){
-				send1Client(id, Config.FIRSTPLAYER);
-			}else{
-				send1Client(id, Config.PROMPT_JOIN);
-			}
-		}
-		
-		send = game.processInput(msg);
-		
-		send2Clients(send);
-		log.info("Message Sent: " + send);
-		System.out.println("Message sent: " + send);
-	}
 	
-	public void send1Client(int id, String msg){
-		ServerThread to = clients.get(id);
-		System.out.println("Sending to 1 client");
-		to.send(String.format("%s\n", msg));
-	}
-	
-	public void send2Clients(String msg){
-		for(ServerThread to : clients.values()){
-			System.out.println("Sending to clients");
-			to.send(String.format("%s\n", msg));
-		}
-	}
-
 	public void remove(int id) {
 		if(clients.containsKey(id)){
 			ServerThread terminate = clients.get(id);
@@ -140,6 +97,120 @@ public class Server implements Runnable {
 			server.close();
 		} catch (IOException e) {
 			log.error(e);
+		}
+	}
+
+	public void handle(int id, String msg) {
+		System.out.println("Message Receieved: " + msg);
+
+		log.info("Message Received: " + msg);
+		String send = "waiting";
+		
+		if (msg.equals("quit")) {
+			log.info(String.format("Removing Client: %d", id));
+			if (clients.containsKey(id)) {
+				clients.get(id).send("quit!" + "\n");
+				remove(id);
+			}
+		}else if (msg.equals("shutdown")){ shutdown(); }
+		
+		else if (msg.equals(Config.CLIENT_START)){
+			if(numPlayers == 1){
+				send1Client(id, Config.FIRSTPLAYER);
+			}else{
+				send1Client(id, Config.PROMPT_JOIN);
+			}
+		} 
+		
+		else {
+			send = game.processInput(msg);
+			//send2Clients(send);
+			//log.info("Message Sent: " + send);
+			//System.out.println("Message sent: " + send);
+			processInput(id, send);
+			
+		}
+	}
+	
+	public void send1Client(int id, String msg){
+		ServerThread to = clients.get(id);
+		to.send(String.format("%s\n", msg));
+	}
+	
+	public void sendAllClients(String msg){
+		System.out.println("Send to clients");
+		for(ServerThread to : clients.values()){
+			to.send(String.format("%s\n", msg));
+		}
+	}
+	
+	/* Figures out whether to send the message to all the clients or just one */
+	public void processInput(int id, String send){
+		if(send.contains(Config.PROMPT_JOIN)){
+			send1Client(id, send);
+		}
+		
+		else if (send.contains(Config.MAX)){
+			sendAllClients(send);
+		}
+		
+		else if(send.contains(Config.PLAYER_NAME)){
+			sendAllClients(send);
+		}
+		
+		else if(send.contains(Config.NEED_PLAYERS)){
+			send1Client(id, send);
+		}
+		
+		// output = purple <player name> turn <player name> (first turn) <card picked up> 
+		// OR output = turn <player name> <card picked up> (subsequent turns)
+		else if(send.contains(Config.TURN)){
+			String s[] = send.split(" ");
+			String message = "nothing";
+			
+			if(send.contains(Config.PICKED_PURPLE)){
+
+			}else{
+				
+			}
+			
+		}
+		
+		else if (send.contains(Config.PLAY)){
+			sendAllClients(send);
+		}
+		
+		else if (send.contains(Config.WAITING)){
+			send1Client(id, send);
+		}
+		
+		else if(send.contains(Config.POINTS)){
+			String s[] = send.split(" ");
+			
+			if(send.contains(Config.CONTINUE)){
+				
+			}
+			
+			else if(send.contains(Config.WITHDRAW)){
+				
+			}
+			
+			else if(send.contains(Config.TOURNAMENT_WINNER)){
+				
+			}
+			
+			else if(send.contains(Config.PURPLE_WIN)){
+				
+			}
+			
+			else if(send.contains(Config.GAME_WINNER)){
+				
+			}
+			
+		}
+		
+		else if(send.contains(Config.WITHDRAW)){
+			
 		}
 	}
 }
