@@ -508,7 +508,6 @@ public class GameEngine {
 	}
 	
 	public void endTurn() {
-		System.out.println("Player total value: " + currentPlayer.getTotalCardValue());
 		for (Player p: players) {
 			if (currentPlayer.getTotalCardValue() < p.getTotalCardValue()) {
 				withdraw();
