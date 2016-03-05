@@ -50,7 +50,7 @@ public class ClientThread extends Thread {
 			try {  
 				String msg = streamIn.readLine();
 				log.info(msg);
-				client.handle(streamIn.readLine());
+				client.handle(msg);
 			} catch(IOException ioe) {  
 				log.error(ioe);
 			}

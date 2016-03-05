@@ -75,6 +75,8 @@ public class Client implements Runnable, Observer {
 				log.info("New ClientThread has started");
 			}
 
+			System.out.println("sending client from client");
+			//handle(Config.CLIENT_START);
 			outStream.write(Config.CLIENT_START + "\n");
 			outStream.flush();
 		}catch (IOException e){
