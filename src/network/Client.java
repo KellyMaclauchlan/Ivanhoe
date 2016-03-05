@@ -120,7 +120,7 @@ public class Client implements Runnable, Observer {
 	/* Handles all the input and output to and from the server */
 	public void handle(String msg) throws IOException {
 		String send = "waiting";
-		
+		System.out.println("Message received: " + msg);
 		log.info("Message Received: " + msg);
 		
 	   	if (msg.equalsIgnoreCase("quit!")) {  
@@ -129,7 +129,10 @@ public class Client implements Runnable, Observer {
 		} else {
 			testing = msg;
 			send = processInput(msg);
+<<<<<<< HEAD
+=======
 			//System.out.println(msg);
+>>>>>>> 6628c6476c7640b297a8922d0c6c2966245aa338
 			log.info("Information sent to server: " + send);
 			
 			outStream.write(send);
@@ -165,6 +168,13 @@ public class Client implements Runnable, Observer {
 	public String processInput(String msg){
 		String output = "result";
 		
+<<<<<<< HEAD
+		if(msg.equals(Config.CLIENT_START)){
+			output = Config.CLIENT_START;
+		}
+		
+=======
+>>>>>>> 6628c6476c7640b297a8922d0c6c2966245aa338
 		/* Prompts the first player for the number of players in the game 
 		 * Input: firstplayer
 		 * Output: start #
@@ -178,9 +188,7 @@ public class Client implements Runnable, Observer {
 		 * Output: join <name>
 		 * */
 		else if(msg.contains(Config.PROMPT_JOIN)){
-			String name = window.getNameFromPlayer();
-			window.playerName = name;
-			return output = Config.JOIN + " " + name;	
+			output = processPromptJoin(msg);
 		}
 		
 		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
@@ -193,29 +201,7 @@ public class Client implements Runnable, Observer {
 		 * Output: begin tournament 
 		 * */
 		else if (msg.contains(Config.PLAYER_NAME)){
-			String name[] = msg.split("name");
-			String card[];
-			String value[];
-			window.setNumPlayers(name.length);
-			
-			for(int i = 0; i < name.length; i++){
-				card = name[i].split(" ");
-				//if this player is the user
-				if(card[0].equalsIgnoreCase(window.playerName)){
-					for(int k = 2; k < card.length; k++){
-						hand.add(card[i]);					
-						value = card[i].split("_");
-						window.addCard(getCardFromTypeValue(value[0],value[1]));
-					}
-					window.setPlayerNum(i);
-				}
-				//set name on gui
-				window.setName(i, card[0]);
-				//set name in array
-				window.playerNames.add(card[0]);
-				
-			}
-			output = Config.START_TOURNAMENT;
+			output = processPlayerName(msg);
 		}
 		
 		/* It is the start currentPlayer's turn 
@@ -226,35 +212,7 @@ public class Client implements Runnable, Observer {
 		 * 	Start of new tournament: colour <colour picked>
 		 * */
 		else if (msg.contains(Config.TURN)){
-			String input[] = msg.split(" ");
-			
-			// if it is the first tournament 
-			if(msg.contains(Config.PICKED_PURPLE)){
-				
-				if(input[3].equalsIgnoreCase(window.playerName)){
-					String value[] = input[4].split("_");
-					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-					output = Config.COLOUR_PICKED + " " + window.setTournament();
-				}
-				for (int i = 0; i < window.getTotalPlayers();i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){
-						window.setCurrPlayer(i);
-					}
-				}
-				
-			}else{
-				if(input[1].equalsIgnoreCase(window.playerName)){
-					String value[]=input[2].split("_");
-					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-					output = Config.COLOUR_PICKED + " " + window.setTournament();	
-				}
-				
-				for (int i = 0; i < window.getTotalPlayers(); i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
-						window.setCurrPlayer(i);
-					}
-				}
-			}
+			output = processPlayerTurn(msg);
 		}
 		
 		/* When the player has chosen which card(s) they wish to play
@@ -262,33 +220,7 @@ public class Client implements Runnable, Observer {
 		 * Output: play <card type> <card value> 
 		 * */
 		else if (msg.contains(Config.PLAY) ){
-			String input[] = msg.split(" ");
-			String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
-			
-			for(int i = 0; i < 5; i++){
-				if (input[1].equalsIgnoreCase(options[i])){
-					if(window.getTournamentColour()!=i)
-						window.setTournamnetColour(i);
-				}
-			}
-			
-			if(window.getPlayerNum() == window.getCurrPlayer()){
-				while(this.playedCards == null){}
-				
-				// if the player choose to withdraw
-				if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
-					output = Config.WITHDRAW;
-				}
-				
-				// if the player has finished their turn 
-				else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
-					output = Config.END_TURN;
-				}
-				else{
-					output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
-				}
-				this.playedCards = null;
-			}
+			output = processPlay(msg);
 		}
 		
 		/* Server is waiting for the next card to be played 
@@ -300,37 +232,7 @@ public class Client implements Runnable, Observer {
 		 *  Card unplayable: informs players of unplayable card 
 		 * */
 		else if(msg.contains(Config.WAITING)){
-			
-			// if the client cannot play that card 
-			if(msg.contains(Config.UNPLAYABLE)){
-				window.cantPlayCardPopup();
-			}
-			else{
-				String input[] = msg.split(" ");
-				Card card = this.getCardFromTypeValue(input[1], input[2]);
-				window.addPlayedCard(window.getCurrPlayer(), card);
-				if(window.getCurrPlayer() == window.getPlayerNum()){
-					window.removeCard(card);
-				}
-			}
-			
-			if(window.getCurrPlayer() == window.getPlayerNum()){
-				while(this.playedCards == null){}
-				
-				// if the player choose to withdraw
-				if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
-					output = Config.WITHDRAW;
-				}
-				
-				// if the player has finished their turn 
-				else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
-					output = Config.END_TURN;
-				}
-				else{
-					output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
-				}
-				this.playedCards = null;			
-			}
+			output = processWaiting(msg);
 		}
 		
 		/* When the currentPlayer has finished playing their turn and does not withdraw
@@ -344,57 +246,7 @@ public class Client implements Runnable, Observer {
 		 * 	Next Player's turn: currentPlayer has switched to the next player 
 		 * */
 		else if(msg.contains(Config.CONTINUE)||msg.contains(Config.WITHDRAW)){
-			
-			String input[] = msg.split(" ");
-			int old = window.getCurrPlayer();
-			window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
-			if(msg.contains(Config.PURPLE_WIN)){
-				if(window.getPlayerNum()==window.getCurrPlayer())
-					output = Config.PURPLE_WIN+" "+ window.playerPickToken();
-			}else{
-				if(msg.contains(Config.TOURNAMENT_WINNER)){
-					window.addToken(window.getCurrPlayer(), window.getTournamentColour());
-					output= Config.START_TOURNAMENT;
-				}
-				if(msg.contains(Config.GAME_WINNER)){
-					window.GameOverPopup(input[0]);
-				}
-				if(!msg.contains(Config.TOURNAMENT_WINNER)){
-					window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
-					
-					if(window.getPlayerNum() == old){
-						window.window.endedTurn();
-					}
-					
-					for(int i = 0; i < window.playerNames.size(); i++){
-						if(window.playerNames.get(i).equalsIgnoreCase(input[4])){						
-							window.setCurrPlayer(i);
-							
-							if(window.getPlayerNum() == window.getCurrPlayer()){
-								String value[] = input[5].split("_");
-								window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-								while(this.playedCards == null){}
-								
-								// if the player choose to withdraw
-								if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
-									output = Config.WITHDRAW;
-								}
-								
-								// if the player has finished their turn 
-								else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
-									output = Config.END_TURN;
-								}
-								else{
-									output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
-								}
-								this.playedCards = null;
-							}
-						}
-					}
-				}
-				
-			}
-			
+			output = processContinueWithdraw(msg);
 		}
 		
 		/* When the currentPlayer has finished playing their turn and withdraws
@@ -410,9 +262,201 @@ public class Client implements Runnable, Observer {
 			
 			//output = Config.END_TURN;
 		//}
+<<<<<<< HEAD
+		
+		//System.out.println("Sending: " + output);
+=======
+>>>>>>> 6628c6476c7640b297a8922d0c6c2966245aa338
 		return output; 
 	}
 	
+	public String processPromptJoin(String msg){
+		String name = window.getNameFromPlayer();
+		window.playerName = name;
+		return Config.JOIN + " " + name;	
+	}
+	
+	public String processPlayerName(String msg){
+		String name[] = msg.split("name");
+		String card[];
+		String value[];
+		window.setNumPlayers(name.length);
+		
+		for(int i = 0; i < name.length; i++){
+			card = name[i].split(" ");
+			//if this player is the user
+			if(card[0].equalsIgnoreCase(window.playerName)){
+				for(int k = 2; k < card.length; k++){
+					hand.add(card[i]);					
+					value = card[i].split("_");
+					window.addCard(getCardFromTypeValue(value[0],value[1]));
+				}
+				window.setPlayerNum(i);
+			}
+			//set name on gui
+			window.setName(i, card[0]);
+			//set name in array
+			window.playerNames.add(card[0]);
+			
+		}
+		return Config.START_TOURNAMENT;
+	}
+	
+	public String processPlayerTurn(String msg){
+		String output = "result";
+		String input[] = msg.split(" ");
+		
+		// if it is the first tournament 
+		if(msg.contains(Config.PICKED_PURPLE)){
+			
+			if(input[3].equalsIgnoreCase(window.playerName)){
+				String value[] = input[4].split("_");
+				window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+				output = Config.COLOUR_PICKED + " " + window.setTournament();
+			}
+			for (int i = 0; i < window.getTotalPlayers();i++){
+				if(window.playerNames.get(i).equalsIgnoreCase(input[3])){
+					window.setCurrPlayer(i);
+				}
+			}
+			
+		}else{
+			if(input[1].equalsIgnoreCase(window.playerName)){
+				String value[] = input[2].split("_");
+				window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+				output = Config.COLOUR_PICKED + " " + window.setTournament();	
+			}
+			
+			for (int i = 0; i < window.getTotalPlayers(); i++){
+				if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
+					window.setCurrPlayer(i);
+				}
+			}
+		}
+		return output;
+	}
+	
+	public String processPlay(String msg){
+		String output = "result";
+		String input[] = msg.split(" ");
+		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
+		
+		for(int i = 0; i < 5; i++){
+			if (input[1].equalsIgnoreCase(options[i])){
+				if(window.getTournamentColour()!= i)
+					window.setTournamnetColour(i);
+			}
+		}
+		
+		if(window.getPlayerNum() == window.getCurrPlayer()){
+			while(this.playedCards == null){}
+			
+			// if the player choose to withdraw
+			if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
+				output = Config.WITHDRAW;
+			}
+			
+			// if the player has finished their turn 
+			else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
+				output = Config.END_TURN;
+			}
+			else{
+				output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+			}
+			this.playedCards = null;
+		}
+		return output;
+	}
+	
+	public String processWaiting(String msg){
+		String output = "result";
+		// if the client cannot play that card 
+		if(msg.contains(Config.UNPLAYABLE)){
+			window.cantPlayCardPopup();
+		}
+		else{
+			String input[] = msg.split(" ");
+			Card card = this.getCardFromTypeValue(input[1], input[2]);
+			window.addPlayedCard(window.getCurrPlayer(), card);
+			if(window.getCurrPlayer() == window.getPlayerNum()){
+				window.removeCard(card);
+			}
+		}
+		
+		if(window.getCurrPlayer() == window.getPlayerNum()){
+			while(this.playedCards == null){}
+			
+			// if the player choose to withdraw
+			if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
+				output = Config.WITHDRAW;
+			}
+			
+			// if the player has finished their turn 
+			else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
+				output = Config.END_TURN;
+			}
+			else{
+				output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+			}
+			this.playedCards = null;			
+		}
+		return output;
+	}
+	
+	public String processContinueWithdraw(String msg){
+		String output = "result";
+		String input[] = msg.split(" ");
+		
+		int old = window.getCurrPlayer();
+		window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
+		
+		if(msg.contains(Config.PURPLE_WIN)){
+			if(window.getPlayerNum()== window.getCurrPlayer())
+				output = Config.PURPLE_WIN+" "+ window.playerPickToken();
+		}else{
+			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				window.addToken(window.getCurrPlayer(), window.getTournamentColour());
+				output = Config.START_TOURNAMENT;
+			}
+			if(msg.contains(Config.GAME_WINNER)){
+				window.GameOverPopup(input[0]);
+			}
+			if(!msg.contains(Config.TOURNAMENT_WINNER)){
+				window.setScore(window.getCurrPlayer(), Integer.parseInt(input[1]));
+				
+				if(window.getPlayerNum() == old){
+					window.window.endedTurn();
+				}
+				
+				for(int i = 0; i < window.playerNames.size(); i++){
+					if(window.playerNames.get(i).equalsIgnoreCase(input[4])){						
+						window.setCurrPlayer(i);
+						
+						if(window.getPlayerNum() == window.getCurrPlayer()){
+							String value[] = input[5].split("_");
+							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+							while(this.playedCards == null){}
+							
+							// if the player choose to withdraw
+							if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
+								output = Config.WITHDRAW;
+							}
+							
+							// if the player has finished their turn 
+							else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
+								output = Config.END_TURN;
+							}
+							else{
+								output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+							}
+							this.playedCards = null;
+						}
+					}
+				}
+			}
+		}
+		return output; 
+	}
 
 	/* Convert brit's string into resources */
 	public Card getCardFromTypeValue(String type, String value){
