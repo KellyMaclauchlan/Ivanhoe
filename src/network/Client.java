@@ -209,15 +209,14 @@ public class Client implements Runnable, Observer {
 		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
 		else if(msg.contains(Config.NEED_PLAYERS)){
 			this.window.showWaiting();
-			// TO DO: make client in waiting state? 
-			
+			// TO DO: make client in waiting state? 	
 		}
 		
 		/* Receives each player and their hand
 		 * Input:  name <player1> card [player1's card] name <player2> cards [player2's card] ... 
 		 * Output: begin tournament 
 		 * */
-		else if (msg.contains(Config.PLAYER_NAME)){
+		else if (msg.contains(Config.HAND)){
 				this.window.hideWaitng();
 			output = processPlayerName(msg);
 		}

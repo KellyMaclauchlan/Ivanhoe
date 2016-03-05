@@ -107,7 +107,7 @@ public class MainWindowController implements Observer, Subject{
 	
 	/* Popups */
 	public String setTournament(){
-		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
+		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		log.info("Tournament colour has been set to " + options[response]);
 	    return options[response];
@@ -137,7 +137,7 @@ public class MainWindowController implements Observer, Subject{
 			this.waitingPopUp.dispose();
 		};
 	public String playerPickToken(){
-		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
+		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 		String have ="";
 		for (int i=0;i<5;i++){
 			if(window.hasTokens[playerNum][i]){
@@ -269,7 +269,7 @@ public class MainWindowController implements Observer, Subject{
 	public void startRound() {
 		for(int i = 0; i < this.playerNum; i++){
 			setScore(i,0);
-			this.window.addPlayedCard(i, "resources/cards_small/simpleCards18.jpg");
+			this.window.addPlayedCard(i, Config.IMG_BACK);
 			this.playedCards.get(i).clear();
 			log.info("Player " + this.playedCards.get(i) + "started their round");
 		}	
