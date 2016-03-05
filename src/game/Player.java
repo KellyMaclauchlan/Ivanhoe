@@ -134,6 +134,11 @@ public class Player {
 	public void setFront(ArrayList<Card> front) {
 		this.front = front;
 	}
+	
+	public void addToFront(Card card) {
+		front.add(card);
+		removeCard(card);
+	}
 
 	public boolean isWinner() {
 		return isWinner;

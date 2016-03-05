@@ -42,6 +42,7 @@ public class GameEngine {
 			// talked to Kelly about this. Can get popups where necessary and append variables necessary for action cards to card play string
 			} else if (input.contains(Config.PLAY)) {
 				output = processPlay(input); // output = waiting <card played> OR output = waiting <unplayable>
+											// KATIE TO DO: If output = stunned <card played> then send me end turn
 			// input = end turn
 			} else if (input.contains(Config.END_TURN)) {
 				output = processEndTurn(); // output = <player name> points <player points> [continue OR withdraw] <next player> <card picked up>
@@ -138,6 +139,11 @@ public class GameEngine {
 				card.setValue(1);
 			}
 			playCard(card);
+			for (Card c: currentPlayer.getFront()) {
+				if (c.getType().equals(Config.STUNNED)) {
+					output = Config.STUNNED;
+				}
+			}
 			output += " " + type + "_" + value;
 		} else if (card.getType().equals(Config.ACTION)) {
 			output += processActionCard((ActionCard) card, input);
@@ -179,7 +185,9 @@ public class GameEngine {
 				String playerName = cardString[2];
 				Player player = getPlayerByName(playerName);
 				Card cardToSteal = card.playRiposte(player);
-				currentPlayer.addToDisplay(cardToSteal);
+				if (cardToSteal != null) {
+					currentPlayer.addToDisplay(cardToSteal);
+				}
 			} else if (card.getType().equals(Config.DODGE)) {
 				// input = play dodge <player name> <card type> <card value>
 				String playerName = cardString[2];
@@ -219,7 +227,7 @@ public class GameEngine {
 				//input = play disgrace
 				card.playDisgrace(this);
 			} else if (card.getType().equals(Config.ADAPT)) {
-				
+				card.playAdapt(this);
 			} else if (card.getType().equals(Config.OUTWIT)) {
 				
 			} else if (card.getType().equals(Config.SHIELD)) {
@@ -233,7 +241,21 @@ public class GameEngine {
 		return output;
 	}
 
-	public String processPurpleWin(String input) {
+	public ArrayList<Player> getActionablePlayers() {
+		ArrayList<Player> actionable = new ArrayList<>();
+		for (Player p: players) {
+			actionable.add(p);
+		}
+		for (Player p: actionable) {
+			for (Card c: p.getFront()) {
+				if (c.getType().equals(Config.SHIELD)) {
+					actionable.remove(p);
+				}
+			}
+		}
+		return actionable;
+	}
+ 	public String processPurpleWin(String input) {
 		String output = "";
 		String[] purpleWin = input.split(" ");
 		String chosenColour = purpleWin[2];

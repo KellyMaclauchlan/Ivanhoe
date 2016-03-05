@@ -32,23 +32,48 @@ public class ActionCard extends Card {
 	
 	public void playBreakLance(Player player) {
 		// rid given player's display of all purple cards, leave one if they only have purple cards
-		for (Card c: player.getDisplay()) {
-			if (c.getType().equals(Config.PURPLE) && player.getDisplay().size() > 1) {
-				player.removeFromDisplay(c);
+		boolean hasShield = false;
+		for (Card c: player.getFront()) {
+			if (c.getType().equals(Config.SHIELD)) {
+				hasShield = true;
+			}
+		}
+		if (!hasShield) {
+			for (Card c: player.getDisplay()) {
+				if (c.getType().equals(Config.PURPLE) && player.getDisplay().size() > 1) {
+					player.removeFromDisplay(c);
+				}
 			}
 		}
 	}
 	
 	public Card playRiposte(Player player) {
 		// take the last played card of given player and put it in deck of current player
-		Card cardToSteal = player.getDisplay().get(player.getDisplay().size() - 1);
-		player.removeFromDisplay(cardToSteal);
-		return cardToSteal;
+		boolean hasShield = false;
+		for (Card c: player.getFront()) {
+			if (c.getType().equals(Config.SHIELD)) {
+				hasShield = true;
+			}
+		}
+		if (!hasShield) {
+			Card cardToSteal = player.getDisplay().get(player.getDisplay().size() - 1);
+			player.removeFromDisplay(cardToSteal);
+			return cardToSteal;
+		}
+		return null;
 	}
 
 	public void playDodge(Player player, Card card) {
 		// discard any one of the given player's cards
-		player.removeFromDisplay(card);
+		boolean hasShield = false;
+		for (Card c: player.getFront()) {
+			if (c.getType().equals(Config.SHIELD)) {
+				hasShield = true;
+			}
+		}
+		if (!hasShield) {
+			player.removeFromDisplay(card);
+		}
 	}
 	
 	public void playRetreat(GameEngine game, Card card) {
@@ -59,14 +84,22 @@ public class ActionCard extends Card {
 	
 	public void playKnockDown(GameEngine game, Player player) {
 		// draw a card at random from given opponent's hand
-		Card cardToSteal = player.getCards().get(0);
-		player.getCards().remove(0);
-		game.getCurrentPlayer().addCard(cardToSteal);
+		boolean hasShield = false;
+		for (Card c: player.getFront()) {
+			if (c.getType().equals(Config.SHIELD)) {
+				hasShield = true;
+			}
+		}
+		if (!hasShield) {
+			Card cardToSteal = player.getCards().get(0);
+			player.getCards().remove(0);
+			game.getCurrentPlayer().addCard(cardToSteal);
+		}
 	}
 	
 	public void playOutmaneuver(GameEngine game) {
 		// discard the last played card on each opponent's display
-		for (Player p: game.getPlayers()) {
+		for (Player p: game.getActionablePlayers()) {
 			Card cardToRemove = p.getCards().get(p.getCards().size() - 1);
 			p.removeCard(cardToRemove);
 			game.discard(p, cardToRemove);
@@ -75,7 +108,7 @@ public class ActionCard extends Card {
 	
 	public void  playCharge(GameEngine game) {
 		// discard the lowest value card from every opponent's display
-		for (Player p: game.getPlayers()) {
+		for (Player p: game.getActionablePlayers()) {
 			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
 				Card cardToRemove = p.getDisplay().get(0);
 				for (Card c: p.getDisplay()) {
@@ -91,7 +124,7 @@ public class ActionCard extends Card {
 	
 	public void  playCounterCharge(GameEngine game) {
 		// discard the highest value card from every opponent's display
-		for (Player p: game.getPlayers()) {
+		for (Player p: game.getActionablePlayers()) {
 			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
 				Card cardToRemove = p.getDisplay().get(0);
 				for (Card c: p.getDisplay()) {
@@ -107,7 +140,7 @@ public class ActionCard extends Card {
 	
 	public void playDisgrace(GameEngine game) {
 		// discard all supporters from every opponent's display
-		for (Player p: game.getPlayers()) {
+		for (Player p: game.getActionablePlayers()) {
 			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
 				for (Card c: p.getDisplay()) {
 					if (c.getCardType().equals(Config.SUPPORT)) {
@@ -120,8 +153,8 @@ public class ActionCard extends Card {
 	}
 	
 	public void playAdapt(GameEngine game) {
-		//TO DO: remove all duplicate cards from each opponent's hand, leaving only one of each card
-		for (Player p: game.getPlayers()) {
+		// remove all duplicate cards from each opponent's hand, leaving only one of each card
+		for (Player p: game.getActionablePlayers()) {
 			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
 				for (Card c: p.getDisplay()) {
 					int duplicates = 0;
@@ -145,12 +178,14 @@ public class ActionCard extends Card {
 		//take one shield or stunned card from the current player and put it in front of the opponent
 	}
 	
-	public void playShield() {
-		//TO DO: Place shield card in front of current player and block opponent action cards from having effect
+	public void playShield(GameEngine game, Card card) {
+		// Place shield card in front of current player and block opponent action cards from having effect
+		game.getCurrentPlayer().addToFront(card);
 	}
 	
-	public void playStunned(Player player) {
-		//TO DO: place stunned card in front of the given opponent and enable the opponent to only play one card at a time
+	public void playStunned(Player player, Card card) {
+		//place stunned card in front of the given opponent and enable the opponent to only play one card at a time
+		player.addToFront(card);
 	}
 	
 	public void playIvanhoe(Card card) {
