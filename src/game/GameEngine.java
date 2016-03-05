@@ -193,17 +193,31 @@ public class GameEngine {
 					}
 				}
 			} else if (card.getType().equals(Config.RETREAT)) {
-				
+				// input = play retreat <card type> <card value>
+				String type = cardString[2];
+				String value = cardString[3];
+				for (Card c: currentPlayer.getDisplay()) {
+					if (c.getType().equals(type) && Integer.valueOf(c.getValue()).equals(value)) {
+						card.playRetreat(this, c);
+					}
+				}
 			} else if (card.getType().equals(Config.KNOCKDOWN)) {
-				
+				// input = play knockdown <player name>
+				String playerName = cardString[2];
+				Player player = getPlayerByName(playerName);
+				card.playKnockDown(this, player);
 			} else if (card.getType().equals(Config.OUTMANEUVER)) {
-				
+				// input = play outmaneuver
+				card.playOutmaneuver(this);
 			} else if (card.getType().equals(Config.CHARGE)) {
-				
+				// input = play charge
+				card.playCharge(this);
 			} else if (card.getType().equals(Config.COUNTERCHARGE)) {
-				
+				// input = play countercharge
+				card.playCounterCharge(this);
 			} else if (card.getType().equals(Config.DISGRACE)) {
-				
+				//input = play disgrace
+				card.playDisgrace(this);
 			} else if (card.getType().equals(Config.ADAPT)) {
 				
 			} else if (card.getType().equals(Config.OUTWIT)) {

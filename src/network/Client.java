@@ -26,14 +26,9 @@ public class Client implements Runnable, Observer {
 	public BufferedWriter outStream = null;
 	public String testing = null;
 	public ArrayList<String> hand = new ArrayList<String>();
-	public String playedCards = null;
-	
+	public String playedCards = null;	
 	public Logger log = Logger.getLogger("Client");
-<<<<<<< HEAD
-	public ArrayList<String> hand = new ArrayList<String>();
-=======
-	
->>>>>>> 69dc90c47caf92180ade4983c2f9ff2524f54202
+
 	public Client(){
 		window = new MainWindowController();
 		String ipAndPort = window.getIPPortFromPlayer();
