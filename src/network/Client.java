@@ -354,22 +354,31 @@ public class Client implements Runnable, Observer {
 		}
 		
 		if(window.getPlayerNum() == window.getCurrPlayer()){
-			while(this.playedCards == null){}
-			
-			// if the player choose to withdraw
-			if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
-				output = Config.WITHDRAW;
-			}
-			
-			// if the player has finished their turn 
-			else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
-				output = Config.END_TURN;
-			}
-			else{
-				output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
-			}
-			this.playedCards = null;
+			output = playACard();
 		}
+		return output;
+	}
+
+	private String playACard() {
+		String output;
+		while(this.playedCards == null){}
+		
+		// if the player choose to withdraw
+		if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
+			output = Config.WITHDRAW;
+		}
+		
+		// if the player has finished their turn 
+		else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
+			output = Config.END_TURN;
+		}
+		else if(window.lastCard.getCardType().equalsIgnoreCase(Config.ACTION)){
+			output = Config.PLAY+ this.processActionCard();
+		}
+		else{
+			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+		}
+		this.playedCards = null;
 		return output;
 	}
 	
@@ -389,21 +398,7 @@ public class Client implements Runnable, Observer {
 		}
 		
 		if(window.getCurrPlayer() == window.getPlayerNum()){
-			while(this.playedCards == null){}
-			
-			// if the player choose to withdraw
-			if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
-				output = Config.WITHDRAW;
-			}
-			
-			// if the player has finished their turn 
-			else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
-				output = Config.END_TURN;
-			}
-			else{
-				output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
-			}
-			this.playedCards = null;			
+			output = playACard();			
 		}
 		return output;
 	}
@@ -462,21 +457,7 @@ public class Client implements Runnable, Observer {
 						if(window.getPlayerNum() == window.getCurrPlayer()){
 							String value[] = input[5].split("_");
 							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-							while(this.playedCards == null){}
-							
-							// if the player choose to withdraw
-							if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
-								output = Config.WITHDRAW;
-							}
-							
-							// if the player has finished their turn 
-							else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
-								output = Config.END_TURN;
-							}
-							else{
-								output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
-							}
-							this.playedCards = null;
+							output = playACard();
 						}
 					}
 				}
