@@ -48,7 +48,8 @@ public class ClientThread extends Thread {
 		log.info("Client Thread " + socket.getLocalPort() + " running.");
 		while (!done) { 
 			try {  
-				log.info(streamIn.readLine());
+				String msg = streamIn.readLine();
+				log.info(msg);
 				client.handle(streamIn.readLine());
 			} catch(IOException ioe) {  
 				log.error(ioe);

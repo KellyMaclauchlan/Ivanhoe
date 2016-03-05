@@ -69,7 +69,6 @@ public class Server implements Runnable {
 			sThread.start();
 			clients.put(sThread.getID(), sThread);
 			this.numPlayers++; 
-			handle(sThread.getID(), Config.CLIENT_START);
 		}catch (IOException e){
 			log.error(e);
 		}
@@ -123,6 +122,11 @@ public class Server implements Runnable {
 			//log.info("Message Sent: " + send);
 			//System.out.println("Message sent: " + send);
 			processInput(id, send);
+			
+			
+			/*if(send.contains(Config.PROMPT_JOIN)){
+				send1Client(id, send);
+			}*/
 			
 		}
 	}
