@@ -29,6 +29,7 @@ public class Client implements Runnable, Observer {
 	public ArrayList<String> hand = new ArrayList<String>();
 	public String playedCards = null;	
 	public Logger log = Logger.getLogger("Client");
+	public boolean currentPlayer = false; 
 
 	public Client(){
 		window = new MainWindowController();
@@ -36,6 +37,7 @@ public class Client implements Runnable, Observer {
 		String ipAndPort = window.getIPPortFromPlayer();
 		String seperate[] = ipAndPort.split(" ");
 		this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
+		this.currentPlayer = false; 
 	}
 
 	public int getID(){
@@ -317,15 +319,17 @@ public class Client implements Runnable, Observer {
 		String input[] = msg.split(" ");
 		
 		this.window.showWindow();
-		this.window.window.startTurn();
+		//this.window.window.startTurn();
 
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
 			//if (input.length > 3) {
 				if(input[3].equalsIgnoreCase(window.playerName)){
+					this.window.window.startTurn();
 					String value[] = input[4].split("_");
 					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
 					output = Config.COLOUR_PICKED + " " + window.setTournament();
+					this.currentPlayer = true; 
 				}
 				for (int i = 0; i < window.getTotalPlayers();i++){
 					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){
@@ -333,19 +337,21 @@ public class Client implements Runnable, Observer {
 					}
 				}
 				
-			}else{
-				if(input[1].equalsIgnoreCase(window.playerName)){
-					String value[] = input[2].split("_");
-					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-					output = Config.COLOUR_PICKED + " " + window.setTournament();	
-				}
-				
-				for (int i = 0; i < window.getTotalPlayers(); i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
-						window.setCurrPlayer(i);
-					}
+		}else{
+			if(input[1].equalsIgnoreCase(window.playerName)){
+				String value[] = input[2].split("_");
+				window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+				output = Config.COLOUR_PICKED + " " + window.setTournament();	
+			}
+			
+			for (int i = 0; i < window.getTotalPlayers(); i++){
+				if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
+					window.setCurrPlayer(i);
 				}
 			}
+		}
+		
+		//if(this.currentPlayer = false){this.window.window.endedTurn();}
 		//}
 		return output;
 	}
