@@ -445,6 +445,29 @@ public class Client implements Runnable, Observer {
 		}
 		return output;
 	}
+	// for input from server on playing the card if an action card is played sent the whole message to this in waiting 
+	public void processActionCardAction(String msg){
+		String input[]=msg.split(" ");
+		String cardType = input[1];
+		//output = " " + cardType + " ";
+		
+		//note Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
+		//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
+		if(cardType.equalsIgnoreCase(Config.KNOCKDOWN)){
+			//output += window.pickAName("take a card from.");
+		}
+		else if(cardType.equalsIgnoreCase(Config.RIPOSTE)){
+			//output += window.pickAName("take the last card on their display and add it to yours.");
+		}
+		else if(cardType.equalsIgnoreCase(Config.BREAKLANCE)){
+			//output += window.pickAName("remove all purple cards from their display.");
+		}
+		//msg =waiting unhorse colour 
+		else if(cardType.equalsIgnoreCase(Config.CHANGEWEAPON)||cardType.equalsIgnoreCase(Config.UNHORSE)||cardType.equalsIgnoreCase(Config.DROPWEAPON)){
+			window.setTournamentColour(Config.colours.indexOf(input[2]));
+		}
+		//return output;
+	}
 	
 	public String processContinueWithdraw(String msg){
 		String output = "result";
@@ -466,8 +489,15 @@ public class Client implements Runnable, Observer {
 			}
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
+<<<<<<< HEAD
 
 				System.out.println("Current player name: " + currentPlayerName);
+=======
+				
+				String playerName = input[input.length-1];
+				int currentPlayer = window.getPlayerByName(playerName);
+				System.out.println("Current player name: " + playerName);
+>>>>>>> 6a3d2a734dbfddde5ad172eaea3a042e4baa5d3e
 				System.out.println("Current player number: " + currentPlayer);
 
 				System.out.println("Winning player name: " + winningPlayerName);
@@ -475,11 +505,16 @@ public class Client implements Runnable, Observer {
 				
 				window.setCurrPlayer(winningPlayer);
 				window.addToken(window.getCurrPlayer(), window.getTournamentColour());
+				window.startRound();
 				output = Config.START_TOURNAMENT;
 			}
 			if(msg.contains(Config.GAME_WINNER)){
+<<<<<<< HEAD
 				String winner = input[input.length - 1];
 				window.GameOverPopup(winner);
+=======
+				window.GameOverPopup(input[input.length-1]);
+>>>>>>> 6a3d2a734dbfddde5ad172eaea3a042e4baa5d3e
 			}
 			if(!msg.contains(Config.TOURNAMENT_WINNER)){
 				window.setScore(window.getCurrPlayer(), Integer.parseInt(score));

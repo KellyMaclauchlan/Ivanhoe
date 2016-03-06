@@ -21,6 +21,7 @@ public class MainWindowController implements Observer, Subject{
 	public WaitingPopUp waitingPopUp;
 	public String lastMessege;
 	public ArrayList<String>tokenStrings;
+	public ArrayList<String>emptyTokenStrings;
 	public Color backgroundColours[] = {new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};
 	public Card lastCard;
 	public Logger log = Logger.getLogger("UI");
@@ -47,6 +48,12 @@ public class MainWindowController implements Observer, Subject{
 		tokenStrings.add("resources/icons/yellow_full.png");
 		tokenStrings.add("resources/icons/green_full.png");
 		tokenStrings.add("resources/icons/purple_full.png");
+		emptyTokenStrings = new ArrayList<String>();
+		emptyTokenStrings.add("resources/icons/blue_empty.png");
+		emptyTokenStrings.add("resources/icons/red_empty.png");
+		emptyTokenStrings.add("resources/icons/yellow_empty.png");
+		emptyTokenStrings.add("resources/icons/green_empty.png");
+		emptyTokenStrings.add("resources/icons/purple_empty.png");
 		window.endedTurn();
 	}
 	/* displays the main window */
@@ -112,7 +119,7 @@ public class MainWindowController implements Observer, Subject{
 			this.playerNames.add("");
 			this.playerScores.add(0);
 		}
-		for(j=j;j<5;j++){
+		for(j=i-1;j<5;j++){
 			this.window.playedCards[j].setEnabled(false);
 		}
 		log.info("Total number of players is: " + i);
@@ -158,6 +165,19 @@ public class MainWindowController implements Observer, Subject{
 			}
 		}
 	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour, you already have:"+have, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+		String output = options[response];
+	    log.info("the player picked " + output);
+	    return output;
+	}
+	public String playerPickTokenRemove(){
+		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+		String have ="";
+		for (int i = 0; i < 5; i++){
+			if(window.hasTokens[playerNum][i]){
+				have += options[i]+" ";
+			}
+		}
+	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour to lose, you already have:"+have, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		String output = options[response];
 	    log.info("the player picked " + output);
 	    return output;
@@ -314,5 +334,11 @@ public class MainWindowController implements Observer, Subject{
 		int player=this.playerNames.indexOf(name);
 		window.playerPoints[player].setText("0");
 		window.playedCards[player].setEnabled(false);
+		
+	}
+	public void removeToken(int player, String token){		
+		this.window.setToken(player, Config.colours.indexOf(token), emptyTokenStrings.get(Config.colours.indexOf(token)));
+		this.window.hasTokens[player][Config.colours.indexOf(token)]=false;
+		log.info("Removing " + token + " token");
 	}
 }
