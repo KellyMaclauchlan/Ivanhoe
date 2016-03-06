@@ -5643,4 +5643,106 @@
 @2016-Mar-06 01:05:46 INFO  Client:126 - Message Received: input
 @2016-Mar-06 01:05:52 INFO  Server:98 - Message Received: null
 @2016-Mar-06 01:05:54 INFO  Server:98 - Message Received: null
+@2016-Mar-06 01:08:52 INFO  Server:29 - Binding to port 3000, please wait...
+@2016-Mar-06 01:08:52 INFO  Server:41 - Game has started
+@2016-Mar-06 01:08:52 INFO  Server:44 - New ServerThread created
+@2016-Mar-06 01:08:52 INFO  Server:53 - Waiting for Clients
+@2016-Mar-06 01:09:00 INFO  Client:47 - 0:Establishing connection. Please wait... 
+@2016-Mar-06 01:09:00 INFO  Client:54 - 50574: Connected to server: localhost/127.0.0.1
+@2016-Mar-06 01:09:00 INFO  Server:63 - Client accepted: Socket[addr=/127.0.0.1,port=50574,localport=3000]
+@2016-Mar-06 01:09:00 INFO  Client:55 - 50574: Connected to portid: 50574
+@2016-Mar-06 01:09:00 INFO  Client:71 - Initializing buffers
+@2016-Mar-06 01:09:00 INFO  Server:53 - Waiting for Clients
+@2016-Mar-06 01:09:00 INFO  Client:77 - New ClientThread has started
+@2016-Mar-06 01:09:00 INFO  ClientThread:48 - Client Thread 50574 running.
+@2016-Mar-06 01:09:00 INFO  Client:58 - Client has started
+@2016-Mar-06 01:09:00 INFO  Server:98 - Message Received: client
+@2016-Mar-06 01:09:00 INFO  ClientThread:52 - firstplayer
+@2016-Mar-06 01:09:00 INFO  Client:126 - Message Received: firstplayer
+@2016-Mar-06 01:09:01 INFO  Client:138 - Information sent to server: start 2
+@2016-Mar-06 01:09:01 INFO  Server:98 - Message Received: start 2
+@2016-Mar-06 01:09:01 INFO  ClientThread:52 - prompt join
+@2016-Mar-06 01:09:01 INFO  Client:126 - Message Received: prompt join
+@2016-Mar-06 01:09:03 INFO  Client:138 - Information sent to server: join Brit
+@2016-Mar-06 01:09:03 INFO  Server:98 - Message Received: join Brit
+@2016-Mar-06 01:09:03 INFO  ClientThread:52 - need players
+@2016-Mar-06 01:09:03 INFO  Client:126 - Message Received: need players
+@2016-Mar-06 01:09:03 INFO  Client:138 - Information sent to server: result
+@2016-Mar-06 01:09:03 INFO  Server:98 - Message Received: result
+@2016-Mar-06 01:09:03 INFO  ClientThread:52 - input
+@2016-Mar-06 01:09:03 INFO  Client:126 - Message Received: input
+@2016-Mar-06 01:09:08 INFO  Client:47 - 0:Establishing connection. Please wait... 
+@2016-Mar-06 01:09:08 INFO  Server:63 - Client accepted: Socket[addr=/127.0.0.1,port=50577,localport=3000]
+@2016-Mar-06 01:09:08 INFO  Client:54 - 50577: Connected to server: localhost/127.0.0.1
+@2016-Mar-06 01:09:08 INFO  Client:55 - 50577: Connected to portid: 50577
+@2016-Mar-06 01:09:08 INFO  Server:53 - Waiting for Clients
+@2016-Mar-06 01:09:08 INFO  Client:71 - Initializing buffers
+@2016-Mar-06 01:09:08 INFO  ClientThread:48 - Client Thread 50577 running.
+@2016-Mar-06 01:09:08 INFO  Client:77 - New ClientThread has started
+@2016-Mar-06 01:09:08 INFO  Client:58 - Client has started
+@2016-Mar-06 01:09:08 INFO  Server:98 - Message Received: client
+@2016-Mar-06 01:09:08 INFO  ClientThread:52 - prompt join
+@2016-Mar-06 01:09:08 INFO  Client:126 - Message Received: prompt join
+@2016-Mar-06 01:09:09 INFO  Client:138 - Information sent to server: join Katie
+@2016-Mar-06 01:09:09 INFO  Server:98 - Message Received: join Katie
+@2016-Mar-06 01:09:09 INFO  ClientThread:52 - hand  name Katie cards squire_3 blue_5 maiden_6 riposte_0 blue_2 yellow_3 red_3 blue_5 name Brit cards squire_2 retreat_0 yellow_2 purple_4 yellow_3 riposte_0 blue_4 yellow_3
+@2016-Mar-06 01:09:09 INFO  Client:126 - Message Received: hand  name Katie cards squire_3 blue_5 maiden_6 riposte_0 blue_2 yellow_3 red_3 blue_5 name Brit cards squire_2 retreat_0 yellow_2 purple_4 yellow_3 riposte_0 blue_4 yellow_3
+@2016-Mar-06 01:09:09 INFO  ClientThread:52 - hand  name Katie cards squire_3 blue_5 maiden_6 riposte_0 blue_2 yellow_3 red_3 blue_5 name Brit cards squire_2 retreat_0 yellow_2 purple_4 yellow_3 riposte_0 blue_4 yellow_3
+@2016-Mar-06 01:09:09 INFO  Client:126 - Message Received: hand  name Katie cards squire_3 blue_5 maiden_6 riposte_0 blue_2 yellow_3 red_3 blue_5 name Brit cards squire_2 retreat_0 yellow_2 purple_4 yellow_3 riposte_0 blue_4 yellow_3
+@2016-Mar-06 01:09:09 INFO  UI:114 - Total number of players is: 3
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:114 - Total number of players is: 3
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:09 INFO  UI:301 - Cards have been reset
+@2016-Mar-06 01:09:09 INFO  UI:301 - Cards have been reset
+@2016-Mar-06 01:09:10 INFO  Client:138 - Information sent to server: begin tournament
+@2016-Mar-06 01:09:10 INFO  Server:98 - Message Received: begin tournament
+@2016-Mar-06 01:09:10 INFO  ClientThread:52 - pickedpurple Brit turn Katie maiden_6
+@2016-Mar-06 01:09:10 INFO  Client:126 - Message Received: pickedpurple Brit turn Katie maiden_6
+@2016-Mar-06 01:09:10 INFO  Client:138 - Information sent to server: result
+@2016-Mar-06 01:09:10 INFO  Server:98 - Message Received: result
+@2016-Mar-06 01:09:10 INFO  ClientThread:52 - input
+@2016-Mar-06 01:09:10 INFO  Client:126 - Message Received: input
+@2016-Mar-06 01:09:10 INFO  Client:138 - Information sent to server: begin tournament
+@2016-Mar-06 01:09:10 INFO  ClientThread:52 - input
+@2016-Mar-06 01:09:10 INFO  Server:98 - Message Received: begin tournament
+@2016-Mar-06 01:09:10 INFO  Client:126 - Message Received: input
+@2016-Mar-06 01:09:10 INFO  ClientThread:52 - pickedpurple Brit turn Katie blue_4
+@2016-Mar-06 01:09:10 INFO  Client:126 - Message Received: pickedpurple Brit turn Katie blue_4
+@2016-Mar-06 01:09:10 INFO  UI:207 - Adding new card
+@2016-Mar-06 01:09:12 INFO  UI:121 - Tournament colour has been set to blue
+@2016-Mar-06 01:09:12 INFO  Client:138 - Information sent to server: colour blue
+@2016-Mar-06 01:09:12 INFO  Server:98 - Message Received: colour blue
+@2016-Mar-06 01:09:12 INFO  ClientThread:52 - play blue
+@2016-Mar-06 01:09:12 INFO  Client:126 - Message Received: play blue
+@2016-Mar-06 01:09:12 INFO  Client:138 - Information sent to server: result
+@2016-Mar-06 01:09:12 INFO  ClientThread:52 - play blue
+@2016-Mar-06 01:09:12 INFO  Client:126 - Message Received: play blue
+@2016-Mar-06 01:09:12 INFO  Client:138 - Information sent to server: result
+@2016-Mar-06 01:09:12 INFO  Server:98 - Message Received: result
+@2016-Mar-06 01:09:12 INFO  ClientThread:52 - input
+@2016-Mar-06 01:09:12 INFO  Client:126 - Message Received: input
+@2016-Mar-06 01:09:12 INFO  Server:98 - Message Received: result
+@2016-Mar-06 01:09:12 INFO  ClientThread:52 - input
+@2016-Mar-06 01:09:12 INFO  Client:126 - Message Received: input
+@2016-Mar-06 01:09:12 INFO  ClientThread:52 - input
+@2016-Mar-06 01:09:12 INFO  Client:126 - Message Received: input
+@2016-Mar-06 01:09:12 INFO  ClientThread:52 - input
+@2016-Mar-06 01:09:12 INFO  Client:126 - Message Received: input
+@2016-Mar-06 01:09:46 INFO  Server:98 - Message Received: null
+@2016-Mar-06 01:12:35 INFO  Server:98 - Message Received: null
 @

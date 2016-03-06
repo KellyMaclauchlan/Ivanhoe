@@ -17,6 +17,16 @@ import game.Card;
 import game.ColourCard;
 import game.SupportCard;
 
+
+/*TO DO: 
+1) wrong winner in winner message
+2) purple tournament popup comes up for wrong player, and only gives purple token when chosen
+3) points aren't reset after a win, only when the player plays their first turn for a new tournament
+4) token sometimes goes to wrong player but not always? Happened on green tournament.
+5) Also sometimes gets greyed out at the beginning of tournament sometimes not
+6) Maiden card - choose a token to remove after withdraw 
+ * 
+ */
 public class Client implements Runnable, Observer {
 	public int ID = 0;
 	public Socket socket = null;
