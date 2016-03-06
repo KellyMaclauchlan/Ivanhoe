@@ -18,10 +18,15 @@ public class Server implements Runnable {
 	public Logger log = Logger.getLogger("Server");
 	public GameEngine game;
 	public Scanner sc = new Scanner(System.in);
+	public boolean minPlayers = false;
+	public boolean maxPlayers = false; 
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
 	}
+	
+	public boolean testMaxPlayers(){return maxPlayers;}
+	public boolean testMinPlayers(){return minPlayers;}
 	
 	public void runServer(int port) {
 		try{
@@ -60,15 +65,24 @@ public class Server implements Runnable {
 	}
 
 	public void addThread(Socket socket) {
-		log.info("Client accepted: " + socket );
-		try{
-			ServerThread sThread = new ServerThread(this, socket);
-			sThread.open();
-			sThread.start();
-			clients.put(sThread.getID(), sThread);
-			this.numPlayers++; 
-		}catch (IOException e){
-			log.error(e);
+		if(numPlayers <= Config.MAX_PLAYERS){
+			log.info("Client accepted: " + socket );
+			try{
+				ServerThread sThread = new ServerThread(this, socket);
+				sThread.open();
+				sThread.start();
+				clients.put(sThread.getID(), sThread);
+				this.numPlayers++; 
+			}catch (IOException e){
+				log.error(e);
+			}
+			
+			if(numPlayers == 2){minPlayers = true;}
+			if(numPlayers == 5){maxPlayers = true;}
+		}else{
+			log.info("Client Thread tried to connect: " + socket);
+			log.info("Client refused: maximum number of clients reached: " + Config.MAX_PLAYERS);
+			maxPlayers = false; 
 		}
 	}
 	
