@@ -17,21 +17,6 @@ import game.Card;
 import game.ColourCard;
 import game.SupportCard;
 
-
-/*TO DO: 
-1) wrong winner in winner message
-2) *DONE* purple tournament popup comes up for wrong player, and only gives purple token when chosen
-3) points aren't reset after a win, only when the player plays their first turn for a new tournament
-4) *DONE* token sometimes goes to wrong player but not always? Happened on green tournament.
-5) Also sometimes gets greyed out at the beginning of tournament sometimes not
-6) Maiden card - choose a token to remove after withdraw 
-7) *DONE* Pick up first player card
-8) *DONE* Picked Up cards missing
-9) *DONE* Test 6th player
-10) Only one Maiden card per tournament
-11) Wrong players greyed out
- * 
- */
 public class Client implements Runnable, Observer {
 	public int ID = 0;
 	public Socket socket = null;
@@ -44,6 +29,7 @@ public class Client implements Runnable, Observer {
 	public ArrayList<String> hand = new ArrayList<String>();
 	public String playedCards = null;	
 	public Logger log = Logger.getLogger("Client");
+	public boolean currentPlayer = false; 
 
 	public Client(){
 		window = new MainWindowController();
@@ -51,6 +37,7 @@ public class Client implements Runnable, Observer {
 		String ipAndPort = window.getIPPortFromPlayer();
 		String seperate[] = ipAndPort.split(" ");
 		this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
+		this.currentPlayer = false; 
 	}
 
 	public int getID(){
@@ -176,6 +163,8 @@ public class Client implements Runnable, Observer {
 		else{
 			send = " " + Config.END_TURN;
 		}
+		
+		//process subject's notify to send to server 
 		try {
 			this.handle(send);
 		} catch (IOException e) {
@@ -190,7 +179,7 @@ public class Client implements Runnable, Observer {
 		String output = "result";
 		
 		if(msg.contains(Config.FROMUPDATE)){
-			output= msg.substring(Config.FROMUPDATE.length());
+			output = msg.substring(Config.FROMUPDATE.length());
 		}
 		
 		else if(msg.contains(Config.CLIENT_START)){
@@ -330,15 +319,17 @@ public class Client implements Runnable, Observer {
 		String input[] = msg.split(" ");
 		
 		this.window.showWindow();
-		this.window.window.startTurn();
+		//this.window.window.startTurn();
 
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
 			//if (input.length > 3) {
 				if(input[3].equalsIgnoreCase(window.playerName)){
+					this.window.window.startTurn();
 					String value[] = input[4].split("_");
 					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
 					output = Config.COLOUR_PICKED + " " + window.setTournament();
+					this.currentPlayer = true; 
 				}
 				for (int i = 0; i < window.getTotalPlayers();i++){
 					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){
@@ -346,19 +337,21 @@ public class Client implements Runnable, Observer {
 					}
 				}
 				
-			}else{
-				if(input[1].equalsIgnoreCase(window.playerName)){
-					String value[] = input[2].split("_");
-					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-					output = Config.COLOUR_PICKED + " " + window.setTournament();	
-				}
-				
-				for (int i = 0; i < window.getTotalPlayers(); i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
-						window.setCurrPlayer(i);
-					}
+		}else{
+			if(input[1].equalsIgnoreCase(window.playerName)){
+				String value[] = input[2].split("_");
+				window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+				output = Config.COLOUR_PICKED + " " + window.setTournament();	
+			}
+			
+			for (int i = 0; i < window.getTotalPlayers(); i++){
+				if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
+					window.setCurrPlayer(i);
 				}
 			}
+		}
+		
+		//if(this.currentPlayer = false){this.window.window.endedTurn();}
 		//}
 		return output;
 	}
@@ -448,6 +441,7 @@ public class Client implements Runnable, Observer {
 		}
 		return output;
 	}
+	
 	// for input from server on playing the card if an action card is played sent the whole message to this in waiting 
 	public void processActionCardAction(String msg){
 		String input[]=msg.split(" ");
@@ -489,15 +483,14 @@ public class Client implements Runnable, Observer {
 			}
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
-
-				System.out.println("Current player name: " + currentPlayerName);
-				System.out.println("Current player number: " + currentPlayer);
-
-				System.out.println("Winning player name: " + winningPlayerName);
-				System.out.println("Winning player number: " + winningPlayer);
-				
 				window.setCurrPlayer(winningPlayer);
 				window.addToken(window.getCurrPlayer(), window.getTournamentColour());
+
+				for(int i = 0; i < window.getPlayerNum(); i++){
+					window.setScore(i, 0);
+				}
+				this.window.setScore(winningPlayer, 0);
+				
 				output = Config.START_TOURNAMENT;
 			}
 			if(msg.contains(Config.GAME_WINNER)){
