@@ -445,16 +445,18 @@ public class Client implements Runnable, Observer {
 				output = Config.PURPLE_WIN + " " + window.playerPickToken();
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				
 				String playerName = input[input.length-1];
 				int currentPlayer = window.getPlayerByName(playerName);
 				System.out.println("Current player name: " + playerName);
 				System.out.println("Current player number: " + currentPlayer);
 				window.setCurrPlayer(currentPlayer);
 				window.addToken(window.getCurrPlayer(), window.getTournamentColour());
+				window.startRound();
 				output = Config.START_TOURNAMENT;
 			}
 			if(msg.contains(Config.GAME_WINNER)){
-				window.GameOverPopup(input[0]);
+				window.GameOverPopup(input[input.length-1]);
 			}
 			if(!msg.contains(Config.TOURNAMENT_WINNER)){
 				window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
