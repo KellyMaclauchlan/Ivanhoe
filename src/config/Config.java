@@ -40,12 +40,9 @@ public class Config {
 	public static String WAITING = "waiting";
 	public static String PURPLE_WIN = "purple win";
 	public static String WITHDRAW = "withdraw";
-<<<<<<< HEAD
 	public static String HAND = "hand";
 	public static String DISPLAY = "display"; 
-=======
 	public static String FROMUPDATE="update";
->>>>>>> 4983993f041e2d06d89c02c6cfd12c9463eb02b2
 	
 	/*UI messages*/
 	public static String LEFT_CLICK="leftclick";
@@ -134,6 +131,7 @@ public class Config {
 	public static String IMG_CHANGE_WEAPON = "resources/cards_small/actionCards10.jpg";
 	public static String IMG_UNHORSE = "resources/cards_small/actionCards11.jpg";
 	public static String IMG_KNOCK_DOWN = "resources/cards_small/actionCards12.jpg";
+	public static String IMG_OUTWIT = "resources/cards_small/actionCards13.jpg";
 	public static String IMG_SHIELD = "resources/cards_small/actionCards14.jpg";
 	public static String IMG_STUNNED = "resources/cards_small/actionCards15.jpg";
 	public static String IMG_IVANHOE = "resources/cards_small/actionCards16.jpg";

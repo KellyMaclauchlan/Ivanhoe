@@ -113,7 +113,7 @@ public class MainWindowController implements Observer, Subject{
 	    return options[response];
 	}
 	public String changeColour(){
-		String[] options = new String[] {"Blue", "Red", "Yellow"};
+		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW};
 	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		log.info("Tournament colour has been set to " + options[response]);
 	    return options[response];

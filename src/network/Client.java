@@ -507,13 +507,12 @@ public class Client implements Runnable, Observer {
 			if(value.equals("3")){
 				output = Config.IMG_RED_3;
 			}
-			else if(type.equals("4")){
+			else if(value.equals("4")){
 				output = Config.IMG_RED_4;
 			}
-			else if(type.equals("5")){
+			else if(value.equals("5")){
 				output = Config.IMG_RED_5;
 			}
-			
 		}
 		
 		else if (type.equals(Config.BLUE)){
@@ -596,7 +595,10 @@ public class Client implements Runnable, Observer {
 		else if(type.equals(Config.ADAPT)){
 			output = Config.IMG_ADAPT;
 		}
-		else if (type.equals(Config.DROPWEAPON)){
+		else if (type.equals(Config.OUTWIT)){
+			output = Config.IMG_OUTWIT;
+		}
+ 		else if (type.equals(Config.DROPWEAPON)){
 			output = Config.IMG_DROP_WEAPON;
 		}
 		else if(type.equals(Config.CHANGEWEAPON)){
