@@ -131,7 +131,6 @@ public class Client implements Runnable, Observer {
 				
 	   	}else if(msg.contains("input")){
 	   		// do nothing and wait for more players to arrive 
-	   		//System.out.println(msg);
 		} else {
 			testing = msg;
 			send = processInput(msg);
@@ -150,22 +149,15 @@ public class Client implements Runnable, Observer {
 
 	@Override
 	public void update(String message) {
-		System.out.println("client got from player:"+message);
 		String send = Config.FROMUPDATE;
 		if(message.contains(Config.PLAYEDCARD)){
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
 			send = this.playACard();
 		}
-		
 		else if (message.contains(Config.WITHDRAW)){
-			//processInput(Config.WITHDRAW);
-			//playedCards = Config.WITHDRAW;
 			send = " " + Config.WITHDRAW;
 		}
-		
 		else{
-			//processInput(Config.END_TURN);
-			//playedCards = Config.END_TURN;
 			send = " " + Config.END_TURN;
 		}
 		try {
@@ -263,7 +255,7 @@ public class Client implements Runnable, Observer {
 		 * */
 		else if(msg.contains(Config.CONTINUE)||msg.contains(Config.WITHDRAW)){
 
-			if(msg.length() == Config.WITHDRAW.length()){
+			if(msg.length() == 9){
 				output = Config.WITHDRAW;
 			}else {
 				output = processContinueWithdraw(msg);	
@@ -290,14 +282,12 @@ public class Client implements Runnable, Observer {
 
 		for(int i = 1; i < name.length; i++){
 			card = name[i].split(" ");
+			
 			//if this player is the user
 			if(card[1].equalsIgnoreCase(window.playerName)){
 				for(int k = 3; k < card.length; k++){
-					
 					hand.add(card[k]);					
 					value = card[k].split("_");
-					
-					System.out.println("Card " + value[0] + " " + value[1]);
 					window.addCard(getCardFromTypeValue(value[0],value[1]));
 				}
 				window.resetCards();
@@ -359,7 +349,7 @@ public class Client implements Runnable, Observer {
 			if (input[1].equalsIgnoreCase(options[i])){
 					window.setTournamentColour(i);
 			}
-		}	
+		}
 		if(input.length != 2){
 			output = msg;
 		}

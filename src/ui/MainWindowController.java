@@ -139,19 +139,17 @@ public class MainWindowController implements Observer, Subject{
 	public String playerPickToken(){
 		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 		String have ="";
-		for (int i=0;i<5;i++){
+		for (int i = 0; i < 5; i++){
 			if(window.hasTokens[playerNum][i]){
-				have+=options[i]+" ";
+				have += options[i]+" ";
 			}
 		}
 	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour, you already have:"+have, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
-		String output= options[response];
+		String output = options[response];
 	    log.info("the player picked " + output);
 	    return output;
 	}
 	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
-	
-	
 	
 	/* Observer Pattern */
 	@Override
@@ -194,7 +192,7 @@ public class MainWindowController implements Observer, Subject{
 	/* Add card to Player's hand */
 	public void addCard(Card newCard){
 		playerCards.add(newCard);
-		if(playerCards.size()<11){
+		if(playerCards.size() < 11){
 			this.window.addPlayerCard(playerCards.size()-1, newCard.getCardImage());
 		}
 		log.info("Adding new card");
@@ -202,11 +200,9 @@ public class MainWindowController implements Observer, Subject{
 	
 	/* Remove card from Player's hand */
 	public void removeCard(int i){
-		if(playerCards.size()>10){
+		if(playerCards.size() > 10){
 			if(moved != 0){moved--;}
 		}
-		
-		System.out.println(i);
 		playerCards.remove(i);
 		this.resetCards();
 		log.info("Card removed");
@@ -221,7 +217,7 @@ public class MainWindowController implements Observer, Subject{
 	public void addPlayedCard(int player, Card card){
 		this.playedCards.get(player).add(card);
 		this.window.addPlayedCard(player, card.getCardImage());
-		log.info("Player "+ this.playedCards.get(player) + " added " + card + " to their hand");
+		log.info("Player " + this.playedCards.get(player) + " added " + card + " to their hand");
 	}
 	
 	/* Show display for popup of other Player's display */
@@ -233,7 +229,6 @@ public class MainWindowController implements Observer, Subject{
 	
 	/*SENDS END TURN NOTIFICAITON AND COMMAND TO NETWORK AND UI*/
 	public void endturnClick() {
-		System.out.println("endTurn click");
 		this.window.endTurnClicked();
 		this.notifyObservers(Config.END_TURN);
 		log.info("Player has ended their turn");
@@ -241,7 +236,6 @@ public class MainWindowController implements Observer, Subject{
 
 	/* Send withdraw notification and command to network and UI */
 	public void withdrawClick() {
-		System.out.println("withdraw click");
 		this.window.withdrawClicked();
 		this.notifyObservers(Config.WITHDRAW);
 		log.info("Player has withdrawed");
@@ -249,7 +243,6 @@ public class MainWindowController implements Observer, Subject{
 
 	/* Moves the Player's cards one to the left to show the cards on the right side that were hidden */
 	public void rightClick() {
-		System.out.println("right click");
 		if(moved < playerCards.size()-10){
 			moved++;
 			this.window.rightArrowClicked(playerCards.get(moved+9).getCardImage());
@@ -258,7 +251,6 @@ public class MainWindowController implements Observer, Subject{
 
 	/* Moves the Player's cards one to the right to show the cards on the left side that were hidden*/
 	public void leftClick(){
-		System.out.println("left click");
 		if(moved != 0){
 			moved--;
 			this.window.leftArrowClicked(playerCards.get(moved).getCardImage());
@@ -280,11 +272,8 @@ public class MainWindowController implements Observer, Subject{
 	public void playCard() {		
 		if(this.window.lastCard<this.playerCards.size()){
 			this.lastCard= this.playerCards.get(this.window.lastCard+this.moved);
-			System.out.println("played card "+this.window.lastCard+"");
 			log.info("Played card " + this.lastCard.getType()+" "+ this.lastCard.getValue());
 			this.notifyObservers(Config.PLAYEDCARD);
-			
-			//this.removeCard(this.window.lastCard+this.moved);
 		}
 	}
 
@@ -307,5 +296,4 @@ public class MainWindowController implements Observer, Subject{
 		this.window.setToken(player, token, tokenStrings.get(token));
 		log.info("Adding " + tokenStrings.get(token) + " token");
 	}
-	
 }
