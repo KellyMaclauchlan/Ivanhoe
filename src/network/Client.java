@@ -20,11 +20,13 @@ import game.SupportCard;
 
 /*TO DO: 
 1) wrong winner in winner message
-2) purple tournament popup comes up for wrong player, and only gives purple token when chosen
+2) *DONE* purple tournament popup comes up for wrong player, and only gives purple token when chosen
 3) points aren't reset after a win, only when the player plays their first turn for a new tournament
-4) token sometimes goes to wrong player but not always? Happened on green tournament.
+4) *DONE* token sometimes goes to wrong player but not always? Happened on green tournament.
 5) Also sometimes gets greyed out at the beginning of tournament sometimes not
 6) Maiden card - choose a token to remove after withdraw 
+7) Pick up first player card
+8) Purple 5 missing
  * 
  */
 public class Client implements Runnable, Observer {
@@ -278,6 +280,7 @@ public class Client implements Runnable, Observer {
 		else if (msg.contains(Config.WITHDRAW)) {
 			String[] withdrawString = msg.split(" ");
 			String name = withdrawString[0];
+			System.out.println("Withdrawn player name: " + name);
 			window.playerWithdraws(name); 
 		}
 
@@ -446,42 +449,55 @@ public class Client implements Runnable, Observer {
 	public String processContinueWithdraw(String msg){
 		String output = "result";
 		String input[] = msg.split(" ");
-		
-		int old = window.getCurrPlayer();
-		window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
+		System.out.println("ProcessContinueWithdraw: " + msg);
+		//int old = window.getCurrPlayer();
+		String currentPlayerName = input[0];
+		String winningPlayerName = input[input.length - 1];
+		String score = input[2];
+		String nextPlayerName = input[4];
+		int winningPlayer = window.getPlayerByName(winningPlayerName);
+		int currentPlayer = window.getPlayerByName(currentPlayerName);
+		window.setScore(currentPlayer, Integer.parseInt(score));
 		
 		if(msg.contains(Config.PURPLE_WIN)){
-			if(window.playerName.equalsIgnoreCase(input[input.length-1]))
+			window.setCurrPlayer(winningPlayer);
+			if(window.playerName.equalsIgnoreCase(winningPlayerName)) {
 				output = Config.PURPLE_WIN + " " + window.playerPickToken();
+			}
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
-				String playerName = input[input.length-1];
-				int currentPlayer = window.getPlayerByName(playerName);
-				System.out.println("Current player name: " + playerName);
+
+				System.out.println("Current player name: " + currentPlayerName);
 				System.out.println("Current player number: " + currentPlayer);
-				window.setCurrPlayer(currentPlayer);
+
+				System.out.println("Winning player name: " + winningPlayerName);
+				System.out.println("Winning player number: " + winningPlayer);
+				
+				window.setCurrPlayer(winningPlayer);
 				window.addToken(window.getCurrPlayer(), window.getTournamentColour());
 				output = Config.START_TOURNAMENT;
 			}
 			if(msg.contains(Config.GAME_WINNER)){
-				window.GameOverPopup(input[0]);
+				String winner = input[input.length - 1];
+				window.GameOverPopup(winner);
 			}
 			if(!msg.contains(Config.TOURNAMENT_WINNER)){
-				window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
+				window.setScore(window.getCurrPlayer(), Integer.parseInt(score));
 				
-				if(window.getPlayerNum() == old){
+				if(window.getPlayerNum() == currentPlayer){
 					window.window.endedTurn();
 				}
 				
 				for(int i = 0; i < window.playerNames.size(); i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(input[4])){						
+					if(window.playerNames.get(i).equalsIgnoreCase(nextPlayerName)){						
 						window.setCurrPlayer(i);
 						
 						if(window.getPlayerNum() == window.getCurrPlayer()){
 							window.window.startTurn();
-							String value[] = input[5].split("_");
-							window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-							//output = playACard();
+							String card[] = input[5].split("_");
+							String type = input[0];
+							String value = input[1];
+							window.addCard(this.getCardFromTypeValue(type, value));
 						}
 					}
 				}
