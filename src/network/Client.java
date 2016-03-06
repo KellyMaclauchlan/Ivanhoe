@@ -25,8 +25,11 @@ import game.SupportCard;
 4) *DONE* token sometimes goes to wrong player but not always? Happened on green tournament.
 5) Also sometimes gets greyed out at the beginning of tournament sometimes not
 6) Maiden card - choose a token to remove after withdraw 
-7) Pick up first player card
-8) Purple 5 missing
+7) *DONE* Pick up first player card
+8) *DONE* Picked Up cards missing
+9) *DONE* Test 6th player
+10) Only one Maiden card per tournament
+11) Wrong players greyed out
  * 
  */
 public class Client implements Runnable, Observer {
@@ -469,13 +472,11 @@ public class Client implements Runnable, Observer {
 		else if(cardType.equalsIgnoreCase(Config.CHANGEWEAPON)||cardType.equalsIgnoreCase(Config.UNHORSE)||cardType.equalsIgnoreCase(Config.DROPWEAPON)){
 			window.setTournamentColour(Config.colours.indexOf(input[2]));
 		}
-		//return output;
 	}
 	
 	public String processContinueWithdraw(String msg){
 		String output = "result";
 		String input[] = msg.split(" ");
-		System.out.println("ProcessContinueWithdraw: " + msg);
 		String currentPlayerName = input[0];
 		String winningPlayerName = input[input.length - 1];
 		String score = input[2];
@@ -486,7 +487,7 @@ public class Client implements Runnable, Observer {
 		
 		if(msg.contains(Config.PURPLE_WIN)){
 			window.setCurrPlayer(winningPlayer);
-			if(window.playerName.equalsIgnoreCase(winningPlayerName)) {
+			if(window.playerName.equalsIgnoreCase(input[input.length - 1])) {
 				output = Config.PURPLE_WIN + " " + window.playerPickToken();
 			}
 		}else{
@@ -520,8 +521,8 @@ public class Client implements Runnable, Observer {
 						if(window.getPlayerNum() == window.getCurrPlayer()){
 							window.window.startTurn();
 							String card[] = input[5].split("_");
-							String type = input[0];
-							String value = input[1];
+							String type = card[0];
+							String value = card[1];
 							window.addCard(this.getCardFromTypeValue(type, value));
 						}
 					}
