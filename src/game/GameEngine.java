@@ -29,7 +29,7 @@ public class GameEngine {
 				output = processStart(input); // output = prompt join OR output = max 5 (if number of players is too high)
 			// input = join <player name>
 			} else if (input.contains(Config.JOIN)) {
-				output = processJoin(input); // output = need players OR output = name <player name> cards <type_value> <type_value> ...
+				output = processJoin(input); // output = need players OR output = hand name <player name> cards <type_value> <type_value> ...
 			// input = begin tournament	
 			} else if (input.contains(Config.START_TOURNAMENT)) {	
 				output = processStartTournament(input); // output = purple <player name> turn <player name> (first turn) <card picked up> 
@@ -84,6 +84,7 @@ public class GameEngine {
 			//prompt first player to start their turn
 			//pick tokens happens automatically 
 			startGame();
+			output += Config.HAND + " ";
 			for (Player p: players) {
 				output += " " + Config.PLAYER_NAME + " " + p.getName() + " " + Config.PLAYER_CARDS; 
 				for (Card c: p.getCards()) {
@@ -152,6 +153,9 @@ public class GameEngine {
 		} else {
 			output += " " + Config.UNPLAYABLE;
 		}
+		
+		output.replace("  ", " ");
+		output.trim();
 		return output; 
 	}
 	
@@ -185,11 +189,12 @@ public class GameEngine {
 				String playerName = cardString[2];
 				Player player = getPlayerByName(playerName);
 				card.playBreakLance(player);
+				output += Config.DISPLAY + " ";
 				output += Config.PLAYER_NAME + " " + playerName + " " + Config.PLAYER_CARDS + " ";
 				for (Card c: player.getDisplay()) {
 					output += " " + c.getType() + "_" + c.getValue(); 
 				}
-				//output = waiting <card played> name <player> cards <display card> <display card> ...
+				//output = waiting <card played> display name <player> cards <display card> <display card> ...
 			} else if (card.getType().equals(Config.RIPOSTE)) {
 				//input = play riposte <player name>
 				String playerName = cardString[2];
@@ -270,7 +275,7 @@ public class GameEngine {
 	}
 	
 	public String updateDisplays() {
-		String output = "";
+		String output = Config.DISPLAY + " ";
 		for (Player p: players) {
 			output += Config.PLAYER_NAME + " " + p.getName() + " " + Config.PLAYER_CARDS + " ";
 			if (!p.getName().equals(currentPlayer.getName())) {

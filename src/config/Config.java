@@ -40,7 +40,10 @@ public class Config {
 	public static String WAITING = "waiting";
 	public static String PURPLE_WIN = "purple win";
 	public static String WITHDRAW = "withdraw";
+	public static String HAND = "hand";
+	public static String DISPLAY = "display"; 
 	public static String FROMUPDATE="update";
+
 	
 	/*UI messages*/
 	public static String LEFT_CLICK="leftclick";
@@ -132,4 +135,6 @@ public class Config {
 	public static String IMG_SHIELD = "resources/cards_small/actionCards14.jpg";
 	public static String IMG_STUNNED = "resources/cards_small/actionCards15.jpg";
 	public static String IMG_IVANHOE = "resources/cards_small/actionCards16.jpg";
+	
+	public static String IMG_BACK = "resources/cards_small/simpleCards18.jpg";
 }

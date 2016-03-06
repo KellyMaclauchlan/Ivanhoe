@@ -505,7 +505,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token22, gbc_token22);
 		
 		JButton p2d = new JButton("");
-		p2d.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		p2d.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_p2d = new GridBagConstraints();
 		gbc_p2d.gridwidth = 3;
 		gbc_p2d.gridheight = 3;
@@ -523,7 +523,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token32, gbc_token32);
 		
 		JButton p3d = new JButton("");
-		p3d.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		p3d.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_p3d = new GridBagConstraints();
 		gbc_p3d.gridheight = 3;
 		gbc_p3d.gridwidth = 3;
@@ -541,7 +541,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token42, gbc_token42);
 		
 		JButton p4d = new JButton("");
-		p4d.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		p4d.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_p4d = new GridBagConstraints();
 		gbc_p4d.gridheight = 3;
 		gbc_p4d.gridwidth = 3;
@@ -559,7 +559,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token52, gbc_token52);
 		
 		JButton p5d = new JButton("");
-		p5d.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		p5d.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_p5d = new GridBagConstraints();
 		gbc_p5d.gridheight = 3;
 		gbc_p5d.gridwidth = 3;
@@ -688,7 +688,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_token55.gridy = 5;
 		getContentPane().add(token55, gbc_token55);
 		
-		JRadioButton name1 = new JRadioButton("name");
+		JRadioButton name1 = new JRadioButton(Config.PLAYER_NAME);
 		GridBagConstraints gbc_name1 = new GridBagConstraints();
 		gbc_name1.gridwidth = 2;
 		gbc_name1.insets = new Insets(0, 0, 5, 5);
@@ -696,7 +696,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_name1.gridy = 6;
 		getContentPane().add(name1, gbc_name1);
 		
-		JRadioButton name2 = new JRadioButton("name");
+		JRadioButton name2 = new JRadioButton(Config.PLAYER_NAME);
 		GridBagConstraints gbc_name2 = new GridBagConstraints();
 		gbc_name2.gridwidth = 2;
 		gbc_name2.insets = new Insets(0, 0, 5, 5);
@@ -704,7 +704,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_name2.gridy = 6;
 		getContentPane().add(name2, gbc_name2);
 		
-		JRadioButton name3 = new JRadioButton("name");
+		JRadioButton name3 = new JRadioButton(Config.PLAYER_NAME);
 		GridBagConstraints gbc_name3 = new GridBagConstraints();
 		gbc_name3.gridwidth = 2;
 		gbc_name3.insets = new Insets(0, 0, 5, 5);
@@ -712,7 +712,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_name3.gridy = 6;
 		getContentPane().add(name3, gbc_name3);
 		
-		JRadioButton name4 = new JRadioButton("name");
+		JRadioButton name4 = new JRadioButton(Config.PLAYER_NAME);
 		GridBagConstraints gbc_name4 = new GridBagConstraints();
 		gbc_name4.gridwidth = 2;
 		gbc_name4.insets = new Insets(0, 0, 5, 5);
@@ -720,7 +720,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_name4.gridy = 6;
 		getContentPane().add(name4, gbc_name4);
 		
-		JRadioButton name5 = new JRadioButton("name");
+		JRadioButton name5 = new JRadioButton(Config.PLAYER_NAME);
 		GridBagConstraints gbc_name5 = new GridBagConstraints();
 		gbc_name5.gridwidth = 2;
 		gbc_name5.insets = new Insets(0, 0, 5, 5);
@@ -729,7 +729,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(name5, gbc_name5);
 		
 		JLabel Deck = new JLabel("");
-		Deck.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		Deck.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_Deck = new GridBagConstraints();
 		gbc_Deck.gridheight = 3;
 		gbc_Deck.gridwidth = 2;
@@ -787,7 +787,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(leftArrow, gbc_leftArrow);
 		
 		JButton card1 = new JButton("");
-		card1.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card1.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card1 = new GridBagConstraints();
 		gbc_card1.gridheight = 3;
 		gbc_card1.gridwidth = 3;
@@ -797,7 +797,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card1, gbc_card1);
 		
 		JButton card2 = new JButton("");
-		card2.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card2.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card2 = new GridBagConstraints();
 		gbc_card2.gridheight = 3;
 		gbc_card2.gridwidth = 3;
@@ -807,7 +807,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card2, gbc_card2);
 		
 		JButton card3 = new JButton("");
-		card3.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card3.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card3 = new GridBagConstraints();
 		gbc_card3.gridheight = 3;
 		gbc_card3.gridwidth = 3;
@@ -817,7 +817,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card3, gbc_card3);
 		
 		JButton card4 = new JButton("");
-		card4.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card4.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card4 = new GridBagConstraints();
 		gbc_card4.gridheight = 3;
 		gbc_card4.gridwidth = 3;
@@ -827,7 +827,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card4, gbc_card4);
 		
 		JButton card5 = new JButton("");
-		card5.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card5.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card5 = new GridBagConstraints();
 		gbc_card5.gridheight = 3;
 		gbc_card5.gridwidth = 3;
@@ -837,7 +837,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card5, gbc_card5);
 		
 		JButton card6 = new JButton("");
-		card6.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card6.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card6 = new GridBagConstraints();
 		gbc_card6.gridheight = 3;
 		gbc_card6.gridwidth = 3;
@@ -847,7 +847,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card6, gbc_card6);
 		
 		JButton card7 = new JButton("");
-		card7.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card7.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card7 = new GridBagConstraints();
 		gbc_card7.gridheight = 3;
 		gbc_card7.gridwidth = 2;
@@ -857,7 +857,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card7, gbc_card7);
 		
 		JButton card8 = new JButton("");
-		card8.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card8.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card8 = new GridBagConstraints();
 		gbc_card8.gridwidth = 3;
 		gbc_card8.gridheight = 3;
@@ -867,7 +867,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card8, gbc_card8);
 		
 		JButton card9 = new JButton("");
-		card9.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card9.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card9 = new GridBagConstraints();
 		gbc_card9.gridheight = 3;
 		gbc_card9.gridwidth = 3;
@@ -884,7 +884,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_card10.gridx = 30;
 		gbc_card10.gridy = 15;
 		getContentPane().add(card10, gbc_card10);
-		card10.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		card10.setIcon(new ImageIcon(Config.IMG_IVANHOE));
 		
 		JButton rightArrow = new JButton("");
 		rightArrow.setIcon(new ImageIcon("resources/icons/right-arrow.png"));
