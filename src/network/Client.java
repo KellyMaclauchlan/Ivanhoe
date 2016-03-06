@@ -17,21 +17,6 @@ import game.Card;
 import game.ColourCard;
 import game.SupportCard;
 
-
-/*TO DO: 
-1) wrong winner in winner message
-2) *DONE* purple tournament popup comes up for wrong player, and only gives purple token when chosen
-3) points aren't reset after a win, only when the player plays their first turn for a new tournament
-4) *DONE* token sometimes goes to wrong player but not always? Happened on green tournament.
-5) Also sometimes gets greyed out at the beginning of tournament sometimes not
-6) Maiden card - choose a token to remove after withdraw 
-7) *DONE* Pick up first player card
-8) *DONE* Picked Up cards missing
-9) *DONE* Test 6th player
-10) Only one Maiden card per tournament
-11) Wrong players greyed out
- * 
- */
 public class Client implements Runnable, Observer {
 	public int ID = 0;
 	public Socket socket = null;
@@ -492,15 +477,14 @@ public class Client implements Runnable, Observer {
 			}
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
-
-				System.out.println("Current player name: " + currentPlayerName);
-				System.out.println("Current player number: " + currentPlayer);
-
-				System.out.println("Winning player name: " + winningPlayerName);
-				System.out.println("Winning player number: " + winningPlayer);
-				
 				window.setCurrPlayer(winningPlayer);
 				window.addToken(window.getCurrPlayer(), window.getTournamentColour());
+
+				for(int i = 0; i < window.getPlayerNum(); i++){
+					window.setScore(i, 0);
+				}
+				this.window.setScore(winningPlayer, 0);
+				
 				output = Config.START_TOURNAMENT;
 			}
 			if(msg.contains(Config.GAME_WINNER)){
