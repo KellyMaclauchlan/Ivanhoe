@@ -324,18 +324,20 @@ public class GameEngine {
 		for (Player p: players) {
 			if (p.isWinner() && tournamentColour.equals(Config.PURPLE) && choosePurple == false) {
 				status = " " + Config.PURPLE_WIN + " " + p.getName();
-
+				currentPlayer = p;
 			}
 			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple == true)) {
 				arrangePlayers();
 				resetPlayers();
 				status = " " + Config.TOURNAMENT_WINNER + " " + p.getName();
 				choosePurple = false;
+				currentPlayer = p;
 			}
 			if (p.isGameWinner()) {
 				status += " " + Config.GAME_WINNER + " " + p.getName();
+				currentPlayer = p;
 			}
-			currentPlayer = p;
+			
 		}
 		if(status.equalsIgnoreCase("")){
 			Card picked = pickupCard();

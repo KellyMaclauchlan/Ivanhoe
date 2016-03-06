@@ -155,6 +155,7 @@ public class Client implements Runnable, Observer {
 			send = this.playACard();
 		}
 		else if (message.contains(Config.WITHDRAW)){
+			
 			send = " " + Config.WITHDRAW;
 		}
 		else{
@@ -263,6 +264,11 @@ public class Client implements Runnable, Observer {
 		}
 		else if(msg.contains(Config.END_TURN)){
 			output = Config.END_TURN;
+		}
+		else if (msg.contains(Config.WITHDRAW)) {
+			String[] withdrawString = msg.split(" ");
+			String name = withdrawString[0];
+			window.playerWithdraws(name); 
 		}
 
 		return output; 
@@ -435,14 +441,15 @@ public class Client implements Runnable, Observer {
 		window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
 		
 		if(msg.contains(Config.PURPLE_WIN)){
-<<<<<<< HEAD
 			if(window.getPlayerNum() == window.getCurrPlayer())
-=======
-			if(window.getPlayerNum()== window.getCurrPlayer())
->>>>>>> 15028c43105a5d9667a617e50d950328fa7f2dcc
 				output = Config.PURPLE_WIN + " " + window.playerPickToken();
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				String playerName = input[input.length-1];
+				int currentPlayer = window.getPlayerByName(playerName);
+				System.out.println("Current player name: " + playerName);
+				System.out.println("Current player number: " + currentPlayer);
+				window.setCurrPlayer(currentPlayer);
 				window.addToken(window.getCurrPlayer(), window.getTournamentColour());
 				output = Config.START_TOURNAMENT;
 			}

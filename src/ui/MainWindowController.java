@@ -78,6 +78,10 @@ public class MainWindowController implements Observer, Subject{
 	public void setTotalPlayers(int totalPlayers) {this.totalPlayers = totalPlayers;}
 	//public void setTournamentColour(int tournamentColour) {this.tournamentColour = tournamentColour;}
 	
+	public int getPlayerByName(String name) {
+		int player = playerNames.indexOf(name);
+		return player;
+	}
 	public void setScore(int player, int score) {
 		this.playerScores.set(player, score);	
 		window.playerPoints[player].setText(""+score);
