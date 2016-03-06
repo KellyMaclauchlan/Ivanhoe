@@ -30,6 +30,8 @@ public class Client implements Runnable, Observer {
 	public String playedCards = null;	
 	public Logger log = Logger.getLogger("Client");
 	public boolean currentPlayer = false; 
+	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+	private boolean purpleChosen = false;
 
 	public Client(){
 		window = new MainWindowController();
@@ -359,7 +361,7 @@ public class Client implements Runnable, Observer {
 	public String processPlay(String msg){
 		String output = "result";
 		String input[] = msg.split(" ");
-		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+		
 		
 		for(int i = 0; i < 5; i++){
 			if (input[1].equalsIgnoreCase(options[i])){
@@ -479,13 +481,24 @@ public class Client implements Runnable, Observer {
 		if(msg.contains(Config.PURPLE_WIN)){
 			window.setCurrPlayer(winningPlayer);
 			if(window.playerName.equalsIgnoreCase(input[input.length - 1])) {
-				output = Config.PURPLE_WIN + " " + window.playerPickToken();
+				String chosenColour = window.playerPickToken();
+				output = Config.PURPLE_WIN + " " + chosenColour;
+				for(int i = 0; i < 5; i++){
+					if (chosenColour.equalsIgnoreCase(options[i])){
+							window.setTournamentColour(i);
+							if (chosenColour.equals(Config.PURPLE)) {
+								purpleChosen = true;
+							}
+					}
+				}
 			}
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
 				window.setCurrPlayer(winningPlayer);
-				window.addToken(window.getCurrPlayer(), window.getTournamentColour());
-
+				if (!(window.getTournamentColour() == 4) || purpleChosen) {
+					window.addToken(window.getCurrPlayer(), window.getTournamentColour());
+					purpleChosen = false;
+				}
 				for(int i = 0; i < window.getPlayerNum(); i++){
 					window.setScore(i, 0);
 				}

@@ -164,11 +164,12 @@ public class MainWindowController implements Observer, Subject{
 				have += options[i]+" ";
 			}
 		}
-	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour, you already have:"+have, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+	    int response = JOptionPane.showOptionDialog(null, "Pick a token colour, you already have:"+have, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		String output = options[response];
 	    log.info("the player picked " + output);
 	    return output;
 	}
+	
 	public String playerPickTokenRemove(){
 		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 		String have ="";
