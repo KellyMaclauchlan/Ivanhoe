@@ -173,6 +173,8 @@ public class Client implements Runnable, Observer {
 		else{
 			send = " " + Config.END_TURN;
 		}
+		
+		//process subject's notify to send to server 
 		try {
 			this.handle(send);
 		} catch (IOException e) {
@@ -187,7 +189,7 @@ public class Client implements Runnable, Observer {
 		String output = "result";
 		
 		if(msg.contains(Config.FROMUPDATE)){
-			output= msg.substring(Config.FROMUPDATE.length());
+			output = msg.substring(Config.FROMUPDATE.length());
 		}
 		
 		else if(msg.contains(Config.CLIENT_START)){
@@ -445,6 +447,7 @@ public class Client implements Runnable, Observer {
 		}
 		return output;
 	}
+	
 	// for input from server on playing the card if an action card is played sent the whole message to this in waiting 
 	public void processActionCardAction(String msg){
 		String input[]=msg.split(" ");
