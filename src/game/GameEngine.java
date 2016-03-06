@@ -16,6 +16,7 @@ public class GameEngine {
 	private Player currentPlayer;
 	private int turnNumber = 0;
 	private boolean choosePurple = false;
+	private boolean purpleWinner;
 	
 	public GameEngine() {
 		players = new ArrayList<>();
@@ -301,6 +302,7 @@ public class GameEngine {
 		return actionable;
 	}
  	public String processPurpleWin(String input) {
+ 		purpleWinner = true;
 		String output = "";
 		String[] purpleWin = input.split(" ");
 		String chosenColour = purpleWin[2];
@@ -517,7 +519,8 @@ public class GameEngine {
 	
 	public void endTurn() {
 		for (Player p: players) {
-			if (currentPlayer.getTotalCardValue() < p.getTotalCardValue()) {
+			if ((currentPlayer.getTotalCardValue() <= p.getTotalCardValue()) 
+					&& (!currentPlayer.getName().equals(p.getName()))) {
 				withdraw();
 			}
 		}
