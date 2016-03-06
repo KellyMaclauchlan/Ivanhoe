@@ -432,6 +432,29 @@ public class Client implements Runnable, Observer {
 		}
 		return output;
 	}
+	// for input from server on playing the card if an action card is played sent the whole message to this in waiting 
+	public void processActionCardAction(String msg){
+		String input[]=msg.split(" ");
+		String cardType = input[1];
+		//output = " " + cardType + " ";
+		
+		//note Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
+		//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
+		if(cardType.equalsIgnoreCase(Config.KNOCKDOWN)){
+			//output += window.pickAName("take a card from.");
+		}
+		else if(cardType.equalsIgnoreCase(Config.RIPOSTE)){
+			//output += window.pickAName("take the last card on their display and add it to yours.");
+		}
+		else if(cardType.equalsIgnoreCase(Config.BREAKLANCE)){
+			//output += window.pickAName("remove all purple cards from their display.");
+		}
+		//msg =waiting unhorse colour 
+		else if(cardType.equalsIgnoreCase(Config.CHANGEWEAPON)||cardType.equalsIgnoreCase(Config.UNHORSE)||cardType.equalsIgnoreCase(Config.DROPWEAPON)){
+			window.setTournamentColour(Config.colours.indexOf(input[2]));
+		}
+		//return output;
+	}
 	
 	public String processContinueWithdraw(String msg){
 		String output = "result";

@@ -119,7 +119,7 @@ public class MainWindowController implements Observer, Subject{
 			this.playerNames.add("");
 			this.playerScores.add(0);
 		}
-		for(j=j;j<5;j++){
+		for(j=i-1;j<5;j++){
 			this.window.playedCards[j].setEnabled(false);
 		}
 		log.info("Total number of players is: " + i);
