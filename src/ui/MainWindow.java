@@ -1,6 +1,7 @@
 package ui;
 
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -70,6 +71,7 @@ public class MainWindow extends JFrame implements Subject {
 		//setSize(300, 200);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setFont(new Font("Helvetica",Font.PLAIN,35));
 		leftClick = false;
 		testing = true;
 		setUpScreen(this.getContentPane());
@@ -80,6 +82,22 @@ public class MainWindow extends JFrame implements Subject {
 				this.hasTokens[i][j]=false;
 			}
 		}
+		int fontsize=17;
+		this.endTurnButton.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.withdrawButton.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playCardButton.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playerNames[0].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playerNames[1].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playerNames[2].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playerNames[3].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playerNames[4].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		
+		this.playerPoints[0].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playerPoints[1].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playerPoints[2].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playerPoints[3].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		this.playerPoints[4].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
+		
 	}
 	
 	@Override

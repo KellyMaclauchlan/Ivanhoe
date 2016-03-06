@@ -47,12 +47,17 @@ public class MainWindowController implements Observer, Subject{
 		tokenStrings.add("resources/icons/yellow_full.png");
 		tokenStrings.add("resources/icons/green_full.png");
 		tokenStrings.add("resources/icons/purple_full.png");
+		window.endedTurn();
 	}
 	/* displays the main window */
 	public void showWindow(){window.setVisible(true);}
 	
 	/* GETTERS */
-	public String getNameFromPlayer(){return JOptionPane.showInputDialog("Enter your name");}
+	public String getNameFromPlayer(){
+		String name=JOptionPane.showInputDialog("Enter your name");
+		window.setTitle("Ivanhoe: "+name);
+		return name ;
+		}
 	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter your IP address and Port ie: localhost 3000");}
 	public String getNumberOfPlayersFromPlayer(){return JOptionPane.showInputDialog("Enter the number of players in this game (2-5)");}
 	public Object getScore(int player) {return this.playerScores.get(player);}
@@ -260,9 +265,10 @@ public class MainWindowController implements Observer, Subject{
 	/* Starts a new round with the UI */
 	public void startRound() {
 		for(int i = 0; i < this.playerNum; i++){
-			setScore(i,0);
-			this.window.addPlayedCard(i, Config.IMG_BACK);
+			setScore(i,0);			
 			this.playedCards.get(i).clear();
+			this.window.addPlayedCard(i, Config.IMG_BACK);
+			this.window.playedCards[i].setEnabled(true);
 			log.info("Player " + this.playedCards.get(i) + "started their round");
 		}	
 		this.window.endedTurn();
@@ -295,5 +301,10 @@ public class MainWindowController implements Observer, Subject{
 	public void addToken(int player, int token){
 		this.window.setToken(player, token, tokenStrings.get(token));
 		log.info("Adding " + tokenStrings.get(token) + " token");
+	}
+	public void playerWithdraws(String name){
+		int player=this.playerNames.indexOf(name);
+		window.playerPoints[player].setText("0");
+		window.playedCards[player].setEnabled(false);
 	}
 }
