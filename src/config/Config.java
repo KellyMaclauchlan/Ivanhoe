@@ -43,11 +43,7 @@ public class Config {
 	public static String HAND = "hand";
 	public static String DISPLAY = "display"; 
 	public static String FROMUPDATE="update";
-<<<<<<< HEAD
-=======
 
->>>>>>> 421a6347ce5acbf6b63ac0615a30fa9a939649cc
-	
 	/*UI messages*/
 	public static String LEFT_CLICK="leftclick";
 	public static String RIGHT_CLICK="rightclick";

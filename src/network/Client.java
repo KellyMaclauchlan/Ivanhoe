@@ -361,7 +361,7 @@ public class Client implements Runnable, Observer {
 	public String processPlay(String msg){
 		String output = "result";
 		String input[] = msg.split(" ");
-		String[] options = new String[] {"Blue", "Red", "Yellow", "Green","Purple"};
+		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 		
 		for(int i = 0; i < 5; i++){
 			if (input[1].equalsIgnoreCase(options[i])){
