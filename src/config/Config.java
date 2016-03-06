@@ -119,7 +119,7 @@ public class Config {
 	public static String IMG_SQUIRE_3 = "resources/cards_small/simpleCards1.jpg";
 	
 	public static String IMG_DODGE = "resources/cards_small/actionCards.jpg";
-	public static String IMG_DISGRACE = "resources/cards_small/actionCards1.jgp";
+	public static String IMG_DISGRACE = "resources/cards_small/actionCards1.jpg";
 	public static String IMG_RETREAT = "resources/cards_small/actionCards2.jpg";
 	public static String IMG_RIPOSTE = "resources/cards_small/actionCards3.jpg";
 	public static String IMG_OUTMANEUVER = "resources/cards_small/actionCards4.jpg";
