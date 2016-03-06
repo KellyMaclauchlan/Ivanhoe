@@ -124,6 +124,8 @@ public class GameEngine {
 	}
 	
 	public String processPlay(String input) {
+		System.out.println("processPlay:" + input);
+		
 		String output = Config.WAITING;
 		String[] play = input.split(" ");
 		String type = play[1];

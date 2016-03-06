@@ -151,35 +151,32 @@ public class Client implements Runnable, Observer {
 	@Override
 	public void update(String message) {
 		System.out.println("client got from player:"+message);
-		String send=Config.FROMUPDATE;
+		String send = Config.FROMUPDATE;
 		if(message.contains(Config.PLAYEDCARD)){
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
-			send=" "+this.playACard();
+			send= this.playACard();
 		}
 		
 		else if (message.contains(Config.WITHDRAW)){
 			//processInput(Config.WITHDRAW);
-			playedCards = Config.WITHDRAW;
+			//playedCards = Config.WITHDRAW;
 			send=" "+Config.WITHDRAW;
 		}
 		
 		else{
 			//processInput(Config.END_TURN);
-			playedCards = Config.END_TURN;
+			//playedCards = Config.END_TURN;
 			send=" "+Config.END_TURN;
 		}
-
 		this.processInput(send);
-		// send the text send to the server here
-
-		
-		
 	}
 
 	/* Handles what the server has sent from the Game Engine and processes
 	 * what buttons/popups/commands the client and GUI must send back */
 	public String processInput(String msg){
 		String output = "result";
+		System.out.println("processInput:" + msg);
+		
 		if(msg.contains(Config.FROMUPDATE)){
 			output= msg.substring(Config.FROMUPDATE.length());
 		}
@@ -207,7 +204,7 @@ public class Client implements Runnable, Observer {
 		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
 		else if(msg.contains(Config.NEED_PLAYERS)){
 			this.window.showWaiting();
-			// TO DO: make client in waiting state? 	
+
 		}
 		
 		/* Receives each player and their hand
@@ -277,6 +274,7 @@ public class Client implements Runnable, Observer {
 			
 			//output = Config.END_TURN;
 		//}
+		System.out.println("End processInput:" + output);
 		return output; 
 	}
 	
@@ -325,6 +323,11 @@ public class Client implements Runnable, Observer {
 		
 		this.window.showWindow();
 		this.window.window.startTurn();
+		
+		for(int i = 0; i < input.length; i++){
+			System.out.println("Input " + i + ": " + input[i]);
+		}
+		
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
 			
@@ -370,6 +373,8 @@ public class Client implements Runnable, Observer {
 		if(window.getPlayerNum() == window.getCurrPlayer()){
 			//output = playACard();
 		}
+		System.out.println("processPlay\n");
+		output = msg;
 		return output;
 	}
 
