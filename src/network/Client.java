@@ -451,7 +451,7 @@ public class Client implements Runnable, Observer {
 		window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
 		
 		if(msg.contains(Config.PURPLE_WIN)){
-			if(window.getPlayerNum() == window.getCurrPlayer())
+			if(window.playerName.equalsIgnoreCase(input[input.length-1]))
 				output = Config.PURPLE_WIN + " " + window.playerPickToken();
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
