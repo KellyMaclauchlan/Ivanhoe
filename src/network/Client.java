@@ -473,7 +473,6 @@ public class Client implements Runnable, Observer {
 		String output = "result";
 		String input[] = msg.split(" ");
 		System.out.println("ProcessContinueWithdraw: " + msg);
-		//int old = window.getCurrPlayer();
 		String currentPlayerName = input[0];
 		String winningPlayerName = input[input.length - 1];
 		String score = input[2];
@@ -489,15 +488,8 @@ public class Client implements Runnable, Observer {
 			}
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
-<<<<<<< HEAD
 
 				System.out.println("Current player name: " + currentPlayerName);
-=======
-				
-				String playerName = input[input.length-1];
-				int currentPlayer = window.getPlayerByName(playerName);
-				System.out.println("Current player name: " + playerName);
->>>>>>> 6a3d2a734dbfddde5ad172eaea3a042e4baa5d3e
 				System.out.println("Current player number: " + currentPlayer);
 
 				System.out.println("Winning player name: " + winningPlayerName);
@@ -505,16 +497,11 @@ public class Client implements Runnable, Observer {
 				
 				window.setCurrPlayer(winningPlayer);
 				window.addToken(window.getCurrPlayer(), window.getTournamentColour());
-				window.startRound();
 				output = Config.START_TOURNAMENT;
 			}
 			if(msg.contains(Config.GAME_WINNER)){
-<<<<<<< HEAD
 				String winner = input[input.length - 1];
 				window.GameOverPopup(winner);
-=======
-				window.GameOverPopup(input[input.length-1]);
->>>>>>> 6a3d2a734dbfddde5ad172eaea3a042e4baa5d3e
 			}
 			if(!msg.contains(Config.TOURNAMENT_WINNER)){
 				window.setScore(window.getCurrPlayer(), Integer.parseInt(score));
