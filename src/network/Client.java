@@ -312,31 +312,32 @@ public class Client implements Runnable, Observer {
 
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
-			
-			if(input[3].equalsIgnoreCase(window.playerName)){
-				String value[] = input[4].split("_");
-				window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-				output = Config.COLOUR_PICKED + " " + window.setTournament();
-			}
-			for (int i = 0; i < window.getTotalPlayers();i++){
-				if(window.playerNames.get(i).equalsIgnoreCase(input[3])){
-					window.setCurrPlayer(i);
+			//if (input.length > 3) {
+				if(input[3].equalsIgnoreCase(window.playerName)){
+					String value[] = input[4].split("_");
+					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+					output = Config.COLOUR_PICKED + " " + window.setTournament();
+				}
+				for (int i = 0; i < window.getTotalPlayers();i++){
+					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){
+						window.setCurrPlayer(i);
+					}
+				}
+				
+			}else{
+				if(input[1].equalsIgnoreCase(window.playerName)){
+					String value[] = input[2].split("_");
+					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
+					output = Config.COLOUR_PICKED + " " + window.setTournament();	
+				}
+				
+				for (int i = 0; i < window.getTotalPlayers(); i++){
+					if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
+						window.setCurrPlayer(i);
+					}
 				}
 			}
-			
-		}else{
-			if(input[1].equalsIgnoreCase(window.playerName)){
-				String value[] = input[2].split("_");
-				window.addCard(this.getCardFromTypeValue(value[0], value[1]));
-				output = Config.COLOUR_PICKED + " " + window.setTournament();	
-			}
-			
-			for (int i = 0; i < window.getTotalPlayers(); i++){
-				if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
-					window.setCurrPlayer(i);
-				}
-			}
-		}
+		//}
 		return output;
 	}
 	
@@ -374,7 +375,8 @@ public class Client implements Runnable, Observer {
 			output = Config.PLAY + this.processActionCard();
 		}
 		else{
-			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
+			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();
+			window.removeCard(window.lastCard);
 		}
 		this.playedCards = null;
 		
@@ -433,8 +435,8 @@ public class Client implements Runnable, Observer {
 		window.setScore(window.getCurrPlayer(), Integer.parseInt(input[2]));
 		
 		if(msg.contains(Config.PURPLE_WIN)){
-			if(window.getPlayerNum()== window.getCurrPlayer())
-				output = Config.PURPLE_WIN+" "+ window.playerPickToken();
+			if(window.getPlayerNum() == window.getCurrPlayer())
+				output = Config.PURPLE_WIN + " " + window.playerPickToken();
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
 				window.addToken(window.getCurrPlayer(), window.getTournamentColour());

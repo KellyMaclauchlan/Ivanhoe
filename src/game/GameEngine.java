@@ -102,7 +102,7 @@ public class GameEngine {
 		for (Player p: players) {
 			if (p.getStartTokenColour() == Config.PURPLE) {
 				purple = p.getName();
-				output = Config.PURPLE + " " + purple + " " 
+				output = Config.PICKED_PURPLE + " " + purple + " " 
 						+ Config.TURN + " " + currentPlayer.getName() 
 						+ " " + picked.getType() + "_" + picked.getValue();
 			} else {
@@ -324,7 +324,7 @@ public class GameEngine {
 		for (Player p: players) {
 			if (p.isWinner() && tournamentColour.equals(Config.PURPLE) && choosePurple == false) {
 				status = " " + Config.PURPLE_WIN + " " + p.getName();
-				currentPlayer = p;
+
 			}
 			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple == true)) {
 				arrangePlayers();
@@ -335,6 +335,7 @@ public class GameEngine {
 			if (p.isGameWinner()) {
 				status += " " + Config.GAME_WINNER + " " + p.getName();
 			}
+			currentPlayer = p;
 		}
 		if(status.equalsIgnoreCase("")){
 			Card picked = pickupCard();
