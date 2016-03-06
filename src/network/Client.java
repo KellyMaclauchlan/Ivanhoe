@@ -154,33 +154,21 @@ public class Client implements Runnable, Observer {
 		String send = Config.FROMUPDATE;
 		if(message.contains(Config.PLAYEDCARD)){
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
-<<<<<<< HEAD
 			send= this.playACard();
-=======
-			//send=" "+this.playACard();
->>>>>>> 2c0ac446ea6d594b467d0f5f4cffc51bfa089f78
 		}
 		
 		else if (message.contains(Config.WITHDRAW)){
 			//processInput(Config.WITHDRAW);
-			playedCards = Config.WITHDRAW;
-			//send=" "+Config.WITHDRAW;
+			//playedCards = Config.WITHDRAW;
+			send=" "+Config.WITHDRAW;
 		}
 		
 		else{
 			//processInput(Config.END_TURN);
-			playedCards = Config.END_TURN;
-			//send=" "+Config.END_TURN;
+			//playedCards = Config.END_TURN;
+			send=" "+Config.END_TURN;
 		}
-		send+= this.playACard();
-
-		try {
-			this.handle(send);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// send the text send to the server here
+		this.processInput(send);
 	}
 
 	/* Handles what the server has sent from the Game Engine and processes
@@ -216,11 +204,7 @@ public class Client implements Runnable, Observer {
 		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
 		else if(msg.contains(Config.NEED_PLAYERS)){
 			this.window.showWaiting();
-<<<<<<< HEAD
-			
-=======
-			// TO DO: make client in waiting state? 	
->>>>>>> 2c0ac446ea6d594b467d0f5f4cffc51bfa089f78
+
 		}
 		
 		/* Receives each player and their hand
