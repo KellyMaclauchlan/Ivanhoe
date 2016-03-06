@@ -135,8 +135,8 @@ public class Client implements Runnable, Observer {
 		} else {
 			testing = msg;
 			send = processInput(msg);
+
 			log.info("Information sent to server: " + send);
-			
 			outStream.write(send);
 			outStream.write("\n");
 			outStream.flush();
@@ -154,28 +154,32 @@ public class Client implements Runnable, Observer {
 		String send = Config.FROMUPDATE;
 		if(message.contains(Config.PLAYEDCARD)){
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
-			send= this.playACard();
+			send = this.playACard();
 		}
 		
 		else if (message.contains(Config.WITHDRAW)){
 			//processInput(Config.WITHDRAW);
 			//playedCards = Config.WITHDRAW;
-			send=" "+Config.WITHDRAW;
+			send = " " + Config.WITHDRAW;
 		}
 		
 		else{
 			//processInput(Config.END_TURN);
 			//playedCards = Config.END_TURN;
-			send=" "+Config.END_TURN;
+			send = " " + Config.END_TURN;
 		}
-		this.processInput(send);
+		try {
+			this.handle(send);
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.error(e);
+		}
 	}
 
 	/* Handles what the server has sent from the Game Engine and processes
 	 * what buttons/popups/commands the client and GUI must send back */
 	public String processInput(String msg){
 		String output = "result";
-		System.out.println("processInput:" + msg);
 		
 		if(msg.contains(Config.FROMUPDATE)){
 			output= msg.substring(Config.FROMUPDATE.length());
@@ -248,7 +252,7 @@ public class Client implements Runnable, Observer {
 		}
 		
 		/* When the currentPlayer has finished playing their turn and does not withdraw
-		 * Input: <currentPlayer's name> points <# of points> continue <next player>
+		 * Input: <currentPlayer's name> points <# of points> continue/withdraw <next player>
 		 * or :IF tournament is won, add: tournament winner <winner name>
 		 * OR IF tournament is won and tournamentColour is purple, add: purple win <winner name> 
 		 * IF game is won, add: game winner <winner name>
@@ -258,23 +262,17 @@ public class Client implements Runnable, Observer {
 		 * 	Next Player's turn: currentPlayer has switched to the next player 
 		 * */
 		else if(msg.contains(Config.CONTINUE)||msg.contains(Config.WITHDRAW)){
-			output = processContinueWithdraw(msg);
+
+			if(msg.length() == Config.WITHDRAW.length()){
+				output = Config.WITHDRAW;
+			}else {
+				output = processContinueWithdraw(msg);	
+			}
 		}
-		
-		/* When the currentPlayer has finished playing their turn and withdraws
-		 * Input: <currentPlayer's name> points <# of points> withdraw <next player>
-		 * Output:
-		 * 	Tournament Winner: begin tournament 
-		 * 	Game Winner: Nothing (game winner popup) 
-		 * 	Next Player's turn: currentPlayer has switched to the next player 
-		 * */
-		//else if (msg.contains(Config.WITHDRAW)){			
-			//String input[] = msg.split(" ");
-			
-			
-			//output = Config.END_TURN;
-		//}
-		System.out.println("End processInput:" + output);
+		else if(msg.contains(Config.END_TURN)){
+			output = Config.END_TURN;
+		}
+
 		return output; 
 	}
 	
@@ -292,8 +290,6 @@ public class Client implements Runnable, Observer {
 
 		for(int i = 1; i < name.length; i++){
 			card = name[i].split(" ");
-			
-			System.out.println("Name Array: " + name[i]);
 			//if this player is the user
 			if(card[1].equalsIgnoreCase(window.playerName)){
 				for(int k = 3; k < card.length; k++){
@@ -323,11 +319,7 @@ public class Client implements Runnable, Observer {
 		
 		this.window.showWindow();
 		this.window.window.startTurn();
-		
-		for(int i = 0; i < input.length; i++){
-			System.out.println("Input " + i + ": " + input[i]);
-		}
-		
+
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
 			
@@ -365,23 +357,20 @@ public class Client implements Runnable, Observer {
 		
 		for(int i = 0; i < 5; i++){
 			if (input[1].equalsIgnoreCase(options[i])){
-				if(window.getTournamentColour()!= i)
-					window.setTournamnetColour(i);
+					window.setTournamentColour(i);
 			}
+		}	
+		if(input.length != 2){
+			output = msg;
 		}
 		
-		if(window.getPlayerNum() == window.getCurrPlayer()){
-			//output = playACard();
-		}
-		System.out.println("processPlay\n");
-		output = msg;
 		return output;
 	}
 
 	private String playACard() {
 		String output;
-		while(this.playedCards==null){}
-		System.out.println("in play a card");
+		while(this.playedCards == null){}
+
 		// if the player choose to withdraw
 		if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
 			output = Config.WITHDRAW;
@@ -398,7 +387,6 @@ public class Client implements Runnable, Observer {
 			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();	
 		}
 		this.playedCards = null;
-		System.out.println("card played: " + output);
 		
 		return output;
 	}
@@ -411,7 +399,8 @@ public class Client implements Runnable, Observer {
 		}
 		else{
 			String input[] = msg.split(" ");
-			Card card = this.getCardFromTypeValue(input[1], input[2]);
+			String c[] = input[1].split("_");
+			Card card = this.getCardFromTypeValue(c[0], c[1]);
 			window.addPlayedCard(window.getCurrPlayer(), card);
 			if(window.getCurrPlayer() == window.getPlayerNum()){
 				window.removeCard(card);
@@ -441,7 +430,7 @@ public class Client implements Runnable, Observer {
 		}
 		
 		else if(cardType.equalsIgnoreCase(Config.CHANGEWEAPON)||cardType.equalsIgnoreCase(Config.UNHORSE)){
-			output +=window.changeColour();
+			output += window.changeColour();
 		}
 		return output;
 	}

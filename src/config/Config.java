@@ -25,7 +25,7 @@ public class Config {
 	public static String NEED_PLAYERS = "need players";
 	public static String START_TOURNAMENT = "begin tournament";
 	public static String PLAY = "play"; 
-	public static String END_TURN = "end turn";
+	public static String END_TURN = "end";
 	public static String POINTS = "points";
 	public static String TOURNAMENT_WINNER = "tournament winner";
 	public static String GAME_WINNER = "game winner";
@@ -42,7 +42,7 @@ public class Config {
 	public static String WITHDRAW = "withdraw";
 	public static String HAND = "hand";
 	public static String DISPLAY = "display"; 
-	public static String FROMUPDATE="update";
+	public static String FROMUPDATE = "update";
 
 	/*UI messages*/
 	public static String LEFT_CLICK="leftclick";

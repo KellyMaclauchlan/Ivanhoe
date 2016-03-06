@@ -83,7 +83,7 @@ public class MainWindowController implements Observer, Subject{
 		window.playerNames[player].setText(name);
 	}	
 	
-	public void setTournamnetColour(int i) {
+	public void setTournamentColour(int i) {
 		this.tournamentColour=i;
 		this.window.getContentPane().setBackground(this.backgroundColours[i]);
 	}
