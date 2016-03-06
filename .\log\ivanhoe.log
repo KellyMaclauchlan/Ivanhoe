@@ -219,4 +219,1229 @@
 @2016-Mar-06 18:18:39 INFO  Client:130 - Message Received: input
 @2016-Mar-06 18:19:11 INFO  Server:112 - Message Received: null
 @2016-Mar-06 18:19:12 INFO  Server:112 - Message Received: null
+@2016-Mar-06 18:34:53 INFO  Server:34 - Binding to port 3000, please wait...
+@2016-Mar-06 18:34:53 INFO  Server:46 - Game has started
+@2016-Mar-06 18:34:53 INFO  Server:49 - New ServerThread created
+@2016-Mar-06 18:34:53 INFO  Server:58 - Waiting for Clients
+@2016-Mar-06 18:35:07 INFO  Client:51 - 0:Establishing connection. Please wait... 
+@2016-Mar-06 18:35:07 INFO  Client:58 - 49717: Connected to server: localhost/127.0.0.1
+@2016-Mar-06 18:35:07 INFO  Server:69 - Client accepted: Socket[addr=/127.0.0.1,port=49717,localport=3000]
+@2016-Mar-06 18:35:07 INFO  Client:59 - 49717: Connected to portid: 49717
+@2016-Mar-06 18:35:07 INFO  Client:75 - Initializing buffers
+@2016-Mar-06 18:35:07 INFO  Server:58 - Waiting for Clients
+@2016-Mar-06 18:35:07 INFO  Client:81 - New ClientThread has started
+@2016-Mar-06 18:35:07 INFO  ClientThread:48 - Client Thread 49717 running.
+@2016-Mar-06 18:35:07 INFO  Client:62 - Client has started
+@2016-Mar-06 18:35:07 INFO  Server:112 - Message Received: client
+@2016-Mar-06 18:35:07 INFO  ClientThread:52 - firstplayer
+@2016-Mar-06 18:35:07 INFO  Client:130 - Message Received: firstplayer
+@2016-Mar-06 18:35:08 INFO  Client:142 - Information sent to server: start 2
+@2016-Mar-06 18:35:08 INFO  Server:112 - Message Received: start 2
+@2016-Mar-06 18:35:08 INFO  ClientThread:52 - prompt join
+@2016-Mar-06 18:35:08 INFO  Client:130 - Message Received: prompt join
+@2016-Mar-06 18:35:09 INFO  Client:142 - Information sent to server: join Brit
+@2016-Mar-06 18:35:09 INFO  Server:112 - Message Received: join Brit
+@2016-Mar-06 18:35:09 INFO  ClientThread:52 - need players
+@2016-Mar-06 18:35:09 INFO  Client:130 - Message Received: need players
+@2016-Mar-06 18:35:09 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:09 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:09 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:09 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:15 INFO  Client:51 - 0:Establishing connection. Please wait... 
+@2016-Mar-06 18:35:15 INFO  Client:58 - 49718: Connected to server: localhost/127.0.0.1
+@2016-Mar-06 18:35:15 INFO  Server:69 - Client accepted: Socket[addr=/127.0.0.1,port=49718,localport=3000]
+@2016-Mar-06 18:35:15 INFO  Server:58 - Waiting for Clients
+@2016-Mar-06 18:35:15 INFO  Client:59 - 49718: Connected to portid: 49718
+@2016-Mar-06 18:35:15 INFO  Client:75 - Initializing buffers
+@2016-Mar-06 18:35:15 INFO  ClientThread:48 - Client Thread 49718 running.
+@2016-Mar-06 18:35:15 INFO  Client:81 - New ClientThread has started
+@2016-Mar-06 18:35:15 INFO  Server:112 - Message Received: client
+@2016-Mar-06 18:35:15 INFO  ClientThread:52 - prompt join
+@2016-Mar-06 18:35:15 INFO  Client:130 - Message Received: prompt join
+@2016-Mar-06 18:35:15 INFO  Client:62 - Client has started
+@2016-Mar-06 18:35:17 INFO  Client:142 - Information sent to server: join Katie
+@2016-Mar-06 18:35:17 INFO  Server:112 - Message Received: join Katie
+@2016-Mar-06 18:35:17 INFO  ClientThread:52 - hand  name Brit cards maiden_6 purple_4 purple_3 red_4 yellow_2 green_1 purple_3 shield_0 name Katie cards stunned_0 outwit_0 red_5 dropweapon_0 blue_5 green_1 yellow_3 yellow_3
+@2016-Mar-06 18:35:17 INFO  ClientThread:52 - hand  name Brit cards maiden_6 purple_4 purple_3 red_4 yellow_2 green_1 purple_3 shield_0 name Katie cards stunned_0 outwit_0 red_5 dropweapon_0 blue_5 green_1 yellow_3 yellow_3
+@2016-Mar-06 18:35:17 INFO  Client:130 - Message Received: hand  name Brit cards maiden_6 purple_4 purple_3 red_4 yellow_2 green_1 purple_3 shield_0 name Katie cards stunned_0 outwit_0 red_5 dropweapon_0 blue_5 green_1 yellow_3 yellow_3
+@2016-Mar-06 18:35:17 INFO  Client:130 - Message Received: hand  name Brit cards maiden_6 purple_4 purple_3 red_4 yellow_2 green_1 purple_3 shield_0 name Katie cards stunned_0 outwit_0 red_5 dropweapon_0 blue_5 green_1 yellow_3 yellow_3
+@2016-Mar-06 18:35:17 INFO  UI:125 - Total number of players is: 3
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:125 - Total number of players is: 3
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:17 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:35:17 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:35:17 INFO  ClientThread:52 - pickedpurple Katie turn Brit charge_0
+@2016-Mar-06 18:35:17 INFO  Client:130 - Message Received: pickedpurple Katie turn Brit charge_0
+@2016-Mar-06 18:35:17 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:35:17 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:35:17 INFO  ClientThread:52 - pickedpurple Katie turn Brit blue_5
+@2016-Mar-06 18:35:17 INFO  Client:130 - Message Received: pickedpurple Katie turn Brit blue_5
+@2016-Mar-06 18:35:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:17 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:17 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:17 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:17 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:26 INFO  UI:132 - Tournament colour has been set to purple
+@2016-Mar-06 18:35:26 INFO  Client:142 - Information sent to server: colour purple
+@2016-Mar-06 18:35:26 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:26 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:26 INFO  Server:112 - Message Received: colour purple
+@2016-Mar-06 18:35:26 INFO  ClientThread:52 - play purple
+@2016-Mar-06 18:35:26 INFO  ClientThread:52 - play purple
+@2016-Mar-06 18:35:26 INFO  Client:130 - Message Received: play purple
+@2016-Mar-06 18:35:26 INFO  Client:130 - Message Received: play purple
+@2016-Mar-06 18:35:26 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:26 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:26 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:26 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:26 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:26 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:26 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:26 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:26 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:26 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:26 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:26 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:29 INFO  UI:310 - Played card purple 3
+@2016-Mar-06 18:35:29 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:29 INFO  UI:247 - Card removed
+@2016-Mar-06 18:35:29 INFO  Client:130 - Message Received: play purple 3
+@2016-Mar-06 18:35:29 INFO  Client:142 - Information sent to server: play purple 3
+@2016-Mar-06 18:35:29 INFO  Server:112 - Message Received: play purple 3
+@2016-Mar-06 18:35:29 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:35:29 INFO  ClientThread:52 - waiting purple_3
+@2016-Mar-06 18:35:29 INFO  Client:130 - Message Received: waiting purple_3
+@2016-Mar-06 18:35:29 INFO  UI:254 - Player [game.ColourCard@47c61381] added game.ColourCard@47c61381 to their hand
+@2016-Mar-06 18:35:29 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:29 INFO  UI:247 - Card removed
+@2016-Mar-06 18:35:29 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:29 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:31 INFO  UI:310 - Played card purple 3
+@2016-Mar-06 18:35:31 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:31 INFO  UI:247 - Card removed
+@2016-Mar-06 18:35:31 INFO  Client:130 - Message Received: play purple 3
+@2016-Mar-06 18:35:31 INFO  Client:142 - Information sent to server: play purple 3
+@2016-Mar-06 18:35:31 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:35:31 INFO  Server:112 - Message Received: play purple 3
+@2016-Mar-06 18:35:31 INFO  ClientThread:52 - waiting purple_3
+@2016-Mar-06 18:35:31 INFO  Client:130 - Message Received: waiting purple_3
+@2016-Mar-06 18:35:31 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f] added game.ColourCard@3d946a1f to their hand
+@2016-Mar-06 18:35:31 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:31 INFO  UI:247 - Card removed
+@2016-Mar-06 18:35:31 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:31 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:31 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:31 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:31 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:31 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:33 INFO  UI:310 - Played card purple 4
+@2016-Mar-06 18:35:33 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:33 INFO  UI:247 - Card removed
+@2016-Mar-06 18:35:33 INFO  Client:130 - Message Received: play purple 4
+@2016-Mar-06 18:35:33 INFO  Client:142 - Information sent to server: play purple 4
+@2016-Mar-06 18:35:33 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:35:33 INFO  Server:112 - Message Received: play purple 4
+@2016-Mar-06 18:35:33 INFO  ClientThread:52 - waiting purple_4
+@2016-Mar-06 18:35:33 INFO  Client:130 - Message Received: waiting purple_4
+@2016-Mar-06 18:35:33 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c] added game.ColourCard@17b03d4c to their hand
+@2016-Mar-06 18:35:33 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:33 INFO  UI:247 - Card removed
+@2016-Mar-06 18:35:33 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:33 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:33 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:33 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:33 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:33 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:37 INFO  UI:310 - Played card maiden 6
+@2016-Mar-06 18:35:37 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:37 INFO  UI:247 - Card removed
+@2016-Mar-06 18:35:37 INFO  Client:130 - Message Received: play maiden 6
+@2016-Mar-06 18:35:37 INFO  Client:142 - Information sent to server: play maiden 6
+@2016-Mar-06 18:35:37 INFO  Server:112 - Message Received: play maiden 6
+@2016-Mar-06 18:35:37 INFO  ClientThread:52 - waiting maiden_6
+@2016-Mar-06 18:35:37 INFO  Client:130 - Message Received: waiting maiden_6
+@2016-Mar-06 18:35:37 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c, game.SupportCard@e69c406] added game.SupportCard@e69c406 to their hand
+@2016-Mar-06 18:35:37 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:35:37 INFO  UI:247 - Card removed
+@2016-Mar-06 18:35:37 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:37 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:35:37 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:37 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:37 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:37 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:37 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:39 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:35:39 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:35:39 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:35:39 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:35:39 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:35:39 INFO  ClientThread:52 - Brit points 16 continue Katie yellow_2
+@2016-Mar-06 18:35:39 INFO  ClientThread:52 - Brit points 16 continue Katie yellow_2
+@2016-Mar-06 18:35:39 INFO  Client:130 - Message Received: Brit points 16 continue Katie yellow_2
+@2016-Mar-06 18:35:39 INFO  Client:130 - Message Received: Brit points 16 continue Katie yellow_2
+@2016-Mar-06 18:35:39 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:39 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:39 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:39 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:39 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:35:39 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:39 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:39 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:39 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:39 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:39 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:39 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:39 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:35:57 INFO  Client:130 - Message Received:  withdraw
+@2016-Mar-06 18:35:57 INFO  Client:142 - Information sent to server: withdraw
+@2016-Mar-06 18:35:57 INFO  Server:112 - Message Received: withdraw
+@2016-Mar-06 18:35:57 INFO  ClientThread:52 - Katie points 0 withdraw Brit win purple Brit
+@2016-Mar-06 18:35:57 INFO  Client:130 - Message Received: Katie points 0 withdraw Brit win purple Brit
+@2016-Mar-06 18:35:57 INFO  ClientThread:52 - Katie points 0 withdraw Brit win purple Brit
+@2016-Mar-06 18:35:57 INFO  Client:130 - Message Received: Katie points 0 withdraw Brit win purple Brit
+@2016-Mar-06 18:35:57 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:35:57 INFO  UI:275 - Player has withdrawed
+@2016-Mar-06 18:35:57 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:35:57 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:35:57 INFO  ClientThread:52 - input
+@2016-Mar-06 18:35:57 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:05 INFO  UI:169 - the player picked red
+@2016-Mar-06 18:36:05 INFO  Client:142 - Information sent to server: win purple red
+@2016-Mar-06 18:36:05 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:05 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:05 INFO  Server:112 - Message Received: win purple red
+@2016-Mar-06 18:36:05 INFO  ClientThread:52 - Brit points 16 continue Katie red winner Brit
+@2016-Mar-06 18:36:05 INFO  Client:130 - Message Received: Brit points 16 continue Katie red winner Brit
+@2016-Mar-06 18:36:05 INFO  ClientThread:52 - Brit points 16 continue Katie red winner Brit
+@2016-Mar-06 18:36:05 INFO  Client:130 - Message Received: Brit points 16 continue Katie red winner Brit
+@2016-Mar-06 18:36:05 INFO  UI:332 - Adding resources/icons/red_full.png token
+@2016-Mar-06 18:36:05 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:36:05 INFO  UI:332 - Adding resources/icons/red_full.png token
+@2016-Mar-06 18:36:05 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:36:05 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:36:05 INFO  ClientThread:52 - turn Brit green_1
+@2016-Mar-06 18:36:05 INFO  Client:130 - Message Received: turn Brit green_1
+@2016-Mar-06 18:36:05 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:36:05 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:36:05 INFO  ClientThread:52 - turn Brit ivanhoe_0
+@2016-Mar-06 18:36:05 INFO  Client:130 - Message Received: turn Brit ivanhoe_0
+@2016-Mar-06 18:36:05 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:36:05 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:36:05 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:05 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:29 INFO  UI:132 - Tournament colour has been set to red
+@2016-Mar-06 18:36:29 INFO  Client:142 - Information sent to server: colour red
+@2016-Mar-06 18:36:29 INFO  Server:112 - Message Received: colour red
+@2016-Mar-06 18:36:29 INFO  ClientThread:52 - play red
+@2016-Mar-06 18:36:29 INFO  Client:130 - Message Received: play red
+@2016-Mar-06 18:36:29 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:36:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:29 INFO  ClientThread:52 - play red
+@2016-Mar-06 18:36:29 INFO  Client:130 - Message Received: play red
+@2016-Mar-06 18:36:29 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:36:29 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:36:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:29 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:36:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:36 INFO  UI:310 - Played card red 4
+@2016-Mar-06 18:36:36 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:36:36 INFO  UI:247 - Card removed
+@2016-Mar-06 18:36:36 INFO  Client:130 - Message Received: play red 4
+@2016-Mar-06 18:36:36 INFO  Client:142 - Information sent to server: play red 4
+@2016-Mar-06 18:36:36 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:36:36 INFO  Server:112 - Message Received: play red 4
+@2016-Mar-06 18:36:36 INFO  ClientThread:52 - waiting red_4
+@2016-Mar-06 18:36:36 INFO  Client:130 - Message Received: waiting red_4
+@2016-Mar-06 18:36:36 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c, game.SupportCard@e69c406, game.ColourCard@66fd128d] added game.ColourCard@66fd128d to their hand
+@2016-Mar-06 18:36:36 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:36:36 INFO  UI:247 - Card removed
+@2016-Mar-06 18:36:36 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:36:36 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:36:36 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:36 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:36 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:36 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:37 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:36:37 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:36:37 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:36:37 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:36:37 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:36:37 INFO  ClientThread:52 - Brit points 4 continue Katie green_1
+@2016-Mar-06 18:36:37 INFO  Client:130 - Message Received: Brit points 4 continue Katie green_1
+@2016-Mar-06 18:36:37 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:36:37 INFO  ClientThread:52 - Brit points 4 continue Katie green_1
+@2016-Mar-06 18:36:37 INFO  Client:130 - Message Received: Brit points 4 continue Katie green_1
+@2016-Mar-06 18:36:37 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:36:37 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:37 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:37 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:36:37 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:36:37 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:37 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:36:37 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:37 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:37 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:36:37 INFO  ClientThread:52 - input
+@2016-Mar-06 18:36:37 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:08 INFO  UI:310 - Played card red 5
+@2016-Mar-06 18:37:08 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:37:08 INFO  UI:247 - Card removed
+@2016-Mar-06 18:37:08 INFO  Client:130 - Message Received: play red 5
+@2016-Mar-06 18:37:08 INFO  Client:142 - Information sent to server: play red 5
+@2016-Mar-06 18:37:08 INFO  Server:112 - Message Received: play red 5
+@2016-Mar-06 18:37:08 INFO  ClientThread:52 - waiting red_5
+@2016-Mar-06 18:37:08 INFO  Client:130 - Message Received: waiting red_5
+@2016-Mar-06 18:37:08 INFO  UI:254 - Player [game.ColourCard@5d8a1e60] added game.ColourCard@5d8a1e60 to their hand
+@2016-Mar-06 18:37:08 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:37:08 INFO  UI:247 - Card removed
+@2016-Mar-06 18:37:08 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:08 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:37:08 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:08 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:08 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:08 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:08 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:09 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:37:09 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:37:09 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:37:09 INFO  ClientThread:52 - Katie points 5 continue Brit yellow_4
+@2016-Mar-06 18:37:09 INFO  Client:130 - Message Received: Katie points 5 continue Brit yellow_4
+@2016-Mar-06 18:37:09 INFO  ClientThread:52 - Katie points 5 continue Brit yellow_4
+@2016-Mar-06 18:37:09 INFO  Client:130 - Message Received: Katie points 5 continue Brit yellow_4
+@2016-Mar-06 18:37:09 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:09 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:37:09 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:37:09 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:37:09 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:09 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:09 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:09 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:09 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:09 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:09 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:09 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:09 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:09 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:09 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:14 INFO  Client:130 - Message Received:  withdraw
+@2016-Mar-06 18:37:14 INFO  Client:142 - Information sent to server: withdraw
+@2016-Mar-06 18:37:14 INFO  Server:112 - Message Received: withdraw
+@2016-Mar-06 18:37:14 INFO  UI:275 - Player has withdrawed
+@2016-Mar-06 18:37:14 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:37:14 INFO  ClientThread:52 - Brit points 4 withdraw Katie red winner Katie
+@2016-Mar-06 18:37:14 INFO  ClientThread:52 - Brit points 4 withdraw Katie red winner Katie
+@2016-Mar-06 18:37:14 INFO  Client:130 - Message Received: Brit points 4 withdraw Katie red winner Katie
+@2016-Mar-06 18:37:14 INFO  UI:332 - Adding resources/icons/red_full.png token
+@2016-Mar-06 18:37:14 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:37:14 INFO  Client:130 - Message Received: Brit points 4 withdraw Katie red winner Katie
+@2016-Mar-06 18:37:14 INFO  UI:332 - Adding resources/icons/red_full.png token
+@2016-Mar-06 18:37:14 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:37:14 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:37:14 INFO  ClientThread:52 - turn Katie squire_3
+@2016-Mar-06 18:37:14 INFO  Client:130 - Message Received: turn Katie squire_3
+@2016-Mar-06 18:37:14 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:37:14 INFO  ClientThread:52 - turn Katie squire_3
+@2016-Mar-06 18:37:14 INFO  Client:130 - Message Received: turn Katie squire_3
+@2016-Mar-06 18:37:14 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:37:14 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:14 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:14 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:14 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:48 INFO  UI:132 - Tournament colour has been set to yellow
+@2016-Mar-06 18:37:48 INFO  Client:142 - Information sent to server: colour yellow
+@2016-Mar-06 18:37:48 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:48 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:48 INFO  Server:112 - Message Received: colour yellow
+@2016-Mar-06 18:37:48 INFO  ClientThread:52 - play yellow
+@2016-Mar-06 18:37:48 INFO  ClientThread:52 - play yellow
+@2016-Mar-06 18:37:48 INFO  Client:130 - Message Received: play yellow
+@2016-Mar-06 18:37:48 INFO  Client:130 - Message Received: play yellow
+@2016-Mar-06 18:37:48 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:48 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:48 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:48 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:48 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:48 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:48 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:48 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:48 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:48 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:48 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:48 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:50 INFO  UI:310 - Played card yellow 2
+@2016-Mar-06 18:37:50 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:37:50 INFO  UI:247 - Card removed
+@2016-Mar-06 18:37:50 INFO  Client:130 - Message Received: play yellow 2
+@2016-Mar-06 18:37:50 INFO  Client:142 - Information sent to server: play yellow 2
+@2016-Mar-06 18:37:50 INFO  Server:112 - Message Received: play yellow 2
+@2016-Mar-06 18:37:50 INFO  ClientThread:52 - waiting yellow_2
+@2016-Mar-06 18:37:50 INFO  Client:130 - Message Received: waiting yellow_2
+@2016-Mar-06 18:37:50 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15] added game.ColourCard@79a23e15 to their hand
+@2016-Mar-06 18:37:50 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:37:50 INFO  UI:247 - Card removed
+@2016-Mar-06 18:37:50 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:50 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:37:50 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:50 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:50 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:51 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:51 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:52 INFO  UI:310 - Played card yellow 3
+@2016-Mar-06 18:37:52 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:37:52 INFO  UI:247 - Card removed
+@2016-Mar-06 18:37:52 INFO  Client:130 - Message Received: play yellow 3
+@2016-Mar-06 18:37:52 INFO  Client:142 - Information sent to server: play yellow 3
+@2016-Mar-06 18:37:52 INFO  Server:112 - Message Received: play yellow 3
+@2016-Mar-06 18:37:52 INFO  ClientThread:52 - waiting yellow_3
+@2016-Mar-06 18:37:52 INFO  Client:130 - Message Received: waiting yellow_3
+@2016-Mar-06 18:37:52 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15, game.ColourCard@7b2ccd0] added game.ColourCard@7b2ccd0 to their hand
+@2016-Mar-06 18:37:52 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:37:52 INFO  UI:247 - Card removed
+@2016-Mar-06 18:37:52 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:52 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:37:52 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:52 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:52 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:52 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:52 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:54 INFO  UI:310 - Played card yellow 3
+@2016-Mar-06 18:37:54 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:37:54 INFO  UI:247 - Card removed
+@2016-Mar-06 18:37:54 INFO  Client:130 - Message Received: play yellow 3
+@2016-Mar-06 18:37:54 INFO  Client:142 - Information sent to server: play yellow 3
+@2016-Mar-06 18:37:54 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:37:54 INFO  Server:112 - Message Received: play yellow 3
+@2016-Mar-06 18:37:54 INFO  ClientThread:52 - waiting yellow_3
+@2016-Mar-06 18:37:54 INFO  Client:130 - Message Received: waiting yellow_3
+@2016-Mar-06 18:37:54 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15, game.ColourCard@7b2ccd0, game.ColourCard@5a0e933e] added game.ColourCard@5a0e933e to their hand
+@2016-Mar-06 18:37:54 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:37:54 INFO  UI:247 - Card removed
+@2016-Mar-06 18:37:54 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:54 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:54 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:54 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:54 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:54 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:57 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:37:57 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:37:57 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:37:57 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:37:57 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:37:57 INFO  ClientThread:52 - Katie points 8 continue Brit yellow_3
+@2016-Mar-06 18:37:57 INFO  Client:130 - Message Received: Katie points 8 continue Brit yellow_3
+@2016-Mar-06 18:37:57 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:57 INFO  ClientThread:52 - Katie points 8 continue Brit yellow_3
+@2016-Mar-06 18:37:57 INFO  Client:130 - Message Received: Katie points 8 continue Brit yellow_3
+@2016-Mar-06 18:37:57 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:57 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:57 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:57 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:37:57 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:37:57 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:57 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:57 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:37:57 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:57 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:37:57 INFO  ClientThread:52 - input
+@2016-Mar-06 18:37:57 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:06 INFO  UI:310 - Played card yellow 3
+@2016-Mar-06 18:38:06 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:06 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:06 INFO  Client:130 - Message Received: play yellow 3
+@2016-Mar-06 18:38:06 INFO  Client:142 - Information sent to server: play yellow 3
+@2016-Mar-06 18:38:06 INFO  Server:112 - Message Received: play yellow 3
+@2016-Mar-06 18:38:06 INFO  ClientThread:52 - waiting yellow_3
+@2016-Mar-06 18:38:06 INFO  Client:130 - Message Received: waiting yellow_3
+@2016-Mar-06 18:38:06 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c, game.SupportCard@e69c406, game.ColourCard@66fd128d, game.ColourCard@21034ad0] added game.ColourCard@21034ad0 to their hand
+@2016-Mar-06 18:38:06 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:06 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:06 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:06 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:06 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:06 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:06 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:06 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:06 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:08 INFO  UI:310 - Played card yellow 4
+@2016-Mar-06 18:38:08 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:08 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:08 INFO  Client:130 - Message Received: play yellow 4
+@2016-Mar-06 18:38:08 INFO  Client:142 - Information sent to server: play yellow 4
+@2016-Mar-06 18:38:08 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:08 INFO  Server:112 - Message Received: play yellow 4
+@2016-Mar-06 18:38:08 INFO  ClientThread:52 - waiting yellow_4
+@2016-Mar-06 18:38:08 INFO  Client:130 - Message Received: waiting yellow_4
+@2016-Mar-06 18:38:08 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c, game.SupportCard@e69c406, game.ColourCard@66fd128d, game.ColourCard@21034ad0, game.ColourCard@7e679c88] added game.ColourCard@7e679c88 to their hand
+@2016-Mar-06 18:38:08 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:08 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:08 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:08 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:08 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:08 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:08 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:08 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:10 INFO  UI:310 - Played card yellow 2
+@2016-Mar-06 18:38:10 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:10 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:10 INFO  Client:130 - Message Received: play yellow 2
+@2016-Mar-06 18:38:10 INFO  Client:142 - Information sent to server: play yellow 2
+@2016-Mar-06 18:38:10 INFO  Server:112 - Message Received: play yellow 2
+@2016-Mar-06 18:38:10 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:10 INFO  ClientThread:52 - waiting yellow_2
+@2016-Mar-06 18:38:10 INFO  Client:130 - Message Received: waiting yellow_2
+@2016-Mar-06 18:38:10 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c, game.SupportCard@e69c406, game.ColourCard@66fd128d, game.ColourCard@21034ad0, game.ColourCard@7e679c88, game.ColourCard@3c7013bc] added game.ColourCard@3c7013bc to their hand
+@2016-Mar-06 18:38:10 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:10 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:10 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:10 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:10 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:10 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:10 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:10 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:12 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:38:12 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:38:12 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:38:12 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:38:12 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:12 INFO  ClientThread:52 - Brit points 9 continue Katie purple_4
+@2016-Mar-06 18:38:12 INFO  ClientThread:52 - Brit points 9 continue Katie purple_4
+@2016-Mar-06 18:38:12 INFO  Client:130 - Message Received: Brit points 9 continue Katie purple_4
+@2016-Mar-06 18:38:12 INFO  Client:130 - Message Received: Brit points 9 continue Katie purple_4
+@2016-Mar-06 18:38:12 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:12 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:12 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:38:12 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:12 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:12 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:12 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:12 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:12 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:12 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:12 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:12 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:12 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:25 INFO  UI:310 - Played card squire 3
+@2016-Mar-06 18:38:25 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:25 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:25 INFO  Client:130 - Message Received: play squire 3
+@2016-Mar-06 18:38:25 INFO  Client:142 - Information sent to server: play squire 3
+@2016-Mar-06 18:38:25 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:25 INFO  Server:112 - Message Received: play squire 3
+@2016-Mar-06 18:38:25 INFO  ClientThread:52 - waiting squire_3
+@2016-Mar-06 18:38:25 INFO  Client:130 - Message Received: waiting squire_3
+@2016-Mar-06 18:38:25 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15, game.ColourCard@7b2ccd0, game.ColourCard@5a0e933e, game.SupportCard@2fb5db4] added game.SupportCard@2fb5db4 to their hand
+@2016-Mar-06 18:38:25 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:25 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:25 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:25 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:25 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:25 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:25 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:25 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:26 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:38:26 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:38:26 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:38:26 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:38:26 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:26 INFO  ClientThread:52 - Katie points 11 continue Brit blue_2
+@2016-Mar-06 18:38:26 INFO  ClientThread:52 - Katie points 11 continue Brit blue_2
+@2016-Mar-06 18:38:26 INFO  Client:130 - Message Received: Katie points 11 continue Brit blue_2
+@2016-Mar-06 18:38:26 INFO  Client:130 - Message Received: Katie points 11 continue Brit blue_2
+@2016-Mar-06 18:38:26 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:26 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:26 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:26 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:26 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:38:26 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:26 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:26 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:26 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:26 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:26 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:26 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:26 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:29 INFO  Client:130 - Message Received:  withdraw
+@2016-Mar-06 18:38:29 INFO  Client:142 - Information sent to server: withdraw
+@2016-Mar-06 18:38:29 INFO  Server:112 - Message Received: withdraw
+@2016-Mar-06 18:38:29 INFO  ClientThread:52 - Brit points 9 withdraw Katie yellow winner Katie
+@2016-Mar-06 18:38:29 INFO  Client:130 - Message Received: Brit points 9 withdraw Katie yellow winner Katie
+@2016-Mar-06 18:38:29 INFO  ClientThread:52 - Brit points 9 withdraw Katie yellow winner Katie
+@2016-Mar-06 18:38:29 INFO  Client:130 - Message Received: Brit points 9 withdraw Katie yellow winner Katie
+@2016-Mar-06 18:38:29 INFO  UI:332 - Adding resources/icons/yellow_full.png token
+@2016-Mar-06 18:38:29 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:38:29 INFO  UI:332 - Adding resources/icons/yellow_full.png token
+@2016-Mar-06 18:38:29 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:38:29 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:38:29 INFO  UI:275 - Player has withdrawed
+@2016-Mar-06 18:38:29 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:29 INFO  ClientThread:52 - turn Katie squire_3
+@2016-Mar-06 18:38:29 INFO  Client:130 - Message Received: turn Katie squire_3
+@2016-Mar-06 18:38:29 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:38:29 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:38:29 INFO  ClientThread:52 - turn Katie squire_2
+@2016-Mar-06 18:38:29 INFO  Client:130 - Message Received: turn Katie squire_2
+@2016-Mar-06 18:38:29 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:29 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:34 INFO  UI:132 - Tournament colour has been set to green
+@2016-Mar-06 18:38:34 INFO  Client:142 - Information sent to server: colour green
+@2016-Mar-06 18:38:34 INFO  Server:112 - Message Received: colour green
+@2016-Mar-06 18:38:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:34 INFO  ClientThread:52 - play green
+@2016-Mar-06 18:38:34 INFO  Client:130 - Message Received: play green
+@2016-Mar-06 18:38:34 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:34 INFO  ClientThread:52 - play green
+@2016-Mar-06 18:38:34 INFO  Client:130 - Message Received: play green
+@2016-Mar-06 18:38:34 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:34 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:34 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:36 INFO  UI:310 - Played card green 1
+@2016-Mar-06 18:38:36 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:36 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:36 INFO  Client:130 - Message Received: play green 1
+@2016-Mar-06 18:38:36 INFO  Client:142 - Information sent to server: play green 1
+@2016-Mar-06 18:38:36 INFO  Server:112 - Message Received: play green 1
+@2016-Mar-06 18:38:36 INFO  ClientThread:52 - waiting green_1
+@2016-Mar-06 18:38:36 INFO  Client:130 - Message Received: waiting green_1
+@2016-Mar-06 18:38:36 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15, game.ColourCard@7b2ccd0, game.ColourCard@5a0e933e, game.SupportCard@2fb5db4, game.ColourCard@18e214df] added game.ColourCard@18e214df to their hand
+@2016-Mar-06 18:38:36 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:36 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:36 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:36 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:36 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:36 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:36 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:36 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:36 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:38 INFO  UI:310 - Played card green 1
+@2016-Mar-06 18:38:38 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:38 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:38 INFO  Client:130 - Message Received: play green 1
+@2016-Mar-06 18:38:38 INFO  Client:142 - Information sent to server: play green 1
+@2016-Mar-06 18:38:38 INFO  Server:112 - Message Received: play green 1
+@2016-Mar-06 18:38:38 INFO  ClientThread:52 - waiting green_1
+@2016-Mar-06 18:38:38 INFO  Client:130 - Message Received: waiting green_1
+@2016-Mar-06 18:38:38 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15, game.ColourCard@7b2ccd0, game.ColourCard@5a0e933e, game.SupportCard@2fb5db4, game.ColourCard@18e214df, game.ColourCard@7f5b64c7] added game.ColourCard@7f5b64c7 to their hand
+@2016-Mar-06 18:38:38 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:38:38 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:38 INFO  UI:247 - Card removed
+@2016-Mar-06 18:38:38 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:38 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:38 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:38 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:38 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:38 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:38:57 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:38:57 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:38:57 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:38:57 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:38:57 INFO  ClientThread:52 - Katie points 2 withdraw Brit green winner Brit
+@2016-Mar-06 18:38:57 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:38:57 INFO  Client:130 - Message Received: Katie points 2 withdraw Brit green winner Brit
+@2016-Mar-06 18:38:57 INFO  ClientThread:52 - Katie points 2 withdraw Brit green winner Brit
+@2016-Mar-06 18:38:57 INFO  Client:130 - Message Received: Katie points 2 withdraw Brit green winner Brit
+@2016-Mar-06 18:38:57 INFO  UI:332 - Adding resources/icons/green_full.png token
+@2016-Mar-06 18:38:57 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:38:57 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:38:57 INFO  UI:332 - Adding resources/icons/green_full.png token
+@2016-Mar-06 18:38:57 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:38:57 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:38:57 INFO  ClientThread:52 - turn Brit unhorse_0
+@2016-Mar-06 18:38:57 INFO  Client:130 - Message Received: turn Brit unhorse_0
+@2016-Mar-06 18:38:57 INFO  ClientThread:52 - turn Brit blue_3
+@2016-Mar-06 18:38:57 INFO  Client:130 - Message Received: turn Brit blue_3
+@2016-Mar-06 18:38:57 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:38:57 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:38:57 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:38:57 INFO  ClientThread:52 - input
+@2016-Mar-06 18:38:57 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:14 INFO  UI:132 - Tournament colour has been set to blue
+@2016-Mar-06 18:39:14 INFO  Client:142 - Information sent to server: colour blue
+@2016-Mar-06 18:39:14 INFO  Server:112 - Message Received: colour blue
+@2016-Mar-06 18:39:14 INFO  ClientThread:52 - play blue
+@2016-Mar-06 18:39:14 INFO  Client:130 - Message Received: play blue
+@2016-Mar-06 18:39:14 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:14 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:14 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:14 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:14 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:14 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:14 INFO  ClientThread:52 - play blue
+@2016-Mar-06 18:39:14 INFO  Client:130 - Message Received: play blue
+@2016-Mar-06 18:39:14 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:14 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:14 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:14 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:14 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:14 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:14 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:14 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:16 INFO  UI:310 - Played card blue 2
+@2016-Mar-06 18:39:16 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:39:16 INFO  UI:247 - Card removed
+@2016-Mar-06 18:39:16 INFO  Client:130 - Message Received: play blue 2
+@2016-Mar-06 18:39:16 INFO  Client:142 - Information sent to server: play blue 2
+@2016-Mar-06 18:39:16 INFO  Server:112 - Message Received: play blue 2
+@2016-Mar-06 18:39:16 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:39:16 INFO  ClientThread:52 - waiting blue_2
+@2016-Mar-06 18:39:16 INFO  Client:130 - Message Received: waiting blue_2
+@2016-Mar-06 18:39:16 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c, game.SupportCard@e69c406, game.ColourCard@66fd128d, game.ColourCard@21034ad0, game.ColourCard@7e679c88, game.ColourCard@3c7013bc, game.ColourCard@143eae98] added game.ColourCard@143eae98 to their hand
+@2016-Mar-06 18:39:16 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:39:16 INFO  UI:247 - Card removed
+@2016-Mar-06 18:39:16 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:16 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:16 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:16 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:16 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:16 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:17 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:39:17 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:39:17 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:39:17 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:39:17 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:39:17 INFO  ClientThread:52 - Brit points 2 withdraw Katie blue winner Katie
+@2016-Mar-06 18:39:17 INFO  Client:130 - Message Received: Brit points 2 withdraw Katie blue winner Katie
+@2016-Mar-06 18:39:17 INFO  ClientThread:52 - Brit points 2 withdraw Katie blue winner Katie
+@2016-Mar-06 18:39:17 INFO  Client:130 - Message Received: Brit points 2 withdraw Katie blue winner Katie
+@2016-Mar-06 18:39:17 INFO  UI:332 - Adding resources/icons/blue_full.png token
+@2016-Mar-06 18:39:17 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:39:17 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:39:17 INFO  ClientThread:52 - turn Katie green_1
+@2016-Mar-06 18:39:17 INFO  Client:130 - Message Received: turn Katie green_1
+@2016-Mar-06 18:39:17 INFO  UI:332 - Adding resources/icons/blue_full.png token
+@2016-Mar-06 18:39:17 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:39:17 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:39:17 INFO  ClientThread:52 - turn Katie changeweapon_0
+@2016-Mar-06 18:39:17 INFO  Client:130 - Message Received: turn Katie changeweapon_0
+@2016-Mar-06 18:39:17 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:17 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:39:17 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:17 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:17 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:52 INFO  UI:132 - Tournament colour has been set to purple
+@2016-Mar-06 18:39:52 INFO  Client:142 - Information sent to server: colour purple
+@2016-Mar-06 18:39:52 INFO  Server:112 - Message Received: colour purple
+@2016-Mar-06 18:39:52 INFO  ClientThread:52 - play purple
+@2016-Mar-06 18:39:52 INFO  Client:130 - Message Received: play purple
+@2016-Mar-06 18:39:52 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:52 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:52 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:52 INFO  ClientThread:52 - play purple
+@2016-Mar-06 18:39:52 INFO  Client:130 - Message Received: play purple
+@2016-Mar-06 18:39:52 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:52 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:52 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:52 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:52 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:52 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:52 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:52 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:52 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:52 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:52 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:54 INFO  UI:310 - Played card purple 4
+@2016-Mar-06 18:39:54 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:39:54 INFO  UI:247 - Card removed
+@2016-Mar-06 18:39:54 INFO  Client:130 - Message Received: play purple 4
+@2016-Mar-06 18:39:54 INFO  Client:142 - Information sent to server: play purple 4
+@2016-Mar-06 18:39:54 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:39:54 INFO  Server:112 - Message Received: play purple 4
+@2016-Mar-06 18:39:54 INFO  ClientThread:52 - waiting purple_4
+@2016-Mar-06 18:39:54 INFO  Client:130 - Message Received: waiting purple_4
+@2016-Mar-06 18:39:54 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15, game.ColourCard@7b2ccd0, game.ColourCard@5a0e933e, game.SupportCard@2fb5db4, game.ColourCard@18e214df, game.ColourCard@7f5b64c7, game.ColourCard@2151c461] added game.ColourCard@2151c461 to their hand
+@2016-Mar-06 18:39:54 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:39:54 INFO  UI:247 - Card removed
+@2016-Mar-06 18:39:54 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:54 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:54 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:54 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:54 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:54 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:57 INFO  UI:310 - Played card squire 3
+@2016-Mar-06 18:39:57 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:39:57 INFO  UI:247 - Card removed
+@2016-Mar-06 18:39:57 INFO  Client:130 - Message Received: play squire 3
+@2016-Mar-06 18:39:57 INFO  Client:142 - Information sent to server: play squire 3
+@2016-Mar-06 18:39:57 INFO  Server:112 - Message Received: play squire 3
+@2016-Mar-06 18:39:57 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:39:57 INFO  ClientThread:52 - waiting squire_3
+@2016-Mar-06 18:39:57 INFO  Client:130 - Message Received: waiting squire_3
+@2016-Mar-06 18:39:57 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15, game.ColourCard@7b2ccd0, game.ColourCard@5a0e933e, game.SupportCard@2fb5db4, game.ColourCard@18e214df, game.ColourCard@7f5b64c7, game.ColourCard@2151c461, game.SupportCard@64ceae77] added game.SupportCard@64ceae77 to their hand
+@2016-Mar-06 18:39:57 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:39:57 INFO  UI:247 - Card removed
+@2016-Mar-06 18:39:57 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:57 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:57 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:57 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:57 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:57 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:58 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:39:58 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:39:58 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:39:58 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:39:58 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:39:58 INFO  ClientThread:52 - Katie points 7 continue Brit blue_3
+@2016-Mar-06 18:39:58 INFO  Client:130 - Message Received: Katie points 7 continue Brit blue_3
+@2016-Mar-06 18:39:58 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:58 INFO  ClientThread:52 - Katie points 7 continue Brit blue_3
+@2016-Mar-06 18:39:58 INFO  Client:130 - Message Received: Katie points 7 continue Brit blue_3
+@2016-Mar-06 18:39:58 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:58 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:39:58 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:39:58 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:58 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:58 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:39:58 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:58 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:58 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:58 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:39:58 INFO  ClientThread:52 - input
+@2016-Mar-06 18:39:58 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:04 INFO  Client:130 - Message Received:  withdraw
+@2016-Mar-06 18:40:04 INFO  Client:142 - Information sent to server: withdraw
+@2016-Mar-06 18:40:04 INFO  UI:275 - Player has withdrawed
+@2016-Mar-06 18:40:04 INFO  Server:112 - Message Received: withdraw
+@2016-Mar-06 18:40:04 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:40:04 INFO  ClientThread:52 - Brit points 2 withdraw Katie win purple Katie
+@2016-Mar-06 18:40:04 INFO  ClientThread:52 - Brit points 2 withdraw Katie win purple Katie
+@2016-Mar-06 18:40:04 INFO  Client:130 - Message Received: Brit points 2 withdraw Katie win purple Katie
+@2016-Mar-06 18:40:04 INFO  Client:130 - Message Received: Brit points 2 withdraw Katie win purple Katie
+@2016-Mar-06 18:40:04 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:40:04 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:40:04 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:04 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:08 INFO  UI:169 - the player picked green
+@2016-Mar-06 18:40:08 INFO  Client:142 - Information sent to server: win purple green
+@2016-Mar-06 18:40:08 INFO  Server:112 - Message Received: win purple green
+@2016-Mar-06 18:40:08 INFO  ClientThread:52 - Katie points 7 continue Brit green winner Katie
+@2016-Mar-06 18:40:08 INFO  Client:130 - Message Received: Katie points 7 continue Brit green winner Katie
+@2016-Mar-06 18:40:08 INFO  UI:332 - Adding resources/icons/green_full.png token
+@2016-Mar-06 18:40:08 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:40:08 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:08 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:08 INFO  ClientThread:52 - Katie points 7 continue Brit green winner Katie
+@2016-Mar-06 18:40:08 INFO  Client:130 - Message Received: Katie points 7 continue Brit green winner Katie
+@2016-Mar-06 18:40:08 INFO  UI:332 - Adding resources/icons/green_full.png token
+@2016-Mar-06 18:40:08 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:40:08 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:40:08 INFO  ClientThread:52 - turn Katie disgrace_0
+@2016-Mar-06 18:40:08 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:40:08 INFO  Client:130 - Message Received: turn Katie disgrace_0
+@2016-Mar-06 18:40:08 INFO  ClientThread:52 - turn Katie squire_3
+@2016-Mar-06 18:40:08 INFO  Client:130 - Message Received: turn Katie squire_3
+@2016-Mar-06 18:40:08 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:40:08 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:40:08 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:08 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:08 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:40:16 INFO  UI:132 - Tournament colour has been set to blue
+@2016-Mar-06 18:40:16 INFO  Client:142 - Information sent to server: colour blue
+@2016-Mar-06 18:40:16 INFO  Server:112 - Message Received: colour blue
+@2016-Mar-06 18:40:16 INFO  ClientThread:52 - play blue
+@2016-Mar-06 18:40:16 INFO  Client:130 - Message Received: play blue
+@2016-Mar-06 18:40:16 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:40:16 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:16 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:16 INFO  ClientThread:52 - play blue
+@2016-Mar-06 18:40:16 INFO  Client:130 - Message Received: play blue
+@2016-Mar-06 18:40:16 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:40:16 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:40:16 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:16 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:16 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:16 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:16 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:40:16 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:16 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:16 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:16 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:19 INFO  UI:310 - Played card blue 5
+@2016-Mar-06 18:40:19 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:40:19 INFO  UI:247 - Card removed
+@2016-Mar-06 18:40:19 INFO  Client:130 - Message Received: play blue 5
+@2016-Mar-06 18:40:19 INFO  Client:142 - Information sent to server: play blue 5
+@2016-Mar-06 18:40:19 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:40:19 INFO  Server:112 - Message Received: play blue 5
+@2016-Mar-06 18:40:19 INFO  ClientThread:52 - waiting blue_5
+@2016-Mar-06 18:40:19 INFO  Client:130 - Message Received: waiting blue_5
+@2016-Mar-06 18:40:19 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15, game.ColourCard@7b2ccd0, game.ColourCard@5a0e933e, game.SupportCard@2fb5db4, game.ColourCard@18e214df, game.ColourCard@7f5b64c7, game.ColourCard@2151c461, game.SupportCard@64ceae77, game.ColourCard@39c66150] added game.ColourCard@39c66150 to their hand
+@2016-Mar-06 18:40:19 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:40:19 INFO  UI:247 - Card removed
+@2016-Mar-06 18:40:19 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:40:19 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:40:19 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:19 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:19 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:19 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:20 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:40:20 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:40:20 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:40:20 INFO  ClientThread:52 - Katie points 5 continue Brit yellow_3
+@2016-Mar-06 18:40:20 INFO  Client:130 - Message Received: Katie points 5 continue Brit yellow_3
+@2016-Mar-06 18:40:20 INFO  ClientThread:52 - Katie points 5 continue Brit yellow_3
+@2016-Mar-06 18:40:20 INFO  Client:130 - Message Received: Katie points 5 continue Brit yellow_3
+@2016-Mar-06 18:40:20 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:40:20 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:40:20 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:40:20 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:40:20 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:40:20 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:40:20 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:20 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:20 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:40:20 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:20 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:20 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:20 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:20 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:20 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:55 INFO  UI:310 - Played card blue 3
+@2016-Mar-06 18:40:55 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:40:55 INFO  UI:247 - Card removed
+@2016-Mar-06 18:40:55 INFO  Client:130 - Message Received: play blue 3
+@2016-Mar-06 18:40:55 INFO  Client:142 - Information sent to server: play blue 3
+@2016-Mar-06 18:40:55 INFO  Server:112 - Message Received: play blue 3
+@2016-Mar-06 18:40:55 INFO  ClientThread:52 - waiting blue_3
+@2016-Mar-06 18:40:55 INFO  Client:130 - Message Received: waiting blue_3
+@2016-Mar-06 18:40:55 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c, game.SupportCard@e69c406, game.ColourCard@66fd128d, game.ColourCard@21034ad0, game.ColourCard@7e679c88, game.ColourCard@3c7013bc, game.ColourCard@143eae98, game.ColourCard@13498f97] added game.ColourCard@13498f97 to their hand
+@2016-Mar-06 18:40:55 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:40:55 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:40:55 INFO  UI:247 - Card removed
+@2016-Mar-06 18:40:55 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:40:55 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:40:55 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:55 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:55 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:55 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:57 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:40:57 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:40:57 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:40:57 INFO  ClientThread:52 - Brit points 3 withdraw Katie blue winner Katie
+@2016-Mar-06 18:40:57 INFO  Client:130 - Message Received: Brit points 3 withdraw Katie blue winner Katie
+@2016-Mar-06 18:40:57 INFO  ClientThread:52 - Brit points 3 withdraw Katie blue winner Katie
+@2016-Mar-06 18:40:57 INFO  Client:130 - Message Received: Brit points 3 withdraw Katie blue winner Katie
+@2016-Mar-06 18:40:57 INFO  UI:332 - Adding resources/icons/blue_full.png token
+@2016-Mar-06 18:40:57 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:40:57 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:40:57 INFO  ClientThread:52 - turn Katie purple_7
+@2016-Mar-06 18:40:57 INFO  Client:130 - Message Received: turn Katie purple_7
+@2016-Mar-06 18:40:57 INFO  UI:332 - Adding resources/icons/blue_full.png token
+@2016-Mar-06 18:40:57 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:40:57 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:40:57 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:40:57 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:40:57 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:40:57 INFO  ClientThread:52 - turn Katie yellow_3
+@2016-Mar-06 18:40:57 INFO  Client:130 - Message Received: turn Katie yellow_3
+@2016-Mar-06 18:40:57 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:40:57 INFO  ClientThread:52 - input
+@2016-Mar-06 18:40:57 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:40:57 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:41:11 INFO  UI:132 - Tournament colour has been set to yellow
+@2016-Mar-06 18:41:11 INFO  Client:142 - Information sent to server: colour yellow
+@2016-Mar-06 18:41:11 INFO  ClientThread:52 - input
+@2016-Mar-06 18:41:11 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:41:11 INFO  Server:112 - Message Received: colour yellow
+@2016-Mar-06 18:41:11 INFO  ClientThread:52 - play yellow
+@2016-Mar-06 18:41:11 INFO  Client:130 - Message Received: play yellow
+@2016-Mar-06 18:41:11 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:41:11 INFO  ClientThread:52 - play yellow
+@2016-Mar-06 18:41:11 INFO  Client:130 - Message Received: play yellow
+@2016-Mar-06 18:41:11 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:41:11 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:41:11 INFO  ClientThread:52 - input
+@2016-Mar-06 18:41:11 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:41:11 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:41:11 INFO  ClientThread:52 - input
+@2016-Mar-06 18:41:11 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:41:11 INFO  ClientThread:52 - input
+@2016-Mar-06 18:41:11 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:41:11 INFO  ClientThread:52 - input
+@2016-Mar-06 18:41:11 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:41:29 INFO  UI:310 - Played card yellow 3
+@2016-Mar-06 18:41:29 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:41:29 INFO  UI:247 - Card removed
+@2016-Mar-06 18:41:29 INFO  Client:130 - Message Received: play yellow 3
+@2016-Mar-06 18:41:29 INFO  Client:142 - Information sent to server: play yellow 3
+@2016-Mar-06 18:41:29 INFO  Server:112 - Message Received: play yellow 3
+@2016-Mar-06 18:41:29 INFO  ClientThread:52 - waiting yellow_3
+@2016-Mar-06 18:41:29 INFO  Client:130 - Message Received: waiting yellow_3
+@2016-Mar-06 18:41:29 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:41:29 INFO  UI:254 - Player [game.ColourCard@5d8a1e60, game.ColourCard@79a23e15, game.ColourCard@7b2ccd0, game.ColourCard@5a0e933e, game.SupportCard@2fb5db4, game.ColourCard@18e214df, game.ColourCard@7f5b64c7, game.ColourCard@2151c461, game.SupportCard@64ceae77, game.ColourCard@39c66150, game.ColourCard@66d788] added game.ColourCard@66d788 to their hand
+@2016-Mar-06 18:41:29 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:41:29 INFO  UI:247 - Card removed
+@2016-Mar-06 18:41:29 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:41:29 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:41:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:41:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:41:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:41:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:41:30 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:41:30 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:41:30 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:41:30 INFO  ClientThread:52 - Katie points 3 withdraw Brit yellow winner Brit
+@2016-Mar-06 18:41:30 INFO  Client:130 - Message Received: Katie points 3 withdraw Brit yellow winner Brit
+@2016-Mar-06 18:41:30 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:41:30 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:41:30 INFO  ClientThread:52 - Katie points 3 withdraw Brit yellow winner Brit
+@2016-Mar-06 18:41:30 INFO  Client:130 - Message Received: Katie points 3 withdraw Brit yellow winner Brit
+@2016-Mar-06 18:41:30 INFO  UI:332 - Adding resources/icons/yellow_full.png token
+@2016-Mar-06 18:41:30 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:41:30 INFO  UI:332 - Adding resources/icons/yellow_full.png token
+@2016-Mar-06 18:41:30 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:41:30 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:41:30 INFO  ClientThread:52 - turn Brit purple_5
+@2016-Mar-06 18:41:30 INFO  Client:130 - Message Received: turn Brit purple_5
+@2016-Mar-06 18:41:30 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:41:30 INFO  ClientThread:52 - turn Brit maiden_6
+@2016-Mar-06 18:41:30 INFO  Client:130 - Message Received: turn Brit maiden_6
+@2016-Mar-06 18:41:30 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:41:30 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:41:30 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:41:30 INFO  ClientThread:52 - input
+@2016-Mar-06 18:41:30 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:42:15 INFO  UI:132 - Tournament colour has been set to purple
+@2016-Mar-06 18:42:15 INFO  Client:142 - Information sent to server: colour purple
+@2016-Mar-06 18:42:15 INFO  Server:112 - Message Received: colour purple
+@2016-Mar-06 18:42:15 INFO  ClientThread:52 - input
+@2016-Mar-06 18:42:15 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:42:15 INFO  ClientThread:52 - play purple
+@2016-Mar-06 18:42:15 INFO  Client:130 - Message Received: play purple
+@2016-Mar-06 18:42:15 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:42:15 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:42:15 INFO  ClientThread:52 - play purple
+@2016-Mar-06 18:42:15 INFO  Client:130 - Message Received: play purple
+@2016-Mar-06 18:42:15 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:42:15 INFO  ClientThread:52 - input
+@2016-Mar-06 18:42:15 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:42:15 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:42:15 INFO  ClientThread:52 - input
+@2016-Mar-06 18:42:15 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:42:15 INFO  ClientThread:52 - input
+@2016-Mar-06 18:42:15 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:42:15 INFO  ClientThread:52 - input
+@2016-Mar-06 18:42:15 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:16 INFO  UI:310 - Played card purple 5
+@2016-Mar-06 18:43:16 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:43:16 INFO  UI:247 - Card removed
+@2016-Mar-06 18:43:16 INFO  Client:130 - Message Received: play purple 5
+@2016-Mar-06 18:43:16 INFO  Client:142 - Information sent to server: play purple 5
+@2016-Mar-06 18:43:16 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:43:16 INFO  Server:112 - Message Received: play purple 5
+@2016-Mar-06 18:43:16 INFO  ClientThread:52 - waiting purple_5
+@2016-Mar-06 18:43:16 INFO  Client:130 - Message Received: waiting purple_5
+@2016-Mar-06 18:43:16 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c, game.SupportCard@e69c406, game.ColourCard@66fd128d, game.ColourCard@21034ad0, game.ColourCard@7e679c88, game.ColourCard@3c7013bc, game.ColourCard@143eae98, game.ColourCard@13498f97, game.ColourCard@671b3432] added game.ColourCard@671b3432 to their hand
+@2016-Mar-06 18:43:16 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:43:16 INFO  UI:247 - Card removed
+@2016-Mar-06 18:43:16 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:43:16 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:43:16 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:16 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:16 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:16 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:18 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:43:18 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:43:18 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:43:18 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:43:18 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:43:18 INFO  ClientThread:52 - Brit points 5 continue Katie purple_5
+@2016-Mar-06 18:43:18 INFO  Client:130 - Message Received: Brit points 5 continue Katie purple_5
+@2016-Mar-06 18:43:18 INFO  ClientThread:52 - Brit points 5 continue Katie purple_5
+@2016-Mar-06 18:43:18 INFO  Client:130 - Message Received: Brit points 5 continue Katie purple_5
+@2016-Mar-06 18:43:18 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:43:18 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:43:18 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:43:18 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:43:18 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:18 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:18 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:43:18 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:18 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:18 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:18 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:18 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:18 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:21 INFO  Client:130 - Message Received:  withdraw
+@2016-Mar-06 18:43:21 INFO  Client:142 - Information sent to server: withdraw
+@2016-Mar-06 18:43:21 INFO  UI:275 - Player has withdrawed
+@2016-Mar-06 18:43:21 INFO  Server:112 - Message Received: withdraw
+@2016-Mar-06 18:43:21 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:43:21 INFO  ClientThread:52 - Katie points 3 withdraw Brit win purple Brit
+@2016-Mar-06 18:43:21 INFO  Client:130 - Message Received: Katie points 3 withdraw Brit win purple Brit
+@2016-Mar-06 18:43:21 INFO  ClientThread:52 - Katie points 3 withdraw Brit win purple Brit
+@2016-Mar-06 18:43:21 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:43:21 INFO  Client:130 - Message Received: Katie points 3 withdraw Brit win purple Brit
+@2016-Mar-06 18:43:21 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:43:21 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:21 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:25 INFO  UI:169 - the player picked purple
+@2016-Mar-06 18:43:25 INFO  Client:142 - Information sent to server: win purple purple
+@2016-Mar-06 18:43:25 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:25 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:25 INFO  Server:112 - Message Received: win purple purple
+@2016-Mar-06 18:43:25 INFO  ClientThread:52 - Brit points 5 continue Katie purple winner Brit
+@2016-Mar-06 18:43:25 INFO  ClientThread:52 - Brit points 5 continue Katie purple winner Brit
+@2016-Mar-06 18:43:25 INFO  Client:130 - Message Received: Brit points 5 continue Katie purple winner Brit
+@2016-Mar-06 18:43:25 INFO  Client:130 - Message Received: Brit points 5 continue Katie purple winner Brit
+@2016-Mar-06 18:43:25 INFO  UI:332 - Adding resources/icons/purple_full.png token
+@2016-Mar-06 18:43:25 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:43:25 INFO  UI:332 - Adding resources/icons/purple_full.png token
+@2016-Mar-06 18:43:25 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:43:25 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:43:25 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:43:25 INFO  ClientThread:52 - turn Brit purple_7
+@2016-Mar-06 18:43:25 INFO  Client:130 - Message Received: turn Brit purple_7
+@2016-Mar-06 18:43:25 INFO  ClientThread:52 - turn Brit maiden_6
+@2016-Mar-06 18:43:25 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:43:25 INFO  Client:130 - Message Received: turn Brit maiden_6
+@2016-Mar-06 18:43:25 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:43:25 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:25 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:25 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:43:34 INFO  UI:132 - Tournament colour has been set to blue
+@2016-Mar-06 18:43:34 INFO  Client:142 - Information sent to server: colour blue
+@2016-Mar-06 18:43:34 INFO  Server:112 - Message Received: colour blue
+@2016-Mar-06 18:43:34 INFO  ClientThread:52 - play blue
+@2016-Mar-06 18:43:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:34 INFO  ClientThread:52 - play blue
+@2016-Mar-06 18:43:34 INFO  Client:130 - Message Received: play blue
+@2016-Mar-06 18:43:34 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:43:34 INFO  Client:130 - Message Received: play blue
+@2016-Mar-06 18:43:34 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:43:34 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:43:34 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:43:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:43:34 INFO  ClientThread:52 - input
+@2016-Mar-06 18:43:34 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:15 INFO  UI:310 - Played card maiden 6
+@2016-Mar-06 18:45:15 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:45:15 INFO  UI:247 - Card removed
+@2016-Mar-06 18:45:15 INFO  Client:130 - Message Received: play maiden 6
+@2016-Mar-06 18:45:15 INFO  Client:142 - Information sent to server: play maiden 6
+@2016-Mar-06 18:45:15 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:45:15 INFO  Server:112 - Message Received: play maiden 6
+@2016-Mar-06 18:45:15 INFO  ClientThread:52 - waiting maiden_6
+@2016-Mar-06 18:45:15 INFO  Client:130 - Message Received: waiting maiden_6
+@2016-Mar-06 18:45:15 INFO  UI:254 - Player [game.ColourCard@47c61381, game.ColourCard@3d946a1f, game.ColourCard@17b03d4c, game.SupportCard@e69c406, game.ColourCard@66fd128d, game.ColourCard@21034ad0, game.ColourCard@7e679c88, game.ColourCard@3c7013bc, game.ColourCard@143eae98, game.ColourCard@13498f97, game.ColourCard@671b3432, game.SupportCard@420b41c4] added game.SupportCard@420b41c4 to their hand
+@2016-Mar-06 18:45:15 INFO  UI:326 - Cards have been reset
+@2016-Mar-06 18:45:15 INFO  UI:247 - Card removed
+@2016-Mar-06 18:45:15 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:45:15 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:45:15 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:15 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:15 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:15 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:29 INFO  Client:130 - Message Received:  end
+@2016-Mar-06 18:45:29 INFO  Client:142 - Information sent to server: end
+@2016-Mar-06 18:45:29 INFO  UI:268 - Player has ended their turn
+@2016-Mar-06 18:45:29 INFO  Server:112 - Message Received: end
+@2016-Mar-06 18:45:29 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:45:29 INFO  ClientThread:52 - Brit points 6 continue Katie countercharge_0
+@2016-Mar-06 18:45:29 INFO  ClientThread:52 - Brit points 6 continue Katie countercharge_0
+@2016-Mar-06 18:45:29 INFO  Client:130 - Message Received: Brit points 6 continue Katie countercharge_0
+@2016-Mar-06 18:45:29 INFO  Client:130 - Message Received: Brit points 6 continue Katie countercharge_0
+@2016-Mar-06 18:45:29 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:45:29 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:45:29 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:45:29 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:45:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:29 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:45:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:29 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:29 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:36 INFO  Client:130 - Message Received:  withdraw
+@2016-Mar-06 18:45:36 INFO  Client:142 - Information sent to server: withdraw
+@2016-Mar-06 18:45:36 INFO  UI:275 - Player has withdrawed
+@2016-Mar-06 18:45:36 INFO  UI:223 - Updated Subjects
+@2016-Mar-06 18:45:36 INFO  Server:112 - Message Received: withdraw
+@2016-Mar-06 18:45:36 INFO  ClientThread:52 - Katie points 3 withdraw Brit blue winner Brit
+@2016-Mar-06 18:45:36 INFO  ClientThread:52 - Katie points 3 withdraw Brit blue winner Brit
+@2016-Mar-06 18:45:36 INFO  Client:130 - Message Received: Katie points 3 withdraw Brit blue winner Brit
+@2016-Mar-06 18:45:36 INFO  Client:130 - Message Received: Katie points 3 withdraw Brit blue winner Brit
+@2016-Mar-06 18:45:36 INFO  UI:332 - Adding resources/icons/blue_full.png token
+@2016-Mar-06 18:45:36 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:45:36 INFO  UI:332 - Adding resources/icons/blue_full.png token
+@2016-Mar-06 18:45:36 INFO  Client:142 - Information sent to server: begin tournament
+@2016-Mar-06 18:45:36 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:45:36 INFO  Server:112 - Message Received: begin tournament
+@2016-Mar-06 18:45:36 INFO  ClientThread:52 - turn Brit yellow_3
+@2016-Mar-06 18:45:36 INFO  Client:130 - Message Received: turn Brit yellow_3
+@2016-Mar-06 18:45:36 INFO  UI:232 - Adding new card
+@2016-Mar-06 18:45:36 INFO  ClientThread:52 - turn Brit purple_3
+@2016-Mar-06 18:45:36 INFO  Client:130 - Message Received: turn Brit purple_3
+@2016-Mar-06 18:45:36 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:45:36 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:45:36 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:36 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:44 INFO  UI:132 - Tournament colour has been set to yellow
+@2016-Mar-06 18:45:44 INFO  Client:142 - Information sent to server: colour yellow
+@2016-Mar-06 18:45:44 INFO  Server:112 - Message Received: colour yellow
+@2016-Mar-06 18:45:44 INFO  ClientThread:52 - play yellow
+@2016-Mar-06 18:45:44 INFO  Client:130 - Message Received: play yellow
+@2016-Mar-06 18:45:44 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:45:44 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:44 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:44 INFO  ClientThread:52 - play yellow
+@2016-Mar-06 18:45:44 INFO  Client:130 - Message Received: play yellow
+@2016-Mar-06 18:45:44 INFO  Client:142 - Information sent to server: result
+@2016-Mar-06 18:45:44 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:45:44 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:44 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:44 INFO  Server:112 - Message Received: result
+@2016-Mar-06 18:45:44 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:44 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:44 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:44 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:45:44 INFO  ClientThread:52 - input
+@2016-Mar-06 18:45:44 INFO  Client:130 - Message Received: input
+@2016-Mar-06 18:46:12 INFO  Server:112 - Message Received: null
+@2016-Mar-06 18:46:13 INFO  Server:112 - Message Received: null
 @
