@@ -27,7 +27,7 @@ public class Config {
 	public static String PLAY = "play"; 
 	public static String END_TURN = "end";
 	public static String POINTS = "points";
-	public static String TOURNAMENT_WINNER = "tournament winner";
+	public static String TOURNAMENT_WINNER = "winner";
 	public static String GAME_WINNER = "game winner";
 	public static String PICK_COLOUR = "pick a colour";
 	public static String COLOUR_PICKED = "colour";
@@ -39,7 +39,7 @@ public class Config {
 	public static String UNPLAYABLE = "unplayable";
 	public static String FIRSTPLAYER = "firstplayer";
 	public static String WAITING = "waiting";
-	public static String PURPLE_WIN = "purple win";
+	public static String PURPLE_WIN = "win purple";
 	public static String WITHDRAW = "withdraw";
 	public static String HAND = "hand";
 	public static String DISPLAY = "display"; 

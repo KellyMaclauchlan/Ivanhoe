@@ -494,6 +494,16 @@ public class Client implements Runnable, Observer {
 			}
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				String chosenColour = input[5];
+				System.out.println("CHOSEN COLOUR: " + chosenColour);
+				for(int i = 0; i < 5; i++){
+					if (chosenColour.equalsIgnoreCase(options[i])){
+							window.setTournamentColour(i);
+							if (chosenColour.equals(Config.PURPLE)) {
+								purpleChosen = true;
+							}
+					}
+				}
 				window.setCurrPlayer(winningPlayer);
 				if (!(window.getTournamentColour() == 4) || purpleChosen) {
 					window.addToken(window.getCurrPlayer(), window.getTournamentColour());
