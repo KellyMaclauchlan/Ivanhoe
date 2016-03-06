@@ -307,7 +307,7 @@ public class Client implements Runnable, Observer {
 				window.setPlayerNum(i);
 			}
 			//set name on gui
-			window.setName(i, card[1]);
+			window.setName(i-1, card[1]);
 			
 		}
 		window.showWindow();
