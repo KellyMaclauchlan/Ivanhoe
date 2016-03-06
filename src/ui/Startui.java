@@ -1,5 +1,6 @@
 package ui;
 
+import config.Config;
 import game.ColourCard;
 
 public class Startui {
@@ -58,6 +59,7 @@ public class Startui {
 		control.playerName=control.getNameFromPlayer();
 		control.setName(0, control.playerName);
 		control.playerNames.add(0, control.playerName);
+		control.removeToken(1, Config.BLUE);
 		//control.playerWithdraws("jo");
 		control.window.startTurn();
 		//testing various pop ups

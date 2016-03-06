@@ -5643,4 +5643,47 @@
 @2016-Mar-06 01:05:46 INFO  Client:126 - Message Received: input
 @2016-Mar-06 01:05:52 INFO  Server:98 - Message Received: null
 @2016-Mar-06 01:05:54 INFO  Server:98 - Message Received: null
+@2016-Mar-06 10:13:30 INFO  UI:125 - Total number of players is: 3
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:218 - Adding new card
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8] added game.ColourCard@12bb4df8 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@7a7b0070] added game.ColourCard@7a7b0070 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4] added game.ColourCard@71bc1ae4 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc] added game.ColourCard@2437c6dc to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac] added game.ColourCard@e73f9ac to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff] added game.ColourCard@7b1d7fff to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa] added game.ColourCard@383534aa to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5] added game.ColourCard@7b3300e5 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db] added game.ColourCard@136432db to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af] added game.ColourCard@1055e4af to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6] added game.ColourCard@e6ea0c6 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b] added game.ColourCard@5577140b to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3] added game.ColourCard@67f89fa3 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3, game.ColourCard@277c0f21] added game.ColourCard@277c0f21 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3, game.ColourCard@277c0f21, game.ColourCard@43556938] added game.ColourCard@43556938 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3, game.ColourCard@277c0f21, game.ColourCard@43556938, game.ColourCard@7a46a697] added game.ColourCard@7a46a697 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3, game.ColourCard@277c0f21, game.ColourCard@43556938, game.ColourCard@7a46a697, game.ColourCard@6d86b085] added game.ColourCard@6d86b085 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3, game.ColourCard@277c0f21, game.ColourCard@43556938, game.ColourCard@7a46a697, game.ColourCard@6d86b085, game.ColourCard@3abfe836] added game.ColourCard@3abfe836 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3, game.ColourCard@277c0f21, game.ColourCard@43556938, game.ColourCard@7a46a697, game.ColourCard@6d86b085, game.ColourCard@3abfe836, game.ColourCard@77afea7d] added game.ColourCard@77afea7d to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3, game.ColourCard@277c0f21, game.ColourCard@43556938, game.ColourCard@7a46a697, game.ColourCard@6d86b085, game.ColourCard@3abfe836, game.ColourCard@77afea7d, game.ColourCard@532760d8] added game.ColourCard@532760d8 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3, game.ColourCard@277c0f21, game.ColourCard@43556938, game.ColourCard@7a46a697, game.ColourCard@6d86b085, game.ColourCard@3abfe836, game.ColourCard@77afea7d, game.ColourCard@532760d8, game.ColourCard@5f8ed237] added game.ColourCard@5f8ed237 to their hand
+@2016-Mar-06 10:13:31 INFO  UI:240 - Player [game.ColourCard@12bb4df8, game.ColourCard@71bc1ae4, game.ColourCard@2437c6dc, game.ColourCard@e73f9ac, game.ColourCard@7b1d7fff, game.ColourCard@383534aa, game.ColourCard@7b3300e5, game.ColourCard@136432db, game.ColourCard@1055e4af, game.ColourCard@e6ea0c6, game.ColourCard@5577140b, game.ColourCard@67f89fa3, game.ColourCard@277c0f21, game.ColourCard@43556938, game.ColourCard@7a46a697, game.ColourCard@6d86b085, game.ColourCard@3abfe836, game.ColourCard@77afea7d, game.ColourCard@532760d8, game.ColourCard@5f8ed237, game.ColourCard@47089e5f] added game.ColourCard@47089e5f to their hand
+@2016-Mar-06 10:13:31 INFO  UI:318 - Adding resources/icons/red_full.png token
+@2016-Mar-06 10:13:31 INFO  UI:318 - Adding resources/icons/green_full.png token
+@2016-Mar-06 10:13:31 INFO  UI:318 - Adding resources/icons/purple_full.png token
+@2016-Mar-06 10:13:31 INFO  UI:318 - Adding resources/icons/blue_full.png token
+@2016-Mar-06 10:13:31 INFO  UI:318 - Adding resources/icons/yellow_full.png token
+@2016-Mar-06 10:13:40 INFO  UI:328 - Removing blue token
 @
