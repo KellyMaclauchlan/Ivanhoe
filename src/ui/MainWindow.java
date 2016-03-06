@@ -77,8 +77,8 @@ public class MainWindow extends JFrame implements Subject {
 		setUpScreen(this.getContentPane());
 		//this.pack();
 		this.hasTokens=new boolean[5][5];
-		for (int i=0;i<5;i++){
-			for (int j=0;j<5;j++){
+		for (int i = 0; i < 5; i++){
+			for (int j = 0; j < 5; j++){
 				this.hasTokens[i][j]=false;
 			}
 		}
@@ -964,84 +964,82 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(points5, gbc_points5);
 		
 		//naming the buttons 
-		this.withdrawButton=withdrawButton;
-		this.deck=Deck;
-		this.leftArrow=leftArrow;
-		this.rightArrow=rightArrow;
-		this.playCardButton=playCardButton;
-		this.endTurnButton=endTurnButton;
-		this.textLabel=textLabel;
-		this.cardTextLabel=cardText;
+		this.withdrawButton = withdrawButton;
+		this.deck = Deck;
+		this.leftArrow = leftArrow;
+		this.rightArrow = rightArrow;
+		this.playCardButton = playCardButton;
+		this.endTurnButton = endTurnButton;
+		this.textLabel = textLabel;
+		this.cardTextLabel = cardText;
 		
 		this.playerCards= new JButton[10];
-		this.playerCards[0]=card1;
-		this.playerCards[1]=card2;
-		this.playerCards[2]=card3;
-		this.playerCards[3]=card4;
-		this.playerCards[4]=card5;
-		this.playerCards[5]=card6;
-		this.playerCards[6]=card7;
-		this.playerCards[7]=card8;
-		this.playerCards[8]=card9;
-		this.playerCards[9]=card10;
+		this.playerCards[0] = card1;
+		this.playerCards[1] = card2;
+		this.playerCards[2] = card3;
+		this.playerCards[3] = card4;
+		this.playerCards[4] = card5;
+		this.playerCards[5] = card6;
+		this.playerCards[6] = card7;
+		this.playerCards[7] = card8;
+		this.playerCards[8] = card9;
+		this.playerCards[9] = card10;
 		
-		this.tokens=new JLabel[5][5];
-		this.tokens[0][0]=token11;
-		this.tokens[0][1]=token12;
-		this.tokens[0][2]=token13;
-		this.tokens[0][3]=token14;
-		this.tokens[0][4]=token15;
+		this.tokens = new JLabel[5][5];
+		this.tokens[0][0] = token11;
+		this.tokens[0][1] = token12;
+		this.tokens[0][2] = token13;
+		this.tokens[0][3] = token14;
+		this.tokens[0][4] = token15;
 		
-		this.tokens[1][0]=token21;
-		this.tokens[1][1]=token22;
-		this.tokens[1][2]=token23;
-		this.tokens[1][3]=token24;
-		this.tokens[1][4]=token25;
+		this.tokens[1][0] = token21;
+		this.tokens[1][1] = token22;
+		this.tokens[1][2] = token23;
+		this.tokens[1][3] = token24;
+		this.tokens[1][4] = token25;
 		
-		this.tokens[2][0]=token31;
-		this.tokens[2][1]=token32;
-		this.tokens[2][2]=token33;
-		this.tokens[2][3]=token34;
-		this.tokens[2][4]=token35;
+		this.tokens[2][0] = token31;
+		this.tokens[2][1] = token32;
+		this.tokens[2][2] = token33;
+		this.tokens[2][3] = token34;
+		this.tokens[2][4] = token35;
 		
-		this.tokens[3][0]=token41;
-		this.tokens[3][1]=token42;
-		this.tokens[3][2]=token43;
-		this.tokens[3][3]=token44;
-		this.tokens[3][4]=token45;
+		this.tokens[3][0] = token41;
+		this.tokens[3][1] = token42;
+		this.tokens[3][2] = token43;
+		this.tokens[3][3] = token44;
+		this.tokens[3][4] = token45;
 		
-		this.tokens[4][0]=token51;
-		this.tokens[4][1]=token52;
-		this.tokens[4][2]=token53;
-		this.tokens[4][3]=token54;
-		this.tokens[4][4]=token55;
-		
-		
+		this.tokens[4][0] = token51;
+		this.tokens[4][1] = token52;
+		this.tokens[4][2] = token53;
+		this.tokens[4][3] = token54;
+		this.tokens[4][4] = token55;
 		
 		
-		this.playerNames= new JRadioButton[5];
-		this.playerNames[0]=name1;
-		this.playerNames[1]=name2;
-		this.playerNames[2]=name3;
-		this.playerNames[3]=name4;
-		this.playerNames[4]=name5;
+		this.playerNames = new JRadioButton[5];
+		this.playerNames[0] = name1;
+		this.playerNames[1] = name2;
+		this.playerNames[2] = name3;
+		this.playerNames[3] = name4;
+		this.playerNames[4] = name5;
 		for(int i = 0; i < 5; i++){
 			this.playerNames[i].setEnabled(false);
 		}
 		
-		this.playedCards= new JButton[5];
-		this.playedCards[0]= p1d;
-		this.playedCards[1]= p2d;
-		this.playedCards[2]= p3d;
-		this.playedCards[3]= p4d;
-		this.playedCards[4]= p5d;
+		this.playedCards = new JButton[5];
+		this.playedCards[0] = p1d;
+		this.playedCards[1] = p2d;
+		this.playedCards[2] = p3d;
+		this.playedCards[3] = p4d;
+		this.playedCards[4] = p5d;
 		
-		this.playerPoints= new JLabel[5];
-		this.playerPoints[0]=points1;
-		this.playerPoints[1]=points2;
-		this.playerPoints[2]=points3;
-		this.playerPoints[3]=points4;
-		this.playerPoints[4]=points5;
+		this.playerPoints = new JLabel[5];
+		this.playerPoints[0] = points1;
+		this.playerPoints[1] = points2;
+		this.playerPoints[2] = points3;
+		this.playerPoints[3] = points4;
+		this.playerPoints[4] = points5;
 	}
 
 	public void setToken(int player,int token,String pic){

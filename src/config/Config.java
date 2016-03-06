@@ -31,7 +31,7 @@ public class Config {
 	public static String GAME_WINNER = "game winner";
 	public static String PICK_COLOUR = "pick a colour";
 	public static String COLOUR_PICKED = "colour";
-	public static String PICKED_PURPLE = "purple";
+	public static String PICKED_PURPLE = "pickedpurple";
 	public static String TURN = "turn";
 	public static String CONTINUE = "continue";
 	public static String MAX = "maximum " + MAX_PLAYERS;
