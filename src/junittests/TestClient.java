@@ -22,11 +22,13 @@ public class TestClient {
 	static Client client3;
 	static Client client4;
 	static Client client5;
+	static Client client6;
 	static boolean c1;
 	static boolean c2;
 	static boolean c3;
 	static boolean c4;
 	static boolean c5;
+	static boolean c6; 
 	
 	@BeforeClass
 	public static void BeforeClass(){
@@ -50,10 +52,10 @@ public class TestClient {
 		System.out.println("@Before: TestClient");
 	}
 	
-	/*@After
+	/*@After*/
 	public void tearDown(){
 		server.shutdown();
-	}*/
+	}
 	
 	@Test
 	public void test1Client(){
@@ -68,6 +70,31 @@ public class TestClient {
 		assertTrue(c3);
 		assertTrue(c4);
 		assertTrue(c5);
+	}
+	
+	@Test
+	public void testMinClients(){
+		System.out.println("@Test: TestMinClients");
+		assertTrue(c1);
+		assertTrue(c2);
+		
+		assertTrue(server.testMinPlayers());
+	}
+	
+	@Test
+	public void testMaxClients(){
+		System.out.println("@Test: TestMaxClients");
+		assertTrue(c1);
+		assertTrue(c2);
+		assertTrue(c3);
+		assertTrue(c4);
+		assertTrue(c5);
+		
+		client6 = new Client();
+		c6 = client6.connectToServer("127.0.0.1", 3000);
+		assertFalse(c6);
+		
+		assertFalse(server.testMaxPlayers());
 	}
 	
 	@Test

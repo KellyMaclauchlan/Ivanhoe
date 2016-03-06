@@ -33,6 +33,7 @@ public class Config {
 	public static String COLOUR_PICKED = "colour";
 	public static String PICKED_PURPLE = "pickedpurple";
 	public static String TURN = "turn";
+	public static String COLOUR = "colour";
 	public static String CONTINUE = "continue";
 	public static String MAX = "maximum " + MAX_PLAYERS;
 	public static String UNPLAYABLE = "unplayable";
@@ -45,19 +46,16 @@ public class Config {
 	public static String FROMUPDATE = "update";
 
 	/*UI messages*/
-	public static String LEFT_CLICK="leftclick";
-	public static String RIGHT_CLICK="rightclick";
-	public static String WITHDRAW_CLICK="withdrawclick";
-	public static String END_TURN_CLICK="endturnclick";
-	public static String PLAYEDCARD="playedcard";
-	public static String VIEWDISPLAY="viewdisplay";
+	public static String LEFT_CLICK = "leftclick";
+	public static String RIGHT_CLICK = "rightclick";
+	public static String WITHDRAW_CLICK = "withdrawclick";
+	public static String END_TURN_CLICK = "endturnclick";
+	public static String PLAYEDCARD = "playedcard";
+	public static String VIEWDISPLAY = "viewdisplay";
 	
 	
 	/* Card names */
-	//colours
-	public static String COLOUR = "colour";
 	/* Coloured Cards */
-
 	public static String PURPLE = "purple";
 	public static String RED = "red";
 	public static String BLUE = "blue";
