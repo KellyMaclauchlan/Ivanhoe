@@ -64,7 +64,7 @@ public class MainWindowController implements Observer, Subject{
 		String name=JOptionPane.showInputDialog("Enter your name");
 		window.setTitle("Ivanhoe: "+name);
 		return name ;
-		}
+	}
 	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter your IP address and Port ie: localhost 3000");}
 	public String getNumberOfPlayersFromPlayer(){return JOptionPane.showInputDialog("Enter the number of players in this game (2-5)");}
 	public Object getScore(int player) {return this.playerScores.get(player);}
