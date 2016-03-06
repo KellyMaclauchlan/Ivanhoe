@@ -154,22 +154,28 @@ public class Client implements Runnable, Observer {
 		String send=Config.FROMUPDATE;
 		if(message.contains(Config.PLAYEDCARD)){
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
-			send=" "+this.playACard();
+			//send=" "+this.playACard();
 		}
 		
 		else if (message.contains(Config.WITHDRAW)){
 			//processInput(Config.WITHDRAW);
 			playedCards = Config.WITHDRAW;
-			send=" "+Config.WITHDRAW;
+			//send=" "+Config.WITHDRAW;
 		}
 		
 		else{
 			//processInput(Config.END_TURN);
 			playedCards = Config.END_TURN;
-			send=" "+Config.END_TURN;
+			//send=" "+Config.END_TURN;
 		}
+		send+= this.playACard();
 
-		this.processInput(send);
+		try {
+			this.handle(send);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// send the text send to the server here
 
 		
