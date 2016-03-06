@@ -47,7 +47,7 @@ public class GameEngine {
 			// input = end turn
 			} else if (input.contains(Config.END_TURN)) {
 				output = processEndTurn(); // output = <player name> points <player points> [continue OR withdraw] <next player> <card picked up>
-												// IF tournament is won, add: tournament winner <winner name> 
+												// IF tournament is won, add: <colour> winner <winner name> 
 												// OR IF tournament is won and tournamentColour is purple, add: purple win <winner name>  
 												// IF game is won, add: game winner <winner name>
 												
@@ -331,7 +331,7 @@ public class GameEngine {
 			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple == true)) {
 				arrangePlayers();
 				resetPlayers();
-				status = " " + Config.TOURNAMENT_WINNER + " " + p.getName();
+				status = " " + getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
 				choosePurple = false;
 				currentPlayer = p;
 			}
