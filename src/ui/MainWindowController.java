@@ -316,8 +316,9 @@ public class MainWindowController implements Observer, Subject{
 	public void resetCards(){		
 		int maxx = Math.min(10, playerCards.size());
 		int i;
+		moved=0;
 		for(i = 0; i < maxx; i++){
-			this.window.addPlayerCard(i, playerCards.get(i+moved).getCardImage());
+			this.window.addPlayerCard(i, playerCards.get(i).getCardImage());
 		}
 		
 		for(i = i; i < 10; i++){
