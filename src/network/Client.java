@@ -338,6 +338,7 @@ public class Client implements Runnable, Observer {
 				}
 				
 		}else{
+			window.startRound();
 			if(input[1].equalsIgnoreCase(window.playerName)){
 				String value[] = input[2].split("_");
 				window.addCard(this.getCardFromTypeValue(value[0], value[1]));
@@ -491,7 +492,9 @@ public class Client implements Runnable, Observer {
 				}
 			}
 		}else{
+			
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				window.startRound();
 				window.setCurrPlayer(winningPlayer);
 				String chosenColour = input[5];
 				for(int i = 0; i < 5; i++){
