@@ -183,7 +183,7 @@ public class Server implements Runnable {
 		}
 		
 		else if (send.contains(Config.WAITING)){
-			send1Client(id, send);
+			sendAllClients(send);
 		}
 		
 		else if(send.contains(Config.POINTS)){

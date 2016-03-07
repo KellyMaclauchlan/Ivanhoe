@@ -60,8 +60,10 @@ public class Startui {
 		control.setName(0, control.playerName);
 		control.playerNames.add(0, control.playerName);
 		control.removeToken(1, Config.BLUE);
+		
 		//control.playerWithdraws("jo");
 		control.window.startTurn();
+		control.startRound();
 		//testing various pop ups
 		//control.setTournamnetColour(control.setTournament());
 		//System.out.println(control.playerPickToken() );
