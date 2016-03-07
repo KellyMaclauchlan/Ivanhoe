@@ -274,7 +274,6 @@ public class Client implements Runnable, Observer {
 		else if (msg.contains(Config.WITHDRAW)) {
 			String[] withdrawString = msg.split(" ");
 			String name = withdrawString[0];
-			System.out.println("Withdrawn player name: " + name);
 			window.playerWithdraws(name); 
 		}
 
@@ -293,11 +292,8 @@ public class Client implements Runnable, Observer {
 		String card[];
 		String value[];
 		window.setNumPlayers(name.length);
-		System.out.println("number of players is :"+name.length);
-		System.out.println("Name: "+name[0]);
 		for(int i = 0; i < name.length; i++){
 			card = name[i].split(" ");
-			System.out.println("Name: "+name[i]);
 			//if this player is the user
 			if(card[1].equalsIgnoreCase(window.playerName)){
 				for(int k = 3; k < card.length; k++){
@@ -498,7 +494,6 @@ public class Client implements Runnable, Observer {
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
 				window.setCurrPlayer(winningPlayer);
 				String chosenColour = input[5];
-				System.out.println("CHOSEN COLOUR: " + chosenColour);
 				for(int i = 0; i < 5; i++){
 					if (chosenColour.equalsIgnoreCase(options[i])){
 							window.setTournamentColour(i);

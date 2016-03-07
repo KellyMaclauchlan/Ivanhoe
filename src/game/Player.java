@@ -111,6 +111,10 @@ public class Player {
 				totalCardValue += c.getValue();
 		}
 	}
+	
+	public void resetTotalCardValue() {
+		totalCardValue = 0;
+	}
 
 	public boolean isStunned() {
 		return isStunned;

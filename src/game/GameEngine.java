@@ -313,6 +313,11 @@ public class GameEngine {
 	}
 	
 	public String processEndTurn() {
+		//TEMP FOR TESTING
+		for (Player p: players) {
+			System.out.println(p.getName() + " " + p.getTotalCardValue());
+		}
+		
 		String output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
 		Player prevPlayer = currentPlayer;
 		endTurn();
@@ -327,16 +332,26 @@ public class GameEngine {
 			if (p.isWinner() && tournamentColour.equals(Config.PURPLE) && choosePurple == false) {
 				status = " " + Config.PURPLE_WIN + " " + p.getName();
 				currentPlayer = p;
+				p.resetTotalCardValue();
+				System.out.println("CURRENT PLAYER PURPLE WIN: " + currentPlayer.getName());
+
 			}
 			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple == true)) {
 				arrangePlayers();
 				resetPlayers();
+				//TEMP FOR TESTING
+
+				System.out.println("RESET PLAYERS");
+				for (Player pl: players) {
+					System.out.println(pl.getName() + " " + pl.getTotalCardValue());
+				}
 				status = " " + getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
 				choosePurple = false;
 				currentPlayer = p;
+				System.out.println("CURRENT PLAYER WIN: " + currentPlayer.getName());
 			}
 			if (p.isGameWinner()) {
-				status += " " + Config.GAME_WINNER + " " + p.getName();
+				output = " " + Config.GAME_WINNER + " " + p.getName();
 				currentPlayer = p;
 			}
 			
@@ -474,7 +489,6 @@ public class GameEngine {
 		currentPlayer.removeCard(card);
 		//add card to where it should be added (display, front, discard)
 		currentPlayer.setTotalCardValue();
-		System.out.println("PLAYER TOTAL CARD VALUE: " + currentPlayer.getTotalCardValue());
 	}
 	
 	public Card pickupCard() {
@@ -503,7 +517,6 @@ public class GameEngine {
 			temp++;
 			for (int i = 0; i < drawDeck.size(); i++) {
 				if (c.getType().equals(drawDeck.get(i).getType()) && (c.getValue() == drawDeck.get(i).getValue())) {
-					System.out.println("\n Removed Card number " + temp + ": " + drawDeck.get(i).getType() + " " + drawDeck.get(i).getValue());
 					drawDeck.remove(i);
 					break;
 				}
@@ -570,6 +583,7 @@ public class GameEngine {
 			p.setWinner(false);
 			p.setDisplay(new ArrayList<Card>());
 			p.setStartTokenColour("nil");
+			p.resetTotalCardValue();
 		}
 		turnNumber = 0;
 	}
