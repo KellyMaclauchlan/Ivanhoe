@@ -109,6 +109,10 @@ public class MainWindowController implements Observer, Subject{
 		if(currPlayer==this.playerNum){
 			window.startTurn();
 		}
+		for(int i=0;i<5;i++){
+			window.playerNames[i].setSelected(false);
+		}
+		window.playerNames[currPlayer].setSelected(true);
 	}
 	
 	public void setNumPlayers(int i){
@@ -119,7 +123,7 @@ public class MainWindowController implements Observer, Subject{
 			this.playerNames.add("");
 			this.playerScores.add(0);
 		}
-		for(j=i-1;j<5;j++){
+		for(j=i;j<5;j++){
 			this.window.playedCards[j].setEnabled(false);
 		}
 		log.info("Total number of players is: " + i);
@@ -293,12 +297,14 @@ public class MainWindowController implements Observer, Subject{
 	
 	/* Starts a new round with the UI */
 	public void startRound() {
-		for(int i = 0; i < this.playerNum; i++){
+		for(int i = 0; i < this.totalPlayers; i++){
 			setScore(i,0);			
 			this.playedCards.get(i).clear();
+			//this.playedCards.set(i, new ArrayList<Card>());						
+			System.out.println("starting new round"+ this.playedCards.get(i).size());
 			this.window.addPlayedCard(i, Config.IMG_BACK);
 			this.window.playedCards[i].setEnabled(true);
-			log.info("Player " + this.playedCards.get(i) + "started their round");
+			//log.info("Player " + this.playedCards.get(i) + "started their round");
 		}	
 		this.window.endedTurn();
 	}
@@ -316,8 +322,9 @@ public class MainWindowController implements Observer, Subject{
 	public void resetCards(){		
 		int maxx = Math.min(10, playerCards.size());
 		int i;
+		moved=0;
 		for(i = 0; i < maxx; i++){
-			this.window.addPlayerCard(i, playerCards.get(i+moved).getCardImage());
+			this.window.addPlayerCard(i, playerCards.get(i).getCardImage());
 		}
 		
 		for(i = i; i < 10; i++){

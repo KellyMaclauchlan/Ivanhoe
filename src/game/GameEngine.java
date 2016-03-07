@@ -130,7 +130,6 @@ public class GameEngine {
 		String type = play[1];
 		String value = play[2];
 		Card card = null;
-		boolean hasMaiden = false;
 		for (Card c: currentPlayer.getCards()) {
 			if (type.equals(c.getType()) && value.equals(Integer.toString(c.getValue()))) {
 				card = c;
@@ -141,23 +140,13 @@ public class GameEngine {
 			if (tournamentColour.equals(Config.GREEN) && card.getValue() > 1) {
 				card.setValue(1);
 			}
-			if (card.getType().equals(Config.MAIDEN)) {
-				for (Card c: currentPlayer.getDisplay()) {
-					if (c.getType().equals(Config.MAIDEN)) {
-						hasMaiden = true;
-						output = Config.UNPLAYABLE;
-					}
+			playCard(card);
+			for (Card c: currentPlayer.getFront()) {
+				if (c.getType().equals(Config.STUNNED)) {
+					output = Config.STUNNED;
 				}
 			}
-			if (!hasMaiden) {
-				playCard(card);
-				for (Card c: currentPlayer.getFront()) {
-					if (c.getType().equals(Config.STUNNED)) {
-						output = Config.STUNNED;
-					}
-				}
-				output += " " + type + "_" + value;
-			}
+			output += " " + type + "_" + value;
 		} else if (card.getType().equals(Config.ACTION)) {
 			output += processActionCard((ActionCard) card, input);
 		} else {
@@ -324,6 +313,11 @@ public class GameEngine {
 	}
 	
 	public String processEndTurn() {
+		//TEMP FOR TESTING
+		for (Player p: players) {
+			System.out.println(p.getName() + " " + p.getTotalCardValue());
+		}
+		
 		String output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
 		Player prevPlayer = currentPlayer;
 		endTurn();
@@ -338,13 +332,23 @@ public class GameEngine {
 			if (p.isWinner() && tournamentColour.equals(Config.PURPLE) && choosePurple == false) {
 				status = " " + Config.PURPLE_WIN + " " + p.getName();
 				currentPlayer = p;
+				p.resetTotalCardValue();
+				System.out.println("CURRENT PLAYER PURPLE WIN: " + currentPlayer.getName());
+
 			}
 			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple == true)) {
 				arrangePlayers();
 				resetPlayers();
+				//TEMP FOR TESTING
+
+				System.out.println("RESET PLAYERS");
+				for (Player pl: players) {
+					System.out.println(pl.getName() + " " + pl.getTotalCardValue());
+				}
 				status = " " + getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
 				choosePurple = false;
 				currentPlayer = p;
+				System.out.println("CURRENT PLAYER WIN: " + currentPlayer.getName());
 			}
 			if (p.isGameWinner()) {
 				status += " " + Config.GAME_WINNER + " " + p.getName();
@@ -513,7 +517,6 @@ public class GameEngine {
 			temp++;
 			for (int i = 0; i < drawDeck.size(); i++) {
 				if (c.getType().equals(drawDeck.get(i).getType()) && (c.getValue() == drawDeck.get(i).getValue())) {
-					System.out.println("\n Removed Card number " + temp + ": " + drawDeck.get(i).getType() + " " + drawDeck.get(i).getValue());
 					drawDeck.remove(i);
 					break;
 				}
@@ -562,7 +565,17 @@ public class GameEngine {
 	}
 	
 	public void announceWinner() {
-		currentPlayer.setWinner(true);
+		int points = players.get(0).getTotalCardValue();
+		for (Player p: players) {
+			if (p.getTotalCardValue() > points) {
+				points = p.getTotalCardValue();
+			}
+		}
+		for (Player p: players) {
+			if (p.getTotalCardValue() == points) {
+				p.setWinner(true);
+			}
+		}
 		if ((((tournamentColour == Config.PURPLE) && choosePurple == true) || (tournamentColour != Config.PURPLE)) 
 			&& (!currentPlayer.getCurrentTokens().contains(tournamentColour))) {
 			currentPlayer.addToken(tournamentColour);
@@ -580,6 +593,7 @@ public class GameEngine {
 			p.setWinner(false);
 			p.setDisplay(new ArrayList<Card>());
 			p.setStartTokenColour("nil");
+			p.resetTotalCardValue();
 		}
 		turnNumber = 0;
 	}
