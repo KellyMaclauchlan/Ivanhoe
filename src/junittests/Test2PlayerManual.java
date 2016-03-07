@@ -109,7 +109,7 @@ public class Test2PlayerManual {
     	assertEquals(Config.PURPLE, game.getPlayers().get(1).getStartTokenColour());
     	
     	//test correct number of players
-    	int players = game.getNumPlayers();
+    	int players = game.getPlayers().size();
     	assertEquals(2, players);
     	
     	//test that the draw deck has the correct number of cards

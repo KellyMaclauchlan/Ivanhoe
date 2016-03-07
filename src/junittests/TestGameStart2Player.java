@@ -9,9 +9,11 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import config.Config;
 import game.Card;
 import game.GameEngine;
 import game.Player;
+import game.SupportCard;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
@@ -35,9 +37,10 @@ public class TestGameStart2Player {
     	Player player2 = new Player("Kelly");
     	game.joinGame(player1);
     	game.joinGame(player2);
-    	
+
 		System.out.println("startGame");
     	game.startGame();
+    	
     	
 	}
     
@@ -49,7 +52,7 @@ public class TestGameStart2Player {
     @Test
     public void test1StartGame() {
     	System.out.println("@Test(): Starting game");
-    	
+
     	//players randomly pick colour tokens to determine who starts the game
     	game.pickTokens();
     	game.startGame();
@@ -57,8 +60,10 @@ public class TestGameStart2Player {
     	//get the first (only) two players from the players array, and ensure that the number of players is correct
     	Player player1 =  game.getPlayers().get(0);
     	Player player2 = game.getPlayers().get(1);
-    	int players = game.getNumPlayers();
+    	int players = game.getPlayers().size();
     	assertEquals(2, players);
+    	int totalDeck = game.getDrawDeck().size() + player1.getCards().size() + player2.getCards().size();
+    	assertEquals(110, totalDeck);
 
     	//make sure that the current player is the first in the players array 
     	assertEquals(game.getCurrentPlayer(), player1);
@@ -112,14 +117,35 @@ public class TestGameStart2Player {
     @Test
     public void test4SecondPlay() {
     	Player player = game.getCurrentPlayer();
-    	
+    	game.setTournamentColour(Config.PURPLE);
     	//for this test, we will choose the first playable card and all subsequent playable cards
     	for (Card cardToPlay: player.getPlayPossibilities(game)) {
     		game.playCard(cardToPlay);
     		player.getPlayPossibilities(game).remove(cardToPlay);
     	}
     	
+
+    	player.addCard(new SupportCard(Config.MAIDEN, 6));
+    	player.addCard(new SupportCard(Config.MAIDEN, 6));
+    	String maiden1 = game.processPlay("play maiden 6");
+    	String maiden2 = game.processPlay("play maiden 6");
+    	
+    	assertEquals("waiting maiden_6", maiden1);
+    	assertEquals(Config.UNPLAYABLE, maiden2);
+       	
+    	//Test that the first player now has cards on their display
+    	assertTrue(player.getDisplay().size() > 0);
+    	
+    	//Test that the first player now has a total card value greater than 0
+    	assertTrue(player.getTotalCardValue() > 0);
+
     	
     	game.endTurn();	
+    	
+    	//make sure that ending the first players turn shifts current player to the next player
+    	assertTrue(game.getCurrentPlayer() != player);
+    	assertEquals(game.getCurrentPlayer(), game.getPlayers().get(1));
+    	
     }
+ 
 }
