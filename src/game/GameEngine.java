@@ -511,7 +511,6 @@ public class GameEngine {
 		// remove a number of cards from the draw deck (mostly for testing after cards are dealt)
 		int temp = 0;
 		for (Card c: cards) {
-			System.out.print("\n Card c: " + c.getType() + " " + c.getValue());
 			temp++;
 			for (int i = 0; i < drawDeck.size(); i++) {
 				if (c.getType().equals(drawDeck.get(i).getType()) && (c.getValue() == drawDeck.get(i).getValue())) {
@@ -581,7 +580,7 @@ public class GameEngine {
 			currentPlayer.addToken(tournamentColour);
 		}
 		if ((numPlayers <= 3) && (winner.getCurrentTokens().size() == 5)) {
-			System.out.println("GAME WINNER");
+
 			winner.setGameWinner(true);
 		} else if ((numPlayers >= 4) && (winner.getCurrentTokens().size() == 4)) {
 			winner.setGameWinner(true);
