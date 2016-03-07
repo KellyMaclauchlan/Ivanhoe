@@ -154,6 +154,9 @@ public class Server implements Runnable {
 		else if (send.contains(Config.MAX)){
 			send1Client(id, send);
 		}
+		else if (send.contains(Config.UNPLAYABLE)){
+			send1Client(id, send);
+		}
 		
 		else if(send.contains(Config.PLAYER_NAME)){
 			sendAllClients(send);
@@ -166,11 +169,7 @@ public class Server implements Runnable {
 		// output = purple <player name> turn <player name> (first turn) <card picked up> 
 		// OR output = turn <player name> <card picked up> (subsequent turns)
 		else if(send.contains(Config.TURN)){			
-			/*if(send.contains(Config.PICKED_PURPLE)){
-				send1Client(id, send);
-			}else{
-				
-			}*/
+
 			send1Client(id, send);
 			
 		}

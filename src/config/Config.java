@@ -36,7 +36,7 @@ public class Config {
 	public static String COLOUR = "colour";
 	public static String CONTINUE = "continue";
 	public static String MAX = "maximum " + MAX_PLAYERS;
-	public static String UNPLAYABLE = "unplayable";
+	public static String UNPLAYABLE = "NOPE";
 	public static String FIRSTPLAYER = "firstplayer";
 	public static String WAITING = "waiting";
 	public static String PURPLE_WIN = "win purple";

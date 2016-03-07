@@ -119,7 +119,7 @@ public class GameEngine {
 		String colour = pick[1];
 		currentPlayer.chooseTournamentColour(colour);
 		startTurn();
-		output = Config.PLAY + " " + colour;
+		output = Config.COLOUR + " " + colour;
 		return output;
 	}
 	

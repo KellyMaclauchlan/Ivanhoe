@@ -238,6 +238,13 @@ public class Client implements Runnable, Observer {
 			output = processPlay(msg);
 		}
 		
+		/*
+		 * set tournament colour
+		 */
+		else if (msg.contains(Config.COLOUR)) {
+			output = processColour(msg);
+		}
+		
 		/* Server is waiting for the next card to be played 
 		 * Input:
 		 * 	Card picked is playable: waiting <card played> 
@@ -368,7 +375,7 @@ public class Client implements Runnable, Observer {
 		return output;
 	}
 	
-	public String processPlay(String msg){
+	public String processColour(String msg) {
 		String output = "result";
 		String input[] = msg.split(" ");
 		
@@ -378,6 +385,20 @@ public class Client implements Runnable, Observer {
 					window.setTournamentColour(i);
 			}
 		}
+		return output;
+	}
+	
+	public String processPlay(String msg){
+		String output = "result";
+		String input[] = msg.split(" ");
+		
+		/*
+		for(int i = 0; i < 5; i++){
+			if (input[1].equalsIgnoreCase(options[i])){
+					window.setTournamentColour(i);
+			}
+		}*/
+		
 		if(input.length != 2){
 			output = msg;
 		}
@@ -388,7 +409,7 @@ public class Client implements Runnable, Observer {
 	private String playACard() {
 		String output;
 		while(this.playedCards == null){}
-
+		System.out.println("PLAYED CARDS: " + playedCards);
 		// if the player choose to withdraw
 		if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
 			output = Config.WITHDRAW;
@@ -411,10 +432,10 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processWaiting(String msg){
-		System.out.println("in processe waiting");
 		String output = "result";
 		// if the client cannot play that card 
 		if(msg.contains(Config.UNPLAYABLE)){
+			window.addCard(window.lastCard);
 			window.cantPlayCardPopup();
 		}
 		else{
@@ -425,10 +446,6 @@ public class Client implements Runnable, Observer {
 			if(window.getCurrPlayer() == window.getPlayerNum()){
 				window.removeCard(card);
 			}
-		}
-		
-		if(window.getCurrPlayer() == window.getPlayerNum()){
-			//output = playACard();			
 		}
 		return output;
 	}
