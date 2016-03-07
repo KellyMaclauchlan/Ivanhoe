@@ -83,7 +83,6 @@ public class MainWindowController implements Observer, Subject{
 	public void setPlayerTurn(int i){this.currPlayer = i;}
 	public void setPlayerNum(int player) {playerNum = player;}
 	public void setTotalPlayers(int totalPlayers) {this.totalPlayers = totalPlayers;}
-	//public void setTournamentColour(int tournamentColour) {this.tournamentColour = tournamentColour;}
 	
 	public int getPlayerByName(String name) {
 		int player = playerNames.indexOf(name);
@@ -131,7 +130,18 @@ public class MainWindowController implements Observer, Subject{
 	
 	/* Popups */
 	public String setTournament(){
-		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+		//String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+		ArrayList<String> colours = new ArrayList<>();
+		for (Card c: playerCards) {
+			if (!colours.contains(c.getType()) && c.getCardType().equals(Config.COLOUR)) {
+				colours.add(c.getType());
+				System.out.println("Colour added: " + c.getType());
+			}
+		}
+		String[] options = new String[colours.size()];
+		for (int i = 0; i < colours.size(); i++) {
+			options[i] = colours.get(i);
+		}
 	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		log.info("Tournament colour has been set to " + options[response]);
 	    return options[response];
@@ -162,13 +172,13 @@ public class MainWindowController implements Observer, Subject{
 		};
 	public String playerPickToken(){
 		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
-		String have ="";
+		String need ="";
 		for (int i = 0; i < 5; i++){
-			if(window.hasTokens[playerNum][i]){
-				have += options[i]+" ";
+			if(!window.hasTokens[playerNum][i]){
+				need += options[i]+" ";
 			}
 		}
-	    int response = JOptionPane.showOptionDialog(null, "Pick a token colour, you already have:"+have, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+	    int response = JOptionPane.showOptionDialog(null, "Pick a token colour. You still need: " + need, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		String output = options[response];
 	    log.info("the player picked " + output);
 	    return output;
