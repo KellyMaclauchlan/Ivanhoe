@@ -351,7 +351,7 @@ public class GameEngine {
 				System.out.println("CURRENT PLAYER WIN: " + currentPlayer.getName());
 			}
 			if (p.isGameWinner()) {
-				output = " " + Config.GAME_WINNER + " " + p.getName();
+				status += " " + Config.GAME_WINNER + " " + p.getName();
 				currentPlayer = p;
 			}
 			
@@ -565,7 +565,17 @@ public class GameEngine {
 	}
 	
 	public void announceWinner() {
-		currentPlayer.setWinner(true);
+		int points = players.get(0).getTotalCardValue();
+		for (Player p: players) {
+			if (p.getTotalCardValue() > points) {
+				points = p.getTotalCardValue();
+			}
+		}
+		for (Player p: players) {
+			if (p.getTotalCardValue() == points) {
+				p.setWinner(true);
+			}
+		}
 		if ((((tournamentColour == Config.PURPLE) && choosePurple == true) || (tournamentColour != Config.PURPLE)) 
 			&& (!currentPlayer.getCurrentTokens().contains(tournamentColour))) {
 			currentPlayer.addToken(tournamentColour);
