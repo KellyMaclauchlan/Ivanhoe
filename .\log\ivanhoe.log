@@ -11268,4 +11268,122 @@
 @2016-Mar-07 05:46:02 INFO  Client:130 - Message Received: input
 @2016-Mar-07 05:46:06 INFO  Server:112 - Message Received: null
 @2016-Mar-07 05:46:08 INFO  Server:112 - Message Received: null
+@2016-Mar-07 11:56:43 INFO  UI:128 - Total number of players is: 3
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:128 - Total number of players is: 3
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:343 - Cards have been reset
+@2016-Mar-07 11:56:43 INFO  UI:256 - Card removed
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:128 - Total number of players is: 3
+@2016-Mar-07 11:56:43 INFO  UI:268 - Player [game.ColourCard@57536d79] added game.ColourCard@57536d79 to their hand
+@2016-Mar-07 11:56:43 INFO  UI:128 - Total number of players is: 3
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:56:43 INFO  UI:326 - Played card purple 4
+@2016-Mar-07 11:56:43 INFO  UI:128 - Total number of players is: 3
+@2016-Mar-07 11:59:07 INFO  UI:128 - Total number of players is: 3
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:128 - Total number of players is: 3
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:343 - Cards have been reset
+@2016-Mar-07 11:59:07 INFO  UI:256 - Card removed
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:128 - Total number of players is: 3
+@2016-Mar-07 11:59:07 INFO  UI:268 - Player [game.ColourCard@57536d79] added game.ColourCard@57536d79 to their hand
+@2016-Mar-07 11:59:07 INFO  UI:128 - Total number of players is: 3
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:07 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:08 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:08 INFO  UI:246 - Adding new card
+@2016-Mar-07 11:59:08 INFO  UI:326 - Played card purple 4
+@2016-Mar-07 11:59:08 INFO  UI:343 - Cards have been reset
+@2016-Mar-07 11:59:08 INFO  UI:261 - Card removed
+@2016-Mar-07 11:59:08 INFO  UI:128 - Total number of players is: 3
 @
