@@ -109,6 +109,10 @@ public class MainWindowController implements Observer, Subject{
 		if(currPlayer==this.playerNum){
 			window.startTurn();
 		}
+		for(int i=0;i<5;i++){
+			window.playerNames[i].setSelected(false);
+		}
+		window.playerNames[currPlayer].setSelected(true);
 	}
 	
 	public void setNumPlayers(int i){

@@ -2,3 +2,5 @@
 *.class
 bin/
 log/
+*.log
+*.jar
