@@ -288,14 +288,16 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processPlayerName(String msg){
+		msg=msg.substring(10);
 		String name[] = msg.split("name");
 		String card[];
 		String value[];
 		window.setNumPlayers(name.length);
-
-		for(int i = 1; i < name.length; i++){
+		System.out.println("number of players is :"+name.length);
+		System.out.println("Name: "+name[0]);
+		for(int i = 0; i < name.length; i++){
 			card = name[i].split(" ");
-			
+			System.out.println("Name: "+name[i]);
 			//if this player is the user
 			if(card[1].equalsIgnoreCase(window.playerName)){
 				for(int k = 3; k < card.length; k++){
