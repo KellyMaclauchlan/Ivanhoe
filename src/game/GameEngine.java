@@ -130,7 +130,6 @@ public class GameEngine {
 		String type = play[1];
 		String value = play[2];
 		Card card = null;
-		boolean hasMaiden = false;
 		for (Card c: currentPlayer.getCards()) {
 			if (type.equals(c.getType()) && value.equals(Integer.toString(c.getValue()))) {
 				card = c;
@@ -141,23 +140,13 @@ public class GameEngine {
 			if (tournamentColour.equals(Config.GREEN) && card.getValue() > 1) {
 				card.setValue(1);
 			}
-			if (card.getType().equals(Config.MAIDEN)) {
-				for (Card c: currentPlayer.getDisplay()) {
-					if (c.getType().equals(Config.MAIDEN)) {
-						hasMaiden = true;
-						output = Config.UNPLAYABLE;
-					}
+			playCard(card);
+			for (Card c: currentPlayer.getFront()) {
+				if (c.getType().equals(Config.STUNNED)) {
+					output = Config.STUNNED;
 				}
 			}
-			if (!hasMaiden) {
-				playCard(card);
-				for (Card c: currentPlayer.getFront()) {
-					if (c.getType().equals(Config.STUNNED)) {
-						output = Config.STUNNED;
-					}
-				}
-				output += " " + type + "_" + value;
-			}
+			output += " " + type + "_" + value;
 		} else if (card.getType().equals(Config.ACTION)) {
 			output += processActionCard((ActionCard) card, input);
 		} else {
@@ -485,6 +474,7 @@ public class GameEngine {
 		currentPlayer.removeCard(card);
 		//add card to where it should be added (display, front, discard)
 		currentPlayer.setTotalCardValue();
+		System.out.println("PLAYER TOTAL CARD VALUE: " + currentPlayer.getTotalCardValue());
 	}
 	
 	public Card pickupCard() {
