@@ -307,7 +307,7 @@ public class Client implements Runnable, Observer {
 				window.setPlayerNum(i);
 			}
 			//set name on gui
-			window.setName(i-1, card[1]);
+			window.setName(i, card[1]);
 			
 		}
 		window.showWindow();
@@ -494,6 +494,7 @@ public class Client implements Runnable, Observer {
 			}
 		}else{
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				window.setCurrPlayer(winningPlayer);
 				String chosenColour = input[5];
 				System.out.println("CHOSEN COLOUR: " + chosenColour);
 				for(int i = 0; i < 5; i++){
@@ -504,7 +505,6 @@ public class Client implements Runnable, Observer {
 							}
 					}
 				}
-				window.setCurrPlayer(winningPlayer);
 				if (!(window.getTournamentColour() == 4) || purpleChosen) {
 					window.addToken(window.getCurrPlayer(), window.getTournamentColour());
 					purpleChosen = false;
