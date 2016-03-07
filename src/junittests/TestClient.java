@@ -35,16 +35,21 @@ public class TestClient {
 		System.out.println("@BeforeClass: TestClient");
 		server = new Server();
 		server.runServer(Config.DEFAULT_PORT);
-		client1 = new Client();
-		c1 = client1.connectToServer("127.0.0.1", 3000);
-		client2 = new Client();
-		c2 = client2.connectToServer("127.0.0.1", 3000);
-		client3 = new Client();
-		c3 = client3.connectToServer("127.0.0.1", 3000);
-		client4 = new Client();
-		c4 = client4.connectToServer("127.0.0.1", 3000);
-		client5 = new Client();
-		c5 = client5.connectToServer("127.0.0.1", 3000);
+		
+		client1 = new Client("127.0.0.1", 3000);
+		c1 = client1.getSuccessConnect();
+		
+		client2 = new Client("127.0.0.1", 3000);
+		c2 = client2.getSuccessConnect();
+		
+		client3 = new Client("127.0.0.1", 3000);
+		c3 = client3.getSuccessConnect();
+		
+		client4 = new Client("127.0.0.1", 3000);
+		c4 = client4.getSuccessConnect();
+		
+		client5 = new Client("127.0.0.1", 3000);
+		c5 = client5.getSuccessConnect();		
 	}
 	
 	@Before
@@ -91,7 +96,8 @@ public class TestClient {
 		assertTrue(c5);
 		
 		client6 = new Client();
-		c6 = client6.connectToServer("127.0.0.1", 3000);
+		//c6 = client6.connectToServer("127.0.0.1", 3000);
+		c6 = client6.getSuccessConnect();
 		assertFalse(c6);
 		
 		assertFalse(server.testMaxPlayers());
@@ -102,7 +108,8 @@ public class TestClient {
 		System.out.println("@Test: testMessage1");
 		assertTrue(c1); 
 		
-		String message = "Test message 1";
+		//String message = Config.FIRSTPLAYER;
+		String message = "firstplayer";
 		int id = client1.getID();
 		server.handle(id, message);
 		assertEquals(message, client1.testMessages());
@@ -113,7 +120,7 @@ public class TestClient {
 		System.out.println("@Test: testMessage2");
 		assertTrue(c2); 
 		
-		String message = "Test message 2";
+		String message = Config.PROMPT_JOIN;
 		int id = client2.getID();
 		server.handle(id, message);
 		assertEquals(message, client2.testMessages());
@@ -124,7 +131,7 @@ public class TestClient {
 		System.out.println("@Test: testMessage3");
 		assertTrue(c3); 
 		
-		String message = "Test message 3";
+		String message = Config.PROMPT_JOIN;
 		int id = client3.getID();
 		server.handle(id, message);
 		assertEquals(message, client3.testMessages());
@@ -135,7 +142,7 @@ public class TestClient {
 		System.out.println("@Test: testMessage4");
 		assertTrue(c4); 
 		
-		String message = "Test message 4";
+		String message = Config.PROMPT_JOIN;
 		int id = client4.getID();
 		server.handle(id, message);
 		assertEquals(message, client4.testMessages());
@@ -146,7 +153,7 @@ public class TestClient {
 		System.out.println("@Test: testMessage5");
 		assertTrue(c5); 
 		
-		String message = "Test message 5";
+		String message = Config.PROMPT_JOIN;
 		int id = client5.getID();
 		server.handle(id, message);
 		assertEquals(message, client5.testMessages());

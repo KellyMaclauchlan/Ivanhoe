@@ -32,19 +32,27 @@ public class Client implements Runnable, Observer {
 	public boolean currentPlayer = false; 
 	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 	private boolean purpleChosen = false;
+	private boolean successConnect = false; 
 
 	public Client(){
 		window = new MainWindowController();
 		window.registerObserver(this);
 		String ipAndPort = window.getIPPortFromPlayer();
 		String seperate[] = ipAndPort.split(" ");
-		this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
+		this.successConnect = this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
 		this.currentPlayer = false; 
+	}
+	
+	public Client(String ip, int port){
+		this.successConnect = this.connectToServer(ip, port);
 	}
 
 	public int getID(){
 		return this.ID;
 	}
+	
+	public boolean getSuccessConnect(){return this.successConnect;}
+	
 	
 	/* Used for Testing to check when the Client connects to the server */
 	public boolean connectToServer(String serverIP, int serverPort) {
