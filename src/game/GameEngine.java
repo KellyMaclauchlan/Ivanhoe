@@ -16,7 +16,6 @@ public class GameEngine {
 	private Player currentPlayer;
 	private int turnNumber = 0;
 	private boolean choosePurple = false;
-	private boolean purpleWinner;
 	
 	public GameEngine() {
 		players = new ArrayList<>();
@@ -302,7 +301,6 @@ public class GameEngine {
 		return actionable;
 	}
  	public String processPurpleWin(String input) {
- 		purpleWinner = true;
 		String output = "";
 		String[] purpleWin = input.split(" ");
 		String chosenColour = purpleWin[2];
@@ -313,11 +311,6 @@ public class GameEngine {
 	}
 	
 	public String processEndTurn() {
-		//TEMP FOR TESTING
-		for (Player p: players) {
-			System.out.println(p.getName() + " " + p.getTotalCardValue());
-		}
-		
 		String output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
 		Player prevPlayer = currentPlayer;
 		endTurn();
@@ -333,25 +326,17 @@ public class GameEngine {
 				status = " " + Config.PURPLE_WIN + " " + p.getName();
 				currentPlayer = p;
 				p.resetTotalCardValue();
-				System.out.println("CURRENT PLAYER PURPLE WIN: " + currentPlayer.getName());
-
+				
 			}
 			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple == true)) {
 				arrangePlayers();
 				resetPlayers();
-				//TEMP FOR TESTING
-
-				System.out.println("RESET PLAYERS");
-				for (Player pl: players) {
-					System.out.println(pl.getName() + " " + pl.getTotalCardValue());
-				}
 				status = " " + getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
 				choosePurple = false;
 				currentPlayer = p;
-				System.out.println("CURRENT PLAYER WIN: " + currentPlayer.getName());
 			}
 			if (p.isGameWinner()) {
-				status += " " + Config.GAME_WINNER + " " + p.getName();
+				output = " " + Config.GAME_WINNER + " " + p.getName();
 				currentPlayer = p;
 			}
 			
@@ -360,6 +345,7 @@ public class GameEngine {
 			Card picked = pickupCard();
 			status = " " + picked.getType() + "_" + picked.getValue();
 		}
+		
 		output += status;
 		return output;
 	}
@@ -565,6 +551,7 @@ public class GameEngine {
 	}
 	
 	public void announceWinner() {
+		Player winner = currentPlayer;
 		int points = players.get(0).getTotalCardValue();
 		for (Player p: players) {
 			if (p.getTotalCardValue() > points) {
@@ -574,16 +561,18 @@ public class GameEngine {
 		for (Player p: players) {
 			if (p.getTotalCardValue() == points) {
 				p.setWinner(true);
+				winner = p;
 			}
 		}
 		if ((((tournamentColour == Config.PURPLE) && choosePurple == true) || (tournamentColour != Config.PURPLE)) 
 			&& (!currentPlayer.getCurrentTokens().contains(tournamentColour))) {
 			currentPlayer.addToken(tournamentColour);
 		}
-		if ((numPlayers <= 3) && (currentPlayer.getCurrentTokens().size() == 5)) {
-			currentPlayer.setGameWinner(true);
-		} else if ((numPlayers >= 4) && (currentPlayer.getCurrentTokens().size() == 4)) {
-			currentPlayer.setGameWinner(true);
+		if ((numPlayers <= 3) && (winner.getCurrentTokens().size() == 5)) {
+			System.out.println("GAME WINNER");
+			winner.setGameWinner(true);
+		} else if ((numPlayers >= 4) && (winner.getCurrentTokens().size() == 4)) {
+			winner.setGameWinner(true);
 		}
 	}
 	

@@ -276,7 +276,17 @@ public class Client implements Runnable, Observer {
 			String name = withdrawString[0];
 			window.playerWithdraws(name); 
 		}
-
+		
+		/*
+		 * Game winner announcement 
+		 */
+		if(msg.contains(Config.GAME_WINNER)){
+			String[] input = msg.split(" ");
+			String winner = input[input.length - 1];
+			int player = window.getPlayerByName(winner);
+			window.addToken(player, window.getTournamentColour());
+			window.GameOverPopup(winner);
+		}
 		return output; 
 	}
 	
@@ -513,10 +523,7 @@ public class Client implements Runnable, Observer {
 				
 				output = Config.START_TOURNAMENT;
 			}
-			if(msg.contains(Config.GAME_WINNER)){
-				String winner = input[input.length - 1];
-				window.GameOverPopup(winner);
-			}
+			
 			if(!msg.contains(Config.TOURNAMENT_WINNER)){
 				window.setScore(window.getCurrPlayer(), Integer.parseInt(score));
 				
