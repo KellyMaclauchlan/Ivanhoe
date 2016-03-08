@@ -108,8 +108,7 @@ public class TestClient {
 		System.out.println("@Test: testMessage1");
 		assertTrue(c1); 
 		
-		//String message = Config.FIRSTPLAYER;
-		String message = "firstplayer";
+		String message = Config.FIRSTPLAYER;
 		int id = client1.getID();
 		server.handle(id, message);
 		assertEquals(message, client1.testMessages());
