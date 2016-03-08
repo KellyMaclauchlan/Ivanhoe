@@ -409,7 +409,6 @@ public class Client implements Runnable, Observer {
 	private String playACard() {
 		String output;
 		while(this.playedCards == null){}
-		System.out.println("PLAYED CARDS: " + playedCards);
 		// if the player choose to withdraw
 		if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
 			output = Config.WITHDRAW;
