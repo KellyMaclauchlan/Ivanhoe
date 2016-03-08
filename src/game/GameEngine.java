@@ -11,7 +11,7 @@ public class GameEngine {
 	private String tournamentColour;
 	private ArrayList<Player> players;
 	private ArrayList<String> tokens;
-	private static ArrayList<Card> drawDeck;
+	private ArrayList<Card> drawDeck;
 	private ArrayList<Card> discardPile;
 	private Player currentPlayer;
 	private int turnNumber = 0;
@@ -32,7 +32,7 @@ public class GameEngine {
 				output = processJoin(input); // output = need players OR output = hand name <player name> cards <type_value> <type_value> ...
 			// input = begin tournament	
 			} else if (input.contains(Config.START_TOURNAMENT)) {	
-				output = processStartTournament(input); // output = purple <player name> turn <player name> (first turn) <card picked up> 
+				output = processStartTournament(); // output = purple <player name> turn <player name> (first turn) <card picked up> 
 														// OR output = turn <player name> <card picked up> (subsequent turns)
 			// input = colour <colour>	
 			} else if (input.contains(Config.COLOUR_PICKED)) {
@@ -62,14 +62,15 @@ public class GameEngine {
 	}
 	
 	public String processStart(String input) {
-		String output = "";
+		String output;
 
 		String[] start = input.split(" ");
 		numPlayers = Integer.valueOf(start[1]);
 		if (numPlayers > Config.MAX_PLAYERS) {
 			output = Config.MAX;
+		} else {
+			output = Config.PROMPT_JOIN;
 		}
-		output = Config.PROMPT_JOIN;
 		return output;
 	}
 	
@@ -95,10 +96,10 @@ public class GameEngine {
 		return output;
 	}
 	
-	public String processStartTournament(String input) {
+	public String processStartTournament() {
 		String output = "";
 		Card picked = pickupCard();
-		String purple = "";
+		String purple;
 		for (Player p: players) {
 			if (p.getStartTokenColour() == Config.PURPLE) {
 				purple = p.getName();
@@ -114,7 +115,7 @@ public class GameEngine {
 	}
 	
 	public String processColourPicked(String input) {
-		String output = "";
+		String output;
 		String[] pick = input.split(" ");
 		String colour = pick[1];
 		currentPlayer.chooseTournamentColour(colour);
@@ -175,7 +176,9 @@ public class GameEngine {
 		if (card.getType().equals(Config.UNHORSE)) {
 			//input = play unhorse <colour>
 			String colour = cardString[2];
-			if (tournamentColour.equals(Config.PURPLE)) card.playUnhorse(this, colour);
+			if (tournamentColour.equals(Config.PURPLE)) { 
+				card.playUnhorse(this, colour);
+			}
 		output += colour; //output = waiting <card played> <colour chosen>
 		} else if (card.getType().equals(Config.CHANGEWEAPON)) {
 				//input = play changeweapon <colour>
@@ -222,7 +225,7 @@ public class GameEngine {
 				String value = cardString[4];
 				Player player = getPlayerByName(playerName);
 				for (Card c: player.getDisplay()) {
-					if (c.getType().equals(type) && Integer.valueOf(c.getValue()).equals(value)) {
+					if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
 						card.playDodge(player, c);
 						break;
 					}
@@ -234,7 +237,7 @@ public class GameEngine {
 				String type = cardString[2];
 				String value = cardString[3];
 				for (Card c: currentPlayer.getDisplay()) {
-					if (c.getType().equals(type) && Integer.valueOf(c.getValue()).equals(value)) {
+					if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
 						card.playRetreat(this, c);
 					}
 				}
@@ -272,13 +275,13 @@ public class GameEngine {
 				output += updateDisplays();
 				//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
 			} else if (card.getType().equals(Config.OUTWIT)) {
-				
+				//TO DO
 			} else if (card.getType().equals(Config.SHIELD)) {
-				
+				//TO DO
 			} else if (card.getType().equals(Config.STUNNED)) {
-				
+				//TO DO
 			} else if (card.getType().equals(Config.IVANHOE)) {
-				
+				//TO DO
 			}
 		
 		return output;
@@ -298,6 +301,7 @@ public class GameEngine {
 		//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
 	}
 
+	//TO DO: Change back to ArrayList if this does not work
 	public ArrayList<Player> getActionablePlayers() {
 		ArrayList<Player> actionable = new ArrayList<>();
 		for (Player p: players) {
@@ -313,10 +317,12 @@ public class GameEngine {
 		return actionable;
 	}
  	public String processPurpleWin(String input) {
-		String output = "";
+		String output;
 		String[] purpleWin = input.split(" ");
 		String chosenColour = purpleWin[2];
-		if (chosenColour.equals(Config.PURPLE)) choosePurple = true;
+		if (chosenColour.equals(Config.PURPLE)) {
+			choosePurple = true;
+		}
 		setTournamentColour(chosenColour);
 		output = processEndTurn();
 		return output;
@@ -332,15 +338,15 @@ public class GameEngine {
 		}
 		output += " " + withdraw + " " + currentPlayer.getName();
 		startTurn();
-		String status = "";
+		String status = null;
 		for (Player p: players) {
-			if (p.isWinner() && tournamentColour.equals(Config.PURPLE) && choosePurple == false) {
+			if (p.isWinner() && tournamentColour.equals(Config.PURPLE) && !choosePurple) {
 				status = " " + Config.PURPLE_WIN + " " + p.getName();
 				currentPlayer = p;
 				p.resetTotalCardValue();
 				
 			}
-			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple == true)) {
+			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple)) {
 				arrangePlayers();
 				resetPlayers();
 				status = " " + getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
@@ -353,7 +359,7 @@ public class GameEngine {
 			}
 			
 		}
-		if(status.equalsIgnoreCase("")){
+		if (status == null){
 			Card picked = pickupCard();
 			status = " " + picked.getType() + "_" + picked.getValue();
 		}
@@ -368,7 +374,7 @@ public class GameEngine {
 
 	public void pickTokens() {
 		//add all tokens to token array, starting with purple
-		tokens = new ArrayList<String>();
+		tokens = new ArrayList<>();
 		tokens.add(Config.PURPLE);
 		tokens.add(Config.RED);
 		tokens.add(Config.BLUE);
@@ -460,7 +466,7 @@ public class GameEngine {
 		turnNumber ++;
 		if (turnNumber == 1) {
 			tournamentColour = currentPlayer.getTournamentColour();
-		} else if (currentPlayer.getPlayPossibilities(this).size() < 1) {
+		} else if (currentPlayer.getPlayPossibilities(this).isEmpty()) {
 			withdraw();
 		} 
 		int playersLeft = 0;
@@ -509,9 +515,11 @@ public class GameEngine {
 	
 	public void removeAllFromDeck(ArrayList<Card> cards) {
 		// remove a number of cards from the draw deck (mostly for testing after cards are dealt)
-		int temp = 0;
 		for (Card c: cards) {
+<<<<<<< HEAD
 			temp++;
+=======
+>>>>>>> lintBranch
 			for (int i = 0; i < drawDeck.size(); i++) {
 				if (c.getType().equals(drawDeck.get(i).getType()) && (c.getValue() == drawDeck.get(i).getValue())) {
 					drawDeck.remove(i);
@@ -558,7 +566,7 @@ public class GameEngine {
 			discardPile.add(c);
 			currentPlayer.removeFromDisplay(c);
 		}
-		currentPlayer.setDisplay(new ArrayList<Card>());
+		currentPlayer.setDisplay(new ArrayList<>());
 	}
 	
 	public void announceWinner() {
@@ -575,7 +583,7 @@ public class GameEngine {
 				winner = p;
 			}
 		}
-		if ((((tournamentColour == Config.PURPLE) && choosePurple == true) || (tournamentColour != Config.PURPLE)) 
+		if ((((tournamentColour == Config.PURPLE) && choosePurple) || (tournamentColour != Config.PURPLE)) 
 			&& (!currentPlayer.getCurrentTokens().contains(tournamentColour))) {
 			currentPlayer.addToken(tournamentColour);
 		}
@@ -613,7 +621,7 @@ public class GameEngine {
 	}
 	
 	public void setCurrentPlayer(Player currentPlayer) {
-		//TO DO: Set currentPlayer to the correct player in order of game rules
+		//Set currentPlayer to the correct player in order of game rules
 		this.currentPlayer = currentPlayer;
 	}
 
@@ -645,7 +653,7 @@ public class GameEngine {
 	}
 
 	public void createDeck() {
-		drawDeck = new ArrayList<Card>();
+		drawDeck = new ArrayList<>();
 		//purple
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
