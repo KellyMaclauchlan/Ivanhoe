@@ -44,6 +44,7 @@ public class Config {
 	public static String HAND = "hand";
 	public static String DISPLAY = "display"; 
 	public static String FROMUPDATE = "update";
+	public static String NOT_ENOUGH = "nobuenos";
 
 	/*UI messages*/
 	public static String LEFT_CLICK = "leftclick";
