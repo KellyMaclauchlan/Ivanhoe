@@ -203,6 +203,14 @@ public class Client implements Runnable, Observer {
 		else if(msg.contains(Config.FIRSTPLAYER)){
 			output = Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
 		}
+		
+		else if(msg.contains(Config.NOT_ENOUGH)){
+			/*
+			 * Kelly can you add another popup/alter the number of players popup
+			 * just added a check to make sure that you can only have between 2 and 5 players
+			 * 
+			 */
+		}
 
 		/* Once the player is connected, prompts that player for their name 
 		 * Input:  prompt join 

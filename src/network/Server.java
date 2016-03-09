@@ -126,7 +126,15 @@ public class Server implements Runnable {
 			}else{
 				send1Client(id, Config.PROMPT_JOIN);
 			}
-		} 
+		}
+		
+		else if(msg.contains(Config.START)){
+			String s[] = msg.split(" ");
+			
+			if(Integer.parseInt(s[1]) < 2 || Integer.parseInt(s[1]) > 5){
+				send1Client(id, Config.NOT_ENOUGH);
+			}
+		}
 		
 		else {
 			send = game.processInput(msg);
@@ -173,9 +181,7 @@ public class Server implements Runnable {
 			send1Client(id, send);
 			
 		}
-		
-		
-		// CHECK BRIT'S GAME ENGINE CHANGE ! 
+
 		// KATIE TO DO: If output = stunned <card played> then send me end turn
 		else if (send.contains(Config.PLAY)){
 			sendAllClients(send);
