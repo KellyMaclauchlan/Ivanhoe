@@ -361,7 +361,7 @@ public class Client implements Runnable, Observer {
 		if(msg.contains(Config.PICKED_PURPLE)){
 			
 				if(input[3].equalsIgnoreCase(window.playerName)){
-					this.window.window.startTurn();
+					window.window.startTurn();
 					String value[] = input[4].split("_");
 					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
 					output = Config.COLOUR_PICKED + " " + window.setTournament();

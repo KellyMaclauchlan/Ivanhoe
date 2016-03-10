@@ -6,6 +6,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.awt.Insets;
 import java.util.ArrayList;
 
@@ -66,11 +67,11 @@ public class MainWindow extends JFrame implements Subject {
 	
 	public MainWindow(){
 		super();
-		setTitle("Ivanho");
+		setTitle("Ivanhoe");
 		this.setSize(1360, 840);
 		//setSize(300, 200);
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		this.setFont(new Font("Helvetica",Font.PLAIN,35));
 		leftClick = false;
 		testing = true;
