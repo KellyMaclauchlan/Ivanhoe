@@ -6,7 +6,6 @@ import java.util.Arrays;
 public class Config {
 	public static final int DEFAULT_PORT = 3000; 
 	public static final String DEFAULT_HOST = "127.0.0.1";
-	
 	public static final int MAX_PLAYERS = 5; 
 	
 	/* Network Messages */
@@ -17,39 +16,57 @@ public class Config {
 	/* Client to Server messages:  
 	 * Commands made by the players will send strings to the server and with those strings
 	 * the server will call the games engine to return a response */
+	
+	/* Client's joining a game */
 	public static final String CLIENT_START = "client";
 	public static final String START = "start";
 	public static final String PROMPT_JOIN = "prompt join";
 	public static final String JOIN = "join";
-	public static final String PLAYER_NAME = "name";
-	public static final String PLAYER_CARDS = "cards";
 	public static final String NEED_PLAYERS = "need players";
-	public static final String START_TOURNAMENT = "begin tournament";
-	public static final String PLAY = "play"; 
-	public static final String END_TURN = "end";
-	public static final String POINTS = "points";
-	public static final String TOURNAMENT_WINNER = "winner";
-	public static final String GAME_WINNER = "game winner";
-	public static final String PICK_COLOUR = "pick a colour";
-	public static final String COLOUR_PICKED = "colour";
-	public static final String PICKED_PURPLE = "pickedpurple";
-	public static final String TURN = "turn";
-	public static final String COLOUR = "colour";
-	public static final String CONTINUE = "continue";
-	public static final String MAX = "maximum " + MAX_PLAYERS;
-	public static final String UNPLAYABLE = "NOPE";
-	public static final String FIRSTPLAYER = "firstplayer";
-	public static final String WAITING = "waiting";
-	public static final String PURPLE_WIN = "win purple";
-	public static final String WITHDRAW = "withdraw";
-	public static final String HAND = "hand";
-	public static final String DISPLAY = "display"; 
-	public static final String FROMUPDATE = "update";
 	public static final String NOT_ENOUGH = "nobuenos";
 	public static final String DUPLICATE = "duplicate";
 	public static final String NAME_APPROVED = "approve";
+	public static final String MAX = "maximum " + MAX_PLAYERS;
+	public static final String FIRSTPLAYER = "firstplayer";
+	public static final String WAITING = "waiting";
+	
+	/* Starting a tournament */
+	public static final String START_TOURNAMENT = "begin tournament";
+	public static final String PICK_COLOUR = "pick a colour";
+	public static final String COLOUR_PICKED = "colour";
+	public static final String PICKED_PURPLE = "pickedpurple";
+	
 
-	/*UI messages*/
+	/* Starting a new tournament */
+	public static final String PLAYER_NAME = "name";
+	public static final String PLAYER_CARDS = "cards";
+	public static final String COLOUR = "colour";
+	
+	
+	/* Playing a round */
+	public static final String PLAY = "play"; 
+	public static final String UNPLAYABLE = "NOPE";
+	public static final String HAND = "hand";
+	public static final String TURN = "turn";
+	
+	/* End of a round */
+	public static final String END_TURN = "end";
+	public static final String POINTS = "points";
+	public static final String CONTINUE = "continue";
+	public static final String WITHDRAW = "withdraw";
+	
+	
+	/* End of a tournament/game */
+	public static final String TOURNAMENT_WINNER = "winner";
+	public static final String GAME_WINNER = "game winner";
+	public static final String PURPLE_WIN = "win purple";
+	
+	/* Observer */
+	public static final String DISPLAY = "display"; 
+	public static final String FROMUPDATE = "update";
+
+
+	/* UI messages */
 	public static final String LEFT_CLICK = "leftclick";
 	public static final String RIGHT_CLICK = "rightclick";
 	public static final String WITHDRAW_CLICK = "withdrawclick";
@@ -57,8 +74,6 @@ public class Config {
 	public static final String PLAYEDCARD = "playedcard";
 	public static final String VIEWDISPLAY = "viewdisplay";
 	
-	
-	/* Card names */
 	/* Coloured Cards */
 	public static final String PURPLE = "purple";
 	public static final String RED = "red";

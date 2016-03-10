@@ -48,10 +48,10 @@ public class Client implements Runnable, Observer {
 	}
 
 	public int getID(){return this.id;}
-	
+	/* Used for testing the strings sent from the server to the client */
+	public String testMessages() {return testing;}
 	public boolean getSuccessConnect(){return this.successConnect;}
-	
-	
+
 	/* Used for Testing to check when the Client connects to the server */
 	public boolean connectToServer(String serverIP, int serverPort) {
 		log.info(id + ":Establishing connection. Please wait... ");
@@ -156,10 +156,6 @@ public class Client implements Runnable, Observer {
 		}
 	}
 
-	/* Used for testing the strings sent from the server to the client */
-	public String testMessages() {
-		return testing;
-	}
 
 	@Override
 	public void update(String message) {
@@ -294,9 +290,11 @@ public class Client implements Runnable, Observer {
 				output = processContinueWithdraw(msg);	
 			}
 		}
+		
 		else if(msg.contains(Config.END_TURN)){
 			output = Config.END_TURN;
 		}
+		
 		else if (msg.contains(Config.WITHDRAW)) {
 			String[] withdrawString = msg.split(" ");
 			String name = withdrawString[0];
@@ -306,7 +304,7 @@ public class Client implements Runnable, Observer {
 		/*
 		 * Game winner announcement 
 		 */
-		if(msg.contains(Config.GAME_WINNER)){
+		else if(msg.contains(Config.GAME_WINNER)){
 			String[] input = msg.split(" ");
 			String winner = input[input.length - 1];
 			int player = window.getPlayerByName(winner);
