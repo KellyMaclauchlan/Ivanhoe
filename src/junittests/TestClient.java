@@ -96,7 +96,6 @@ public class TestClient {
 		assertTrue(c5);
 		
 		client6 = new Client();
-		//c6 = client6.connectToServer("127.0.0.1", 3000);
 		c6 = client6.getSuccessConnect();
 		assertFalse(c6);
 		

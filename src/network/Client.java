@@ -18,18 +18,18 @@ import game.ColourCard;
 import game.SupportCard;
 
 public class Client implements Runnable, Observer {
-	public int ID = 0;
-	public Socket socket = null;
-	public Thread thread = null;
-	public ClientThread client = null;
-	public MainWindowController window = null;
-	public BufferedReader inStream = null;
-	public BufferedWriter outStream = null;
-	public String testing = null;
-	public ArrayList<String> hand = new ArrayList<String>();
-	public String playedCards = null;	
-	public Logger log = Logger.getLogger("Client");
-	public boolean currentPlayer = false; 
+	private int id = 0;
+	private Socket socket = null;
+	private Thread thread = null;
+	private ClientThread client = null;
+	private MainWindowController window = null;
+	private BufferedReader inStream = null;
+	private BufferedWriter outStream = null;
+	private String testing = null;
+	private ArrayList<String> hand = new ArrayList<String>();
+	private String playedCards = null;	
+	private Logger log = Logger.getLogger("Client");
+	private boolean currentPlayer = false; 
 	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 	private boolean purpleChosen = false;
 	private boolean successConnect = false; 
@@ -47,24 +47,22 @@ public class Client implements Runnable, Observer {
 		this.successConnect = this.connectToServer(ip, port);
 	}
 
-	public int getID(){
-		return this.ID;
-	}
+	public int getID(){return this.id;}
 	
 	public boolean getSuccessConnect(){return this.successConnect;}
 	
 	
 	/* Used for Testing to check when the Client connects to the server */
 	public boolean connectToServer(String serverIP, int serverPort) {
-		log.info(ID + ":Establishing connection. Please wait... ");
+		log.info(id + ":Establishing connection. Please wait... ");
 		boolean connected = false;
 		
 		try{
 			this.socket = new Socket(serverIP, serverPort);
-			this.ID = socket.getLocalPort(); 
+			this.id = socket.getLocalPort(); 
 			
-			log.info(ID + ": Connected to server: " + socket.getInetAddress());
-	    	log.info(ID + ": Connected to portid: " + socket.getLocalPort());
+			log.info(id + ": Connected to server: " + socket.getInetAddress());
+	    	log.info(id + ": Connected to portid: " + socket.getLocalPort());
 	    	
 	    	this.start();
 	    	log.info("Client has started");
@@ -97,13 +95,14 @@ public class Client implements Runnable, Observer {
 		}
 	}
 
+	@Override
 	public void run() {
 		while (thread != null) {  
 			try {  
 				if (outStream != null) {
 					outStream.flush();
 				} else {
-					log.info(ID + ": Stream Closed");
+					log.info(id + ": Stream Closed");
 				}
          }
          catch(IOException e) {  
@@ -116,10 +115,13 @@ public class Client implements Runnable, Observer {
 		try{
 			if(thread != null){
 				thread = null;
-				if(inStream != null){inStream.close();}
-				if(outStream != null){outStream.close();}
+				if(inStream != null){
+					inStream.close();}
+				if(outStream != null){
+					outStream.close();}
 				
-				if(socket != null){socket.close();}
+				if(socket != null){
+					socket.close();}
 				
 				this.socket = null;
 				this.inStream = null;
@@ -137,8 +139,8 @@ public class Client implements Runnable, Observer {
 		System.out.println("Message received: " + msg);
 		log.info("Message Received: " + msg);
 		
-	   	if (msg.equalsIgnoreCase("quit!")) {  
-				log.info(ID + " has left the game");
+	   	if (msg.equalsIgnoreCase(Config.QUIT)) {  
+				log.info(id + " has left the game");
 				stop();
 				
 	   	}else if(msg.contains("input")){
@@ -162,6 +164,7 @@ public class Client implements Runnable, Observer {
 	@Override
 	public void update(String message) {
 		String send = Config.FROMUPDATE;
+		
 		if(message.contains(Config.PLAYEDCARD)){
 			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
 			send = this.playACard();
@@ -178,7 +181,6 @@ public class Client implements Runnable, Observer {
 		try {
 			this.handle(send);
 		} catch (IOException e) {
-			e.printStackTrace();
 			log.error(e);
 		}
 	}
@@ -203,25 +205,26 @@ public class Client implements Runnable, Observer {
 		else if(msg.contains(Config.FIRSTPLAYER)){
 			output = Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
 		}
-		
+
+		/* Re-prompts the first player for the number of players because they have entered a number
+		 * smaller then 2 or larger than 5
+		 * Input: nobuenos
+		 * Output: start #
+		 */
 		else if(msg.contains(Config.NOT_ENOUGH)){
-			/*
-			 * Kelly can you add another popup/alter the number of players popup
-			 * just added a check to make sure that you can only have between 2 and 5 players
-			 * 
-			 */
+			output = Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
 		}
 
 		/* Once the player is connected, prompts that player for their name 
 		 * Input:  prompt join 
 		 * Output: join <name>
 		 * */
-		else if(msg.contains(Config.PROMPT_JOIN)){
+		else if(msg.contains(Config.PROMPT_JOIN) || msg.contains(Config.DUPLICATE)){
 			output = processPromptJoin(msg);
 		}
 		
 		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
-		else if(msg.contains(Config.NEED_PLAYERS)){
+		else if(msg.contains(Config.NEED_PLAYERS) || msg.contains(Config.NAME_APPROVED)){
 			this.window.showWaiting();
 
 		}
@@ -320,13 +323,14 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processPlayerName(String msg){
-		msg=msg.substring(10);
+		msg = msg.substring(10);
 		String name[] = msg.split("name");
 		String card[];
 		String value[];
 		window.setNumPlayers(name.length);
 		for(int i = 0; i < name.length; i++){
 			card = name[i].split(" ");
+			
 			//if this player is the user
 			if(card[1].equalsIgnoreCase(window.playerName)){
 				for(int k = 3; k < card.length; k++){
@@ -352,11 +356,10 @@ public class Client implements Runnable, Observer {
 		String input[] = msg.split(" ");
 		
 		this.window.showWindow();
-		//this.window.window.startTurn();
 
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
-			//if (input.length > 3) {
+			
 				if(input[3].equalsIgnoreCase(window.playerName)){
 					this.window.window.startTurn();
 					String value[] = input[4].split("_");
@@ -385,9 +388,6 @@ public class Client implements Runnable, Observer {
 				}
 			}
 		}
-		
-		//if(this.currentPlayer = false){this.window.window.endedTurn();}
-		//}
 		return output;
 	}
 	
@@ -407,14 +407,7 @@ public class Client implements Runnable, Observer {
 	public String processPlay(String msg){
 		String output = "result";
 		String input[] = msg.split(" ");
-		
-		/*
-		for(int i = 0; i < 5; i++){
-			if (input[1].equalsIgnoreCase(options[i])){
-					window.setTournamentColour(i);
-			}
-		}*/
-		
+
 		if(input.length != 2){
 			output = msg;
 		}
@@ -425,6 +418,7 @@ public class Client implements Runnable, Observer {
 	private String playACard() {
 		String output;
 		while(this.playedCards == null){}
+		
 		// if the player choose to withdraw
 		if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
 			output = Config.WITHDRAW;
@@ -527,7 +521,7 @@ public class Client implements Runnable, Observer {
 				String chosenColour = window.playerPickToken();
 				output = Config.PURPLE_WIN + " " + chosenColour;
 				for(int i = 0; i < 5; i++){
-					if (chosenColour.equalsIgnoreCase(options[i])){
+					if(chosenColour.equalsIgnoreCase(options[i])){
 							window.setTournamentColour(i);
 							if (chosenColour.equals(Config.PURPLE)) {
 								purpleChosen = true;

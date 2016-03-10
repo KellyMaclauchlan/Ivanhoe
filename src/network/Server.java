@@ -3,23 +3,23 @@ package network;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 import org.apache.log4j.Logger;
 
 import config.Config;
 import game.GameEngine;
 
 public class Server implements Runnable {
-	public int numPlayers = 0;
-	public Thread thread = null;
-	public ServerSocket server = null;
-	public HashMap<Integer, ServerThread> clients;
-	public Logger log = Logger.getLogger("Server");
-	public GameEngine game;
-	public Scanner sc = new Scanner(System.in);
-	public boolean minPlayers = false;
-	public boolean maxPlayers = false; 
+	private int numPlayers = 0;
+	private Thread thread = null;
+	private ServerSocket server = null;
+	private HashMap<Integer, ServerThread> clients;
+	private Logger log = Logger.getLogger("Server");
+	private GameEngine game;
+	private boolean minPlayers = false;
+	private boolean maxPlayers = false; 
+	private ArrayList<String> names = new ArrayList<String>();
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
@@ -30,12 +30,11 @@ public class Server implements Runnable {
 	
 	public void runServer(int port) {
 		try{
-			System.out.println("Binding to port " + port + ", please wait...");
 			log.info("Binding to port " + port + ", please wait...");
-			clients = new HashMap<Integer, ServerThread>();
-			server = new ServerSocket(port);
-			server.setReuseAddress(true);
-			start();
+			this.clients = new HashMap<Integer, ServerThread>();
+			this.server = new ServerSocket(port);
+			this.server.setReuseAddress(true);
+			this.start();
 		}catch(IOException e){
 			log.error(e);
 		}
@@ -51,6 +50,7 @@ public class Server implements Runnable {
 		}
 	}
 
+	@Override
 	public void run() {
 		while(thread != null){
 			try{
@@ -77,8 +77,12 @@ public class Server implements Runnable {
 				log.error(e);
 			}
 			
-			if(numPlayers == 2){minPlayers = true;}
-			if(numPlayers == 5){maxPlayers = true;}
+			if(numPlayers == 2){
+				minPlayers = true;
+			}
+			else if(numPlayers == 5){
+				maxPlayers = true;
+			}
 		}else{
 			log.info("Client Thread tried to connect: " + socket);
 			log.info("Client refused: maximum number of clients reached: " + Config.MAX_PLAYERS);
@@ -93,7 +97,6 @@ public class Server implements Runnable {
 			log.info("Player " + id + " is being removed");
 			
 			terminate.close();
-			terminate = null;
 			log.info("Removed " + id);
 		}
 	}
@@ -112,14 +115,21 @@ public class Server implements Runnable {
 		log.info("Message Received: " + msg);
 		String send = "input";
 		
-		if (msg.equals("quit")) {
+		/* Server receives message that client has quit */
+		if (msg.equals(Config.QUIT)) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {
 				clients.get(id).send("quit!" + "\n");
 				remove(id);
 			}
-		}else if (msg.equals("shutdown")){ shutdown(); }
+		}
 		
+		/* All clients have quit therefore, the server will now shutdown */
+		else if (msg.equals(Config.SHUTDOWN)){ 
+			shutdown(); 
+		}
+		
+		/* When a client first connects, it checks to see if this is the first client */
 		else if (msg.equals(Config.CLIENT_START)){
 			if(numPlayers == 1){
 				send1Client(id, Config.FIRSTPLAYER);
@@ -128,14 +138,51 @@ public class Server implements Runnable {
 			}
 		}
 		
+		/* Checks the number of players is between 2 and 5 */
 		else if(msg.contains(Config.START)){
 			String s[] = msg.split(" ");
 			
 			if(Integer.parseInt(s[1]) < 2 || Integer.parseInt(s[1]) > 5){
 				send1Client(id, Config.NOT_ENOUGH);
 			}
+			
+			else{
+				send = game.processInput(msg);
+				processInput(id, send);
+			}
 		}
 		
+		/* Double checking to make sure that no 2 players have the same name */
+		else if (msg.contains(Config.JOIN)){
+			System.out.println("checking names");
+			String result = Config.DUPLICATE;
+			String join[] = msg.split(" ");
+			int count = 0;
+			
+			// adding the first player 
+			if(numPlayers == 1){
+				System.out.println("first player");
+				names.add(join[1]);
+				send = game.processInput(msg);
+				processInput(id, send);
+			}
+
+			for(int i = 0; i < names.size(); i++){
+				if(names.get(i).equalsIgnoreCase(join[1])){
+					result = Config.DUPLICATE;
+				}
+				System.out.println("Result: " + result + "count: " + count);
+				count++;
+				
+				if((count == numPlayers - 1) && !names.get(i).equalsIgnoreCase(join[1])){
+					System.out.println("done for loop");
+					result = Config.NAME_APPROVED;
+				}
+			}
+			send1Client(id, result);
+		}
+		
+		/* All other messages from the client */
 		else {
 			send = game.processInput(msg);
 			processInput(id, send);
@@ -173,13 +220,9 @@ public class Server implements Runnable {
 		else if(send.contains(Config.NEED_PLAYERS)){
 			send1Client(id, send);
 		}
-		
-		// output = purple <player name> turn <player name> (first turn) <card picked up> 
-		// OR output = turn <player name> <card picked up> (subsequent turns)
-		else if(send.contains(Config.TURN)){			
 
+		else if(send.contains(Config.TURN)){			
 			send1Client(id, send);
-			
 		}
 
 		// KATIE TO DO: If output = stunned <card played> then send me end turn
@@ -195,7 +238,7 @@ public class Server implements Runnable {
 			sendAllClients(send);
 		}
 		
-		else {
+		else{
 			sendAllClients(send);
 		}
 	}

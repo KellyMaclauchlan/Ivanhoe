@@ -12,6 +12,7 @@ public class Config {
 	/* Network Messages */
 	public static String RUN = "run";
 	public static String SHUTDOWN = "shutdown";
+	public static String QUIT = "quit";
 	
 	/* Client to Server messages:  
 	 * Commands made by the players will send strings to the server and with those strings
@@ -45,6 +46,8 @@ public class Config {
 	public static String DISPLAY = "display"; 
 	public static String FROMUPDATE = "update";
 	public static String NOT_ENOUGH = "nobuenos";
+	public static String DUPLICATE = "duplicate";
+	public static String NAME_APPROVED = "approve";
 
 	/*UI messages*/
 	public static String LEFT_CLICK = "leftclick";

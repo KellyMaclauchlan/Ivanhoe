@@ -516,10 +516,6 @@ public class GameEngine {
 	public void removeAllFromDeck(ArrayList<Card> cards) {
 		// remove a number of cards from the draw deck (mostly for testing after cards are dealt)
 		for (Card c: cards) {
-<<<<<<< HEAD
-			temp++;
-=======
->>>>>>> lintBranch
 			for (int i = 0; i < drawDeck.size(); i++) {
 				if (c.getType().equals(drawDeck.get(i).getType()) && (c.getValue() == drawDeck.get(i).getValue())) {
 					drawDeck.remove(i);
