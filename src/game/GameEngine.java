@@ -30,6 +30,10 @@ public class GameEngine {
 			// input = join <player name>
 			} else if (input.contains(Config.JOIN)) {
 				output = processJoin(input); // output = need players OR output = hand name <player name> cards <type_value> <type_value> ...
+
+			}else if (input.contains(Config.DUPLICATE)){
+				output = Config.DUPLICATE;
+				
 			// input = begin tournament	
 			} else if (input.contains(Config.START_TOURNAMENT)) {	
 				output = processStartTournament(); // output = purple <player name> turn <player name> (first turn) <card picked up> 

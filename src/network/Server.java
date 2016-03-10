@@ -154,32 +154,31 @@ public class Server implements Runnable {
 		
 		/* Double checking to make sure that no 2 players have the same name */
 		else if (msg.contains(Config.JOIN)){
-			System.out.println("checking names");
-			String result = Config.DUPLICATE;
 			String join[] = msg.split(" ");
 			int count = 0;
 			
 			// adding the first player 
 			if(numPlayers == 1){
-				System.out.println("first player");
 				names.add(join[1]);
-				send = game.processInput(msg);
-				processInput(id, send);
 			}
-
-			for(int i = 0; i < names.size(); i++){
-				if(names.get(i).equalsIgnoreCase(join[1])){
-					result = Config.DUPLICATE;
+			
+			// checking for all other players
+			else{
+				for(int i = 0; i < names.size(); i++){
+					if(names.get(i).equalsIgnoreCase(join[1])){
+						// Brit can you tell me if this is proper coding convention or if i should make a temp 
+						msg = Config.DUPLICATE;
+						break;
+					}
+					count++;
 				}
-				System.out.println("Result: " + result + "count: " + count);
-				count++;
 				
-				if((count == numPlayers - 1) && !names.get(i).equalsIgnoreCase(join[1])){
-					System.out.println("done for loop");
-					result = Config.NAME_APPROVED;
+				if(!msg.equals(Config.DUPLICATE)){
+					names.add(join[1]);
 				}
 			}
-			send1Client(id, result);
+			send = game.processInput(msg);
+			processInput(id, send);
 		}
 		
 		/* All other messages from the client */
@@ -203,6 +202,10 @@ public class Server implements Runnable {
 	/* Figures out whether to send the message to all the clients or just one */
 	public void processInput(int id, String send){
 		if(send.contains(Config.PROMPT_JOIN)){
+			send1Client(id, send);
+		}
+		
+		else if(send.contains(Config.DUPLICATE)){
 			send1Client(id, send);
 		}
 		
