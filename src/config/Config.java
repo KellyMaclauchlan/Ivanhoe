@@ -3,8 +3,6 @@ package config;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-// testing new branch?
-
 public class Config {
 	public static final int DEFAULT_PORT = 3000; 
 	public static final String DEFAULT_HOST = "127.0.0.1";
