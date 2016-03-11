@@ -1,6 +1,7 @@
 package ui;
 
 import config.Config;
+import game.Card;
 import game.ColourCard;
 
 public class Startui {
@@ -11,20 +12,27 @@ public class Startui {
 		control.setNumPlayers(3);
 		//control.setName(0, control.getNameFromPlayer());
 		control.setPlayerNum(0);
-		control.addCard(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		control.addCard(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		control.addCard(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		control.addCard(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		control.addCard(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		control.addCard(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		control.addCard(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		control.addCard(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		control.addCard(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		control.addCard(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		control.addCard(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		control.addCard(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
-		control.addCard(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		control.addCard(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
+		Card c1=new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg");
+		Card c2= new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg");
+		c1.setCardDescription("this is a purple 3");
+		c2.setCardDescription("this is a purple 4");
+		control.addCard(c1);
+		control.addCard(c2);
+		control.addCard(c1);
+		control.addCard(c2);
+		control.addCard(c1);
+		control.addCard(c2);
+		control.addCard(c1);
+		control.addCard(c2);
+		control.addCard(c1);
+		control.addCard(c2);
+		control.addCard(c1);
+		control.addCard(c2);
+		control.addCard(c1);
+		control.addCard(c2);
+		control.addCard(c1);
+		control.addCard(c2);
+		
 		control.setScore(0, 5);
 		control.addPlayedCard(0, new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
 		control.addPlayedCard(1, new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
@@ -48,22 +56,24 @@ public class Startui {
 		control.addPlayedCard(0, new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
 		control.addPlayedCard(0, new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
 		control.addPlayedCard(0, new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
-		control.addToken(0, 1);
+		/*control.addToken(0, 1);
 		control.addToken(0, 3);
 		control.addToken(0, 4);
 		control.addToken(1, 0);
-		control.addToken(1, 2);
+		control.addToken(1, 2);*/
 		//control.playerNames.add("kelly");
 		//control.playerNames.add("katie");
 		//control.playerNames.add("brit");
 		control.playerName=control.getNameFromPlayer();
 		control.setName(0, control.playerName);
 		control.playerNames.add(0, control.playerName);
-		control.removeToken(1, Config.BLUE);
+		//control.removeToken(1, Config.BLUE);
 		
 		//control.playerWithdraws("jo");
+		control.setCurrPlayer(control.getPlayerNum());
 		control.window.startTurn();
-		control.startRound();
+		//control.startRound();
+	
 		//testing various pop ups
 		//control.setTournamnetColour(control.setTournament());
 		//System.out.println(control.playerPickToken() );

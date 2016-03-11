@@ -236,10 +236,18 @@ public class MainWindowController implements Observer, Subject{
 			break;
 			case "quit":notifyObservers(message);
 			break;
+			case "description":addDescription();
+			break;
 		}
 		log.info("Updated Subjects");
 	}
 
+	private void addDescription() {
+		// TODO Auto-generated method stub
+		String info= this.playerCards.get(window.lastCard+moved).getCardDescription();
+		window.cardTextLabel.setText(info);
+		System.out.println(info);
+	}
 	/* Add card to Player's hand */
 	public void addCard(Card newCard){
 		playerCards.add(newCard);

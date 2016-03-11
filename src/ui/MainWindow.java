@@ -126,9 +126,11 @@ public class MainWindow extends JFrame implements Subject {
 
 	@Override
 	public void notifyObservers(String message) {
+		this.cardTextLabel.setText("");
 		for(Observer ob:observers){
 			ob.update(message);
 		}
+		
 	}
 	
 	public void setUpScreen(Container pane){
@@ -139,8 +141,220 @@ public class MainWindow extends JFrame implements Subject {
 	}
 	
 	//adding names to the components for testing
-	private void addNames() {
 	
+	
+	
+ 	private void addButtonListners() {
+		this.leftArrow.addActionListener(new ActionListener() {
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){leftArrowClicked("resources/cards_small/simpleCards18.jpg");}
+			notifyObservers(Config.LEFT_CLICK);
+		}});
+		this.rightArrow.addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){rightArrowClicked("resources/cards_small/simpleCards18.jpg");}
+			notifyObservers(Config.RIGHT_CLICK);
+		}});
+		this.withdrawButton.addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){withdrawClicked();}
+			notifyObservers(Config.WITHDRAW_CLICK);
+		}});
+		this.endTurnButton.addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){endTurnClicked();}
+			notifyObservers(Config.END_TURN_CLICK);
+		}});
+		this.playCardButton.addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){playCardClicked();}
+			notifyObservers(Config.PLAYEDCARD);
+		}});
+		this.playerCards[0].addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(0);
+		}});
+		this.playerCards[1].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(1);
+		}});
+		this.playerCards[2].addActionListener(new ActionListener() {
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(2);
+		}});
+		this.playerCards[3].addActionListener(new ActionListener() {
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(3);
+		}});
+		this.playerCards[4].addActionListener(new ActionListener() {
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(4);
+		}});
+		this.playerCards[5].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(5);
+		}});
+		this.playerCards[6].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(6);
+		}});
+		this.playerCards[7].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(7);
+		}});
+		this.playerCards[8].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(8);
+		}});
+		this.playerCards[9].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			selectCard(9);
+		}});
+		this.playedCards[0].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		playedCardsClick(0);
+		}});
+		this.playedCards[1].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(1);
+		}});
+		this.playedCards[2].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(2);
+		}});
+		this.playedCards[3].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(3);
+		}});
+		this.playedCards[4].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(4);
+		}});	
+	}
+ 	
+ 	
+ 	public void selectCard(int i){
+ 		lastCard=i;	
+		deck.setText(lastCard + "");
+ 		this.notifyObservers(Config.DESCRIPTION);
+ 	}
+ 	protected void playCardClicked() {
+		this.textLabel.setText("played " + lastCard + "");
+		//this.testLable.setText("played "+this.lastCard+"");
+	}
+ 	
+
+	public void withdrawClicked() {
+		for(int i = 0; i < 5; i++){
+			if(this.playerNames[i].isSelected())
+				this.playerNames[i].setSelected(false);
+		}
+		this.endedTurn();
+	}
+	
+ 	public void endTurnClicked() {
+		for(int i = 0; i < 5; i++){
+			if(this.playerNames[i].isSelected())
+				this.playerNames[i].setSelected(false);
+		}
+		this.endedTurn();
+	}
+
+	public void leftArrowClicked(String imageStr){
+		for(int i = 9; i > 0;i--){
+ 			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
+ 		}
+ 		this.playerCards[0].setIcon(new ImageIcon(imageStr));
+ 		
+ 	}
+ 	public void rightArrowClicked(String imageStr){
+ 		for(int i = 0; i < 9; i++){
+ 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
+ 		}
+ 		this.playerCards[9].setIcon(new ImageIcon(imageStr));	
+ 	}
+ 	
+ 	public void playedCardsClick(int i){
+ 		this.playedCard = i;
+ 		notifyObservers(Config.VIEWDISPLAY);
+ 	}
+ 	
+ 	public void addPlayerCard(int index, String imageStr){
+ 		this.playerCards[index].setIcon(new ImageIcon(imageStr));
+ 	}
+ 	
+ 	public void addPlayedCard(int index, String imageStr){
+ 		this.playedCards[index].setIcon(new ImageIcon(imageStr));
+ 	}
+ 	
+	public void setToken(int player,int token,String pic){
+		this.tokens[player][token].setIcon(new ImageIcon(pic));
+		this.hasTokens[player][token]=true;
+	}
+	
+	
+	public void startTurn(){
+		for (int i = 0; i < 10; i++){
+			this.playerCards[i].setEnabled(true);
+		}
+		this.withdrawButton.setEnabled(true);
+		this.endTurnButton.setEnabled(true);
+		this.playCardButton.setEnabled(true);
+	}
+
+	public void endedTurn(){
+		for (int i = 0; i < 10; i++){
+			this.playerCards[i].setEnabled(false);
+		}
+		this.withdrawButton.setEnabled(false);
+		this.endTurnButton.setEnabled(false);
+		this.playCardButton.setEnabled(false);
+	}
+	
+	
+	//adds names for tests
+	private void addNames() {
+		
 		// Individual Buttons
 		this.leftArrow.setName("leftArrow");
 		this.rightArrow.setName("rightArrow");
@@ -222,6 +436,8 @@ public class MainWindow extends JFrame implements Subject {
 	}
 	
 	//adds default cards for tests
+	
+	
 	private void addDefaults(){
 
 		this.playerNames[0].setSelected(true);
@@ -263,198 +479,6 @@ public class MainWindow extends JFrame implements Subject {
 		}
 	}
 
-
- 	private void addButtonListners() {
-		this.leftArrow.addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){leftArrowClicked("resources/cards_small/simpleCards18.jpg");}
-			notifyObservers(Config.LEFT_CLICK);
-		}});
-		this.rightArrow.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){rightArrowClicked("resources/cards_small/simpleCards18.jpg");}
-			notifyObservers(Config.RIGHT_CLICK);
-		}});
-		this.withdrawButton.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){withdrawClicked();}
-			notifyObservers(Config.WITHDRAW_CLICK);
-		}});
-		this.endTurnButton.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){endTurnClicked();}
-			notifyObservers(Config.END_TURN_CLICK);
-		}});
-		this.playCardButton.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){playCardClicked();}
-			notifyObservers(Config.PLAYEDCARD);
-		}});
-		this.playerCards[0].addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 0;	
-			deck.setText(lastCard + "");
-		}});
-		this.playerCards[1].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 1;
-			deck.setText(lastCard + "");
-		}});
-		this.playerCards[2].addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 2;	
-			deck.setText(lastCard + "");
-		}});
-		this.playerCards[3].addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 3;	
-			deck.setText(lastCard + "");
-		}});
-		this.playerCards[4].addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 4;	
-			deck.setText(lastCard + "");
-		}});
-		this.playerCards[5].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 5;	
-			deck.setText(lastCard + "");
-		}});
-		this.playerCards[6].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 6;	
-			deck.setText(lastCard + "");
-		}});
-		this.playerCards[7].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 7;	
-			deck.setText(lastCard + "");
-		}});
-		this.playerCards[8].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 8;	
-			deck.setText(lastCard + "");
-		}});
-		this.playerCards[9].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			lastCard = 9;
-			deck.setText(lastCard + "");
-		}});
-		this.playedCards[0].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-		playedCardsClick(0);
-		}});
-		this.playedCards[1].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(1);
-		}});
-		this.playedCards[2].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(2);
-		}});
-		this.playedCards[3].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(3);
-		}});
-		this.playedCards[4].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(4);
-		}});	
-	}
- 	
- 	public void selectCard(int i){
- 		lastCard=i;
- 		
- 	}
- 	protected void playCardClicked() {
-		this.textLabel.setText("played " + lastCard + "");
-		//this.testLable.setText("played "+this.lastCard+"");
-	}
- 	
-
-	public void withdrawClicked() {
-		for(int i = 0; i < 5; i++){
-			if(this.playerNames[i].isSelected())
-				this.playerNames[i].setSelected(false);
-		}
-		this.endedTurn();
-	}
-	
- 	public void endTurnClicked() {
-		for(int i = 0; i < 5; i++){
-			if(this.playerNames[i].isSelected())
-				this.playerNames[i].setSelected(false);
-		}
-		this.endedTurn();
-	}
-
-	public void leftArrowClicked(String imageStr){
-		for(int i = 9; i > 0;i--){
- 			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
- 		}
- 		this.playerCards[0].setIcon(new ImageIcon(imageStr));
- 		
- 	}
- 	public void rightArrowClicked(String imageStr){
- 		for(int i = 0; i < 9; i++){
- 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
- 		}
- 		this.playerCards[9].setIcon(new ImageIcon(imageStr));	
- 	}
- 	
- 	public void playedCardsClick(int i){
- 		this.playedCard = i;
- 		notifyObservers(Config.VIEWDISPLAY);
- 	}
- 	
- 	public void addPlayerCard(int index, String imageStr){
- 		this.playerCards[index].setIcon(new ImageIcon(imageStr));
- 	}
- 	
- 	public void addPlayedCard(int index, String imageStr){
- 		this.playedCards[index].setIcon(new ImageIcon(imageStr));
- 	}
- 	
 	public void setup2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1360, 840);
@@ -1051,29 +1075,4 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerPoints[4] = points5;
 	}
 
-	public void setToken(int player,int token,String pic){
-		this.tokens[player][token].setIcon(new ImageIcon(pic));
-		this.hasTokens[player][token]=true;
-	}
-	
-	
-	public void startTurn(){
-		for (int i = 0; i < 10; i++){
-			this.playerCards[i].setEnabled(true);
-		}
-		this.withdrawButton.setEnabled(true);
-		this.endTurnButton.setEnabled(true);
-		this.playCardButton.setEnabled(true);
-	}
-
-	public void endedTurn(){
-		for (int i = 0; i < 10; i++){
-			this.playerCards[i].setEnabled(false);
-		}
-		this.withdrawButton.setEnabled(false);
-		this.endTurnButton.setEnabled(false);
-		this.playCardButton.setEnabled(false);
-	}
-	
-	
 }

@@ -73,6 +73,7 @@ public class Config {
 	public static final String END_TURN_CLICK = "endturnclick";
 	public static final String PLAYEDCARD = "playedcard";
 	public static final String VIEWDISPLAY = "viewdisplay";
+	public static final String DESCRIPTION = "description";
 	
 	/* Coloured Cards */
 	public static final String PURPLE = "purple";
