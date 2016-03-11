@@ -219,6 +219,7 @@ public class MainWindowController implements Observer, Subject{
 	
 	@Override
 	public void update(String message) {
+		System.out.println(message);
 		lastMessege = message;
 		switch(message){
 			case "leftclick": leftClick();
@@ -232,6 +233,8 @@ public class MainWindowController implements Observer, Subject{
 			case "playedcard":playCard();
 			break;
 			case "viewdisplay":displayCards();
+			break;
+			case "quit":notifyObservers(message);
 			break;
 		}
 		log.info("Updated Subjects");
