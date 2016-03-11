@@ -20,8 +20,6 @@ public class MainWindowController implements Observer, Subject{
 	public MainWindow window;
 	public WaitingPopUp waitingPopUp;
 	public String lastMessege;
-	public ArrayList<String>tokenStrings;
-	public ArrayList<String>emptyTokenStrings;
 	public Color backgroundColours[] = {new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};
 	public Card lastCard;
 	public Logger log = Logger.getLogger("UI");
@@ -42,18 +40,7 @@ public class MainWindowController implements Observer, Subject{
 		playerNames = new ArrayList<String>();
 		playerScores = new ArrayList<Integer>();
 		moved = 0;
-		tokenStrings = new ArrayList<String>();
-		tokenStrings.add("resources/icons/blue_full.png");
-		tokenStrings.add("resources/icons/red_full.png");
-		tokenStrings.add("resources/icons/yellow_full.png");
-		tokenStrings.add("resources/icons/green_full.png");
-		tokenStrings.add("resources/icons/purple_full.png");
-		emptyTokenStrings = new ArrayList<String>();
-		emptyTokenStrings.add("resources/icons/blue_empty.png");
-		emptyTokenStrings.add("resources/icons/red_empty.png");
-		emptyTokenStrings.add("resources/icons/yellow_empty.png");
-		emptyTokenStrings.add("resources/icons/green_empty.png");
-		emptyTokenStrings.add("resources/icons/purple_empty.png");
+		
 		window.endedTurn();
 	}
 	/* displays the main window */
@@ -356,8 +343,8 @@ public class MainWindowController implements Observer, Subject{
 	
 	/* Adds a token for Player after that round */
 	public void addToken(int player, int token){
-		this.window.setToken(player, token, tokenStrings.get(token));
-		log.info("Adding " + tokenStrings.get(token) + " token");
+		this.window.setToken(player, token, Config.tokenStrings.get(token));
+		log.info("Adding " + Config.tokenStrings.get(token) + " token");
 	}
 	public void playerWithdraws(String name){
 		int player=this.playerNames.indexOf(name);
@@ -366,7 +353,7 @@ public class MainWindowController implements Observer, Subject{
 		
 	}
 	public void removeToken(int player, String token){		
-		this.window.setToken(player, Config.colours.indexOf(token), emptyTokenStrings.get(Config.colours.indexOf(token)));
+		this.window.setToken(player, Config.colours.indexOf(token), Config.emptyTokenStrings.get(Config.colours.indexOf(token)));
 		this.window.hasTokens[player][Config.colours.indexOf(token)]=false;
 		log.info("Removing " + token + " token");
 	}

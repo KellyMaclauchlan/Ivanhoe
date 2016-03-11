@@ -155,4 +155,41 @@ public class Config {
 	public static final String IMG_IVANHOE = "resources/cards_small/actionCards16.jpg";
 	
 	public static final String IMG_BACK = "resources/cards_small/simpleCards18.jpg";
+	
+	//token images 
+	public static final ArrayList<String> tokenStrings = new ArrayList<String>(Arrays.asList("resources/icons/blue_full.png", 
+			"resources/icons/red_full.png", "resources/icons/yellow_full.png", "resources/icons/green_full.png", 
+			"resources/icons/purple_full.png"));
+
+	public static final ArrayList<String> emptyTokenStrings = new ArrayList<String>(Arrays.asList("resources/icons/blue_empty.png",
+			"resources/icons/red_empty.png", "resources/icons/yellow_empty.png", "resources/icons/green_empty.png", 
+			"resources/icons/purple_empty.png"));
+	
+	//strings for description
+	
+	public static final ArrayList<String> infoStrings= new ArrayList<String>(Arrays.asList(
+			"Yellow: 2","Yellow: 3", "Yellow: 4",
+			"Blue: 2", "Blue: 3", "Blue: 4", "Blue: 5",
+			"Red: 3", "Red: 4", "Red: 5",
+			"Purple: 3", "Purple: 4", "Purple: 5", "Purple: 7",
+			"Green: 14",
+			"Squire: 2", "Squire: 3", "Maiden: 6",
+			"Unhorse: Change the tournament colour from purple to red blue or yellow",
+			"Change Weapon: Change the colour from red blue or yellow to a different one of these colours",
+			"Drop Weapon: Change the tournament colour from red blue or yellow to green",
+			"Shield: Play this card face up in front of you but separate from your display. As long as you have the SHIELD in front of you, the action cards have no effect on your display", 
+			"Stunned: You may play this card on any one opponent still in the tournament but separate from the opponents display. As long as a player is STUNNED he may only add one new card to his display each turn", 
+			"Ivanhoe: You may play this card at anytime as long as you are in a tournament. Use the IVANHOE card to cancel all effects of any one action card just played",
+			"Break lance: One opponent must discard all purple cards from their display",
+			"Riposte: you may take the last card of any one opponent's display and add it to your own display", 
+			"Dodge: You may discard any one card from any one opponent's display", 
+			"Retreat: You may take any one card from your display back into your hand", 
+			"Knock Down: You may draw at random one card from any one opponent's hand and add it to your own hand (Without revealing the card)", 
+			"Outmaneuver: All your opponents must discard their last card from their displays", 
+			"Charge: Identify the lowest value card throughout the displays. All players must discard all cards of this value from their displays",
+			"Counter-Charge: Identify the highest value card throughout all displays. All players must discard all cards of this value from their displays",
+			"Disgrace: All players must discard all their supporters from their displays", 
+			"Adapt: Each player may only keep one card of each value in his display. All other cards with the same value are discarded. Each player decides which card he discards", 
+			"Outwit: Place one of your face up cards infant of an opponent, take one face up card from youths opponent and place it face up infant of yourself. This may include SHEILD and STUNNED cards"));
+
 }

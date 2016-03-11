@@ -442,41 +442,16 @@ public class MainWindow extends JFrame implements Subject {
 	private void addDefaults(){
 
 		this.playerNames[0].setSelected(true);
-		
-		this.tokens[0][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
-		this.tokens[1][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
-		this.tokens[2][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
-		this.tokens[3][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
-		this.tokens[4][0].setIcon(new ImageIcon("resources/icons/blue_empty.png"));
-		
-		this.tokens[0][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
-		this.tokens[1][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
-		this.tokens[2][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
-		this.tokens[3][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
-		this.tokens[4][1].setIcon(new ImageIcon("resources/icons/red_empty.png"));
-		
-		this.tokens[0][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
-		this.tokens[1][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
-		this.tokens[2][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
-		this.tokens[3][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
-		this.tokens[4][2].setIcon(new ImageIcon("resources/icons/yellow_empty.png"));
-		
-		this.tokens[0][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
-		this.tokens[1][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
-		this.tokens[2][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
-		this.tokens[3][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
-		this.tokens[4][3].setIcon(new ImageIcon("resources/icons/green_empty.png"));
-		
-		this.tokens[0][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
-		this.tokens[1][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
-		this.tokens[2][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
-		this.tokens[3][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
-		this.tokens[4][4].setIcon(new ImageIcon("resources/icons/purple_empty.png"));
-		
-		this.deck.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		for(int i=0;i<5;i++){
+			for(int j=0;j<5;j++){
+				this.tokens[i][j].setIcon(new ImageIcon(Config.emptyTokenStrings.get(j)));
+			}
+		}
+
+		this.deck.setIcon(new ImageIcon(Config.IMG_BACK));
 		
 		for(int i = 0; i < 5; i++){
-				this.playedCards[i].setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+				this.playedCards[i].setIcon(new ImageIcon(Config.IMG_BACK));
 		}
 	}
 

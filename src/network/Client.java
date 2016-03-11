@@ -582,141 +582,182 @@ public class Client implements Runnable, Observer {
 	public Card getCardFromTypeValue(String type, String value){
 
 		String output = "";
-		
+		String info="";
 		/* Coloured Cards */
 		if(type.equals(Config.PURPLE)){
 			if(value.equals("3")){
 				output = Config.IMG_PURPLE_3; 
+				info=Config.infoStrings.get(10);
 			}
 			else if (value.equals("4")){
-				output = Config.IMG_PURPLE_4;	
+				output = Config.IMG_PURPLE_4;
+				info=Config.infoStrings.get(11);
 			}
 			else if(value.equals("5")){
 				output = Config.IMG_PURPLE_5;
+				info=Config.infoStrings.get(12);
 			}
 			else if(value.equals("7")){
 				output = Config.IMG_PURPLE_7;
+				info=Config.infoStrings.get(13);
 			}
 		}
 		else if(type.equals(Config.RED)){
 			if(value.equals("3")){
 				output = Config.IMG_RED_3;
+				info=Config.infoStrings.get(7);
 			}
 			else if(value.equals("4")){
 				output = Config.IMG_RED_4;
+				info=Config.infoStrings.get(8);
 			}
 			else if(value.equals("5")){
 				output = Config.IMG_RED_5;
+				info=Config.infoStrings.get(9);
 			}
 		}
 		
 		else if (type.equals(Config.BLUE)){
 			if(value.equals("2")){
 				output = Config.IMG_BLUE_2;
+				info=Config.infoStrings.get(3);
 			}
 			else if(value.equals("3")){
 				output = Config.IMG_BLUE_3;
+				info=Config.infoStrings.get(4);
 			}
 			else if(value.equals("4")){
 				output = Config.IMG_BLUE_4;
+				info=Config.infoStrings.get(5);
 			}
 			else if(value.equals("5")){
 				output = Config.IMG_BLUE_5;
+				info=Config.infoStrings.get(6);
 			}
 		}
 		
 		else if (type.equals(Config.YELLOW)){
 			if(value.equals("2")){
 				output = Config.IMG_YELLOW_2;
+				info=Config.infoStrings.get(0);
 			}
 			else if(value.equals("3")){
 				output = Config.IMG_YELLOW_3;
+				info=Config.infoStrings.get(1);
 			}
 			else if(value.equals("4")){
 				output = Config.IMG_YELLOW_4;
+				info=Config.infoStrings.get(2);
 			}
 		}
 		
 		else if (type.equals(Config.GREEN)){
 			output = Config.IMG_GREEN_1;
+			info=Config.infoStrings.get(14);
 		}
 		/*creates a coloured card*/
 		if(!output.equals("")){
-			return new ColourCard(type,Integer.parseInt(value),output);
+			Card c =new ColourCard(type,Integer.parseInt(value),output);
+			c.setCardDescription(info);
+			return c;
 		}
 		
 		/* Supporter */
 		if(type.equals(Config.MAIDEN)){
 			output = Config.IMG_MAIDEN_6;
+			info=Config.infoStrings.get(17);
 		}
 		else if(type.equals(Config.SQUIRE)){
 			if(value.equals("2")){
 				output = Config.IMG_SQUIRE_2;
+				info=Config.infoStrings.get(15);
 			}
 			else if(value.equals("3")){
 				output = Config.IMG_SQUIRE_3;
+				info=Config.infoStrings.get(16);
 			}
 		}
 
 		if(!output.equals("")){
-			return new SupportCard(type,Integer.parseInt(value),output);
+			Card c=new SupportCard(type,Integer.parseInt(value),output);
+			c.setCardDescription(info);
+			return c;
 		} 
 		
 		/* Action */
 		if(type.equals(Config.DODGE)){
 			output = Config.IMG_DODGE;
+			info=Config.infoStrings.get(26);
 		}
 		else if (type.equals(Config.DISGRACE)){
 			output = Config.IMG_DISGRACE;
+			info=Config.infoStrings.get(32);
 		}
 		else if (type.equals(Config.RETREAT)){
 			output = Config.IMG_RETREAT;
+			info=Config.infoStrings.get(27);
 		}
 		else if(type.equals(Config.RIPOSTE)){
 			output = Config.IMG_RIPOSTE;
+			info=Config.infoStrings.get(25);
 		}
 		else if(type.equals(Config.OUTMANEUVER)){
 			output = Config.IMG_OUTMANEUVER;
+			info=Config.infoStrings.get(29);
 		}
 		else if(type.equals(Config.COUNTERCHARGE)){
 			output = Config.IMG_COUNTER_CHARGE;
+			info=Config.infoStrings.get(31);
 		}
 		else if(type.equals(Config.CHARGE)){
 			output = Config.IMG_CHARGE;
+			info=Config.infoStrings.get(30);
 		}
 		else if(type.equals(Config.BREAKLANCE)){
 			output = Config.IMG_BREAK_LANCE;
+			info=Config.infoStrings.get(24);
 		}
 		else if(type.equals(Config.ADAPT)){
 			output = Config.IMG_ADAPT;
+			info=Config.infoStrings.get(33);
 		}
 		else if (type.equals(Config.OUTWIT)){
 			output = Config.IMG_OUTWIT;
+			info=Config.infoStrings.get(34);
 		}
  		else if (type.equals(Config.DROPWEAPON)){
 			output = Config.IMG_DROP_WEAPON;
+			info=Config.infoStrings.get(20);
 		}
 		else if(type.equals(Config.CHANGEWEAPON)){
 			output = Config.IMG_CHANGE_WEAPON;
+			info=Config.infoStrings.get(19);
 		}
 		else if(type.equals(Config.UNHORSE)){
 			output = Config.IMG_UNHORSE;
+			info=Config.infoStrings.get(18);
 		}
 		else if(type.equals(Config.KNOCKDOWN)){
 			output = Config.IMG_KNOCK_DOWN;
+			info=Config.infoStrings.get(28);
 		}
 		else if(type.equals(Config.SHIELD)){
 			output = Config.IMG_SHIELD;
+			info=Config.infoStrings.get(21);
 		}
 		else if(type.equals(Config.STUNNED)){
 			output = Config.IMG_STUNNED;
+			info=Config.infoStrings.get(22);
 		}
 		else if(type.equals(Config.IVANHOE)){
 			output = Config.IMG_IVANHOE;
+			info=Config.infoStrings.get(23);
 		}
 		
 		if(!output.equals("")){
-			return new ActionCard(type, output);
+			Card c=new ActionCard(type, output);
+			c.setCardDescription(info);
+			return c;
 		}
 		
 		return new Card();
