@@ -566,7 +566,7 @@ public class GameEngine {
 			discardPile.add(c);
 			currentPlayer.removeFromDisplay(c);
 		}
-		currentPlayer.setDisplay(new ArrayList<>());
+		currentPlayer.setDisplay(new ArrayList<Card>());
 	}
 	
 	public void announceWinner() {
