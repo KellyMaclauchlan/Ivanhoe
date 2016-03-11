@@ -331,6 +331,7 @@ public class MainWindow extends JFrame implements Subject {
 		this.tokens[player][token].setIcon(new ImageIcon(pic));
 		this.hasTokens[player][token]=true;
 	}
+	 
 	
 	
 	public void startTurn(){
