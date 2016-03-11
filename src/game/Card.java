@@ -5,12 +5,14 @@ public class Card {
 	private int value;
 	private String cardType;
 	private String cardImage;
+	private String cardDescription;
 	
 	public Card() {
 		type = "";
 		value = 0;
 		cardType = "";
 		cardImage = "";
+		setCardDescription("");
 	}
 		
 	public int getValue() {
@@ -36,6 +38,14 @@ public class Card {
 	}
 	public void setCardImage(String cardImage) {
 		this.cardImage = cardImage;
+	}
+
+	public String getCardDescription() {
+		return cardDescription;
+	}
+
+	public void setCardDescription(String cardDescription) {
+		this.cardDescription = cardDescription;
 	}
 
 }

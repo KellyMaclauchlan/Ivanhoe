@@ -101,7 +101,8 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerPoints[3].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
 		this.playerPoints[4].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
 		
-		this.addWindowListener(new WindowAdapter() {
+		this.addWindowListener(new WindowAdapter() { 
+			@Override
 			  public void windowClosing(WindowEvent we) {
 				    closing();
 				  }});
@@ -109,7 +110,7 @@ public class MainWindow extends JFrame implements Subject {
 	}
 	public void closing(){
 		this.notifyObservers(Config.QUIT);
-		System.exit(0);
+		System.exit(0); 
 	}
 	
 	
@@ -401,7 +402,11 @@ public class MainWindow extends JFrame implements Subject {
 		}});	
 	}
  	
- 	protected void playCardClicked() {			
+ 	public void selectCard(int i){
+ 		lastCard=i;
+ 		
+ 	}
+ 	protected void playCardClicked() {
 		this.textLabel.setText("played " + lastCard + "");
 		//this.testLable.setText("played "+this.lastCard+"");
 	}
