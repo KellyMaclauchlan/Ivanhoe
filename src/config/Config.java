@@ -156,6 +156,10 @@ public class Config {
 	
 	public static final String IMG_BACK = "resources/cards_small/simpleCards18.jpg";
 	
+	//sheild and stun images 
+	public static final String IMG_SHEILD = "resources/icons/sheild.png";
+	public static final String IMG_STUN = "resources/icons/stun.png";
+	
 	//token images 
 	public static final ArrayList<String> tokenStrings = new ArrayList<String>(Arrays.asList("resources/icons/blue_full.png", 
 			"resources/icons/red_full.png", "resources/icons/yellow_full.png", "resources/icons/green_full.png", 
