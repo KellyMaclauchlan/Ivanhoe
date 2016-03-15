@@ -277,6 +277,9 @@ public class MainWindow extends JFrame implements Subject {
  		lastCard=i;	
 		deck.setText(lastCard + "");
  		this.notifyObservers(Config.DESCRIPTION);
+ 		if(testing){
+ 			this.textLabel.setText("card "+i);
+ 		}
  	}
  	protected void playCardClicked() {
 		this.textLabel.setText("played " + lastCard + "");
