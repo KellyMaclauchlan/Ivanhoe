@@ -173,6 +173,10 @@ public class Config {
 	public static final String ARROW_LEFT = "icons/left-arrow.png";
 	public static final String ARROW_RIGHT = "icons/right-arrow.png";
 	
+	//sheild and stun
+	public static final String SHEILD = "icons/sheild.png";
+	public static final String STUN = "icons/stun.png";
+	
 
 	public static final ArrayList<String> emptyTokenStrings = new ArrayList<String>(Arrays.asList("icons/blue_empty.png",
 			"icons/red_empty.png", "icons/yellow_empty.png", "icons/green_empty.png", 
