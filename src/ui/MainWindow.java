@@ -12,7 +12,6 @@ import java.awt.Insets;
 import java.util.ArrayList;
 
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -126,11 +125,9 @@ public class MainWindow extends JFrame implements Subject {
 
 	@Override
 	public void notifyObservers(String message) {
-		this.cardTextLabel.setText("");
 		for(Observer ob:observers){
 			ob.update(message);
 		}
-		
 	}
 	
 	public void setUpScreen(Container pane){
@@ -141,221 +138,8 @@ public class MainWindow extends JFrame implements Subject {
 	}
 	
 	//adding names to the components for testing
-	
-	
-	
- 	private void addButtonListners() {
-		this.leftArrow.addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){leftArrowClicked("resources/cards_small/simpleCards18.jpg");}
-			notifyObservers(Config.LEFT_CLICK);
-		}});
-		this.rightArrow.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){rightArrowClicked("resources/cards_small/simpleCards18.jpg");}
-			notifyObservers(Config.RIGHT_CLICK);
-		}});
-		this.withdrawButton.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){withdrawClicked();}
-			notifyObservers(Config.WITHDRAW_CLICK);
-		}});
-		this.endTurnButton.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){endTurnClicked();}
-			notifyObservers(Config.END_TURN_CLICK);
-		}});
-		this.playCardButton.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){playCardClicked();}
-			notifyObservers(Config.PLAYEDCARD);
-		}});
-		this.playerCards[0].addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(0);
-		}});
-		this.playerCards[1].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(1);
-		}});
-		this.playerCards[2].addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(2);
-		}});
-		this.playerCards[3].addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(3);
-		}});
-		this.playerCards[4].addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(4);
-		}});
-		this.playerCards[5].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(5);
-		}});
-		this.playerCards[6].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(6);
-		}});
-		this.playerCards[7].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(7);
-		}});
-		this.playerCards[8].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(8);
-		}});
-		this.playerCards[9].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(9);
-		}});
-		this.playedCards[0].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-		playedCardsClick(0);
-		}});
-		this.playedCards[1].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(1);
-		}});
-		this.playedCards[2].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(2);
-		}});
-		this.playedCards[3].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(3);
-		}});
-		this.playedCards[4].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(4);
-		}});	
-	}
- 	
- 	
- 	public void selectCard(int i){
- 		lastCard=i;	
-		deck.setText(lastCard + "");
- 		this.notifyObservers(Config.DESCRIPTION);
- 	}
- 	protected void playCardClicked() {
-		this.textLabel.setText("played " + lastCard + "");
-		//this.testLable.setText("played "+this.lastCard+"");
-	}
- 	
-
-	public void withdrawClicked() {
-		for(int i = 0; i < 5; i++){
-			if(this.playerNames[i].isSelected())
-				this.playerNames[i].setSelected(false);
-		}
-		this.endedTurn();
-	}
-	
- 	public void endTurnClicked() {
-		for(int i = 0; i < 5; i++){
-			if(this.playerNames[i].isSelected())
-				this.playerNames[i].setSelected(false);
-		}
-		this.endedTurn();
-	}
-
-	public void leftArrowClicked(String imageStr){
-		for(int i = 9; i > 0;i--){
- 			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
- 		}
- 		this.playerCards[0].setIcon(new ImageIcon(imageStr));
- 		
- 	}
- 	public void rightArrowClicked(String imageStr){
- 		for(int i = 0; i < 9; i++){
- 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
- 		}
- 		this.playerCards[9].setIcon(new ImageIcon(imageStr));	
- 	}
- 	
- 	public void playedCardsClick(int i){
- 		this.playedCard = i;
- 		notifyObservers(Config.VIEWDISPLAY);
- 	}
- 	
- 	public void addPlayerCard(int index, String imageStr){
- 		this.playerCards[index].setIcon(new ImageIcon(imageStr));
- 	}
- 	
- 	public void addPlayedCard(int index, String imageStr){
- 		this.playedCards[index].setIcon(new ImageIcon(imageStr));
- 	}
- 	
-	public void setToken(int player,int token,String pic){
-		this.tokens[player][token].setIcon(new ImageIcon(pic));
-		this.hasTokens[player][token]=true;
-	}
-	 
-	
-	
-	public void startTurn(){
-		for (int i = 0; i < 10; i++){
-			this.playerCards[i].setEnabled(true);
-		}
-		this.withdrawButton.setEnabled(true);
-		this.endTurnButton.setEnabled(true);
-		this.playCardButton.setEnabled(true);
-	}
-
-	public void endedTurn(){
-		for (int i = 0; i < 10; i++){
-			this.playerCards[i].setEnabled(false);
-		}
-		this.withdrawButton.setEnabled(false);
-		this.endTurnButton.setEnabled(false);
-		this.playCardButton.setEnabled(false);
-	}
-	
-	
-	//adds names for tests
 	private void addNames() {
-		
+	
 		// Individual Buttons
 		this.leftArrow.setName("leftArrow");
 		this.rightArrow.setName("rightArrow");
@@ -437,24 +221,217 @@ public class MainWindow extends JFrame implements Subject {
 	}
 	
 	//adds default cards for tests
-	
-	
 	private void addDefaults(){
 
 		this.playerNames[0].setSelected(true);
-		for(int i=0;i<5;i++){
-			for(int j=0;j<5;j++){
-				this.tokens[i][j].setIcon(new ImageIcon(Config.emptyTokenStrings.get(j)));
-			}
+		
+		for (int i = 0; i < Config.MAX_PLAYERS; i++) {
+			this.tokens[i][0].setIcon(ResourceLoader.loadImage(Config.BLUE_EMPTY));
+			this.tokens[i][1].setIcon(ResourceLoader.loadImage(Config.RED_EMPTY));
+			this.tokens[i][2].setIcon(ResourceLoader.loadImage(Config.YELLOW_EMPTY));
+			this.tokens[i][3].setIcon(ResourceLoader.loadImage(Config.GREEN_EMPTY));
+			this.tokens[i][4].setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		}
-
-		this.deck.setIcon(new ImageIcon(Config.IMG_BACK));
+		
+		this.deck.setIcon(ResourceLoader.loadImage(Config.IMG_BACK));
 		
 		for(int i = 0; i < 5; i++){
-				this.playedCards[i].setIcon(new ImageIcon(Config.IMG_BACK));
+				this.playedCards[i].setIcon(ResourceLoader.loadImage(Config.IMG_BACK));
 		}
 	}
 
+
+ 	private void addButtonListners() {
+		this.leftArrow.addActionListener(new ActionListener() {
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){leftArrowClicked(Config.IMG_BACK);}
+			notifyObservers(Config.LEFT_CLICK);
+		}});
+		this.rightArrow.addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){rightArrowClicked(Config.IMG_BACK);}
+			notifyObservers(Config.RIGHT_CLICK);
+		}});
+		this.withdrawButton.addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){withdrawClicked();}
+			notifyObservers(Config.WITHDRAW_CLICK);
+		}});
+		this.endTurnButton.addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){endTurnClicked();}
+			notifyObservers(Config.END_TURN_CLICK);
+		}});
+		this.playCardButton.addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(testing){playCardClicked();}
+			notifyObservers(Config.PLAYEDCARD);
+		}});
+		this.playerCards[0].addActionListener(new ActionListener() {
+			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 0;	
+			deck.setText(lastCard + "");
+		}});
+		this.playerCards[1].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 1;
+			deck.setText(lastCard + "");
+		}});
+		this.playerCards[2].addActionListener(new ActionListener() {
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 2;	
+			deck.setText(lastCard + "");
+		}});
+		this.playerCards[3].addActionListener(new ActionListener() {
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 3;	
+			deck.setText(lastCard + "");
+		}});
+		this.playerCards[4].addActionListener(new ActionListener() {
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 4;	
+			deck.setText(lastCard + "");
+		}});
+		this.playerCards[5].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 5;	
+			deck.setText(lastCard + "");
+		}});
+		this.playerCards[6].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 6;	
+			deck.setText(lastCard + "");
+		}});
+		this.playerCards[7].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 7;	
+			deck.setText(lastCard + "");
+		}});
+		this.playerCards[8].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 8;	
+			deck.setText(lastCard + "");
+		}});
+		this.playerCards[9].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lastCard = 9;
+			deck.setText(lastCard + "");
+		}});
+		this.playedCards[0].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		playedCardsClick(0);
+		}});
+		this.playedCards[1].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(1);
+		}});
+		this.playedCards[2].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(2);
+		}});
+		this.playedCards[3].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(3);
+		}});
+		this.playedCards[4].addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			playedCardsClick(4);
+		}});	
+	}
+ 	
+ 	public void selectCard(int i){
+ 		lastCard=i;
+ 		
+ 	}
+ 	protected void playCardClicked() {
+		this.textLabel.setText("played " + lastCard + "");
+		//this.testLable.setText("played "+this.lastCard+"");
+	}
+ 	
+
+	public void withdrawClicked() {
+		for(int i = 0; i < 5; i++){
+			if(this.playerNames[i].isSelected())
+				this.playerNames[i].setSelected(false);
+		}
+		this.endedTurn();
+	}
+	
+ 	public void endTurnClicked() {
+		for(int i = 0; i < 5; i++){
+			if(this.playerNames[i].isSelected())
+				this.playerNames[i].setSelected(false);
+		}
+		this.endedTurn();
+	}
+
+	public void leftArrowClicked(String imageStr){
+		for(int i = 9; i > 0;i--){
+ 			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
+ 		}
+ 		this.playerCards[0].setIcon(ResourceLoader.loadImage(imageStr));
+ 		
+ 	}
+ 	public void rightArrowClicked(String imageStr){
+ 		for(int i = 0; i < 9; i++){
+ 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
+ 		}
+ 		this.playerCards[9].setIcon(ResourceLoader.loadImage(imageStr));	
+ 	}
+ 	
+ 	public void playedCardsClick(int i){
+ 		this.playedCard = i;
+ 		notifyObservers(Config.VIEWDISPLAY);
+ 	}
+ 	
+ 	public void addPlayerCard(int index, String imageStr){
+ 		this.playerCards[index].setIcon(ResourceLoader.loadImage(imageStr));
+ 	}
+ 	
+ 	public void addPlayedCard(int index, String imageStr){
+ 		this.playedCards[index].setIcon(ResourceLoader.loadImage(imageStr));
+ 	}
+ 	
 	public void setup2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1360, 840);
@@ -466,7 +443,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().setLayout(gridBagLayout);
 		
 		JLabel token11 = new JLabel("");
-		token11.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token11.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token11 = new GridBagConstraints();
 		gbc_token11.insets = new Insets(0, 0, 5, 5);
 		gbc_token11.gridx = 5;
@@ -474,7 +451,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token11, gbc_token11);
 		
 		JLabel token21 = new JLabel("");
-		token21.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token21.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token21 = new GridBagConstraints();
 		gbc_token21.insets = new Insets(0, 0, 5, 5);
 		gbc_token21.gridx = 10;
@@ -482,7 +459,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token21, gbc_token21);
 		
 		JLabel token31 = new JLabel("");
-		token31.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token31.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token31 = new GridBagConstraints();
 		gbc_token31.insets = new Insets(0, 0, 5, 5);
 		gbc_token31.gridx = 15;
@@ -490,7 +467,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token31, gbc_token31);
 		
 		JLabel token41 = new JLabel("");
-		token41.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token41.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token41 = new GridBagConstraints();
 		gbc_token41.insets = new Insets(0, 0, 5, 5);
 		gbc_token41.gridx = 20;
@@ -498,7 +475,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token41, gbc_token41);
 		
 		JLabel token51 = new JLabel("");
-		token51.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token51.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token51 = new GridBagConstraints();
 		gbc_token51.insets = new Insets(0, 0, 5, 5);
 		gbc_token51.gridx = 25;
@@ -506,7 +483,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token51, gbc_token51);
 		
 		JButton p1d = new JButton("");
-		p1d.setIcon(new ImageIcon("resources/cards_small/simpleCards18.jpg"));
+		p1d.setIcon(ResourceLoader.loadImage(Config.IMG_BACK));
 		GridBagConstraints gbc_p1d = new GridBagConstraints();
 		gbc_p1d.gridheight = 3;
 		gbc_p1d.gridwidth = 3;
@@ -516,7 +493,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(p1d, gbc_p1d);
 		
 		JLabel token12 = new JLabel("");
-		token12.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token12.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token12 = new GridBagConstraints();
 		gbc_token12.insets = new Insets(0, 0, 5, 5);
 		gbc_token12.gridx = 5;
@@ -524,7 +501,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token12, gbc_token12);
 		
 		JLabel token22 = new JLabel("");
-		token22.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token22.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token22 = new GridBagConstraints();
 		gbc_token22.insets = new Insets(0, 0, 5, 5);
 		gbc_token22.gridx = 10;
@@ -532,7 +509,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token22, gbc_token22);
 		
 		JButton p2d = new JButton("");
-		p2d.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		p2d.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_p2d = new GridBagConstraints();
 		gbc_p2d.gridwidth = 3;
 		gbc_p2d.gridheight = 3;
@@ -542,7 +519,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(p2d, gbc_p2d);
 		
 		JLabel token32 = new JLabel("");
-		token32.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token32.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token32 = new GridBagConstraints();
 		gbc_token32.insets = new Insets(0, 0, 5, 5);
 		gbc_token32.gridx = 15;
@@ -550,7 +527,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token32, gbc_token32);
 		
 		JButton p3d = new JButton("");
-		p3d.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		p3d.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_p3d = new GridBagConstraints();
 		gbc_p3d.gridheight = 3;
 		gbc_p3d.gridwidth = 3;
@@ -560,7 +537,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(p3d, gbc_p3d);
 		
 		JLabel token42 = new JLabel("");
-		token42.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token42.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token42 = new GridBagConstraints();
 		gbc_token42.insets = new Insets(0, 0, 5, 5);
 		gbc_token42.gridx = 20;
@@ -568,7 +545,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token42, gbc_token42);
 		
 		JButton p4d = new JButton("");
-		p4d.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		p4d.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_p4d = new GridBagConstraints();
 		gbc_p4d.gridheight = 3;
 		gbc_p4d.gridwidth = 3;
@@ -578,7 +555,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(p4d, gbc_p4d);
 		
 		JLabel token52 = new JLabel("");
-		token52.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token52.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token52 = new GridBagConstraints();
 		gbc_token52.insets = new Insets(0, 0, 5, 5);
 		gbc_token52.gridx = 25;
@@ -586,7 +563,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token52, gbc_token52);
 		
 		JButton p5d = new JButton("");
-		p5d.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		p5d.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_p5d = new GridBagConstraints();
 		gbc_p5d.gridheight = 3;
 		gbc_p5d.gridwidth = 3;
@@ -596,7 +573,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(p5d, gbc_p5d);
 		
 		JLabel token13 = new JLabel("");
-		token13.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token13.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token13 = new GridBagConstraints();
 		gbc_token13.insets = new Insets(0, 0, 5, 5);
 		gbc_token13.gridx = 5;
@@ -604,7 +581,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token13, gbc_token13);
 		
 		JLabel token23 = new JLabel("");
-		token23.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token23.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token23 = new GridBagConstraints();
 		gbc_token23.insets = new Insets(0, 0, 5, 5);
 		gbc_token23.gridx = 10;
@@ -612,7 +589,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token23, gbc_token23);
 		
 		JLabel token33 = new JLabel("");
-		//token33.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		//token33.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token33 = new GridBagConstraints();
 		gbc_token33.insets = new Insets(0, 0, 5, 5);
 		gbc_token33.gridx = 15;
@@ -620,7 +597,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token33, gbc_token33);
 		
 		JLabel token43 = new JLabel("");
-		//token43.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		//token43.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token43 = new GridBagConstraints();
 		gbc_token43.insets = new Insets(0, 0, 5, 5);
 		gbc_token43.gridx = 20;
@@ -628,7 +605,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token43, gbc_token43);
 		
 		JLabel token53 = new JLabel("");
-		//token53.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		//token53.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token53 = new GridBagConstraints();
 		gbc_token53.insets = new Insets(0, 0, 5, 5);
 		gbc_token53.gridx = 25;
@@ -636,7 +613,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token53, gbc_token53);
 		
 		JLabel token14 = new JLabel("");
-		//token14.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		//token14.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token14 = new GridBagConstraints();
 		gbc_token14.insets = new Insets(0, 0, 5, 5);
 		gbc_token14.gridx = 5;
@@ -644,7 +621,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token14, gbc_token14);
 		
 		JLabel token24 = new JLabel("");
-		//token24.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		//token24.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token24 = new GridBagConstraints();
 		gbc_token24.insets = new Insets(0, 0, 5, 5);
 		gbc_token24.gridx = 10;
@@ -652,7 +629,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token24, gbc_token24);
 		
 		JLabel token34 = new JLabel("");
-		//token34.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		//token34.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token34 = new GridBagConstraints();
 		gbc_token34.insets = new Insets(0, 0, 5, 5);
 		gbc_token34.gridx = 15;
@@ -660,7 +637,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token34, gbc_token34);
 		
 		JLabel token44 = new JLabel("");
-		//token44.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		//token44.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token44 = new GridBagConstraints();
 		gbc_token44.insets = new Insets(0, 0, 5, 5);
 		gbc_token44.gridx = 20;
@@ -668,7 +645,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token44, gbc_token44);
 		
 		JLabel token54 = new JLabel("");
-		//token54.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		//token54.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token54 = new GridBagConstraints();
 		gbc_token54.insets = new Insets(0, 0, 5, 5);
 		gbc_token54.gridx = 25;
@@ -676,7 +653,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token54, gbc_token54);
 		
 		JLabel token15 = new JLabel("");
-		token15.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token15.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token15 = new GridBagConstraints();
 		gbc_token15.insets = new Insets(0, 0, 5, 5);
 		gbc_token15.gridx = 5;
@@ -684,7 +661,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token15, gbc_token15);
 		
 		JLabel token25 = new JLabel("");
-		token25.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token25.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token25 = new GridBagConstraints();
 		gbc_token25.insets = new Insets(0, 0, 5, 5);
 		gbc_token25.gridx = 10;
@@ -692,7 +669,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token25, gbc_token25);
 		
 		JLabel token35 = new JLabel("");
-		token35.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token35.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token35 = new GridBagConstraints();
 		gbc_token35.insets = new Insets(0, 0, 5, 5);
 		gbc_token35.gridx = 15;
@@ -700,7 +677,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token35, gbc_token35);
 		
 		JLabel token45 = new JLabel("");
-		token45.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token45.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token45 = new GridBagConstraints();
 		gbc_token45.insets = new Insets(0, 0, 5, 5);
 		gbc_token45.gridx = 20;
@@ -708,7 +685,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(token45, gbc_token45);
 		
 		JLabel token55 = new JLabel("");
-		token55.setIcon(new ImageIcon("resources/icons/purple_empty.png"));
+		token55.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token55 = new GridBagConstraints();
 		gbc_token55.insets = new Insets(0, 0, 5, 5);
 		gbc_token55.gridx = 25;
@@ -756,7 +733,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(name5, gbc_name5);
 		
 		JLabel Deck = new JLabel("");
-		Deck.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		Deck.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_Deck = new GridBagConstraints();
 		gbc_Deck.gridheight = 3;
 		gbc_Deck.gridwidth = 2;
@@ -804,7 +781,7 @@ public class MainWindow extends JFrame implements Subject {
 
 		
 		JButton leftArrow = new JButton("");
-		leftArrow.setIcon(new ImageIcon("resources/icons/left-arrow.png"));
+		leftArrow.setIcon(ResourceLoader.loadImage(Config.ARROW_LEFT));
 		GridBagConstraints gbc_leftArrow = new GridBagConstraints();
 		gbc_leftArrow.gridheight = 3;
 		gbc_leftArrow.gridwidth = 2;
@@ -814,7 +791,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(leftArrow, gbc_leftArrow);
 		
 		JButton card1 = new JButton("");
-		card1.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card1.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card1 = new GridBagConstraints();
 		gbc_card1.gridheight = 3;
 		gbc_card1.gridwidth = 3;
@@ -824,7 +801,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card1, gbc_card1);
 		
 		JButton card2 = new JButton("");
-		card2.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card2.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card2 = new GridBagConstraints();
 		gbc_card2.gridheight = 3;
 		gbc_card2.gridwidth = 3;
@@ -834,7 +811,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card2, gbc_card2);
 		
 		JButton card3 = new JButton("");
-		card3.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card3.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card3 = new GridBagConstraints();
 		gbc_card3.gridheight = 3;
 		gbc_card3.gridwidth = 3;
@@ -844,7 +821,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card3, gbc_card3);
 		
 		JButton card4 = new JButton("");
-		card4.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card4.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card4 = new GridBagConstraints();
 		gbc_card4.gridheight = 3;
 		gbc_card4.gridwidth = 3;
@@ -854,7 +831,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card4, gbc_card4);
 		
 		JButton card5 = new JButton("");
-		card5.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card5.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card5 = new GridBagConstraints();
 		gbc_card5.gridheight = 3;
 		gbc_card5.gridwidth = 3;
@@ -864,7 +841,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card5, gbc_card5);
 		
 		JButton card6 = new JButton("");
-		card6.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card6.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card6 = new GridBagConstraints();
 		gbc_card6.gridheight = 3;
 		gbc_card6.gridwidth = 3;
@@ -874,7 +851,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card6, gbc_card6);
 		
 		JButton card7 = new JButton("");
-		card7.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card7.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card7 = new GridBagConstraints();
 		gbc_card7.gridheight = 3;
 		gbc_card7.gridwidth = 2;
@@ -884,7 +861,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card7, gbc_card7);
 		
 		JButton card8 = new JButton("");
-		card8.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card8.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card8 = new GridBagConstraints();
 		gbc_card8.gridwidth = 3;
 		gbc_card8.gridheight = 3;
@@ -894,7 +871,7 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(card8, gbc_card8);
 		
 		JButton card9 = new JButton("");
-		card9.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card9.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_card9 = new GridBagConstraints();
 		gbc_card9.gridheight = 3;
 		gbc_card9.gridwidth = 3;
@@ -911,10 +888,10 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_card10.gridx = 30;
 		gbc_card10.gridy = 15;
 		getContentPane().add(card10, gbc_card10);
-		card10.setIcon(new ImageIcon(Config.IMG_IVANHOE));
+		card10.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		
 		JButton rightArrow = new JButton("");
-		rightArrow.setIcon(new ImageIcon("resources/icons/right-arrow.png"));
+		rightArrow.setIcon(ResourceLoader.loadImage(Config.ARROW_RIGHT));
 		GridBagConstraints gbc_rightArrow = new GridBagConstraints();
 		gbc_rightArrow.gridheight = 3;
 		gbc_rightArrow.gridwidth = 2;
@@ -1051,4 +1028,29 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerPoints[4] = points5;
 	}
 
+	public void setToken(int player,int token,String pic){
+		this.tokens[player][token].setIcon(ResourceLoader.loadImage(pic));
+		this.hasTokens[player][token]=true;
+	}
+	
+	
+	public void startTurn(){
+		for (int i = 0; i < 10; i++){
+			this.playerCards[i].setEnabled(true);
+		}
+		this.withdrawButton.setEnabled(true);
+		this.endTurnButton.setEnabled(true);
+		this.playCardButton.setEnabled(true);
+	}
+
+	public void endedTurn(){
+		for (int i = 0; i < 10; i++){
+			this.playerCards[i].setEnabled(false);
+		}
+		this.withdrawButton.setEnabled(false);
+		this.endTurnButton.setEnabled(false);
+		this.playCardButton.setEnabled(false);
+	}
+	
+	
 }

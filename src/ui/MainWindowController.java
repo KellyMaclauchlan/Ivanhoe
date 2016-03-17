@@ -53,7 +53,7 @@ public class MainWindowController implements Observer, Subject{
 		return name ;
 	}
 	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter your IP address and Port ie: localhost 3000");}
-	public String getNumberOfPlayersFromPlayer(){return JOptionPane.showInputDialog("Enter the number of players in this game (2-5)");}
+	public String getNumberOfPlayersFromPlayer() {return JOptionPane.showInputDialog("Enter the number of players in this game (2-5)");}
 	public Object getScore(int player) {return this.playerScores.get(player);}
 	public Object getName(int player) {return this.playerNames.get(player);}
 	public int numCards(){return playerCards.size();}

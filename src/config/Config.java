@@ -3,6 +3,8 @@ package config;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.swing.ImageIcon;
+
 public class Config {
 	public static final int DEFAULT_PORT = 3000; 
 	public static final String DEFAULT_HOST = "127.0.0.1";
@@ -112,58 +114,69 @@ public class Config {
 	public static final String IVANHOE = "ivanhoe";
 	
 	/* Card resource strings */
-	public static final String IMG_PURPLE_3 = "resources/cards_small/simpleCards14.jpg";
-	public static final String IMG_PURPLE_4 = "resources/cards_small/simpleCards15.jpg";
-	public static final String IMG_PURPLE_5 = "resources/cards_small/simpleCards16.jpg";
-	public static final String IMG_PURPLE_7 = "resources/cards_small/simpleCards17.jpg";
+	public static final String IMG_PURPLE_3 = "cards_small/simpleCards14.jpg";
+	public static final String IMG_PURPLE_4 = "cards_small/simpleCards15.jpg";
+	public static final String IMG_PURPLE_5 = "cards_small/simpleCards16.jpg";
+	public static final String IMG_PURPLE_7 = "cards_small/simpleCards17.jpg";
 	
-	public static final String IMG_RED_3 = "resources/cards_small/simpleCards7.jpg";
-	public static final String IMG_RED_4 = "resources/cards_small/simpleCards8.jpg";
-	public static final String IMG_RED_5 = "resources/cards_small/simpleCards9.jpg";
+	public static final String IMG_RED_3 = "cards_small/simpleCards7.jpg";
+	public static final String IMG_RED_4 = "cards_small/simpleCards8.jpg";
+	public static final String IMG_RED_5 = "cards_small/simpleCards9.jpg";
 
-	public static final String IMG_BLUE_2 = "resources/cards_small/simpleCards10.jpg";
-	public static final String IMG_BLUE_3 = "resources/cards_small/simpleCards11.jpg";
-	public static final String IMG_BLUE_4 = "resources/cards_small/simpleCards12.jpg";
-	public static final String IMG_BLUE_5 = "resources/cards_small/simpleCards13.jpg";
+	public static final String IMG_BLUE_2 = "cards_small/simpleCards10.jpg";
+	public static final String IMG_BLUE_3 = "cards_small/simpleCards11.jpg";
+	public static final String IMG_BLUE_4 = "cards_small/simpleCards12.jpg";
+	public static final String IMG_BLUE_5 = "cards_small/simpleCards13.jpg";
 
-	public static final String IMG_YELLOW_2 = "resources/cards_small/simpleCards4.jpg";
-	public static final String IMG_YELLOW_3 = "resources/cards_small/simpleCards5.jpg";
-	public static final String IMG_YELLOW_4 = "resources/cards_small/simpleCards6.jpg";
+	public static final String IMG_YELLOW_2 = "cards_small/simpleCards4.jpg";
+	public static final String IMG_YELLOW_3 = "cards_small/simpleCards5.jpg";
+	public static final String IMG_YELLOW_4 = "cards_small/simpleCards6.jpg";
 	
-	public static final String IMG_GREEN_1 = "resources/cards_small/simpleCards3.jpg";
+	public static final String IMG_GREEN_1 = "cards_small/simpleCards3.jpg";
 	
-	public static final String IMG_MAIDEN_6 = "resources/cards_small/simpleCards2.jpg";
-	public static final String IMG_SQUIRE_2 = "resources/cards_small/simpleCards.jpg";
-	public static final String IMG_SQUIRE_3 = "resources/cards_small/simpleCards1.jpg";
+	public static final String IMG_MAIDEN_6 = "cards_small/simpleCards2.jpg";
+	public static final String IMG_SQUIRE_2 = "cards_small/simpleCards.jpg";
+	public static final String IMG_SQUIRE_3 = "cards_small/simpleCards1.jpg";
 	
-	public static final String IMG_DODGE = "resources/cards_small/actionCards.jpg";
-	public static final String IMG_DISGRACE = "resources/cards_small/actionCards1.jpg";
-	public static final String IMG_RETREAT = "resources/cards_small/actionCards2.jpg";
-	public static final String IMG_RIPOSTE = "resources/cards_small/actionCards3.jpg";
-	public static final String IMG_OUTMANEUVER = "resources/cards_small/actionCards4.jpg";
-	public static final String IMG_COUNTER_CHARGE = "resources/cards_small/actionCards5.jpg";
-	public static final String IMG_CHARGE = "resources/cards_small/actionCards6.jpg";
-	public static final String IMG_BREAK_LANCE = "resources/cards_small/actionCards7.jpg";
-	public static final String IMG_ADAPT = "resources/cards_small/actionCards8.jpg";
-	public static final String IMG_DROP_WEAPON = "resources/cards_small/actionCards9.jpg";
-	public static final String IMG_CHANGE_WEAPON = "resources/cards_small/actionCards10.jpg";
-	public static final String IMG_UNHORSE = "resources/cards_small/actionCards11.jpg";
-	public static final String IMG_KNOCK_DOWN = "resources/cards_small/actionCards12.jpg";
-	public static final String IMG_OUTWIT = "resources/cards_small/actionCards13.jpg";
-	public static final String IMG_SHIELD = "resources/cards_small/actionCards14.jpg";
-	public static final String IMG_STUNNED = "resources/cards_small/actionCards15.jpg";
-	public static final String IMG_IVANHOE = "resources/cards_small/actionCards16.jpg";
+	public static final String IMG_DODGE = "cards_small/actionCards.jpg";
+	public static final String IMG_DISGRACE = "cards_small/actionCards1.jpg";
+	public static final String IMG_RETREAT = "cards_small/actionCards2.jpg";
+	public static final String IMG_RIPOSTE = "cards_small/actionCards3.jpg";
+	public static final String IMG_OUTMANEUVER = "cards_small/actionCards4.jpg";
+	public static final String IMG_COUNTER_CHARGE = "cards_small/actionCards5.jpg";
+	public static final String IMG_CHARGE = "cards_small/actionCards6.jpg";
+	public static final String IMG_BREAK_LANCE = "cards_small/actionCards7.jpg";
+	public static final String IMG_ADAPT = "cards_small/actionCards8.jpg";
+	public static final String IMG_DROP_WEAPON = "cards_small/actionCards9.jpg";
+	public static final String IMG_CHANGE_WEAPON = "cards_small/actionCards10.jpg";
+	public static final String IMG_UNHORSE = "cards_small/actionCards11.jpg";
+	public static final String IMG_KNOCK_DOWN = "cards_small/actionCards12.jpg";
+	public static final String IMG_OUTWIT = "cards_small/actionCards13.jpg";
+	public static final String IMG_SHIELD = "cards_small/actionCards14.jpg";
+	public static final String IMG_STUNNED = "cards_small/actionCards15.jpg";
+	public static final String IMG_IVANHOE = "cards_small/actionCards16.jpg";
 	
-	public static final String IMG_BACK = "resources/cards_small/simpleCards18.jpg";
+	public static final String IMG_BACK = "cards_small/simpleCards18.jpg";
 	
 	//token images 
-	public static final ArrayList<String> tokenStrings = new ArrayList<String>(Arrays.asList("resources/icons/blue_full.png", 
-			"resources/icons/red_full.png", "resources/icons/yellow_full.png", "resources/icons/green_full.png", 
-			"resources/icons/purple_full.png"));
+	public static final ArrayList<String> tokenStrings = new ArrayList<String>(Arrays.asList("icons/blue_full.png", 
+			"icons/red_full.png", "icons/yellow_full.png", "icons/green_full.png", 
+			"icons/purple_full.png"));
+	
+	public static final String BLUE_EMPTY = "icons/blue_empty.png";
+	public static final String RED_EMPTY = "icons/red_empty.png";
+	public static final String YELLOW_EMPTY = "icons/yellow_empty.png";
+	public static final String GREEN_EMPTY = "icons/green_empty.png";
+	public static final String PURPLE_EMPTY = "icons/purple_empty.png";
+	
+	//arrows
+	public static final String ARROW_LEFT = "icons/left-arrow.png";
+	public static final String ARROW_RIGHT = "icons/right-arrow.png";
+	
 
-	public static final ArrayList<String> emptyTokenStrings = new ArrayList<String>(Arrays.asList("resources/icons/blue_empty.png",
-			"resources/icons/red_empty.png", "resources/icons/yellow_empty.png", "resources/icons/green_empty.png", 
-			"resources/icons/purple_empty.png"));
+	public static final ArrayList<String> emptyTokenStrings = new ArrayList<String>(Arrays.asList("icons/blue_empty.png",
+			"icons/red_empty.png", "icons/yellow_empty.png", "icons/green_empty.png", 
+			"icons/purple_empty.png"));
 	
 	//strings for description
 	
