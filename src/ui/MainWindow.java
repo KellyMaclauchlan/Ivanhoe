@@ -45,6 +45,10 @@ public class MainWindow extends JFrame implements Subject {
 	//players cards
 	JButton[] playerCards;
 	
+	//stun and shield images
+	JLabel[] shieldImages;
+	JLabel[] stunImages;
+	
 	//cards played this round [player][cards]
 	JButton[] playedCards;
 	
@@ -231,6 +235,9 @@ public class MainWindow extends JFrame implements Subject {
 			this.tokens[i][2].setIcon(ResourceLoader.loadImage(Config.YELLOW_EMPTY));
 			this.tokens[i][3].setIcon(ResourceLoader.loadImage(Config.GREEN_EMPTY));
 			this.tokens[i][4].setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
+			
+			this.stunImages[i].setIcon(ResourceLoader.loadImage(Config.STUN_IMG));
+			this.shieldImages[i].setIcon(ResourceLoader.loadImage(Config.SHIELD_IMG));
 		}
 		
 		this.deck.setIcon(ResourceLoader.loadImage(Config.IMG_BACK));
@@ -426,7 +433,37 @@ public class MainWindow extends JFrame implements Subject {
  		this.playedCards[index].setIcon(ResourceLoader.loadImage(imageStr));
  	}
  	
-	public void setup2() {
+ 	public void setToken(int player,int token,String pic){
+		this.tokens[player][token].setIcon(ResourceLoader.loadImage(pic));
+		this.hasTokens[player][token]=true;
+	}
+ 	
+ 	public void setSheild(int player,boolean toggle){
+ 		this.shieldImages[player].setVisible(toggle);
+ 	}
+ 	
+ 	public void setStun(int player,boolean toggle){
+ 		this.stunImages[player].setVisible(toggle);
+ 	}
+	
+	public void startTurn(){
+		for (int i = 0; i < 10; i++){
+			this.playerCards[i].setEnabled(true);
+		}
+		this.withdrawButton.setEnabled(true);
+		this.endTurnButton.setEnabled(true);
+		this.playCardButton.setEnabled(true);
+	}
+
+	public void endedTurn(){
+		for (int i = 0; i < 10; i++){
+			this.playerCards[i].setEnabled(false);
+		}
+		this.withdrawButton.setEnabled(false);
+		this.endTurnButton.setEnabled(false);
+		this.playCardButton.setEnabled(false);
+	}
+	public void setup2(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1360, 840);
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -444,6 +481,20 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_token11.gridy = 1;
 		getContentPane().add(token11, gbc_token11);
 		
+		JLabel sheild1 = new JLabel("");
+		GridBagConstraints gbc_sheild1 = new GridBagConstraints();
+		gbc_sheild1.insets = new Insets(0, 0, 5, 5);
+		gbc_sheild1.gridx = 7;
+		gbc_sheild1.gridy = 1;
+		getContentPane().add(sheild1, gbc_sheild1);
+		
+		JLabel stun1 = new JLabel("");
+		GridBagConstraints gbc_stun1 = new GridBagConstraints();
+		gbc_stun1.insets = new Insets(0, 0, 5, 5);
+		gbc_stun1.gridx = 9;
+		gbc_stun1.gridy = 1;
+		getContentPane().add(stun1, gbc_stun1);
+		
 		JLabel token21 = new JLabel("");
 		token21.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token21 = new GridBagConstraints();
@@ -451,6 +502,20 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_token21.gridx = 10;
 		gbc_token21.gridy = 1;
 		getContentPane().add(token21, gbc_token21);
+		
+		JLabel sheild2 = new JLabel("");
+		GridBagConstraints gbc_sheild2 = new GridBagConstraints();
+		gbc_sheild2.insets = new Insets(0, 0, 5, 5);
+		gbc_sheild2.gridx = 12;
+		gbc_sheild2.gridy = 1;
+		getContentPane().add(sheild2, gbc_sheild2);
+		
+		JLabel stun2 = new JLabel("");
+		GridBagConstraints gbc_stun2 = new GridBagConstraints();
+		gbc_stun2.insets = new Insets(0, 0, 5, 5);
+		gbc_stun2.gridx = 14;
+		gbc_stun2.gridy = 1;
+		getContentPane().add(stun2, gbc_stun2);
 		
 		JLabel token31 = new JLabel("");
 		token31.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
@@ -460,6 +525,21 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_token31.gridy = 1;
 		getContentPane().add(token31, gbc_token31);
 		
+		JLabel sheild3 = new JLabel("");
+		GridBagConstraints gbc_sheild3 = new GridBagConstraints();
+		gbc_sheild3.insets = new Insets(0, 0, 5, 5);
+		gbc_sheild3.gridx = 17;
+		gbc_sheild3.gridy = 1;
+		getContentPane().add(sheild3, gbc_sheild3);
+		
+		JLabel stun3 = new JLabel("");
+		GridBagConstraints gbc_stun3 = new GridBagConstraints();
+		gbc_stun3.anchor = GridBagConstraints.NORTH;
+		gbc_stun3.insets = new Insets(0, 0, 5, 5);
+		gbc_stun3.gridx = 19;
+		gbc_stun3.gridy = 1;
+		getContentPane().add(stun3, gbc_stun3);
+		
 		JLabel token41 = new JLabel("");
 		token41.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token41 = new GridBagConstraints();
@@ -468,6 +548,20 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_token41.gridy = 1;
 		getContentPane().add(token41, gbc_token41);
 		
+		JLabel sheild4 = new JLabel("");
+		GridBagConstraints gbc_sheild4 = new GridBagConstraints();
+		gbc_sheild4.insets = new Insets(0, 0, 5, 5);
+		gbc_sheild4.gridx = 22;
+		gbc_sheild4.gridy = 1;
+		getContentPane().add(sheild4, gbc_sheild4);
+		
+		JLabel stun4 = new JLabel("");
+		GridBagConstraints gbc_stun4 = new GridBagConstraints();
+		gbc_stun4.insets = new Insets(0, 0, 5, 5);
+		gbc_stun4.gridx = 24;
+		gbc_stun4.gridy = 1;
+		getContentPane().add(stun4, gbc_stun4);
+		
 		JLabel token51 = new JLabel("");
 		token51.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token51 = new GridBagConstraints();
@@ -475,6 +569,20 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_token51.gridx = 25;
 		gbc_token51.gridy = 1;
 		getContentPane().add(token51, gbc_token51);
+		
+		JLabel sheild5 = new JLabel("");
+		GridBagConstraints gbc_sheild5 = new GridBagConstraints();
+		gbc_sheild5.insets = new Insets(0, 0, 5, 5);
+		gbc_sheild5.gridx = 27;
+		gbc_sheild5.gridy = 1;
+		getContentPane().add(sheild5, gbc_sheild5);
+		
+		JLabel stun5 = new JLabel("");
+		GridBagConstraints gbc_stun5 = new GridBagConstraints();
+		gbc_stun5.insets = new Insets(0, 0, 5, 5);
+		gbc_stun5.gridx = 29;
+		gbc_stun5.gridy = 1;
+		getContentPane().add(stun5, gbc_stun5);
 		
 		JButton p1d = new JButton("");
 		p1d.setIcon(ResourceLoader.loadImage(Config.IMG_BACK));
@@ -897,9 +1005,9 @@ public class MainWindow extends JFrame implements Subject {
 		JLabel cardText = new JLabel("card text");
 		GridBagConstraints gbc_cardText = new GridBagConstraints();
 		gbc_cardText.gridheight = 2;
-		gbc_cardText.gridwidth = 8;
-		gbc_cardText.insets = new Insets(0, 0, 5, 5);
-		gbc_cardText.gridx = 12;
+		gbc_cardText.gridwidth = 31;
+		gbc_cardText.insets = new Insets(0, 0, 0, 5);
+		gbc_cardText.gridx = 4;
 		gbc_cardText.gridy = 18;
 		getContentPane().add(cardText, gbc_cardText);
 		
@@ -1020,31 +1128,20 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerPoints[2] = points3;
 		this.playerPoints[3] = points4;
 		this.playerPoints[4] = points5;
+		
+		this.shieldImages = new JLabel[5];
+		this.shieldImages[0] = sheild1;
+		this.shieldImages[1] = sheild2;
+		this.shieldImages[2] = sheild3;
+		this.shieldImages[3] = sheild4;
+		this.shieldImages[4] = sheild5;
+		
+		this.stunImages = new JLabel[5];
+		this.stunImages[0] = stun1;
+		this.stunImages[1] = stun2;
+		this.stunImages[2] = stun3;
+		this.stunImages[3] = stun4;
+		this.stunImages[4] = stun5;
+		
 	}
-
-	public void setToken(int player,int token,String pic){
-		this.tokens[player][token].setIcon(ResourceLoader.loadImage(pic));
-		this.hasTokens[player][token]=true;
-	}
-	
-	
-	public void startTurn(){
-		for (int i = 0; i < 10; i++){
-			this.playerCards[i].setEnabled(true);
-		}
-		this.withdrawButton.setEnabled(true);
-		this.endTurnButton.setEnabled(true);
-		this.playCardButton.setEnabled(true);
-	}
-
-	public void endedTurn(){
-		for (int i = 0; i < 10; i++){
-			this.playerCards[i].setEnabled(false);
-		}
-		this.withdrawButton.setEnabled(false);
-		this.endTurnButton.setEnabled(false);
-		this.playCardButton.setEnabled(false);
-	}
-	
-	
 }
