@@ -40,7 +40,10 @@ public class MainWindowController implements Observer, Subject{
 		playerNames = new ArrayList<String>();
 		playerScores = new ArrayList<Integer>();
 		moved = 0;
-		
+		for(int i=0;i<5;i++){
+			this.window.setStun(i, false);
+			this.window.setSheild(i, false);
+		}
 		window.endedTurn();
 	}
 	/* displays the main window */
@@ -313,7 +316,11 @@ public class MainWindowController implements Observer, Subject{
 			this.window.addPlayedCard(i, Config.IMG_BACK);
 			this.window.playedCards[i].setEnabled(true);
 			//log.info("Player " + this.playedCards.get(i) + "started their round");
-		}	
+		}
+		for(int i=0;i<5;i++){
+			this.window.setStun(i, false);
+			this.window.setSheild(i, false);
+		}
 		this.window.endedTurn();
 	}
 	
@@ -356,5 +363,11 @@ public class MainWindowController implements Observer, Subject{
 		this.window.setToken(player, Config.colours.indexOf(token), Config.emptyTokenStrings.get(Config.colours.indexOf(token)));
 		this.window.hasTokens[player][Config.colours.indexOf(token)]=false;
 		log.info("Removing " + token + " token");
+	}
+	public void endTurn(){
+		this.window.endedTurn();
+	}
+	public void startTurn(){
+		this.window.startTurn();
 	}
 }

@@ -344,7 +344,7 @@ public class Client implements Runnable, Observer {
 			
 		}
 		window.showWindow();
-		this.window.window.endedTurn();
+		this.window.endTurn();
 		return Config.START_TOURNAMENT;
 		
 	}
@@ -359,7 +359,7 @@ public class Client implements Runnable, Observer {
 		if(msg.contains(Config.PICKED_PURPLE)){
 			
 				if(input[3].equalsIgnoreCase(window.playerName)){
-					window.window.startTurn();
+					window.startTurn();
 					String value[] = input[4].split("_");
 					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
 					output = Config.COLOUR_PICKED + " " + window.setTournament();
@@ -374,7 +374,7 @@ public class Client implements Runnable, Observer {
 		}else{
 			window.startRound();
 			if(input[1].equalsIgnoreCase(window.playerName)){
-				window.window.startTurn();
+				window.startTurn();
 				String value[] = input[2].split("_");
 				window.addCard(this.getCardFromTypeValue(value[0], value[1]));
 				output = Config.COLOUR_PICKED + " " + window.setTournament();	
@@ -492,6 +492,7 @@ public class Client implements Runnable, Observer {
 		}
 		else if(cardType.equalsIgnoreCase(Config.RIPOSTE)){
 			//output += window.pickAName("take the last card on their display and add it to yours.");
+			
 		}
 		else if(cardType.equalsIgnoreCase(Config.BREAKLANCE)){
 			//output += window.pickAName("remove all purple cards from their display.");
@@ -557,7 +558,7 @@ public class Client implements Runnable, Observer {
 				window.setScore(window.getCurrPlayer(), Integer.parseInt(score));
 				
 				if(window.getPlayerNum() == currentPlayer){
-					window.window.endedTurn();
+					window.endTurn();
 				}
 				
 				for(int i = 0; i < window.playerNames.size(); i++){
@@ -565,7 +566,7 @@ public class Client implements Runnable, Observer {
 						window.setCurrPlayer(i);
 						
 						if(window.getPlayerNum() == window.getCurrPlayer()){
-							window.window.startTurn();
+							window.startTurn();
 							String card[] = input[5].split("_");
 							String type = card[0];
 							String value = card[1];
@@ -681,7 +682,6 @@ public class Client implements Runnable, Observer {
 		if(!output.equals("")){
 			Card c=new SupportCard(type,Integer.parseInt(value),output);
 			c.setCardDescription(info);
-			c.setCardDescription("this is set");
 			return c;
 		} 
 		

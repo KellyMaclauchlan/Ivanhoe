@@ -14,8 +14,8 @@ public class Startui {
 		control.setPlayerNum(0);
 		Card c1=new ColourCard("purple", 3,Config.IMG_PURPLE_3);
 		Card c2= new ColourCard("purple", 4,Config.IMG_PURPLE_4);
-		c1.setCardDescription("this is a purple 3");
-		c2.setCardDescription("this is a purple 4");
+		c1.setCardDescription(Config.infoStrings.get(34));
+		c2.setCardDescription(Config.infoStrings.get(23));
 		control.addCard(c1);
 		control.addCard(c2);
 		control.addCard(c1);
