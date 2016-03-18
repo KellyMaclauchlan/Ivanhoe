@@ -492,6 +492,7 @@ public class Client implements Runnable, Observer {
 		}
 		else if(cardType.equalsIgnoreCase(Config.RIPOSTE)){
 			//output += window.pickAName("take the last card on their display and add it to yours.");
+			
 		}
 		else if(cardType.equalsIgnoreCase(Config.BREAKLANCE)){
 			//output += window.pickAName("remove all purple cards from their display.");

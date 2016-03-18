@@ -853,7 +853,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_withdrawButton.gridy = 11;
 		getContentPane().add(withdrawButton, gbc_withdrawButton);
 		
-		JLabel textLabel = new JLabel("game instructions");
+		JLabel textLabel = new JLabel("");
 		GridBagConstraints gbc_textLabel = new GridBagConstraints();
 		gbc_textLabel.gridheight = 2;
 		gbc_textLabel.gridwidth = 5;
@@ -1002,7 +1002,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_rightArrow.gridy = 15;
 		getContentPane().add(rightArrow, gbc_rightArrow);
 		
-		JLabel cardText = new JLabel("card text");
+		JLabel cardText = new JLabel("");
 		GridBagConstraints gbc_cardText = new GridBagConstraints();
 		gbc_cardText.gridheight = 2;
 		gbc_cardText.gridwidth = 31;
