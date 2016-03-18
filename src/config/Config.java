@@ -189,7 +189,7 @@ public class Config {
 			"Blue: 2", "Blue: 3", "Blue: 4", "Blue: 5",
 			"Red: 3", "Red: 4", "Red: 5",
 			"Purple: 3", "Purple: 4", "Purple: 5", "Purple: 7",
-			"Green: 14",
+			"Green: 1",
 			"Squire: 2", "Squire: 3", "Maiden: 6",
 			"Unhorse: Change the tournament colour from purple to red blue or yellow",
 			"Change Weapon: Change the colour from red blue or yellow to a different one of these colours",
