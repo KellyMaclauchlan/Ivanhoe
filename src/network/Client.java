@@ -688,6 +688,7 @@ public class Client implements Runnable, Observer {
 		if(!output.equals("")){
 			Card c=new SupportCard(type,Integer.parseInt(value),output);
 			c.setCardDescription(info);
+			c.setCardDescription("this is set");
 			return c;
 		} 
 		

@@ -173,6 +173,10 @@ public class Config {
 	public static final String ARROW_LEFT = "icons/left-arrow.png";
 	public static final String ARROW_RIGHT = "icons/right-arrow.png";
 	
+	//sheild and stun
+	public static final String SHEILD = "icons/sheild.png";
+	public static final String STUN = "icons/stun.png";
+	
 
 	public static final ArrayList<String> emptyTokenStrings = new ArrayList<String>(Arrays.asList("icons/blue_empty.png",
 			"icons/red_empty.png", "icons/yellow_empty.png", "icons/green_empty.png", 
@@ -185,7 +189,7 @@ public class Config {
 			"Blue: 2", "Blue: 3", "Blue: 4", "Blue: 5",
 			"Red: 3", "Red: 4", "Red: 5",
 			"Purple: 3", "Purple: 4", "Purple: 5", "Purple: 7",
-			"Green: 14",
+			"Green: 1",
 			"Squire: 2", "Squire: 3", "Maiden: 6",
 			"Unhorse: Change the tournament colour from purple to red blue or yellow",
 			"Change Weapon: Change the colour from red blue or yellow to a different one of these colours",

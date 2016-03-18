@@ -281,71 +281,61 @@ public class MainWindow extends JFrame implements Subject {
 			
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 0;	
-			deck.setText(lastCard + "");
+			selectCard(0);
 		}});
 		this.playerCards[1].addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 1;
-			deck.setText(lastCard + "");
+			selectCard(1);
 		}});
 		this.playerCards[2].addActionListener(new ActionListener() {
 	
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 2;	
-			deck.setText(lastCard + "");
+			selectCard(2);
 		}});
 		this.playerCards[3].addActionListener(new ActionListener() {
 	
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 3;	
-			deck.setText(lastCard + "");
+			selectCard(3);
 		}});
 		this.playerCards[4].addActionListener(new ActionListener() {
 	
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 4;	
-			deck.setText(lastCard + "");
+			selectCard(4);
 		}});
 		this.playerCards[5].addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 5;	
-			deck.setText(lastCard + "");
+			selectCard(5);
 		}});
 		this.playerCards[6].addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 6;	
-			deck.setText(lastCard + "");
+			selectCard(6);
 		}});
 		this.playerCards[7].addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 7;	
-			deck.setText(lastCard + "");
+			selectCard(7);
 		}});
 		this.playerCards[8].addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 8;	
-			deck.setText(lastCard + "");
+			selectCard(8);
 		}});
 		this.playerCards[9].addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			lastCard = 9;
-			deck.setText(lastCard + "");
+			selectCard(9);
 		}});
 		this.playedCards[0].addActionListener(new ActionListener() {
 		
@@ -380,7 +370,12 @@ public class MainWindow extends JFrame implements Subject {
 	}
  	
  	public void selectCard(int i){
- 		lastCard=i;
+ 		lastCard=i;	
+ 		deck.setText(lastCard + "");
+ 		this.notifyObservers(Config.DESCRIPTION);
+ 		if(testing){
+ 			this.textLabel.setText("card "+i);
+ 		}
  		
  	}
  	protected void playCardClicked() {

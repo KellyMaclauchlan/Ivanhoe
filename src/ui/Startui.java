@@ -54,18 +54,18 @@ public class Startui {
 		control.addPlayedCard(0, c1);
 		control.addPlayedCard(0, c2);
 
-		control.addToken(0, 1);
+		/*control.addToken(0, 1);
 		control.addToken(0, 3);
 		control.addToken(0, 4);
 		control.addToken(1, 0);
-		control.addToken(1, 2);
+		control.addToken(1, 2);*/
 		//control.playerNames.add("kelly");
 		//control.playerNames.add("katie");
 		//control.playerNames.add("brit");
 		control.playerName=control.getNameFromPlayer();
 		control.setName(0, control.playerName);
 		control.playerNames.add(0, control.playerName);
-		control.removeToken(1, Config.BLUE);
+		//control.removeToken(1, Config.BLUE);
 		
 		//control.playerWithdraws("jo");
 		control.setCurrPlayer(control.getPlayerNum());
