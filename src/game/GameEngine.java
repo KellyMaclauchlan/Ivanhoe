@@ -104,6 +104,15 @@ public class GameEngine {
 		String output = "";
 		Card picked = pickupCard();
 		String purple;
+		int nonAction = 0;
+		for (Card c: currentPlayer.getCards()) {
+			if (!c.getCardType().equals(Config.ACTION)) {
+				nonAction ++;
+			}
+		}
+		if (nonAction == 0) {
+			currentPlayer = getNext();
+		}
 		for (Player p: players) {
 			if (p.getStartTokenColour() == Config.PURPLE) {
 				purple = p.getName();
