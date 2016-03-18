@@ -392,10 +392,14 @@ public class Client implements Runnable, Observer {
 	public String processColour(String msg) {
 		String output = "result";
 		String input[] = msg.split(" ");
+		String colour = input[1];
+		if (colour.equals(Config.PURPLE)) {
+			window.setLastTournamentPurple(true);
+		}
 		
 		
 		for(int i = 0; i < 5; i++){
-			if (input[1].equalsIgnoreCase(options[i])){
+			if (colour.equalsIgnoreCase(options[i])){
 					window.setTournamentColour(i);
 			}
 		}
@@ -430,6 +434,9 @@ public class Client implements Runnable, Observer {
 			output = Config.PLAY + this.processActionCard();
 		}
 		else{
+			if (window.lastCard.getType().equals(Config.UNHORSE)) {
+				window.setLastTournamentPurple(false);
+			}
 			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();
 			window.removeCard(window.lastCard);
 		}

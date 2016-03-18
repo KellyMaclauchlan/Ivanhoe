@@ -29,6 +29,7 @@ public class MainWindowController implements Observer, Subject{
 	private ArrayList<Integer>playerScores;
 	public ArrayList<String>playerNames;
 	private ArrayList<Observer>observers = new ArrayList<Observer>();
+	private boolean lastTournamentPurple = false;
 	
 	public MainWindowController(){
 		playerCards = new ArrayList<Card>();
@@ -120,11 +121,13 @@ public class MainWindowController implements Observer, Subject{
 		//String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 		ArrayList<String> colours = new ArrayList<>();
 		for (Card c: playerCards) {
-			if (!colours.contains(c.getType()) && c.getCardType().equals(Config.COLOUR)) {
+			if (!colours.contains(c.getType()) && c.getCardType().equals(Config.COLOUR) && 
+					!(c.getType().equals(Config.PURPLE) && lastTournamentPurple)) {
 				colours.add(c.getType());
 				System.out.println("Colour added: " + c.getType());
 			}
 		}
+		setLastTournamentPurple(false);
 		String[] options = new String[colours.size()];
 		for (int i = 0; i < colours.size(); i++) {
 			options[i] = colours.get(i);
@@ -356,5 +359,11 @@ public class MainWindowController implements Observer, Subject{
 		this.window.setToken(player, Config.colours.indexOf(token), Config.emptyTokenStrings.get(Config.colours.indexOf(token)));
 		this.window.hasTokens[player][Config.colours.indexOf(token)]=false;
 		log.info("Removing " + token + " token");
+	}
+	public boolean isLastTournamentPurple() {
+		return lastTournamentPurple;
+	}
+	public void setLastTournamentPurple(boolean lastTournamentPurple) {
+		this.lastTournamentPurple = lastTournamentPurple;
 	}
 }
