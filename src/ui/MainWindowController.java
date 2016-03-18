@@ -118,19 +118,29 @@ public class MainWindowController implements Observer, Subject{
 	
 	/* Popups */
 	public String setTournament(){
-		//String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+		String[] options = null;
 		ArrayList<String> colours = new ArrayList<>();
 		for (Card c: playerCards) {
-			if (!colours.contains(c.getType()) && c.getCardType().equals(Config.COLOUR) && 
+			if (c.getCardType().equals(Config.SUPPORT)) {
+				if (lastTournamentPurple) {
+					options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN};
+				} else {
+					options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+				}
+				colours = null;
+				break;
+			} else if (!colours.contains(c.getType()) && c.getCardType().equals(Config.COLOUR) && 
 					!(c.getType().equals(Config.PURPLE) && lastTournamentPurple)) {
 				colours.add(c.getType());
 				System.out.println("Colour added: " + c.getType());
 			}
 		}
 		setLastTournamentPurple(false);
-		String[] options = new String[colours.size()];
-		for (int i = 0; i < colours.size(); i++) {
-			options[i] = colours.get(i);
+		if (colours != null) {
+			options = new String[colours.size()];
+			for (int i = 0; i < colours.size(); i++) {
+				options[i] = colours.get(i);
+			}
 		}
 	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		log.info("Tournament colour has been set to " + options[response]);
@@ -366,4 +376,5 @@ public class MainWindowController implements Observer, Subject{
 	public void setLastTournamentPurple(boolean lastTournamentPurple) {
 		this.lastTournamentPurple = lastTournamentPurple;
 	}
+
 }
