@@ -481,8 +481,10 @@ public class Client implements Runnable, Observer {
 		}
 		else if(cardType.equalsIgnoreCase(Config.OUTWIT)){
 			//pick a face up card including sheild and stun 
+			output +=window.playerPickCardFromDisplay(window.playerName);
 			String name= window.pickAName("take a played card from.");
 			output+= name+" "+window.playerPickCardForOutwhit(name);
+			//added to output <your cardtype > <value> <other player> <their card type> <value>
 		}
 		else if(cardType.equalsIgnoreCase(Config.DODGE)){
 			// pick a player and a card to remove from their display
