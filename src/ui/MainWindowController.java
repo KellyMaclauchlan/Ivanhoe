@@ -30,6 +30,7 @@ public class MainWindowController implements Observer, Subject{
 	public ArrayList<String>playerNames;
 	private ArrayList<Observer>observers = new ArrayList<Observer>();
 	
+	
 	public MainWindowController(){
 		playerCards = new ArrayList<Card>();
 		playerCards.clear();
@@ -42,7 +43,7 @@ public class MainWindowController implements Observer, Subject{
 		moved = 0;
 		for(int i=0;i<5;i++){
 			this.window.setStun(i, false);
-			this.window.setSheild(i, false);
+			this.window.setShield(i, false);
 		}
 		window.endedTurn();
 	}
@@ -189,6 +190,72 @@ public class MainWindowController implements Observer, Subject{
 	}
 	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
 	
+	//asks user if they would like to play ivanho to stop the action card returns true our false 
+	public Boolean playIvanho(String name){
+			int result =JOptionPane.showConfirmDialog(null, 
+				   "Do you want to use Ivanho to stop the "+name+" card?",null, JOptionPane.YES_NO_OPTION);
+		if(result == JOptionPane.OK_OPTION)
+			return true;
+		return false;
+	}
+	
+	public String playerPickCardFromDisplay(String name){
+		int player=this.playerNames.indexOf(name);
+		String result="";
+		ArrayList<String> info= new ArrayList<String>();
+		
+		for(Card c : this.playedCards.get(player)){
+			info.add(c.getCardDescription());
+		}
+		String[] possibilities= new String[info.size()];
+		info.toArray(possibilities);
+		String s = (String)JOptionPane.showInputDialog(
+                null,
+                "pick a card",
+                "Customized Dialog",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                possibilities,
+                info.get(0));
+		for(Card c : this.playedCards.get(player)){
+			if(s.equalsIgnoreCase(c.getCardDescription()))
+				return c.getType()+" "+c.getValue();
+		}
+		return result;
+	}
+	public String playerPickCardForOutwhit(String name){
+		int player=this.playerNames.indexOf(name);
+		String result="";
+		ArrayList<String> info= new ArrayList<String>();
+		
+		for(Card c : this.playedCards.get(player)){
+			info.add(c.getCardDescription());
+		}
+		if(window.shieldImages[player].isVisible())
+			info.add("Shield");
+		if(window.stunImages[player].isVisible())
+			info.add("Stun");
+		String[] possibilities= new String[info.size()];
+		info.toArray(possibilities);
+		String s = (String)JOptionPane.showInputDialog(
+                null,
+                "pick a card",
+                "Customized Dialog",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                possibilities,
+                info.get(0));
+		for(Card c : this.playedCards.get(player)){
+			if(s.equalsIgnoreCase(c.getCardDescription()))
+				return c.getType()+" "+c.getValue();
+		}
+		
+		return s;
+	}
+	
+	
+	
+	
 	/* Observer Pattern */
 	@Override
 	public void registerObserver(Observer observer) {
@@ -319,7 +386,7 @@ public class MainWindowController implements Observer, Subject{
 		}
 		for(int i=0;i<5;i++){
 			this.window.setStun(i, false);
-			this.window.setSheild(i, false);
+			this.window.setShield(i, false);
 		}
 		this.window.endedTurn();
 	}
@@ -369,5 +436,11 @@ public class MainWindowController implements Observer, Subject{
 	}
 	public void startTurn(){
 		this.window.startTurn();
+	}
+	public void setStun(int player, boolean toggle){
+		window.setStun(player, toggle);
+	}
+	public void setShield(int player, boolean toggle){
+		window.setShield(player, toggle);
 	}
 }

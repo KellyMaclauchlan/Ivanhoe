@@ -462,7 +462,7 @@ public class Client implements Runnable, Observer {
 		String cardType = window.lastCard.getType();
 		output = " " + cardType + " ";
 		
-		//note Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
+		//note sheild, ivanho, Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
 		if(cardType.equalsIgnoreCase(Config.KNOCKDOWN)){
 			output += window.pickAName("take a card from.");
 		}
@@ -475,6 +475,23 @@ public class Client implements Runnable, Observer {
 		
 		else if(cardType.equalsIgnoreCase(Config.CHANGEWEAPON)||cardType.equalsIgnoreCase(Config.UNHORSE)){
 			output += window.changeColour();
+		}
+		else if(cardType.equalsIgnoreCase(Config.STUNNED)){
+			output += window.pickAName("stun.");
+		}
+		else if(cardType.equalsIgnoreCase(Config.OUTWIT)){
+			//pick a face up card including sheild and stun 
+			String name= window.pickAName("take a played card from.");
+			output+= name+" "+window.playerPickCardForOutwhit(name);
+		}
+		else if(cardType.equalsIgnoreCase(Config.DODGE)){
+			// pick a player and a card to remove from their display
+			String name= window.pickAName("take a played card from.");
+			output+= name+" "+window.playerPickCardFromDisplay(name);
+		}
+		else if(cardType.equalsIgnoreCase(Config.RETREAT)){
+			// pick a card from your display 
+			output +=window.playerPickCardFromDisplay(window.playerName);
 		}
 		return output;
 	}

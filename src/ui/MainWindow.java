@@ -438,7 +438,7 @@ public class MainWindow extends JFrame implements Subject {
 		this.hasTokens[player][token]=true;
 	}
  	
- 	public void setSheild(int player,boolean toggle){
+ 	public void setShield(int player,boolean toggle){
  		this.shieldImages[player].setVisible(toggle);
  	}
  	
