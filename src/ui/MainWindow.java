@@ -376,7 +376,6 @@ public class MainWindow extends JFrame implements Subject {
  		if(testing){
  			this.textLabel.setText("card "+i);
  		}
- 		
  	}
  	protected void playCardClicked() {
 		this.textLabel.setText("played " + lastCard + "");
