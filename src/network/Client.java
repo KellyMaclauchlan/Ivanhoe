@@ -556,7 +556,6 @@ public class Client implements Runnable, Observer {
 					window.setScore(i, 0);
 				}
 				this.window.setScore(winningPlayer, 0);
-				
 				output = Config.START_TOURNAMENT;
 			}
 			

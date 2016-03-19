@@ -132,7 +132,6 @@ public class MainWindowController implements Observer, Subject{
 			} else if (!colours.contains(c.getType()) && c.getCardType().equals(Config.COLOUR) && 
 					!(c.getType().equals(Config.PURPLE) && lastTournamentPurple)) {
 				colours.add(c.getType());
-				System.out.println("Colour added: " + c.getType());
 			}
 		}
 		setLastTournamentPurple(false);
@@ -219,7 +218,6 @@ public class MainWindowController implements Observer, Subject{
 	
 	@Override
 	public void update(String message) {
-		System.out.println(message);
 		lastMessege = message;
 		switch(message){
 			case "leftclick": leftClick();
@@ -246,7 +244,6 @@ public class MainWindowController implements Observer, Subject{
 		// TODO Auto-generated method stub
 		String info= this.playerCards.get(window.lastCard+moved).getCardDescription();
 		window.cardTextLabel.setText(info);
-		System.out.println(info);
 	}
 	/* Add card to Player's hand */
 	public void addCard(Card newCard){
@@ -322,7 +319,6 @@ public class MainWindowController implements Observer, Subject{
 			setScore(i,0);			
 			this.playedCards.get(i).clear();
 			//this.playedCards.set(i, new ArrayList<Card>());						
-			System.out.println("starting new round"+ this.playedCards.get(i).size());
 			this.window.addPlayedCard(i, Config.IMG_BACK);
 			this.window.playedCards[i].setEnabled(true);
 			//log.info("Player " + this.playedCards.get(i) + "started their round");
