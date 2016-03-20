@@ -432,6 +432,9 @@ public class MainWindow extends JFrame implements Subject {
  	public void addPlayedCard(int index, String imageStr){
  		this.playedCards[index].setIcon(ResourceLoader.loadImage(imageStr));
  	}
+ 	public void setPlayedCardImage(int index, String imageStr){
+ 		this.playedCards[index].setIcon(ResourceLoader.loadImage(imageStr));
+ 	}
  	
  	public void setToken(int player,int token,String pic){
 		this.tokens[player][token].setIcon(ResourceLoader.loadImage(pic));

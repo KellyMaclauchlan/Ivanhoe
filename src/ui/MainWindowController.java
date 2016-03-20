@@ -65,6 +65,7 @@ public class MainWindowController implements Observer, Subject{
 	public int getPlayerNum() {return playerNum;}
 	public int getTotalPlayers() {return totalPlayers;}
 	public Card getPlayedCard(int player, int index) {return this.playedCards.get(player).get(index);}
+	public Card getPlayerCard(int index) {return this.playerCards.get(index);}
 	public int getTournamentColour() {
 		return tournamentColour;
 	}
@@ -255,7 +256,7 @@ public class MainWindowController implements Observer, Subject{
 	
 	
 	
-	
+	/*end of popups*/
 	/* Observer Pattern */
 	@Override
 	public void registerObserver(Observer observer) {
@@ -442,5 +443,14 @@ public class MainWindowController implements Observer, Subject{
 	}
 	public void setShield(int player, boolean toggle){
 		window.setShield(player, toggle);
+	}
+	
+	public void resetPlayedCards(int player){
+		this.playedCards.get(player).clear();
+	}
+	public void removePlayedCard(int player, Card c){
+		this.playedCards.get(player).remove(c);
+		this.window.setPlayedCardImage(player, this.playedCards.get(player).get(this.playedCards.get(player).size()-1).getCardImage());
+		
 	}
 }
