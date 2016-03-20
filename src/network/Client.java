@@ -550,9 +550,13 @@ public class Client implements Runnable, Observer {
 			window.setTournamentColour(Config.colours.indexOf(input[2]));
 		}
 		else if(cardType.equalsIgnoreCase(Config.SHIELD)){
+			//msg = waiting shield name
+			window.setShield(window.getPlayerByName(input[2]), true);
 		//TODO
 		}
 		else if(cardType.equalsIgnoreCase(Config.STUNNED)){
+			//msg = waiting stun name
+			window.setStun(window.getPlayerByName(input[2]), true);
 			//TODO
 		}
 		else if(cardType.equalsIgnoreCase(Config.DISGRACE)){
