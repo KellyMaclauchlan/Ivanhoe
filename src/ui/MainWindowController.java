@@ -31,6 +31,7 @@ public class MainWindowController implements Observer, Subject{
 	private ArrayList<Observer>observers = new ArrayList<Observer>();
 	private boolean lastTournamentPurple = false;
 	
+	
 	public MainWindowController(){
 		playerCards = new ArrayList<Card>();
 		playerCards.clear();
@@ -41,7 +42,10 @@ public class MainWindowController implements Observer, Subject{
 		playerNames = new ArrayList<String>();
 		playerScores = new ArrayList<Integer>();
 		moved = 0;
-		
+		for(int i=0;i<5;i++){
+			this.window.setStun(i, false);
+			this.window.setShield(i, false);
+		}
 		window.endedTurn();
 	}
 	/* displays the main window */
@@ -62,6 +66,7 @@ public class MainWindowController implements Observer, Subject{
 	public int getPlayerNum() {return playerNum;}
 	public int getTotalPlayers() {return totalPlayers;}
 	public Card getPlayedCard(int player, int index) {return this.playedCards.get(player).get(index);}
+	public Card getPlayerCard(int index) {return this.playerCards.get(index);}
 	public int getTournamentColour() {
 		return tournamentColour;
 	}
@@ -198,6 +203,72 @@ public class MainWindowController implements Observer, Subject{
 	}
 	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
 	
+	//asks user if they would like to play ivanho to stop the action card returns true our false 
+	public Boolean playIvanho(String name){
+			int result =JOptionPane.showConfirmDialog(null, 
+				   "Do you want to use Ivanho to stop the "+name+" card?",null, JOptionPane.YES_NO_OPTION);
+		if(result == JOptionPane.OK_OPTION)
+			return true;
+		return false;
+	}
+	
+	public String playerPickCardFromDisplay(String name){
+		int player=this.playerNames.indexOf(name);
+		String result="";
+		ArrayList<String> info= new ArrayList<String>();
+		
+		for(Card c : this.playedCards.get(player)){
+			info.add(c.getCardDescription());
+		}
+		String[] possibilities= new String[info.size()];
+		info.toArray(possibilities);
+		String s = (String)JOptionPane.showInputDialog(
+                null,
+                "pick a card",
+                "Customized Dialog",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                possibilities,
+                info.get(0));
+		for(Card c : this.playedCards.get(player)){
+			if(s.equalsIgnoreCase(c.getCardDescription()))
+				return c.getType()+" "+c.getValue();
+		}
+		return result;
+	}
+	public String playerPickCardForOutwhit(String name){
+		int player=this.playerNames.indexOf(name);
+		String result="";
+		ArrayList<String> info= new ArrayList<String>();
+		
+		for(Card c : this.playedCards.get(player)){
+			info.add(c.getCardDescription());
+		}
+		if(window.shieldImages[player].isVisible())
+			info.add("Shield");
+		if(window.stunImages[player].isVisible())
+			info.add("Stun");
+		String[] possibilities= new String[info.size()];
+		info.toArray(possibilities);
+		String s = (String)JOptionPane.showInputDialog(
+                null,
+                "pick a card",
+                "Customized Dialog",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                possibilities,
+                info.get(0));
+		for(Card c : this.playedCards.get(player)){
+			if(s.equalsIgnoreCase(c.getCardDescription()))
+				return c.getType()+" "+c.getValue();
+		}
+		
+		return s;
+	}
+	
+	
+	
+	/*end of popups*/
 	/* Observer Pattern */
 	@Override
 	public void registerObserver(Observer observer) {
@@ -322,7 +393,11 @@ public class MainWindowController implements Observer, Subject{
 			this.window.addPlayedCard(i, Config.IMG_BACK);
 			this.window.playedCards[i].setEnabled(true);
 			//log.info("Player " + this.playedCards.get(i) + "started their round");
-		}	
+		}
+		for(int i=0;i<5;i++){
+			this.window.setStun(i, false);
+			this.window.setShield(i, false);
+		}
 		this.window.endedTurn();
 	}
 	
@@ -366,6 +441,7 @@ public class MainWindowController implements Observer, Subject{
 		this.window.hasTokens[player][Config.colours.indexOf(token)]=false;
 		log.info("Removing " + token + " token");
 	}
+<<<<<<< HEAD
 	public boolean isLastTournamentPurple() {
 		return lastTournamentPurple;
 	}
@@ -373,4 +449,27 @@ public class MainWindowController implements Observer, Subject{
 		this.lastTournamentPurple = lastTournamentPurple;
 	}
 
+=======
+	public void endTurn(){
+		this.window.endedTurn();
+	}
+	public void startTurn(){
+		this.window.startTurn();
+	}
+	public void setStun(int player, boolean toggle){
+		window.setStun(player, toggle);
+	}
+	public void setShield(int player, boolean toggle){
+		window.setShield(player, toggle);
+	}
+	
+	public void resetPlayedCards(int player){
+		this.playedCards.get(player).clear();
+	}
+	public void removePlayedCard(int player, Card c){
+		this.playedCards.get(player).remove(c);
+		this.window.setPlayedCardImage(player, this.playedCards.get(player).get(this.playedCards.get(player).size()-1).getCardImage());
+		
+	}
+>>>>>>> 73cde2018c495bff447c5d17d1b91816c36635f1
 }

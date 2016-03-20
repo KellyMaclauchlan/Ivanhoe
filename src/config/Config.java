@@ -174,8 +174,8 @@ public class Config {
 	public static final String ARROW_RIGHT = "icons/right-arrow.png";
 	
 	//sheild and stun
-	public static final String SHEILD = "icons/sheild.png";
-	public static final String STUN = "icons/stun.png";
+	public static final String SHIELD_IMG = "icons/sheild.png";
+	public static final String STUN_IMG = "icons/stun.png";
 	
 
 	public static final ArrayList<String> emptyTokenStrings = new ArrayList<String>(Arrays.asList("icons/blue_empty.png",
@@ -195,7 +195,7 @@ public class Config {
 			"Change Weapon: Change the colour from red blue or yellow to a different one of these colours",
 			"Drop Weapon: Change the tournament colour from red blue or yellow to green",
 			"Shield: Play this card face up in front of you but separate from your display. As long as you have the SHIELD in front of you, the action cards have no effect on your display", 
-			"Stunned: You may play this card on any one opponent still in the tournament but separate from the opponents display. As long as a player is STUNNED he may only add one new card to his display each turn", 
+			"Stunned: You may play this card on any one opponent still in the tournament\n but separate from the opponents display. As long as a player is STUNNED he may only add one new card to his display each turn", 
 			"Ivanhoe: You may play this card at anytime as long as you are in a tournament. Use the IVANHOE card to cancel all effects of any one action card just played",
 			"Break lance: One opponent must discard all purple cards from their display",
 			"Riposte: you may take the last card of any one opponent's display and add it to your own display", 
@@ -207,6 +207,6 @@ public class Config {
 			"Counter-Charge: Identify the highest value card throughout all displays. All players must discard all cards of this value from their displays",
 			"Disgrace: All players must discard all their supporters from their displays", 
 			"Adapt: Each player may only keep one card of each value in his display. All other cards with the same value are discarded. Each player decides which card he discards", 
-			"Outwit: Place one of your face up cards infant of an opponent, take one face up card from youths opponent and place it face up infant of yourself. This may include SHEILD and STUNNED cards"));
+			"Outwit: Place one of your face up cards infront of an opponent, take one face up card from your opponent and place it face up infant of yourself. This may include SHEILD and STUNNED cards"));
 
 }

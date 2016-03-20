@@ -14,8 +14,8 @@ public class Startui {
 		control.setPlayerNum(0);
 		Card c1=new ColourCard("purple", 3,Config.IMG_PURPLE_3);
 		Card c2= new ColourCard("purple", 4,Config.IMG_PURPLE_4);
-		c1.setCardDescription("this is a purple 3");
-		c2.setCardDescription("this is a purple 4");
+		c1.setCardDescription("purple three");
+		c2.setCardDescription("purple 4");
 		control.addCard(c1);
 		control.addCard(c2);
 		control.addCard(c1);
@@ -69,9 +69,16 @@ public class Startui {
 		
 		//control.playerWithdraws("jo");
 		control.setCurrPlayer(control.getPlayerNum());
-		control.window.startTurn();
+		System.out.println(control.playerPickCardFromDisplay(control.playerName));
+		control.setShield(0, true);
+		System.out.println(control.playerPickCardForOutwhit(control.playerName));
+		control.setStun(0, true);
+		System.out.println(control.playerPickCardForOutwhit(control.playerName));
+		control.setStun(0, false);
+		System.out.println(control.playerPickCardForOutwhit(control.playerName));
+		//control.window.startTurn();
 		//control.startRound();
-	
+		//System.out.println(control.playIvanho("unhorse"));
 		//testing various pop ups
 		//control.setTournamnetColour(control.setTournament());
 		//System.out.println(control.playerPickToken() );
