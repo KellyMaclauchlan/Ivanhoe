@@ -441,7 +441,6 @@ public class MainWindowController implements Observer, Subject{
 		this.window.hasTokens[player][Config.colours.indexOf(token)]=false;
 		log.info("Removing " + token + " token");
 	}
-<<<<<<< HEAD
 	public boolean isLastTournamentPurple() {
 		return lastTournamentPurple;
 	}
@@ -449,7 +448,6 @@ public class MainWindowController implements Observer, Subject{
 		this.lastTournamentPurple = lastTournamentPurple;
 	}
 
-=======
 	public void endTurn(){
 		this.window.endedTurn();
 	}
@@ -471,5 +469,4 @@ public class MainWindowController implements Observer, Subject{
 		this.window.setPlayedCardImage(player, this.playedCards.get(player).get(this.playedCards.get(player).size()-1).getCardImage());
 		
 	}
->>>>>>> 73cde2018c495bff447c5d17d1b91816c36635f1
 }
