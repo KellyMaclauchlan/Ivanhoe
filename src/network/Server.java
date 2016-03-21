@@ -168,8 +168,7 @@ public class Server implements Runnable {
 		
 		if(Integer.parseInt(s[1]) < 2 || Integer.parseInt(s[1]) > 5){
 			send1Client(id, Config.NOT_ENOUGH);
-		}
-		
+		}		
 		else{
 			send = game.processInput(msg);
 			processInput(id, send);
