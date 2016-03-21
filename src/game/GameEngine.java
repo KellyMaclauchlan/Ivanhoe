@@ -71,7 +71,7 @@ public class GameEngine {
 												// OR IF tournament is won and tournamentColour is purple, add: purple win <winner name>  
 												// IF game is won, add: game winner <winner name>
 												
-			// input = purple win <colour>
+			// input = purple_win <colour>
 			} else if (input.contains(Config.PURPLE_WIN)) {
 				output = processPurpleWin(input); // output = same as a normal tournament win of any colour
 			// input = withdraw
@@ -121,6 +121,15 @@ public class GameEngine {
 		String output = "";
 		Card picked = pickupCard();
 		String purple;
+		int nonAction = 0;
+		for (Card c: currentPlayer.getCards()) {
+			if (!c.getCardType().equals(Config.ACTION)) {
+				nonAction ++;
+			}
+		}
+		if (nonAction == 0) {
+			currentPlayer = getNext();
+		}
 		for (Player p: players) {
 			if (p.getStartTokenColour() == Config.PURPLE) {
 				purple = p.getName();
@@ -167,7 +176,7 @@ public class GameEngine {
 					for (Card c: currentPlayer.getDisplay()) {
 						if (c.getType().equals(Config.MAIDEN)) {
 							hasMaiden = true;
-							output = Config.UNPLAYABLE;
+							output += Config.UNPLAYABLE;
 						}
 					}
 				}
@@ -368,10 +377,11 @@ public class GameEngine {
 				
 			}
 			else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple)) {
+				currentPlayer = p;
+				announceWinner();
 				arrangePlayers();
 				resetPlayers();
 				status = " " + getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
-				choosePurple = false;
 				currentPlayer = p;
 			}
 			if (p.isGameWinner()) {
@@ -584,7 +594,7 @@ public class GameEngine {
 			discardPile.add(c);
 			currentPlayer.removeFromDisplay(c);
 		}
-		currentPlayer.setDisplay(new ArrayList<>());
+		currentPlayer.setDisplay(new ArrayList<Card>());
 	}
 	
 	public void announceWinner() {
@@ -601,16 +611,17 @@ public class GameEngine {
 				winner = p;
 			}
 		}
-		if ((((tournamentColour == Config.PURPLE) && choosePurple) || (tournamentColour != Config.PURPLE)) 
+		if ((choosePurple && (!currentPlayer.getCurrentTokens().contains(Config.PURPLE))) || (!tournamentColour.equals(Config.PURPLE))
 			&& (!currentPlayer.getCurrentTokens().contains(tournamentColour))) {
 			currentPlayer.addToken(tournamentColour);
+			choosePurple = false;
 		}
 		if ((numPlayers <= 3) && (winner.getCurrentTokens().size() == 5)) {
-
 			winner.setGameWinner(true);
 		} else if ((numPlayers >= 4) && (winner.getCurrentTokens().size() == 4)) {
 			winner.setGameWinner(true);
 		}
+
 	}
 	
 	public void resetPlayers() {
