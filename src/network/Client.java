@@ -576,21 +576,24 @@ public class Client implements Runnable, Observer {
 		}
 		else if(cardType.equalsIgnoreCase(Config.DODGE)){
 			//input[0] = waiting 
-			String[] card=input[3].split("_");
+			//TODO SCORE
+			String[] card={input[3],input[4]};
 			int player = window.getPlayerByName(input[2]);
 			window.removePlayedCard(player, this.getCardFromTypeValue(card[0], card[1]));
-			//output = waiting <card played> <player discarded from> <card discarded>
+			//input = waiting <card played> <player discarded from> <card discarded>
 			
 		}
 		else if(cardType.equalsIgnoreCase(Config.RETREAT)){
 			//input[0] = waiting 
-			String[] card=input[3].split("_");
+			//TODO need score
+			String[] card={input[3],input[4]};
 			int player= window.getPlayerByName(input[2]);
 			Card c= this.getCardFromTypeValue(card[0], card[1]);
 			window.removePlayedCard(player, c);
 			if(window.playerName.equalsIgnoreCase(input[2])){
 				window.addCard(c);
 			}
+			//input= waiting <card played> <currentPlayerName> <card removed from display and put back into hand>
 		}
 		else if(cardType.equalsIgnoreCase(Config.OUTWIT)){
 			//input[0] = waiting 
