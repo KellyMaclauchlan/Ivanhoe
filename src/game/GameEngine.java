@@ -17,6 +17,23 @@ public class GameEngine {
 	private int turnNumber = 0;
 	private boolean choosePurple = false;
 	
+	
+	/* Testing variables */
+	private boolean startTournament = false; 
+	private boolean joined = false;
+	private String supporters = "supporters";
+	private boolean token = false; 
+	private String round = "round";
+	private boolean testCurrPlayer = false; 
+	
+	public boolean getStart(){return startTournament;}
+	public boolean getJoined(){return joined;}
+	public String getSupporters(){return supporters;}
+	public boolean getToken(){return token;}
+	public String getRound(){return round;}
+	public boolean checkCurrPlayer(){return testCurrPlayer;}
+	
+	
 	public GameEngine() {
 		players = new ArrayList<>();
 		discardPile = new ArrayList<>();
@@ -389,6 +406,7 @@ public class GameEngine {
 	
 	public void joinGame(Player player) {
 		players.add(player);
+		joined = true;
 	}
 
 	public void pickTokens() {
@@ -452,7 +470,6 @@ public class GameEngine {
 			//set the current player's hand to the one created
 			p.setCards(hand);
 		}
-
 	}
 	
 	public void arrangePlayers() {
@@ -479,6 +496,7 @@ public class GameEngine {
 					}
 				}
 				currentPlayer = players.get(0);
+				testCurrPlayer = true;
 	}
 	
 	public void startTurn() {

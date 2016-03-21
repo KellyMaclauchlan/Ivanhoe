@@ -304,7 +304,7 @@ public class Client implements Runnable, Observer {
 		/*
 		 * Game winner announcement 
 		 */
-		else if(msg.contains(Config.GAME_WINNER)){
+		if(msg.contains(Config.GAME_WINNER)){
 			String[] input = msg.split(" ");
 			String winner = input[input.length - 1];
 			int player = window.getPlayerByName(winner);
@@ -559,9 +559,14 @@ public class Client implements Runnable, Observer {
 			window.setTournamentColour(Config.colours.indexOf(input[2]));
 		}
 		else if(cardType.equalsIgnoreCase(Config.SHIELD)){
+			//msg = waiting shield name
+			window.setShield(window.getPlayerByName(input[2]), true);
 		//TODO
 		}
 		else if(cardType.equalsIgnoreCase(Config.STUNNED)){
+			//msg = waiting stun name
+			window.setStun(window.getPlayerByName(input[2]), true);
+			//TODO
 		}
 		else if(cardType.equalsIgnoreCase(Config.DISGRACE)){
 			//TODO
