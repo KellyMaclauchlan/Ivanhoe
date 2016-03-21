@@ -40,8 +40,6 @@ public class TestGameStart2Player {
 
 		System.out.println("startGame");
     	game.startGame();
-    	
-    	
 	}
     
     @After
