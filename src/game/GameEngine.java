@@ -141,6 +141,7 @@ public class GameEngine {
 				+ " " + picked.getType() + "_" + picked.getValue();
 			}
 		}
+		startTournament = true;
 		return output;
 	}
 	
