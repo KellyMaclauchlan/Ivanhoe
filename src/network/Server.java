@@ -111,6 +111,7 @@ public class Server implements Runnable {
 
 	public void handle(int id, String msg) {
 		System.out.println("Message Receieved: " + msg);
+		int quitters = 0;
 
 		log.info("Message Received: " + msg);
 		String send = "input";
@@ -119,14 +120,16 @@ public class Server implements Runnable {
 		if (msg.equals(Config.QUIT) || msg.equals(null)) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {
-				clients.get(id).send("quit!" + "\n");
+				//clients.get(id).send("quit!" + "\n");
 				remove(id);
 			}
-		}
-		
-		/* All clients have quit therefore, the server will now shutdown */
-		else if (msg.equals(Config.SHUTDOWN)){ 
-			shutdown(); 
+			quitters++;
+			System.out.println("Quit: " + quitters);
+			
+			if(quitters == numPlayers){
+				shutdown();
+			}
+
 		}
 		
 		/* When a client first connects, it checks to see if this is the first client */
