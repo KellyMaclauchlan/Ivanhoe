@@ -206,10 +206,10 @@ public class Client implements Runnable, Observer {
 		 * smaller then 2 or larger than 5
 		 * Input: nobuenos
 		 * Output: start #
-		 */
+		 
 		else if(msg.contains(Config.NOT_ENOUGH)){
 			output = Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
-		}
+		}*/
 
 		/* Once the player is connected, prompts that player for their name 
 		 * Input:  prompt join 

@@ -135,9 +135,9 @@ public class Server implements Runnable {
 		}
 		
 		/* Checks the number of players is between 2 and 5 */
-		else if(msg.contains(Config.START)){
+		/*else if(msg.contains(Config.START)){
 			checkNumPlayers(id, msg);
-		}
+		}*/
 		
 		/* Double checking to make sure that no 2 players have the same name */
 		else if (msg.contains(Config.JOIN)){
