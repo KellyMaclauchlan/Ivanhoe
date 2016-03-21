@@ -304,7 +304,7 @@ public class Client implements Runnable, Observer {
 		/*
 		 * Game winner announcement 
 		 */
-		else if(msg.contains(Config.GAME_WINNER)){
+		if(msg.contains(Config.GAME_WINNER)){
 			String[] input = msg.split(" ");
 			String winner = input[input.length - 1];
 			int player = window.getPlayerByName(winner);

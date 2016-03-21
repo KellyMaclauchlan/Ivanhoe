@@ -24,7 +24,6 @@ public class GameEngine {
 	private String supporters = "supporters";
 	private boolean token = false; 
 	private String round = "round";
-	private String colour = "colour";
 	private boolean testCurrPlayer = false; 
 	
 	public boolean getStart(){return startTournament;}
@@ -32,7 +31,6 @@ public class GameEngine {
 	public String getSupporters(){return supporters;}
 	public boolean getToken(){return token;}
 	public String getRound(){return round;}
-	public String checkColour(){return colour;}
 	public boolean checkCurrPlayer(){return testCurrPlayer;}
 	
 	
