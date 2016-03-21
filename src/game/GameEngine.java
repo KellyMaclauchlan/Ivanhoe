@@ -308,7 +308,7 @@ public class GameEngine {
 	public String updateDisplays() {
 		String output = Config.DISPLAY + " ";
 		for (Player p: players) {
-			output += Config.PLAYER_NAME + " " + p.getName() + " " + Config.PLAYER_CARDS + " ";
+			output += Config.PLAYER_NAME + " " + p.getName() + " " + p.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
 			if (!p.getName().equals(currentPlayer.getName())) {
 				for (Card c: p.getDisplay()) {
 					output += c.getType() + "_" + c.getValue();
@@ -316,7 +316,7 @@ public class GameEngine {
 			}
 		}
 		return output;
-		//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
+		//output += <player name> <score> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
 	}
 
 	//TO DO: Change back to ArrayList if this does not work
