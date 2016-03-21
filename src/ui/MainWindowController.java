@@ -203,8 +203,8 @@ public class MainWindowController implements Observer, Subject{
 	}
 	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
 	
-	//asks user if they would like to play ivanho to stop the action card returns true our false 
-	public Boolean playIvanho(String name){
+	//asks user if they would like to play ivanhoe to stop the action card returns true our false 
+	public Boolean playIvanhoe(String name){
 			int result =JOptionPane.showConfirmDialog(null, 
 				   "Do you want to use Ivanho to stop the "+name+" card?",null, JOptionPane.YES_NO_OPTION);
 		if(result == JOptionPane.OK_OPTION)

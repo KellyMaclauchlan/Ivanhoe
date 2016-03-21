@@ -465,8 +465,18 @@ public class Client implements Runnable, Observer {
 		}
 		else{
 			String input[] = msg.split(" ");
-			String c[] = input[1].split("_");
-			Card card = this.getCardFromTypeValue(c[0], c[1]);
+			String[] c = null;
+			String type = null;
+			String value = null;
+			if (input[1].contains("_")) {
+				c = input[1].split("_");
+				type = c[0];
+				value = c[1];
+			} else {
+				type = input[1];
+				value = "0";
+			}
+			Card card = this.getCardFromTypeValue(type, value);
 			window.addPlayedCard(window.getCurrPlayer(), card);
 			if(window.getCurrPlayer() == window.getPlayerNum()){
 				window.removeCard(card);
@@ -478,7 +488,8 @@ public class Client implements Runnable, Observer {
 	public String processActionCard(){
 		String output = "";
 		String cardType = window.lastCard.getType();
-		output = " " + cardType + " ";
+		String cardValue = String.valueOf(window.lastCard.getValue());
+		output = " " + cardType + " " ;
 		
 		//note sheild, ivanho, Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
 		if(cardType.equalsIgnoreCase(Config.KNOCKDOWN)){
@@ -498,6 +509,7 @@ public class Client implements Runnable, Observer {
 			output += window.changeColour();
 			//added to output <new colour>
 		}
+		
 		else if(cardType.equalsIgnoreCase(Config.STUNNED)){
 			output += window.pickAName("stun.");
 			//added to output <other name>
@@ -527,36 +539,33 @@ public class Client implements Runnable, Observer {
 	public void processActionCardAction(String msg){
 		String input[]=msg.split(" ");
 		String cardType = input[1];
-
 		
 		//note Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
 		//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
 		if(cardType.equalsIgnoreCase(Config.KNOCKDOWN)){
-			//output += window.pickAName("take a card from.");
 			if(window.playerName.equalsIgnoreCase(input[2])){
 				window.removeCard(window.getPlayerCard(0));
 			}
 		}
 		else if(cardType.equalsIgnoreCase(Config.RIPOSTE)){
-			//input = waiting <card played> <player stolen from> <card stolen> <player added to> 
-			//TODO: need score 
+			//input = waiting <card played> <player stolen from> <player total> <card stolen> <player added to> <player total> 
 			int player = window.getPlayerByName(input[2]);
-			Card c= this.getCardFromTypeValue(input[3], input[4]);
+			String playerScore = input[3];
+			Card c = this.getCardFromTypeValue(input[4], input[5]);
 			window.removePlayedCard(player, c);
-			int addtoplayer=window.getPlayerByName(input[4]);
+			int addtoplayer=window.getPlayerByName(input[5]);
+			String addToPlayerScore = input[6];
 			window.addPlayedCard(addtoplayer,c);		
-			
 		}
 		else if(cardType.equalsIgnoreCase(Config.BREAKLANCE)){
-			//in = waiting <card played> display name <player> cards <display card> <display card> ...
-			//TODO: need score 
+			//in = waiting <card played> display name <player> <player score> cards <display card> <display card> ...
 			int player=window.getPlayerByName(input[4]);
+			String score = input[5];
 			window.resetPlayedCards(player);
-			for(int i=6;i<input.length ;i+=2){
+			for(int i=7;i<input.length ;i+=2){
 				window.addPlayedCard(player, this.getCardFromTypeValue(input[i], input[i+1]));
 			}		
 		}
-		//msg =waiting unhorse colour 
 		else if(cardType.equalsIgnoreCase(Config.CHANGEWEAPON)||cardType.equalsIgnoreCase(Config.UNHORSE)||cardType.equalsIgnoreCase(Config.DROPWEAPON)){
 			window.setTournamentColour(Config.colours.indexOf(input[2]));
 		}
@@ -571,7 +580,75 @@ public class Client implements Runnable, Observer {
 			//TODO
 		}
 		else if(cardType.equalsIgnoreCase(Config.DISGRACE)){
-			//TODO
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.ADAPT)){
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.CHARGE)){
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.COUNTERCHARGE)){
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.OUTMANEUVER)){
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.DODGE)){
+			//input[0] = waiting 
+			//TODO SCORE
+			String[] card={input[3],input[4]};
+			int player = window.getPlayerByName(input[2]);
+			window.removePlayedCard(player, this.getCardFromTypeValue(card[0], card[1]));
+			//input = waiting <card played> <player discarded from> <card discarded>
+			
+		}
+		else if(cardType.equalsIgnoreCase(Config.RETREAT)){
+			//input[0] = waiting 
+			//TODO need score
+			String[] card={input[3],input[4]};
+			int player= window.getPlayerByName(input[2]);
+			Card c= this.getCardFromTypeValue(card[0], card[1]);
+			window.removePlayedCard(player, c);
+			if(window.playerName.equalsIgnoreCase(input[2])){
+				window.addCard(c);
+			}
+			//input= waiting <card played> <currentPlayerName> <card removed from display and put back into hand>
+		}
+		else if(cardType.equalsIgnoreCase(Config.OUTWIT)){
+			//input[0] = waiting 
+			// switch the two things with each other 
+			// check if it's sheild or stun 
+			// move sheild/ stun if needed
+			// move cards from one display to the other if need
+			//
+		}
+	}
+	
+	public void redoDisplay(String[] input){
+		//TODO score
+		//input[0]= waiting
+		//input[1] = card 
+		//input[2]= display
+		for (int i=0;i<window.getTotalPlayers();i++){
+			window.resetPlayedCards(i);
+		}
+
+		int name= -1; 
+		for(int i=3;i<input.length;i++){
+			if(input[i].equalsIgnoreCase(Config.PLAYER_NAME)){
+				name=-1;
+			}
+			else if(input[i-1].equalsIgnoreCase(Config.PLAYER_NAME)){
+				name=window.getPlayerByName(input[i]);
+			}
+			else if(input[i].equalsIgnoreCase(Config.PLAYER_CARDS)){
+
+			}
+			else{
+				String[] card= input[i].split("_");
+				window.addPlayedCard(name, this.getCardFromTypeValue(card[0], card[1]));						
+			}
 		}
 	}
 	
@@ -829,7 +906,7 @@ public class Client implements Runnable, Observer {
 		if(!output.equals("")){
 			Card c=new ActionCard(type, output);
 			c.setCardDescription(info);
-			System.out.println(c.getValue());
+			//System.out.println(c.getValue());
 			return c;
 		}
 		
