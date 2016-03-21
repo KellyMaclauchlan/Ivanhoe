@@ -569,7 +569,75 @@ public class Client implements Runnable, Observer {
 			//TODO
 		}
 		else if(cardType.equalsIgnoreCase(Config.DISGRACE)){
-			//TODO
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.ADAPT)){
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.CHARGE)){
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.COUNTERCHARGE)){
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.OUTMANEUVER)){
+			redoDisplay(input);
+		}
+		else if(cardType.equalsIgnoreCase(Config.DODGE)){
+			//input[0] = waiting 
+			//TODO SCORE
+			String[] card={input[3],input[4]};
+			int player = window.getPlayerByName(input[2]);
+			window.removePlayedCard(player, this.getCardFromTypeValue(card[0], card[1]));
+			//input = waiting <card played> <player discarded from> <card discarded>
+			
+		}
+		else if(cardType.equalsIgnoreCase(Config.RETREAT)){
+			//input[0] = waiting 
+			//TODO need score
+			String[] card={input[3],input[4]};
+			int player= window.getPlayerByName(input[2]);
+			Card c= this.getCardFromTypeValue(card[0], card[1]);
+			window.removePlayedCard(player, c);
+			if(window.playerName.equalsIgnoreCase(input[2])){
+				window.addCard(c);
+			}
+			//input= waiting <card played> <currentPlayerName> <card removed from display and put back into hand>
+		}
+		else if(cardType.equalsIgnoreCase(Config.OUTWIT)){
+			//input[0] = waiting 
+			// switch the two things with each other 
+			// check if it's sheild or stun 
+			// move sheild/ stun if needed
+			// move cards from one display to the other if need
+			//
+		}
+	}
+	
+	public void redoDisplay(String[] input){
+		//TODO score
+		//input[0]= waiting
+		//input[1] = card 
+		//input[2]= display
+		for (int i=0;i<window.getTotalPlayers();i++){
+			window.resetPlayedCards(i);
+		}
+
+		int name= -1; 
+		for(int i=3;i<input.length;i++){
+			if(input[i].equalsIgnoreCase(Config.PLAYER_NAME)){
+				name=-1;
+			}
+			else if(input[i-1].equalsIgnoreCase(Config.PLAYER_NAME)){
+				name=window.getPlayerByName(input[i]);
+			}
+			else if(input[i].equalsIgnoreCase(Config.PLAYER_CARDS)){
+
+			}
+			else{
+				String[] card= input[i].split("_");
+				window.addPlayedCard(name, this.getCardFromTypeValue(card[0], card[1]));						
+			}
 		}
 	}
 	
