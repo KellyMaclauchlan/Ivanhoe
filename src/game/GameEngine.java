@@ -237,7 +237,7 @@ public class GameEngine {
 				Player player = getPlayerByName(playerName);
 				card.playBreakLance(player);
 				output += Config.DISPLAY + " ";
-				output += Config.PLAYER_NAME + " " + playerName + " " + Config.PLAYER_CARDS + " ";
+				output += Config.PLAYER_NAME + " " + playerName + " " + player.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
 				for (Card c: player.getDisplay()) {
 					output += " " + c.getType() + " " + c.getValue(); 
 				}
@@ -265,8 +265,8 @@ public class GameEngine {
 						break;
 					}
 				}
-				output += Config.DODGE + " " + playerName + " " + type + " " + value;
-				//output = waiting <card played> <player discarded from> <card discarded> 
+				output += Config.DODGE + " " + playerName + " " + player.getTotalCardValue() + " " + type + " " + value;
+				//output = waiting <card played> <player discarded from> <score> <card discarded> 
 			} else if (card.getType().equals(Config.RETREAT)) {
 				// input = play retreat <card type> <card value>
 				String type = cardString[2];
@@ -276,8 +276,8 @@ public class GameEngine {
 						card.playRetreat(this, c);
 					}
 				}
-				output += Config.RETREAT + " " + currentPlayer.getName() + " " + type + " " + value;
-				//output = waiting <card played> <currentPlayerName> <card removed from display and put back into hand>
+				output += Config.RETREAT + " " + currentPlayer.getName() + " " + currentPlayer.getTotalCardValue() + " " + type + " " + value;
+				//output = waiting <card played> <currentPlayerName> <score> <card removed from display and put back into hand>
 			} else if (card.getType().equals(Config.KNOCKDOWN)) {
 				// input = play knockdown <player name>
 				String playerName = cardString[2];
