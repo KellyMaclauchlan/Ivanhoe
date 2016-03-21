@@ -57,8 +57,7 @@ public class MainWindowController implements Observer, Subject{
 		window.setTitle("Ivanhoe: "+name);
 		return name ;
 	}
-	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter your IP address and Port ie: localhost 3000");}
-	public String getNumberOfPlayersFromPlayer() {return JOptionPane.showInputDialog("Enter the number of players in this game (2-5)");}
+	
 	public Object getScore(int player) {return this.playerScores.get(player);}
 	public Object getName(int player) {return this.playerNames.get(player);}
 	public int numCards(){return playerCards.size();}
@@ -122,6 +121,19 @@ public class MainWindowController implements Observer, Subject{
 	}
 	
 	/* Popups */
+	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter your IP address and Port ie: localhost 3000");}
+	public String getNumberOfPlayersFromPlayer() {
+		String[] possibilities= {"2","3","4","5"};
+		String s = (String)JOptionPane.showInputDialog(
+            null,
+            "Enter the number of players in this game",
+            "Customized Dialog",
+            JOptionPane.PLAIN_MESSAGE,
+            null,
+            possibilities,
+            "2");
+		return s;
+	}
 	public String setTournament(){
 		String[] options = null;
 		ArrayList<String> colours = new ArrayList<>();
