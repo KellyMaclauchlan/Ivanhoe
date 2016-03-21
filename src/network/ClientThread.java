@@ -40,7 +40,7 @@ public class ClientThread extends Thread {
 		} catch(IOException ioe) { 
 			log.error(ioe);
 	   }	
-	   log.info("Closing Thread" + socket.getLocalPort());
+	   log.info("Closing Thread");
 	}
 	
 	

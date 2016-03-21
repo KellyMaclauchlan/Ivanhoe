@@ -139,11 +139,11 @@ public class Client implements Runnable, Observer {
 		System.out.println("Message received: " + msg);
 		log.info("Message Received: " + msg);
 		
-	   	if (msg.equalsIgnoreCase(Config.QUIT)) {  
+	   /*	if (msg.equals(Config.QUIT)) {  
 				log.info(id + " has left the game");
 				stop();
 				
-	   	}else if(msg.contains("input")){
+	   	}else*/ if(msg.contains("input")){
 	   		// do nothing and wait for more players to arrive 
 		} else {
 			testing = msg;
@@ -153,6 +153,11 @@ public class Client implements Runnable, Observer {
 			outStream.write(send);
 			outStream.write("\n");
 			outStream.flush();
+			
+			if(send.equals(Config.QUIT)){
+				stop();
+				log.info(id + " has left the game");
+			}
 		}
 	}
 
@@ -168,6 +173,9 @@ public class Client implements Runnable, Observer {
 		else if (message.contains(Config.WITHDRAW)){
 			
 			send = " " + Config.WITHDRAW;
+		}
+		else if (message.contains(Config.QUIT)){
+			send = Config.QUIT;
 		}
 		else{
 			send = " " + Config.END_TURN;
@@ -186,7 +194,10 @@ public class Client implements Runnable, Observer {
 	public String processInput(String msg){
 		String output = "result";
 		
-		if(msg.contains(Config.FROMUPDATE)){
+		if(msg.equals(Config.QUIT)) {  
+			output = Config.QUIT;
+		}
+		else if(msg.contains(Config.FROMUPDATE)){
 			output = msg.substring(Config.FROMUPDATE.length());
 		}
 		
