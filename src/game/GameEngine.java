@@ -696,17 +696,17 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 4));
 		drawDeck.add(new ColourCard(Config.PURPLE, 4));
-		/*drawDeck.add(new ColourCard(Config.PURPLE, 4));
+		drawDeck.add(new ColourCard(Config.PURPLE, 4));
 		drawDeck.add(new ColourCard(Config.PURPLE, 4));
 		drawDeck.add(new ColourCard(Config.PURPLE, 5));
 		drawDeck.add(new ColourCard(Config.PURPLE, 5));
 		drawDeck.add(new ColourCard(Config.PURPLE, 5));
 		drawDeck.add(new ColourCard(Config.PURPLE, 5));
 		drawDeck.add(new ColourCard(Config.PURPLE, 7));
-		drawDeck.add(new ColourCard(Config.PURPLE, 7));*/
+		drawDeck.add(new ColourCard(Config.PURPLE, 7));
 		
 		//red
-		/*drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
@@ -717,14 +717,14 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.RED, 4));
 		drawDeck.add(new ColourCard(Config.RED, 4));
 		drawDeck.add(new ColourCard(Config.RED, 4));
-		drawDeck.add(new ColourCard(Config.RED, 4));*/
+		drawDeck.add(new ColourCard(Config.RED, 4));
 		drawDeck.add(new ColourCard(Config.RED, 5));
 		drawDeck.add(new ColourCard(Config.RED, 5));
 
 		//blue
 		drawDeck.add(new ColourCard(Config.BLUE, 2));
 		drawDeck.add(new ColourCard(Config.BLUE, 2));
-		/*drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
 		drawDeck.add(new ColourCard(Config.BLUE, 2));
 		drawDeck.add(new ColourCard(Config.BLUE, 3));
 		drawDeck.add(new ColourCard(Config.BLUE, 3));
@@ -749,14 +749,14 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
-		drawDeck.add(new ColourCard(Config.YELLOW, 3));*/
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 4));
 		drawDeck.add(new ColourCard(Config.YELLOW, 4));
 		
 		//green
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
-		/*drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
@@ -787,31 +787,31 @@ public class GameEngine {
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
-		drawDeck.add(new SupportCard(Config.SQUIRE, 3));*/
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 
 		//action
-		/*drawDeck.add(new ActionCard(Config.UNHORSE));
-		drawDeck.add(new ActionCard(Config.CHANGEWEAPON));*/
-		//drawDeck.add(new ActionCard(Config.DROPWEAPON));
+		drawDeck.add(new ActionCard(Config.UNHORSE));
+		drawDeck.add(new ActionCard(Config.CHANGEWEAPON));
+		drawDeck.add(new ActionCard(Config.DROPWEAPON));
 		drawDeck.add(new ActionCard(Config.BREAKLANCE));
-		//drawDeck.add(new ActionCard(Config.RIPOSTE));
-		//drawDeck.add(new ActionCard(Config.RIPOSTE));
-		//drawDeck.add(new ActionCard(Config.RIPOSTE));
-		//drawDeck.add(new ActionCard(Config.DODGE));
-		//drawDeck.add(new ActionCard(Config.RETREAT));
+		drawDeck.add(new ActionCard(Config.RIPOSTE));
+		drawDeck.add(new ActionCard(Config.RIPOSTE));
+		drawDeck.add(new ActionCard(Config.RIPOSTE));
+		drawDeck.add(new ActionCard(Config.DODGE));
+		drawDeck.add(new ActionCard(Config.RETREAT));
 		drawDeck.add(new ActionCard(Config.KNOCKDOWN));
 		drawDeck.add(new ActionCard(Config.KNOCKDOWN));
-		//drawDeck.add(new ActionCard(Config.OUTMANEUVER));
-		/*drawDeck.add(new ActionCard(Config.CHARGE));
+		drawDeck.add(new ActionCard(Config.OUTMANEUVER));
+		drawDeck.add(new ActionCard(Config.CHARGE));
 		drawDeck.add(new ActionCard(Config.COUNTERCHARGE));
 		drawDeck.add(new ActionCard(Config.DISGRACE));
 		drawDeck.add(new ActionCard(Config.ADAPT));
 		drawDeck.add(new ActionCard(Config.OUTWIT));
 		drawDeck.add(new ActionCard(Config.SHIELD));
 		drawDeck.add(new ActionCard(Config.STUNNED));
-		drawDeck.add(new ActionCard(Config.IVANHOE));*/
+		drawDeck.add(new ActionCard(Config.IVANHOE));
 	}
 
 
