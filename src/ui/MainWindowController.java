@@ -88,7 +88,15 @@ public class MainWindowController implements Observer, Subject{
 		return player;
 	}
 	public void setVarPlayerName(String name){playerName = name;}
-	public void setTextDisplay(String msg){window.getTextDisplay().setText(msg);}
+	
+	
+	/***********/
+	//public void setTextDisplay(String msg){window.getTextDisplay().setText(msg);}
+	public void setTextDisplay(String msg){window.getDisplayText().append(msg);}
+	
+	
+	
+	
 	public void setScore(int player, int score) {
 		this.playerScores.set(player, score);	
 		window.getPlayerPoints(player).setText("" + score);
