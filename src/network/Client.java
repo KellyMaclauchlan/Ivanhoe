@@ -566,6 +566,9 @@ public class Client implements Runnable, Observer {
 			if(window.playerName.equalsIgnoreCase(input[2])){
 				window.removeCard(window.getPlayerCard(0));
 			}
+			if(window.getCurrPlayer()==window.getPlayerNum()){
+				window.addCard(this.getCardFromTypeValue(input[3], input[4]));
+			}
 		}
 		else if(cardType.equalsIgnoreCase(Config.RIPOSTE)){
 			//input = waiting <card played> <player stolen from> <player total> <card stolen> <player added to> <player total> 
@@ -574,8 +577,8 @@ public class Client implements Runnable, Observer {
 			Card c = this.getCardFromTypeValue(input[4], input[5]);
 			window.removePlayedCard(player, c);
 			window.setScore(player, Integer.getInteger(playerScore));
-			int addtoplayer=window.getPlayerByName(input[5]);
-			String addToPlayerScore = input[6];
+			int addtoplayer=window.getPlayerByName(input[6]);
+			String addToPlayerScore = input[7];
 			window.addPlayedCard(addtoplayer,c);	
 			window.setScore(addtoplayer, Integer.getInteger(addToPlayerScore));
 			
