@@ -28,47 +28,85 @@ public class MainWindow extends JFrame implements Subject {
 	private ArrayList<Observer>observers =new ArrayList<Observer>();
 	
 	//buttons
-	JButton withdrawButton;
-	JButton endTurnButton;
-	JButton playCardButton;
+	private JButton withdrawButton;
+	private JButton endTurnButton;
+	private JButton playCardButton;
 	
 	//radio buttons
-	JRadioButton[] playerNames;
+	private JRadioButton[] playerNames;
 	
 	//point labels 
-	JLabel[] playerPoints;
+	private JLabel[] playerPoints;
 	
 	//arrows
-	JButton leftArrow;
-	JButton rightArrow;
+	private JButton leftArrow;
+	private JButton rightArrow;
 	
 	//players cards
-	JButton[] playerCards;
+	private JButton[] playerCards;
 	
 	//stun and shield images
-	JLabel[] shieldImages;
-	JLabel[] stunImages;
+	private JLabel[] shieldImages;
+	private JLabel[] stunImages;
 	
 	//cards played this round [player][cards]
-	JButton[] playedCards;
+	private JButton[] playedCards;
 	
 	//tokens [player][token]
-	JLabel[][] tokens;
-	public boolean[][] hasTokens;
+	private JLabel[][] tokens;
+	private boolean[][] hasTokens;
 	
 	//decks
-	JLabel deck;
+	private JLabel deck;
 	
 	GridBagConstraints c = new GridBagConstraints();
 	//testing variables
-	public int lastCard;
-	public int playedCard;
-	Boolean leftClick;
-	JLabel testLable = new JLabel();
-	JLabel textLabel;
-	JLabel cardTextLabel;
-	public Boolean testing;
-	public Boolean close;
+	private int lastCard;
+	private int playedCard;
+	private Boolean leftClick;
+	private JLabel testLable = new JLabel();
+	private JLabel textDisplay;
+	private JLabel cardTextLabel;
+	private Boolean testing;
+	private Boolean close;
+	
+	
+	public JButton getWithdrawButon(){return withdrawButton;}
+	public JButton getEndTurnButton(){return endTurnButton;}
+	public JButton getPlayCardButton(){return playCardButton;}
+	
+	public JRadioButton getPlayerNames(int i){return playerNames[i];}
+	public JLabel getPlayerPoints(int i){return playerPoints[i];}
+	
+	public JButton getLeftArrow(){return leftArrow;}
+	public JButton getRightArrow(){return rightArrow;}
+	
+	public JButton getPlayerCards(int i){return playerCards[i];}
+	
+	public JLabel getShield(int i){return shieldImages[i];}
+	public JLabel getStun(int i){return stunImages[i];}
+	
+	public JButton getPlayedCards(int i){return playedCards[i];}
+	
+	public JLabel getTokens(int i, int k){return tokens[i][k];}
+	public boolean getPlayerArrayofTokens(int i, int k){return hasTokens[i][k];}
+	
+	public JLabel getDeck(){return deck;}
+	
+	public int getLastCard(){return lastCard;}
+	public int getPlayedCard(){return playedCard;}
+	public boolean isLeftClick(){return leftClick;}
+	
+	public JLabel getTextDisplay(){return textDisplay;}
+	public JLabel getCardTextLabel(){return cardTextLabel;}
+	
+	public boolean getTesting(){return testing;}
+	public boolean getClose(){return close;}
+	
+	public void setTesting(boolean b){testing = b;}
+	public void setHasToken(int i, int k, boolean b){hasTokens[i][k] = b;}
+	public void setLastCard(int i){lastCard = i;}
+	
 	public MainWindow(){
 		super();
 		setTitle("Ivanhoe");
@@ -116,7 +154,6 @@ public class MainWindow extends JFrame implements Subject {
 		System.exit(0); 
 	}
 	
-	
 	@Override
 	public void registerObserver(Observer observer) {
 		observers.add(observer);
@@ -152,7 +189,7 @@ public class MainWindow extends JFrame implements Subject {
 		this.endTurnButton.setName("endTurn");
 		this.playCardButton.setName("playCard");
 		this.testLable.setName("test");
-		this.textLabel.setName("text");
+		this.textDisplay.setName("text");
 		
 		// Player Names
 		this.playerNames[0].setName("player1name");
@@ -381,11 +418,11 @@ public class MainWindow extends JFrame implements Subject {
  		deck.setText(lastCard + "");
  		this.notifyObservers(Config.DESCRIPTION);
  		if(testing){
- 			this.textLabel.setText("card "+i);
+ 			this.textDisplay.setText("card "+i);
  		}
  	}
  	protected void playCardClicked() {
-		this.textLabel.setText("played " + lastCard + "");
+		this.textDisplay.setText("played " + lastCard + "");
 		//this.testLable.setText("played "+this.lastCard+"");
 	}
  	
@@ -1061,7 +1098,7 @@ public class MainWindow extends JFrame implements Subject {
 		this.rightArrow = rightArrow;
 		this.playCardButton = playCardButton;
 		this.endTurnButton = endTurnButton;
-		this.textLabel = textLabel;
+		this.textDisplay = textLabel;
 		this.cardTextLabel = cardText;
 		
 		this.playerCards= new JButton[10];

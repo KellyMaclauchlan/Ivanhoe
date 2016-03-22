@@ -167,7 +167,7 @@ public class Client implements Runnable, Observer {
 		String send = Config.FROMUPDATE;
 		
 		if(message.contains(Config.PLAYEDCARD)){
-			playedCards = window.lastCard.getCardType() + " " +  window.lastCard.getValue(); 
+			playedCards = window.getLastCard().getCardType() + " " +  window.getLastCard().getValue(); 
 			send = this.playACard();
 		}
 		else if (message.contains(Config.WITHDRAW)){
@@ -327,7 +327,7 @@ public class Client implements Runnable, Observer {
 	
 	public String processPromptJoin(String msg){
 		String name = window.getNameFromPlayer();
-		window.playerName = name;
+		window.setVarPlayerName(name);
 		return Config.JOIN + " " + name;	
 	}
 	
@@ -341,7 +341,7 @@ public class Client implements Runnable, Observer {
 			card = name[i].split(" ");
 			
 			//if this player is the user
-			if(card[1].equalsIgnoreCase(window.playerName)){
+			if(card[1].equalsIgnoreCase(window.getPlayerName())){
 				for(int k = 3; k < card.length; k++){
 					hand.add(card[k]);					
 					value = card[k].split("_");
@@ -369,7 +369,7 @@ public class Client implements Runnable, Observer {
 		// if it is the first tournament 
 		if(msg.contains(Config.PICKED_PURPLE)){
 			
-				if(input[3].equalsIgnoreCase(window.playerName)){
+				if(input[3].equalsIgnoreCase(window.getPlayerName())){
 					window.startTurn();
 					String value[] = input[4].split("_");
 					window.addCard(this.getCardFromTypeValue(value[0], value[1]));
@@ -377,14 +377,14 @@ public class Client implements Runnable, Observer {
 					this.currentPlayer = true; 
 				}
 				for (int i = 0; i < window.getTotalPlayers();i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(input[3])){
+					if((window.getName(i)).equalsIgnoreCase(input[3])){
 						window.setCurrPlayer(i);
 					}
 				}
 				
 		}else{
 			window.startRound();
-			if(input[1].equalsIgnoreCase(window.playerName)){
+			if(input[1].equalsIgnoreCase(window.getPlayerName())){
 				window.startTurn();
 				String value[] = input[2].split("_");
 				window.addCard(this.getCardFromTypeValue(value[0], value[1]));
@@ -392,7 +392,7 @@ public class Client implements Runnable, Observer {
 			}
 			
 			for (int i = 0; i < window.getTotalPlayers(); i++){
-				if(window.playerNames.get(i).equalsIgnoreCase(input[1])){
+				if(window.getName(i).equalsIgnoreCase(input[1])){
 					window.setCurrPlayer(i);
 				}
 			}
@@ -441,15 +441,15 @@ public class Client implements Runnable, Observer {
 		else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
 			output = Config.END_TURN;
 		}
-		else if(window.lastCard.getCardType().equalsIgnoreCase(Config.ACTION)){
+		else if(window.getLastCard().getCardType().equalsIgnoreCase(Config.ACTION)){
 			output = Config.PLAY + this.processActionCard();
 		}
 		else{
-			if (window.lastCard.getType().equals(Config.UNHORSE)) {
+			if (window.getLastCard().getType().equals(Config.UNHORSE)) {
 				window.setLastTournamentPurple(false);
 			}
-			output = Config.PLAY + " " + window.lastCard.getType() + " " + window.lastCard.getValue();
-			window.removeCard(window.lastCard);
+			output = Config.PLAY + " " + window.getLastCard().getType() + " " + window.getLastCard().getValue();
+			window.removeCard(window.getLastCard());
 		}
 		this.playedCards = null;
 		
@@ -460,7 +460,7 @@ public class Client implements Runnable, Observer {
 		String output = "result";
 		// if the client cannot play that card 
 		if(msg.contains(Config.UNPLAYABLE)){
-			window.addCard(window.lastCard);
+			window.addCard(window.getLastCard());
 			window.cantPlayCardPopup();
 		}
 		else{
@@ -487,8 +487,8 @@ public class Client implements Runnable, Observer {
 	
 	public String processActionCard(){
 		String output = "";
-		String cardType = window.lastCard.getType();
-		String cardValue = String.valueOf(window.lastCard.getValue());
+		String cardType = window.getLastCard().getType();
+		String cardValue = String.valueOf(window.getLastCard().getValue());
 		output = " " + cardType + " " ;
 		
 		//note sheild, ivanho, Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
@@ -516,7 +516,7 @@ public class Client implements Runnable, Observer {
 		}
 		else if(cardType.equalsIgnoreCase(Config.OUTWIT)){
 			//pick a face up card including sheild and stun 
-			output +=window.playerPickCardFromDisplay(window.playerName);
+			output +=window.playerPickCardFromDisplay(window.getPlayerName());
 			String name= window.pickAName("take a played card from.");
 			output+= name+" "+window.playerPickCardForOutwhit(name);
 			//added to output <your cardtype > <value> <other player> <their card type> <value>
@@ -529,7 +529,7 @@ public class Client implements Runnable, Observer {
 		}
 		else if(cardType.equalsIgnoreCase(Config.RETREAT)){
 			// pick a card from your display 
-			output +=window.playerPickCardFromDisplay(window.playerName);
+			output +=window.playerPickCardFromDisplay(window.getPlayerName());
 			//added to output <your cardtype > <value> 
 		}
 		return output;
@@ -543,7 +543,7 @@ public class Client implements Runnable, Observer {
 		//note Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
 		//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
 		if(cardType.equalsIgnoreCase(Config.KNOCKDOWN)){
-			if(window.playerName.equalsIgnoreCase(input[2])){
+			if(window.getPlayerName().equalsIgnoreCase(input[2])){
 				window.removeCard(window.getPlayerCard(0));
 			}
 		}
@@ -610,7 +610,7 @@ public class Client implements Runnable, Observer {
 			int player= window.getPlayerByName(input[2]);
 			Card c= this.getCardFromTypeValue(card[0], card[1]);
 			window.removePlayedCard(player, c);
-			if(window.playerName.equalsIgnoreCase(input[2])){
+			if(window.getPlayerName().equalsIgnoreCase(input[2])){
 				window.addCard(c);
 			}
 			//input= waiting <card played> <currentPlayerName> <card removed from display and put back into hand>
@@ -665,7 +665,7 @@ public class Client implements Runnable, Observer {
 		
 		if(msg.contains(Config.PURPLE_WIN)){
 			window.setCurrPlayer(winningPlayer);
-			if(window.playerName.equalsIgnoreCase(input[input.length - 1])) {
+			if(window.getPlayerName().equalsIgnoreCase(input[input.length - 1])) {
 				String chosenColour = window.playerPickToken();
 				output = Config.PURPLE_WIN + " " + chosenColour;
 				for(int i = 0; i < 5; i++){
@@ -709,8 +709,8 @@ public class Client implements Runnable, Observer {
 					window.endTurn();
 				}
 				
-				for(int i = 0; i < window.playerNames.size(); i++){
-					if(window.playerNames.get(i).equalsIgnoreCase(nextPlayerName)){						
+				for(int i = 0; i < window.getPlayerNamesArray().size(); i++){
+					if(window.getName(i).equalsIgnoreCase(nextPlayerName)){						
 						window.setCurrPlayer(i);
 						
 						if(window.getPlayerNum() == window.getCurrPlayer()){

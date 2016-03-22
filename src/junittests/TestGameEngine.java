@@ -166,7 +166,6 @@ public class TestGameEngine {
 		game.playCard(toPlay);
 		assertEquals("squire", toPlay.getType());
 		assertEquals(3, toPlay.getValue());
-		
 	}
 	
 	@Test
