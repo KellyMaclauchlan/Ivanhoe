@@ -30,9 +30,12 @@ public class Client implements Runnable, Observer {
 	private String playedCards = null;	
 	private Logger log = Logger.getLogger("Client");
 	private boolean currentPlayer = false; 
+	private String currPlayer = null;
 	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 	private boolean purpleChosen = false;
 	private boolean successConnect = false; 
+	
+	private String displayText = null;
 
 	public Client(){
 		window = new MainWindowController();
@@ -139,11 +142,7 @@ public class Client implements Runnable, Observer {
 		System.out.println("Message received: " + msg);
 		log.info("Message Received: " + msg);
 		
-	   /*	if (msg.equals(Config.QUIT)) {  
-				log.info(id + " has left the game");
-				stop();
-				
-	   	}else*/ if(msg.contains("input")){
+		if(msg.contains("input")){
 	   		// do nothing and wait for more players to arrive 
 		} else {
 			testing = msg;
@@ -187,6 +186,10 @@ public class Client implements Runnable, Observer {
 		} catch (IOException e) {
 			log.error(e);
 		}
+	}
+	
+	public void logActivity(String msg){
+		window.setTextDisplay(msg);
 	}
 
 	/* Handles what the server has sent from the Game Engine and processes
@@ -241,7 +244,7 @@ public class Client implements Runnable, Observer {
 		 * Output: begin tournament 
 		 * */
 		else if (msg.contains(Config.HAND)){
-				this.window.hideWaitng();
+			this.window.hideWaitng();
 			output = processPlayerName(msg);
 		}
 		
@@ -356,6 +359,10 @@ public class Client implements Runnable, Observer {
 		}
 		window.showWindow();
 		this.window.endTurn();
+		
+		displayText = "TOURNAMENT IS ABOUT TO BEGIN";
+		logActivity(displayText);
+		
 		return Config.START_TOURNAMENT;
 		
 	}
@@ -379,6 +386,9 @@ public class Client implements Runnable, Observer {
 				for (int i = 0; i < window.getTotalPlayers();i++){
 					if((window.getName(i)).equalsIgnoreCase(input[3])){
 						window.setCurrPlayer(i);
+						currPlayer = window.getName(i);
+						displayText = "It is: " + currPlayer + " turn";
+						logActivity(displayText);
 					}
 				}
 				
@@ -394,6 +404,9 @@ public class Client implements Runnable, Observer {
 			for (int i = 0; i < window.getTotalPlayers(); i++){
 				if(window.getName(i).equalsIgnoreCase(input[1])){
 					window.setCurrPlayer(i);
+					currPlayer = window.getName(i);
+					displayText = "It is: " + currPlayer + "'s turn";
+					logActivity(displayText);
 				}
 			}
 		}
@@ -435,11 +448,17 @@ public class Client implements Runnable, Observer {
 		// if the player choose to withdraw
 		if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
 			output = Config.WITHDRAW;
+			
+			displayText = currPlayer + " has withdrawn from the tournament";
+			logActivity(displayText);
 		}
 		
 		// if the player has finished their turn 
 		else if(playedCards.equalsIgnoreCase(Config.END_TURN)){
 			output = Config.END_TURN;
+			
+			displayText = currPlayer + " has ended their turn";
+			logActivity(displayText);
 		}
 		else if(window.getLastCard().getCardType().equalsIgnoreCase(Config.ACTION)){
 			output = Config.PLAY + this.processActionCard();
@@ -449,6 +468,9 @@ public class Client implements Runnable, Observer {
 				window.setLastTournamentPurple(false);
 			}
 			output = Config.PLAY + " " + window.getLastCard().getType() + " " + window.getLastCard().getValue();
+			displayText = currPlayer + " has played a card";
+			logActivity(displayText);
+			
 			window.removeCard(window.getLastCard());
 		}
 		this.playedCards = null;
@@ -656,11 +678,13 @@ public class Client implements Runnable, Observer {
 		String output = "result";
 		String input[] = msg.split(" ");
 		String currentPlayerName = input[0];
+		currPlayer = currentPlayerName;
 		String winningPlayerName = input[input.length - 1];
 		String score = input[2];
 		String nextPlayerName = input[4];
 		int winningPlayer = window.getPlayerByName(winningPlayerName);
 		int currentPlayer = window.getPlayerByName(currentPlayerName);
+		String tournament;
 		window.setScore(currentPlayer, Integer.parseInt(score));
 		
 		if(msg.contains(Config.PURPLE_WIN)){
@@ -668,6 +692,9 @@ public class Client implements Runnable, Observer {
 			if(window.getPlayerName().equalsIgnoreCase(input[input.length - 1])) {
 				String chosenColour = window.playerPickToken();
 				output = Config.PURPLE_WIN + " " + chosenColour;
+				
+				displayText = currPlayer + " has won a purple tournament";
+				
 				for(int i = 0; i < 5; i++){
 					if(chosenColour.equalsIgnoreCase(options[i])){
 							window.setTournamentColour(i);
@@ -699,6 +726,10 @@ public class Client implements Runnable, Observer {
 					window.setScore(i, 0);
 				}
 				this.window.setScore(winningPlayer, 0);
+				
+				displayText = currPlayer + " has won the tournament";
+				logActivity(displayText);
+				
 				output = Config.START_TOURNAMENT;
 			}
 			
@@ -712,13 +743,16 @@ public class Client implements Runnable, Observer {
 				for(int i = 0; i < window.getPlayerNamesArray().size(); i++){
 					if(window.getName(i).equalsIgnoreCase(nextPlayerName)){						
 						window.setCurrPlayer(i);
-						
+						currPlayer = window.getName(i);
 						if(window.getPlayerNum() == window.getCurrPlayer()){
 							window.startTurn();
 							String card[] = input[5].split("_");
 							String type = card[0];
 							String value = card[1];
 							window.addCard(this.getCardFromTypeValue(type, value));
+							
+							displayText = "It is now: " + currPlayer + "'s turn";
+							logActivity(displayText);
 						}
 					}
 				}
