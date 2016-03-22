@@ -143,6 +143,23 @@ public class MainWindowController implements Observer, Subject{
             "2");
 		return s;
 	}
+	public String getNumberOfAIFromPlayer(int numPlayers) {
+		ArrayList<String> nums= new ArrayList<String>();
+		for(int i=0;i<numPlayers;i++){
+			nums.add(Integer.toString(i));			
+		}
+		String[] possibilities= new String[nums.size()];
+		nums.toArray(possibilities);
+		String s = (String)JOptionPane.showInputDialog(
+            null,
+            "Enter the number of AI players you want in this game",
+            "Customized Dialog",
+            JOptionPane.PLAIN_MESSAGE,
+            null,
+            possibilities,
+            "0");
+		return s;
+	}
 	public String setTournament(){
 		String[] options = null;
 		ArrayList<String> colours = new ArrayList<>();
