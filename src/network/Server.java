@@ -211,7 +211,7 @@ public class Server implements Runnable {
 
 		else if(send.contains(Config.TURN)){			
 			send1Client(id, send);
-			sendAllClients(Config.LOGGING + " " + send);
+			//sendAllClients(Config.LOGGING + " " + send);
 		}
 
 		else if (send.contains(Config.PLAY)){
