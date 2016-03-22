@@ -25,8 +25,6 @@ public class TestGameEngine {
 	Player player4;
 	Player player5;
 	
-	private Card pickup = new ColourCard("yellow", 4);
-	
 	@BeforeClass
 	public static void BeforeClass(){
 		System.out.println("@BeforeClass: TestGameEngine");
