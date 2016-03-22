@@ -34,12 +34,9 @@ public class Client implements Runnable, Observer {
 	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 	private boolean purpleChosen = false;
 	private boolean successConnect = false; 
-<<<<<<< HEAD
 	
 	private String displayText = null;
-=======
 	private ArrayList<String>actioncards = new ArrayList<String>();
->>>>>>> bcd4c8d46a62610eeb7474f0dc1b6d1ed4e97034
 
 	public Client(){
 		window = new MainWindowController();
