@@ -141,6 +141,7 @@ public class GameEngine {
 				+ " " + picked.getType() + "_" + picked.getValue();
 			}
 		}
+		startTournament = true;
 		return output;
 	}
 	
@@ -236,6 +237,7 @@ public class GameEngine {
 				String playerName = cardString[2];
 				Player player = getPlayerByName(playerName);
 				card.playBreakLance(player);
+				output += Config.BREAKLANCE + " ";
 				output += Config.DISPLAY + " ";
 				output += Config.PLAYER_NAME + " " + playerName + " " + player.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
 				for (Card c: player.getDisplay()) {
@@ -251,7 +253,7 @@ public class GameEngine {
 					currentPlayer.addToDisplay(cardToSteal);
 				}
 				output += Config.RIPOSTE + " " + playerName + " " + player.getTotalCardValue() + " "
-				+ card.getType() + " " + card.getValue() + currentPlayer.getName() + currentPlayer.getTotalCardValue(); 
+				+ card.getType() + " " + card.getValue()  + " " + currentPlayer.getName()  + " " + currentPlayer.getTotalCardValue(); 
 				//output = waiting <card played> <player stolen from> <player total> <card stolen> <player added to> <player value>
 			} else if (card.getType().equals(Config.DODGE)) {
 				// input = play dodge <player name> <card type> <card value>
@@ -283,12 +285,12 @@ public class GameEngine {
 				String playerName = cardString[2];
 				Player player = getPlayerByName(playerName);
 				card.playKnockDown(this, player);
-				output += playerName;
+				output += Config.KNOCKDOWN + " " + playerName + " " +player.getCards().get(0).getType()+" "+ player.getCards().get(0).getValue();
 				//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
 			} else if (card.getType().equals(Config.OUTMANEUVER)) {
 				// input = play outmaneuver
 				card.playOutmaneuver(this);
-				output += Config.OUTMANEUVER + " " + currentPlayer.getName() + " " + updateDisplays();
+				output += Config.OUTMANEUVER + " " + updateDisplays();
 				//output = waiting <card played> <current player name> (remove the last card from all other displays that don't have a shield card)
 			} else if (card.getType().equals(Config.CHARGE)) {
 				// input = play charge
@@ -303,7 +305,7 @@ public class GameEngine {
 			} else if (card.getType().equals(Config.DISGRACE)) {
 				//input = play disgrace
 				card.playDisgrace(this);
-				output += Config.DISGRACE + " " + currentPlayer.getName() + " " + updateDisplays();
+				output += Config.DISGRACE + " "  + updateDisplays();
 				//output = waiting <card played> <current player name> (can you remove all support cards from everyone but the current player here?) 
 			} else if (card.getType().equals(Config.ADAPT)) {
 				card.playAdapt(this);

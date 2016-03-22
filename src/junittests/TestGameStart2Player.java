@@ -129,7 +129,7 @@ public class TestGameStart2Player {
     	String maiden2 = game.processPlay("play maiden 6");
     	
     	assertEquals("waiting maiden_6", maiden1);
-    	assertEquals(Config.UNPLAYABLE, maiden2);
+    	assertEquals(Config.WAITING + " " + Config.UNPLAYABLE, maiden2);
        	
     	//Test that the first player now has cards on their display
     	assertTrue(player.getDisplay().size() > 0);

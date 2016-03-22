@@ -1,509 +1,44 @@
 package ui;
 
-import java.awt.Container;
-import java.awt.Font;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.awt.Insets;
-import java.util.ArrayList;
 
-import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import config.*;
+import javax.swing.border.EmptyBorder;
+
 import config.Config;
-import config.Observer;
-import config.Subject;
 
-public class MainWindow extends JFrame implements Subject {
-	private static final long serialVersionUID = 1L;
-	
-	//observer pattern 
-	private ArrayList<Observer>observers =new ArrayList<Observer>();
-	
-	//buttons
-	private JButton withdrawButton;
-	private JButton endTurnButton;
-	private JButton playCardButton;
-	
-	//radio buttons
-	private JRadioButton[] playerNames;
-	
-	//point labels 
-	private JLabel[] playerPoints;
-	
-	//arrows
-	private JButton leftArrow;
-	private JButton rightArrow;
-	
-	//players cards
-	private JButton[] playerCards;
-	
-	//stun and shield images
-	private JLabel[] shieldImages;
-	private JLabel[] stunImages;
-	
-	//cards played this round [player][cards]
-	private JButton[] playedCards;
-	
-	//tokens [player][token]
-	private JLabel[][] tokens;
-	private boolean[][] hasTokens;
-	
-	//decks
-	private JLabel deck;
-	
-	GridBagConstraints c = new GridBagConstraints();
-	//testing variables
-	private int lastCard;
-	private int playedCard;
-	private Boolean leftClick;
-	private JLabel testLable = new JLabel();
-	private JLabel textDisplay;
-	private JLabel cardTextLabel;
-	private Boolean testing;
-	private Boolean close;
-	
-	
-	public JButton getWithdrawButon(){return withdrawButton;}
-	public JButton getEndTurnButton(){return endTurnButton;}
-	public JButton getPlayCardButton(){return playCardButton;}
-	
-	public JRadioButton getPlayerNames(int i){return playerNames[i];}
-	public JLabel getPlayerPoints(int i){return playerPoints[i];}
-	
-	public JButton getLeftArrow(){return leftArrow;}
-	public JButton getRightArrow(){return rightArrow;}
-	
-	public JButton getPlayerCards(int i){return playerCards[i];}
-	
-	public JLabel getShield(int i){return shieldImages[i];}
-	public JLabel getStun(int i){return stunImages[i];}
-	
-	public JButton getPlayedCards(int i){return playedCards[i];}
-	
-	public JLabel getTokens(int i, int k){return tokens[i][k];}
-	public boolean getPlayerArrayofTokens(int i, int k){return hasTokens[i][k];}
-	
-	public JLabel getDeck(){return deck;}
-	
-	public int getLastCard(){return lastCard;}
-	public int getPlayedCard(){return playedCard;}
-	public boolean isLeftClick(){return leftClick;}
-	
-	public JLabel getTextDisplay(){return textDisplay;}
-	public JLabel getCardTextLabel(){return cardTextLabel;}
-	
-	public boolean getTesting(){return testing;}
-	public boolean getClose(){return close;}
-	
-	public void setTesting(boolean b){testing = b;}
-	public void setHasToken(int i, int k, boolean b){hasTokens[i][k] = b;}
-	public void setLastCard(int i){lastCard = i;}
-	
-	public MainWindow(){
-		super();
-		setTitle("Ivanhoe");
-		this.setSize(1360, 840);
-		//setSize(300, 200);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		this.setFont(new Font("Helvetica",Font.PLAIN,35));
-		leftClick = false;
-		testing = true;
-		setUpScreen(this.getContentPane());
-		//this.pack();
-		this.hasTokens=new boolean[5][5];
-		for (int i = 0; i < 5; i++){
-			for (int j = 0; j < 5; j++){
-				this.hasTokens[i][j]=false;
+public class Guilayout extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Guilayout frame = new Guilayout();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
-		}
-		close=false;
-		int fontsize=17;
-		this.endTurnButton.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.withdrawButton.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playCardButton.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playerNames[0].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playerNames[1].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playerNames[2].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playerNames[3].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playerNames[4].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		
-		this.playerPoints[0].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playerPoints[1].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playerPoints[2].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playerPoints[3].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		this.playerPoints[4].setFont(new Font("Helvetica",Font.PLAIN,fontsize));
-		
-		this.addWindowListener(new WindowAdapter() { 
-			@Override
-			  public void windowClosing(WindowEvent we) {
-				    closing();
-				  }});
-		
-	}
-	public void closing(){
-		this.notifyObservers(Config.QUIT);
-		System.exit(0); 
-	}
-	
-	@Override
-	public void registerObserver(Observer observer) {
-		observers.add(observer);
+		});
 	}
 
-	@Override
-	public void removeObserver(Observer observer) {
-		observers.remove(observer);
-	}
-
-	@Override
-	public void notifyObservers(String message) {
-		for(Observer ob:observers){
-			ob.update(message);
-		}
-	}
-	
-	public void setUpScreen(Container pane){
-		setup2();
-		addNames();
-		addDefaults();
-		addButtonListners();
-	}
-	
-	//adding names to the components for testing
-	private void addNames() {
-	
-		// Individual Buttons
-		this.leftArrow.setName("leftArrow");
-		this.rightArrow.setName("rightArrow");
-		this.deck.setName("deck");
-		this.withdrawButton.setName("withdraw");
-		this.endTurnButton.setName("endTurn");
-		this.playCardButton.setName("playCard");
-		this.testLable.setName("test");
-		this.textDisplay.setName("text");
-		
-		// Player Names
-		this.playerNames[0].setName("player1name");
-		this.playerNames[1].setName("player2name");
-		this.playerNames[2].setName("player3name");
-		this.playerNames[3].setName("player4name");
-		this.playerNames[4].setName("player5name");
-		
-		// Player Scores
-		this.playerPoints[0].setName("player1points");
-		this.playerPoints[1].setName("player2points");
-		this.playerPoints[2].setName("player3points");
-		this.playerPoints[3].setName("player4points");
-		this.playerPoints[4].setName("player5points");
-		
-		// Player Tokens
-		//Player 1
-		this.tokens[0][0].setName("player1blue");
-		this.tokens[0][1].setName("player1red");
-		this.tokens[0][2].setName("player1yellow");
-		this.tokens[0][3].setName("player1green");
-		this.tokens[0][4].setName("player1purple");
-
-		//Player 2
-		this.tokens[1][0].setName("player2blue");
-		this.tokens[1][1].setName("player2red");
-		this.tokens[1][2].setName("player2yellow");
-		this.tokens[1][3].setName("player2green");
-		this.tokens[1][4].setName("player2purple");	
-		
-		//Player 3
-		this.tokens[2][0].setName("player3blue");
-		this.tokens[2][1].setName("player3red");
-		this.tokens[2][2].setName("player3yellow");
-		this.tokens[2][3].setName("player3green");
-		this.tokens[2][4].setName("player3purple");
-		
-		//Player 4
-		this.tokens[3][0].setName("player4blue");
-		this.tokens[3][1].setName("player4red");
-		this.tokens[3][2].setName("player4yellow");
-		this.tokens[3][3].setName("player4green");
-		this.tokens[3][4].setName("player4purple");
-	
-		//Player 5
-		this.tokens[4][0].setName("player5blue");
-		this.tokens[4][1].setName("player5red");
-		this.tokens[4][2].setName("player5yellow");
-		this.tokens[4][3].setName("player5green");
-		this.tokens[4][4].setName("player5purple");
-		
-		//Player's cards 
-		this.playerCards[0].setName("card1");
-		this.playerCards[1].setName("card2");
-		this.playerCards[2].setName("card3");
-		this.playerCards[3].setName("card4");
-		this.playerCards[4].setName("card5");
-		this.playerCards[5].setName("card6");
-		this.playerCards[6].setName("card7");
-		this.playerCards[7].setName("card8");
-		this.playerCards[8].setName("card9");
-		this.playerCards[9].setName("card10");
-		
-		//Played cards
-		this.playedCards[0].setName("player1played");
-		this.playedCards[1].setName("player2played");
-		this.playedCards[2].setName("player3played");
-		this.playedCards[3].setName("player4played");
-		this.playedCards[4].setName("player5played");
-	}
-	
-	//adds default cards for tests
-	private void addDefaults(){
-
-		this.playerNames[0].setSelected(true);
-		
-		for (int i = 0; i < Config.MAX_PLAYERS; i++) {
-			this.tokens[i][0].setIcon(ResourceLoader.loadImage(Config.BLUE_EMPTY));
-			this.tokens[i][1].setIcon(ResourceLoader.loadImage(Config.RED_EMPTY));
-			this.tokens[i][2].setIcon(ResourceLoader.loadImage(Config.YELLOW_EMPTY));
-			this.tokens[i][3].setIcon(ResourceLoader.loadImage(Config.GREEN_EMPTY));
-			this.tokens[i][4].setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
-			
-			this.stunImages[i].setIcon(ResourceLoader.loadImage(Config.STUN_IMG));
-			this.shieldImages[i].setIcon(ResourceLoader.loadImage(Config.SHIELD_IMG));
-		}
-		
-		this.deck.setIcon(ResourceLoader.loadImage(Config.IMG_BACK));
-		
-		for(int i = 0; i < 5; i++){
-				this.playedCards[i].setIcon(ResourceLoader.loadImage(Config.IMG_BACK));
-		}
-	}
-
-
- 	private void addButtonListners() {
-		this.leftArrow.addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){leftArrowClicked(Config.IMG_BACK);}
-			notifyObservers(Config.LEFT_CLICK);
-		}});
-		this.rightArrow.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){rightArrowClicked(Config.IMG_BACK);}
-			notifyObservers(Config.RIGHT_CLICK);
-		}});
-		this.withdrawButton.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){withdrawClicked();}
-			notifyObservers(Config.WITHDRAW_CLICK);
-		}});
-		this.endTurnButton.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){endTurnClicked();}
-			notifyObservers(Config.END_TURN_CLICK);
-		}});
-		this.playCardButton.addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(testing){playCardClicked();}
-			notifyObservers(Config.PLAYEDCARD);
-		}});
-		this.playerCards[0].addActionListener(new ActionListener() {
-			
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(0);
-		}});
-		this.playerCards[1].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(1);
-		}});
-		this.playerCards[2].addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(2);
-		}});
-		this.playerCards[3].addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(3);
-		}});
-		this.playerCards[4].addActionListener(new ActionListener() {
-	
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(4);
-		}});
-		this.playerCards[5].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(5);
-		}});
-		this.playerCards[6].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(6);
-		}});
-		this.playerCards[7].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(7);
-		}});
-		this.playerCards[8].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(8);
-		}});
-		this.playerCards[9].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			selectCard(9);
-		}});
-		this.playedCards[0].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-		playedCardsClick(0);
-		}});
-		this.playedCards[1].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(1);
-		}});
-		this.playedCards[2].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(2);
-		}});
-		this.playedCards[3].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(3);
-		}});
-		this.playedCards[4].addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			playedCardsClick(4);
-		}});	
-	}
- 	
- 	public void selectCard(int i){
- 		lastCard=i;	
- 		deck.setText(lastCard + "");
- 		this.notifyObservers(Config.DESCRIPTION);
- 		if(testing){
- 			this.textDisplay.setText("card "+i);
- 		}
- 	}
- 	protected void playCardClicked() {
-		this.textDisplay.setText("played " + lastCard + "");
-		//this.testLable.setText("played "+this.lastCard+"");
-	}
- 	
-
-	public void withdrawClicked() {
-		for(int i = 0; i < 5; i++){
-			if(this.playerNames[i].isSelected())
-				this.playerNames[i].setSelected(false);
-		}
-		this.endedTurn();
-	}
-	
- 	public void endTurnClicked() {
-		for(int i = 0; i < 5; i++){
-			if(this.playerNames[i].isSelected())
-				this.playerNames[i].setSelected(false);
-		}
-		this.endedTurn();
-	}
-
-	public void leftArrowClicked(String imageStr){
-		for(int i = 9; i > 0;i--){
- 			this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
- 		}
- 		this.playerCards[0].setIcon(ResourceLoader.loadImage(imageStr));
- 		
- 	}
- 	public void rightArrowClicked(String imageStr){
- 		for(int i = 0; i < 9; i++){
- 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
- 		}
- 		this.playerCards[9].setIcon(ResourceLoader.loadImage(imageStr));	
- 	}
- 	
- 	public void playedCardsClick(int i){
- 		this.playedCard = i;
- 		notifyObservers(Config.VIEWDISPLAY);
- 	}
- 	
- 	public void addPlayerCard(int index, String imageStr){
- 		this.playerCards[index].setIcon(ResourceLoader.loadImage(imageStr));
- 	}
- 	
- 	public void addPlayedCard(int index, String imageStr){
- 		this.playedCards[index].setIcon(ResourceLoader.loadImage(imageStr));
- 	}
- 	public void setPlayedCardImage(int index, String imageStr){
- 		this.playedCards[index].setIcon(ResourceLoader.loadImage(imageStr));
- 	}
- 	
- 	public void setToken(int player,int token,String pic){
-		this.tokens[player][token].setIcon(ResourceLoader.loadImage(pic));
-		this.hasTokens[player][token]=true;
-	}
- 	
- 	public void setShield(int player,boolean toggle){
- 		this.shieldImages[player].setVisible(toggle);
- 	}
- 	
- 	public void setStun(int player,boolean toggle){
- 		this.stunImages[player].setVisible(toggle);
- 	}
-	
-	public void startTurn(){
-		for (int i = 0; i < 10; i++){
-			this.playerCards[i].setEnabled(true);
-		}
-		this.withdrawButton.setEnabled(true);
-		this.endTurnButton.setEnabled(true);
-		this.playCardButton.setEnabled(true);
-	}
-
-	public void endedTurn(){
-		for (int i = 0; i < 10; i++){
-			this.playerCards[i].setEnabled(false);
-		}
-		this.withdrawButton.setEnabled(false);
-		this.endTurnButton.setEnabled(false);
-		this.playCardButton.setEnabled(false);
-	}
-	public void setup2(){
+	/**
+	 * Create the frame.
+	 */
+	public Guilayout() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1360, 840);
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -893,7 +428,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_withdrawButton.gridy = 11;
 		getContentPane().add(withdrawButton, gbc_withdrawButton);
 		
-		JLabel textLabel = new JLabel("");
+		JLabel textLabel = new JLabel("game instructions");
 		GridBagConstraints gbc_textLabel = new GridBagConstraints();
 		gbc_textLabel.gridheight = 2;
 		gbc_textLabel.gridwidth = 5;
@@ -1042,7 +577,7 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_rightArrow.gridy = 15;
 		getContentPane().add(rightArrow, gbc_rightArrow);
 		
-		JLabel cardText = new JLabel("");
+		JLabel cardText = new JLabel("card text");
 		GridBagConstraints gbc_cardText = new GridBagConstraints();
 		gbc_cardText.gridheight = 2;
 		gbc_cardText.gridwidth = 31;
@@ -1092,13 +627,13 @@ public class MainWindow extends JFrame implements Subject {
 		getContentPane().add(points5, gbc_points5);
 		
 		//naming the buttons 
-		this.withdrawButton = withdrawButton;
+		/*this.withdrawButton = withdrawButton;
 		this.deck = Deck;
 		this.leftArrow = leftArrow;
 		this.rightArrow = rightArrow;
 		this.playCardButton = playCardButton;
 		this.endTurnButton = endTurnButton;
-		this.textDisplay = textLabel;
+		this.textLabel = textLabel;
 		this.cardTextLabel = cardText;
 		
 		this.playerCards= new JButton[10];
@@ -1167,21 +702,9 @@ public class MainWindow extends JFrame implements Subject {
 		this.playerPoints[1] = points2;
 		this.playerPoints[2] = points3;
 		this.playerPoints[3] = points4;
-		this.playerPoints[4] = points5;
-		
-		this.shieldImages = new JLabel[5];
-		this.shieldImages[0] = sheild1;
-		this.shieldImages[1] = sheild2;
-		this.shieldImages[2] = sheild3;
-		this.shieldImages[3] = sheild4;
-		this.shieldImages[4] = sheild5;
-		
-		this.stunImages = new JLabel[5];
-		this.stunImages[0] = stun1;
-		this.stunImages[1] = stun2;
-		this.stunImages[2] = stun3;
-		this.stunImages[3] = stun4;
-		this.stunImages[4] = stun5;
-		
+		this.playerPoints[4] = points5;*/
 	}
+
+	
+
 }
