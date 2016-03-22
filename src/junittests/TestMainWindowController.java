@@ -18,7 +18,7 @@ public class TestMainWindowController {
 	public void setup(){
 		controller= new MainWindowController();
 		config=new Config();
-		testCard=new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg");
+		testCard=new ColourCard("purple", 3,config.IMG_PURPLE_3);
 	}
 	@Test
 	public void testPlayerNum() {
@@ -28,12 +28,14 @@ public class TestMainWindowController {
 	@Test
 	public void testPlayerAddCard() {
 		ColourCard card= new ColourCard("purple",4);
+		card.setCardImage(Config.IMG_IVANHOE);
 		controller.addCard(card);
 		assertEquals(controller.numCards(),1);
 	}
 	@Test
 	public void testPlayerRemoveCard() {
 		ColourCard card= new ColourCard("purple",4);
+		card.setCardImage(Config.IMG_IVANHOE);
 		controller.addCard(card);
 		controller.removeCard(0);
 		assertEquals(controller.numCards(),0);
@@ -76,6 +78,7 @@ public class TestMainWindowController {
 	public void testSelectCard(){
 		controller.getWindow().setLastCard(1);
 		ColourCard card = new ColourCard("purple",4);
+		card.setCardImage(Config.IMG_IVANHOE);
 		controller.addCard(card);
 		controller.addCard(card);
 		int old = controller.getPlayerCardSize();
@@ -115,6 +118,7 @@ public class TestMainWindowController {
 	}
 	public void addCards(int i){
 		ColourCard card= new ColourCard("purple",4);
+		card.setCardImage(Config.IMG_IVANHOE);
 		for(i=i;i>=0;i--){
 			controller.addCard(card);
 		}

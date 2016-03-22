@@ -34,8 +34,12 @@ public class Client implements Runnable, Observer {
 	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 	private boolean purpleChosen = false;
 	private boolean successConnect = false; 
+<<<<<<< HEAD
 	
 	private String displayText = null;
+=======
+	private ArrayList<String>actioncards = new ArrayList<String>();
+>>>>>>> bcd4c8d46a62610eeb7474f0dc1b6d1ed4e97034
 
 	public Client(){
 		window = new MainWindowController();
@@ -44,10 +48,31 @@ public class Client implements Runnable, Observer {
 		String seperate[] = ipAndPort.split(" ");
 		this.successConnect = this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
 		this.currentPlayer = false; 
+		setActionCardArraylist();
 	}
 	
 	public Client(String ip, int port){
 		this.successConnect = this.connectToServer(ip, port);
+		setActionCardArraylist();
+	}
+	public void setActionCardArraylist(){
+		this.actioncards.add(Config.KNOCKDOWN);
+		this.actioncards.add(Config.RIPOSTE);
+		this.actioncards.add(Config.BREAKLANCE);
+		this.actioncards.add(Config.CHANGEWEAPON);
+		this.actioncards.add(Config.UNHORSE);
+		this.actioncards.add(Config.DROPWEAPON);
+		this.actioncards.add(Config.SHIELD);
+		this.actioncards.add(Config.DISGRACE);
+		this.actioncards.add(Config.COUNTERCHARGE);
+		this.actioncards.add(Config.CHARGE);
+		this.actioncards.add(Config.OUTMANEUVER);
+		this.actioncards.add(Config.STUNNED);
+		this.actioncards.add(Config.OUTWIT);
+		this.actioncards.add(Config.DODGE);
+		this.actioncards.add(Config.RETREAT);
+		this.actioncards.add(Config.IVANHOE);
+		this.actioncards.add(Config.ADAPT);
 	}
 
 	public int getID(){return this.id;}
@@ -480,6 +505,7 @@ public class Client implements Runnable, Observer {
 	
 	public String processWaiting(String msg){
 		String output = "result";
+		Boolean isAction=false;
 		// if the client cannot play that card 
 		if(msg.contains(Config.UNPLAYABLE)){
 			window.addCard(window.getLastCard());
@@ -497,9 +523,15 @@ public class Client implements Runnable, Observer {
 			} else {
 				type = input[1];
 				value = "0";
+				isAction=true;
 			}
 			Card card = this.getCardFromTypeValue(type, value);
-			window.addPlayedCard(window.getCurrPlayer(), card);
+			if(isAction){
+				this.processActionCardAction(msg);
+			}
+			else{
+				window.addPlayedCard(window.getCurrPlayer(), card);
+			}
 			if(window.getCurrPlayer() == window.getPlayerNum()){
 				window.removeCard(card);
 			}
@@ -508,6 +540,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processActionCard(){
+		System.out.println("got to actioncard process");
 		String output = "";
 		String cardType = window.getLastCard().getType();
 		String cardValue = String.valueOf(window.getLastCard().getValue());
@@ -559,6 +592,7 @@ public class Client implements Runnable, Observer {
 	
 	// for input from server on playing the card if an action card is played sent the whole message to this in waiting 
 	public void processActionCardAction(String msg){
+		System.out.println("got to processe actioncard action  "+msg);
 		String input[]=msg.split(" ");
 		String cardType = input[1];
 		
@@ -568,6 +602,9 @@ public class Client implements Runnable, Observer {
 			if(window.getPlayerName().equalsIgnoreCase(input[2])){
 				window.removeCard(window.getPlayerCard(0));
 			}
+			if(window.getCurrPlayer()==window.getPlayerNum()){
+				window.addCard(this.getCardFromTypeValue(input[3], input[4]));
+			}
 		}
 		else if(cardType.equalsIgnoreCase(Config.RIPOSTE)){
 			//input = waiting <card played> <player stolen from> <player total> <card stolen> <player added to> <player total> 
@@ -575,14 +612,18 @@ public class Client implements Runnable, Observer {
 			String playerScore = input[3];
 			Card c = this.getCardFromTypeValue(input[4], input[5]);
 			window.removePlayedCard(player, c);
-			int addtoplayer=window.getPlayerByName(input[5]);
-			String addToPlayerScore = input[6];
-			window.addPlayedCard(addtoplayer,c);		
+			window.setScore(player, Integer.getInteger(playerScore));
+			int addtoplayer=window.getPlayerByName(input[6]);
+			String addToPlayerScore = input[7];
+			window.addPlayedCard(addtoplayer,c);	
+			window.setScore(addtoplayer, Integer.getInteger(addToPlayerScore));
+			
 		}
 		else if(cardType.equalsIgnoreCase(Config.BREAKLANCE)){
 			//in = waiting <card played> display name <player> <player score> cards <display card> <display card> ...
 			int player=window.getPlayerByName(input[4]);
 			String score = input[5];
+			window.setScore(player, Integer.getInteger(score));
 			window.resetPlayedCards(player);
 			for(int i=7;i<input.length ;i+=2){
 				window.addPlayedCard(player, this.getCardFromTypeValue(input[i], input[i+1]));
@@ -618,18 +659,20 @@ public class Client implements Runnable, Observer {
 		}
 		else if(cardType.equalsIgnoreCase(Config.DODGE)){
 			//input[0] = waiting 
-			//TODO SCORE
-			String[] card={input[3],input[4]};
+			String[] card={input[4],input[5]};
 			int player = window.getPlayerByName(input[2]);
+			int score = Integer.getInteger(input[3]);
+			window.setScore(player, score);
 			window.removePlayedCard(player, this.getCardFromTypeValue(card[0], card[1]));
 			//input = waiting <card played> <player discarded from> <card discarded>
 			
 		}
 		else if(cardType.equalsIgnoreCase(Config.RETREAT)){
 			//input[0] = waiting 
-			//TODO need score
-			String[] card={input[3],input[4]};
+			String[] card={input[4],input[5]};
 			int player= window.getPlayerByName(input[2]);
+			int score = Integer.getInteger(input[3]);
+			window.setScore(player, score);
 			Card c= this.getCardFromTypeValue(card[0], card[1]);
 			window.removePlayedCard(player, c);
 			if(window.getPlayerName().equalsIgnoreCase(input[2])){
@@ -656,13 +699,16 @@ public class Client implements Runnable, Observer {
 			window.resetPlayedCards(i);
 		}
 
-		int name= -1; 
+		int name= -1;
 		for(int i=3;i<input.length;i++){
 			if(input[i].equalsIgnoreCase(Config.PLAYER_NAME)){
 				name=-1;
 			}
 			else if(input[i-1].equalsIgnoreCase(Config.PLAYER_NAME)){
 				name=window.getPlayerByName(input[i]);
+			}
+			else if(input[i-2].equalsIgnoreCase(Config.PLAYER_NAME)){
+				window.setScore(name, Integer.getInteger(input[i]));
 			}
 			else if(input[i].equalsIgnoreCase(Config.PLAYER_CARDS)){
 
