@@ -74,11 +74,11 @@ public class TestMainWindowController {
 	}
 	@Test
 	public void testSelectCard(){
-		controller.window.lastCard=1;
-		ColourCard card= new ColourCard("purple",4);
+		controller.getWindow().setLastCard(1);
+		ColourCard card = new ColourCard("purple",4);
 		controller.addCard(card);
 		controller.addCard(card);
-		int old=controller.getPlayerCardSize();
+		int old = controller.getPlayerCardSize();
 		controller.playCard();
 		controller.removeCard(card);
 		System.out.println(old);
@@ -89,28 +89,28 @@ public class TestMainWindowController {
 	@Test
 	public void testClickLeft(){
 		addCards(15);
-		controller.moved=2;
-		int old = controller.moved;
+		controller.setMoved(2);
+		int old = controller.getMoved();
 		controller.leftClick();
-		assertEquals(controller.moved,old-1);
+		assertEquals(controller.getMoved(), old-1);
 		
 	}
 	@Test
 	public void testClickRight(){
 		addCards(15);
-		controller.moved=0;
-		int old = controller.moved;
+		controller.setMoved(0);
+		int old = controller.getMoved();
 		controller.rightClick();
-		assertEquals(controller.moved,old+1);
+		assertEquals(controller.getMoved(), old+1);
 		
 	}
 	@Test
 	public void testClickRightMax(){
 		addCards(12);
-		controller.moved=3;
-		int old = controller.moved;
+		controller.setMoved(3);
+		int old = controller.getMoved();
 		controller.rightClick();
-		assertEquals(controller.moved,old);
+		assertEquals(controller.getMoved() ,old);
 		
 	}
 	public void addCards(int i){
@@ -122,31 +122,31 @@ public class TestMainWindowController {
 	@Test
 	public void testchangeBackgroundBlue(){
 		controller.setTournamentColour(0);
-		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[0]);
+		assertEquals(controller.getWindow().getContentPane().getBackground(),controller.getBackgroundColour(0));
 		
 	}
 	@Test
 	public void testchangeBackgroundRed(){
 		controller.setTournamentColour(1);
-		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[1]);
+		assertEquals(controller.getWindow().getContentPane().getBackground(),controller.getBackgroundColour(1));
 		
 	}
 	@Test
 	public void testchangeBackgroundYellow(){
 		controller.setTournamentColour(2);
-		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[2]);
+		assertEquals(controller.getWindow().getContentPane().getBackground(),controller.getBackgroundColour(2));
 		
 	}
 	@Test
 	public void testchangeBackgroundGreen(){
 		controller.setTournamentColour(3);
-		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[3]);
+		assertEquals(controller.getWindow().getContentPane().getBackground(),controller.getBackgroundColour(3));
 		
 	}
 	@Test
 	public void testchangeBackgroundPurple(){
 		controller.setTournamentColour(4);
-		assertEquals(controller.window.getContentPane().getBackground(),controller.backgroundColours[4]);
+		assertEquals(controller.getWindow().getContentPane().getBackground(),controller.getBackgroundColour(4));
 		
 	}
 	

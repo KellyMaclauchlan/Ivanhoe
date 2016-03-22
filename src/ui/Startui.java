@@ -62,20 +62,21 @@ public class Startui {
 		//control.playerNames.add("kelly");
 		//control.playerNames.add("katie");
 		//control.playerNames.add("brit");
-		control.playerName=control.getNameFromPlayer();
-		control.setName(0, control.playerName);
-		control.playerNames.add(0, control.playerName);
+		//control.playerName=control.getNameFromPlayer();
+		control.setVarPlayerName(control.getNameFromPlayer());
+		control.setName(0, control.getPlayerName());
+		control.getPlayerNamesArray().add(0, control.getPlayerName());
 		//control.removeToken(1, Config.BLUE);
 		
 		//control.playerWithdraws("jo");
 		control.setCurrPlayer(control.getPlayerNum());
-		System.out.println(control.playerPickCardFromDisplay(control.playerName));
+		System.out.println(control.playerPickCardFromDisplay(control.getPlayerName()));
 		control.setShield(0, true);
-		System.out.println(control.playerPickCardForOutwhit(control.playerName));
+		System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
 		control.setStun(0, true);
-		System.out.println(control.playerPickCardForOutwhit(control.playerName));
+		System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
 		control.setStun(0, false);
-		System.out.println(control.playerPickCardForOutwhit(control.playerName));
+		System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
 		//control.window.startTurn();
 		//control.startRound();
 		//System.out.println(control.playIvanho("unhorse"));
