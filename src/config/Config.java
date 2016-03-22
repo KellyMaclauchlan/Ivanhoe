@@ -3,8 +3,6 @@ package config;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.swing.ImageIcon;
-
 public class Config {
 	public static final int DEFAULT_PORT = 3000; 
 	public static final String DEFAULT_HOST = "127.0.0.1";
@@ -14,6 +12,7 @@ public class Config {
 	public static final String RUN = "run";
 	public static final String SHUTDOWN = "shutdown";
 	public static final String QUIT = "quit";
+	public static final String LOGGING = "log";
 	
 	/* Client to Server messages:  
 	 * Commands made by the players will send strings to the server and with those strings

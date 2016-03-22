@@ -1,10 +1,12 @@
 package ui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.LayoutManager;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,6 +16,9 @@ import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
 import config.Config;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 public class Guilayout extends JFrame {
 
@@ -43,9 +48,9 @@ public class Guilayout extends JFrame {
 		this.setSize(1360, 840);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{ 40, 40, 40, 40, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowHeights = new int[]{ 40, 40, 40, 40, 40, 0, 0, 0, 0, 0, 0, 0, 137, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		getContentPane().setLayout(gridBagLayout);
 		
 		JLabel token11 = new JLabel("");
@@ -412,7 +417,7 @@ public class Guilayout extends JFrame {
 		JLabel Deck = new JLabel("");
 		Deck.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		GridBagConstraints gbc_Deck = new GridBagConstraints();
-		gbc_Deck.gridheight = 3;
+		gbc_Deck.gridheight = 4;
 		gbc_Deck.gridwidth = 2;
 		gbc_Deck.insets = new Insets(0, 0, 5, 5);
 		gbc_Deck.gridx = 21;
@@ -421,25 +426,44 @@ public class Guilayout extends JFrame {
 		
 		JButton withdrawButton = new JButton("Withdraw");
 		GridBagConstraints gbc_withdrawButton = new GridBagConstraints();
-		gbc_withdrawButton.gridheight = 2;
+		gbc_withdrawButton.gridheight = 3;
 		gbc_withdrawButton.gridwidth = 9;
 		gbc_withdrawButton.insets = new Insets(0, 0, 5, 5);
 		gbc_withdrawButton.gridx = 4;
 		gbc_withdrawButton.gridy = 11;
 		getContentPane().add(withdrawButton, gbc_withdrawButton);
+
 		
-		JLabel textLabel = new JLabel("game instructions");
-		GridBagConstraints gbc_textLabel = new GridBagConstraints();
-		gbc_textLabel.gridheight = 2;
-		gbc_textLabel.gridwidth = 5;
-		gbc_textLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_textLabel.gridx = 14;
-		gbc_textLabel.gridy = 11;
-		getContentPane().add(textLabel, gbc_textLabel);
+/*********************************************************************************/
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setMaximumSize(new java.awt.Dimension(200,200));
+		scrollPane.setMinimumSize(new java.awt.Dimension(200, 200));
+		scrollPane.setPreferredSize(new java.awt.Dimension(200, 200));
 		
+				GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+				gbc_scrollPane.gridwidth = 7;
+				gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
+				gbc_scrollPane.gridx = 12;
+				gbc_scrollPane.gridy = 12;
+				getContentPane().add(scrollPane, gbc_scrollPane);
+				
+				JTextArea displayText = new JTextArea();
+				displayText.setTabSize(0);
+				displayText.setRows(5);
+				displayText.setColumns(5);
+				displayText.setLineWrap(true);
+				scrollPane.setViewportView(displayText);
+		
+		String temp;
+		for(int i = 1; i < 100; i++){
+			temp = Integer.toString(i) + "\n";
+			displayText.append(temp);
+		}
+		
+/*********************************************************************************/
 		JButton playCardButton = new JButton("Play Card");
 		GridBagConstraints gbc_playCardButton = new GridBagConstraints();
-		gbc_playCardButton.gridheight = 2;
+		gbc_playCardButton.gridheight = 3;
 		gbc_playCardButton.gridwidth = 4;
 		gbc_playCardButton.insets = new Insets(0, 0, 5, 5);
 		gbc_playCardButton.gridx = 32;
@@ -448,7 +472,7 @@ public class Guilayout extends JFrame {
 		
 		JButton endTurnButton = new JButton("End Turn");
 		GridBagConstraints gbc_endTurnButton = new GridBagConstraints();
-		gbc_endTurnButton.gridheight = 2;
+		gbc_endTurnButton.gridheight = 3;
 		gbc_endTurnButton.gridwidth = 5;
 		gbc_endTurnButton.insets = new Insets(0, 0, 5, 5);
 		gbc_endTurnButton.gridx = 25;
@@ -464,7 +488,7 @@ public class Guilayout extends JFrame {
 		gbc_leftArrow.gridwidth = 2;
 		gbc_leftArrow.insets = new Insets(0, 0, 5, 5);
 		gbc_leftArrow.gridx = 2;
-		gbc_leftArrow.gridy = 15;
+		gbc_leftArrow.gridy = 16;
 		getContentPane().add(leftArrow, gbc_leftArrow);
 		
 		JButton card1 = new JButton("");
@@ -474,7 +498,7 @@ public class Guilayout extends JFrame {
 		gbc_card1.gridwidth = 3;
 		gbc_card1.insets = new Insets(0, 0, 5, 5);
 		gbc_card1.gridx = 4;
-		gbc_card1.gridy = 15;
+		gbc_card1.gridy = 16;
 		getContentPane().add(card1, gbc_card1);
 		
 		JButton card2 = new JButton("");
@@ -484,7 +508,7 @@ public class Guilayout extends JFrame {
 		gbc_card2.gridwidth = 3;
 		gbc_card2.insets = new Insets(0, 0, 5, 5);
 		gbc_card2.gridx = 7;
-		gbc_card2.gridy = 15;
+		gbc_card2.gridy = 16;
 		getContentPane().add(card2, gbc_card2);
 		
 		JButton card3 = new JButton("");
@@ -494,7 +518,7 @@ public class Guilayout extends JFrame {
 		gbc_card3.gridwidth = 3;
 		gbc_card3.insets = new Insets(0, 0, 5, 5);
 		gbc_card3.gridx = 10;
-		gbc_card3.gridy = 15;
+		gbc_card3.gridy = 16;
 		getContentPane().add(card3, gbc_card3);
 		
 		JButton card4 = new JButton("");
@@ -504,7 +528,7 @@ public class Guilayout extends JFrame {
 		gbc_card4.gridwidth = 3;
 		gbc_card4.insets = new Insets(0, 0, 5, 5);
 		gbc_card4.gridx = 13;
-		gbc_card4.gridy = 15;
+		gbc_card4.gridy = 16;
 		getContentPane().add(card4, gbc_card4);
 		
 		JButton card5 = new JButton("");
@@ -514,7 +538,7 @@ public class Guilayout extends JFrame {
 		gbc_card5.gridwidth = 3;
 		gbc_card5.insets = new Insets(0, 0, 5, 5);
 		gbc_card5.gridx = 16;
-		gbc_card5.gridy = 15;
+		gbc_card5.gridy = 16;
 		getContentPane().add(card5, gbc_card5);
 		
 		JButton card6 = new JButton("");
@@ -524,7 +548,7 @@ public class Guilayout extends JFrame {
 		gbc_card6.gridwidth = 3;
 		gbc_card6.insets = new Insets(0, 0, 5, 5);
 		gbc_card6.gridx = 19;
-		gbc_card6.gridy = 15;
+		gbc_card6.gridy = 16;
 		getContentPane().add(card6, gbc_card6);
 		
 		JButton card7 = new JButton("");
@@ -534,7 +558,7 @@ public class Guilayout extends JFrame {
 		gbc_card7.gridwidth = 2;
 		gbc_card7.insets = new Insets(0, 0, 5, 5);
 		gbc_card7.gridx = 22;
-		gbc_card7.gridy = 15;
+		gbc_card7.gridy = 16;
 		getContentPane().add(card7, gbc_card7);
 		
 		JButton card8 = new JButton("");
@@ -544,7 +568,7 @@ public class Guilayout extends JFrame {
 		gbc_card8.gridheight = 3;
 		gbc_card8.insets = new Insets(0, 0, 5, 5);
 		gbc_card8.gridx = 24;
-		gbc_card8.gridy = 15;
+		gbc_card8.gridy = 16;
 		getContentPane().add(card8, gbc_card8);
 		
 		JButton card9 = new JButton("");
@@ -554,7 +578,7 @@ public class Guilayout extends JFrame {
 		gbc_card9.gridwidth = 3;
 		gbc_card9.insets = new Insets(0, 0, 5, 5);
 		gbc_card9.gridx = 27;
-		gbc_card9.gridy = 15;
+		gbc_card9.gridy = 16;
 		getContentPane().add(card9, gbc_card9);
 		
 		JButton card10 = new JButton("");
@@ -563,7 +587,7 @@ public class Guilayout extends JFrame {
 		gbc_card10.gridwidth = 3;
 		gbc_card10.insets = new Insets(0, 0, 5, 5);
 		gbc_card10.gridx = 30;
-		gbc_card10.gridy = 15;
+		gbc_card10.gridy = 16;
 		getContentPane().add(card10, gbc_card10);
 		card10.setIcon(ResourceLoader.loadImage(Config.IMG_IVANHOE));
 		
@@ -574,7 +598,7 @@ public class Guilayout extends JFrame {
 		gbc_rightArrow.gridwidth = 2;
 		gbc_rightArrow.insets = new Insets(0, 0, 5, 5);
 		gbc_rightArrow.gridx = 33;
-		gbc_rightArrow.gridy = 15;
+		gbc_rightArrow.gridy = 16;
 		getContentPane().add(rightArrow, gbc_rightArrow);
 		
 		JLabel cardText = new JLabel("card text");
@@ -583,7 +607,7 @@ public class Guilayout extends JFrame {
 		gbc_cardText.gridwidth = 31;
 		gbc_cardText.insets = new Insets(0, 0, 0, 5);
 		gbc_cardText.gridx = 4;
-		gbc_cardText.gridy = 18;
+		gbc_cardText.gridy = 19;
 		getContentPane().add(cardText, gbc_cardText);
 		
 		JLabel points1 = new JLabel("0");

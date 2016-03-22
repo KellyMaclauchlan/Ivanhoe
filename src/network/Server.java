@@ -201,7 +201,7 @@ public class Server implements Runnable {
 			send1Client(id, send);
 		}
 		
-		else if(send.contains(Config.PLAYER_NAME)){
+		else if(send.contains(Config.HAND)){
 			sendAllClients(send);
 		}
 		
@@ -211,6 +211,7 @@ public class Server implements Runnable {
 
 		else if(send.contains(Config.TURN)){			
 			send1Client(id, send);
+			sendAllClients(Config.LOGGING + " " + send);
 		}
 
 		else if (send.contains(Config.PLAY)){
