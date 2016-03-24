@@ -283,7 +283,7 @@ public class GameEngine {
 				String playerName = cardString[2];
 				Player player = getPlayerByName(playerName);
 				card.playKnockDown(this, player);
-				output += playerName;
+				output += Config.KNOCKDOWN + " " + playerName + " " + player.getCards().get(0);
 				//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
 			} else if (card.getType().equals(Config.OUTMANEUVER)) {
 				// input = play outmaneuver
