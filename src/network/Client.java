@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.util.ArrayList;
+
 import org.apache.log4j.Logger;
 
 import config.Config;
@@ -18,23 +19,23 @@ import game.ColourCard;
 import game.SupportCard;
 
 public class Client implements Runnable, Observer {
-	private int id = 0;
+	protected int id = 0;
 	private Socket socket = null;
 	private Thread thread = null;
 	private ClientThread client = null;
-	private MainWindowController window = null;
+	protected MainWindowController window = null;
 	private BufferedReader inStream = null;
 	private BufferedWriter outStream = null;
 	private String testing = null;
-	private ArrayList<String> hand = new ArrayList<String>();
-	private String playedCards = null;	
+	protected ArrayList<String> hand = new ArrayList<String>();
+	protected String playedCards = null;	
 	private Logger log = Logger.getLogger("Client");
-	private boolean currentPlayer = false; 
-	private String currPlayer = null; // used for logging activity 
-	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
-	private boolean purpleChosen = false;
-	private boolean successConnect = false; 
-	private ArrayList<String>actioncards = new ArrayList<String>();
+	protected boolean currentPlayer = false; 
+	protected String currPlayer = null; // used for logging activity 
+	protected String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+	protected boolean purpleChosen = false;
+	protected boolean successConnect = false; 
+	protected ArrayList<String>actioncards = new ArrayList<String>();
 
 	public Client(){
 		window = new MainWindowController();
@@ -230,10 +231,6 @@ public class Client implements Runnable, Observer {
 		if(msg.equals(Config.QUIT)) {  
 			output = Config.QUIT;
 		}
-		
-		else if(msg.startsWith(Config.LOGGING)){
-			logActivity(msg);
-		}
 
 		else if(msg.contains(Config.FROMUPDATE)){
 			output = msg.substring(Config.FROMUPDATE.length());
@@ -248,7 +245,8 @@ public class Client implements Runnable, Observer {
 		 * Output: start #
 		 * */
 		else if(msg.contains(Config.FIRSTPLAYER)){
-			output = Config.START + " " + this.window.getNumberOfPlayersFromPlayer();
+			output = Config.START + " " + this.window.getNumberOfPlayersFromPlayer() + " " +
+					this.window.getNumberOfAIFromPlayer();
 		}
 
 		/* Once the player is connected, prompts that player for their name 

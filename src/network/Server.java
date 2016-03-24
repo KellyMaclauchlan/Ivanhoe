@@ -5,9 +5,14 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
+
 import org.apache.log4j.Logger;
 
 import config.Config;
+import config.StrategyPlayAll;
+import config.StrategySmartish;
+import config.StrategyWithdraw;
 import game.GameEngine;
 
 public class Server implements Runnable {
@@ -20,6 +25,9 @@ public class Server implements Runnable {
 	private boolean minPlayers = false;
 	private boolean maxPlayers = false; 
 	private ArrayList<String> names = new ArrayList<String>();
+	
+	private AI ai;
+	private ArrayList<AI> aiPlayers = new ArrayList<AI>();
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
@@ -132,11 +140,43 @@ public class Server implements Runnable {
 			doubleCheckNames(id, msg);
 		}
 		
+		else if (msg.startsWith(Config.START)){
+			String[] input = msg.split(" ");
+			String reConstruct = input[0] + " " + input[1];
+			
+			produceAI(Integer.parseInt(input[2]));
+			
+			send = game.processInput(reConstruct);
+			processInput(id, send);
+		}
+		
 		/* All other messages from the client */
 		else {
 			send = game.processInput(msg);
+			sendToAI(send);
 			processInput(id, send);
 		}
+	}
+	
+	public void produceAI(int a){
+		Random rand = new Random();
+		for(int i = 0; i <= a; i++){
+			int r = rand.nextInt(3) + 1;
+			
+			switch(r){
+				case 1: ai = new AI(new StrategyPlayAll());
+				case 2: ai = new AI(new StrategyWithdraw());
+				case 3: ai = new AI(new StrategySmartish());
+			}
+			aiPlayers.add(ai);
+		}
+	}
+	
+	public void sendToAI(String msg){
+		for(AI i : aiPlayers){
+			i.processInput(msg);
+		}
+
 	}
 	
 	public void checkStart(int id){
@@ -211,7 +251,6 @@ public class Server implements Runnable {
 
 		else if(send.contains(Config.TURN)){			
 			send1Client(id, send);
-			//sendAllClients(Config.LOGGING + " " + send);
 		}
 
 		else if (send.contains(Config.PLAY)){

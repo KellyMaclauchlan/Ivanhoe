@@ -23,6 +23,7 @@ public class MainWindowController implements Observer, Subject{
 	private Color backgroundColours[] = {new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};
 	private Card lastCard;
 	private Logger log = Logger.getLogger("UI");
+	private int numberOfPlayers;
 	
 	private ArrayList<Card> playerCards;
 	private ArrayList<ArrayList<Card>> playedCards;
@@ -149,9 +150,11 @@ public class MainWindowController implements Observer, Subject{
             null,
             possibilities,
             "2");
+		numberOfPlayers = Integer.parseInt(s);
 		return s;
 	}
-	public String getNumberOfAIFromPlayer(int numPlayers) {
+	public String getNumberOfAIFromPlayer() {
+		int numPlayers = numberOfPlayers;
 		ArrayList<String> nums= new ArrayList<String>();
 		for(int i=0;i<numPlayers;i++){
 			nums.add(Integer.toString(i));			
