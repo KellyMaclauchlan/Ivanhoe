@@ -1,10 +1,10 @@
-package network;
+package ai;
 
 import org.apache.log4j.Logger;
 
 import config.Config;
-import config.Strategy;
 import game.Player;
+import network.Server;
 
 public class AI extends Player{
 	private Strategy strategy;

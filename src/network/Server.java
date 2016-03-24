@@ -9,10 +9,11 @@ import java.util.Random;
 
 import org.apache.log4j.Logger;
 
+import ai.AI;
+import ai.StrategyPlayAll;
+import ai.StrategySmartish;
+import ai.StrategyWithdraw;
 import config.Config;
-import config.StrategyPlayAll;
-import config.StrategySmartish;
-import config.StrategyWithdraw;
 import game.GameEngine;
 
 public class Server implements Runnable {

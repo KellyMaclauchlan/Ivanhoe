@@ -1,4 +1,4 @@
-package config;
+package ai;
 
 public interface Strategy {
 

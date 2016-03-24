@@ -1,4 +1,4 @@
-package config;
+package ai;
 
 public class StrategyPlayAll implements Strategy{
 	/* This strategy plays all possible cards in a round even though it might

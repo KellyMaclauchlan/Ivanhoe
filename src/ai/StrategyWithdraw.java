@@ -1,4 +1,4 @@
-package config;
+package ai;
 
 public class StrategyWithdraw implements Strategy{
 	/* This strategy will withdraw no matter what */

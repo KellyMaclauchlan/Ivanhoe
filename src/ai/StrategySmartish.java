@@ -1,4 +1,4 @@
-package config;
+package ai;
 
 public class StrategySmartish implements Strategy{
 	
