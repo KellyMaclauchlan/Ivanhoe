@@ -383,13 +383,11 @@ public class Client implements Runnable, Observer {
 		window.showWindow();
 		this.window.endTurn();
 		
-		//displayText = "TOURNAMENT IS ABOUT TO BEGIN";
 		logActivity("****************************\n" +
 						"Tournament has Begun\n" +
 					"****************************\n");
 		
 		return Config.START_TOURNAMENT;
-		
 	}
 	
 	public String processPlayerTurn(String msg){

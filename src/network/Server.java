@@ -159,11 +159,13 @@ public class Server implements Runnable {
 		}
 	}
 	
+	//add something like handle to process messages the same way for AI
+	
 	public void produceAI(int a){
 		Random rand = new Random();
 		for(int i = 0; i < a; i++){
-			int r = rand.nextInt(3) + 1;
-			
+			//int r = rand.nextInt(3) + 1;
+			int r = 3;
 			switch(r){
 				case 1: ai = new AI(new StrategyPlayAll());
 				case 2: ai = new AI(new StrategySmartish());

@@ -1,8 +1,13 @@
 package ai;
 
-public interface Strategy {
+import java.util.ArrayList;
+import game.Card;
 
-	public void startTournament();
-	public void playACard();
-	public void continueWithdraw(); 
+public interface Strategy {
+	
+	public String startTournament();
+	public String playACard();
+	public String continueWithdraw(); 
+	
+	public void getHand(ArrayList<Card> c);
 }
