@@ -1,5 +1,7 @@
 package network;
 
+import org.apache.log4j.Logger;
+
 import config.Config;
 import config.Strategy;
 import game.Player;
@@ -9,12 +11,17 @@ public class AI extends Player{
 	private int id;
 	private Server server;
 	
+	private Logger log = Logger.getLogger("AI");
+	
 	public AI(Strategy s){
 		this.strategy = s;
 		this.id = 0;
+		
+		log.info("New AI has been created");
 	}
 	
 	public void processInput(String msg){
+		log.info("AI has received: " + msg);
 		System.out.println("GOT MESSAGE: " + msg);
 		//server.handle(id, msg);
 	}

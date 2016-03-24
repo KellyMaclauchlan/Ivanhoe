@@ -19,23 +19,23 @@ import game.ColourCard;
 import game.SupportCard;
 
 public class Client implements Runnable, Observer {
-	protected int id = 0;
+	private int id = 0;
 	private Socket socket = null;
 	private Thread thread = null;
 	private ClientThread client = null;
-	protected MainWindowController window = null;
+	private MainWindowController window = null;
 	private BufferedReader inStream = null;
 	private BufferedWriter outStream = null;
 	private String testing = null;
-	protected ArrayList<String> hand = new ArrayList<String>();
-	protected String playedCards = null;	
+	private ArrayList<String> hand = new ArrayList<String>();
+	private String playedCards = null;	
 	private Logger log = Logger.getLogger("Client");
-	protected boolean currentPlayer = false; 
-	protected String currPlayer = null; // used for logging activity 
-	protected String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
-	protected boolean purpleChosen = false;
-	protected boolean successConnect = false; 
-	protected ArrayList<String>actioncards = new ArrayList<String>();
+	private boolean currentPlayer = false; 
+	private String currPlayer = null; // used for logging activity 
+	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+	private boolean purpleChosen = false;
+	private boolean successConnect = false; 
+	private ArrayList<String>actioncards = new ArrayList<String>();
 
 	public Client(){
 		window = new MainWindowController();
