@@ -111,7 +111,6 @@ public class Server implements Runnable {
 
 	public void handle(int id, String msg) {
 		System.out.println("Message Receieved: " + msg);
-
 		log.info("Message Received: " + msg);
 		String send = "input";
 		
@@ -119,24 +118,13 @@ public class Server implements Runnable {
 		if (msg.equals(Config.QUIT) || msg.equals(null)) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {
-				clients.get(id).send("quit!" + "\n");
 				remove(id);
 			}
-		}
-		
-		/* All clients have quit therefore, the server will now shutdown */
-		else if (msg.equals(Config.SHUTDOWN)){ 
-			shutdown(); 
 		}
 		
 		/* When a client first connects, it checks to see if this is the first client */
 		else if (msg.equals(Config.CLIENT_START)){
 			checkStart(id);
-		}
-		
-		/* Checks the number of players is between 2 and 5 */
-		else if(msg.contains(Config.START)){
-			checkNumPlayers(id, msg);
 		}
 		
 		/* Double checking to make sure that no 2 players have the same name */
@@ -159,24 +147,9 @@ public class Server implements Runnable {
 		}
 	}
 	
-	public void checkNumPlayers(int id, String msg){
-		String s[] = msg.split(" ");
-		String send = "input";
-		
-		if(Integer.parseInt(s[1]) < 2 || Integer.parseInt(s[1]) > 5){
-			send1Client(id, Config.NOT_ENOUGH);
-		}
-		
-		else{
-			send = game.processInput(msg);
-			processInput(id, send);
-		}
-	}
-	
 	public void doubleCheckNames(int id, String msg){
 		String send = "input";
 		String join[] = msg.split(" ");
-		int count = 0;
 		
 		// adding the first player 
 		if(numPlayers == 1){
@@ -187,11 +160,9 @@ public class Server implements Runnable {
 		else{
 			for(int i = 0; i < names.size(); i++){
 				if(names.get(i).equalsIgnoreCase(join[1])){
-					// Brit can you tell me if this is proper coding convention or if i should make a temp 
 					msg = Config.DUPLICATE;
 					break;
 				}
-				count++;
 			}
 			
 			if(!msg.equals(Config.DUPLICATE)){
@@ -230,7 +201,7 @@ public class Server implements Runnable {
 			send1Client(id, send);
 		}
 		
-		else if(send.contains(Config.PLAYER_NAME)){
+		else if(send.contains(Config.HAND)){
 			sendAllClients(send);
 		}
 		
@@ -240,9 +211,9 @@ public class Server implements Runnable {
 
 		else if(send.contains(Config.TURN)){			
 			send1Client(id, send);
+			//sendAllClients(Config.LOGGING + " " + send);
 		}
 
-		// KATIE TO DO: If output = stunned <card played> then send me end turn
 		else if (send.contains(Config.PLAY)){
 			sendAllClients(send);
 		}

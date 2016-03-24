@@ -61,6 +61,7 @@ public class ServerThread extends Thread {
 	}
 
 	public void close() {
+		log.info("Closing Thread " + socket.getLocalPort());
 		try {
 			if (socket != null) socket.close();
 			if (streamIn != null) streamIn.close();
@@ -71,7 +72,6 @@ public class ServerThread extends Thread {
 		} catch (IOException e) { 
 			log.error(e);
 		}
-		log.info("Closing Thread " + socket.getLocalPort());
 	}
 
 }

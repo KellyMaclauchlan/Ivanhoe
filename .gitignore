@@ -4,4 +4,3 @@ bin/
 log/
 *.log
 *.jar
-src/ui/Guilayout.java
