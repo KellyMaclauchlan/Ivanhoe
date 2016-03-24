@@ -24,6 +24,13 @@ public class Player {
 		front = new ArrayList<>();
 	}
 	
+	public Player(){
+		this.name = "AI";
+		currentTokens = new ArrayList<>();
+		display = new ArrayList<>();
+		front = new ArrayList<>();
+	}
+	
 	public void chooseTournamentColour(String colour) {
 		this.tournamentColour = colour;
 	}

@@ -2,17 +2,16 @@ package network;
 
 import config.Config;
 import config.Strategy;
+import game.Player;
 
-public class AI{
+public class AI extends Player{
 	private Strategy strategy;
 	private int id;
 	private Server server;
 	
-	
 	public AI(Strategy s){
 		this.strategy = s;
 		this.id = 0;
-		System.out.println("New AI of type: " +  strategy);
 	}
 	
 	public void processInput(String msg){

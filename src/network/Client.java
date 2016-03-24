@@ -260,7 +260,6 @@ public class Client implements Runnable, Observer {
 		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
 		else if(msg.contains(Config.NEED_PLAYERS) || msg.contains(Config.NAME_APPROVED)){
 			this.window.showWaiting();
-
 		}
 		
 		/* Receives each player and their hand

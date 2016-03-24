@@ -160,15 +160,16 @@ public class Server implements Runnable {
 	
 	public void produceAI(int a){
 		Random rand = new Random();
-		for(int i = 0; i <= a; i++){
+		for(int i = 0; i < a; i++){
 			int r = rand.nextInt(3) + 1;
 			
 			switch(r){
 				case 1: ai = new AI(new StrategyPlayAll());
-				case 2: ai = new AI(new StrategyWithdraw());
-				case 3: ai = new AI(new StrategySmartish());
-			}
+				case 2: ai = new AI(new StrategySmartish());
+				case 3: ai = new AI(new StrategyWithdraw());
+			}	
 			aiPlayers.add(ai);
+			game.joinGame(ai);
 		}
 	}
 	
@@ -176,7 +177,6 @@ public class Server implements Runnable {
 		for(AI i : aiPlayers){
 			i.processInput(msg);
 		}
-
 	}
 	
 	public void checkStart(int id){
