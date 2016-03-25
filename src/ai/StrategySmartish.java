@@ -13,9 +13,12 @@ public class StrategySmartish implements Strategy{
 	private ArrayList<Card> hand = new ArrayList<Card>();
 	private String output = "result";
 	private boolean started = false;
+	private boolean currentPlayer = false;
+	private String name;
 	
 	public void setStarted(boolean b){started = b;}
 	public boolean getStarted(){return started;}
+	public void setName(String n){this.name = n;}
 	
 	
 	public StrategySmartish(){
@@ -37,6 +40,27 @@ public class StrategySmartish implements Strategy{
 
 	public void getHand(ArrayList<Card> c) {
 		hand = c;
+	}
+	
+	
+	public String processInput(String msg){
+		return output; 
+	}
+	
+	public void processPlayerName(String msg){
+
+	}
+	
+	public String processPlayerTurn(String msg){
+		return output;
+	}
+	
+	public String processPlay(String msg){
+		return output;
+	}
+	
+	public String processContinueWithdraw(String msg){
+		return output;
 	}
 
 }
