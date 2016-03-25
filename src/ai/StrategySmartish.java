@@ -33,10 +33,6 @@ public class StrategySmartish implements Strategy{
 		return output;
 	}
 	
-	public String continueWithdraw(){
-		return null;
-		
-	}
 
 	public void getHand(ArrayList<Card> c) {
 		hand = c;

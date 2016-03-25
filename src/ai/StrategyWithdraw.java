@@ -10,12 +10,16 @@ import game.Card;
 public class StrategyWithdraw implements Strategy{
 	/* This strategy will withdraw no matter what */
 	
+	
+	/* PROBLEM: Class fails when the actual player has nothing to play */
+	
 	private Logger log = Logger.getLogger("AI");
 	private ArrayList<Card> hand = new ArrayList<Card>();
 	private String output = "result";
 	private boolean started = false;
 	private boolean currentPlayer = false;
 	private String name;
+	private String tournamentColour; 
 	
 	public void setStarted(boolean b){started = b;}
 	public boolean getStarted(){return started;}
@@ -32,6 +36,7 @@ public class StrategyWithdraw implements Strategy{
 				continue;
 			}else{
 				output = hand.get(i).getType();
+				tournamentColour = output;
 				break;
 			}
 		}
@@ -55,10 +60,6 @@ public class StrategyWithdraw implements Strategy{
 		return output;
 	}
 
-	public String continueWithdraw() {
-		return "result";
-	}
-
 	public void getHand(ArrayList<Card> c) {
 		hand = c;
 	}
@@ -67,8 +68,6 @@ public class StrategyWithdraw implements Strategy{
 	 * what the AI will send back to the server */
 	public String processInput(String msg){
 		log.info("AI has received: " + msg);
-		
-		System.out.println("STarted: " + started);
 
 		/* Determines who's turn it is */
 		 if (msg.contains(Config.TURN)){
@@ -77,7 +76,6 @@ public class StrategyWithdraw implements Strategy{
 		
 		/* Notifies all players when a card has been played */
 		else if (msg.contains(Config.COLOUR) && started){
-			System.out.println("HERE");
 			output = processPlay(msg);
 		}
 		
@@ -106,7 +104,6 @@ public class StrategyWithdraw implements Strategy{
 	}
 	
 	public void processPlayerName(String msg) {
-		System.out.println("HAND");
 		msg = msg.substring(10);
 		String name[] = msg.split("name");
 		String card[];
@@ -127,12 +124,10 @@ public class StrategyWithdraw implements Strategy{
 				}
 			}
 		}
-		getHand(hand);
-		//return output; 
+		getHand(hand); 
 	}
 	
 	public String processPlayerTurn(String msg) {
-		System.out.println("PLAYERTURN");
 		String input[] = msg.split(" ");
 		
 		if(msg.contains(Config.PICKED_PURPLE)){
@@ -155,15 +150,12 @@ public class StrategyWithdraw implements Strategy{
 	}
 
 	public String processPlay(String msg) {
-		System.out.println("PLAY");
 		output = playACard();
 		return output;
 	}
 
 	
 	public String processContinueWithdraw(String msg) {
-		System.out.println("CONTINUEWITHDRAW");
-		
 		String[] input = msg.split(" ");
 		
 		if(!msg.contains(Config.TOURNAMENT_WINNER)){
