@@ -14,9 +14,10 @@ import ai.StrategyPlayAll;
 import ai.StrategySmartish;
 import ai.StrategyWithdraw;
 import config.Config;
+import config.Observer;
 import game.GameEngine;
 
-public class Server implements Runnable {
+public class Server implements Runnable, Observer {
 	private int numPlayers = 0;
 	private Thread thread = null;
 	private ServerSocket server = null;
@@ -26,9 +27,10 @@ public class Server implements Runnable {
 	private boolean minPlayers = false;
 	private boolean maxPlayers = false; 
 	private ArrayList<String> names = new ArrayList<String>();
-	
 	private AI ai;
 	private ArrayList<AI> aiPlayers = new ArrayList<AI>();
+	
+	private String send = "input";
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
@@ -48,7 +50,6 @@ public class Server implements Runnable {
 			log.error(e);
 		}
 	}
-	
 	public void start() {
 		game = new GameEngine();
 		log.info("Game has started");
@@ -58,7 +59,6 @@ public class Server implements Runnable {
 			thread.start();
 		}
 	}
-
 	@Override
 	public void run() {
 		while(thread != null){
@@ -72,7 +72,6 @@ public class Server implements Runnable {
 		}
 		
 	}
-
 	public void addThread(Socket socket) {
 		if(numPlayers <= Config.MAX_PLAYERS){
 			log.info("Client accepted: " + socket );
@@ -98,7 +97,6 @@ public class Server implements Runnable {
 			maxPlayers = false; 
 		}
 	}
-	
 	public void remove(int id) {
 		if(clients.containsKey(id)){
 			ServerThread terminate = clients.get(id);
@@ -109,7 +107,6 @@ public class Server implements Runnable {
 			log.info("Removed " + id);
 		}
 	}
-	
 	public void shutdown() {
 		try {
 			server.close();
@@ -117,11 +114,9 @@ public class Server implements Runnable {
 			log.error(e);
 		}
 	}
-
 	public void handle(int id, String msg) {
 		System.out.println("Message Receieved: " + msg);
 		log.info("Message Received: " + msg);
-		String send = "input";
 		
 		/* Server receives message that client has quit */
 		if (msg.equals(Config.QUIT) || msg.equals(null)) {
@@ -129,6 +124,8 @@ public class Server implements Runnable {
 			if (clients.containsKey(id)) {
 				remove(id);
 			}
+			send = game.processInput(msg);
+			processInput(id, send);
 		}
 		
 		/* When a client first connects, it checks to see if this is the first client */
@@ -154,12 +151,10 @@ public class Server implements Runnable {
 		/* All other messages from the client */
 		else {
 			send = game.processInput(msg);
-			sendToAI(send);
 			processInput(id, send);
+			sendToAI(send);
 		}
 	}
-	
-	//add something like handle to process messages the same way for AI
 	
 	public void produceAI(int a){
 		Random rand = new Random();
@@ -170,7 +165,8 @@ public class Server implements Runnable {
 				case 1: ai = new AI(new StrategyPlayAll());
 				case 2: ai = new AI(new StrategySmartish());
 				case 3: ai = new AI(new StrategyWithdraw());
-			}	
+			}
+			ai.registerObserver(this);
 			aiPlayers.add(ai);
 			game.joinGame(ai);
 		}
@@ -214,6 +210,7 @@ public class Server implements Runnable {
 		}
 		send = game.processInput(msg);
 		processInput(id, send);
+		sendToAI(send);
 	}
 	
 	public void send1Client(int id, String msg){
@@ -229,6 +226,7 @@ public class Server implements Runnable {
 	
 	/* Figures out whether to send the message to all the clients or just one */
 	public void processInput(int id, String send){
+		
 		if(send.contains(Config.PROMPT_JOIN)){
 			send1Client(id, send);
 		}
@@ -271,5 +269,9 @@ public class Server implements Runnable {
 		else{
 			sendAllClients(send);
 		}
+	}
+
+	public void update(String msg) {
+		this.handle(0, msg);
 	}
 }

@@ -12,7 +12,7 @@ public class Config {
 	public static final String RUN = "run";
 	public static final String SHUTDOWN = "shutdown";
 	public static final String QUIT = "quit";
-	public static final String LOGGING = "log";
+	public static final String PLAYER_LEFT = "left";
 	
 	/* Client to Server messages:  
 	 * Commands made by the players will send strings to the server and with those strings

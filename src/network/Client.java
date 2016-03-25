@@ -119,7 +119,6 @@ public class Client implements Runnable, Observer {
 		}
 	}
 
-	@Override
 	public void run() {
 		while (thread != null) {  
 			try {  
@@ -181,8 +180,6 @@ public class Client implements Runnable, Observer {
 		}
 	}
 
-
-	@Override
 	public void update(String message) {
 		String send = Config.FROMUPDATE;
 		
@@ -278,7 +275,7 @@ public class Client implements Runnable, Observer {
 		 * Output: 
 		 * 	Start of new tournament: colour <colour picked>
 		 * */
-		else if (msg.contains(Config.TURN) && !msg.contains(Config.LOGGING)){
+		else if (msg.contains(Config.TURN) /*&& !msg.contains(Config.LOGGING)*/){
 			output = processPlayerTurn(msg);
 		}
 		
@@ -768,7 +765,7 @@ public class Client implements Runnable, Observer {
 				this.window.setScore(winningPlayer, 0);
 				
 				if(msg.contains(Config.WITHDRAW)){
-					logActivity("\n" + currPlayer + " has ended their turn \nand withdrawn from the \ntournament\n");
+					logActivity("\n" + currPlayer + " has ended their turn \nand withdrawn from the \ntournament");
 				}
 				
 				currPlayer = winningPlayerName;

@@ -5,68 +5,48 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import config.Config;
+import config.Observer;
+import config.Subject;
 import game.Card;
 import game.Player;
 import network.Server;
 
-public class AI extends Player{
+public class AI extends Player implements Subject{
 	private Strategy strategy;
-	private int id;
-	private Server server;
 	private ArrayList<Card> hand = new ArrayList<Card>();
 	
 	private Logger log = Logger.getLogger("AI");
 	private boolean currentPlayer;
+	private ArrayList<Observer> observers = new ArrayList<Observer>();
 	
 	private String output = "result";
 	
 	public AI(Strategy s){
 		this.strategy = s;
-		this.id = 0;
 	}
 	
 	/* Handles what the server has sent from the Game Engine and processes
 	 * what the AI will send back to the server */
 	public void processInput(String msg){
 		log.info("AI has received: " + msg);
-		
-		/* Receives each player and their hand
-		 * Input:  hand name <player1> card [player1's card] name <player2> cards [player2's card] ... 
-		 * Output: begin tournament 
-		 * */
+		System.out.println("AI has received: " + msg);
+
 		if (msg.contains(Config.HAND)){
 			output = processPlayerName(msg);
 		}
-		
-		/* It is the start currentPlayer's turn 
-		 * Input: 
-		 * 	First tournament purple <player that picked purple> turn <1st player> <1st player's card> picked
-		 * 	Player's turn: turn <name> <card picked> picked 
-		 * Output: 
-		 * 	Start of new tournament: colour <colour picked>
-		 * */
-		else if (msg.contains(Config.TURN) && !msg.contains(Config.LOGGING)){
+
+		else if (msg.contains(Config.TURN)){
 			output = processPlayerTurn(msg);
+			System.out.println("Current Player: " + currentPlayer);
+			notifyObservers(output);
 		}
 		
-		/* When the player has chosen which card(s) they wish to play
-		 * Input: play <colour of tournament>
-		 * Output: play <card type> <card value> 
-		 * */
-		else if (msg.contains(Config.PLAY) ){
+		else if (msg.contains(Config.COLOUR) && strategy.getStarted()){
 			output = processPlay(msg);
+			System.out.println("Current Player: " + currentPlayer);
+			notifyObservers(output);
 		}
 		
-		/* When the currentPlayer has finished playing their turn and does not withdraw
-		 * Input: <currentPlayer's name> points <# of points> continue/withdraw <next player>
-		 * or :IF tournament is won, add: tournament winner <winner name>
-		 * OR IF tournament is won and tournamentColour is purple, add: purple win <winner name> 
-		 * IF game is won, add: game winner <winner name>
-		 * Output:
-		 * 	Tournament Winner: begin tournament 
-		 * 	Game Winner: Nothing (game winner popup) 
-		 * 	Next Player's turn: currentPlayer has switched to the next player 
-		 * */
 		else if(msg.contains(Config.CONTINUE)||msg.contains(Config.WITHDRAW)){
 
 			if(msg.length() == 9){
@@ -74,14 +54,21 @@ public class AI extends Player{
 			}else {
 				output = processContinueWithdraw(msg);	
 			}
+			System.out.println("Current Player: " + currentPlayer);
+			notifyObservers(output);
 		}
 		
-		else if(msg.contains(Config.END_TURN)){
-			output = Config.END_TURN;
+		else if(msg.contains(Config.WAITING)){
+			System.out.println("Current Player: " + currentPlayer);
+			if(currentPlayer){
+				output = Config.END_TURN;
+				this.currentPlayer = false;
+			}else{
+				output = "result";
+			}
+			
+			notifyObservers(output);
 		}
-
-
-		server.handle(id, output);
 	}
 	
 	public String processPlayerName(String msg) {
@@ -106,27 +93,26 @@ public class AI extends Player{
 			}
 		}
 		strategy.getHand(hand);
-		return Config.START_TOURNAMENT;
+		return output; 
 	}
 	
 	public String processPlayerTurn(String msg) {
 		String input[] = msg.split(" ");
-
-		// if it is the first tournament 
+		
+		System.out.println("PlayerTurn");
+		
 		if(msg.contains(Config.PICKED_PURPLE)){
 			
 				if(input[3].equalsIgnoreCase(this.name)){
-					String value[] = input[4].split("_");
-					
 					String colour = strategy.startTournament();
 					output = Config.COLOUR_PICKED + " " + colour;
 					this.currentPlayer = true; 
+					this.strategy.setStarted(true);
 				}
 				
 		}else{
 			if(input[1].equalsIgnoreCase(this.name)){
-				String value[] = input[2].split("_");
-				
+				this.currentPlayer = true; 
 				String colour = strategy.startTournament();
 				output = Config.COLOUR_PICKED + " " + colour;
 			}
@@ -135,13 +121,41 @@ public class AI extends Player{
 	}
 
 	public String processPlay(String msg) {
-		strategy.playACard();
+		System.out.println("PlayCard");
+		output = strategy.playACard();
 		return output;
 	}
 
 	
 	public String processContinueWithdraw(String msg) {
-		//return output;
-		return strategy.continueWithdraw();
-	}	
+		System.out.println("ContinueWithdraw");
+		
+		String[] input = msg.split(" ");
+		
+		if(!msg.contains(Config.TOURNAMENT_WINNER)){
+			if(input[4].equals(this.getName())){
+				this.currentPlayer = true;
+				output = strategy.playACard();
+			}else{
+				this.currentPlayer = false;
+				output = "result";
+			}
+		}else{
+			output = "result";
+		}
+		return output;
+	}
+
+	public void registerObserver(Observer observer) {
+		observers.add(observer);
+	}
+
+	public void removeObserver(Observer observer) {
+		observers.remove(observer);
+	}
+
+	public void notifyObservers(String message) {
+		Observer ob = observers.get(0);
+		ob.update(message);
+	}
 }

@@ -156,7 +156,7 @@ public class MainWindowController implements Observer, Subject{
 	public String getNumberOfAIFromPlayer() {
 		int numPlayers = numberOfPlayers;
 		ArrayList<String> nums= new ArrayList<String>();
-		for(int i=0;i<numPlayers;i++){
+		for(int i=0;i<=numPlayers;i++){
 			nums.add(Integer.toString(i));			
 		}
 		String[] possibilities= new String[nums.size()];

@@ -12,9 +12,13 @@ public class StrategySmartish implements Strategy{
 	private Logger log = Logger.getLogger("AI");
 	private ArrayList<Card> hand = new ArrayList<Card>();
 	private String output = "result";
+	private boolean started = false;
+	
+	public void setStarted(boolean b){started = b;}
+	public boolean getStarted(){return started;}
+	
 	
 	public StrategySmartish(){
-		System.out.println("Smartish");
 		log.info("New AI of type 'Smartish' has been created");
 	}
 	
