@@ -26,16 +26,21 @@ public class Client implements Runnable, Observer {
 	private MainWindowController window = null;
 	private BufferedReader inStream = null;
 	private BufferedWriter outStream = null;
+	
+	private Logger log = Logger.getLogger("Client");
+	private boolean successConnect = false; 
 	private String testing = null;
+	
+	private String output = Config.OUTPUT;
+	
 	private ArrayList<String> hand = new ArrayList<String>();
 	private String playedCards = null;	
-	private Logger log = Logger.getLogger("Client");
+
 	private boolean currentPlayer = false; 
 	private String currPlayer = null; // used for logging activity 
 	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 	private boolean purpleChosen = false;
-	private boolean successConnect = false; 
-	private ArrayList<String>actioncards = new ArrayList<String>();
+	private ArrayList<String> actioncards = new ArrayList<String>();
 
 	public Client(){
 		window = new MainWindowController();
@@ -47,6 +52,7 @@ public class Client implements Runnable, Observer {
 		setActionCardArraylist();
 	}
 	
+	/* Constructor used for Testing */
 	public Client(String ip, int port){
 		this.successConnect = this.connectToServer(ip, port);
 		setActionCardArraylist();
@@ -178,6 +184,7 @@ public class Client implements Runnable, Observer {
 				log.info(id + " has left the game");
 			}
 		}
+		output = Config.OUTPUT;
 	}
 
 	public void update(String message) {
@@ -223,16 +230,16 @@ public class Client implements Runnable, Observer {
 	/* Handles what the server has sent from the Game Engine and processes
 	 * what buttons/popups/commands the client and GUI must send back */
 	public String processInput(String msg){
-		String output = "result";
-		
 		if(msg.equals(Config.QUIT)) {  
 			output = Config.QUIT;
 		}
 
+		/* Processes all actions from the MainWindowController */
 		else if(msg.contains(Config.FROMUPDATE)){
 			output = msg.substring(Config.FROMUPDATE.length());
 		}
 		
+		/* Check to see if this client is the first player or not */
 		else if(msg.contains(Config.CLIENT_START)){
 			output = Config.CLIENT_START;
 		}
@@ -255,7 +262,7 @@ public class Client implements Runnable, Observer {
 		}
 		
 		/* If there is not a sufficient amount of players yet, a waiting for more players window appears */
-		else if(msg.contains(Config.NEED_PLAYERS) || msg.contains(Config.NAME_APPROVED)){
+		else if(msg.contains(Config.NEED_PLAYERS)){
 			this.window.showWaiting();
 		}
 		
@@ -275,7 +282,7 @@ public class Client implements Runnable, Observer {
 		 * Output: 
 		 * 	Start of new tournament: colour <colour picked>
 		 * */
-		else if (msg.contains(Config.TURN) /*&& !msg.contains(Config.LOGGING)*/){
+		else if (msg.contains(Config.TURN)){
 			output = processPlayerTurn(msg);
 		}
 		
@@ -388,7 +395,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processPlayerTurn(String msg){
-		String output = "result";
+		//String output = "result";
 		String input[] = msg.split(" ");
 		
 		this.window.showWindow();
@@ -432,7 +439,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processColour(String msg) {
-		String output = "result";
+		//String output = "result";
 		String input[] = msg.split(" ");
 		String colour = input[1];
 		if (colour.equals(Config.PURPLE)) {
@@ -451,6 +458,8 @@ public class Client implements Runnable, Observer {
 	public String processPlay(String msg){
 		String output = "result";
 		String input[] = msg.split(" ");
+		
+		System.out.println("play");
 
 		if(input.length != 2){
 			output = msg;
@@ -460,7 +469,7 @@ public class Client implements Runnable, Observer {
 	}
 
 	private String playACard() {
-		String output;
+		//String output;
 		while(this.playedCards == null){}
 		
 		// if the player choose to withdraw
@@ -488,7 +497,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processWaiting(String msg){
-		String output = "result";
+		//String output = "result";
 		Boolean isAction=false;
 		// if the client cannot play that card 
 		if(msg.contains(Config.UNPLAYABLE)){
@@ -528,7 +537,7 @@ public class Client implements Runnable, Observer {
 	
 	public String processActionCard(){
 		System.out.println("got to actioncard process");
-		String output = "";
+		output = "";
 		String cardType = window.getLastCard().getType();
 		String cardValue = String.valueOf(window.getLastCard().getValue());
 		output = " " + cardType + " " ;
@@ -711,13 +720,13 @@ public class Client implements Runnable, Observer {
 		String output = "result";
 		String input[] = msg.split(" ");
 		String currentPlayerName = input[0];
-		currPlayer = currentPlayerName;
 		String winningPlayerName = input[input.length - 1];
 		String score = input[2];
 		String nextPlayerName = input[4];
 		int winningPlayer = window.getPlayerByName(winningPlayerName);
 		int currentPlayer = window.getPlayerByName(currentPlayerName);
-		String tournament;
+		
+		currPlayer = currentPlayerName;
 		window.setScore(currentPlayer, Integer.parseInt(score));
 		
 		if(msg.contains(Config.PURPLE_WIN)){
@@ -815,83 +824,83 @@ public class Client implements Runnable, Observer {
 	/* Convert brit's string into resources */
 	public Card getCardFromTypeValue(String type, String value){
 
-		String output = "";
-		String info="";
+		output = "";
+		String info = "";
 		/* Coloured Cards */
 		if(type.equals(Config.PURPLE)){
 			if(value.equals("3")){
 				output = Config.IMG_PURPLE_3; 
-				info=Config.infoStrings.get(10);
+				info = Config.infoStrings.get(10);
 			}
 			else if (value.equals("4")){
 				output = Config.IMG_PURPLE_4;
-				info=Config.infoStrings.get(11);
+				info = Config.infoStrings.get(11);
 			}
 			else if(value.equals("5")){
 				output = Config.IMG_PURPLE_5;
-				info=Config.infoStrings.get(12);
+				info = Config.infoStrings.get(12);
 			}
 			else if(value.equals("7")){
 				output = Config.IMG_PURPLE_7;
-				info=Config.infoStrings.get(13);
+				info = Config.infoStrings.get(13);
 			}
 		}
 		else if(type.equals(Config.RED)){
 			if(value.equals("3")){
 				output = Config.IMG_RED_3;
-				info=Config.infoStrings.get(7);
+				info = Config.infoStrings.get(7);
 			}
 			else if(value.equals("4")){
 				output = Config.IMG_RED_4;
-				info=Config.infoStrings.get(8);
+				info = Config.infoStrings.get(8);
 			}
 			else if(value.equals("5")){
 				output = Config.IMG_RED_5;
-				info=Config.infoStrings.get(9);
+				info = Config.infoStrings.get(9);
 			}
 		}
 		
 		else if (type.equals(Config.BLUE)){
 			if(value.equals("2")){
 				output = Config.IMG_BLUE_2;
-				info=Config.infoStrings.get(3);
+				info = Config.infoStrings.get(3);
 			}
 			else if(value.equals("3")){
 				output = Config.IMG_BLUE_3;
-				info=Config.infoStrings.get(4);
+				info = Config.infoStrings.get(4);
 			}
 			else if(value.equals("4")){
 				output = Config.IMG_BLUE_4;
-				info=Config.infoStrings.get(5);
+				info = Config.infoStrings.get(5);
 			}
 			else if(value.equals("5")){
 				output = Config.IMG_BLUE_5;
-				info=Config.infoStrings.get(6);
+				info = Config.infoStrings.get(6);
 			}
 		}
 		
 		else if (type.equals(Config.YELLOW)){
 			if(value.equals("2")){
 				output = Config.IMG_YELLOW_2;
-				info=Config.infoStrings.get(0);
+				info = Config.infoStrings.get(0);
 			}
 			else if(value.equals("3")){
 				output = Config.IMG_YELLOW_3;
-				info=Config.infoStrings.get(1);
+				info = Config.infoStrings.get(1);
 			}
 			else if(value.equals("4")){
 				output = Config.IMG_YELLOW_4;
-				info=Config.infoStrings.get(2);
+				info = Config.infoStrings.get(2);
 			}
 		}
 		
 		else if (type.equals(Config.GREEN)){
 			output = Config.IMG_GREEN_1;
-			info=Config.infoStrings.get(14);
+			info = Config.infoStrings.get(14);
 		}
 		/*creates a coloured card*/
 		if(!output.equals("")){
-			Card c =new ColourCard(type,Integer.parseInt(value),output);
+			Card c = new ColourCard(type,Integer.parseInt(value),output);
 			c.setCardDescription(info);
 			return c;
 		}
@@ -899,21 +908,21 @@ public class Client implements Runnable, Observer {
 		/* Supporter */
 		if(type.equals(Config.MAIDEN)){
 			output = Config.IMG_MAIDEN_6;
-			info=Config.infoStrings.get(17);
+			info = Config.infoStrings.get(17);
 		}
 		else if(type.equals(Config.SQUIRE)){
 			if(value.equals("2")){
 				output = Config.IMG_SQUIRE_2;
-				info=Config.infoStrings.get(15);
+				info = Config.infoStrings.get(15);
 			}
 			else if(value.equals("3")){
 				output = Config.IMG_SQUIRE_3;
-				info=Config.infoStrings.get(16);
+				info = Config.infoStrings.get(16);
 			}
 		}
 
 		if(!output.equals("")){
-			Card c=new SupportCard(type,Integer.parseInt(value),output);
+			Card c = new SupportCard(type,Integer.parseInt(value),output);
 			c.setCardDescription(info);
 			return c;
 		} 
@@ -921,80 +930,78 @@ public class Client implements Runnable, Observer {
 		/* Action */
 		if(type.equals(Config.DODGE)){
 			output = Config.IMG_DODGE;
-			info=Config.infoStrings.get(26);
+			info = Config.infoStrings.get(26);
 		}
 		else if (type.equals(Config.DISGRACE)){
 			output = Config.IMG_DISGRACE;
-			info=Config.infoStrings.get(32);
+			info = Config.infoStrings.get(32);
 		}
 		else if (type.equals(Config.RETREAT)){
 			output = Config.IMG_RETREAT;
-			info=Config.infoStrings.get(27);
+			info = Config.infoStrings.get(27);
 		}
 		else if(type.equals(Config.RIPOSTE)){
 			output = Config.IMG_RIPOSTE;
-			info=Config.infoStrings.get(25);
+			info = Config.infoStrings.get(25);
 		}
 		else if(type.equals(Config.OUTMANEUVER)){
 			output = Config.IMG_OUTMANEUVER;
-			info=Config.infoStrings.get(29);
+			info = Config.infoStrings.get(29);
 		}
 		else if(type.equals(Config.COUNTERCHARGE)){
 			output = Config.IMG_COUNTER_CHARGE;
-			info=Config.infoStrings.get(31);
+			info = Config.infoStrings.get(31);
 		}
 		else if(type.equals(Config.CHARGE)){
 			output = Config.IMG_CHARGE;
-			info=Config.infoStrings.get(30);
+			info = Config.infoStrings.get(30);
 		}
 		else if(type.equals(Config.BREAKLANCE)){
 			output = Config.IMG_BREAK_LANCE;
-			info=Config.infoStrings.get(24);
+			info = Config.infoStrings.get(24);
 		}
 		else if(type.equals(Config.ADAPT)){
 			output = Config.IMG_ADAPT;
-			info=Config.infoStrings.get(33);
+			info = Config.infoStrings.get(33);
 		}
 		else if (type.equals(Config.OUTWIT)){
 			output = Config.IMG_OUTWIT;
-			info=Config.infoStrings.get(34);
+			info = Config.infoStrings.get(34);
 		}
  		else if (type.equals(Config.DROPWEAPON)){
 			output = Config.IMG_DROP_WEAPON;
-			info=Config.infoStrings.get(20);
+			info = Config.infoStrings.get(20);
 		}
 		else if(type.equals(Config.CHANGEWEAPON)){
 			output = Config.IMG_CHANGE_WEAPON;
-			info=Config.infoStrings.get(19);
+			info = Config.infoStrings.get(19);
 		}
 		else if(type.equals(Config.UNHORSE)){
 			output = Config.IMG_UNHORSE;
-			info=Config.infoStrings.get(18);
+			info = Config.infoStrings.get(18);
 		}
 		else if(type.equals(Config.KNOCKDOWN)){
 			output = Config.IMG_KNOCK_DOWN;
-			info=Config.infoStrings.get(28);
+			info = Config.infoStrings.get(28);
 		}
 		else if(type.equals(Config.SHIELD)){
 			output = Config.IMG_SHIELD;
-			info=Config.infoStrings.get(21);
+			info = Config.infoStrings.get(21);
 		}
 		else if(type.equals(Config.STUNNED)){
 			output = Config.IMG_STUNNED;
-			info=Config.infoStrings.get(22);
+			info = Config.infoStrings.get(22);
 		}
 		else if(type.equals(Config.IVANHOE)){
 			output = Config.IMG_IVANHOE;
-			info=Config.infoStrings.get(23);
+			info = Config.infoStrings.get(23);
 		}
 		
 		if(!output.equals("")){
-			Card c=new ActionCard(type, output);
+			Card c = new ActionCard(type, output);
 			c.setCardDescription(info);
-			//System.out.println(c.getValue());
 			return c;
 		}
-		
 		return new Card();
 	}
 }

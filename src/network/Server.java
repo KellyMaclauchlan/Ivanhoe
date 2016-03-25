@@ -30,7 +30,7 @@ public class Server implements Runnable, Observer {
 	private AI ai;
 	private ArrayList<AI> aiPlayers = new ArrayList<AI>();
 	
-	private String send = "input";
+	private String send = Config.OUTPUT;
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
@@ -59,7 +59,6 @@ public class Server implements Runnable, Observer {
 			thread.start();
 		}
 	}
-	@Override
 	public void run() {
 		while(thread != null){
 			try{
@@ -124,6 +123,7 @@ public class Server implements Runnable, Observer {
 			if (clients.containsKey(id)) {
 				remove(id);
 			}
+			msg = Config.PLAYER_LEFT;
 			send = game.processInput(msg);
 			processInput(id, send);
 		}
@@ -138,6 +138,7 @@ public class Server implements Runnable, Observer {
 			doubleCheckNames(id, msg);
 		}
 		
+		/* Receives the number of players and AIs for the game */
 		else if (msg.startsWith(Config.START)){
 			String[] input = msg.split(" ");
 			String reConstruct = input[0] + " " + input[1];
@@ -156,6 +157,7 @@ public class Server implements Runnable, Observer {
 		}
 	}
 	
+	/* Creates the correct number of AIs that the first player has specified */
 	public void produceAI(int a){
 		Random rand = new Random();
 		for(int i = 0; i < a; i++){
@@ -172,12 +174,14 @@ public class Server implements Runnable, Observer {
 		}
 	}
 	
+	/* Sends the game engine messages to the AI */
 	public void sendToAI(String msg){
 		for(AI i : aiPlayers){
 			i.processInput(msg);
 		}
 	}
 	
+	/* Checks to see who the first player is so the correct popups can occur */
 	public void checkStart(int id){
 		if(numPlayers == 1){
 			send1Client(id, Config.FIRSTPLAYER);
@@ -186,6 +190,7 @@ public class Server implements Runnable, Observer {
 		}
 	}
 	
+	/* Checks for duplicate names (no 2 players can have the same name) */
 	public void doubleCheckNames(int id, String msg){
 		String send = "input";
 		String join[] = msg.split(" ");
@@ -271,6 +276,7 @@ public class Server implements Runnable, Observer {
 		}
 	}
 
+	/* Used for the AI to communicate with the Server (Observer Pattern) */
 	public void update(String msg) {
 		this.handle(0, msg);
 	}

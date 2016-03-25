@@ -18,6 +18,9 @@ public class Config {
 	 * Commands made by the players will send strings to the server and with those strings
 	 * the server will call the games engine to return a response */
 	
+	/* Generic message */
+	public static final String OUTPUT = "output";
+	
 	/* Client's joining a game */
 	public static final String CLIENT_START = "client";
 	public static final String START = "start";
@@ -26,7 +29,6 @@ public class Config {
 	public static final String NEED_PLAYERS = "need players";
 	public static final String NOT_ENOUGH = "nobuenos";
 	public static final String DUPLICATE = "duplicate";
-	public static final String NAME_APPROVED = "approve";
 	public static final String MAX = "maximum " + MAX_PLAYERS;
 	public static final String FIRSTPLAYER = "firstplayer";
 	public static final String WAITING = "waiting";
@@ -182,8 +184,7 @@ public class Config {
 			"icons/purple_empty.png"));
 	
 	//strings for description
-	
-	public static final ArrayList<String> infoStrings= new ArrayList<String>(Arrays.asList(
+	public static final ArrayList<String> infoStrings = new ArrayList<String>(Arrays.asList(
 			"Yellow: 2","Yellow: 3", "Yellow: 4",
 			"Blue: 2", "Blue: 3", "Blue: 4", "Blue: 5",
 			"Red: 3", "Red: 4", "Red: 5",

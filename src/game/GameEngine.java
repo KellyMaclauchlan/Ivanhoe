@@ -16,8 +16,7 @@ public class GameEngine {
 	private Player currentPlayer;
 	private int turnNumber = 0;
 	private boolean choosePurple = false;
-	
-	
+		
 	/* Testing variables */
 	private boolean startTournament = false; 
 	private boolean joined = false;
@@ -690,7 +689,7 @@ public class GameEngine {
 	public void createDeck() {
 		drawDeck = new ArrayList<>();
 		//purple
-		/*drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
@@ -700,13 +699,13 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.PURPLE, 4));
 		drawDeck.add(new ColourCard(Config.PURPLE, 5));
 		drawDeck.add(new ColourCard(Config.PURPLE, 5));
-		drawDeck.add(new ColourCard(Config.PURPLE, 5));*/
+		drawDeck.add(new ColourCard(Config.PURPLE, 5));
 		drawDeck.add(new ColourCard(Config.PURPLE, 5));
 		drawDeck.add(new ColourCard(Config.PURPLE, 7));
 		drawDeck.add(new ColourCard(Config.PURPLE, 7));
 		
 		//red
-		/*drawDeck.add(new ColourCard(Config.RED, 3));
+		drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
@@ -717,12 +716,12 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.RED, 4));
 		drawDeck.add(new ColourCard(Config.RED, 4));
 		drawDeck.add(new ColourCard(Config.RED, 4));
-		drawDeck.add(new ColourCard(Config.RED, 4));*/
+		drawDeck.add(new ColourCard(Config.RED, 4));
 		drawDeck.add(new ColourCard(Config.RED, 5));
 		drawDeck.add(new ColourCard(Config.RED, 5));
 
 		//blue
-		/*drawDeck.add(new ColourCard(Config.BLUE, 2));
+		drawDeck.add(new ColourCard(Config.BLUE, 2));
 		drawDeck.add(new ColourCard(Config.BLUE, 2));
 		drawDeck.add(new ColourCard(Config.BLUE, 2));
 		drawDeck.add(new ColourCard(Config.BLUE, 2));
@@ -733,28 +732,27 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.BLUE, 4));
 		drawDeck.add(new ColourCard(Config.BLUE, 4));
 		drawDeck.add(new ColourCard(Config.BLUE, 4));
-		drawDeck.add(new ColourCard(Config.BLUE, 4));*/
+		drawDeck.add(new ColourCard(Config.BLUE, 4));
 		drawDeck.add(new ColourCard(Config.BLUE, 5));
 		drawDeck.add(new ColourCard(Config.BLUE, 5));
 
 		//yellow
-		/*drawDeck.add(new ColourCard(Config.YELLOW, 2));
 		drawDeck.add(new ColourCard(Config.YELLOW, 2));
 		drawDeck.add(new ColourCard(Config.YELLOW, 2));
 		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+		drawDeck.add(new ColourCard(Config.YELLOW, 2));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
-		drawDeck.add(new ColourCard(Config.YELLOW, 3));*/
+		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 4));
 		drawDeck.add(new ColourCard(Config.YELLOW, 4));
 		
 		//green
-		/*drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
@@ -764,16 +762,17 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
-		drawDeck.add(new ColourCard(Config.GREEN, 1));*/
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
+		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 
 		//supporters
-		/*drawDeck.add(new SupportCard(Config.MAIDEN, 6));
 		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
 		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
 		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
@@ -786,7 +785,7 @@ public class GameEngine {
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
-		drawDeck.add(new SupportCard(Config.SQUIRE, 3));*/
+		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
