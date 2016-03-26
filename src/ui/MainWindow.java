@@ -16,6 +16,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
+import javax.swing.SwingConstants;
+
 import config.*;
 import config.Config;
 import config.Observer;
@@ -1049,6 +1051,8 @@ public class MainWindow extends JFrame implements Subject {
 		gbc_cardText.insets = new Insets(0, 0, 0, 5);
 		gbc_cardText.gridx = 4;
 		gbc_cardText.gridy = 18;
+		gbc_cardText.fill=GridBagConstraints.HORIZONTAL;
+		cardText.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(cardText, gbc_cardText);
 		
 		JLabel points1 = new JLabel("0");
