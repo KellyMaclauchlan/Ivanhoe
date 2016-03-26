@@ -29,6 +29,8 @@ public class StrategyWithdraw implements Strategy{
 		log.info("New AI of type 'Withdraw' has been created");
 	}
 
+	/* If the AI is the first player of the game and has to choose a tournament colour, 
+	 * It will choose the first coloured card in its hand */
 	public String startTournament() {
 		for(int i = 0; i < hand.size(); i++){
 			if(hand.get(i).getValue() == 0 || hand.get(i).getType().equals(Config.SQUIRE) || 
@@ -43,6 +45,8 @@ public class StrategyWithdraw implements Strategy{
 		return output;
 	}
 
+	/* If the AI is the first player of the tournament (chose the tournament colour), then it will play 
+	 * the first card in its hand, else it will automatically withdraw */
 	public String playACard() {
 		if(started){
 			for(int i = 0; i < hand.size(); i++){
@@ -60,6 +64,7 @@ public class StrategyWithdraw implements Strategy{
 		return output;
 	}
 
+	/* Saves the AI's hand to an ArrayList */
 	public void getHand(ArrayList<Card> c) {
 		hand = c;
 	}

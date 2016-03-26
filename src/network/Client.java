@@ -164,7 +164,7 @@ public class Client implements Runnable, Observer {
 	
 	/* Handles all the input and output to and from the server */
 	public void handle(String msg) throws IOException {
-		String send = "waiting";
+		String send = Config.OUTPUT;
 		System.out.println("Message received: " + msg);
 		log.info("Message Received: " + msg);
 		
@@ -395,7 +395,6 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processPlayerTurn(String msg){
-		//String output = "result";
 		String input[] = msg.split(" ");
 		
 		this.window.showWindow();
@@ -439,7 +438,6 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processColour(String msg) {
-		//String output = "result";
 		String input[] = msg.split(" ");
 		String colour = input[1];
 		if (colour.equals(Config.PURPLE)) {
@@ -456,7 +454,6 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processPlay(String msg){
-		String output = "result";
 		String input[] = msg.split(" ");
 		
 		System.out.println("play");
@@ -469,7 +466,6 @@ public class Client implements Runnable, Observer {
 	}
 
 	private String playACard() {
-		//String output;
 		while(this.playedCards == null){}
 		
 		// if the player choose to withdraw
@@ -497,8 +493,8 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processWaiting(String msg){
-		//String output = "result";
-		Boolean isAction=false;
+		Boolean isAction = false;
+		
 		// if the client cannot play that card 
 		if(msg.contains(Config.UNPLAYABLE)){
 			window.addCard(window.getLastCard());
@@ -717,7 +713,6 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processContinueWithdraw(String msg){
-		String output = "result";
 		String input[] = msg.split(" ");
 		String currentPlayerName = input[0];
 		String winningPlayerName = input[input.length - 1];
@@ -823,7 +818,6 @@ public class Client implements Runnable, Observer {
 
 	/* Convert brit's string into resources */
 	public Card getCardFromTypeValue(String type, String value){
-
 		output = "";
 		String info = "";
 		/* Coloured Cards */

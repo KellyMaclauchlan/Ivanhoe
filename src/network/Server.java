@@ -18,6 +18,8 @@ import config.Observer;
 import game.GameEngine;
 
 public class Server implements Runnable, Observer {
+	// Might need to add more ai variables to create more ai's
+	
 	private int numPlayers = 0;
 	private Thread thread = null;
 	private ServerSocket server = null;
