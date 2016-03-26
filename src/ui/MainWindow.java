@@ -17,6 +17,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.text.DefaultCaret;
 
 import config.*;
 import config.Config;
@@ -61,6 +64,9 @@ public class MainWindow extends JFrame implements Subject {
 	//decks
 	private JLabel deck;
 	
+	//Logs player's actions
+	private JTextArea displayText; 
+	
 	GridBagConstraints c = new GridBagConstraints();
 	//testing variables
 	private int lastCard;
@@ -72,6 +78,7 @@ public class MainWindow extends JFrame implements Subject {
 	private Boolean testing;
 	private Boolean close;
 	
+	public JTextArea getDisplayText(){return displayText;}
 	
 	public JButton getWithdrawButon(){return withdrawButton;}
 	public JButton getEndTurnButton(){return endTurnButton;}
@@ -515,6 +522,30 @@ public class MainWindow extends JFrame implements Subject {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		getContentPane().setLayout(gridBagLayout);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setMaximumSize(new java.awt.Dimension(200,200));
+		scrollPane.setMinimumSize(new java.awt.Dimension(200, 200));
+		scrollPane.setPreferredSize(new java.awt.Dimension(200, 200));
+		
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.gridwidth = 9;
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
+		gbc_scrollPane.gridx = 12;
+		gbc_scrollPane.gridy = 12;
+		getContentPane().add(scrollPane, gbc_scrollPane);
+		
+		displayText = new JTextArea();
+		displayText.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
+		displayText.setTabSize(0);
+		displayText.setRows(5);
+		displayText.setColumns(10);
+		displayText.setLineWrap(true);
+		scrollPane.setViewportView(displayText);
+		
+		
+		DefaultCaret caret = (DefaultCaret) displayText.getCaret(); 
+		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+
 		JLabel token11 = new JLabel("");
 		token11.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token11 = new GridBagConstraints();

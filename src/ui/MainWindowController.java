@@ -88,6 +88,15 @@ public class MainWindowController implements Observer, Subject{
 		return player;
 	}
 	public void setVarPlayerName(String name){playerName = name;}
+	
+	
+	/***********/
+	//public void setTextDisplay(String msg){window.getTextDisplay().setText(msg);}
+	public void setTextDisplay(String msg){window.getDisplayText().append(msg);}
+	
+	
+	
+	
 	public void setScore(int player, int score) {
 		this.playerScores.set(player, score);	
 		window.getPlayerPoints(player).setText("" + score);
@@ -140,6 +149,23 @@ public class MainWindowController implements Observer, Subject{
             null,
             possibilities,
             "2");
+		return s;
+	}
+	public String getNumberOfAIFromPlayer(int numPlayers) {
+		ArrayList<String> nums= new ArrayList<String>();
+		for(int i=0;i<numPlayers;i++){
+			nums.add(Integer.toString(i));			
+		}
+		String[] possibilities= new String[nums.size()];
+		nums.toArray(possibilities);
+		String s = (String)JOptionPane.showInputDialog(
+            null,
+            "Enter the number of AI players you want in this game",
+            "Customized Dialog",
+            JOptionPane.PLAIN_MESSAGE,
+            null,
+            possibilities,
+            "0");
 		return s;
 	}
 	public String setTournament(){
