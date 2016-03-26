@@ -212,9 +212,11 @@ public class GameEngine {
 			//input = play unhorse <colour>
 			String colour = cardString[2];
 			if (tournamentColour.equals(Config.PURPLE)) { 
-				card.playUnhorse(this, colour);
+				card.playUnhorse(this, colour);		
+				output += Config.UNHORSE + " " + colour; //output = waiting <card played> <colour chosen>
+			} else {
+				output += Config.UNPLAYABLE;
 			}
-		output += Config.UNHORSE + " " + colour; //output = waiting <card played> <colour chosen>
 		} else if (card.getType().equals(Config.CHANGEWEAPON)) {
 				//input = play changeweapon <colour>
 				String colour = cardString[2];
@@ -236,57 +238,84 @@ public class GameEngine {
 				//input = play breaklance <player name> 
 				String playerName = cardString[2];
 				Player player = getPlayerByName(playerName);
-				card.playBreakLance(player);
-				output += Config.BREAKLANCE + " ";
-				output += Config.DISPLAY + " ";
-				output += Config.PLAYER_NAME + " " + playerName + " " + player.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
-				for (Card c: player.getDisplay()) {
-					output += " " + c.getType() + " " + c.getValue(); 
+				if (player.getDisplay().size() < 2) {
+					output += Config.UNPLAYABLE;
+				} else {
+					card.playBreakLance(player);
+					output += Config.BREAKLANCE + " ";
+					output += Config.DISPLAY + " ";
+					output += Config.PLAYER_NAME + " " + playerName + " " + player.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
+	
+						for (Card c: player.getDisplay()) {
+							output += c.getType() + " " + c.getValue(); 
+						}
 				}
+
 				//output = waiting <card played> display name <player> <player score> cards <display card> <display card> ...
 			} else if (card.getType().equals(Config.RIPOSTE)) {
 				//input = play riposte <player name>
 				String playerName = cardString[2];
 				Player player = getPlayerByName(playerName);
-				Card cardToSteal = card.playRiposte(player);
-				if (cardToSteal != null) {
-					currentPlayer.addToDisplay(cardToSteal);
+				if (player.getDisplay().size() < 2) {
+					output += Config.UNPLAYABLE;
+				} else {
+					Card cardToSteal = card.playRiposte(player);
+					if (cardToSteal != null) {
+						currentPlayer.addToDisplay(cardToSteal);
+						currentPlayer.setTotalCardValue();
+					}
+	
+					
+						output += Config.RIPOSTE + " " + playerName + " " + player.getTotalCardValue() + " "
+						+ cardToSteal.getType() + " " + cardToSteal.getValue()  + " " 
+								+ currentPlayer.getName()  + " " + currentPlayer.getTotalCardValue();
 				}
-				output += Config.RIPOSTE + " " + playerName + " " + player.getTotalCardValue() + " "
-				+ card.getType() + " " + card.getValue()  + " " + currentPlayer.getName()  + " " + currentPlayer.getTotalCardValue(); 
 				//output = waiting <card played> <player stolen from> <player total> <card stolen> <player added to> <player value>
 			} else if (card.getType().equals(Config.DODGE)) {
 				// input = play dodge <player name> <card type> <card value>
+
 				String playerName = cardString[2];
 				String type = cardString[3];
 				String value = cardString[4];
 				Player player = getPlayerByName(playerName);
+				if (player.getDisplay().size() < 2) {
+					output += Config.UNPLAYABLE;
+				} else {
 				for (Card c: player.getDisplay()) {
 					if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
 						card.playDodge(player, c);
+						player.setTotalCardValue();
 						break;
 					}
 				}
-				output += Config.DODGE + " " + playerName + " " + player.getTotalCardValue() + " " + type + " " + value;
+					output += Config.DODGE + " " + playerName + " " + player.getTotalCardValue() + " " + type + " " + value;
+				}
 				//output = waiting <card played> <player discarded from> <score> <card discarded> 
 			} else if (card.getType().equals(Config.RETREAT)) {
 				// input = play retreat <card type> <card value>
 				String type = cardString[2];
 				String value = cardString[3];
+				Card cardToRetreat = null;
 				for (Card c: currentPlayer.getDisplay()) {
 					if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
-						card.playRetreat(this, c);
+						cardToRetreat = c;
+						break;
 					}
 				}
-				output += Config.RETREAT + " " + currentPlayer.getName() + " " + currentPlayer.getTotalCardValue() + " " + type + " " + value;
+				if (currentPlayer.getDisplay().size() < 2) {
+					output += Config.UNPLAYABLE;
+				} else {
+					card.playRetreat(this, cardToRetreat);
+					output += Config.RETREAT + " " + currentPlayer.getName() + " " + currentPlayer.getTotalCardValue() + " " + type + " " + value;
+				}
 				//output = waiting <card played> <currentPlayerName> <score> <card removed from display and put back into hand>
 			} else if (card.getType().equals(Config.KNOCKDOWN)) {
 				// input = play knockdown <player name>
 				String playerName = cardString[2];
 				Player player = getPlayerByName(playerName);
-				card.playKnockDown(this, player);
+				Card cardToSteal = card.playKnockDown(this, player);
 
-				output += Config.KNOCKDOWN + " " + playerName + " " +player.getCards().get(0).getType()+" "+ player.getCards().get(0).getValue();
+				output += Config.KNOCKDOWN + " " + playerName + " " + cardToSteal.getType() + " " + cardToSteal.getValue();
 				//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
 			} else if (card.getType().equals(Config.OUTMANEUVER)) {
 				// input = play outmaneuver
@@ -315,9 +344,14 @@ public class GameEngine {
 			} else if (card.getType().equals(Config.OUTWIT)) {
 				//TO DO
 			} else if (card.getType().equals(Config.SHIELD)) {
-				//TO DO
+				card.playShield(this, card);
+				output += Config.SHIELD + " " + currentPlayer.getName();
+
 			} else if (card.getType().equals(Config.STUNNED)) {
-				//TO DO
+				String playerName = cardString[2];
+				Player player = getPlayerByName(playerName);
+				card.playStunned(player, card);
+				output += Config.STUNNED + " " + playerName;
 			} else if (card.getType().equals(Config.IVANHOE)) {
 				//TO DO
 			}
@@ -328,11 +362,12 @@ public class GameEngine {
 	public String updateDisplays() {
 		String output = Config.DISPLAY + " ";
 		for (Player p: players) {
+			p.setTotalCardValue();
 			output += Config.PLAYER_NAME + " " + p.getName() + " " + p.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
-			if (!p.getName().equals(currentPlayer.getName())) {
+			//if (!p.getName().equals(currentPlayer.getName())) {
 				for (Card c: p.getDisplay()) {
-					output += c.getType() + "_" + c.getValue();
-				}
+					output += c.getType() + "_" + c.getValue() + " ";
+				//}
 			}
 		}
 		return output;
@@ -519,10 +554,10 @@ public class GameEngine {
 		}
 	}
 	
-	public void discard(Player player, Card card) {
-		player.removeCard(card);
+	public void discard(Card card) {
 		discardPile.add(card);
 	}
+	
 	
 	public void playCard(Card card) {
 		// play a specific card for current player, handle based on card rules
@@ -537,6 +572,12 @@ public class GameEngine {
 	
 	public Card pickupCard() {
 		//current player picks up top card
+		if (drawDeck.isEmpty()) {
+			drawDeck = discardPile;
+			Collections.shuffle(drawDeck);
+			Collections.shuffle(drawDeck);
+			discardPile = new ArrayList<Card>();
+		}
 		Card picked = drawDeck.get(0);
 		currentPlayer.addCard(picked);
 		drawDeck.remove(0);
@@ -598,11 +639,13 @@ public class GameEngine {
 
 	public void withdraw() {
 		currentPlayer.setWithdrawn(true);
-		for (Card c: currentPlayer.getCards()) {
-			discardPile.add(c);
-			currentPlayer.removeFromDisplay(c);
+		if (currentPlayer.getCards().size() != 0) {
+			for (Card c: currentPlayer.getCards()) {
+				discardPile.add(c);
+				currentPlayer.removeFromDisplay(c);
+			}
+			currentPlayer.setDisplay(new ArrayList<Card>());
 		}
-		currentPlayer.setDisplay(new ArrayList<Card>());
 	}
 	
 	public void announceWinner() {
@@ -694,7 +737,7 @@ public class GameEngine {
 		//purple
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
-		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		/*drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 4));
 		drawDeck.add(new ColourCard(Config.PURPLE, 4));
@@ -706,11 +749,11 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.PURPLE, 5));
 		drawDeck.add(new ColourCard(Config.PURPLE, 7));
 		drawDeck.add(new ColourCard(Config.PURPLE, 7));
-		
+		*/
 		//red
 		drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
-		drawDeck.add(new ColourCard(Config.RED, 3));
+		/*drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
 		drawDeck.add(new ColourCard(Config.RED, 3));
@@ -722,12 +765,12 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.RED, 4));
 		drawDeck.add(new ColourCard(Config.RED, 5));
 		drawDeck.add(new ColourCard(Config.RED, 5));
-
+*/
 		//blue
 		drawDeck.add(new ColourCard(Config.BLUE, 2));
 		drawDeck.add(new ColourCard(Config.BLUE, 2));
 		drawDeck.add(new ColourCard(Config.BLUE, 2));
-		drawDeck.add(new ColourCard(Config.BLUE, 2));
+/*		drawDeck.add(new ColourCard(Config.BLUE, 2));
 		drawDeck.add(new ColourCard(Config.BLUE, 3));
 		drawDeck.add(new ColourCard(Config.BLUE, 3));
 		drawDeck.add(new ColourCard(Config.BLUE, 3));
@@ -738,11 +781,11 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.BLUE, 4));
 		drawDeck.add(new ColourCard(Config.BLUE, 5));
 		drawDeck.add(new ColourCard(Config.BLUE, 5));
-
+*/
 		//yellow
 		drawDeck.add(new ColourCard(Config.YELLOW, 2));
 		drawDeck.add(new ColourCard(Config.YELLOW, 2));
-		drawDeck.add(new ColourCard(Config.YELLOW, 2));
+/*		drawDeck.add(new ColourCard(Config.YELLOW, 2));
 		drawDeck.add(new ColourCard(Config.YELLOW, 2));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
@@ -754,10 +797,11 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.YELLOW, 3));
 		drawDeck.add(new ColourCard(Config.YELLOW, 4));
 		drawDeck.add(new ColourCard(Config.YELLOW, 4));
-		
+*/		
 		//green
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
+/*		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
@@ -769,10 +813,9 @@ public class GameEngine {
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
 		drawDeck.add(new ColourCard(Config.GREEN, 1));
-		drawDeck.add(new ColourCard(Config.GREEN, 1));
-
+*/
 		//supporters
-		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
+/*		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
 		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
 		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
 		drawDeck.add(new SupportCard(Config.MAIDEN, 6));
@@ -787,33 +830,34 @@ public class GameEngine {
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
-		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
+*/		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 3));
 
 		//action
-		drawDeck.add(new ActionCard(Config.UNHORSE));
+		/*drawDeck.add(new ActionCard(Config.UNHORSE));
 		drawDeck.add(new ActionCard(Config.CHANGEWEAPON));
 		drawDeck.add(new ActionCard(Config.DROPWEAPON));
-		drawDeck.add(new ActionCard(Config.BREAKLANCE));
+		
 		drawDeck.add(new ActionCard(Config.RIPOSTE));
 		drawDeck.add(new ActionCard(Config.RIPOSTE));
 		drawDeck.add(new ActionCard(Config.RIPOSTE));
 		drawDeck.add(new ActionCard(Config.DODGE));
 		drawDeck.add(new ActionCard(Config.RETREAT));
 		drawDeck.add(new ActionCard(Config.KNOCKDOWN));
-		drawDeck.add(new ActionCard(Config.KNOCKDOWN));
+		drawDeck.add(new ActionCard(Config.KNOCKDOWN));*/
+		drawDeck.add(new ActionCard(Config.BREAKLANCE));	
 		drawDeck.add(new ActionCard(Config.OUTMANEUVER));
 		drawDeck.add(new ActionCard(Config.CHARGE));
 		drawDeck.add(new ActionCard(Config.COUNTERCHARGE));
 		drawDeck.add(new ActionCard(Config.DISGRACE));
 		drawDeck.add(new ActionCard(Config.ADAPT));
-		drawDeck.add(new ActionCard(Config.OUTWIT));
-		drawDeck.add(new ActionCard(Config.SHIELD));
-		drawDeck.add(new ActionCard(Config.STUNNED));
-		drawDeck.add(new ActionCard(Config.IVANHOE));
+		//drawDeck.add(new ActionCard(Config.OUTWIT));
+		//drawDeck.add(new ActionCard(Config.SHIELD));
+		//drawDeck.add(new ActionCard(Config.STUNNED));
+		//drawDeck.add(new ActionCard(Config.IVANHOE));
 	}
 
 

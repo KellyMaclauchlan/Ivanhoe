@@ -76,7 +76,12 @@ public class Player {
 	}
 	
 	public void removeCard(Card card) {
-		cards.remove(card);
+		for (int i = 0; i < cards.size(); i++) {
+			if (cards.get(i).getType().equals(card.getType()) && (cards.get(i).getValue() == card.getValue())) { 
+				cards.remove(i);
+				break;
+			}
+		}
 	}
 	
 	public void addCard(Card card) {
@@ -96,7 +101,17 @@ public class Player {
 	}
 	
 	public void removeFromDisplay(Card card) {
-		display.remove(card);
+		int i = 0;
+		if (display.size() != 0) {
+			for (i = 0; i < display.size(); i ++) {
+				if (card.getType().equals(display.get(i).getType()) && (card.getValue() == display.get(i).getValue())) {
+					break;
+				}
+			}
+			if (i < display.size()) {
+				display.remove(i);
+			}
+		}
 	}
 
 	public int getTotalCardValue() {

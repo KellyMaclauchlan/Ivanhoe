@@ -1,4 +1,4 @@
-package ui;
+	package ui;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -192,9 +192,14 @@ public class MainWindowController implements Observer, Subject{
 				options[i] = colours.get(i);
 			}
 		}
-	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
-		log.info("Tournament colour has been set to " + options[response]);
-	    return options[response];
+		if (options == null) {
+			endturnClick();
+		} else {
+		    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+			log.info("Tournament colour has been set to " + options[response]);
+		    return options[response];
+		}
+		return "nil";
 	}
 	public String changeColour(){
 		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW};
@@ -203,8 +208,17 @@ public class MainWindowController implements Observer, Subject{
 	    return options[response];
 	}
 	public String pickAName(String action){
-
-		String[] options = this.playerNames.toArray(new String[0]);
+		String[] options = new String[playerNames.size() - 1];
+		//String[] options = this.playerNames.toArray(new String[0]);
+		int i = 0;
+		System.out.println("PLAYERNAMES: " + playerNames);
+		System.out.println("PLAYER NAME: " + playerName);
+		for (String name: playerNames) {
+			if (!name.equals(playerName)) {
+				options[i] = name;
+				i++;
+			}
+		}
 	    int response = JOptionPane.showOptionDialog(null, "Pick a Player to "+action, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		log.info("Player picked was " + options[response]);
 	    return options[response];
@@ -511,7 +525,24 @@ public class MainWindowController implements Observer, Subject{
 		this.playedCards.get(player).clear();
 	}
 	public void removePlayedCard(int player, Card c){
-		this.playedCards.get(player).remove(c);
-		this.window.setPlayedCardImage(player, this.playedCards.get(player).get(this.playedCards.get(player).size()-1).getCardImage());
+		//this.playedCards.get(player).remove(c);
+		System.out.println("WINDOW CONTROLLER: removePlayedCard()");
+		System.out.println("WINDOW CONTROLLER: card c: " + c.getType() + " " + c.getValue());
+		int i = 0;
+		for (i = 0; i < playedCards.get(player).size(); i++) {
+			System.out.println("PLAYER CARD " + i +  ": " + playedCards.get(player).get(i).getType() + " " + playedCards.get(player).get(i).getValue());
+			if (playedCards.get(player).get(i).getType().equals(c.getType()) && (playedCards.get(player).get(i).getValue() == c.getValue())) {
+				System.out.println("REMOVING CARD: " + playedCards.get(player).get(i));
+				break;
+			}
+		}
+		System.out.println("i = " + i);
+		this.playedCards.get(player).remove(i);
+		if (playedCards.get(player).size() > 0) {
+			this.window.setPlayedCardImage(player, this.playedCards.get(player).get(i-1).getCardImage());
+		} else {
+			//TEMP FOR TESTING BEFORE ACTION CARDS DON'T ALLOW STEALING LAST CARD
+			this.window.setPlayedCardImage(player, Config.IMG_BACK);
+		}
 	}
 }

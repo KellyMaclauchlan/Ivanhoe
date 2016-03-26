@@ -63,7 +63,7 @@ public class Config {
 	public static final String PURPLE_WIN = "win purple";
 	
 	/* Observer */
-	public static final String DISPLAY = "display"; 
+	public static final String DISPLAY = "disply"; 
 	public static final String FROMUPDATE = "update";
 
 
@@ -73,7 +73,7 @@ public class Config {
 	public static final String WITHDRAW_CLICK = "withdrawclick";
 	public static final String END_TURN_CLICK = "endturnclick";
 	public static final String PLAYEDCARD = "playedcard";
-	public static final String VIEWDISPLAY = "viewdisplay";
+	public static final String VIEWDISPLAY = "viewdisply";
 	public static final String DESCRIPTION = "description";
 	
 	/* Coloured Cards */
@@ -82,6 +82,15 @@ public class Config {
 	public static final String BLUE = "blue";
 	public static final String YELLOW = "yellow";
 	public static final String GREEN = "green";
+	
+//					options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
+
+	public static final int BLUE_INT = 0;
+	public static final int RED_INT = 1;
+	public static final int YELLOW_INT = 2;
+	public static final int GREEN_INT = 3;
+	public static final int PURPLE_INT  = 4;
+	
 	
 	/* Arrary of colours */
 	public static final ArrayList<String> colours = new ArrayList<String>(Arrays.asList(BLUE, RED, YELLOW, GREEN, PURPLE));
