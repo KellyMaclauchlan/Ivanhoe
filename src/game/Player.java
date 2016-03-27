@@ -1,6 +1,8 @@
 package game;
 
 import java.util.ArrayList;
+
+import config.Config;
 public class Player {
 	
 	private String name;
@@ -9,8 +11,6 @@ public class Player {
 	private ArrayList<Card> display;
 	private ArrayList<Card> front;
 	private int totalCardValue;
-	private boolean isStunned;
-	private boolean isShielded;
 	private boolean isWinner;
 	private boolean hasWithdrawn;
 	private ArrayList<String> currentTokens;
@@ -131,22 +131,6 @@ public class Player {
 		totalCardValue = 0;
 	}
 
-	public boolean isStunned() {
-		return isStunned;
-	}
-
-	public void setStunned(boolean isStunned) {
-		this.isStunned = isStunned;
-	}
-
-	public boolean isShielded() {
-		return isShielded;
-	}
-
-	public void setShielded(boolean isShielded) {
-		this.isShielded = isShielded;
-	}
-
 	public ArrayList<Card> getFront() {
 		return front;
 	}
@@ -157,7 +141,6 @@ public class Player {
 	
 	public void addToFront(Card card) {
 		front.add(card);
-		removeCard(card);
 	}
 
 	public boolean isWinner() {
@@ -190,6 +173,28 @@ public class Player {
 
 	public void setGameWinner(boolean gameWinner) {
 		this.gameWinner = gameWinner;
+	}
+	
+	public boolean hasShield() {
+		boolean hasShield = false;
+		for (Card c: front) {
+			if (c.getType().equals(Config.SHIELD)) {
+				hasShield = true;
+				break;
+			}
+		}
+		return hasShield;
+	}
+	
+	public boolean isStunned() {
+		boolean isStunned = false;
+		for (Card c: front) {
+			if (c.getType().equals(Config.STUNNED)) {
+				isStunned = true;
+				break;
+			}
+		}
+		return isStunned;
 	}
 	
 

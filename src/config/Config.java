@@ -30,6 +30,7 @@ public class Config {
 	public static final String MAX = "maximum " + MAX_PLAYERS;
 	public static final String FIRSTPLAYER = "firstplayer";
 	public static final String WAITING = "waiting";
+	public static final String IS_STUNNED = "stn";
 	
 	/* Starting a tournament */
 	public static final String START_TOURNAMENT = "begin tournament";

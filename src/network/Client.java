@@ -225,10 +225,14 @@ public class Client implements Runnable, Observer {
 	/* Handles what the server has sent from the Game Engine and processes
 	 * what buttons/popups/commands the client and GUI must send back */
 	public String processInput(String msg){
-		String output = "resultpi";
+		String output = "result";
 		
 		if(msg.equals(Config.QUIT)) {  
 			output = Config.QUIT;
+		} 
+		else if (msg.contains(Config.IS_STUNNED)) {
+			processWaiting(msg);
+			output = Config.END_TURN;
 		}
 		
 		else if(msg.startsWith(Config.LOGGING)){
@@ -396,7 +400,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processPlayerTurn(String msg){
-		String output = "resultpt";
+		String output = "result";
 		String input[] = msg.split(" ");
 		
 		this.window.showWindow();
@@ -440,7 +444,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processColour(String msg) {
-		String output = "resultpc";
+		String output = "result";
 		String input[] = msg.split(" ");
 		String colour = input[1];
 		if (colour.equals(Config.PURPLE)) {
@@ -457,13 +461,9 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processPlay(String msg){
-		String output = "resultpl";
+		String output = "result";
 		String input[] = msg.split(" ");
-
-		//if(input.length != 2){
-			output = msg;
-		//}
-		
+		output = msg;
 		return output;
 	}
 
@@ -496,7 +496,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processWaiting(String msg){
-		String output = "resultwait";
+		String output = "result";
 		Boolean isAction=false;
 		// if the client cannot play that card 
 		if(msg.contains(Config.UNPLAYABLE)){
@@ -714,7 +714,7 @@ public class Client implements Runnable, Observer {
 	}
 	
 	public String processContinueWithdraw(String msg){
-		String output = "resultcw";
+		String output = "result";
 		String input[] = msg.split(" ");
 		String currentPlayerName = input[0];
 		currPlayer = currentPlayerName;
@@ -723,7 +723,6 @@ public class Client implements Runnable, Observer {
 		String nextPlayerName = input[4];
 		int winningPlayer = window.getPlayerByName(winningPlayerName);
 		int currentPlayer = window.getPlayerByName(currentPlayerName);
-		String tournament;
 		window.setScore(currentPlayer, Integer.parseInt(score));
 		
 		if(msg.contains(Config.PURPLE_WIN)){
@@ -750,11 +749,12 @@ public class Client implements Runnable, Observer {
 		}else{
 			
 			if(msg.contains(Config.TOURNAMENT_WINNER)){
-				window.startRound();
 				window.setCurrPlayer(winningPlayer);
+
+				window.startRound();
 				String chosenColour = input[5];
 				for(int i = 0; i < 5; i++){
-					if (chosenColour.equalsIgnoreCase(options[i])){
+					if (chosenColour.equalsIgnoreCase(options[i])) {
 							window.setTournamentColour(i);
 							if (chosenColour.equals(Config.PURPLE)) {
 								purpleChosen = true;
@@ -783,15 +783,15 @@ public class Client implements Runnable, Observer {
 				output = Config.START_TOURNAMENT;
 			}
 			
-			if(!msg.contains(Config.TOURNAMENT_WINNER)){
+			else if(!msg.contains(Config.TOURNAMENT_WINNER)){
 				window.setScore(window.getCurrPlayer(), Integer.parseInt(score));
 				
 				if(msg.contains(Config.CONTINUE)){
 					logActivity(currPlayer + " has ended their turn");
 				}
 				else if(msg.contains(Config.WITHDRAW)){
-					currPlayer = nextPlayerName;
 					logActivity(currPlayer + " HIIIIIhas ended their turn \nand withdrawn from the \ntournament\n");
+					currPlayer = nextPlayerName;
 				}
 				
 				if(window.getPlayerNum() == currentPlayer){
