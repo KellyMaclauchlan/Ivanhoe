@@ -18,8 +18,6 @@ import config.Observer;
 import game.GameEngine;
 
 public class Server implements Runnable, Observer {
-	// Might need to add more ai variables to create more ai's
-	
 	private int numPlayers = 0;
 	private Thread thread = null;
 	private ServerSocket server = null;
@@ -164,7 +162,7 @@ public class Server implements Runnable, Observer {
 		Random rand = new Random();
 		for(int i = 0; i < a; i++){
 			//int r = rand.nextInt(3) + 1;
-			int r = 3;
+			int r = 2;
 			switch(r){
 				case 1: ai = new AI(new StrategyPlayAll());
 				case 2: ai = new AI(new StrategySmartish());

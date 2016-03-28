@@ -10,6 +10,12 @@ public class StrategyPlayAll implements Strategy{
 	/* This strategy plays all possible cards in a round even though it might
 	 * not be the smartest strategy */
 	
+	/* Pick a tournament colour depending on how many colours of each card
+	 * it has:
+	 * >3 choose that colour
+	 * anything less than choose the most colour card
+	 */
+	
 	private Logger log = Logger.getLogger("AI");
 	private ArrayList<Card> hand = new ArrayList<Card>();
 	private String output = "result";
@@ -49,6 +55,7 @@ public class StrategyPlayAll implements Strategy{
 	}
 	
 	public String processPlay(String msg){
+		output = playACard();
 		return output;
 	}
 	
