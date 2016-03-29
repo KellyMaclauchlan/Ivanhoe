@@ -76,14 +76,21 @@ public class Startui {
 		control.setStun(0, true);
 		//System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
 		control.setStun(0, false);
+<<<<<<< HEAD
 		//System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
+=======
+
+		System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
+>>>>>>> 4b541b37703b17fb616d835e9cd37e4e15e55946
 		//System.out.println(control.getNumberOfAIFromPlayer(2));
 		//System.out.println(control.getNumberOfAIFromPlayer(3));
 		//System.out.println(control.getNumberOfAIFromPlayer(4));
 		//System.out.println(control.getNumberOfAIFromPlayer(5));
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4b541b37703b17fb616d835e9cd37e4e15e55946
 		//System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
-
 		//System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
 		//control.window.startTurn();
 		//control.startRound();

@@ -1,8 +1,11 @@
 package game;
 
 import java.util.ArrayList;
+
+import config.Config;
 public class Player {
 	
+
 	protected String name;
 	protected String startTokenColour;
 	protected ArrayList<Card> cards;
@@ -83,7 +86,12 @@ public class Player {
 	}
 	
 	public void removeCard(Card card) {
-		cards.remove(card);
+		for (int i = 0; i < cards.size(); i++) {
+			if (cards.get(i).getType().equals(card.getType()) && (cards.get(i).getValue() == card.getValue())) { 
+				cards.remove(i);
+				break;
+			}
+		}
 	}
 	
 	public void addCard(Card card) {
@@ -103,7 +111,31 @@ public class Player {
 	}
 	
 	public void removeFromDisplay(Card card) {
-		display.remove(card);
+		int i = 0;
+		if (display.size() != 0) {
+			for (i = 0; i < display.size(); i ++) {
+				if (card.getType().equals(display.get(i).getType()) && (card.getValue() == display.get(i).getValue())) {
+					break;
+				}
+			}
+			if (i < display.size()) {
+				display.remove(i);
+			}
+		}
+	}
+	
+	public void removeFromFront(Card card) {
+		int i = 0;
+		if (front.size() != 0) {
+			for (i = 0; i < front.size(); i ++) {
+				if (card.getType().equals(front.get(i).getType()) && (card.getValue() == front.get(i).getValue())) {
+					break;
+				}
+			}
+			if (i < front.size()) {
+				front.remove(i);
+			}
+		}
 	}
 
 	public int getTotalCardValue() {
@@ -123,22 +155,6 @@ public class Player {
 		totalCardValue = 0;
 	}
 
-	public boolean isStunned() {
-		return isStunned;
-	}
-
-	public void setStunned(boolean isStunned) {
-		this.isStunned = isStunned;
-	}
-
-	public boolean isShielded() {
-		return isShielded;
-	}
-
-	public void setShielded(boolean isShielded) {
-		this.isShielded = isShielded;
-	}
-
 	public ArrayList<Card> getFront() {
 		return front;
 	}
@@ -149,7 +165,6 @@ public class Player {
 	
 	public void addToFront(Card card) {
 		front.add(card);
-		removeCard(card);
 	}
 
 	public boolean isWinner() {
@@ -182,6 +197,28 @@ public class Player {
 
 	public void setGameWinner(boolean gameWinner) {
 		this.gameWinner = gameWinner;
+	}
+	
+	public boolean hasShield() {
+		boolean hasShield = false;
+		for (Card c: front) {
+			if (c.getType().equals(Config.SHIELD)) {
+				hasShield = true;
+				break;
+			}
+		}
+		return hasShield;
+	}
+	
+	public boolean isStunned() {
+		boolean isStunned = false;
+		for (Card c: front) {
+			if (c.getType().equals(Config.STUNNED)) {
+				isStunned = true;
+				break;
+			}
+		}
+		return isStunned;
 	}
 	
 

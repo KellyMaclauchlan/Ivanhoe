@@ -7,6 +7,14 @@ public class Card {
 	private String cardImage;
 	private String cardDescription;
 	
+	public Card(String type, int value) {
+		this.type = type;
+		this.value = value;
+		this.cardType = "";
+		cardImage = "";
+		setCardDescription("");
+	}
+	
 	public Card() {
 		type = "";
 		value = 0;

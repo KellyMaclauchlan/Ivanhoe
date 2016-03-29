@@ -1,5 +1,7 @@
 package game;
 
+import java.util.ArrayList;
+
 import config.Config;
 
 public class ActionCard extends Card {
@@ -40,10 +42,15 @@ public class ActionCard extends Card {
 			}
 		}
 		if (!hasShield) {
+			ArrayList<Card> cardsToRemove = new ArrayList<>();
 			for (Card c: player.getDisplay()) {
 				if (c.getType().equals(Config.PURPLE) && player.getDisplay().size() > 1) {
-					player.removeFromDisplay(c);
+					cardsToRemove.add(c);
 				}
+			}
+			for (Card c: cardsToRemove) {
+				player.removeFromDisplay(c);
+				player.setTotalCardValue();
 			}
 		}
 	}
@@ -59,6 +66,7 @@ public class ActionCard extends Card {
 		if (!hasShield) {
 			Card cardToSteal = player.getDisplay().get(player.getDisplay().size() - 1);
 			player.removeFromDisplay(cardToSteal);
+			player.setTotalCardValue();
 			return cardToSteal;
 		}
 		return null;
@@ -83,8 +91,9 @@ public class ActionCard extends Card {
 		game.getCurrentPlayer().addCard(card);
 	}
 	
-	public void playKnockDown(GameEngine game, Player player) {
+	public Card playKnockDown(GameEngine game, Player player) {
 		// draw a card at random from given opponent's hand
+		Card cardToSteal = null;
 		boolean hasShield = false;
 		for (Card c: player.getFront()) {
 			if (c.getType().equals(Config.SHIELD)) {
@@ -92,18 +101,22 @@ public class ActionCard extends Card {
 			}
 		}
 		if (!hasShield) {
-			Card cardToSteal = player.getCards().get(0);
+			cardToSteal = player.getCards().get(0);
 			player.getCards().remove(0);
 			game.getCurrentPlayer().addCard(cardToSteal);
 		}
+		return cardToSteal;
 	}
 	
 	public void playOutmaneuver(GameEngine game) {
 		// discard the last played card on each opponent's display
 		for (Player p: game.getActionablePlayers()) {
-			Card cardToRemove = p.getCards().get(p.getCards().size() - 1);
-			p.removeCard(cardToRemove);
-			game.discard(p, cardToRemove);
+			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
+				Card cardToRemove = p.getDisplay().get(p.getDisplay().size() - 1);
+				p.removeFromDisplay(cardToRemove);
+				game.discard(cardToRemove);
+				p.setTotalCardValue();
+			}
 		}
 	}
 	
@@ -117,8 +130,9 @@ public class ActionCard extends Card {
 						cardToRemove = c;
 					}
 				}
-				p.removeCard(cardToRemove);
-				game.discard(p, cardToRemove);
+				p.removeFromDisplay(cardToRemove);
+				game.discard(cardToRemove);
+				p.setTotalCardValue();
 			}
 		}
 	}
@@ -133,8 +147,9 @@ public class ActionCard extends Card {
 						cardToRemove = c;
 					}
 				}
-				p.removeCard(cardToRemove);
-				game.discard(p, cardToRemove);
+				p.removeFromDisplay(cardToRemove);
+				game.discard(cardToRemove);
+				p.setTotalCardValue();
 			}
 		}
 	}
@@ -143,12 +158,16 @@ public class ActionCard extends Card {
 		// discard all supporters from every opponent's display
 		for (Player p: game.getActionablePlayers()) {
 			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
+				ArrayList<Card> cardsToDiscard = new ArrayList<>();
 				for (Card c: p.getDisplay()) {
 					if (c.getCardType().equals(Config.SUPPORT)) {
-						p.removeCard(c);
-						game.discard(p, c);
+						cardsToDiscard.add(c);
 					}
+				} for (Card c: cardsToDiscard) {
+					p.removeFromDisplay(c);
+					game.discard(c);
 				}
+				p.setTotalCardValue();
 			}
 		}
 	}
@@ -157,26 +176,62 @@ public class ActionCard extends Card {
 		// remove all duplicate cards from each opponent's display, leaving only one of each card
 		for (Player p: game.getActionablePlayers()) {
 			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
+					ArrayList<Card> cardsToKeep = new ArrayList<>();
 				for (Card c: p.getDisplay()) {
-					int duplicates = 0;
-					for (Card c2: p.getDisplay()) {
-						if (c.getType().equals(c2.getType()) && (c.getValue() == c2.getValue())) {
-							duplicates ++;
-							if (duplicates > 1) {
-								p.removeCard(c2);
-								game.discard(p, c);
-							}
-						}
+					if (!cardsToKeep.contains(c)) {
+						cardsToKeep.add(c);
 					}
 				}
+				p.setDisplay(cardsToKeep);
+				p.setTotalCardValue();
 			}
 		}
 		
 	}
 	
-	public void playOutwit(Player player, Card opponentCard, Card playerCard) {
+	public void playOutwit(GameEngine game, Player player, Card opponentCard, Card playerCard) {
 		//TO DO: take one shield or stunned card from in front of the given opponent, and place it in front of current player
 		//take one shield or stunned card from the current player and put it in front of the opponent
+		Card opponentCardToSwap = null;
+		Card playerCardToSwap = null;
+		for (Card c: player.getDisplay()) {
+			if  (c.getType().equals(opponentCard.getType()) && (c.getValue() == opponentCard.getValue())) {
+				opponentCardToSwap = c;
+			}
+		}
+		for (Card c: game.getCurrentPlayer().getDisplay()) {
+			if  (c.getType().equals(playerCard.getType()) && (c.getValue() == playerCard.getValue())) {
+				playerCardToSwap = c;
+			}
+		}
+		for (Card c: player.getFront()) {
+			if  (c.getType().equals(opponentCard.getType()) && (c.getValue() == opponentCard.getValue())) {
+				opponentCardToSwap = c;
+			}
+		}
+		for (Card c: game.getCurrentPlayer().getFront()) {
+			if  (c.getType().equals(playerCard.getType()) && (c.getValue() == playerCard.getValue())) {
+				playerCardToSwap = c;
+			}
+		}
+		
+		if (opponentCardToSwap.getType().equals(Config.SHIELD) || opponentCardToSwap.getType().equals(Config.STUNNED)) {
+			player.removeFromFront(opponentCardToSwap);
+			game.getCurrentPlayer().addToFront(opponentCardToSwap);
+		} else {
+			player.removeFromDisplay(opponentCardToSwap);
+			game.getCurrentPlayer().addToDisplay(opponentCardToSwap);
+		} 
+		if (playerCardToSwap.getType().equals(Config.SHIELD) || playerCardToSwap.getType().equals(Config.STUNNED)) {
+			game.getCurrentPlayer().removeFromFront(playerCardToSwap);
+			player.addToFront(playerCardToSwap);
+		} else {
+			game.getCurrentPlayer().removeFromDisplay(playerCardToSwap);
+			player.addToDisplay(playerCardToSwap);
+		}
+		game.getCurrentPlayer().setTotalCardValue();
+		player.setTotalCardValue();
+		
 	}
 	
 	public void playShield(GameEngine game, Card card) {

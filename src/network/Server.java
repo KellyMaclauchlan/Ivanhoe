@@ -271,6 +271,9 @@ public class Server implements Runnable, Observer {
 		
 		else if(send.contains(Config.POINTS)){
 			sendAllClients(send);
+		} 
+		else if(send.contains(Config.IS_STUNNED)) {
+			send1Client(id, send);
 		}
 		
 		else{
