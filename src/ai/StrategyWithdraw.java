@@ -45,6 +45,11 @@ public class StrategyWithdraw implements Strategy{
 		return output;
 	}
 
+
+	public void tokenChoice(ArrayList<String> tokens) {
+		// do nothing as this strategy loses everytime 
+	}
+	
 	/* If the AI is the first player of the tournament (chose the tournament colour), then it will play 
 	 * the first card in its hand, else it will automatically withdraw */
 	public String playACard() {
@@ -87,11 +92,12 @@ public class StrategyWithdraw implements Strategy{
 		/* When a player has ended their turn */
 		else if(msg.contains(Config.CONTINUE)||msg.contains(Config.WITHDRAW)){
 
-			if(msg.length() == 9){
+			/*if(msg.length() == 9){
 				output = Config.WITHDRAW;
 			}else {
 				output = processContinueWithdraw(msg);	
-			}
+			}*/
+			output = processContinueWithdraw(msg);
 		}
 		
 		/* When you are not the current player, you are notified when another player
@@ -169,15 +175,18 @@ public class StrategyWithdraw implements Strategy{
 				output = playACard();
 			}else{
 				this.currentPlayer = false;
+				output = Config.WITHDRAW;
+			}
+		}
+
+		if(msg.contains(Config.TOURNAMENT_WINNER)){
+			if(input[7].equals(this.name)){
+				output = Config.OUTPUT;
+			}else{
 				output = Config.OUTPUT;
 			}
-		}else{
-			output = Config.OUTPUT;
 		}
+		
 		return output;
-	}
-
-	public void tokenChoice(ArrayList<String> tokens) {
-		// do nothing as this strategy loses everytime 
 	}
 }

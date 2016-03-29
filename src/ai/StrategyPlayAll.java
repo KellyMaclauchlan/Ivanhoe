@@ -428,7 +428,7 @@ public class StrategyPlayAll implements Strategy{
 		if(msg.contains(Config.PURPLE_WIN)){
 			addToken();
 			resetVariables();
-			output = Config.OUTPUT;
+			output = Config.PURPLE_WIN + " " + Config.PURPLE;
 		}else{
 			
 			// ended the AI's turn
@@ -461,6 +461,7 @@ public class StrategyPlayAll implements Strategy{
 				}
 			}
 		}
+		System.out.println("Continue/Withdraw: " + output);
 		return output;
 	}
 	
