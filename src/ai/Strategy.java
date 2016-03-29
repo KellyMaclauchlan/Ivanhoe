@@ -12,6 +12,9 @@ public interface Strategy{
 	public void setStarted(boolean b);
 	public boolean getStarted();
 	
+	public void setToPlay(Card c);
+	public Card getToPlay();
+	
 	public void tokenChoice(ArrayList<String> tokens);
 	
 	public String processInput(String msg);

@@ -20,9 +20,13 @@ public class StrategyWithdraw implements Strategy{
 	private boolean currentPlayer = false;
 	private String name;
 	private String tournamentColour; 
+	private Card toPlay;
 	
 	public void setStarted(boolean b){started = b;}
 	public boolean getStarted(){return started;}
+	
+	public void setToPlay(Card c){toPlay = c;}
+	public Card getToPlay(){return toPlay;}
 	
 	public StrategyWithdraw(String n){
 		log.info("New AI of type 'Withdraw' has been created");
@@ -54,7 +58,12 @@ public class StrategyWithdraw implements Strategy{
 						hand.get(i).getType().equals(Config.MAIDEN)){
 					continue;
 				}else{
-					output = Config.PLAY + " " +  hand.get(i).getType() + " " + hand.get(i).getValue();
+					toPlay = hand.get(i);
+					String type = toPlay.getType();
+					int value = toPlay.getValue();
+					
+					//output = Config.PLAY + " " +  hand.get(i).getType() + " " + hand.get(i).getValue();
+					output = Config.PLAY + " " + type + " " + value;
 					hand.remove(i);
 					break;
 				}

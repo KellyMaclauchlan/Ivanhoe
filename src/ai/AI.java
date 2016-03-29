@@ -21,6 +21,8 @@ public class AI extends Player implements Subject{
 	
 	private String output = "result";
 	
+	public Strategy getStrategy(){return strategy;}
+	
 	public AI(Strategy s){
 		this.strategy = s;
 		//this.strategy.setName(this.getName());

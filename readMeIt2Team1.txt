@@ -49,5 +49,6 @@ AI Strategies:
 					 the AI will play all of its cards that it can possibly play and then end its turn
 					 if the AI has no cards to play it will withdraw
 					 Sometimes, the AI will choose the tournament colour based on the tokens it will need, however does not have the cards needed and will then withdraw. This is one of the bugs with the AI that was unsolvable. 
+***in regards to action cards, the AI do not play any action cards 
 
 

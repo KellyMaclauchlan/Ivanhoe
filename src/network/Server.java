@@ -37,6 +37,7 @@ public class Server implements Runnable, Observer {
 	
 	public boolean testMaxPlayers(){return maxPlayers;}
 	public boolean testMinPlayers(){return minPlayers;}
+	public GameEngine getGame(){return game;}
 	
 	public void runServer(int port) {
 		try{

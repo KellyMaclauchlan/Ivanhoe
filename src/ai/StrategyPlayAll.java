@@ -52,8 +52,13 @@ public class StrategyPlayAll implements Strategy{
 	private ArrayList<String> currentTokens = new ArrayList<String>();
 	private String bestColourChoice = Config.GREEN;
 	
+	private Card toPlay;
+	
 	public void setStarted(boolean b){started = b;}
 	public boolean getStarted(){return started;}
+	
+	public void setToPlay(Card c){toPlay = c;}
+	public Card getToPlay(){return toPlay;}
 	
 	public StrategyPlayAll(String n){
 		log.info("New AI of type 'Play All' has been created");
@@ -176,7 +181,7 @@ public class StrategyPlayAll implements Strategy{
 	}
 		
 	public String playACard() {
-		Card toPlay; 
+		//Card toPlay; 
 		
 		if(otherPlayer <= currentPoints){
 			
@@ -244,7 +249,7 @@ public class StrategyPlayAll implements Strategy{
 	
 	public String playSupporter(){
 		if(supportCards.size() != 0){
-			Card toPlay = supportCards.get(0);
+			toPlay = supportCards.get(0);
 			output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
 			supportCards.remove(0);
 			supporter--;
