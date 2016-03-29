@@ -39,5 +39,15 @@ At the end of each tournament, all players are notified of the winner and the wi
 At the end of a game, the winner is announced to all players.
 
 Known issues:
-- when you play with the 'Play all' AI strategy, sometimes the correct player does not win however, majority of the time it is the right player
+
+
+
+AI Strategies:
+	1) Withdraw AI : this AI essentially withdraws after every play. The AI, if it is the first player, will choose the tournament colour based on 
+					 its first coloured card in its hand and play that card. After it will withdraw after every turn
+	2) Play All AI : this AI will choose the tournament colour based on the number of coloured cards it has or by which token it needs.
+					 the AI will play all of its cards that it can possibly play and then end its turn
+					 if the AI has no cards to play it will withdraw
+					 Sometimes, the AI will choose the tournament colour based on the tokens it will need, however does not have the cards needed and will then withdraw. This is one of the bugs with the AI that was unsolvable. 
+
 
