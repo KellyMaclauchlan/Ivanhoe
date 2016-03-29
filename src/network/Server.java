@@ -5,12 +5,19 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
+
 import org.apache.log4j.Logger;
 
+import ai.AI;
+import ai.StrategyPlayAll;
+import ai.StrategySmartish;
+import ai.StrategyWithdraw;
 import config.Config;
+import config.Observer;
 import game.GameEngine;
 
-public class Server implements Runnable {
+public class Server implements Runnable, Observer {
 	private int numPlayers = 0;
 	private Thread thread = null;
 	private ServerSocket server = null;
@@ -20,6 +27,10 @@ public class Server implements Runnable {
 	private boolean minPlayers = false;
 	private boolean maxPlayers = false; 
 	private ArrayList<String> names = new ArrayList<String>();
+	private AI ai;
+	private ArrayList<AI> aiPlayers = new ArrayList<AI>();
+	
+	private String send = Config.OUTPUT;
 
 	public Server(){
 		runServer(Config.DEFAULT_PORT);
@@ -39,7 +50,6 @@ public class Server implements Runnable {
 			log.error(e);
 		}
 	}
-	
 	public void start() {
 		game = new GameEngine();
 		log.info("Game has started");
@@ -49,8 +59,6 @@ public class Server implements Runnable {
 			thread.start();
 		}
 	}
-
-	@Override
 	public void run() {
 		while(thread != null){
 			try{
@@ -63,7 +71,6 @@ public class Server implements Runnable {
 		}
 		
 	}
-
 	public void addThread(Socket socket) {
 		if(numPlayers <= Config.MAX_PLAYERS){
 			log.info("Client accepted: " + socket );
@@ -89,7 +96,6 @@ public class Server implements Runnable {
 			maxPlayers = false; 
 		}
 	}
-	
 	public void remove(int id) {
 		if(clients.containsKey(id)){
 			ServerThread terminate = clients.get(id);
@@ -100,7 +106,6 @@ public class Server implements Runnable {
 			log.info("Removed " + id);
 		}
 	}
-	
 	public void shutdown() {
 		try {
 			server.close();
@@ -108,11 +113,9 @@ public class Server implements Runnable {
 			log.error(e);
 		}
 	}
-
 	public void handle(int id, String msg) {
 		System.out.println("Message Receieved: " + msg);
 		log.info("Message Received: " + msg);
-		String send = "input";
 		
 		/* Server receives message that client has quit */
 		if (msg.equals(Config.QUIT) || msg.equals(null)) {
@@ -120,6 +123,9 @@ public class Server implements Runnable {
 			if (clients.containsKey(id)) {
 				remove(id);
 			}
+			msg = Config.PLAYER_LEFT;
+			send = game.processInput(msg);
+			processInput(id, send);
 		}
 		
 		/* When a client first connects, it checks to see if this is the first client */
@@ -132,13 +138,50 @@ public class Server implements Runnable {
 			doubleCheckNames(id, msg);
 		}
 		
+		/* Receives the number of players and AIs for the game */
+		else if (msg.startsWith(Config.START)){
+			String[] input = msg.split(" ");
+			String reConstruct = input[0] + " " + input[1];
+			
+			produceAI(Integer.parseInt(input[2]));
+			
+			send = game.processInput(reConstruct);
+			processInput(id, send);
+		}
+		
 		/* All other messages from the client */
 		else {
 			send = game.processInput(msg);
 			processInput(id, send);
+			sendToAI(send);
 		}
 	}
 	
+	/* Creates the correct number of AIs that the first player has specified */
+	public void produceAI(int a){
+		Random rand = new Random();
+		for(int i = 0; i < a; i++){
+			//int r = rand.nextInt(3) + 1;
+			int r = 2;
+			switch(r){
+				case 1: ai = new AI(new StrategyPlayAll());
+				case 2: ai = new AI(new StrategySmartish());
+				case 3: ai = new AI(new StrategyWithdraw());
+			}
+			ai.registerObserver(this);
+			aiPlayers.add(ai);
+			game.joinGame(ai);
+		}
+	}
+	
+	/* Sends the game engine messages to the AI */
+	public void sendToAI(String msg){
+		for(AI i : aiPlayers){
+			i.processInput(msg);
+		}
+	}
+	
+	/* Checks to see who the first player is so the correct popups can occur */
 	public void checkStart(int id){
 		if(numPlayers == 1){
 			send1Client(id, Config.FIRSTPLAYER);
@@ -147,6 +190,7 @@ public class Server implements Runnable {
 		}
 	}
 	
+	/* Checks for duplicate names (no 2 players can have the same name) */
 	public void doubleCheckNames(int id, String msg){
 		String send = "input";
 		String join[] = msg.split(" ");
@@ -171,6 +215,7 @@ public class Server implements Runnable {
 		}
 		send = game.processInput(msg);
 		processInput(id, send);
+		sendToAI(send);
 	}
 	
 	public void send1Client(int id, String msg){
@@ -186,6 +231,7 @@ public class Server implements Runnable {
 	
 	/* Figures out whether to send the message to all the clients or just one */
 	public void processInput(int id, String send){
+		
 		if(send.contains(Config.PROMPT_JOIN)){
 			send1Client(id, send);
 		}
@@ -211,7 +257,6 @@ public class Server implements Runnable {
 
 		else if(send.contains(Config.TURN)){			
 			send1Client(id, send);
-			//sendAllClients(Config.LOGGING + " " + send);
 		}
 
 		else if (send.contains(Config.PLAY)){
@@ -232,5 +277,10 @@ public class Server implements Runnable {
 		else{
 			sendAllClients(send);
 		}
+	}
+
+	/* Used for the AI to communicate with the Server (Observer Pattern) */
+	public void update(String msg) {
+		this.handle(0, msg);
 	}
 }

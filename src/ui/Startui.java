@@ -15,7 +15,7 @@ public class Startui {
 		Card c1=new ColourCard("purple", 3,Config.IMG_PURPLE_3);
 		Card c2= new ColourCard("purple", 4,Config.IMG_PURPLE_4);
 		c1.setCardDescription("purple three");
-		c2.setCardDescription("purple 4");
+		c2.setCardDescription(Config.infoStrings.get(21));
 		control.addCard(c1);
 		control.addCard(c2);
 		control.addCard(c1);
@@ -70,17 +70,20 @@ public class Startui {
 		
 		//control.playerWithdraws("jo");
 		control.setCurrPlayer(control.getPlayerNum());
-		System.out.println(control.playerPickCardFromDisplay(control.getPlayerName()));
+		//System.out.println(control.playerPickCardFromDisplay(control.getPlayerName()));
 		control.setShield(0, true);
-		System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
+		//System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
 		control.setStun(0, true);
-		System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
+		//System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
 		control.setStun(0, false);
+
 		System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
-		System.out.println(control.getNumberOfAIFromPlayer(2));
-		System.out.println(control.getNumberOfAIFromPlayer(3));
-		System.out.println(control.getNumberOfAIFromPlayer(4));
-		System.out.println(control.getNumberOfAIFromPlayer(5));
+		//System.out.println(control.getNumberOfAIFromPlayer(2));
+		//System.out.println(control.getNumberOfAIFromPlayer(3));
+		//System.out.println(control.getNumberOfAIFromPlayer(4));
+		//System.out.println(control.getNumberOfAIFromPlayer(5));
+		//System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
+		//System.out.println(control.playerPickCardForOutwhit(control.getPlayerName()));
 		//control.window.startTurn();
 		//control.startRound();
 		//System.out.println(control.playIvanho("unhorse"));

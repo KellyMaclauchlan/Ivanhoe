@@ -5,20 +5,30 @@ import java.util.ArrayList;
 import config.Config;
 public class Player {
 	
-	private String name;
-	private String startTokenColour;
-	private ArrayList<Card> cards;
-	private ArrayList<Card> display;
-	private ArrayList<Card> front;
-	private int totalCardValue;
-	private boolean isWinner;
-	private boolean hasWithdrawn;
-	private ArrayList<String> currentTokens;
-	private String tournamentColour;
-	private boolean gameWinner = false;
+
+	protected String name;
+	protected String startTokenColour;
+	protected ArrayList<Card> cards;
+	protected ArrayList<Card> display;
+	protected ArrayList<Card> front;
+	protected int totalCardValue;
+	protected boolean isStunned;
+	protected boolean isShielded;
+	protected boolean isWinner;
+	protected boolean hasWithdrawn;
+	protected ArrayList<String> currentTokens;
+	protected String tournamentColour;
+	protected boolean gameWinner = false;
 	
 	public Player(String name) {
 		this.name = name;
+		currentTokens = new ArrayList<>();
+		display = new ArrayList<>();
+		front = new ArrayList<>();
+	}
+	
+	public Player(){
+		this.name = "AI";
 		currentTokens = new ArrayList<>();
 		display = new ArrayList<>();
 		front = new ArrayList<>();

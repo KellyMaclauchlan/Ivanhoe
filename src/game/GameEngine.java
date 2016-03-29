@@ -16,8 +16,7 @@ public class GameEngine {
 	private Player currentPlayer;
 	private int turnNumber = 0;
 	private boolean choosePurple = false;
-	
-	
+		
 	/* Testing variables */
 	private boolean startTournament = false; 
 	private boolean joined = false;
@@ -602,7 +601,6 @@ public class GameEngine {
 		drawDeck.remove(0);
 		return picked;
 	}
-	
 	
 	public void removeCardfromDeck(Card card) {
 		//remove a single card from draw deck (mostly for testing)

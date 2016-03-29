@@ -12,11 +12,14 @@ public class Config {
 	public static final String RUN = "run";
 	public static final String SHUTDOWN = "shutdown";
 	public static final String QUIT = "quit";
-	public static final String LOGGING = "log";
+	public static final String PLAYER_LEFT = "left";
 	
 	/* Client to Server messages:  
 	 * Commands made by the players will send strings to the server and with those strings
 	 * the server will call the games engine to return a response */
+	
+	/* Generic message */
+	public static final String OUTPUT = "output";
 	
 	/* Client's joining a game */
 	public static final String CLIENT_START = "client";
@@ -26,7 +29,6 @@ public class Config {
 	public static final String NEED_PLAYERS = "need players";
 	public static final String NOT_ENOUGH = "nobuenos";
 	public static final String DUPLICATE = "duplicate";
-	public static final String NAME_APPROVED = "approve";
 	public static final String MAX = "maximum " + MAX_PLAYERS;
 	public static final String FIRSTPLAYER = "firstplayer";
 	public static final String WAITING = "waiting";
@@ -192,30 +194,30 @@ public class Config {
 			"icons/purple_empty.png"));
 	
 	//strings for description
-	
-	public static final ArrayList<String> infoStrings= new ArrayList<String>(Arrays.asList(
+	public static final ArrayList<String> infoStrings = new ArrayList<String>(Arrays.asList(
 			"Yellow: 2","Yellow: 3", "Yellow: 4",
 			"Blue: 2", "Blue: 3", "Blue: 4", "Blue: 5",
 			"Red: 3", "Red: 4", "Red: 5",
 			"Purple: 3", "Purple: 4", "Purple: 5", "Purple: 7",
 			"Green: 1",
 			"Squire: 2", "Squire: 3", "Maiden: 6",
-			"Unhorse: Change the tournament colour from purple to red blue or yellow",
-			"Change Weapon: Change the colour from red blue or yellow to a different one of these colours",
-			"Drop Weapon: Change the tournament colour from red blue or yellow to green",
-			"Shield: Play this card face up in front of you but separate from your display. As long as you have the SHIELD in front of you, the action cards have no effect on your display", 
-			"Stunned: You may play this card on any one opponent still in the tournament\n but separate from the opponents display. As long as a player is STUNNED he may only add one new card to his display each turn", 
-			"Ivanhoe: You may play this card at anytime as long as you are in a tournament. Use the IVANHOE card to cancel all effects of any one action card just played",
-			"Break lance: One opponent must discard all purple cards from their display",
-			"Riposte: you may take the last card of any one opponent's display and add it to your own display", 
-			"Dodge: You may discard any one card from any one opponent's display", 
-			"Retreat: You may take any one card from your display back into your hand", 
-			"Knock Down: You may draw at random one card from any one opponent's hand and add it to your own hand (Without revealing the card)", 
-			"Outmaneuver: All your opponents must discard their last card from their displays", 
-			"Charge: Identify the lowest value card throughout the displays. All players must discard all cards of this value from their displays",
-			"Counter-Charge: Identify the highest value card throughout all displays. All players must discard all cards of this value from their displays",
-			"Disgrace: All players must discard all their supporters from their displays", 
-			"Adapt: Each player may only keep one card of each value in his display. All other cards with the same value are discarded. Each player decides which card he discards", 
-			"Outwit: Place one of your face up cards infront of an opponent, take one face up card from your opponent and place it face up infant of yourself. This may include SHEILD and STUNNED cards"));
+			"Unhorse: The tournament color changes from purple to red, blue or yellow.",
+			"Change Weapon: The tournament color changes from red, blue or yellow to a different one of these colors",
+			"Drop Weapon: The tournament color changes from red, blue or yellow to green",
+			"<html><p>Shield: A player plays this card face up in front of himself, but separate from his display.<br>As long as a player has the SHIELD card in front of him, all action cards have no effect on his display.</p></html>",
+			"<html><p>Stunned: Place this card separately face up in front of any one opponent.<br>As long as a player has the STUNNED card in front of him, he may add only one new card to his display each turn.</p></html>",
+			"<html><p>Ivanhoe: This is the only card a player can play outside of his turn.<br>A player can play it at any time as long as he is still in the tournament.<br>Use this card to cancel all effects of any one action card just played.</p>/html>",			
+			"Break lance: Force one opponent to discard all purple cards from his display.",
+			"Riposte: Take the last card played on any one opponent's display and add it to your own display.", 
+			"Dodge: Discard any one card from any one opponent's display.", 			
+			"Retreat: Take any one card from your own display back into your hand.", 
+			
+			"<html><p>Knock Down: Draw at random one card from any one opponent's hand and add it to your hand,<br>without revealing the card to other opponents.</p></html>",
+			"Outmaneuver: All opponents must remove the last card played on their displays.", 
+			"<html><p>Charge: Identify the lowest value card throughout all displays.<br> All players must dis- card all cards of this value from their displays.</p></html>",
+			"<html><p>Counter-Charge: Identify the highest value card throughout all displays. All play- ers must discard all cards of this value from their displays.</p></html",
+			"Disgrace: Each player must remove all his supporters from his display.", 
+			"Adapt: Each player may only keep one card of each value in his display. <br>All other cards with the same value are discarded. <br>Each player decides which of the matching-value cards he will discard.</p></html>",
+			"Outwit: Place one of your faceup cards in front of an opponent,<br>and take one faceup card from this opponent and place it face up in front of yourself. <br>This may include the SHIELD and STUNNED cards.</p></html>"));
 
 }
