@@ -113,6 +113,20 @@ public class Player {
 			}
 		}
 	}
+	
+	public void removeFromFront(Card card) {
+		int i = 0;
+		if (front.size() != 0) {
+			for (i = 0; i < front.size(); i ++) {
+				if (card.getType().equals(front.get(i).getType()) && (card.getValue() == front.get(i).getValue())) {
+					break;
+				}
+			}
+			if (i < front.size()) {
+				front.remove(i);
+			}
+		}
+	}
 
 	public int getTotalCardValue() {
 		return totalCardValue;

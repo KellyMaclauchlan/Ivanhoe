@@ -103,7 +103,6 @@ public class ActionCard extends Card {
 		if (!hasShield) {
 			cardToSteal = player.getCards().get(0);
 			player.getCards().remove(0);
-			System.out.println("adding cardToSteal: " + cardToSteal.getType());
 			game.getCurrentPlayer().addCard(cardToSteal);
 		}
 		return cardToSteal;
@@ -113,7 +112,6 @@ public class ActionCard extends Card {
 		// discard the last played card on each opponent's display
 		for (Player p: game.getActionablePlayers()) {
 			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
-				System.out.println("REMOVING FROM: " + p.getName());
 				Card cardToRemove = p.getDisplay().get(p.getDisplay().size() - 1);
 				p.removeFromDisplay(cardToRemove);
 				game.discard(cardToRemove);
@@ -191,9 +189,49 @@ public class ActionCard extends Card {
 		
 	}
 	
-	public void playOutwit(Player player, Card opponentCard, Card playerCard) {
+	public void playOutwit(GameEngine game, Player player, Card opponentCard, Card playerCard) {
 		//TO DO: take one shield or stunned card from in front of the given opponent, and place it in front of current player
 		//take one shield or stunned card from the current player and put it in front of the opponent
+		Card opponentCardToSwap = null;
+		Card playerCardToSwap = null;
+		for (Card c: player.getDisplay()) {
+			if  (c.getType().equals(opponentCard.getType()) && (c.getValue() == opponentCard.getValue())) {
+				opponentCardToSwap = c;
+			}
+		}
+		for (Card c: game.getCurrentPlayer().getDisplay()) {
+			if  (c.getType().equals(playerCard.getType()) && (c.getValue() == playerCard.getValue())) {
+				playerCardToSwap = c;
+			}
+		}
+		for (Card c: player.getFront()) {
+			if  (c.getType().equals(opponentCard.getType()) && (c.getValue() == opponentCard.getValue())) {
+				opponentCardToSwap = c;
+			}
+		}
+		for (Card c: game.getCurrentPlayer().getFront()) {
+			if  (c.getType().equals(playerCard.getType()) && (c.getValue() == playerCard.getValue())) {
+				playerCardToSwap = c;
+			}
+		}
+		
+		if (opponentCardToSwap.getType().equals(Config.SHIELD) || opponentCardToSwap.getType().equals(Config.STUNNED)) {
+			player.removeFromFront(opponentCardToSwap);
+			game.getCurrentPlayer().addToFront(opponentCardToSwap);
+		} else {
+			player.removeFromDisplay(opponentCardToSwap);
+			game.getCurrentPlayer().addToDisplay(opponentCardToSwap);
+		} 
+		if (playerCardToSwap.getType().equals(Config.SHIELD) || playerCardToSwap.getType().equals(Config.STUNNED)) {
+			game.getCurrentPlayer().removeFromFront(playerCardToSwap);
+			player.addToFront(playerCardToSwap);
+		} else {
+			game.getCurrentPlayer().removeFromDisplay(playerCardToSwap);
+			player.addToDisplay(playerCardToSwap);
+		}
+		game.getCurrentPlayer().setTotalCardValue();
+		player.setTotalCardValue();
+		
 	}
 	
 	public void playShield(GameEngine game, Card card) {

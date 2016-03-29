@@ -284,7 +284,7 @@ public class MainWindowController implements Observer, Subject{
 		info.toArray(possibilities);
 		String s = (String)JOptionPane.showInputDialog(
                 null,
-                "pick a card",
+                "pick a card to swap from your display",
                 "Customized Dialog",
                 JOptionPane.PLAIN_MESSAGE,
                 null,
@@ -305,23 +305,31 @@ public class MainWindowController implements Observer, Subject{
 			info.add(c.getCardDescription());
 		}
 		if(window.getShield(player).isVisible())
-			info.add("Shield");
+			info.add(Config.SHIELD + " " + 0);
 		if(window.getStun(player).isVisible())
-			info.add("Stun");
+			info.add(Config.STUNNED + " " + 0);
 		String[] possibilities= new String[info.size()];
 		info.toArray(possibilities);
+		String playerName = null;
+		if (name.equals(getPlayerName())) {
+			playerName = "your";
+		} else {
+			playerName = name + "'s";
+		}
+		
 		String s = (String)JOptionPane.showInputDialog(
                 null,
-                "pick a card",
+                "pick a card to swap from " + playerName + " display",
                 "Customized Dialog",
                 JOptionPane.PLAIN_MESSAGE,
                 null,
                 possibilities,
                 info.get(0));
+		
 		for(Card c : this.playedCards.get(player)){
 			if(s.equalsIgnoreCase(c.getCardDescription()))
 				return c.getType()+" "+c.getValue();
-		}
+		} 
 		
 		return s;
 	}

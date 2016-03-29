@@ -483,6 +483,7 @@ public class Client implements Runnable, Observer {
 		else if(window.getLastCard().getCardType().equalsIgnoreCase(Config.ACTION)){
 			output = Config.PLAY + this.processActionCard();
 			window.removeCard(window.getLastCard());
+			
 		}
 		else{
 			if (window.getLastCard().getType().equals(Config.UNHORSE)) {
@@ -492,6 +493,8 @@ public class Client implements Runnable, Observer {
 			window.removeCard(window.getLastCard());
 		}
 		this.playedCards = null;
+		window.setScore(window.getCurrPlayer(), window.getScore(window.getCurrPlayer()) + window.getLastCard().getValue());
+
 		return output;
 	}
 	
@@ -502,31 +505,31 @@ public class Client implements Runnable, Observer {
 		if(msg.contains(Config.UNPLAYABLE)){
 			window.addCard(window.getLastCard());
 			window.cantPlayCardPopup();
-		}
-		else{
-			
+		} else {
 			String input[] = msg.split(" ");
-			String[] c = null;
-			String type = null;
-			String value = null;
-			if (input[1].contains("_")) {
-				c = input[1].split("_");
-				type = c[0];
-				value = c[1];
-			} else {
-				type = input[1];
-				value = "0";
-				isAction=true;
-			}
-			Card card = this.getCardFromTypeValue(type, value);
-			if(isAction){
-				this.processActionCardAction(msg);
-			}
-			else{
-				window.addPlayedCard(window.getCurrPlayer(), card);
-			}
-			if(window.getCurrPlayer() == window.getPlayerNum()){
-				window.removeCard(card);
+			if (input.length > 1) {
+				String[] c = null;
+				String type = null;
+				String value = null;
+				if (input[1].contains("_")) {
+					c = input[1].split("_");
+					type = c[0];
+					value = c[1];
+				} else {
+					type = input[1];
+					value = "0";
+					isAction=true;
+				}
+				Card card = this.getCardFromTypeValue(type, value);
+				if(isAction){
+					this.processActionCardAction(msg);
+				}
+				else{
+					window.addPlayedCard(window.getCurrPlayer(), card);
+				}
+				if(window.getCurrPlayer() == window.getPlayerNum()){
+					window.removeCard(card);
+				}
 			}
 		}
 		
@@ -569,10 +572,11 @@ public class Client implements Runnable, Observer {
 		}
 		else if(cardType.equalsIgnoreCase(Config.OUTWIT)){
 			//pick a face up card including sheild and stun 
-			output +=window.playerPickCardFromDisplay(window.getPlayerName());
+			output += window.playerPickCardForOutwhit(window.getPlayerName());
 			String name= window.pickAName("take a played card from.");
-			output+= name+" "+window.playerPickCardForOutwhit(name);
+			output += " " + name + " " + window.playerPickCardForOutwhit(name);
 			//added to output <your cardtype > <value> <other player> <their card type> <value>
+			
 		}
 		else if(cardType.equalsIgnoreCase(Config.DODGE)){
 			// pick a player and a card to remove from their display
@@ -680,6 +684,16 @@ public class Client implements Runnable, Observer {
 			// move sheild/ stun if needed
 			// move cards from one display to the other if need
 			//
+			String playerCardValue = input[3];
+			String opponentName = input[4];
+			String opponentCardValue = input[6];
+			
+			window.setScore(window.getCurrPlayer(), window.getScore(window.getCurrPlayer()) 
+					+ Integer.parseInt(opponentCardValue) - Integer.parseInt(playerCardValue));
+			window.setScore(window.getPlayerByName(opponentName), window.getScore(window.getPlayerByName(opponentName)) 
+					+ Integer.parseInt(playerCardValue) - Integer.parseInt(opponentCardValue));
+
+
 		}
 	}
 	
