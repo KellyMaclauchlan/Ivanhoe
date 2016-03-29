@@ -23,10 +23,10 @@ public class StrategyWithdraw implements Strategy{
 	
 	public void setStarted(boolean b){started = b;}
 	public boolean getStarted(){return started;}
-	public void setName(String n){this.name = n;}
 	
-	public StrategyWithdraw(){
+	public StrategyWithdraw(String n){
 		log.info("New AI of type 'Withdraw' has been created");
+		this.name = n;
 	}
 
 	/* If the AI is the first player of the game and has to choose a tournament colour, 
@@ -169,11 +169,15 @@ public class StrategyWithdraw implements Strategy{
 				output = playACard();
 			}else{
 				this.currentPlayer = false;
-				output = "result";
+				output = Config.OUTPUT;
 			}
 		}else{
-			output = "result";
+			output = Config.OUTPUT;
 		}
 		return output;
+	}
+
+	public void tokenChoice(ArrayList<String> tokens) {
+		// do nothing as this strategy loses everytime 
 	}
 }

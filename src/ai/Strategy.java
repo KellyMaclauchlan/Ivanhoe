@@ -11,7 +11,8 @@ public interface Strategy{
 	public void getHand(ArrayList<Card> c);
 	public void setStarted(boolean b);
 	public boolean getStarted();
-	public void setName(String name);
+	
+	public void tokenChoice(ArrayList<String> tokens);
 	
 	public String processInput(String msg);
 	public void processPlayerName(String msg);

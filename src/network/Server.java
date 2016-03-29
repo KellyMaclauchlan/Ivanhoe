@@ -160,14 +160,20 @@ public class Server implements Runnable, Observer {
 	/* Creates the correct number of AIs that the first player has specified */
 	public void produceAI(int a){
 		Random rand = new Random();
+		int dd = 0;
 		for(int i = 0; i < a; i++){
 			//int r = rand.nextInt(3) + 1;
-			int r = 2;
-			switch(r){
-				case 1: ai = new AI(new StrategyPlayAll());
-				case 2: ai = new AI(new StrategySmartish());
-				case 3: ai = new AI(new StrategyWithdraw());
+			int r = 1;
+			if(r == 1 ){
+				ai = new AI(new StrategyPlayAll("AI" + dd));
 			}
+			else if (r == 2){
+				ai = new AI(new StrategySmartish("AI" + dd));
+			}
+			else if(r == 3){
+				ai = new AI(new StrategyWithdraw("AI" + dd));
+			}
+			ai.setName("AI" + dd);
 			ai.registerObserver(this);
 			aiPlayers.add(ai);
 			game.joinGame(ai);

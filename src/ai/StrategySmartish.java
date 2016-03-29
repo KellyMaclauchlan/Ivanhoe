@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
+import config.Config;
 import game.Card;
 
 public class StrategySmartish implements Strategy{
@@ -18,11 +19,10 @@ public class StrategySmartish implements Strategy{
 	
 	public void setStarted(boolean b){started = b;}
 	public boolean getStarted(){return started;}
-	public void setName(String n){this.name = n;}
 	
-	
-	public StrategySmartish(){
+	public StrategySmartish(String n){
 		log.info("New AI of type 'Smartish' has been created");
+		this.name = n;
 	}
 	
 	public String startTournament(){
@@ -38,6 +38,9 @@ public class StrategySmartish implements Strategy{
 		hand = c;
 	}
 	
+	public void tokenChoice(ArrayList<String> tokens) {
+		
+	}
 	
 	public String processInput(String msg){
 		return output; 
