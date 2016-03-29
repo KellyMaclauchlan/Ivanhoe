@@ -22,6 +22,7 @@ public class StrategyPlayAll implements Strategy{
 	private String name;
 	private String tournamentColour;
 	private int currentPoints = 0;
+	private int otherPlayer;
 	
 	// number of each colour cards
 	private int red = 0;
@@ -177,61 +178,66 @@ public class StrategyPlayAll implements Strategy{
 	public String playACard() {
 		Card toPlay; 
 		
-		if(tournamentColour.equals(Config.RED)){
-			if(redCards.size() != 0){
-				toPlay = redCards.get(0);
-				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
-				redCards.remove(0);
-				red--;
-			}else{
-				red = 0;
-				output = playSupporter();
-			}
+		if(otherPlayer <= currentPoints){
 			
-		}
-		else if(tournamentColour.equals(Config.BLUE)){
-			if(blueCards.size() != 0){
-				toPlay = blueCards.get(0);
-				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
-				blueCards.remove(0);
-				blue--;
-			}else{
-				blue = 0;
-				output = playSupporter();
+			if(tournamentColour.equals(Config.RED)){
+				if(redCards.size() != 0){
+					toPlay = redCards.get(0);
+					output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
+					redCards.remove(0);
+					red--;
+				}else{
+					red = 0;
+					output = playSupporter();
+				}
+				
 			}
-		}
-		else if(tournamentColour.equals(Config.PURPLE)){
-			if(purpleCards.size() != 0){
-				toPlay = purpleCards.get(0);
-				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
-				purpleCards.remove(0);
-				purple--;
-			}else{
-				purple = 0;
-				output = playSupporter();
+			else if(tournamentColour.equals(Config.BLUE)){
+				if(blueCards.size() != 0){
+					toPlay = blueCards.get(0);
+					output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
+					blueCards.remove(0);
+					blue--;
+				}else{
+					blue = 0;
+					output = playSupporter();
+				}
 			}
-		}
-		else if(tournamentColour.equals(Config.YELLOW)){
-			if(yellowCards.size() != 0){
-				toPlay = yellowCards.get(0);
-				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
-				yellowCards.remove(0);
-				yellow--;
-			}else{
-				yellow = 0;
-				output = playSupporter();
+			else if(tournamentColour.equals(Config.PURPLE)){
+				if(purpleCards.size() != 0){
+					toPlay = purpleCards.get(0);
+					output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
+					purpleCards.remove(0);
+					purple--;
+				}else{
+					purple = 0;
+					output = playSupporter();
+				}
 			}
-		}
-		else if(tournamentColour.equals(Config.GREEN)){
-			if(greenCards.size() != 0){
-				toPlay = greenCards.get(0);
-				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
-				greenCards.remove(0);
-				green--;
-			}else{
-				green = 0;
-				output = playSupporter();
+			else if(tournamentColour.equals(Config.YELLOW)){
+				if(yellowCards.size() != 0){
+					toPlay = yellowCards.get(0);
+					output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
+					yellowCards.remove(0);
+					yellow--;
+				}else{
+					yellow = 0;
+					output = playSupporter();
+				}
 			}
+			else if(tournamentColour.equals(Config.GREEN)){
+				if(greenCards.size() != 0){
+					toPlay = greenCards.get(0);
+					output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
+					greenCards.remove(0);
+					green--;
+				}else{
+					green = 0;
+					output = playSupporter();
+				}
+			}
+		}else{
+			output = Config.WITHDRAW;
 		}
 		return output;
 	}
@@ -330,7 +336,6 @@ public class StrategyPlayAll implements Strategy{
 		}
 	}
 	
-	
 	public String processInput(String msg){
 		log.info("AI has received: " + msg);
 
@@ -425,33 +430,32 @@ public class StrategyPlayAll implements Strategy{
 	public String processContinueWithdraw(String msg){
 		String[] input = msg.split(" ");
 		
-		if(msg.contains(Config.PURPLE_WIN)){
-			addToken();
-			resetVariables();
-			output = Config.PURPLE_WIN + " " + Config.PURPLE;
-		}else{
-			
-			// ended the AI's turn
-			if(input[0].equals(this.name)){
-				this.currentPlayer = false;
+		if(msg.contains(Config.PURPLE_WIN) ){
+			if(input[7].equals(this.name)){
+				addToken();
+				resetVariables();
+				output = Config.PURPLE_WIN + " " + Config.PURPLE;
+			}else{
 				output = Config.OUTPUT;
-				currentPoints = Integer.parseInt(input[2]);
-				
-			// ended the other player's turn	
-			}else if(input[4].equals(this.name)){
-				this.currentPlayer = true;
-				
-				if(msg.contains(Config.TOURNAMENT_WINNER)){
+			}
+		}else{
+		
+			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				if(input[4].equals(this.name)){
 					addToken();
 					resetVariables();
+				}
+				output = Config.OUTPUT;
+			}
+			else if(!msg.contains(Config.TOURNAMENT_WINNER)){
+				if(input[0].equals(this.name)){
+					this.currentPlayer = false;
 					output = Config.OUTPUT;
-					
-				}else if(msg.contains(Config.GAME_WINNER)){
-					resetVariables();
-					output = Config.OUTPUT;
-				}else{
-					
-					int otherPlayer = Integer.parseInt(input[2]);
+					currentPoints = Integer.parseInt(input[2]);
+				}
+				else{
+					this.currentPlayer = true;
+					otherPlayer = Integer.parseInt(input[2]);
 					if(otherPlayer > currentPoints && started){
 						output = Config.WITHDRAW;
 					}else{
