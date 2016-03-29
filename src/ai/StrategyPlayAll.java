@@ -21,7 +21,9 @@ public class StrategyPlayAll implements Strategy{
 	private boolean currentPlayer = false;
 	private String name;
 	private String tournamentColour;
+	private int currentPoints = 0;
 	
+	// number of each colour cards
 	private int red = 0;
 	private int blue = 0;
 	private int purple = 0;
@@ -29,6 +31,7 @@ public class StrategyPlayAll implements Strategy{
 	private int green = 0;
 	private int supporter = 0;
 	
+	// what tokens the AI has
 	private boolean redToken = false;
 	private boolean blueToken = false;
 	private boolean purpleToken = false;
@@ -36,6 +39,7 @@ public class StrategyPlayAll implements Strategy{
 	private boolean greenToken = false; 
 	private boolean[] booleanTokens = {redToken, blueToken, purpleToken, yellowToken, greenToken};
 	
+	//ArrayList of each kind of card the AI has
 	private ArrayList<Card> redCards = new ArrayList<Card>();
 	private ArrayList<Card> blueCards = new ArrayList<Card>();
 	private ArrayList<Card> purpleCards = new ArrayList<Card>();
@@ -56,8 +60,6 @@ public class StrategyPlayAll implements Strategy{
 	}
 
 	public String startTournament() {
-		System.out.println("in start tournament");
-		
 		if(red >= 2){
 			output = Config.RED;
 		}
@@ -129,19 +131,58 @@ public class StrategyPlayAll implements Strategy{
 		}
 	}
 
+	public void addToken(){
+		if(tournamentColour.equals(Config.RED)){
+			redToken = true;
+		}
+		else if(tournamentColour.equals(Config.BLUE)){
+			blueToken = true;
+		}
+		else if(tournamentColour.equals(Config.PURPLE)){
+			if(purpleToken){
+				int tokenIndex = 0;
+				
+				for(boolean b : booleanTokens){
+					if(!b){
+						tokenIndex++;
+						break;
+					}
+				}
+				
+				if(tokenIndex == 1){
+					redToken = true;
+				}
+				else if(tokenIndex == 2){
+					blueToken = true;
+				}
+				else if(tokenIndex == 4){
+					yellowToken = true;
+				}
+				else{
+					greenToken = true;
+				}
+				
+			}else{
+				purpleToken = true;
+			}
+		}
+		else if(tournamentColour.equals(Config.YELLOW)){
+			yellowToken = true;
+		}
+		else if(tournamentColour.equals(Config.GREEN)){
+			greenToken = true;
+		}
+	}
+		
 	public String playACard() {
-		System.out.println("Play a card");
-		System.out.println("tournament colour: " + tournamentColour);
 		Card toPlay; 
 		
 		if(tournamentColour.equals(Config.RED)){
-			
 			if(redCards.size() != 0){
 				toPlay = redCards.get(0);
 				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
 				redCards.remove(0);
 				red--;
-				System.out.println("Play red: " + red);
 			}else{
 				red = 0;
 				output = playSupporter();
@@ -154,7 +195,6 @@ public class StrategyPlayAll implements Strategy{
 				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
 				blueCards.remove(0);
 				blue--;
-				System.out.println("Play blue: " + blue);
 			}else{
 				blue = 0;
 				output = playSupporter();
@@ -166,7 +206,6 @@ public class StrategyPlayAll implements Strategy{
 				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
 				purpleCards.remove(0);
 				purple--;
-				System.out.println("Play purple: " + purple);
 			}else{
 				purple = 0;
 				output = playSupporter();
@@ -178,26 +217,22 @@ public class StrategyPlayAll implements Strategy{
 				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
 				yellowCards.remove(0);
 				yellow--;
-				System.out.println("Play yellow: " + yellow);
 			}else{
 				yellow = 0;
 				output = playSupporter();
 			}
 		}
 		else if(tournamentColour.equals(Config.GREEN)){
-				if(greenCards.size() != 0){
+			if(greenCards.size() != 0){
 				toPlay = greenCards.get(0);
 				output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
 				greenCards.remove(0);
 				green--;
-				System.out.println("Play green: " + green);
 			}else{
 				green = 0;
 				output = playSupporter();
 			}
 		}
-		
-		System.out.println("Playing the following card: " + output);
 		return output;
 	}
 	
@@ -207,7 +242,6 @@ public class StrategyPlayAll implements Strategy{
 			output = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue(); 
 			supportCards.remove(0);
 			supporter--;
-			System.out.println("Play support: " + supporter);
 		}else{
 			supporter = 0;
 			output = Config.END_TURN;
@@ -217,6 +251,7 @@ public class StrategyPlayAll implements Strategy{
 
 	public void getHand(ArrayList<Card> c) {
 		hand = c;
+		
 		// counts how many of each colour there are 
 		for(int i = 0; i < hand.size(); i++){
 			Card nextCard = hand.get(i);
@@ -254,7 +289,6 @@ public class StrategyPlayAll implements Strategy{
 	}
 	
 	public void addNewCard(String card){
-		System.out.println("New Card: " + card);
 		String[] input = card.split("_");
 		String type = input[0];
 		int value = Integer.parseInt(input[1]);
@@ -264,49 +298,41 @@ public class StrategyPlayAll implements Strategy{
 			newCard = new ColourCard(type, value);
 			red++;
 			redCards.add(newCard);
-			System.out.println("red: " + red);
 		}
 		else if(type.equals(Config.BLUE)){
 			newCard = new ColourCard(type, value);
 			blue++;
 			blueCards.add(newCard);
-			System.out.println("blue: " + blue);
 		}
 		else if(type.equals(Config.PURPLE)){
 			newCard = new ColourCard(type, value);
 			purple++;
 			purpleCards.add(newCard);
-			System.out.println("purple: " + purple);
 		}
 		else if(type.equals(Config.YELLOW)){
 			newCard = new ColourCard(type, value);
 			yellow++;
 			yellowCards.add(newCard);
-			System.out.println("yellow: " + yellow);
 		}
 		else if(type.equals(Config.GREEN)){
 			newCard = new ColourCard(type, value);
 			green++;
 			greenCards.add(newCard);
-			System.out.println("green: " + green);
 		}
 		else if(type.equals(Config.SQUIRE) || type.equals(Config.MAIDEN)){
 			newCard = new SupportCard(type, value);
 			supporter++;
 			supportCards.add(newCard);
-			System.out.println("supporter: " + supporter);
 		}
 		else{
 			newCard = new ActionCard(type);
 			actionCards.add(newCard);
-			System.out.println("action");
 		}
 	}
 	
 	
 	public String processInput(String msg){
 		log.info("AI has received: " + msg);
-		System.out.println("Strategy message: " + msg);
 
 		/* Determines who's turn it is */
 		 if (msg.contains(Config.TURN)){
@@ -326,16 +352,9 @@ public class StrategyPlayAll implements Strategy{
 		/* When you are not the current player, you are notified when another player
 		 * plays a card*/
 		else if(msg.contains(Config.WAITING)){
-			String input[] = msg.split(" ");
-			//if(input.length == 2 && currentPlayer){
 			if(msg.startsWith(Config.WAITING) && currentPlayer){
 				output = playACard();
-			}else if(msg.contains(Config.TOURNAMENT_WINNER)){
-				
-			}else if(msg.contains(Config.GAME_WINNER)){
-				
 			}else{
-				System.out.println("WAITING");
 				output = Config.OUTPUT;
 			}
 		}
@@ -343,7 +362,6 @@ public class StrategyPlayAll implements Strategy{
 	}
 	
 	public void processPlayerName(String msg){
-		System.out.println("Name: " + msg);
 		msg = msg.substring(10);
 		String name[] = msg.split("name");
 		String card[];
@@ -370,18 +388,21 @@ public class StrategyPlayAll implements Strategy{
 	public String processPlayerTurn(String msg){
 		String input[]  = msg.split(" ");
 		
-		System.out.println("PlayerTurn");
-		
+		// first tournament
 		if(msg.contains(Config.PICKED_PURPLE)){
 			if(input[3].equalsIgnoreCase(this.name)){
 				String colour = startTournament();
 				output = Config.COLOUR_PICKED + " " + colour;
 				this.currentPlayer = true; 
+				addNewCard(input[4]);
 				this.setStarted(true);
 			}	
+			
+		// every other tournament 
 		}else{
 			if(input[1].equalsIgnoreCase(this.name)){
 				this.currentPlayer = true; 
+				addNewCard(input[2]);
 				String colour = startTournament();
 				output = Config.COLOUR_PICKED + " " + colour;
 			}else{
@@ -402,22 +423,49 @@ public class StrategyPlayAll implements Strategy{
 	}
 	
 	public String processContinueWithdraw(String msg){
-		
-		// YOU ARE HERE RIGHT NOW !!!
-		
-		System.out.println("Continue Withdraw");
 		String[] input = msg.split(" ");
 		
-		if(input[0].equals(this.name)){
-			this.currentPlayer = false;
+		if(msg.contains(Config.PURPLE_WIN)){
+			addToken();
+			resetVariables();
 			output = Config.OUTPUT;
-		}else if(input[4].equals(this.name)){
-			addNewCard(input[5]); 
-			output = playACard();
+		}else{
+			
+			// ended the AI's turn
+			if(input[0].equals(this.name)){
+				this.currentPlayer = false;
+				output = Config.OUTPUT;
+				currentPoints = Integer.parseInt(input[2]);
+				
+			// ended the other player's turn	
+			}else if(input[4].equals(this.name)){
+				this.currentPlayer = true;
+				
+				if(msg.contains(Config.TOURNAMENT_WINNER)){
+					addToken();
+					resetVariables();
+					output = Config.OUTPUT;
+					
+				}else if(msg.contains(Config.GAME_WINNER)){
+					resetVariables();
+					output = Config.OUTPUT;
+				}else{
+					
+					int otherPlayer = Integer.parseInt(input[2]);
+					if(otherPlayer > currentPoints && started){
+						output = Config.WITHDRAW;
+					}else{
+						addNewCard(input[5]); 
+						output = playACard();	
+					}
+				}
+			}
 		}
-		
-		System.out.println("Continue/Withdraw: " + output);
 		return output;
 	}
-
+	
+	public void resetVariables(){
+		started = false;
+		currentPlayer = false;
+	}
 }
