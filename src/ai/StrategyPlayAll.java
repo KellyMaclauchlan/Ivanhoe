@@ -461,7 +461,6 @@ public class StrategyPlayAll implements Strategy{
 				}
 			}
 		}
-		System.out.println("Continue/Withdraw: " + output);
 		return output;
 	}
 	

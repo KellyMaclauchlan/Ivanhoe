@@ -801,13 +801,8 @@ public class Client implements Runnable, Observer {
 					logActivity(currPlayer + " has ended their turn");
 				}
 				else if(msg.contains(Config.WITHDRAW)){
-<<<<<<< HEAD
 					currPlayer = nextPlayerName;
 					logActivity(currPlayer + " has ended their turn \nand withdrawn from the \ntournament\n");
-=======
-					logActivity(currPlayer + " HIIIIIhas ended their turn \nand withdrawn from the \ntournament\n");
-					currPlayer = nextPlayerName;
->>>>>>> 4b541b37703b17fb616d835e9cd37e4e15e55946
 				}
 				
 				if(window.getPlayerNum() == currentPlayer){
