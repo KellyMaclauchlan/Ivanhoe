@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
 
 import ai.AI;
 import ai.StrategyPlayAll;
-import ai.StrategySmartish;
 import ai.StrategyWithdraw;
 import config.Config;
 import config.Observer;
@@ -162,15 +161,12 @@ public class Server implements Runnable, Observer {
 		Random rand = new Random();
 		int dd = 0;
 		for(int i = 0; i < a; i++){
-			//int r = rand.nextInt(3) + 1;
+			//int r = rand.nextInt(2) + 1;
 			int r = 1;
 			if(r == 1 ){
 				ai = new AI(new StrategyPlayAll("AI" + dd));
 			}
-			else if (r == 2){
-				ai = new AI(new StrategySmartish("AI" + dd));
-			}
-			else if(r == 3){
+			else if(r == 2){
 				ai = new AI(new StrategyWithdraw("AI" + dd));
 			}
 			ai.setName("AI" + dd);
