@@ -162,7 +162,7 @@ public class Server implements Runnable, Observer {
 		int dd = 0;
 		for(int i = 0; i < a; i++){
 			//int r = rand.nextInt(2) + 1;
-			int r = 1;
+			int r = 2;
 			if(r == 1 ){
 				ai = new AI(new StrategyPlayAll("AI" + dd));
 			}
