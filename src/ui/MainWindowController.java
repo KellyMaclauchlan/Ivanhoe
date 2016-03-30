@@ -247,17 +247,23 @@ public class MainWindowController implements Observer, Subject{
 	
 	public String playerPickTokenRemove(){
 		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
-		String have ="";
+		ArrayList<String> playerTokens = new ArrayList<String>();
 		for (int i = 0; i < 5; i++){
 			if(window.getPlayerArrayofTokens(playerNum, i)){
-				have += options[i]+" ";
+				playerTokens.add(options[i]);
 			}
 		}
-	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour to lose, you already have:"+have, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+		options = new String[playerTokens.size()];
+		for (int i = 0; i < playerTokens.size(); i++) {
+			options[i] = playerTokens.get(i);
+		}		
+		String option = options[0];
+	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour to lose:", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, option);
 		String output = options[response];
 	    log.info("the player picked " + output);
 	    return output;
 	}
+	
 	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
 	
 	//asks user if they would like to play ivanhoe to stop the action card returns true our false 
@@ -363,7 +369,7 @@ public class MainWindowController implements Observer, Subject{
 			break;
 			case "playedcard":playCard();
 			break;
-			case "viewdisplay":displayCards();
+			case Config.VIEWDISPLAY:displayCards();
 			break;
 			case "quit":notifyObservers(message);
 			break;

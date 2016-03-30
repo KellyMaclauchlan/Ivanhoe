@@ -75,9 +75,45 @@ public class GameEngine {
 				output = processPurpleWin(input); // output = same as a normal tournament win of any colour
 			// input = withdraw
 			} else if (input.contains(Config.WITHDRAW)) {
-				withdraw();				
-				output = processEndTurn();	// see above: only change is that the player has chosen to withdraw instead of being forced
+				output = processWithdraw(input);
+					// see above: only change is that the player has chosen to withdraw instead of being forced
 			}
+		return output;
+	}
+	
+	
+	public String processWithdraw(String input) {
+		String output = "input";
+		for (Card c: currentPlayer.getDisplay()) {
+			if (c.getType().equals(Config.MAIDEN)) {
+				output = Config.MAIDEN;
+				currentPlayer.removeFromDisplay(c);
+				return output;
+			}
+		}
+		if (!input.equals(Config.WITHDRAW)) {
+			String[] colourInput = input.split(" ");
+			if (colourInput[1].equals(currentPlayer.getName())) {
+				withdraw();	
+				output = processEndTurn();
+			}
+			else {
+				for (Player p: players) {
+					if (p.getName().equals(colourInput[1])) {
+						return output;
+					} 
+				}
+				String colour = colourInput[1];
+				currentPlayer.removeToken(colour);
+				for (String token: currentPlayer.getCurrentTokens()) {
+				}
+				output = Config.MAIDEN + " " + colour;
+			}
+		}
+		else {
+			withdraw();	
+			output = processEndTurn();
+		}
 		return output;
 	}
 	
@@ -438,7 +474,7 @@ public class GameEngine {
 				}
 				else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple)) {
 					currentPlayer = p;
-					//announceWinner();
+					announceWinner();
 					arrangePlayers();
 					resetPlayers();
 					status = " " + getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
