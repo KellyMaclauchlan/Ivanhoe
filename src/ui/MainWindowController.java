@@ -279,9 +279,10 @@ public class MainWindowController implements Observer, Subject{
 		int player=this.playerNames.indexOf(name);
 		String result="";
 		ArrayList<String> info= new ArrayList<String>();
-		
+
 		for(Card c : this.playedCards.get(player)){
 			info.add(c.getCardDescription());
+			
 		}
 		String[] possibilities= new String[info.size()];
 		info.toArray(possibilities);

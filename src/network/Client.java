@@ -693,15 +693,46 @@ public class Client implements Runnable, Observer {
 			// move sheild/ stun if needed
 			// move cards from one display to the other if need
 			//
+			String playerCardType = input[2];
 			String playerCardValue = input[3];
 			String opponentName = input[4];
+			String opponentCardType = input[5];
 			String opponentCardValue = input[6];
+			Card playerCard=this.getCardFromTypeValue(playerCardType, playerCardValue);
+			Card opponentCard=this.getCardFromTypeValue(opponentCardType, opponentCardValue);
+			int currentPlayer=window.getCurrPlayer();
+			int opponent= window.getPlayerByName(opponentName);
 			
-			window.setScore(window.getCurrPlayer(), window.getScore(window.getCurrPlayer()) 
+			window.setScore(currentPlayer, window.getScore(currentPlayer) 
 					+ Integer.parseInt(opponentCardValue) - Integer.parseInt(playerCardValue));
-			window.setScore(window.getPlayerByName(opponentName), window.getScore(window.getPlayerByName(opponentName)) 
+			window.setScore(opponent, window.getScore(opponent) 
 					+ Integer.parseInt(playerCardValue) - Integer.parseInt(opponentCardValue));
-
+			
+			if(playerCard.getType().equalsIgnoreCase(Config.SHIELD)){
+				window.setShield(currentPlayer, false);
+				window.setShield(opponent, true);
+			}
+			else if(playerCard.getType().equalsIgnoreCase(Config.STUNNED)){
+				window.setStun(currentPlayer, false);
+				window.setStun(opponent, true);
+			}
+			else{
+				window.removePlayedCard(currentPlayer,playerCard);
+				window.addPlayedCard(opponent, playerCard);
+			}
+			
+			if(opponentCard.getType().equalsIgnoreCase(Config.SHIELD)){
+				window.setShield(currentPlayer, true);
+				window.setShield(opponent, false);
+			}
+			else if(opponentCard.getType().equalsIgnoreCase(Config.STUNNED)){
+				window.setStun(currentPlayer, true);
+				window.setStun(opponent, false);
+			}
+			else{
+				window.removePlayedCard(opponent, opponentCard);
+				window.addPlayedCard(currentPlayer,opponentCard);
+			}
 
 		}
 	}
