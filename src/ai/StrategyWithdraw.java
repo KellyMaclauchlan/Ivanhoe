@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 import config.Config;
 import game.Card;
+import game.Player;
 
 public class StrategyWithdraw implements Strategy{
 	/* This strategy will withdraw no matter what */
@@ -24,6 +25,9 @@ public class StrategyWithdraw implements Strategy{
 	
 	public void setStarted(boolean b){started = b;}
 	public boolean getStarted(){return started;}
+	
+	public void setCurrentPlayer(boolean p){currentPlayer = p;}
+	public boolean getCurrentPlayer(){return currentPlayer;}
 	
 	public void setToPlay(Card c){toPlay = c;}
 	public Card getToPlay(){return toPlay;}

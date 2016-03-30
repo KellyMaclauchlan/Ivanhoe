@@ -60,6 +60,10 @@ public class StrategyPlayAll implements Strategy{
 	public void setToPlay(Card c){toPlay = c;}
 	public Card getToPlay(){return toPlay;}
 	
+	public void setCurrentPlayer(boolean p){currentPlayer = p;}
+	public boolean getCurrentPlayer(){return currentPlayer;}
+
+	
 	public StrategyPlayAll(String n){
 		log.info("New AI of type 'Play All' has been created");
 		this.name = n;

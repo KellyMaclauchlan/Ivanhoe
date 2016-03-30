@@ -2,6 +2,7 @@ package ai;
 
 import java.util.ArrayList;
 import game.Card;
+import game.Player;
 
 public interface Strategy{
 
@@ -14,6 +15,9 @@ public interface Strategy{
 	
 	public void setToPlay(Card c);
 	public Card getToPlay();
+	
+	public void setCurrentPlayer(boolean p);
+	public boolean getCurrentPlayer();
 	
 	public void tokenChoice(ArrayList<String> tokens);
 	

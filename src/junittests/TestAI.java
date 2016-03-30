@@ -49,8 +49,8 @@ public class TestAI {
     	game.removeAllFromDeck(withdrawCards);
     	
     	playAllCards = new ArrayList<Card>();
-    	playAllCards.add(new ColourCard("red", 5));
-    	playAllCards.add(new ColourCard("green", 1));
+    	playAllCards.add(new ColourCard("yellow", 2));
+    	playAllCards.add(new ColourCard("yellow", 3));
     	playAllCards.add(new ColourCard("yellow", 4));
     	playAllCards.add(new ColourCard("blue", 4));
     	playAllCards.add(new ColourCard("green", 1));
@@ -86,7 +86,7 @@ public class TestAI {
 	
 	@Test
 	public void testWithdrawStartTournament() {
-		System.out.println("AI will start the tournament");
+		System.out.println("Withdraw AI will start the tournament");
 		
 		String colour = withdraw.getStrategy().startTournament();
 		assertEquals(Config.RED, colour);
@@ -94,7 +94,7 @@ public class TestAI {
 	
 	@Test
 	public void testWithdrawPlayACard(){
-		System.out.println("AI will start the tournament and a play a card to continue");
+		System.out.println("Withdraw AI will start the tournament and a play a card to continue");
 		
 		String colour = withdraw.getStrategy().startTournament();
 		assertEquals(Config.RED, colour);
@@ -109,9 +109,87 @@ public class TestAI {
 	
 	@Test
 	public void testWithdrawWithdraws(){
-		System.out.println("a real player will set the tournament colour and play a turn, then the AI will withdraw");
+		System.out.println("a real player will set the tournament colour and play a turn, then the Withdraw AI will withdraw");
 		
 		String compare = withdraw.getStrategy().playACard();
+		assertEquals(Config.WITHDRAW, compare);
+	}
+	
+	@Test
+	public void testPlayAllStartTournament(){
+		System.out.println("Play All AI will start the tournament");
+		String colour = playAll.getStrategy().startTournament();
+		//tournament colour is yellow because the AI has the most yellow cards
+		assertEquals(Config.YELLOW, colour);
+	}
+	
+	@Test
+	public void testPlayAllPlayACard(){
+		System.out.println("Play All AI will start the tournament and play all of its avaliable cards");
+		int cardsPlayed = 0;
+		String played;
+		Card toPlay;
+		String message;
+		
+		String colour = playAll.getStrategy().startTournament();
+		//tournament colour is yellow because the AI has the most yellow cards
+		assertEquals(Config.YELLOW, colour);
+		
+		// play yellow 2
+		played = playAll.getStrategy().playACard();
+		cardsPlayed++;
+		toPlay = playAll.getStrategy().getToPlay();
+		message = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue();
+		assertEquals(played,message);
+		
+		// play yellow 3
+		played = playAll.getStrategy().playACard();
+		cardsPlayed++;
+		toPlay = playAll.getStrategy().getToPlay();
+		message = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue();
+		assertEquals(played,message);
+		
+		// play yellow 4
+		played = playAll.getStrategy().playACard();
+		cardsPlayed++;
+		toPlay = playAll.getStrategy().getToPlay();
+		message = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue();
+		assertEquals(played,message);
+		
+		// play squire 2
+		played = playAll.getStrategy().playACard();
+		cardsPlayed++;
+		toPlay = playAll.getStrategy().getToPlay();
+		message = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue();
+		assertEquals(played,message);
+		
+		//play squire 3
+		played = playAll.getStrategy().playACard();
+		cardsPlayed++;
+		toPlay = playAll.getStrategy().getToPlay();
+		message = Config.PLAY + " " + toPlay.getType() + " " + toPlay.getValue();
+		assertEquals(played,message);
+		
+		assertEquals(5, cardsPlayed);
+		
+		// the AI will then send 'end turn' when it has no more valid cards to play
+		played = playAll.getStrategy().playACard();
+		cardsPlayed++;
+		toPlay = playAll.getStrategy().getToPlay();
+		message = Config.END_TURN;
+		assertEquals(played,message);
+	}
+	
+	@Test
+	public void testPlayAllWithdraw(){
+		System.out.println("Play All AI will withdraw if it does not have enough cards to play");
+		
+		// we know from the playACard test that the AI no longer has any more yellow or supporters
+		// therefore will be forced to withdraw
+		String message = Config.COLOUR + " " + Config.YELLOW;
+		playAll.getStrategy().setCurrentPlayer(true);
+		String compare = playAll.getStrategy().processPlay(message);
+		
 		assertEquals(Config.WITHDRAW, compare);
 	}
 
