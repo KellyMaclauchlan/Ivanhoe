@@ -114,7 +114,6 @@ public class Server implements Runnable, Observer {
 		}
 	}
 	public void handle(int id, String msg) {
-		System.out.println("Message Receieved: " + msg);
 		log.info("Message Received: " + msg);
 		
 		/* Server receives message that client has quit */
@@ -162,8 +161,7 @@ public class Server implements Runnable, Observer {
 		Random rand = new Random();
 		int dd = 0;
 		for(int i = 0; i < a; i++){
-			//int r = rand.nextInt(2) + 1;
-			int r = 1;
+			int r = rand.nextInt(2) + 1;
 			if(r == 1 ){
 				ai = new AI(new StrategyPlayAll("AI" + dd));
 			}

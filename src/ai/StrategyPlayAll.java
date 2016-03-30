@@ -185,7 +185,7 @@ public class StrategyPlayAll implements Strategy{
 	}
 		
 	public String playACard() {
-		//Card toPlay; 
+		Card toPlay; 
 		
 		if(otherPlayer <= currentPoints){
 			
