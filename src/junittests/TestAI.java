@@ -186,7 +186,6 @@ public class TestAI {
 		
 		// we know from the playACard test that the AI no longer has any more yellow or supporters
 		// therefore will be forced to withdraw
-		
 		testPlayAllPlayACard();
 		
 		String message = Config.COLOUR + " " + Config.YELLOW;
