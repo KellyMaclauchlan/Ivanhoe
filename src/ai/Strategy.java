@@ -2,6 +2,7 @@ package ai;
 
 import java.util.ArrayList;
 import game.Card;
+import game.Player;
 
 public interface Strategy{
 
@@ -11,7 +12,14 @@ public interface Strategy{
 	public void getHand(ArrayList<Card> c);
 	public void setStarted(boolean b);
 	public boolean getStarted();
-	public void setName(String name);
+	
+	public void setToPlay(Card c);
+	public Card getToPlay();
+	
+	public void setCurrentPlayer(boolean p);
+	public boolean getCurrentPlayer();
+	
+	public void tokenChoice(ArrayList<String> tokens);
 	
 	public String processInput(String msg);
 	public void processPlayerName(String msg);

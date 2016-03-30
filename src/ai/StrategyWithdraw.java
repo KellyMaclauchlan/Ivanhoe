@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 import config.Config;
 import game.Card;
+import game.Player;
 
 public class StrategyWithdraw implements Strategy{
 	/* This strategy will withdraw no matter what */
@@ -20,13 +21,20 @@ public class StrategyWithdraw implements Strategy{
 	private boolean currentPlayer = false;
 	private String name;
 	private String tournamentColour; 
+	private Card toPlay;
 	
 	public void setStarted(boolean b){started = b;}
 	public boolean getStarted(){return started;}
-	public void setName(String n){this.name = n;}
 	
-	public StrategyWithdraw(){
+	public void setCurrentPlayer(boolean p){currentPlayer = p;}
+	public boolean getCurrentPlayer(){return currentPlayer;}
+	
+	public void setToPlay(Card c){toPlay = c;}
+	public Card getToPlay(){return toPlay;}
+	
+	public StrategyWithdraw(String n){
 		log.info("New AI of type 'Withdraw' has been created");
+		this.name = n;
 	}
 
 	/* If the AI is the first player of the game and has to choose a tournament colour, 
@@ -54,7 +62,13 @@ public class StrategyWithdraw implements Strategy{
 						hand.get(i).getType().equals(Config.MAIDEN)){
 					continue;
 				}else{
-					output = Config.PLAY + " " +  hand.get(i).getType() + " " + hand.get(i).getValue();
+					toPlay = hand.get(i);
+					String type = toPlay.getType();
+					int value = toPlay.getValue();
+					
+					//output = Config.PLAY + " " +  hand.get(i).getType() + " " + hand.get(i).getValue();
+					output = Config.PLAY + " " + type + " " + value;
+					hand.remove(i);
 					break;
 				}
 			}
@@ -86,12 +100,7 @@ public class StrategyWithdraw implements Strategy{
 		
 		/* When a player has ended their turn */
 		else if(msg.contains(Config.CONTINUE)||msg.contains(Config.WITHDRAW)){
-
-			if(msg.length() == 9){
-				output = Config.WITHDRAW;
-			}else {
-				output = processContinueWithdraw(msg);	
-			}
+			output = processContinueWithdraw(msg);
 		}
 		
 		/* When you are not the current player, you are notified when another player
@@ -145,6 +154,7 @@ public class StrategyWithdraw implements Strategy{
 		}else{
 			if(input[1].equalsIgnoreCase(this.name)){
 				this.currentPlayer = true; 
+				this.setStarted(true);
 				String colour = startTournament();
 				output = Config.COLOUR_PICKED + " " + colour;
 			}else{
@@ -169,11 +179,16 @@ public class StrategyWithdraw implements Strategy{
 				output = playACard();
 			}else{
 				this.currentPlayer = false;
-				output = "result";
+				output = Config.OUTPUT;
 			}
 		}else{
-			output = "result";
+			output = Config.OUTPUT;
 		}
+		
 		return output;
+	}
+
+	public void tokenChoice(ArrayList<String> tokens) {
+		// do nothing as this strategy loses everytime 
 	}
 }

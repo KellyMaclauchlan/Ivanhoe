@@ -21,13 +21,15 @@ public class AI extends Player implements Subject{
 	
 	private String output = "result";
 	
+	public Strategy getStrategy(){return strategy;}
+	
 	public AI(Strategy s){
 		this.strategy = s;
-		this.strategy.setName("AI");
+		//this.strategy.setName(this.getName());
 	}
 	
 	public void processInput(String msg){
-		System.out.println("AI received: " + msg);
+		//System.out.println("AI received: " + msg);
 		if(msg.contains(Config.HAND)){
 			strategy.processPlayerName(msg);
 		}
@@ -37,8 +39,13 @@ public class AI extends Player implements Subject{
 			
 		}else{
 			output = strategy.processInput(msg);
+			giveTokens2Strategy();
 			notifyObservers(output);
 		}
+	}
+	
+	public void giveTokens2Strategy(){
+		strategy.tokenChoice(currentTokens);
 	}
 
 	public void registerObserver(Observer observer) {
