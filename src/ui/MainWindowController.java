@@ -1,4 +1,4 @@
-package ui;
+	package ui;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -23,6 +23,7 @@ public class MainWindowController implements Observer, Subject{
 	private Color backgroundColours[] = {new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};
 	private Card lastCard;
 	private Logger log = Logger.getLogger("UI");
+	private int numberOfPlayers;
 	
 	private ArrayList<Card> playerCards;
 	private ArrayList<ArrayList<Card>> playedCards;
@@ -94,9 +95,6 @@ public class MainWindowController implements Observer, Subject{
 	//public void setTextDisplay(String msg){window.getTextDisplay().setText(msg);}
 	public void setTextDisplay(String msg){window.getDisplayText().append(msg);}
 	
-	
-	
-	
 	public void setScore(int player, int score) {
 		this.playerScores.set(player, score);	
 		window.getPlayerPoints(player).setText("" + score);
@@ -149,11 +147,13 @@ public class MainWindowController implements Observer, Subject{
             null,
             possibilities,
             "2");
+		numberOfPlayers = Integer.parseInt(s);
 		return s;
 	}
-	public String getNumberOfAIFromPlayer(int numPlayers) {
+	public String getNumberOfAIFromPlayer() {
+		int numPlayers = numberOfPlayers;
 		ArrayList<String> nums= new ArrayList<String>();
-		for(int i=0;i<numPlayers;i++){
+		for(int i=0;i<=numPlayers;i++){
 			nums.add(Integer.toString(i));			
 		}
 		String[] possibilities= new String[nums.size()];
@@ -192,9 +192,14 @@ public class MainWindowController implements Observer, Subject{
 				options[i] = colours.get(i);
 			}
 		}
-	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
-		log.info("Tournament colour has been set to " + options[response]);
-	    return options[response];
+		if (options == null) {
+			endturnClick();
+		} else {
+		    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+			log.info("Tournament colour has been set to " + options[response]);
+		    return options[response];
+		}
+		return "nil";
 	}
 	public String changeColour(){
 		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW};
@@ -203,8 +208,14 @@ public class MainWindowController implements Observer, Subject{
 	    return options[response];
 	}
 	public String pickAName(String action){
-
-		String[] options = this.playerNames.toArray(new String[0]);
+		String[] options = new String[playerNames.size() - 1];
+		int i = 0;
+		for (String name: playerNames) {
+			if (!name.equals(playerName)) {
+				options[i] = name;
+				i++;
+			}
+		}
 	    int response = JOptionPane.showOptionDialog(null, "Pick a Player to "+action, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
 		log.info("Player picked was " + options[response]);
 	    return options[response];
@@ -236,23 +247,29 @@ public class MainWindowController implements Observer, Subject{
 	
 	public String playerPickTokenRemove(){
 		String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
-		String have ="";
+		ArrayList<String> playerTokens = new ArrayList<String>();
 		for (int i = 0; i < 5; i++){
 			if(window.getPlayerArrayofTokens(playerNum, i)){
-				have += options[i]+" ";
+				playerTokens.add(options[i]);
 			}
 		}
-	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour to lose, you already have:"+have, "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
+		options = new String[playerTokens.size()];
+		for (int i = 0; i < playerTokens.size(); i++) {
+			options[i] = playerTokens.get(i);
+		}		
+		String option = options[0];
+	    int response = JOptionPane.showOptionDialog(null, "Pick a tournament colour to lose:", "New Round",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, option);
 		String output = options[response];
 	    log.info("the player picked " + output);
 	    return output;
 	}
+	
 	public void GameOverPopup(String winner){ JOptionPane.showMessageDialog(null, "Game over "+winner+" won!");}
 	
 	//asks user if they would like to play ivanhoe to stop the action card returns true our false 
 	public Boolean playIvanhoe(String name){
 			int result =JOptionPane.showConfirmDialog(null, 
-				   "Do you want to use Ivanho to stop the "+name+" card?",null, JOptionPane.YES_NO_OPTION);
+				   "Do you want to use Ivanhoe to stop the "+name+" card?",null, JOptionPane.YES_NO_OPTION);
 		if(result == JOptionPane.OK_OPTION)
 			return true;
 		return false;
@@ -291,28 +308,33 @@ public class MainWindowController implements Observer, Subject{
 			info.add(c.getCardDescription());
 		}
 		if(window.getShield(player).isVisible())
-			info.add("Shield");
+			info.add(Config.SHIELD + " " + 0);
 		if(window.getStun(player).isVisible())
-			info.add("Stun");
+			info.add(Config.STUNNED + " " + 0);
 		String[] possibilities= new String[info.size()];
 		info.toArray(possibilities);
+		String playerName = null;
+		if (name.equals(getPlayerName())) {
+			playerName = "your";
+		} else {
+			playerName = name + "'s";
+		}
+		
 		String s = (String)JOptionPane.showInputDialog(
                 null,
-                "pick a card",
+                "pick a card to swap from " + playerName + " display",
                 "Customized Dialog",
                 JOptionPane.PLAIN_MESSAGE,
                 null,
                 possibilities,
                 info.get(0));
+		
 		for(Card c : this.playedCards.get(player)){
 			if(s.equalsIgnoreCase(c.getCardDescription()))
 				return c.getType()+" "+c.getValue();
-		}
-		
+		} 
 		return s;
 	}
-	
-	
 	
 	/*end of popups*/
 	/* Observer Pattern */
@@ -347,7 +369,7 @@ public class MainWindowController implements Observer, Subject{
 			break;
 			case "playedcard":playCard();
 			break;
-			case "viewdisplay":displayCards();
+			case Config.VIEWDISPLAY:displayCards();
 			break;
 			case "quit":notifyObservers(message);
 			break;
@@ -511,7 +533,15 @@ public class MainWindowController implements Observer, Subject{
 		this.playedCards.get(player).clear();
 	}
 	public void removePlayedCard(int player, Card c){
-		this.playedCards.get(player).remove(c);
-		this.window.setPlayedCardImage(player, this.playedCards.get(player).get(this.playedCards.get(player).size()-1).getCardImage());
+		int i = 0;
+		for (i = 0; i < playedCards.get(player).size(); i++) {
+			if (playedCards.get(player).get(i).getType().equals(c.getType()) && (playedCards.get(player).get(i).getValue() == c.getValue())) {
+				break;
+			}
+		}
+		this.playedCards.get(player).remove(i);
+		if ((playedCards.get(player).size() > 0) && (i == (playedCards.get(player).size()))) {
+				this.window.setPlayedCardImage(player, this.playedCards.get(player).get(i-1).getCardImage());
+		} 
 	}
 }

@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import config.Config;
 import game.Card;
 
 public class CardDisplayPopUp extends JFrame{
@@ -50,7 +51,7 @@ public class CardDisplayPopUp extends JFrame{
 	public void placeCards(){
 		int max = Math.min(10, cards.size());
 		for(int i = 0; i < max; i++){
-			this.playerCards[i].setIcon(new ImageIcon(cards.get(i+moved).getCardImage()));
+			this.playerCards[i].setIcon(ResourceLoader.loadImage(cards.get(i+moved).getCardImage()));
 		}
 	}
 	
@@ -75,7 +76,7 @@ public class CardDisplayPopUp extends JFrame{
 			for(int i = 9; i > 0; i--){
 				this.playerCards[i].setIcon(this.playerCards[i-1].getIcon());
 			}
-			this.playerCards[0].setIcon(new ImageIcon(cards.get(moved).getCardImage()));
+			this.playerCards[0].setIcon(ResourceLoader.loadImage(cards.get(moved).getCardImage()));
 		}
  	}
 	
@@ -85,7 +86,7 @@ public class CardDisplayPopUp extends JFrame{
 			for(int i = 0; i < 9; i++){
 	 			this.playerCards[i].setIcon(this.playerCards[i+1].getIcon());
 	 		}
-	 		this.playerCards[9].setIcon(new ImageIcon(cards.get(moved+9).getCardImage()));
+	 		this.playerCards[9].setIcon(ResourceLoader.loadImage(cards.get(moved+9).getCardImage()));
 		}
  	}
 	
@@ -100,7 +101,7 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().setLayout(gridBagLayout);
 		
 		JButton leftArrow = new JButton("");
-		leftArrow.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/icons/left-arrow.png"));
+		leftArrow.setIcon(ResourceLoader.loadImage(Config.ARROW_LEFT));
 		GridBagConstraints gbc_leftArrow = new GridBagConstraints();
 		gbc_leftArrow.gridheight = 3;
 		gbc_leftArrow.gridwidth = 2;
@@ -110,7 +111,6 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().add(leftArrow, gbc_leftArrow);
 		
 		JButton card1 = new JButton("");
-		card1.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		GridBagConstraints gbc_card1 = new GridBagConstraints();
 		gbc_card1.gridheight = 3;
 		gbc_card1.gridwidth = 3;
@@ -120,7 +120,6 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().add(card1, gbc_card1);
 		
 		JButton card2 = new JButton("");
-		card2.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		GridBagConstraints gbc_card2 = new GridBagConstraints();
 		gbc_card2.gridheight = 3;
 		gbc_card2.gridwidth = 3;
@@ -130,7 +129,6 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().add(card2, gbc_card2);
 		
 		JButton card3 = new JButton("");
-		card3.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		GridBagConstraints gbc_card3 = new GridBagConstraints();
 		gbc_card3.gridheight = 3;
 		gbc_card3.gridwidth = 3;
@@ -140,7 +138,6 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().add(card3, gbc_card3);
 		
 		JButton card4 = new JButton("");
-		card4.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		GridBagConstraints gbc_card4 = new GridBagConstraints();
 		gbc_card4.gridheight = 3;
 		gbc_card4.gridwidth = 3;
@@ -150,7 +147,6 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().add(card4, gbc_card4);
 		
 		JButton card5 = new JButton("");
-		card5.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		GridBagConstraints gbc_card5 = new GridBagConstraints();
 		gbc_card5.gridheight = 3;
 		gbc_card5.gridwidth = 3;
@@ -160,7 +156,6 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().add(card5, gbc_card5);
 		
 		JButton card6 = new JButton("");
-		card6.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		GridBagConstraints gbc_card6 = new GridBagConstraints();
 		gbc_card6.gridheight = 3;
 		gbc_card6.gridwidth = 3;
@@ -170,7 +165,6 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().add(card6, gbc_card6);
 		
 		JButton card7 = new JButton("");
-		card7.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		GridBagConstraints gbc_card7 = new GridBagConstraints();
 		gbc_card7.gridheight = 3;
 		gbc_card7.gridwidth = 2;
@@ -180,7 +174,6 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().add(card7, gbc_card7);
 		
 		JButton card8 = new JButton("");
-		card8.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		GridBagConstraints gbc_card8 = new GridBagConstraints();
 		gbc_card8.gridwidth = 3;
 		gbc_card8.gridheight = 3;
@@ -190,7 +183,6 @@ public class CardDisplayPopUp extends JFrame{
 		getContentPane().add(card8, gbc_card8);
 		
 		JButton card9 = new JButton("");
-		card9.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		GridBagConstraints gbc_card9 = new GridBagConstraints();
 		gbc_card9.gridheight = 3;
 		gbc_card9.gridwidth = 3;
@@ -207,10 +199,9 @@ public class CardDisplayPopUp extends JFrame{
 		gbc_card10.gridx = 30;
 		gbc_card10.gridy = 1;
 		getContentPane().add(card10, gbc_card10);
-		card10.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/cards_small/simpleCards18.jpg"));
 		
 		JButton rightArrow = new JButton("");
-		rightArrow.setIcon(new ImageIcon("/Users/kellymaclauchlan/class/winter2016/comp3004/Ivanho2/resources/icons/right-arrow.png"));
+		rightArrow.setIcon(ResourceLoader.loadImage(Config.ARROW_RIGHT));
 		GridBagConstraints gbc_rightArrow = new GridBagConstraints();
 		gbc_rightArrow.gridheight = 3;
 		gbc_rightArrow.gridwidth = 2;

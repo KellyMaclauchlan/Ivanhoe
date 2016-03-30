@@ -1196,6 +1196,10 @@ public class MainWindow extends JFrame implements Subject {
 		this.playedCards[2] = p3d;
 		this.playedCards[3] = p4d;
 		this.playedCards[4] = p5d;
+		for(int i = 0; i < 5; i++){
+				this.playerCards[i].setEnabled(false);
+			}
+		
 		
 		this.playerPoints = new JLabel[5];
 		this.playerPoints[0] = points1;

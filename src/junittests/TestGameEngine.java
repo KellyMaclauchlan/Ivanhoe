@@ -196,13 +196,13 @@ public class TestGameEngine {
 		
 		player1.chooseTournamentColour(Config.RED);
 		game.setCurrentPlayer(player1);
+		game.startTurn();
 
 		player2.setWithdrawn(true);
 		player3.setWithdrawn(true);
 		player4.setWithdrawn(true);
 		player5.setWithdrawn(true);
-		
-		game.startTurn();
+		game.endTurn();
 
 		assertTrue(player1.isWinner());
 		// Error is right here... saying everyone is a winner
@@ -257,5 +257,40 @@ public class TestGameEngine {
 		game.setCurrentPlayer(player5);
 		game.startTurn();
 		assertEquals(Config.PURPLE, game.getTournamentColour());
+	}
+	
+	//@Test
+	public void testMaiden(){
+		System.out.println("@Test: Restriction to 1 Maiden per player per tournament");
+	}
+	
+	//@Test
+	public void testWonPurpleTournament(){
+		System.out.println("@Test: won a purple tournament choose token colour");
+	}
+	
+	//@Test
+	public void testLoseOnMaiden(){
+		System.out.println("@Test: losing with a maiden and losing a token");
+	}
+	
+	//@Test
+	public void testUnshieldPlayer(){
+		System.out.println("@Test: playing an action card on an unshielded player");
+	}
+	
+	//@Test
+	public void testShieldPlayer(){
+		System.out.println("@Test: playing an action card on a shield player");
+	}
+	
+	//@Test
+	public void testIvanhoe(){
+		System.out.println("@Test: undoing playing an action card with Ivanhoe");
+	}
+	
+	//@Test
+	public void testDiscardActionCard(){
+		System.out.println("@Test: checking a used action card is indeed thrown away");
 	}
 }
