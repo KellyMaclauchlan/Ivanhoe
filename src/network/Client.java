@@ -189,13 +189,11 @@ public class Client implements Runnable, Observer {
 
 	public void update(String message) {
 		String send = Config.FROMUPDATE;
-		
 		if(message.contains(Config.PLAYEDCARD)){
 			playedCards = window.getLastCard().getCardType() + " " +  window.getLastCard().getValue(); 
 			send = this.playACard();
 		}
 		else if (message.contains(Config.WITHDRAW)){
-			
 			send = " " + Config.WITHDRAW;
 		}
 		else if (message.contains(Config.QUIT)){
@@ -356,6 +354,20 @@ public class Client implements Runnable, Observer {
 			window.addToken(player, window.getTournamentColour());
 			window.GameOverPopup(winner);
 		}
+		
+		else if (msg.contains(Config.MAIDEN) && !msg.contains(Config.PLAY) && !msg.contains(Config.HAND) && !msg.contains("_")) {
+			String tokenToRemove = null;
+			String[] input = msg.split(" ");
+			if (msg.equals(Config.MAIDEN)) {			
+				tokenToRemove = window.playerPickTokenRemove();
+				output = Config.WITHDRAW + " " + tokenToRemove;
+			} else {
+				tokenToRemove = input[1];
+				window.removeToken(window.getCurrPlayer(), tokenToRemove);
+				output = Config.WITHDRAW + " " + currPlayer;
+				
+			}
+		}		
 		return output; 
 	}
 	

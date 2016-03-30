@@ -123,7 +123,6 @@ public class ActionCard extends Card {
 	public void  playCharge(GameEngine game) {
 		// discard the lowest value card from every opponent's display
 		for (Player p: game.getActionablePlayers()) {
-			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
 				Card cardToRemove = p.getDisplay().get(0);
 				for (Card c: p.getDisplay()) {
 					if (c.getValue() < cardToRemove.getValue()) {
@@ -133,14 +132,13 @@ public class ActionCard extends Card {
 				p.removeFromDisplay(cardToRemove);
 				game.discard(cardToRemove);
 				p.setTotalCardValue();
-			}
+			
 		}
 	}
 	
 	public void  playCounterCharge(GameEngine game) {
 		// discard the highest value card from every opponent's display
 		for (Player p: game.getActionablePlayers()) {
-			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
 				Card cardToRemove = p.getDisplay().get(0);
 				for (Card c: p.getDisplay()) {
 					if (c.getValue() > cardToRemove.getValue()) {
@@ -150,7 +148,6 @@ public class ActionCard extends Card {
 				p.removeFromDisplay(cardToRemove);
 				game.discard(cardToRemove);
 				p.setTotalCardValue();
-			}
 		}
 	}
 	

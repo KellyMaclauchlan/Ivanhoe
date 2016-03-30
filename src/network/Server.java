@@ -275,6 +275,8 @@ public class Server implements Runnable, Observer {
 		} 
 		else if(send.contains(Config.IS_STUNNED)) {
 			send1Client(id, send);
+		} else if (send.equals(Config.MAIDEN)) {
+			send1Client(id, send);
 		}
 		
 		else{

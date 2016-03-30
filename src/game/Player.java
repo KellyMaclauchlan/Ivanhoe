@@ -94,6 +94,14 @@ public class Player {
 		}
 	}
 	
+	public void removeToken(String colour) {
+		for (int i = 0; i < currentTokens.size(); i++) {
+			if (currentTokens.get(i).equals(colour)) {
+				currentTokens.remove(i);
+			}
+		}
+	}
+	
 	public void addCard(Card card) {
 		//Add a card to the current player's hand
 		cards.add(card);
