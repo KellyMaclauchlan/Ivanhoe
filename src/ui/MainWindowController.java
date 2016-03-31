@@ -279,9 +279,11 @@ public class MainWindowController implements Observer, Subject{
 		int player=this.playerNames.indexOf(name);
 		String result="";
 		ArrayList<String> info= new ArrayList<String>();
-		
+
+		int i=0;
 		for(Card c : this.playedCards.get(player)){
-			info.add(c.getCardDescription());
+			i++;
+			info.add(i+". "+c.getCardDescription());
 		}
 		String[] possibilities= new String[info.size()];
 		info.toArray(possibilities);
@@ -294,8 +296,9 @@ public class MainWindowController implements Observer, Subject{
                 possibilities,
                 info.get(0));
 		for(Card c : this.playedCards.get(player)){
-			if(s.equalsIgnoreCase(c.getCardDescription()))
+			if(s.contains(c.getCardDescription())){
 				return c.getType()+" "+c.getValue();
+			}
 		}
 		return result;
 	}
@@ -303,14 +306,19 @@ public class MainWindowController implements Observer, Subject{
 		int player = this.playerNames.indexOf(name);
 		String result = "";
 		ArrayList<String> info= new ArrayList<String>();
-		
+		int i=0;
 		for(Card c : this.playedCards.get(player)){
-			info.add(c.getCardDescription());
+			i++;
+			info.add(i+". "+c.getCardDescription());
 		}
-		if(window.getShield(player).isVisible())
-			info.add(Config.SHIELD + " " + 0);
-		if(window.getStun(player).isVisible())
-			info.add(Config.STUNNED + " " + 0);
+		if(window.getShield(player).isVisible()){
+			i++;
+			info.add(i+". "+Config.SHIELD);
+		}
+		if(window.getStun(player).isVisible()){
+			i++;
+			info.add(i+". "+Config.STUNNED);
+		}
 		String[] possibilities= new String[info.size()];
 		info.toArray(possibilities);
 		String playerName = null;
@@ -330,9 +338,18 @@ public class MainWindowController implements Observer, Subject{
                 info.get(0));
 		
 		for(Card c : this.playedCards.get(player)){
-			if(s.equalsIgnoreCase(c.getCardDescription()))
+			if(s.contains(c.getCardDescription())){
 				return c.getType()+" "+c.getValue();
+			}
+			//if(s.equalsIgnoreCase(c.getCardDescription()))
+				
 		} 
+		if(s.contains(Config.SHIELD)){
+			return Config.SHIELD+" 0";
+		}
+		if(s.contains(Config.STUNNED)){
+			return Config.STUNNED+" 0";
+		}
 		return s;
 	}
 	

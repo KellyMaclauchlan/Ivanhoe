@@ -15,7 +15,7 @@ public class GameEngine {
 	private ArrayList<Card> discardPile;
 	private Player currentPlayer;
 	private int turnNumber = 0;
-	private boolean choosePurple = false;
+	private boolean choosePurple = false; 
 		
 	/* Testing variables */
 	private boolean startTournament = false; 

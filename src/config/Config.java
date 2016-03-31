@@ -217,7 +217,7 @@ public class Config {
 			"<html><p>Charge: Identify the lowest value card throughout all displays.<br> All players must dis- card all cards of this value from their displays.</p></html>",
 			"<html><p>Counter-Charge: Identify the highest value card throughout all displays. All play- ers must discard all cards of this value from their displays.</p></html",
 			"Disgrace: Each player must remove all his supporters from his display.", 
-			"Adapt: Each player may only keep one card of each value in his display. <br>All other cards with the same value are discarded. <br>Each player decides which of the matching-value cards he will discard.</p></html>",
-			"Outwit: Place one of your faceup cards in front of an opponent,<br>and take one faceup card from this opponent and place it face up in front of yourself. <br>This may include the SHIELD and STUNNED cards.</p></html>"));
+			"<html><p>Adapt: Each player may only keep one card of each value in his display. <br>All other cards with the same value are discarded. <br>Each player decides which of the matching-value cards he will discard.</p></html>",
+			"<html><p>Outwit: Place one of your faceup cards in front of an opponent,<br>and take one faceup card from this opponent and place it face up in front of yourself. <br>This may include the SHIELD and STUNNED cards.</p></html>"));
 
 }
