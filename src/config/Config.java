@@ -33,6 +33,8 @@ public class Config {
 	public static final String FIRSTPLAYER = "firstplayer";
 	public static final String WAITING = "waiting";
 	public static final String IS_STUNNED = "stn";
+	public static final String PLAY_IVANHOE = "plyivnhoe";
+	public static final String IVANHOE_DECLINED = "ivnhoedeclined";
 	
 	/* Starting a tournament */
 	public static final String START_TOURNAMENT = "begin tournament";
@@ -206,7 +208,7 @@ public class Config {
 			"Drop Weapon: The tournament color changes from red, blue or yellow to green",
 			"<html><p>Shield: A player plays this card face up in front of himself, but separate from his display.<br>As long as a player has the SHIELD card in front of him, all action cards have no effect on his display.</p></html>",
 			"<html><p>Stunned: Place this card separately face up in front of any one opponent.<br>As long as a player has the STUNNED card in front of him, he may add only one new card to his display each turn.</p></html>",
-			"<html><p>Ivanhoe: This is the only card a player can play outside of his turn.<br>A player can play it at any time as long as he is still in the tournament.<br>Use this card to cancel all effects of any one action card just played.</p>/html>",			
+			"<html><p>Ivanhoe: This is the only card a player can play outside of his turn.<br>A player can play it at any time as long as he is still in the tournament.<br>Use this card to cancel all effects of any one action card just played.</p></html>",			
 			"Break lance: Force one opponent to discard all purple cards from his display.",
 			"Riposte: Take the last card played on any one opponent's display and add it to your own display.", 
 			"Dodge: Discard any one card from any one opponent's display.", 			

@@ -241,8 +241,24 @@ public class ActionCard extends Card {
 		player.addToFront(card);
 	}
 	
-	public void playIvanhoe(Card card) {
-		//TO DO: cancel effects of any one card just played
+	public String promptIvanhoe(GameEngine game, Card card) {
+		String output = " ";
+		if (!card.getType().equals(Config.IVANHOE)) {
+			for (Player p: game.getPlayers()) {
+				for (Card c: p.getCards()) {
+					if (c.getType().equals(Config.IVANHOE)) {
+						output = " " + Config.PLAY_IVANHOE + " " + p.getName() + " " + card.getType();
+						break;
+					}
+				}
+			}
+		}
+		
+		return output;
+	}
+	
+	public void playIvanhoe(GameEngine game, Card card) {
+		game.getCurrentPlayer().removeCard(card);
 	}
 	
 	

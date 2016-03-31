@@ -34,6 +34,28 @@ public class Player {
 		front = new ArrayList<>();
 	}
 	
+	public Card getCardFromHand(String type, int value) {
+		Card card = null;
+		for (int i = 0; i < cards.size(); i++) {
+			if (type.equals(cards.get(i).getType()) && value == cards.get(i).getValue()) {
+				card = cards.get(i);
+				break;
+			}
+		}
+		return card;
+	}
+	
+	public Card getCardFromDisplay(String type, int value) {
+		Card card = null;
+		for (int i = 0; i < display.size(); i++) {
+			if (type.equals(display.get(i).getType()) && value == display.get(i).getValue()) {
+				card = display.get(i);
+				break;
+			}
+		}
+		return card;
+	}
+	
 	public void chooseTournamentColour(String colour) {
 		this.tournamentColour = colour;
 	}

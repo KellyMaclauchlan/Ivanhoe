@@ -270,8 +270,14 @@ public class MainWindowController implements Observer, Subject{
 	public Boolean playIvanhoe(String name){
 			int result =JOptionPane.showConfirmDialog(null, 
 				   "Do you want to use Ivanhoe to stop the "+name+" card?",null, JOptionPane.YES_NO_OPTION);
-		if(result == JOptionPane.OK_OPTION)
+		if(result == JOptionPane.OK_OPTION) {
+			for (int i = 0; i < playerCards.size(); i++) {
+				if (playerCards.get(i).getType().equals(Config.IVANHOE)) {
+					removeCard(i);
+				}
+			}
 			return true;
+		}
 		return false;
 	}
 	

@@ -41,6 +41,7 @@ public class Client implements Runnable, Observer {
 	private String[] options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
 	private boolean purpleChosen = false;
 	private ArrayList<String> actioncards = new ArrayList<String>();
+	private String thisPlayerName = null;
 
 	public Client(){
 		window = new MainWindowController();
@@ -229,8 +230,23 @@ public class Client implements Runnable, Observer {
 	 * what buttons/popups/commands the client and GUI must send back */
 	public String processInput(String msg){
 		if(msg.equals(Config.QUIT)) {  
-			output = Config.QUIT;
+			output = Config.QUIT + " " + thisPlayerName;
 		} 
+		else if (msg.contains(Config.PLAY_IVANHOE)) {
+			String[] input = msg.split(" ");
+			//input: waiting plyivnhoe <name> <card>
+			String cardName = input[3];
+			String playerName = input[2];
+			
+			if (playerName.equals(thisPlayerName)) {
+				boolean played = window.playIvanhoe(cardName);
+				if (played) {
+					return output = Config.PLAY + " " + Config.IVANHOE + " " + cardName;
+				} else if (!played) {
+					return output = Config.PLAY + " " + processActionCard() +  Config.IVANHOE_DECLINED;
+				}
+			}
+		}
 		else if (msg.contains(Config.IS_STUNNED)) {
 			processWaiting(msg);
 			output = Config.END_TURN;
@@ -326,7 +342,6 @@ public class Client implements Runnable, Observer {
 		 * 	Next Player's turn: currentPlayer has switched to the next player 
 		 * */
 		else if(msg.contains(Config.CONTINUE)||msg.contains(Config.WITHDRAW)){
-
 			if(msg.length() == 9){
 				output = Config.WITHDRAW;
 			}else {
@@ -355,7 +370,7 @@ public class Client implements Runnable, Observer {
 			window.GameOverPopup(winner);
 		}
 		
-		else if (msg.contains(Config.MAIDEN) && !msg.contains(Config.PLAY) && !msg.contains(Config.HAND) && !msg.contains("_")) {
+		else if (msg.contains(Config.MAIDEN) && !msg.contains(Config.PLAY) && !msg.contains(Config.HAND) && !msg.contains("_") && !msg.contains(Config.WAITING)) {
 			String tokenToRemove = null;
 			String[] input = msg.split(" ");
 			if (msg.equals(Config.MAIDEN)) {			
@@ -373,6 +388,7 @@ public class Client implements Runnable, Observer {
 	
 	public String processPromptJoin(String msg){
 		String name = window.getNameFromPlayer();
+		thisPlayerName = name;
 		window.setVarPlayerName(name);
 		return Config.JOIN + " " + name;	
 	}
