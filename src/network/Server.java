@@ -115,6 +115,7 @@ public class Server implements Runnable, Observer {
 	}
 	public void handle(int id, String msg) {
 		log.info("Message Received: " + msg);
+		System.out.println("Message Received: " + msg);
 		
 		/* Server receives message that client has quit */
 		if (msg.equals(Config.QUIT) || msg.equals(null)) {
@@ -122,7 +123,9 @@ public class Server implements Runnable, Observer {
 			if (clients.containsKey(id)) {
 				remove(id);
 			}
-			msg = Config.PLAYER_LEFT;
+			String[] quitmsg = msg.split(" ");
+			String name = quitmsg[1];
+			msg = Config.PLAYER_LEFT + " " + name;
 			send = game.processInput(msg);
 			processInput(id, send);
 		}

@@ -77,10 +77,23 @@ public class GameEngine {
 			} else if (input.contains(Config.WITHDRAW)) {
 				output = processWithdraw(input);
 					// see above: only change is that the player has chosen to withdraw instead of being forced
+			} else if (input.contains(Config.PLAYER_LEFT)) {
+				processQuit(input);
 			}
+			
 		return output;
 	}
 	
+	
+	public void processQuit(String input) {
+		String[] quitInput = input.split(" ");
+		String playerName = quitInput[1];
+		for (int i = 0; i < players.size(); i++) {
+			if (playerName.equals(players.get(i))) {
+				players.remove(i);
+			}
+		}
+	}
 	
 	public String processWithdraw(String input) {
 		String output = "input";
@@ -195,17 +208,31 @@ public class GameEngine {
 		String[] play = input.split(" ");
 		String type = play[1];
 		String value = "0";
-		if (play.length > 2) {
+		if ((play.length > 2) && (!input.contains(Config.IVANHOE_DECLINED))) {
 			value = play[2];
 		}
 		Card card = null;
 		boolean hasMaiden = false;
-		for (Card c: currentPlayer.getCards()) {
-			if (type.equals(c.getType()) && value.equals(Integer.toString(c.getValue()))
-					|| (type.equals(c.getType()) && c.getCardType().equals(Config.ACTION))) {
-				card = c;
+		if (type.equals(Config.IVANHOE)) {
+			Player player = null;
+			for (Player p: players) {
+				for (Card c: p.getCards()) {
+					if (c.getType().equals(type)) {
+						card = c;
+						player = p;
+					}
+				}
+			}
+			player.removeCard(card);
+		} else {
+			for (Card c: currentPlayer.getCards()) {
+				if (type.equals(c.getType()) && value.equals(Integer.toString(c.getValue()))
+						|| (type.equals(c.getType()) && c.getCardType().equals(Config.ACTION))) {
+					card = c;
+				}
 			}
 		}
+		if (card != null) {
 		if (card.getType().equals(tournamentColour) 
 				|| card.getCardType().equals(Config.SUPPORT)) {
 			if (tournamentColour.equals(Config.GREEN) && card.getValue() > 1) {
@@ -229,184 +256,207 @@ public class GameEngine {
 			}
 		} else if (card.getCardType().equals(Config.ACTION)) {
 			output += processActionCard((ActionCard) card, input);
-			discard(card);
 		} else {
 			output += " " + Config.UNPLAYABLE;
 		}
-		
+		}
 		output.replace("  ", " ");
 		output.trim();
 		return output; 
 	}
 	
+
+	
+	
 	public String processActionCard(ActionCard card, String input) {
-		String output = " ";
+		String output;
+		if (input.contains(Config.IVANHOE_DECLINED)) {
+			output = " ";
+		} else {
+			output = card.promptIvanhoe(this, card);
+			//output = plyivnhoe <playerwithivanhoe> <actioncard cancelled>
+		}
 		String[] cardString = input.split(" ");
-		if (card.getType().equals(Config.UNHORSE)) {
-			//input = play unhorse <colour>
-			String colour = cardString[2];
-			if (tournamentColour.equals(Config.PURPLE)) { 
-				card.playUnhorse(this, colour);		
-				output += Config.UNHORSE + " " + colour; //output = waiting <card played> <colour chosen>
-			} else {
-				output += Config.UNPLAYABLE;
-			}
-		} else if (card.getType().equals(Config.CHANGEWEAPON)) {
-				//input = play changeweapon <colour>
+		
+		if (output.equals(" ")) {
+			if (card.getType().equals(Config.UNHORSE)) {
+				//input = play unhorse <colour>
 				String colour = cardString[2];
-				if (tournamentColour.equals(Config.RED) 
-						|| tournamentColour.equals(Config.BLUE) 
-						|| tournamentColour.equals(Config.YELLOW)) {
-					card.playChangeWeapon(this, colour);
-				}
-				output += Config.CHANGEWEAPON + " " + colour; //output = waiting <card played> <colour chosen>
-			} else if (card.getType().equals(Config.DROPWEAPON)) {
-				//input = play dropweapon
-				if (tournamentColour.equals(Config.RED) 
-						|| tournamentColour.equals(Config.BLUE) 
-						|| tournamentColour.equals(Config.YELLOW)) {
-					card.playDropWeapon(this);
-				}
-				output += Config.DROPWEAPON + " " + Config.GREEN; //output = waiting <card played> green
-			} else if (card.getType().equals(Config.BREAKLANCE)) {
-				//input = play breaklance <player name> 
-				String playerName = cardString[2];
-				Player player = getPlayerByName(playerName);
-				if ((player.getDisplay().size() < 2) || player.hasShield()) {
-					output += Config.UNPLAYABLE;
+				if (tournamentColour.equals(Config.PURPLE)) { 
+					card.playUnhorse(this, colour);		
+					output += Config.UNHORSE + " " + colour; //output = waiting <card played> <colour chosen>
 				} else {
-					card.playBreakLance(player);
-					output += Config.BREAKLANCE + " ";
-					output += Config.DISPLAY + " ";
-					output += Config.PLAYER_NAME + " " + playerName + " " + player.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
+					output += Config.UNPLAYABLE;
+				}
+			} else if (card.getType().equals(Config.CHANGEWEAPON)) {
+					//input = play changeweapon <colour>
+					String colour = cardString[2];
+					if (tournamentColour.equals(Config.RED) 
+							|| tournamentColour.equals(Config.BLUE) 
+							|| tournamentColour.equals(Config.YELLOW)) {
+						card.playChangeWeapon(this, colour);
+					}
+					output += Config.CHANGEWEAPON + " " + colour; //output = waiting <card played> <colour chosen>
+				} else if (card.getType().equals(Config.DROPWEAPON)) {
+					//input = play dropweapon
+					if (tournamentColour.equals(Config.RED) 
+							|| tournamentColour.equals(Config.BLUE) 
+							|| tournamentColour.equals(Config.YELLOW)) {
+						card.playDropWeapon(this);
+					}
+					output += Config.DROPWEAPON + " " + Config.GREEN; //output = waiting <card played> green
+				} else if (card.getType().equals(Config.BREAKLANCE)) {
+					//input = play breaklance <player name> 
+					String playerName = cardString[2];
+					Player player = getPlayerByName(playerName);
+					if ((player.getDisplay().size() < 2) || player.hasShield()) {
+						output += Config.UNPLAYABLE;
+					} else {
+						card.playBreakLance(player);
+						output += Config.BREAKLANCE + " ";
+						output += Config.DISPLAY + " ";
+						output += Config.PLAYER_NAME + " " + playerName + " " + player.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
+		
+							for (Card c: player.getDisplay()) {
+								output += c.getType() + " " + c.getValue(); 
+							}
+					}
 	
-						for (Card c: player.getDisplay()) {
-							output += c.getType() + " " + c.getValue(); 
+					//output = waiting <card played> display name <player> <player score> cards <display card> <display card> ...
+				} else if (card.getType().equals(Config.RIPOSTE)) {
+					//input = play riposte <player name>
+					String playerName = cardString[2];
+					Player player = getPlayerByName(playerName);
+					if ((player.getDisplay().size() < 2) || player.hasShield()){
+						output += Config.UNPLAYABLE;
+					} else {
+						Card cardToSteal = card.playRiposte(player);
+						if (cardToSteal != null) {
+							currentPlayer.addToDisplay(cardToSteal);
+							currentPlayer.setTotalCardValue();
 						}
-				}
-
-				//output = waiting <card played> display name <player> <player score> cards <display card> <display card> ...
-			} else if (card.getType().equals(Config.RIPOSTE)) {
-				//input = play riposte <player name>
-				String playerName = cardString[2];
-				Player player = getPlayerByName(playerName);
-				if ((player.getDisplay().size() < 2) || player.hasShield()){
-					output += Config.UNPLAYABLE;
-				} else {
-					Card cardToSteal = card.playRiposte(player);
-					if (cardToSteal != null) {
-						currentPlayer.addToDisplay(cardToSteal);
-						currentPlayer.setTotalCardValue();
+		
+						
+							output += Config.RIPOSTE + " " + playerName + " " + player.getTotalCardValue() + " "
+							+ cardToSteal.getType() + " " + cardToSteal.getValue()  + " " 
+									+ currentPlayer.getName()  + " " + currentPlayer.getTotalCardValue();
 					}
+					//output = waiting <card played> <player stolen from> <player total> <card stolen> <player added to> <player value>
+				} else if (card.getType().equals(Config.DODGE)) {
+					// input = play dodge <player name> <card type> <card value>
 	
+					String playerName = cardString[2];
+					String type = cardString[3];
+					String value = cardString[4];
+					Player player = getPlayerByName(playerName);
+					if ((player.getDisplay().size() < 2) || player.hasShield()){
+						output += Config.UNPLAYABLE;
+					} else {
+					for (Card c: player.getDisplay()) {
+						if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
+							card.playDodge(player, c);
+							player.setTotalCardValue();
+							break;
+						}
+					}
+						output += Config.DODGE + " " + playerName + " " + player.getTotalCardValue() + " " + type + " " + value;
+					}
+					//output = waiting <card played> <player discarded from> <score> <card discarded> 
+				} else if (card.getType().equals(Config.RETREAT)) {
+					// input = play retreat <card type> <card value>
+					String type = cardString[2];
+					String value = cardString[3];
+					Card cardToRetreat = null;
+					for (Card c: currentPlayer.getDisplay()) {
+						if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
+							cardToRetreat = c;
+							break;
+						}
+					}
+					if (currentPlayer.getDisplay().size() < 2) {
+						output += Config.UNPLAYABLE;
+					} else {
+						card.playRetreat(this, cardToRetreat);
+						output += Config.RETREAT + " " + currentPlayer.getName() + " " + currentPlayer.getTotalCardValue() + " " + type + " " + value;
+					}
+					//output = waiting <card played> <currentPlayerName> <score> <card removed from display and put back into hand>
+				} else if (card.getType().equals(Config.KNOCKDOWN)) {
+					// input = play knockdown <player name>
 					
-						output += Config.RIPOSTE + " " + playerName + " " + player.getTotalCardValue() + " "
-						+ cardToSteal.getType() + " " + cardToSteal.getValue()  + " " 
-								+ currentPlayer.getName()  + " " + currentPlayer.getTotalCardValue();
-				}
-				//output = waiting <card played> <player stolen from> <player total> <card stolen> <player added to> <player value>
-			} else if (card.getType().equals(Config.DODGE)) {
-				// input = play dodge <player name> <card type> <card value>
-
-				String playerName = cardString[2];
-				String type = cardString[3];
-				String value = cardString[4];
-				Player player = getPlayerByName(playerName);
-				if ((player.getDisplay().size() < 2) || player.hasShield()){
-					output += Config.UNPLAYABLE;
-				} else {
-				for (Card c: player.getDisplay()) {
-					if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
-						card.playDodge(player, c);
-						player.setTotalCardValue();
-						break;
+	
+					String playerName = cardString[2];
+					Player player = getPlayerByName(playerName);
+					if (player.hasShield()) {
+						output += Config.UNPLAYABLE;
 					}
-				}
-					output += Config.DODGE + " " + playerName + " " + player.getTotalCardValue() + " " + type + " " + value;
-				}
-				//output = waiting <card played> <player discarded from> <score> <card discarded> 
-			} else if (card.getType().equals(Config.RETREAT)) {
-				// input = play retreat <card type> <card value>
-				String type = cardString[2];
-				String value = cardString[3];
-				Card cardToRetreat = null;
-				for (Card c: currentPlayer.getDisplay()) {
-					if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
-						cardToRetreat = c;
-						break;
+					else {
+					Card cardToSteal = card.playKnockDown(this, player);
+					output += Config.KNOCKDOWN + " " + playerName + " " + cardToSteal.getType() + " " + cardToSteal.getValue();
 					}
+					//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
+				} else if (card.getType().equals(Config.OUTMANEUVER)) {
+					// input = play outmaneuver
+					
+					card.playOutmaneuver(this);
+					output += Config.OUTMANEUVER + " " + updateDisplays();
+					//output = waiting <card played> <current player name> (remove the last card from all other displays that don't have a shield card)
+				} else if (card.getType().equals(Config.CHARGE)) {
+					// input = play charge
+					card.playCharge(this);
+					output += Config.CHARGE + " " + updateDisplays();
+					//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
+				} else if (card.getType().equals(Config.COUNTERCHARGE)) {
+					// input = play countercharge
+					card.playCounterCharge(this);
+					output += Config.COUNTERCHARGE + " " + updateDisplays();
+					//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
+				} else if (card.getType().equals(Config.DISGRACE)) {
+					//input = play disgrace
+					card.playDisgrace(this);
+					output += Config.DISGRACE + " "  + updateDisplays();
+					//output = waiting <card played> <current player name> (can you remove all support cards from everyone but the current player here?) 
+				} else if (card.getType().equals(Config.ADAPT)) {
+					card.playAdapt(this);
+					output +=  Config.ADAPT + " " + updateDisplays();
+					//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
+				} else if (card.getType().equals(Config.OUTWIT)) {
+					String playerCardType = cardString[2];
+					String playerCardValue = cardString[3];
+					String opponentName = cardString[4];
+					String opponentCardType = cardString[5];
+					String opponentCardValue = cardString[6];
+					Player opponent = getPlayerByName(opponentName);
+					Card playerCard = new Card(playerCardType, Integer.parseInt(playerCardValue));
+					Card opponentCard = new Card(opponentCardType, Integer.parseInt(opponentCardValue));
+					if ((opponent.getDisplay().size() < 2) || opponent.hasShield()) {
+						output += Config.UNPLAYABLE;
+					} else {
+						card.playOutwit(this, opponent, opponentCard, playerCard);
+						currentPlayer.setTotalCardValue();
+						opponent.setTotalCardValue();
+						output += Config.OUTWIT + " " + playerCardType + " " + playerCardValue 
+								+ " " + opponentName + " " + opponentCardType + " " + opponentCardValue;
+					}
+				} else if (card.getType().equals(Config.SHIELD)) {
+					card.playShield(this, card);
+					output += Config.SHIELD + " " + currentPlayer.getName();
+				} else if (card.getType().equals(Config.STUNNED)) {
+					String playerName = cardString[2];
+					Player player = getPlayerByName(playerName);
+					card.playStunned(player, card);
+					output += Config.STUNNED + " " + playerName;
+				} else if (card.getType().equals(Config.IVANHOE)) {
+					//input = play ivanhoe <actioncard>
+					String cardType = cardString[2];
+					Card cardToDiscard = currentPlayer.getCardFromHand(cardType, 0);
+					card.playIvanhoe(this, card);
+					output += Config.IVANHOE + " " + currentPlayer.getName();
 				}
-				if (currentPlayer.getDisplay().size() < 2) {
-					output += Config.UNPLAYABLE;
-				} else {
-					card.playRetreat(this, cardToRetreat);
-					output += Config.RETREAT + " " + currentPlayer.getName() + " " + currentPlayer.getTotalCardValue() + " " + type + " " + value;
-				}
-				//output = waiting <card played> <currentPlayerName> <score> <card removed from display and put back into hand>
-			} else if (card.getType().equals(Config.KNOCKDOWN)) {
-				// input = play knockdown <player name>
-				
-
-				String playerName = cardString[2];
-				Player player = getPlayerByName(playerName);
-				if (player.hasShield()) {
-					output += Config.UNPLAYABLE;
-				}
-				else {
-				Card cardToSteal = card.playKnockDown(this, player);
-				output += Config.KNOCKDOWN + " " + playerName + " " + cardToSteal.getType() + " " + cardToSteal.getValue();
-				}
-				//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
-			} else if (card.getType().equals(Config.OUTMANEUVER)) {
-				// input = play outmaneuver
-				
-				card.playOutmaneuver(this);
-				output += Config.OUTMANEUVER + " " + updateDisplays();
-				//output = waiting <card played> <current player name> (remove the last card from all other displays that don't have a shield card)
-			} else if (card.getType().equals(Config.CHARGE)) {
-				// input = play charge
-				card.playCharge(this);
-				output += Config.CHARGE + " " + updateDisplays();
-				//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
-			} else if (card.getType().equals(Config.COUNTERCHARGE)) {
-				// input = play countercharge
-				card.playCounterCharge(this);
-				output += Config.COUNTERCHARGE + " " + updateDisplays();
-				//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
-			} else if (card.getType().equals(Config.DISGRACE)) {
-				//input = play disgrace
-				card.playDisgrace(this);
-				output += Config.DISGRACE + " "  + updateDisplays();
-				//output = waiting <card played> <current player name> (can you remove all support cards from everyone but the current player here?) 
-			} else if (card.getType().equals(Config.ADAPT)) {
-				card.playAdapt(this);
-				output +=  Config.ADAPT + " " + updateDisplays();
-				//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
-			} else if (card.getType().equals(Config.OUTWIT)) {
-				String playerCardType = cardString[2];
-				String playerCardValue = cardString[3];
-				String opponentName = cardString[4];
-				String opponentCardType = cardString[5];
-				String opponentCardValue = cardString[6];
-				Player opponent = getPlayerByName(opponentName);
-				Card playerCard = new Card(playerCardType, Integer.parseInt(playerCardValue));
-				Card opponentCard = new Card(opponentCardType, Integer.parseInt(opponentCardValue));
-				card.playOutwit(this, opponent, opponentCard, playerCard);
-				currentPlayer.setTotalCardValue();
-				opponent.setTotalCardValue();
-				output += Config.OUTWIT + " " + playerCardType + " " + playerCardValue 
-						+ " " + opponentName + " " + opponentCardType + " " + opponentCardValue;
-			} else if (card.getType().equals(Config.SHIELD)) {
-				card.playShield(this, card);
-				output += Config.SHIELD + " " + currentPlayer.getName();
-			} else if (card.getType().equals(Config.STUNNED)) {
-				String playerName = cardString[2];
-				Player player = getPlayerByName(playerName);
-				card.playStunned(player, card);
-				output += Config.STUNNED + " " + playerName;
-			} else if (card.getType().equals(Config.IVANHOE)) {
-				//TO DO
+			if (!card.getType().equals(Config.IVANHOE)) {
+				currentPlayer.removeCard(card);
 			}
+		}
+
 		return output;
 	}
 	
@@ -903,6 +953,7 @@ public class GameEngine {
 		drawDeck.add(new ActionCard(Config.SHIELD));
 		drawDeck.add(new ActionCard(Config.STUNNED));
 		drawDeck.add(new ActionCard(Config.IVANHOE));
+
 
 
 	}
