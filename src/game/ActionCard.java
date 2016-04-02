@@ -266,11 +266,13 @@ public class ActionCard extends Card {
 	public String promptIvanhoe(GameEngine game, Card card) {
 		String output = " ";
 		if (!card.getType().equals(Config.IVANHOE)) {
-			for (Player p: game.getPlayers()) {
-				for (Card c: p.getCards()) {
-					if (c.getType().equals(Config.IVANHOE)) {
-						output = " " + Config.PLAY_IVANHOE + " " + p.getName() + " " + card.getType();
-						break;
+				for (Player p: game.getPlayers()) {
+					if (!p.getName().equals(game.getCurrentPlayer().getName())) {
+					for (Card c: p.getCards()) {
+						if (c.getType().equals(Config.IVANHOE)) {
+							output = " " + Config.PLAY_IVANHOE + " " + p.getName() + " " + card.getType();
+							break;
+						}
 					}
 				}
 			}

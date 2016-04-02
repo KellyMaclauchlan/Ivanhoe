@@ -24,6 +24,7 @@ public class GameEngine {
 	private boolean token = false; 
 	private String round = "round";
 	private boolean testCurrPlayer = false; 
+	private String actionCard;
 	
 	public boolean getStart(){return startTournament;}
 	public boolean getJoined(){return joined;}
@@ -206,8 +207,10 @@ public class GameEngine {
 		String[] play = input.split(" ");
 		String type = play[1];
 		String value = "0";
-		if ((play.length > 2) && (!input.contains(Config.IVANHOE_DECLINED))) {
+		if ((play.length > 2)) {
 			value = play[2];
+		} else if (input.contains(Config.IVANHOE_DECLINED) && (play.length == 2)) {
+			output = processPlay(actionCard + " " + Config.IVANHOE_DECLINED);
 		}
 		Card card = null;
 		boolean hasMaiden = false;
@@ -254,7 +257,7 @@ public class GameEngine {
 			}
 		} else if (card.getCardType().equals(Config.ACTION)) {
 			output += processActionCard((ActionCard) card, input);
-			
+			actionCard = input;			
 		} else {
 			output += " " + Config.UNPLAYABLE;
 		}
@@ -268,7 +271,7 @@ public class GameEngine {
 	
 	
 	public String processActionCard(ActionCard card, String input) {
-		String output;
+		String output = " ";
 		if (input.contains(Config.IVANHOE_DECLINED)) {
 			output = " ";
 		} else {
@@ -830,7 +833,7 @@ public class GameEngine {
 	public void createDeck() {
 		drawDeck = new ArrayList<>();
 		//purple
-		drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		/*drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
@@ -917,7 +920,7 @@ public class GameEngine {
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
-		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));*/
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));

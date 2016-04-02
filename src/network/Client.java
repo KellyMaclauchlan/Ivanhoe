@@ -42,6 +42,7 @@ public class Client implements Runnable, Observer {
 	private boolean purpleChosen = false;
 	private ArrayList<String> actioncards = new ArrayList<String>();
 	private String thisPlayerName = null;
+	private boolean ivanhoePrompted = false;
 
 	public Client(){
 		window = new MainWindowController();
@@ -238,12 +239,15 @@ public class Client implements Runnable, Observer {
 			String cardName = input[3];
 			String playerName = input[2];
 			
-			if (playerName.equals(thisPlayerName)) {
-				boolean played = window.playIvanhoe(cardName);
-				if (played) {
-					return output = Config.PLAY + " " + Config.IVANHOE + " " + cardName;
-				} else if (!played) {
-					return output = Config.PLAY + " " + processActionCard() + " " +  Config.IVANHOE_DECLINED;
+			if (!ivanhoePrompted) {
+				if (playerName.equals(thisPlayerName)) {
+					boolean played = window.playIvanhoe(cardName);
+					ivanhoePrompted = true;
+					if (played) {
+						return output = Config.PLAY + " " + Config.IVANHOE + " " + cardName;
+					} else if (!played) {
+						return output = Config.PLAY + " " +  Config.IVANHOE_DECLINED;
+					}
 				}
 			}
 		}
@@ -564,7 +568,8 @@ public class Client implements Runnable, Observer {
 	
 	public String processActionCard(){
 		String output = "";
-		String cardType = window.getLastCard().getType();
+		String cardType;
+		cardType = window.getLastCard().getType();
 		output = " " + cardType + " " ;
 		if (cardType.equals(Config.UNHORSE)){
 			if (window.getTournamentColour() != Config.PURPLE_INT) {
@@ -597,12 +602,12 @@ public class Client implements Runnable, Observer {
 			//pick a face up card including sheild and stun 
 			output = " " + Config.OUTWIT + " " + window.playerPickCardForOutwhit(window.getPlayerName());
 			String name= window.pickAName("take a played card from.");
-			output += " " + name + " " + window.playerPickCardForOutwhit(name);
+			output = Config.OUTWIT +  " " + name + " " + window.playerPickCardForOutwhit(name);
 			//added to output <your cardtype > <value> <other player> <their card type> <value>
 			
 		} else if(cardType.equalsIgnoreCase(Config.DODGE)){
 			// pick a player and a card to remove from their display
-			String name= window.pickAName("take a played card from.");
+			String name = window.pickAName("take a played card from.");
 			output = " " + Config.DODGE + " " + name + " " + window.playerPickCardFromDisplay(name);
 			//added to output <other player> <their card type> <value>
 			// input = play dodge <player name> <card type> <card value>
@@ -625,6 +630,7 @@ public class Client implements Runnable, Observer {
 	
 	// for input from server on playing the card if an action card is played sent the whole message to this in waiting 
 	public void processActionCardAction(String msg){
+		ivanhoePrompted = false;
 		String input[]=msg.split(" ");
 		String cardType = input[1];
 		//note Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
