@@ -52,12 +52,12 @@ public class TestGameEngine {
 		game.joinGame(player5);
 		assertTrue(game.getJoined());
 		
-		
 		game.startGame();
 	  	game.addAllToDeck(player1.getCards());
     	game.addAllToDeck(player2.getCards());
     	game.addAllToDeck(player3.getCards());
     	game.addAllToDeck(player4.getCards());
+    	game.addAllToDeck(player5.getCards());
 		
     	ArrayList<Card> player1Cards = new ArrayList<>();
     	player1Cards.add(new ColourCard("red", 3));
@@ -197,19 +197,24 @@ public class TestGameEngine {
 		player1.chooseTournamentColour(Config.RED);
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-
-		player2.setWithdrawn(true);
-		player3.setWithdrawn(true);
-		player4.setWithdrawn(true);
-		player5.setWithdrawn(true);
+		game.withdraw();
 		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
 
-		assertTrue(player1.isWinner());
-		// Error is right here... saying everyone is a winner
+		assertTrue(player5.isWinner());
+		assertFalse(player1.isWinner());
 		assertFalse(player2.isWinner());
 		assertFalse(player3.isWinner());
 		assertFalse(player4.isWinner());
-		assertFalse(player5.isWinner());
 		
 		assertTrue(game.getCurrentPlayer().getCurrentTokens().contains(game.getTournamentColour()));
 	}
@@ -259,24 +264,78 @@ public class TestGameEngine {
 		assertEquals(Config.PURPLE, game.getTournamentColour());
 	}
 	
-	//@Test
+	@Test
 	public void testMaiden(){
 		System.out.println("@Test: Restriction to 1 Maiden per player per tournament");
+    	player5.addCard(new SupportCard(Config.MAIDEN, 6));
+		player5.chooseTournamentColour(Config.BLUE);
+    	game.setCurrentPlayer(player5);
+    	game.startTurn();
+    	String maiden1 = game.processPlay("play maiden 6");
+    	assertEquals("waiting maiden_6", maiden1);
+    	String maiden2 = game.processPlay("play maiden 6");
+    	assertEquals(Config.WAITING + " " + Config.UNPLAYABLE, maiden2);
+    	int numberOfMaidens = 0;
+    	for (Card c: player5.getDisplay()) {
+    		if (c.getType().equals(Config.MAIDEN)) {
+    			numberOfMaidens ++;
+    		}
+    	}
+    	assertEquals(1, numberOfMaidens);
 	}
 	
-	//@Test
+	@Test
 	public void testWonPurpleTournament(){
 		System.out.println("@Test: won a purple tournament choose token colour");
+		player2.chooseTournamentColour(Config.PURPLE);
+		assertFalse(player1.getCurrentTokens().contains(Config.RED));
+    	game.setCurrentPlayer(player2);
+    	game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		String purpleWin = game.processEndTurn();
+		assertEquals(player1.getName(), game.getCurrentPlayer().getName());
+		
+		assertEquals(player5.getName() + " points " + player5.getTotalCardValue() + " " + Config.WITHDRAW 
+				+ " " + player1.getName() + " " + Config.PURPLE_WIN + " " + game.getCurrentPlayer().getName(), purpleWin);
+		String processPurpleWin = game.processPurpleWin(Config.PURPLE_WIN + " " + Config.RED);
+		assertEquals(player1.getName() + " points " + player1.getTotalCardValue() + " " + Config.WITHDRAW 
+				+ " " + player2.getName() + " " + game.getTournamentColour() + " " + Config.TOURNAMENT_WINNER 
+				+ " " + player1.getName(), processPurpleWin);
+		assertTrue(player1.getCurrentTokens().contains(Config.RED));
+		
+    	
 	}
 	
-	//@Test
+	@Test
 	public void testLoseOnMaiden(){
 		System.out.println("@Test: losing with a maiden and losing a token");
+		player2.addToken(Config.RED);
+		player2.addCard(new SupportCard(Config.MAIDEN, 6));
+		player2.chooseTournamentColour(Config.YELLOW);
+		assertTrue(player2.getCurrentTokens().contains(Config.RED));
+    	game.setCurrentPlayer(player2);
+    	game.startTurn();
+    	game.processPlay("play maiden 6");
+    	String withdraw = game.processWithdraw(Config.WITHDRAW);
+    	assertEquals(Config.MAIDEN, withdraw);
+    	withdraw = game.processWithdraw("maiden red");
+    	assertEquals("maiden red", withdraw);
+    	assertFalse(player2.getCurrentTokens().contains(Config.RED));
 	}
 	
 	//@Test
 	public void testUnshieldPlayer(){
 		System.out.println("@Test: playing an action card on an unshielded player");
+		
 	}
 	
 	//@Test

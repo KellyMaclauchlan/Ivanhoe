@@ -31,6 +31,7 @@ public class GameEngine {
 	public boolean getToken(){return token;}
 	public String getRound(){return round;}
 	public boolean checkCurrPlayer(){return testCurrPlayer;}
+	public ArrayList<Card> getDiscardPile() {return discardPile;}
 	
 	
 	public GameEngine() {
@@ -118,8 +119,6 @@ public class GameEngine {
 				}
 				String colour = colourInput[1];
 				currentPlayer.removeToken(colour);
-				for (String token: currentPlayer.getCurrentTokens()) {
-				}
 				output = Config.MAIDEN + " " + colour;
 			}
 		}
@@ -232,7 +231,7 @@ public class GameEngine {
 				}
 			}
 		}
-		if (card != null) {
+		if ((card != null)) {
 		if (card.getType().equals(tournamentColour) 
 				|| card.getCardType().equals(Config.SUPPORT)) {
 			if (tournamentColour.equals(Config.GREEN) && card.getValue() > 1) {
@@ -256,6 +255,7 @@ public class GameEngine {
 			}
 		} else if (card.getCardType().equals(Config.ACTION)) {
 			output += processActionCard((ActionCard) card, input);
+			
 		} else {
 			output += " " + Config.UNPLAYABLE;
 		}
@@ -377,6 +377,7 @@ public class GameEngine {
 						output += Config.UNPLAYABLE;
 					} else {
 						card.playRetreat(this, cardToRetreat);
+						currentPlayer.setTotalCardValue();
 						output += Config.RETREAT + " " + currentPlayer.getName() + " " + currentPlayer.getTotalCardValue() + " " + type + " " + value;
 					}
 					//output = waiting <card played> <currentPlayerName> <score> <card removed from display and put back into hand>
@@ -449,11 +450,16 @@ public class GameEngine {
 					//input = play ivanhoe <actioncard>
 					String cardType = cardString[2];
 					Card cardToDiscard = currentPlayer.getCardFromHand(cardType, 0);
-					card.playIvanhoe(this, card);
+					//card.playIvanhoe(this, card);
 					output += Config.IVANHOE + " " + currentPlayer.getName();
+					currentPlayer.removeCard(cardToDiscard);
+					discard(cardToDiscard);
 				}
-			if (!card.getType().equals(Config.IVANHOE)) {
+			if (!(output.contains(Config.UNPLAYABLE))) {
 				currentPlayer.removeCard(card);
+				if (!card.getType().equals(Config.SHIELD) && !card.getType().equals(Config.STUNNED)) {
+					discard(card);
+				}
 			}
 		}
 
@@ -465,26 +471,23 @@ public class GameEngine {
 		for (Player p: players) {
 			p.setTotalCardValue();
 			output += Config.PLAYER_NAME + " " + p.getName() + " " + p.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
-			//if (!p.getName().equals(currentPlayer.getName())) {
 				for (Card c: p.getDisplay()) {
 					output += c.getType() + "_" + c.getValue() + " ";
-				//}
 			}
 		}
 		return output;
 		//output += <player name> <score> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
 	}
 
-	//TO DO: Change back to ArrayList if this does not work
 	public ArrayList<Player> getActionablePlayers() {
 		ArrayList<Player> actionable = new ArrayList<>();
 		for (Player p: players) {
 			actionable.add(p);
 		}
-		for (Player p: actionable) {
-			for (Card c: p.getFront()) {
+		for (int i = 0; i < players.size(); i++) {
+			for (Card c: actionable.get(i).getFront()) {
 				if (c.getType().equals(Config.SHIELD)) {
-					actionable.remove(p);
+					actionable.remove(i);
 				}
 			}
 		}
@@ -667,7 +670,7 @@ public class GameEngine {
 		// play a specific card for current player, handle based on card rules
 		if (card.getCardType().equals(Config.COLOUR) || card.getCardType().equals(Config.SUPPORT)) {
 			currentPlayer.addToDisplay(card);
-		} 
+		}
 		//remove card from player hand
 		currentPlayer.removeCard(card);
 		//add card to where it should be added (display, front, discard)
