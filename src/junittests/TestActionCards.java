@@ -746,14 +746,14 @@ public class TestActionCards {
 		//test discard (none, only one card in display)
 		assertEquals(7, player3.getCards().size());
 		assertEquals(0, game.getDiscardPile().size());
-		player3.addCard(new ActionCard(Config.IVANHOE));
+		player2.addCard(new ActionCard(Config.IVANHOE));
 
 		// second card in display
 		game.playCard(player3.getCardFromHand(Config.YELLOW, 4));
 		assertEquals(2, player3.getDisplay().size());
 		assertEquals(8, player3.getTotalCardValue());
 		String prompt = game.processPlay("play retreat yellow 4");
-		assertEquals("waiting plyivnhoe " + player3.getName() + " retreat", prompt);
+		assertEquals("waiting plyivnhoe " + player2.getName() + " retreat", prompt);
 
 		// player chooses to play ivanhoe
 		String ivanhoe = game.processPlay("play ivanhoe outmaneuver");
