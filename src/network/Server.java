@@ -123,13 +123,13 @@ public class Server implements Runnable, Observer {
 			if (clients.containsKey(id)) {
 				remove(id);
 			} 
-				if (msg != null) {
+			if (msg != null) {
 				String[] quitmsg = msg.split(" ");
 				String name = quitmsg[1];
 				msg = Config.PLAYER_LEFT + " " + name;
-				send = game.processInput(msg);
+				game.processInput(msg);
 			}
-			processInput(id, send);
+			sendAllClients(msg);
 		}
 		
 		/* When a client first connects, it checks to see if this is the first client */

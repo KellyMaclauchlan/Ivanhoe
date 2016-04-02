@@ -171,7 +171,7 @@ public class Client implements Runnable, Observer {
 		log.info("Message Received: " + msg);
 		
 		if(msg.contains("input")){
-	   		// do nothing and wait for more players to arrive 
+	   		// do nothing and wait for the server to send something 
 		} else {
 			testing = msg;
 			send = processInput(msg);
@@ -233,6 +233,9 @@ public class Client implements Runnable, Observer {
 		if(msg.equals(Config.QUIT)) {  
 			output = Config.QUIT + " " + thisPlayerName;
 		} 
+		else if(msg.contains(Config.PLAYER_LEFT)){
+			window.GameOverPopup("No one has");
+		}
 		else if (msg.contains(Config.PLAY_IVANHOE)) {
 			String[] input = msg.split(" ");
 			//input: waiting plyivnhoe <name> <card>
