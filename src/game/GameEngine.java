@@ -833,7 +833,7 @@ public class GameEngine {
 	public void createDeck() {
 		drawDeck = new ArrayList<>();
 		//purple
-		/*drawDeck.add(new ColourCard(Config.PURPLE, 3));
+		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
 		drawDeck.add(new ColourCard(Config.PURPLE, 3));
@@ -920,7 +920,7 @@ public class GameEngine {
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
-		drawDeck.add(new SupportCard(Config.SQUIRE, 2));*/
+		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
 		drawDeck.add(new SupportCard(Config.SQUIRE, 2));
