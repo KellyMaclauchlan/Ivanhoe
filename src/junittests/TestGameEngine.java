@@ -52,71 +52,71 @@ public class TestGameEngine {
 		game.joinGame(player5);
 		assertTrue(game.getJoined());
 		
-		
 		game.startGame();
 	  	game.addAllToDeck(player1.getCards());
     	game.addAllToDeck(player2.getCards());
     	game.addAllToDeck(player3.getCards());
     	game.addAllToDeck(player4.getCards());
+    	game.addAllToDeck(player5.getCards());
 		
     	ArrayList<Card> player1Cards = new ArrayList<>();
-    	player1Cards.add(new ColourCard("red", 3));
-    	player1Cards.add(new ColourCard("purple", 5));
-    	player1Cards.add(new ColourCard("yellow", 3));
-    	player1Cards.add(new ColourCard("blue", 4));
-    	player1Cards.add(new ColourCard("yellow", 3));
-    	player1Cards.add(new ColourCard("yellow", 2));
-    	player1Cards.add(new ActionCard("riposte"));
-    	player1Cards.add(new SupportCard("squire", 2));
+    	player1Cards.add(new ColourCard(Config.RED, 3));
+    	player1Cards.add(new ColourCard(Config.PURPLE, 5));
+    	player1Cards.add(new ColourCard(Config.YELLOW, 3));
+    	player1Cards.add(new ColourCard(Config.BLUE, 4));
+    	player1Cards.add(new ColourCard(Config.YELLOW, 3));
+    	player1Cards.add(new ColourCard(Config.YELLOW, 2));
+    	player1Cards.add(new ActionCard(Config.RIPOSTE));
+    	player1Cards.add(new SupportCard(Config.SQUIRE, 2));
     	player1.setCards(player1Cards);
     	game.removeAllFromDeck(player1Cards);
     	
     	ArrayList<Card> player2Cards = new ArrayList<>();
-    	player2Cards.add(new ColourCard("red", 5));
-    	player2Cards.add(new ColourCard("green", 1));
-    	player2Cards.add(new ColourCard("yellow", 4));
-    	player2Cards.add(new ColourCard("blue", 4));
-    	player2Cards.add(new ColourCard("green", 1));
+    	player2Cards.add(new ColourCard(Config.RED, 5));
+    	player2Cards.add(new ColourCard(Config.GREEN, 1));
+    	player2Cards.add(new ColourCard(Config.YELLOW, 4));
+    	player2Cards.add(new ColourCard(Config.BLUE, 4));
+    	player2Cards.add(new ColourCard(Config.GREEN, 1));
     	player2Cards.add(new ActionCard("unhorse"));
-    	player2Cards.add(new SupportCard("squire", 2));
-    	player2Cards.add(new SupportCard("squire", 3));
+    	player2Cards.add(new SupportCard(Config.SQUIRE, 2));
+    	player2Cards.add(new SupportCard(Config.SQUIRE, 3));
     	player2.setCards(player2Cards);
     	game.removeAllFromDeck(player2Cards);
     	
     	ArrayList<Card> player3Cards = new ArrayList<>();
-    	player3Cards.add(new ColourCard("green", 1));
-    	player3Cards.add(new ColourCard("green", 1));
-    	player3Cards.add(new ColourCard("yellow", 4));
-    	player3Cards.add(new ColourCard("blue", 4));
-    	player3Cards.add(new ColourCard("green", 1));
-    	player3Cards.add(new ColourCard("yellow", 4));
-    	player3Cards.add(new ColourCard("blue", 4));
-    	player3Cards.add(new ColourCard("green", 1));
+    	player3Cards.add(new ColourCard(Config.GREEN, 1));
+    	player3Cards.add(new ColourCard(Config.GREEN, 1));
+    	player3Cards.add(new ColourCard(Config.YELLOW, 4));
+    	player3Cards.add(new ColourCard(Config.BLUE, 4));
+    	player3Cards.add(new ColourCard(Config.GREEN, 1));
+    	player3Cards.add(new ColourCard(Config.YELLOW, 4));
+    	player3Cards.add(new ColourCard(Config.BLUE, 4));
+    	player3Cards.add(new ColourCard(Config.GREEN, 1));
     	player3.setCards(player3Cards);
     	game.removeAllFromDeck(player3Cards);
     	
     	ArrayList<Card> player4Cards = new ArrayList<>();
-    	player4Cards.add(new ColourCard("red", 4));
-    	player4Cards.add(new ColourCard("red", 3));
-    	player4Cards.add(new ColourCard("yellow", 4));
-    	player4Cards.add(new ColourCard("blue", 4));
-    	player4Cards.add(new ColourCard("green", 1));
-    	player4Cards.add(new ActionCard("drop weapon"));
-    	player4Cards.add(new ColourCard("yellow", 4));
-    	player4Cards.add(new ColourCard("blue", 4));
+    	player4Cards.add(new ColourCard(Config.RED, 4));
+    	player4Cards.add(new ColourCard(Config.RED, 3));
+    	player4Cards.add(new ColourCard(Config.YELLOW, 4));
+    	player4Cards.add(new ColourCard(Config.BLUE, 4));
+    	player4Cards.add(new ColourCard(Config.GREEN, 1));
+    	player4Cards.add(new ActionCard(Config.DROPWEAPON));
+    	player4Cards.add(new ColourCard(Config.YELLOW, 4));
+    	player4Cards.add(new ColourCard(Config.BLUE, 4));
     	player4.setCards(player4Cards);
     	game.removeAllFromDeck(player4Cards);
     	
     	
     	ArrayList<Card> player5Cards = new ArrayList<>();
-    	player5Cards.add(new ColourCard("red", 4));
-    	player5Cards.add(new SupportCard("squire", 3));
-    	player5Cards.add(new ColourCard("green", 1));
-    	player5Cards.add(new ColourCard("blue", 4));
-    	player5Cards.add(new ColourCard("green", 1));
-    	player5Cards.add(new SupportCard("maiden", 6));
-    	player5Cards.add(new ColourCard("yellow", 4));
-    	player5Cards.add(new ColourCard("blue", 4));
+    	player5Cards.add(new ColourCard(Config.RED, 4));
+    	player5Cards.add(new SupportCard(Config.SQUIRE, 3));
+    	player5Cards.add(new ColourCard(Config.GREEN, 1));
+    	player5Cards.add(new ColourCard(Config.BLUE, 4));
+    	player5Cards.add(new ColourCard(Config.GREEN, 1));
+    	player5Cards.add(new SupportCard(Config.MAIDEN, 6));
+    	player5Cards.add(new ColourCard(Config.YELLOW, 4));
+    	player5Cards.add(new ColourCard(Config.BLUE, 4));
     	player5.setCards(player5Cards);
     	game.removeAllFromDeck(player5Cards);
 	}
@@ -197,19 +197,24 @@ public class TestGameEngine {
 		player1.chooseTournamentColour(Config.RED);
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-
-		player2.setWithdrawn(true);
-		player3.setWithdrawn(true);
-		player4.setWithdrawn(true);
-		player5.setWithdrawn(true);
+		game.withdraw();
 		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
 
-		assertTrue(player1.isWinner());
-		// Error is right here... saying everyone is a winner
+		assertTrue(player5.isWinner());
+		assertFalse(player1.isWinner());
 		assertFalse(player2.isWinner());
 		assertFalse(player3.isWinner());
 		assertFalse(player4.isWinner());
-		assertFalse(player5.isWinner());
 		
 		assertTrue(game.getCurrentPlayer().getCurrentTokens().contains(game.getTournamentColour()));
 	}
@@ -259,38 +264,71 @@ public class TestGameEngine {
 		assertEquals(Config.PURPLE, game.getTournamentColour());
 	}
 	
-	//@Test
+	@Test
 	public void testMaiden(){
 		System.out.println("@Test: Restriction to 1 Maiden per player per tournament");
+    	player5.addCard(new SupportCard(Config.MAIDEN, 6));
+		player5.chooseTournamentColour(Config.BLUE);
+    	game.setCurrentPlayer(player5);
+    	game.startTurn();
+    	String maiden1 = game.processPlay("play maiden 6");
+    	assertEquals("waiting maiden_6", maiden1);
+    	String maiden2 = game.processPlay("play maiden 6");
+    	assertEquals(Config.WAITING + " " + Config.UNPLAYABLE, maiden2);
+    	int numberOfMaidens = 0;
+    	for (Card c: player5.getDisplay()) {
+    		if (c.getType().equals(Config.MAIDEN)) {
+    			numberOfMaidens ++;
+    		}
+    	}
+    	assertEquals(1, numberOfMaidens);
 	}
 	
-	//@Test
+	@Test
 	public void testWonPurpleTournament(){
 		System.out.println("@Test: won a purple tournament choose token colour");
+		player2.chooseTournamentColour(Config.PURPLE);
+		assertFalse(player1.getCurrentTokens().contains(Config.RED));
+    	game.setCurrentPlayer(player2);
+    	game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		game.endTurn();
+		game.startTurn();
+		game.withdraw();
+		String purpleWin = game.processEndTurn();
+		assertEquals(player1.getName(), game.getCurrentPlayer().getName());
+		
+		assertEquals(player5.getName() + " points " + player5.getTotalCardValue() + " " + Config.WITHDRAW 
+				+ " " + player1.getName() + " " + Config.PURPLE_WIN + " " + game.getCurrentPlayer().getName(), purpleWin);
+		String processPurpleWin = game.processPurpleWin(Config.PURPLE_WIN + " " + Config.RED);
+		assertEquals(player1.getName() + " points " + player1.getTotalCardValue() + " " + Config.WITHDRAW 
+				+ " " + player2.getName() + " " + game.getTournamentColour() + " " + Config.TOURNAMENT_WINNER 
+				+ " " + player1.getName(), processPurpleWin);
+		assertTrue(player1.getCurrentTokens().contains(Config.RED));
+		
+    	
 	}
 	
-	//@Test
+	@Test
 	public void testLoseOnMaiden(){
 		System.out.println("@Test: losing with a maiden and losing a token");
-	}
-	
-	//@Test
-	public void testUnshieldPlayer(){
-		System.out.println("@Test: playing an action card on an unshielded player");
-	}
-	
-	//@Test
-	public void testShieldPlayer(){
-		System.out.println("@Test: playing an action card on a shield player");
-	}
-	
-	//@Test
-	public void testIvanhoe(){
-		System.out.println("@Test: undoing playing an action card with Ivanhoe");
-	}
-	
-	//@Test
-	public void testDiscardActionCard(){
-		System.out.println("@Test: checking a used action card is indeed thrown away");
+		player2.addToken(Config.RED);
+		player2.addCard(new SupportCard(Config.MAIDEN, 6));
+		player2.chooseTournamentColour(Config.YELLOW);
+		assertTrue(player2.getCurrentTokens().contains(Config.RED));
+    	game.setCurrentPlayer(player2);
+    	game.startTurn();
+    	game.processPlay("play maiden 6");
+    	String withdraw = game.processWithdraw(Config.WITHDRAW);
+    	assertEquals(Config.MAIDEN, withdraw);
+    	withdraw = game.processWithdraw("maiden red");
+    	assertEquals("maiden red", withdraw);
+    	assertFalse(player2.getCurrentTokens().contains(Config.RED));
 	}
 }

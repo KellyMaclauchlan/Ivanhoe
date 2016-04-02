@@ -118,15 +118,17 @@ public class Server implements Runnable, Observer {
 		System.out.println("Message Received: " + msg);
 		
 		/* Server receives message that client has quit */
-		if (msg.equals(Config.QUIT) || msg.equals(null)) {
+		if (msg.contains(Config.QUIT) || msg.equals(null)) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {
 				remove(id);
+			} 
+				if (msg != null) {
+				String[] quitmsg = msg.split(" ");
+				String name = quitmsg[1];
+				msg = Config.PLAYER_LEFT + " " + name;
+				send = game.processInput(msg);
 			}
-			String[] quitmsg = msg.split(" ");
-			String name = quitmsg[1];
-			msg = Config.PLAYER_LEFT + " " + name;
-			send = game.processInput(msg);
 			processInput(id, send);
 		}
 		

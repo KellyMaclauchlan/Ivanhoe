@@ -30,57 +30,48 @@ public class ActionCard extends Card {
 	public void playDropWeapon(GameEngine game) {
 		// change tournament colour to green if it is currently red blue or yellow 
 		game.setTournamentColour(Config.GREEN);
-		
+		for (Player p: game.getPlayers()) {
+			for (Card c: p.getDisplay()) {
+				c.setValue(1);
+			}
+			p.setTotalCardValue();
+		}
 	}
 	
 	public void playBreakLance(Player player) {
 		// rid given player's display of all purple cards, leave one if they only have purple cards
-		boolean hasShield = false;
-		for (Card c: player.getFront()) {
-			if (c.getType().equals(Config.SHIELD)) {
-				hasShield = true;
-			}
-		}
-		if (!hasShield) {
+
+		if (!player.hasShield()) {
 			ArrayList<Card> cardsToRemove = new ArrayList<>();
 			for (Card c: player.getDisplay()) {
-				if (c.getType().equals(Config.PURPLE) && player.getDisplay().size() > 1) {
+				if (c.getType().equals(Config.PURPLE) && (player.getDisplay().size() > 1)) {
 					cardsToRemove.add(c);
 				}
 			}
 			for (Card c: cardsToRemove) {
-				player.removeFromDisplay(c);
-				player.setTotalCardValue();
+				if (player.getDisplay().size() >1) {
+					player.removeFromDisplay(c);
+					player.setTotalCardValue();
+				}
 			}
 		}
 	}
 	
 	public Card playRiposte(Player player) {
-		// take the last played card of given player and put it in deck of current player
-		boolean hasShield = false;
-		for (Card c: player.getFront()) {
-			if (c.getType().equals(Config.SHIELD)) {
-				hasShield = true;
-			}
-		}
-		if (!hasShield) {
-			Card cardToSteal = player.getDisplay().get(player.getDisplay().size() - 1);
+		// take the last played card of given player and put it in display of current player
+		Card cardToSteal = null;
+		if (!player.hasShield()) {
+			cardToSteal = player.getDisplay().get(player.getDisplay().size() - 1);
+			System.out.println("STEALING: " + cardToSteal.getType());
 			player.removeFromDisplay(cardToSteal);
 			player.setTotalCardValue();
-			return cardToSteal;
 		}
-		return null;
+		return cardToSteal;
 	}
 
 	public void playDodge(Player player, Card card) {
 		// discard any one of the given player's displayed cards
-		boolean hasShield = false;
-		for (Card c: player.getFront()) {
-			if (c.getType().equals(Config.SHIELD)) {
-				hasShield = true;
-			}
-		}
-		if (!hasShield) {
+		if (!player.hasShield()) {
 			player.removeFromDisplay(card);
 		}
 	}
@@ -100,7 +91,7 @@ public class ActionCard extends Card {
 				hasShield = true;
 			}
 		}
-		if (!hasShield) {
+		if ((!hasShield) && (player.getCards().size() >= 1)){
 			cardToSteal = player.getCards().get(0);
 			player.getCards().remove(0);
 			game.getCurrentPlayer().addCard(cardToSteal);
@@ -111,7 +102,7 @@ public class ActionCard extends Card {
 	public void playOutmaneuver(GameEngine game) {
 		// discard the last played card on each opponent's display
 		for (Player p: game.getActionablePlayers()) {
-			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
+			if (!p.getName().equals(game.getCurrentPlayer().getName()) && (p.getDisplay().size() > 1)) {
 				Card cardToRemove = p.getDisplay().get(p.getDisplay().size() - 1);
 				p.removeFromDisplay(cardToRemove);
 				game.discard(cardToRemove);
@@ -121,74 +112,105 @@ public class ActionCard extends Card {
 	}
 	
 	public void  playCharge(GameEngine game) {
-		// discard the lowest value card from every opponent's display
+		// discard the lowest value card from every player's display
+		int lowestValue = 7;
+		for (Player p: game.getPlayers()) {
+			for (Card c: p.getDisplay()) {
+				if (c.getValue() < lowestValue) {
+					lowestValue = c.getValue();
+				}
+			}
+		}
 		for (Player p: game.getActionablePlayers()) {
-				Card cardToRemove = p.getDisplay().get(0);
-				for (Card c: p.getDisplay()) {
-					if (c.getValue() < cardToRemove.getValue()) {
-						cardToRemove = c;
+			if (p.getDisplay().size() > 1) {
+				for (int i = 0; i < p.getDisplay().size(); i++) {
+					Card card = p.getDisplay().get(i);
+					if (card.getValue() == lowestValue) {
+						p.removeFromDisplay(card);
+						game.discard(card);
 					}
 				}
-				p.removeFromDisplay(cardToRemove);
-				game.discard(cardToRemove);
 				p.setTotalCardValue();
-			
+			}
 		}
 	}
 	
 	public void  playCounterCharge(GameEngine game) {
-		// discard the highest value card from every opponent's display
+		// discard the highest value card from every player's display
+		int highestValue = 0;
+		for (Player p: game.getPlayers()) {
+			for (Card c: p.getDisplay()) {
+				if (c.getValue() > highestValue) {
+					highestValue = c.getValue();
+				}
+			}
+		}
 		for (Player p: game.getActionablePlayers()) {
-				Card cardToRemove = p.getDisplay().get(0);
-				for (Card c: p.getDisplay()) {
-					if (c.getValue() > cardToRemove.getValue()) {
-						cardToRemove = c;
+			if (p.getDisplay().size() > 1) {
+				for (int i = 0; i < p.getDisplay().size(); i++) {
+					Card card = p.getDisplay().get(i);
+					if (card.getValue() == highestValue) {
+						p.removeFromDisplay(card);
+						game.discard(card);
 					}
 				}
-				p.removeFromDisplay(cardToRemove);
-				game.discard(cardToRemove);
 				p.setTotalCardValue();
+			}
 		}
 	}
 	
+	
 	public void playDisgrace(GameEngine game) {
-		// discard all supporters from every opponent's display
+		// discard all supporters from every player's display
 		for (Player p: game.getActionablePlayers()) {
-			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
 				ArrayList<Card> cardsToDiscard = new ArrayList<>();
 				for (Card c: p.getDisplay()) {
 					if (c.getCardType().equals(Config.SUPPORT)) {
 						cardsToDiscard.add(c);
 					}
 				} for (Card c: cardsToDiscard) {
-					p.removeFromDisplay(c);
-					game.discard(c);
+					if (p.getDisplay().size() > 1) {
+						p.removeFromDisplay(c);
+						game.discard(c);
+					}
 				}
 				p.setTotalCardValue();
-			}
 		}
 	}
 	
+	public boolean containsCard(Card card, ArrayList<Card> cards) {
+		boolean containsCard = false;
+		for (Card c: cards) {
+			if (c.getType().equals(card.getType()) && (c.getValue() == card.getValue())) {
+				containsCard = true;
+				break;
+			}
+		}
+		return containsCard;
+	}
+	
 	public void playAdapt(GameEngine game) {
-		// remove all duplicate cards from each opponent's display, leaving only one of each card
+		// remove all duplicate cards from each player's display, leaving only one of each card
 		for (Player p: game.getActionablePlayers()) {
-			if (!p.getName().equals(game.getCurrentPlayer().getName())) {
 					ArrayList<Card> cardsToKeep = new ArrayList<>();
 				for (Card c: p.getDisplay()) {
-					if (!cardsToKeep.contains(c)) {
+					if (!containsCard(c,cardsToKeep)) {
 						cardsToKeep.add(c);
+					} else {
+						game.discard(c);
 					}
 				}
 				p.setDisplay(cardsToKeep);
 				p.setTotalCardValue();
-			}
+			
 		}
 		
 	}
 	
 	public void playOutwit(GameEngine game, Player player, Card opponentCard, Card playerCard) {
-		//TO DO: take one shield or stunned card from in front of the given opponent, and place it in front of current player
-		//take one shield or stunned card from the current player and put it in front of the opponent
+		//Place one of your faceup cards in front of an opponent, and take one faceup
+		//card from this opponent and place it face up in front of yourself. This may include the
+		//SHIELD and STUNNED cards.
 		Card opponentCardToSwap = null;
 		Card playerCardToSwap = null;
 		for (Card c: player.getDisplay()) {
@@ -244,21 +266,18 @@ public class ActionCard extends Card {
 	public String promptIvanhoe(GameEngine game, Card card) {
 		String output = " ";
 		if (!card.getType().equals(Config.IVANHOE)) {
-			for (Player p: game.getPlayers()) {
-				for (Card c: p.getCards()) {
-					if (c.getType().equals(Config.IVANHOE)) {
-						output = " " + Config.PLAY_IVANHOE + " " + p.getName() + " " + card.getType();
-						break;
+				for (Player p: game.getPlayers()) {
+					if (!p.getName().equals(game.getCurrentPlayer().getName())) {
+					for (Card c: p.getCards()) {
+						if (c.getType().equals(Config.IVANHOE)) {
+							output = " " + Config.PLAY_IVANHOE + " " + p.getName() + " " + card.getType();
+							break;
+						}
 					}
 				}
 			}
 		}
-		
 		return output;
-	}
-	
-	public void playIvanhoe(GameEngine game, Card card) {
-		game.getCurrentPlayer().removeCard(card);
 	}
 	
 	

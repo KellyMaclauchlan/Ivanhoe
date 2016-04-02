@@ -390,7 +390,7 @@ public class MainWindowController implements Observer, Subject{
 			break;
 			case "endturnclick": endturnClick();
 			break;
-			case "playedcard":playCard();
+			case "playedcard": playCard();
 			break;
 			case Config.VIEWDISPLAY:displayCards();
 			break;
@@ -426,9 +426,11 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Card removed");
 	}
 	public void removeCard(Card card){
-		playerCards.remove(card);
-		this.resetCards();
-		log.info("Card removed");
+		if (card != null) {
+			playerCards.remove(card);
+			this.resetCards();
+			log.info("Card removed");
+		}
 	}
 	
 	/* Add a card to the given Player's played cards and show it on the button */
@@ -503,11 +505,13 @@ public class MainWindowController implements Observer, Subject{
 
 	/* Resets the Player's hand after a card has been played */
 	public void resetCards(){		
-		int maxx = Math.min(10, playerCards.size());
+		int max = Math.min(10, playerCards.size());
 		int i;
 		moved=0;
-		for(i = 0; i < maxx; i++){
-			this.window.addPlayerCard(i, playerCards.get(i).getCardImage());
+		for(i = 0; i < max; i++){
+			if (i < playerCards.size()) {
+				this.window.addPlayerCard(i, playerCards.get(i).getCardImage());
+			}
 		}
 		
 		for(i = i; i < 10; i++){

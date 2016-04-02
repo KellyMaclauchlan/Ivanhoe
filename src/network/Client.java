@@ -42,6 +42,7 @@ public class Client implements Runnable, Observer {
 	private boolean purpleChosen = false;
 	private ArrayList<String> actioncards = new ArrayList<String>();
 	private String thisPlayerName = null;
+	private boolean ivanhoePrompted = false;
 
 	public Client(){
 		window = new MainWindowController();
@@ -217,7 +218,7 @@ public class Client implements Runnable, Observer {
 		String displayText = null;
 		String input[] = msg.split(" "); 
 
-		if(input[0].equals(Config.WAITING)){
+		if(input[0].equals(Config.WAITING) && !msg.contains(Config.UNPLAYABLE)) {
 			displayText = currPlayer + " has played a card";
 		}
 		else{
@@ -238,12 +239,15 @@ public class Client implements Runnable, Observer {
 			String cardName = input[3];
 			String playerName = input[2];
 			
-			if (playerName.equals(thisPlayerName)) {
-				boolean played = window.playIvanhoe(cardName);
-				if (played) {
-					return output = Config.PLAY + " " + Config.IVANHOE + " " + cardName;
-				} else if (!played) {
-					return output = Config.PLAY + " " + processActionCard() +  Config.IVANHOE_DECLINED;
+			if (!ivanhoePrompted) {
+				if (playerName.equals(thisPlayerName)) {
+					boolean played = window.playIvanhoe(cardName);
+					ivanhoePrompted = true;
+					if (played) {
+						return output = Config.PLAY + " " + Config.IVANHOE + " " + cardName;
+					} else if (!played) {
+						return output = Config.PLAY + " " +  Config.IVANHOE_DECLINED;
+					}
 				}
 			}
 		}
@@ -564,7 +568,8 @@ public class Client implements Runnable, Observer {
 	
 	public String processActionCard(){
 		String output = "";
-		String cardType = window.getLastCard().getType();
+		String cardType;
+		cardType = window.getLastCard().getType();
 		output = " " + cardType + " " ;
 		if (cardType.equals(Config.UNHORSE)){
 			if (window.getTournamentColour() != Config.PURPLE_INT) {
@@ -572,43 +577,52 @@ public class Client implements Runnable, Observer {
 			} else {
 				output += window.changeColour();
 			}
-		
 			//added to output <new colour>	
 		} else if (cardType.equals(Config.CHANGEWEAPON)) {
-			output += window.changeColour();
+			output = " " + Config.CHANGEWEAPON + " " + window.changeColour();
 		}
 		else if (cardType.equals(Config.DROPWEAPON)) {
-			output += Config.DROPWEAPON;
+			output = " " + Config.DROPWEAPON;
 		} else if(cardType.equalsIgnoreCase(Config.BREAKLANCE)){
-				output += window.pickAName("remove all purple cards from their display.");
+				output = " " + Config.BREAKLANCE + " " + window.pickAName("remove all purple cards from their display.");
 				//added to output <other name>
 		} else if(cardType.equalsIgnoreCase(Config.RIPOSTE)){
-			output += window.pickAName("take the last card on their display and add it to yours.");
+			output = " " + Config.RIPOSTE + " " + window.pickAName("take the last card on their display and add it to yours.");
 			//added to output <other name>
 		} else if(cardType.equalsIgnoreCase(Config.RETREAT)){
 			// pick a card from your display 
-			output +=window.playerPickCardFromDisplay(window.getPlayerName());
+			output = " " + Config.RETREAT + " " + window.playerPickCardFromDisplay(window.getPlayerName());
 			//added to output <your cardtype > <value> 
 		} else if(cardType.equalsIgnoreCase(Config.KNOCKDOWN)){
-			output += window.pickAName("take a card from.");
+			output = " " + Config.KNOCKDOWN + " " + window.pickAName("take a card from.");
 		} else if(cardType.equalsIgnoreCase(Config.STUNNED)){
-			output += window.pickAName("stun.");
+			output = " " + Config.STUNNED + " " + window.pickAName("stun.");
 			//added to output <other name>
-		}
-		else if(cardType.equalsIgnoreCase(Config.OUTWIT)){
+		} else if(cardType.equalsIgnoreCase(Config.OUTWIT)){
 			//pick a face up card including sheild and stun 
-			output += window.playerPickCardForOutwhit(window.getPlayerName());
+			output = " " + Config.OUTWIT + " " + window.playerPickCardForOutwhit(window.getPlayerName());
 			String name= window.pickAName("take a played card from.");
-			output += " " + name + " " + window.playerPickCardForOutwhit(name);
+			output = Config.OUTWIT +  " " + name + " " + window.playerPickCardForOutwhit(name);
 			//added to output <your cardtype > <value> <other player> <their card type> <value>
 			
-		}
-		else if(cardType.equalsIgnoreCase(Config.DODGE)){
+		} else if(cardType.equalsIgnoreCase(Config.DODGE)){
 			// pick a player and a card to remove from their display
-			String name= window.pickAName("take a played card from.");
-			output+= name+" "+window.playerPickCardFromDisplay(name);
+			String name = window.pickAName("take a played card from.");
+			output = " " + Config.DODGE + " " + name + " " + window.playerPickCardFromDisplay(name);
 			//added to output <other player> <their card type> <value>
 			// input = play dodge <player name> <card type> <card value>
+		} else if (cardType.equals(Config.OUTMANEUVER)) {
+			output = " " + Config.OUTMANEUVER;
+		} else if (cardType.equals(Config.CHARGE)) {
+			output = " " + Config.CHARGE;
+		} else if (cardType.equals(Config.COUNTERCHARGE)) {
+			output = " " + Config.COUNTERCHARGE;
+		} else if (cardType.equals(Config.DISGRACE)) {
+			output = " " + Config.DISGRACE;
+		} else if (cardType.equals(Config.ADAPT)) {
+			output = " " + Config.ADAPT;
+		} else if (cardType.equals(Config.SHIELD)) {
+			output = " " + Config.SHIELD;
 		}
 		
 		return output;
@@ -616,6 +630,7 @@ public class Client implements Runnable, Observer {
 	
 	// for input from server on playing the card if an action card is played sent the whole message to this in waiting 
 	public void processActionCardAction(String msg){
+		ivanhoePrompted = false;
 		String input[]=msg.split(" ");
 		String cardType = input[1];
 		//note Drop weapon, disgrace, counter charge, charge and outmaneuver don't require anything other than the type
