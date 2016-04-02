@@ -63,7 +63,6 @@ public class GameEngine {
 			// talked to Kelly about this. Can get popups where necessary and append variables necessary for action cards to card play string
 			} else if (input.contains(Config.PLAY)) {
 				output = processPlay(input); // output = waiting <card played> OR output = waiting <unplayable>
-											// KATIE TO DO: If output = stunned <card played> then send me end turn
 			// input = end turn
 			} else if (input.contains(Config.END_TURN)) {
 					output = processEndTurn(); // output = <player name> points <player points> [continue OR withdraw] <next player> <card picked up>
@@ -231,7 +230,7 @@ public class GameEngine {
 				}
 			}
 		}
-		if ((card != null)) {
+		if ((card != null) && tournamentColour != null) {
 		if (card.getType().equals(tournamentColour) 
 				|| card.getCardType().equals(Config.SUPPORT)) {
 			if (tournamentColour.equals(Config.GREEN) && card.getValue() > 1) {
@@ -331,12 +330,9 @@ public class GameEngine {
 						output += Config.UNPLAYABLE;
 					} else {
 						Card cardToSteal = card.playRiposte(player);
-						if (cardToSteal != null) {
-							currentPlayer.addToDisplay(cardToSteal);
-							currentPlayer.setTotalCardValue();
-						}
-		
-						
+						currentPlayer.addToDisplay(cardToSteal);
+						currentPlayer.setTotalCardValue();
+						player.setTotalCardValue();
 							output += Config.RIPOSTE + " " + playerName + " " + player.getTotalCardValue() + " "
 							+ cardToSteal.getType() + " " + cardToSteal.getValue()  + " " 
 									+ currentPlayer.getName()  + " " + currentPlayer.getTotalCardValue();
@@ -353,7 +349,7 @@ public class GameEngine {
 						output += Config.UNPLAYABLE;
 					} else {
 					for (Card c: player.getDisplay()) {
-						if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
+						if (c.getType().equals(type) && c.getValue() == Integer.parseInt(value)) {
 							card.playDodge(player, c);
 							player.setTotalCardValue();
 							break;
@@ -429,7 +425,7 @@ public class GameEngine {
 					Player opponent = getPlayerByName(opponentName);
 					Card playerCard = new Card(playerCardType, Integer.parseInt(playerCardValue));
 					Card opponentCard = new Card(opponentCardType, Integer.parseInt(opponentCardValue));
-					if ((opponent.getDisplay().size() < 2) || opponent.hasShield()) {
+					if ((opponent.getDisplay().size() < 1) || opponent.hasShield()) {
 						output += Config.UNPLAYABLE;
 					} else {
 						card.playOutwit(this, opponent, opponentCard, playerCard);
@@ -484,10 +480,11 @@ public class GameEngine {
 		for (Player p: players) {
 			actionable.add(p);
 		}
-		for (int i = 0; i < players.size(); i++) {
+		for (int i = 0; i < actionable.size(); i++) {
 			for (Card c: actionable.get(i).getFront()) {
 				if (c.getType().equals(Config.SHIELD)) {
 					actionable.remove(i);
+					break;
 				}
 			}
 		}

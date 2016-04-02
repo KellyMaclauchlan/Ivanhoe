@@ -75,11 +75,11 @@ public class TestActionCards {
     	player2Cards.add(new ActionCard(Config.BREAKLANCE));
     	player2Cards.add(new ActionCard(Config.RIPOSTE));
     	player2Cards.add(new ActionCard(Config.DODGE));
-    	player2Cards.add(new ColourCard("yellow", 4));
-    	player2Cards.add(new ColourCard("yellow", 4));
+    	player2Cards.add(new ColourCard(Config.YELLOW, 4));
+    	player2Cards.add(new ColourCard(Config.YELLOW, 4));
     	player2Cards.add(new ColourCard(Config.YELLOW, 5));
-    	player2Cards.add(new SupportCard("squire", 2));
-    	player2Cards.add(new SupportCard("squire", 3));
+    	player2Cards.add(new SupportCard(Config.SQUIRE, 2));
+    	player2Cards.add(new SupportCard(Config.SQUIRE, 3));
     	player2.setCards(player2Cards);
     	game.removeAllFromDeck(player2Cards);
     	
@@ -87,10 +87,10 @@ public class TestActionCards {
     	player3Cards.add(new ActionCard(Config.RETREAT));
     	player3Cards.add(new ActionCard(Config.KNOCKDOWN));
     	player3Cards.add(new ActionCard(Config.OUTMANEUVER));
-    	player3Cards.add(new ColourCard("yellow", 4));
+    	player3Cards.add(new ColourCard(Config.YELLOW, 4));
     	player3Cards.add(new ColourCard(Config.PURPLE, 4));
     	player3Cards.add(new ColourCard(Config.YELLOW, 4));
-    	player3Cards.add(new ColourCard("yellow", 4));
+    	player3Cards.add(new ColourCard(Config.YELLOW, 4));
     	player3Cards.add(new ColourCard(Config.PURPLE, 4));
     	player3.setCards(player3Cards);
     	game.removeAllFromDeck(player3Cards);
@@ -100,9 +100,9 @@ public class TestActionCards {
     	player4Cards.add(new ActionCard(Config.COUNTERCHARGE));
     	player4Cards.add(new ActionCard(Config.DISGRACE));
     	player4Cards.add(new ColourCard(Config.PURPLE, 4));
-    	player4Cards.add(new ColourCard("green", 1));
-    	player4Cards.add(new ColourCard("yellow", 4));
-    	player4Cards.add(new ColourCard("yellow", 4));
+    	player4Cards.add(new ColourCard(Config.GREEN, 1));
+    	player4Cards.add(new ColourCard(Config.YELLOW, 4));
+    	player4Cards.add(new ColourCard(Config.YELLOW, 4));
     	player4Cards.add(new SupportCard(Config.MAIDEN, 6));
     	
     	player4.setCards(player4Cards);

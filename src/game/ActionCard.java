@@ -30,18 +30,18 @@ public class ActionCard extends Card {
 	public void playDropWeapon(GameEngine game) {
 		// change tournament colour to green if it is currently red blue or yellow 
 		game.setTournamentColour(Config.GREEN);
-		
+		for (Player p: game.getPlayers()) {
+			for (Card c: p.getDisplay()) {
+				c.setValue(1);
+			}
+			p.setTotalCardValue();
+		}
 	}
 	
 	public void playBreakLance(Player player) {
 		// rid given player's display of all purple cards, leave one if they only have purple cards
-		boolean hasShield = false;
-		for (Card c: player.getFront()) {
-			if (c.getType().equals(Config.SHIELD)) {
-				hasShield = true;
-			}
-		}
-		if (!hasShield) {
+
+		if (!player.hasShield()) {
 			ArrayList<Card> cardsToRemove = new ArrayList<>();
 			for (Card c: player.getDisplay()) {
 				if (c.getType().equals(Config.PURPLE) && (player.getDisplay().size() > 1)) {
@@ -59,30 +59,19 @@ public class ActionCard extends Card {
 	
 	public Card playRiposte(Player player) {
 		// take the last played card of given player and put it in display of current player
-		boolean hasShield = false;
-		for (Card c: player.getFront()) {
-			if (c.getType().equals(Config.SHIELD)) {
-				hasShield = true;
-			}
-		}
-		if (!hasShield) {
-			Card cardToSteal = player.getDisplay().get(player.getDisplay().size() - 1);
+		Card cardToSteal = null;
+		if (!player.hasShield()) {
+			cardToSteal = player.getDisplay().get(player.getDisplay().size() - 1);
+			System.out.println("STEALING: " + cardToSteal.getType());
 			player.removeFromDisplay(cardToSteal);
 			player.setTotalCardValue();
-			return cardToSteal;
 		}
-		return null;
+		return cardToSteal;
 	}
 
 	public void playDodge(Player player, Card card) {
 		// discard any one of the given player's displayed cards
-		boolean hasShield = false;
-		for (Card c: player.getFront()) {
-			if (c.getType().equals(Config.SHIELD)) {
-				hasShield = true;
-			}
-		}
-		if (!hasShield) {
+		if (!player.hasShield()) {
 			player.removeFromDisplay(card);
 		}
 	}
@@ -180,8 +169,10 @@ public class ActionCard extends Card {
 						cardsToDiscard.add(c);
 					}
 				} for (Card c: cardsToDiscard) {
-					p.removeFromDisplay(c);
-					game.discard(c);
+					if (p.getDisplay().size() > 1) {
+						p.removeFromDisplay(c);
+						game.discard(c);
+					}
 				}
 				p.setTotalCardValue();
 		}
@@ -285,11 +276,6 @@ public class ActionCard extends Card {
 			}
 		}
 		return output;
-	}
-	
-	public void playIvanhoe(GameEngine game, Card card) {
-		//game.getCurrentPlayer().removeCard(card);
-		//game.discard(card);
 	}
 	
 	
