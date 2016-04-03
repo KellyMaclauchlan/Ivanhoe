@@ -76,7 +76,7 @@ public class Player {
 	}
 	
 	public ArrayList<Card> getPlayPossibilities(GameEngine game) {
-		//TO DO: determine what cards can be played from hand based on tournament colour
+		//determine what cards can be played from hand based on tournament colour
 		ArrayList<Card> playableCards = new ArrayList<>();
 		for (Card c: cards) {
 			if ((c.getType().equals(game.getTournamentColour())) 

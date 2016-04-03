@@ -154,6 +154,15 @@ public class GameEngine {
 		turnNumber ++;
 		if (turnNumber == 1) {
 			tournamentColour = currentPlayer.getTournamentColour();
+			int cardsToPlay = 0;
+			for (Card c: currentPlayer.getPlayPossibilities(this)) {
+				if (!c.getCardType().equals(Config.ACTION)) {
+					cardsToPlay++;
+				}
+				if (cardsToPlay == 0) {
+					withdraw();
+				}
+			}
 		} else if (currentPlayer.getPlayPossibilities(this).isEmpty()) {
 			withdraw();
 		} 

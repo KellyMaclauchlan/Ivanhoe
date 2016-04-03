@@ -26,7 +26,8 @@ public class TestGameEngine {
 	Player player3;
 	Player player4;
 	Player player5;
-	
+	Card pickup = new ColourCard(Config.YELLOW, 4);
+
 	@BeforeClass
 	public static void BeforeClass(){
 		System.out.println("@BeforeClass: TestGameEngine");
@@ -81,7 +82,7 @@ public class TestGameEngine {
     	player2Cards.add(new ColourCard(Config.YELLOW, 4));
     	player2Cards.add(new ColourCard(Config.BLUE, 4));
     	player2Cards.add(new ColourCard(Config.GREEN, 1));
-    	player2Cards.add(new ActionCard("unhorse"));
+    	player2Cards.add(new ActionCard(Config.UNHORSE));
     	player2Cards.add(new SupportCard(Config.SQUIRE, 2));
     	player2Cards.add(new SupportCard(Config.SQUIRE, 3));
     	player2.setCards(player2Cards);
@@ -146,83 +147,497 @@ public class TestGameEngine {
     	assertEquals(5, players);	
 	}
 	
+	
 	@Test
-	public void testNumCards(){
-		System.out.println("@Test: checks that 110 cards are being used");
-		game.createDeck();
-		assertEquals(110, game.getDrawDeck().size());
-	}
-	
-	
-	//@Test
 	public void testOrder(){
 		System.out.println("@Test: check the order of players");
+		
+		//players have picked their tokens and have been arranged in the setup startGame() function;
+		Player pickedPurple = null;
+		for (Player p: game.getPlayers()) {
+			if (p.getStartTokenColour().equals(Config.PURPLE)) {
+				pickedPurple = p;
+				break;
+			}
+		}
+		assertTrue(pickedPurple.getStartTokenColour().equals(Config.PURPLE));
+		
+		game.startTurn();
+		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(0));
+		game.endTurn();
+		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(1));
+		game.endTurn();
+		game.startTurn();
+		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(2));
+		game.endTurn();
+		game.startTurn();
+		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(3));
+		game.endTurn();
+		game.startTurn();
+		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(4));
+		game.endTurn();
+		// last player, moves back to first
+		game.startTurn();
+		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(0));
+		game.endTurn();
 	}
 	
 	@Test
 	public void testSupporters(){
 		System.out.println("@Test: Check supporter cards");
-		
 		game.setCurrentPlayer(player5);
-		Card toPlay = game.getCurrentPlayer().getCards().get(1);
+		Card toPlay = player5.getCardFromHand(Config.SQUIRE, 3);
 		game.playCard(toPlay);
-		assertEquals("squire", toPlay.getType());
+		assertEquals(Config.SQUIRE, toPlay.getType());
 		assertEquals(3, toPlay.getValue());
 	}
 	
-	@Test
-	public void testTotalValue(){
-		System.out.println("@Test: tests that the current player has the largest total value or withdraws");
-		
-		game.setCurrentPlayer(player2);
-		Card toPlay = game.getCurrentPlayer().getCards().get(0);
-    	game.playCard(toPlay);
-    	assertEquals("red", toPlay.getType());
-    	assertEquals(5, toPlay.getValue());
-    	
-    	//test the current player's total card value and that it is greater than the value of the other player
-    	assertEquals(5, game.getCurrentPlayer().getTotalCardValue());
-    	assertEquals(0, player1.getTotalCardValue());
-    	assertEquals(0, player3.getTotalCardValue());
-    	assertEquals(0, player4.getTotalCardValue());
-    	assertEquals(0, player5.getTotalCardValue());
-    	
-    	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player1.getTotalCardValue());
-    	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player3.getTotalCardValue());
-    	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player4.getTotalCardValue());
-    	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player5.getTotalCardValue());
-	}
 	
+	/* Each tournament testing */
 	@Test
-	public void testWinnerToken(){
-		System.out.println("@Test: the winner of a tournament gets a token");
-		// Player 1 will win this tournament
+	public void testOnePlayerStarts() {
+		System.out.println("Test: One Player draws/starts, other draw but do not participate");
+		/* Player 1 will set the tournament colour and play a card
+		 * All other players will withdraw and player 1 will be the tournament winner
+		 */ 
 		
 		player1.chooseTournamentColour(Config.RED);
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-		game.withdraw();
-		game.endTurn();
-		game.startTurn();
-		game.withdraw();
-		game.endTurn();
-		game.startTurn();
-		game.withdraw();
-		game.endTurn();
-		game.startTurn();
-		game.withdraw();
-		game.endTurn();
-		game.startTurn();
-
-		assertTrue(player5.isWinner());
-		assertFalse(player1.isWinner());
-		assertFalse(player2.isWinner());
-		assertFalse(player3.isWinner());
-		assertFalse(player4.isWinner());
+		assertEquals(player1.getName(), game.getCurrentPlayer().getName());
 		
-		assertTrue(game.getCurrentPlayer().getCurrentTokens().contains(game.getTournamentColour()));
+		int players = game.getPlayers().size();
+		assertEquals(5, players);
+
+		assertEquals(Config.RED, game.getTournamentColour()); 
+		
+		Card toPlay = player1.getCardFromHand(Config.RED, 3);
+		game.playCard(toPlay);
+		assertEquals(Config.RED, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		
+    	//test the current player's total card value and that it is greater than the value of the other player
+    	assertEquals(3, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(0, player2.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	game.endTurn();
+    	// end of player 1's turn
+    	
+    	game.setCurrentPlayer(player2);
+		game.startTurn();
+		assertEquals(player2.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().setWithdrawn(true);
+    	
+    	assertEquals(0, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(3, player1.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	game.endTurn();
+    	// end of player 2's turn 
+    	
+    	game.setCurrentPlayer(player3);
+		game.startTurn();
+		assertEquals(player3.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().setWithdrawn(true);
+    	
+    	assertEquals(0, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(3, player1.getTotalCardValue());
+    	assertEquals(0, player2.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	game.endTurn();
+    	// end of player 3's turn
+    	
+    	game.setCurrentPlayer(player4);
+		game.startTurn();
+		assertEquals(player4.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().setWithdrawn(true);
+    	
+    	assertEquals(0, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(3, player1.getTotalCardValue());
+    	assertEquals(0, player2.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	game.endTurn();
+    	//end of player 4's turn
+    	
+    	game.setCurrentPlayer(player5);
+		game.startTurn();
+		assertEquals(player5.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().setWithdrawn(true);
+    	
+    	assertEquals(0, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(3, player1.getTotalCardValue());
+    	assertEquals(0, player2.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	
+    	game.endTurn();
+    	// end of player 5's turn
+    	
+    	// player 1 is the one player left in the tournament
+    	game.setCurrentPlayer(player1);
+		game.startTurn();
+    	
+		assertEquals(player1.getName(), game.getCurrentPlayer().getName());
+		
+    	assertTrue(player1.isWinner());
+    	assertFalse(player2.isWinner());
+    	assertFalse(player3.isWinner());
+    	assertFalse(player4.isWinner());
+    	assertFalse(player5.isWinner());
 	}
 	
+	@Test
+	public void testSomePlayersParticipate(){
+		System.out.println("Test: one player draws/starts, others draw and some participate by playing a card or several");
+
+		// Player 1 and player 2 will play a few cards and player 2 will win the tournament
+		player1.chooseTournamentColour(Config.YELLOW);
+		game.setCurrentPlayer(player1);
+		game.startTurn();
+		assertEquals(player1.getName(), game.getCurrentPlayer().getName());
+		game.getCurrentPlayer().addCard(pickup);
+		
+		int players = game.getPlayers().size();
+		assertEquals(5, players);
+
+		assertEquals(Config.YELLOW, game.getTournamentColour()); 
+		
+		Card toPlay = player1.getCardFromHand(Config.YELLOW, 3);
+		game.playCard(toPlay);
+		assertEquals(Config.YELLOW, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		
+		toPlay = player1.getCardFromHand(Config.YELLOW, 3);
+		game.playCard(toPlay);
+		assertEquals(Config.YELLOW, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		
+    	assertEquals(6, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(0, player2.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+		
+    	pickup = new ColourCard(Config.GREEN, 1);
+    	game.endTurn();
+    	
+    	//Start of player 2's turn
+		game.setCurrentPlayer(player2);
+		game.startTurn();
+		assertEquals(player2.getName(), game.getCurrentPlayer().getName());
+		game.getCurrentPlayer().addCard(pickup);
+    	
+		toPlay = player2.getCardFromHand(Config.YELLOW, 4);
+		game.playCard(toPlay);
+		assertEquals(Config.YELLOW, toPlay.getType());
+		assertEquals(4, toPlay.getValue());
+		
+		toPlay = player2.getCardFromHand(Config.SQUIRE, 3);
+		game.playCard(toPlay);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		
+    	assertEquals(7, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(6, player1.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	pickup = new ColourCard(Config.BLUE, 4);
+    	game.endTurn();
+    	
+    	//Start of player 3's turn 
+    	game.setCurrentPlayer(player3);
+		game.startTurn();
+		assertEquals(player3.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().addCard(pickup);
+    	game.getCurrentPlayer().setWithdrawn(true);
+    	
+    	assertEquals(0, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(6, player1.getTotalCardValue());
+    	assertEquals(7, player2.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	pickup = new ColourCard(Config.PURPLE, 7);
+    	game.endTurn();
+    	
+    	// start of player 4's turn
+    	game.setCurrentPlayer(player4);
+		game.startTurn();
+		assertEquals(player4.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().addCard(pickup);
+    	game.getCurrentPlayer().setWithdrawn(true);
+    	
+    	assertEquals(0, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(6, player1.getTotalCardValue());
+    	assertEquals(7, player2.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	pickup = new SupportCard(Config.MAIDEN, 6);
+    	game.endTurn();
+    	
+    	// Start of player 5's turn
+    	game.setCurrentPlayer(player5);
+		game.startTurn();
+		assertEquals(player5.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().addCard(pickup);
+    	game.getCurrentPlayer().setWithdrawn(true);
+    	
+    	assertEquals(0, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(6, player1.getTotalCardValue());
+    	assertEquals(7, player2.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	
+    	pickup = new SupportCard(Config.SQUIRE, 4);
+    	game.endTurn();
+    	// end of player 5's turn
+    	
+    	// back to player 1's turn
+    	game.setCurrentPlayer(player1);
+		game.startTurn();
+    	game.getCurrentPlayer().addCard(pickup);
+    	
+		toPlay = player1.getCardFromHand(Config.SQUIRE, 4);
+		game.playCard(toPlay);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(4, toPlay.getValue());
+		
+    	assertEquals(10, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(7, player2.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	pickup = new ColourCard(Config.BLUE, 4);
+    	game.endTurn();
+    	// end of player 1's turn
+    	
+    	game.setCurrentPlayer(player2);
+    	game.startTurn();
+    	game.getCurrentPlayer().addCard(pickup);
+    	game.getCurrentPlayer().setWithdrawn(true);
+    	
+    	assertEquals(7, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(10, player1.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	pickup = new ColourCard(Config.GREEN, 1);
+    	game.endTurn();
+    	
+    	game.setCurrentPlayer(player1);
+		game.startTurn();
+    	game.getCurrentPlayer().addCard(pickup);
+    	
+		assertEquals(player1.getName(), game.getCurrentPlayer().getName());
+		
+    	assertTrue(player1.isWinner());
+    	assertFalse(player2.isWinner());
+    	assertFalse(player3.isWinner());
+    	assertFalse(player4.isWinner());
+    	assertFalse(player5.isWinner());
+	}
+	
+	@Test
+	public void testStartingWithSupporters(){
+		System.out.println("Test: starting with a supporter or several supporters");
+		//genericCards();
+		
+		// Player 2 will start with supporters
+		player2.chooseTournamentColour(Config.PURPLE);
+		game.setCurrentPlayer(player2);
+		game.startTurn();
+		assertEquals(player2.getName(), game.getCurrentPlayer().getName());
+		game.getCurrentPlayer().addCard(pickup);
+		
+		int players = game.getPlayers().size();
+		assertEquals(5, players);
+
+		assertEquals(Config.PURPLE, game.getTournamentColour()); 
+		
+		Card toPlay = player2.getCardFromHand(Config.SQUIRE, 2);
+		game.playCard(toPlay);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(2, toPlay.getValue());
+		
+		toPlay = player2.getCardFromHand(Config.SQUIRE, 3);
+		game.playCard(toPlay);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		
+    	assertEquals(5, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(5, player2.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	game.endTurn();
+    	
+	}
+	
+	@Test
+	public void testMultiplayerTournamentWithSupporters(){
+		System.out.println("Test: Multiplayer tournament with multiple supporter cards played");
+				
+		// Player 1 and player 2 will play a few cards and player 2 will win the tournament
+		player1.chooseTournamentColour(Config.YELLOW);
+		game.setCurrentPlayer(player1);
+		game.startTurn();
+		assertEquals(player1.getName(), game.getCurrentPlayer().getName());
+		game.getCurrentPlayer().addCard(pickup);
+		
+		int players = game.getPlayers().size();
+		assertEquals(5, players);
+
+		assertEquals(Config.YELLOW, game.getTournamentColour()); 
+		
+		Card toPlay = player1.getCardFromHand(Config.SQUIRE, 2);
+		game.playCard(toPlay);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(2, toPlay.getValue());
+		
+		toPlay = player1.getCardFromHand(Config.YELLOW, 3);
+		game.playCard(toPlay);
+		assertEquals(Config.YELLOW, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		
+    	assertEquals(5, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(0, player2.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+		
+    	pickup = new ColourCard(Config.GREEN, 1);
+    	game.endTurn();
+    	
+    	//Start of player 2's turn
+		game.setCurrentPlayer(player2);
+		game.startTurn();
+		assertEquals(player2.getName(), game.getCurrentPlayer().getName());
+		game.getCurrentPlayer().addCard(pickup);
+    	
+		toPlay = player2.getCardFromHand(Config.SQUIRE, 2);
+		game.playCard(toPlay);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(2, toPlay.getValue());
+		
+		toPlay = player2.getCardFromHand(Config.SQUIRE, 3);
+		game.playCard(toPlay);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		
+    	assertEquals(5, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(5, player1.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	pickup = new SupportCard(Config.SQUIRE, 3);
+    	game.endTurn();
+    	
+    	//Start of player 3's turn 
+    	game.setCurrentPlayer(player3);
+		game.startTurn();
+		assertEquals(player3.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().addCard(pickup);
+		
+    	toPlay = player3.getCardFromHand(Config.SQUIRE, 3);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		game.playCard(toPlay);
+		game.endTurn();
+    	
+    	assertEquals(5, player1.getTotalCardValue());
+    	assertEquals(5, player2.getTotalCardValue());
+    	assertEquals(3, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	pickup = new ColourCard(Config.SQUIRE, 3);
+    	game.endTurn();
+    	
+    	// start of player 4's turn
+    	game.setCurrentPlayer(player4);
+		game.startTurn();
+		assertEquals(player4.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().addCard(pickup);
+    	
+    	toPlay = player4.getCardFromHand(Config.SQUIRE, 3);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		game.playCard(toPlay);
+		
+		game.endTurn();    	
+    	
+    	assertEquals(3, player4.getTotalCardValue());
+    	assertEquals(5, player1.getTotalCardValue());
+    	assertEquals(5, player2.getTotalCardValue());
+    	assertEquals(3, player3.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	pickup = new SupportCard(Config.SQUIRE, 2);
+    	game.endTurn();
+    	
+    	// Start of player 5's turn
+    	game.setCurrentPlayer(player5);
+		game.startTurn();
+		assertEquals(player5.getName(), game.getCurrentPlayer().getName());
+    	game.getCurrentPlayer().addCard(pickup);
+    	
+    	toPlay = player5.getCardFromHand(Config.SQUIRE, 3);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(3, toPlay.getValue());
+		game.playCard(toPlay);
+		
+    	toPlay = player5.getCardFromHand(Config.MAIDEN, 6);
+		assertEquals(Config.MAIDEN, toPlay.getType());
+		assertEquals(6, toPlay.getValue());
+		game.playCard(toPlay);
+		
+    	assertEquals(9, player5.getTotalCardValue());
+    	assertEquals(5, player1.getTotalCardValue());
+    	assertEquals(5, player2.getTotalCardValue());
+    	assertEquals(3, player3.getTotalCardValue());
+    	assertEquals(3, player4.getTotalCardValue());
+    	
+    	pickup = new SupportCard(Config.SQUIRE, 4);
+    	game.endTurn();
+    	// end of player 5's turn
+    	
+    	// back to player 1's turn
+    	game.setCurrentPlayer(player1);
+		game.startTurn();
+    	game.getCurrentPlayer().addCard(pickup);
+    	
+		toPlay = player1.getCardFromHand(Config.SQUIRE, 4);
+		game.playCard(toPlay);
+		assertEquals(Config.SQUIRE, toPlay.getType());
+		assertEquals(4, toPlay.getValue());
+		
+    	assertEquals(9, player1.getTotalCardValue());
+    	assertEquals(5, player2.getTotalCardValue());
+    	assertEquals(3, player3.getTotalCardValue());
+    	assertEquals(3, player4.getTotalCardValue());
+    	assertEquals(9, player5.getTotalCardValue());
+    	
+    	pickup = new ColourCard(Config.BLUE, 4);
+    	game.endTurn();
+    	// end of player 1's turn
+ 
+	}
+
 	@Test
 	public void testRedTournament(){
 		System.out.println("@Test: testing red tournament");
