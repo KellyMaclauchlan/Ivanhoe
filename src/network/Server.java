@@ -169,20 +169,16 @@ public class Server implements Runnable, Observer {
 		for(int i = 0; i < a; i++){
 			int r = rand.nextInt(2) + 1;
 			if(r == 1 ){
-				//ai = new AI(new StrategyPlayAll("AI" + i));
 				s = new StrategyPlayAll("AI" + i);
 				ai = new AI(s, s.getName());
 			}
 			else if(r == 2){
-				//ai = new AI(new StrategyWithdraw("AI" + i));
 				s = new StrategyWithdraw("AI" + i);
 				ai = new AI(s, s.getName());
 			}
-			//ai.setName("AI" + i);
 			ai.registerObserver(this);
 			aiPlayers.add(ai);
 			game.joinGame(ai);
-			System.out.println("AI name: " + ai.getName());
 		}
 	}
 	
