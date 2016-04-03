@@ -91,7 +91,7 @@ public class StrategyPlayAll implements Strategy{
 		else{
 			output = this.bestColourChoice; 
 		}
-		this.tournamentColour = output;
+		tournamentColour = output;
 		return output;
 	}
 	

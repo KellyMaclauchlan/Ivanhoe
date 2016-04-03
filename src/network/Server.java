@@ -227,7 +227,7 @@ public class Server implements Runnable, Observer {
 		}
 		send = game.processInput(msg);
 		processInput(id, send);
-		sendToAI(send);
+		//sendToAI(send);
 	}
 	
 	public void send1Client(int id, String msg){
@@ -261,6 +261,7 @@ public class Server implements Runnable, Observer {
 		
 		else if(send.contains(Config.HAND)){
 			sendAllClients(send);
+			sendToAI(send);
 		}
 		
 		else if(send.contains(Config.NEED_PLAYERS)){
@@ -273,14 +274,17 @@ public class Server implements Runnable, Observer {
 
 		else if (send.contains(Config.PLAY)){
 			sendAllClients(send);
+			sendToAI(send);
 		}
 		
 		else if (send.contains(Config.WAITING)){
 			sendAllClients(send);
+			sendToAI(send);
 		}
 		
 		else if(send.contains(Config.POINTS)){
 			sendAllClients(send);
+			sendToAI(send);
 		} 
 		else if(send.contains(Config.IS_STUNNED)) {
 			send1Client(id, send);
@@ -290,6 +294,7 @@ public class Server implements Runnable, Observer {
 		
 		else{
 			sendAllClients(send);
+			sendToAI(send);
 		}
 	}
 
