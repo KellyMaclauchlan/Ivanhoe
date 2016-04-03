@@ -1,4 +1,4 @@
-	package ui;
+package ui;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -90,9 +90,6 @@ public class MainWindowController implements Observer, Subject{
 	}
 	public void setVarPlayerName(String name){playerName = name;}
 	
-	
-	/***********/
-	//public void setTextDisplay(String msg){window.getTextDisplay().setText(msg);}
 	public void setTextDisplay(String msg){window.getDisplayText().append(msg);}
 	
 	public void setScore(int player, int score) {
@@ -308,7 +305,7 @@ public class MainWindowController implements Observer, Subject{
 		}
 		return result;
 	}
-	public String playerPickCardForOutwhit(String name){
+	public String playerPickCardForOutwit(String name){
 		int player = this.playerNames.indexOf(name);
 		String result = "";
 		ArrayList<String> info= new ArrayList<String>();
@@ -346,9 +343,7 @@ public class MainWindowController implements Observer, Subject{
 		for(Card c : this.playedCards.get(player)){
 			if(s.contains(c.getCardDescription())){
 				return c.getType()+" "+c.getValue();
-			}
-			//if(s.equalsIgnoreCase(c.getCardDescription()))
-				
+			}				
 		} 
 		if(s.contains(Config.SHIELD)){
 			return Config.SHIELD+" 0";
@@ -403,7 +398,6 @@ public class MainWindowController implements Observer, Subject{
 	}
 
 	private void addDescription() {
-		// TODO Auto-generated method stub
 		String info= this.playerCards.get(window.getLastCard() + moved).getCardDescription();
 		window.getCardTextLabel().setText(info);
 	}

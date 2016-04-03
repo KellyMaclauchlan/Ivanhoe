@@ -171,9 +171,9 @@ public class GUIProcessor {
 		} else if (cardType.equalsIgnoreCase(Config.STUNNED)){
 			output = " " + Config.STUNNED + " " + client.getWindow().pickAName("stun.");
 		} else if (cardType.equalsIgnoreCase(Config.OUTWIT)){
-			output = " " + Config.OUTWIT + " " + client.getWindow().playerPickCardForOutwhit(client.getWindow().getPlayerName());
+			output = " " + Config.OUTWIT + " " + client.getWindow().playerPickCardForOutwit(client.getWindow().getPlayerName());
 			String name = client.getWindow().pickAName("take a played card from.");
-			output += " " + name + " " + client.getWindow().playerPickCardForOutwhit(name);
+			output += " " + name + " " + client.getWindow().playerPickCardForOutwit(name);
 		} else if (cardType.equalsIgnoreCase(Config.DODGE)){
 			String name = client.getWindow().pickAName("take a played card from.");
 			output = " " + Config.DODGE + " " + name + " " + client.getWindow().playerPickCardFromDisplay(name);

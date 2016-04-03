@@ -25,7 +25,6 @@ public class PopupTest extends FestSwingJUnitTestCase  {
 
 	@Override
 	protected void onSetUp() {
-		// TODO Auto-generated method stub
 		cards=new ArrayList<Card>();
 		cards.add(new ColourCard("purple", 3,"resources/cards_small/simpleCards14.jpg"));
 		cards.add(new ColourCard("purple", 4,"resources/cards_small/simpleCards15.jpg"));
@@ -62,16 +61,12 @@ public class PopupTest extends FestSwingJUnitTestCase  {
 		Icon old= editor.button("card2").target.getIcon();
 		editor.button("leftArrow").click();
 		assertTrue(editor.button("card3").target.getIcon().equals(old));
-		//assertTrue(true);
-		//fail("Not yet implemented");
 	}
 	@Test
 	public void testRightArrow() {
 		Icon old= editor.button("card2").target.getIcon();
 		editor.button("rightArrow").click();
 		assertTrue(editor.button("card1").target.getIcon().equals(old));
-		//assertTrue(true);
-		//fail("Not yet implemented");
 	}
 
 
