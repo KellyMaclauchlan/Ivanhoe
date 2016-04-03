@@ -118,8 +118,7 @@ public class Server implements Runnable, Observer {
 	}
 	public void handle(int id, String msg) {
 		log.info("Message Received: " + msg);
-		System.out.println("Message Received: " + msg);
-		
+
 		/* Server receives message that client has quit */
 		if (msg.contains(Config.QUIT) || msg.equals(null)) {
 			log.info(String.format("Removing Client: %d", id));

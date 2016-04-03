@@ -140,7 +140,7 @@ public class GUIProcessor {
 				}
 			}
 		}
-		client.logActivity(msg);
+		client.logActivity(client.getCurrPlayer() + " played a card");
 		return client.getOutput();
 	}
 	

@@ -193,7 +193,6 @@ public class Client implements Runnable, Observer {
 	/* Handles all the input and output to and from the server */
 	public void handle(String msg) throws IOException {
 		String send = Config.OUTPUT;
-		System.out.println("Message received: " + msg);
 		log.info("Message Received: " + msg);
 
 		if (msg.contains("input")) {
