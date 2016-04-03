@@ -17,7 +17,6 @@ public class AI extends Player implements Subject{
 	public AI(Strategy s, String name){
 		super(name);
 		this.strategy = s;
-		System.out.println("AI of type: " + strategy);
 		this.name = name;
 	}
 	

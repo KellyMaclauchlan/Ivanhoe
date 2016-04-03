@@ -182,7 +182,6 @@ public class Server implements Runnable, Observer {
 			String join = Config.JOIN + " " + ai.getName();
 			game.processInput(join);
 		}
-		System.out.println("Size: " + aiPlayers.size());
 	}
 	
 	/* Checks to see who the first player is so the correct popups can occur */
