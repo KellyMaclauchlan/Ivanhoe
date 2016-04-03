@@ -78,12 +78,6 @@ public class GameProcessor {
 			//pick tokens happens automatically 
 			game.startGame();
 			
-			/* BRIT!!!!!!!!!!!!!!!!!!!!!!! */
-			
-			for(Player p : game.getPlayers()){
-				System.out.println("Player Name: " + p.getName());
-			}
-			
 			output += Config.HAND + " ";
 			for (Player p: game.getPlayers()) {
 				output += " " + Config.PLAYER_NAME + " " + p.getName() + " " + Config.PLAYER_CARDS; 
@@ -500,10 +494,5 @@ public class GameProcessor {
 			}
 		}
 		return output;
-	}
-
-
-	public void joinGame(Player player) {
-		game.joinGame(player);
 	}
 }

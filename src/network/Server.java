@@ -16,7 +16,7 @@ import ai.StrategyWithdraw;
 import config.Config;
 import config.Observer;
 import game.GameEngine;
-import game.InputProcessor;
+import game.ServerProcessor;
 
 public class Server implements Runnable, Observer {
 	private int numPlayers = 0;
@@ -24,7 +24,7 @@ public class Server implements Runnable, Observer {
 	private ServerSocket server = null;
 	private HashMap<Integer, ServerThread> clients;
 	private Logger log = Logger.getLogger("Server");
-	private InputProcessor game;
+	private ServerProcessor game;
 	private boolean minPlayers = false;
 	private boolean maxPlayers = false; 
 	private ArrayList<String> names = new ArrayList<String>();
@@ -40,7 +40,7 @@ public class Server implements Runnable, Observer {
 	
 	public boolean testMaxPlayers(){return maxPlayers;}
 	public boolean testMinPlayers(){return minPlayers;}
-	public InputProcessor getGame(){return game;}
+	public ServerProcessor getGame(){return game;}
 	
 	public void runServer(int port) {
 		try{
@@ -54,7 +54,7 @@ public class Server implements Runnable, Observer {
 		}
 	}
 	public void start() {
-		game = new InputProcessor();
+		game = new ServerProcessor();
 		log.info("Game has started");
 		if(thread == null){
 			thread = new Thread(this);

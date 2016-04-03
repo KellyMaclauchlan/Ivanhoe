@@ -2,10 +2,10 @@ package network;
 
 import config.Config;
 
-public class InputProcessor {
+public class ClientProcessor {
 	Client client;
 	GUIProcessor processor;
-	public InputProcessor(Client client) {
+	public ClientProcessor(Client client) {
 		this.client = client;
 		this.processor = client.getProcessor();
 	}

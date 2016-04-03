@@ -2,7 +2,7 @@ package game;
 
 import config.Config;
 
-public class InputProcessor {
+public class ServerProcessor {
 private GameProcessor gameProcessor = new GameProcessor();
 
 	public String processInput(String input) {

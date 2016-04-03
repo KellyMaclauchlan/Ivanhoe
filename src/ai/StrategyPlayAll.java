@@ -192,7 +192,7 @@ public class StrategyPlayAll implements Strategy{
 		//Card toPlay; 
 		
 		System.out.println("tournamentColour: " + tournamentColour);
-		if(highestTotalValue <= this.currentPoints && !this.started){
+		if(highestTotalValue <= this.currentPoints || !this.started){
 			
 			if(tournamentColour.equals(Config.RED)){
 				if(this.redCards.size() != 0){

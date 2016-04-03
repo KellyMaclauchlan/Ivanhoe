@@ -58,10 +58,6 @@ public class GameEngine {
 	public void joinGame(Player player) {
 		players.add(player);
 		joined = true;
-		
-		for(int i = 0; i < players.size(); i++){
-			System.out.println("NAME: " + players.get(i).getName());
-		}
 	}
 
 	public void pickTokens() {

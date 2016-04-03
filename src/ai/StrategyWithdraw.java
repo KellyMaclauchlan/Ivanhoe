@@ -11,9 +11,6 @@ import game.Player;
 public class StrategyWithdraw implements Strategy{
 	/* This strategy will withdraw no matter what */
 	
-	
-	/* PROBLEM: Class fails when the actual player has nothing to play */
-	
 	private Logger log = Logger.getLogger("AI");
 	private ArrayList<Card> hand = new ArrayList<Card>();
 	private String output = "result";

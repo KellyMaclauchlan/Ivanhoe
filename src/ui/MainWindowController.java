@@ -77,36 +77,30 @@ public class MainWindowController implements Observer, Subject{
 		return tournamentColour;
 	}
 	public int getCurrPlayer() {return currPlayer;}
+	public int getPlayerByName(String name) {
+		int player = playerNames.indexOf(name);
+		return player;
+	}
 	
 	/* SETTERS */
 	public void setPlayerTurn(int i){this.currPlayer = i;}
 	public void setPlayerNum(int player) {playerNum = player;}
 	public void setTotalPlayers(int totalPlayers) {this.totalPlayers = totalPlayers;}
 	public void setMoved(int i){moved = i;}
-	
-	public int getPlayerByName(String name) {
-		int player = playerNames.indexOf(name);
-		return player;
-	}
 	public void setVarPlayerName(String name){playerName = name;}
-	
 	public void setTextDisplay(String msg){window.getDisplayText().append(msg);}
-	
 	public void setScore(int player, int score) {
 		this.playerScores.set(player, score);	
 		window.getPlayerPoints(player).setText("" + score);
 	}
-	
 	public void setName(int player, String name) {
 		this.playerNames.set(player, name);
 		window.getPlayerNames(player).setText(name);
 	}	
-	
 	public void setTournamentColour(int i) {
 		this.tournamentColour=i;
 		this.window.getContentPane().setBackground(this.backgroundColours[i]);
 	}
-	
 	public void setCurrPlayer(int currPlayer) {
 		this.currPlayer = currPlayer;
 		if(currPlayer==this.playerNum){
@@ -117,7 +111,6 @@ public class MainWindowController implements Observer, Subject{
 		}
 		window.getPlayerNames(currPlayer).setSelected(true);
 	}
-	
 	public void setNumPlayers(int i){
 		this.setTotalPlayers(i);
 		int j ;
@@ -130,6 +123,12 @@ public class MainWindowController implements Observer, Subject{
 			this.window.getPlayerCards(j).setEnabled(false);
 		}
 		log.info("Total number of players is: " + i);
+	}
+	public void setStun(int player, boolean toggle){
+		window.setStun(player, toggle);
+	}
+	public void setShield(int player, boolean toggle){
+		window.setShield(player, toggle);
 	}
 	
 	/* Popups */
@@ -353,8 +352,7 @@ public class MainWindowController implements Observer, Subject{
 		}
 		return s;
 	}
-	
-	/*end of popups*/
+
 	/* Observer Pattern */
 	@Override
 	public void registerObserver(Observer observer) {
@@ -542,13 +540,7 @@ public class MainWindowController implements Observer, Subject{
 	public void startTurn(){
 		this.window.startTurn();
 	}
-	public void setStun(int player, boolean toggle){
-		window.setStun(player, toggle);
-	}
-	public void setShield(int player, boolean toggle){
-		window.setShield(player, toggle);
-	}
-	
+
 	public void resetPlayedCards(int player){
 		this.playedCards.get(player).clear();
 	}
