@@ -37,7 +37,6 @@ public class StrategyWithdraw implements Strategy{
 	public StrategyWithdraw(String n){
 		log.info("New AI of type 'Withdraw' has been created");
 		this.name = n;
-		System.out.println("Withdraw name: " + name);
 	}
 
 	/* If the AI is the first player of the game and has to choose a tournament colour, 
@@ -68,8 +67,6 @@ public class StrategyWithdraw implements Strategy{
 					toPlay = this.hand.get(i);
 					String type = toPlay.getType();
 					int value = toPlay.getValue();
-					
-					//output = Config.PLAY + " " +  hand.get(i).getType() + " " + hand.get(i).getValue();
 					output = Config.PLAY + " " + type + " " + value;
 					this.hand.remove(i);
 					break;
@@ -90,8 +87,6 @@ public class StrategyWithdraw implements Strategy{
 	 * what the AI will send back to the server */
 	public String processInput(String msg){
 		log.info("AI has received: " + msg);
-
-		System.out.println("Withdraw: " + msg);
 		/* Determines who's turn it is */
 		 if (msg.contains(Config.TURN)){
 			output = processPlayerTurn(msg);
@@ -118,7 +113,6 @@ public class StrategyWithdraw implements Strategy{
 				output = Config.OUTPUT;
 			}
 		}
-		System.out.println("Withdraw sending: " + output);
 		return output;
 	}
 	

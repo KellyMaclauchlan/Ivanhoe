@@ -22,7 +22,7 @@ public class MainWindowController implements Observer, Subject{
 	private String lastMessage;
 	private Color backgroundColours[] = {new Color(128,156,229),new Color(255,0,40),new Color(255,223,0), new Color(81,186,91), new Color(161,89,188)};
 	private Card lastCard;
-	private Logger log = Logger.getLogger("UI");
+	private Logger log = Logger.getLogger("GUI");
 	private int numberOfPlayers;
 	
 	private ArrayList<Card> playerCards;

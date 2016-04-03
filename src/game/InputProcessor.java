@@ -30,8 +30,4 @@ private GameProcessor gameProcessor = new GameProcessor();
 			}
 		return output;
 	}
-	
-	public void joinGame(Player player) {
-		gameProcessor.joinGame(player);
-	}
 }

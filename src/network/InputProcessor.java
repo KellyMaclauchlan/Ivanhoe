@@ -15,7 +15,13 @@ public class InputProcessor {
 	public String processInput(String msg){
 		if (msg.equals(Config.QUIT)) {  
 			client.setOutput(Config.QUIT + " " + client.getThisPlayerName());
-		} else if (msg.contains(Config.PLAY_IVANHOE)) {
+		} 
+		
+		else if(msg.contains(Config.PLAYER_LEFT)){
+			client.getWindow().GameOverPopup("No one");
+		}
+		
+		else if (msg.contains(Config.PLAY_IVANHOE)) {
 			String[] input = msg.split(" ");
 			String cardName = input[3];
 			String playerName = input[2];
@@ -30,7 +36,9 @@ public class InputProcessor {
 					}
 				}
 			}
-		} else if (msg.contains(Config.IS_STUNNED)) {
+		} 
+		
+		else if (msg.contains(Config.IS_STUNNED)) {
 			processor.processWaiting(msg);
 			client.setOutput(Config.END_TURN);
 		}

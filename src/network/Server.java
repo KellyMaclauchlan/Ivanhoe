@@ -30,6 +30,7 @@ public class Server implements Runnable, Observer {
 	private ArrayList<String> names = new ArrayList<String>();
 	private AI ai;
 	private ArrayList<AI> aiPlayers = new ArrayList<AI>();
+	//private HashMap<String, AI> aiPlayers;
 	
 	private String send = Config.OUTPUT;
 
@@ -179,15 +180,10 @@ public class Server implements Runnable, Observer {
 			}
 			ai.registerObserver(this);
 			aiPlayers.add(ai);
-			game.joinGame(ai);
+			String join = Config.JOIN + " " + ai.getName();
+			game.processInput(join);
 		}
-	}
-	
-	/* Sends the game engine messages to the AI */
-	public void sendToAI(String msg){
-		for(AI i : aiPlayers){
-			i.processInput(msg);
-		}
+		System.out.println("Size: " + aiPlayers.size());
 	}
 	
 	/* Checks to see who the first player is so the correct popups can occur */
@@ -224,7 +220,7 @@ public class Server implements Runnable, Observer {
 		}
 		send = game.processInput(msg);
 		processInput(id, send);
-		//sendToAI(send);
+		sendToAI(send);
 	}
 	
 	public void send1Client(int id, String msg){
@@ -235,6 +231,13 @@ public class Server implements Runnable, Observer {
 	public void sendAllClients(String msg){
 		for(ServerThread to : clients.values()){
 			to.send(String.format("%s\n", msg));
+		}
+	}
+	
+	/* Sends the game engine messages to the AI */
+	public void sendToAI(String msg){
+		for(int i = 0; i < aiPlayers.size(); i++){
+			aiPlayers.get(i).processInput(msg);
 		}
 	}
 	
@@ -258,7 +261,7 @@ public class Server implements Runnable, Observer {
 		
 		else if(send.contains(Config.HAND)){
 			sendAllClients(send);
-			sendToAI(send);
+			//sendToAI(send);
 		}
 		
 		else if(send.contains(Config.NEED_PLAYERS)){
@@ -271,17 +274,17 @@ public class Server implements Runnable, Observer {
 
 		else if (send.contains(Config.PLAY)){
 			sendAllClients(send);
-			sendToAI(send);
+			//sendToAI(send);
 		}
 		
 		else if (send.contains(Config.WAITING)){
 			sendAllClients(send);
-			sendToAI(send);
+			//sendToAI(send);
 		}
 		
 		else if(send.contains(Config.POINTS)){
 			sendAllClients(send);
-			sendToAI(send);
+			//sendToAI(send);
 		} 
 		else if(send.contains(Config.IS_STUNNED)) {
 			send1Client(id, send);
@@ -291,7 +294,7 @@ public class Server implements Runnable, Observer {
 		
 		else{
 			sendAllClients(send);
-			sendToAI(send);
+			//sendToAI(send);
 		}
 	}
 

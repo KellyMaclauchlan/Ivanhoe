@@ -70,6 +70,7 @@ public class StrategyPlayAll implements Strategy{
 	public StrategyPlayAll(String n){
 		log.info("New AI of type 'Play All' has been created");
 		this.name = n;
+		System.out.println("Play All: " + name);
 	}
 
 	public String startTournament() {
@@ -188,10 +189,10 @@ public class StrategyPlayAll implements Strategy{
 	}
 		
 	public String playACard() {
-		Card toPlay; 
+		//Card toPlay; 
 		
 		System.out.println("tournamentColour: " + tournamentColour);
-		if(highestTotalValue <= this.currentPoints || !this.started){
+		if(highestTotalValue <= this.currentPoints && !this.started){
 			
 			if(tournamentColour.equals(Config.RED)){
 				if(this.redCards.size() != 0){
@@ -274,10 +275,8 @@ public class StrategyPlayAll implements Strategy{
 	
 	public boolean checkPlayedMaiden(Card toPlay){
 		String type = toPlay.getType();
-		System.out.println("Maiden: " + playedMaiden);
 		if(type.equals(Config.MAIDEN) && !playedMaiden){
 			this.playedMaiden = true;
-			System.out.println("Playing support");
 			return true;
 		}else if(type.equals(Config.MAIDEN) && playedMaiden){
 			return false;
@@ -441,7 +440,7 @@ public class StrategyPlayAll implements Strategy{
 				output = Config.COLOUR_PICKED + " " + colour;
 				this.currentPlayer = true; 
 				addNewCard(input[4]);
-				this.setStarted(true);
+				this.started = true;
 			}	
 			
 		// every other tournament 
@@ -459,6 +458,7 @@ public class StrategyPlayAll implements Strategy{
 	}
 	
 	public String processPlay(String msg){
+		System.out.println("colour");
 		String input[] = msg.split(" ");
 		tournamentColour = input[1];
 		
@@ -470,8 +470,6 @@ public class StrategyPlayAll implements Strategy{
 	
 	public String processContinueWithdraw(String msg){
 		String[] input = msg.split(" ");
-		
-		System.out.println("continue/withdraw");
 		
 		if(msg.contains(Config.PURPLE_WIN) ){
 			if(input[7].equals(this.name)){
@@ -498,7 +496,6 @@ public class StrategyPlayAll implements Strategy{
 				}
 				else if(input[4].equals(this.name)){
 					this.currentPlayer = true;
-					//otherPlayer = Integer.parseInt(input[2]);
 					
 					// check the highest total value played by any player 
 					if(Integer.parseInt(input[2]) > highestTotalValue){
@@ -506,7 +503,6 @@ public class StrategyPlayAll implements Strategy{
 					}
 					
 					if(highestTotalValue > this.currentPoints && this.started){
-						System.out.println("Start");
 						output = Config.WITHDRAW;
 					}else{
 						addNewCard(input[5]); 

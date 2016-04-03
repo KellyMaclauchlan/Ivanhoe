@@ -27,13 +27,6 @@ public class Player {
 		front = new ArrayList<>();
 	}
 	
-	public Player(){
-		//this.name = "AI";
-		currentTokens = new ArrayList<>();
-		display = new ArrayList<>();
-		front = new ArrayList<>();
-	}
-	
 	public Card getCardFromHand(String type, int value) {
 		Card card = null;
 		for (int i = 0; i < cards.size(); i++) {
