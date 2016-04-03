@@ -20,6 +20,7 @@ public class Config {
 	
 	/* Generic message */
 	public static final String OUTPUT = "output";
+	public static final String INPUT = "input";
 	
 	/* Client's joining a game */
 	public static final String CLIENT_START = "client";
@@ -88,8 +89,6 @@ public class Config {
 	public static final String YELLOW = "yellow";
 	public static final String GREEN = "green";
 	
-//					options = new String[] {Config.BLUE, Config.RED, Config.YELLOW, Config.GREEN, Config.PURPLE};
-
 	public static final int BLUE_INT = 0;
 	public static final int RED_INT = 1;
 	public static final int YELLOW_INT = 2;
@@ -191,9 +190,9 @@ public class Config {
 	public static final String STUN_IMG = "icons/stun.png";
 	
 
-	public static final ArrayList<String> emptyTokenStrings = new ArrayList<String>(Arrays.asList("icons/blue_empty.png",
-			"icons/red_empty.png", "icons/yellow_empty.png", "icons/green_empty.png", 
-			"icons/purple_empty.png"));
+	public static final ArrayList<String> emptyTokenStrings = new ArrayList<String>(Arrays.asList(BLUE_EMPTY,
+			RED_EMPTY, YELLOW_EMPTY, GREEN_EMPTY, 
+			PURPLE_EMPTY));
 	
 	//strings for description
 	public static final ArrayList<String> infoStrings = new ArrayList<String>(Arrays.asList(
@@ -216,10 +215,10 @@ public class Config {
 			
 			"<html><p>Knock Down: Draw at random one card from any one opponent's hand and add it to your hand,<br>without revealing the card to other opponents.</p></html>",
 			"Outmaneuver: All opponents must remove the last card played on their displays.", 
-			"<html><p>Charge: Identify the lowest value card throughout all displays.<br> All players must dis- card all cards of this value from their displays.</p></html>",
-			"<html><p>Counter-Charge: Identify the highest value card throughout all displays. All play- ers must discard all cards of this value from their displays.</p></html",
+			"<html><p>Charge: Identify the lowest value card throughout all displays.<br> All players must discard all cards of this value from their displays.</p></html>",
+			"<html><p>Counter-Charge: Identify the highest value card throughout all displays. All players must discard all cards of this value from their displays.</p></html",
 			"Disgrace: Each player must remove all his supporters from his display.", 
-			"<html><p>Adapt: Each player may only keep one card of each value in his display. <br>All other cards with the same value are discarded. <br>Each player decides which of the matching-value cards he will discard.</p></html>",
+			"<html><p>Adapt: Each player may only keep one card of each value in his display. <br> All other cards with the same value are discarded. </html>",
 			"<html><p>Outwit: Place one of your faceup cards in front of an opponent,<br>and take one faceup card from this opponent and place it face up in front of yourself. <br>This may include the SHIELD and STUNNED cards.</p></html>"));
 
 }

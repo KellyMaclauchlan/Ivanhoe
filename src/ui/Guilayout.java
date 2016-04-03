@@ -271,7 +271,6 @@ public class Guilayout extends JFrame {
 		getContentPane().add(token23, gbc_token23);
 		
 		JLabel token33 = new JLabel("");
-		//token33.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token33 = new GridBagConstraints();
 		gbc_token33.insets = new Insets(0, 0, 5, 5);
 		gbc_token33.gridx = 15;
@@ -279,7 +278,6 @@ public class Guilayout extends JFrame {
 		getContentPane().add(token33, gbc_token33);
 		
 		JLabel token43 = new JLabel("");
-		//token43.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token43 = new GridBagConstraints();
 		gbc_token43.insets = new Insets(0, 0, 5, 5);
 		gbc_token43.gridx = 20;
@@ -287,7 +285,6 @@ public class Guilayout extends JFrame {
 		getContentPane().add(token43, gbc_token43);
 		
 		JLabel token53 = new JLabel("");
-		//token53.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token53 = new GridBagConstraints();
 		gbc_token53.insets = new Insets(0, 0, 5, 5);
 		gbc_token53.gridx = 25;
@@ -295,7 +292,6 @@ public class Guilayout extends JFrame {
 		getContentPane().add(token53, gbc_token53);
 		
 		JLabel token14 = new JLabel("");
-		//token14.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token14 = new GridBagConstraints();
 		gbc_token14.insets = new Insets(0, 0, 5, 5);
 		gbc_token14.gridx = 5;
@@ -303,7 +299,6 @@ public class Guilayout extends JFrame {
 		getContentPane().add(token14, gbc_token14);
 		
 		JLabel token24 = new JLabel("");
-		//token24.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token24 = new GridBagConstraints();
 		gbc_token24.insets = new Insets(0, 0, 5, 5);
 		gbc_token24.gridx = 10;
@@ -311,7 +306,6 @@ public class Guilayout extends JFrame {
 		getContentPane().add(token24, gbc_token24);
 		
 		JLabel token34 = new JLabel("");
-		//token34.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token34 = new GridBagConstraints();
 		gbc_token34.insets = new Insets(0, 0, 5, 5);
 		gbc_token34.gridx = 15;
@@ -319,7 +313,6 @@ public class Guilayout extends JFrame {
 		getContentPane().add(token34, gbc_token34);
 		
 		JLabel token44 = new JLabel("");
-		//token44.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token44 = new GridBagConstraints();
 		gbc_token44.insets = new Insets(0, 0, 5, 5);
 		gbc_token44.gridx = 20;
@@ -327,7 +320,6 @@ public class Guilayout extends JFrame {
 		getContentPane().add(token44, gbc_token44);
 		
 		JLabel token54 = new JLabel("");
-		//token54.setIcon(ResourceLoader.loadImage(Config.PURPLE_EMPTY));
 		GridBagConstraints gbc_token54 = new GridBagConstraints();
 		gbc_token54.insets = new Insets(0, 0, 5, 5);
 		gbc_token54.gridx = 25;
@@ -649,84 +641,6 @@ public class Guilayout extends JFrame {
 		gbc_points5.gridx = 27;
 		gbc_points5.gridy = 7;
 		getContentPane().add(points5, gbc_points5);
-		
-		//naming the buttons 
-		/*this.withdrawButton = withdrawButton;
-		this.deck = Deck;
-		this.leftArrow = leftArrow;
-		this.rightArrow = rightArrow;
-		this.playCardButton = playCardButton;
-		this.endTurnButton = endTurnButton;
-		this.textLabel = textLabel;
-		this.cardTextLabel = cardText;
-		
-		this.playerCards= new JButton[10];
-		this.playerCards[0] = card1;
-		this.playerCards[1] = card2;
-		this.playerCards[2] = card3;
-		this.playerCards[3] = card4;
-		this.playerCards[4] = card5;
-		this.playerCards[5] = card6;
-		this.playerCards[6] = card7;
-		this.playerCards[7] = card8;
-		this.playerCards[8] = card9;
-		this.playerCards[9] = card10;
-		
-		this.tokens = new JLabel[5][5];
-		this.tokens[0][0] = token11;
-		this.tokens[0][1] = token12;
-		this.tokens[0][2] = token13;
-		this.tokens[0][3] = token14;
-		this.tokens[0][4] = token15;
-		
-		this.tokens[1][0] = token21;
-		this.tokens[1][1] = token22;
-		this.tokens[1][2] = token23;
-		this.tokens[1][3] = token24;
-		this.tokens[1][4] = token25;
-		
-		this.tokens[2][0] = token31;
-		this.tokens[2][1] = token32;
-		this.tokens[2][2] = token33;
-		this.tokens[2][3] = token34;
-		this.tokens[2][4] = token35;
-		
-		this.tokens[3][0] = token41;
-		this.tokens[3][1] = token42;
-		this.tokens[3][2] = token43;
-		this.tokens[3][3] = token44;
-		this.tokens[3][4] = token45;
-		
-		this.tokens[4][0] = token51;
-		this.tokens[4][1] = token52;
-		this.tokens[4][2] = token53;
-		this.tokens[4][3] = token54;
-		this.tokens[4][4] = token55;
-		
-		
-		this.playerNames = new JRadioButton[5];
-		this.playerNames[0] = name1;
-		this.playerNames[1] = name2;
-		this.playerNames[2] = name3;
-		this.playerNames[3] = name4;
-		this.playerNames[4] = name5;
-		for(int i = 0; i < 5; i++){
-			this.playerNames[i].setEnabled(false);
-		}
-		
-		this.playedCards = new JButton[5];
-		this.playedCards[0] = p1d;
-		this.playedCards[1] = p2d;
-		this.playedCards[2] = p3d;
-		this.playedCards[3] = p4d;
-		this.playedCards[4] = p5d;
-		
-		this.playerPoints = new JLabel[5];
-		this.playerPoints[0] = points1;
-		this.playerPoints[1] = points2;
-		this.playerPoints[2] = points3;
-		this.playerPoints[3] = points4;
-		this.playerPoints[4] = points5;*/
 	}
 
 	

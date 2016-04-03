@@ -14,11 +14,13 @@ import game.ActionCard;
 import game.Card;
 import game.ColourCard;
 import game.GameEngine;
+import game.GameProcessor;
 import game.Player;
 import game.SupportCard;
 
 public class TestActionCards {
 	GameEngine game;
+	GameProcessor gameProcessor;
 	Player player1;
 	Player player2;
 	Player player3;
@@ -33,8 +35,9 @@ public class TestActionCards {
 	@Before
 	public void setUp(){
 		System.out.println("@Before: TestGameEngine");
+		gameProcessor = new GameProcessor();
+		game = gameProcessor.getGame();
 		
-		game = new GameEngine();
 		player1 = new Player("Katie");
 		player2 = new Player("Brit");
 		player3 = new Player("Kelly");
@@ -137,7 +140,7 @@ public class TestActionCards {
 		
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-		String unhorse = game.processPlay("play unhorse yellow");
+		String unhorse = gameProcessor.processPlay("play unhorse yellow");
 		
 		//test tournament colour
 		assertEquals("waiting unhorse yellow", unhorse);
@@ -157,13 +160,13 @@ public class TestActionCards {
 		
 		game.setCurrentPlayer(player5);
 		game.startTurn();
-		String shield = game.processPlay("play shield");
+		String shield = gameProcessor.processPlay("play shield");
 		
 		assertEquals("waiting shield " + player5.getName(), shield);
 
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-		String unhorse = game.processPlay("play unhorse yellow");
+		String unhorse = gameProcessor.processPlay("play unhorse yellow");
 		
 		//test discard
 		assertEquals(7, player1.getCards().size());
@@ -183,11 +186,11 @@ public class TestActionCards {
 
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-		String unhorse = game.processPlay("play unhorse yellow");
+		String unhorse = gameProcessor.processPlay("play unhorse yellow");
 		assertEquals("waiting plyivnhoe " + player2.getName() + " unhorse", unhorse);
 		
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe unhorse");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe unhorse");
 		assertEquals("waiting ivanhoe " + player1.getName(), ivanhoe);
 		
 		//test tournament colour
@@ -206,7 +209,7 @@ public class TestActionCards {
 		
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-		String changeWeapon = game.processPlay("play changeweapon yellow");
+		String changeWeapon = gameProcessor.processPlay("play changeweapon yellow");
 		
 		//test discard
 		assertEquals(7, player1.getCards().size());
@@ -226,12 +229,12 @@ public class TestActionCards {
 		
 		game.setCurrentPlayer(player5);
 		game.startTurn();
-		String shield = game.processPlay("play shield");
+		String shield = gameProcessor.processPlay("play shield");
 		assertEquals("waiting shield " + player5.getName(), shield);
 
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-		String changeWeapon = game.processPlay("play changeweapon yellow");
+		String changeWeapon = gameProcessor.processPlay("play changeweapon yellow");
 		
 		//test discard
 		assertEquals(7, player1.getCards().size());
@@ -251,11 +254,11 @@ public class TestActionCards {
 
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-		String changeWeapon = game.processPlay("play changeweapon yellow");
+		String changeWeapon = gameProcessor.processPlay("play changeweapon yellow");
 		assertEquals("waiting plyivnhoe " + player2.getName() + " changeweapon", changeWeapon);
 
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe changeweapon");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe changeweapon");
 		assertEquals("waiting ivanhoe " + player1.getName(), ivanhoe);
 		
 		//test discard
@@ -274,7 +277,7 @@ public class TestActionCards {
 		
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-		String dropWeapon = game.processPlay("play dropweapon");
+		String dropWeapon = gameProcessor.processPlay("play dropweapon");
 		
 		//test discard
 		assertEquals(7, player1.getCards().size());
@@ -294,12 +297,12 @@ public class TestActionCards {
 		
 		game.setCurrentPlayer(player5);
 		game.startTurn();
-		String shield = game.processPlay("play shield");
+		String shield = gameProcessor.processPlay("play shield");
 		assertEquals("waiting shield " + player5.getName(), shield);
 
 		game.setCurrentPlayer(player1);
 		game.startTurn();
-		String dropWeapon = game.processPlay("play dropweapon");
+		String dropWeapon = gameProcessor.processPlay("play dropweapon");
 		
 		//test discard
 		assertEquals(7, player1.getCards().size());
@@ -320,11 +323,11 @@ public class TestActionCards {
 		game.startTurn();
 		player2.addCard(new ActionCard(Config.IVANHOE));
 
-		String dropWeapon = game.processPlay("play dropweapon");
+		String dropWeapon = gameProcessor.processPlay("play dropweapon");
 		assertEquals("waiting plyivnhoe " + player2.getName() + " dropweapon", dropWeapon);
 
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe dropweapon");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe dropweapon");
 		assertEquals("waiting ivanhoe " + player1.getName(), ivanhoe);
 		
 		//test discard
@@ -350,7 +353,7 @@ public class TestActionCards {
 		game.setCurrentPlayer(player2);
 		game.startTurn();		
 		
-		String breaklance = game.processPlay("play breaklance " + player1.getName());
+		String breaklance = gameProcessor.processPlay("play breaklance " + player1.getName());
 		
 		//test message passed
 		assertEquals("waiting breaklance disply name " + player1.getName() + " " + player1.getTotalCardValue() 
@@ -374,7 +377,7 @@ public class TestActionCards {
 		
 		game.setCurrentPlayer(player5);
 		game.startTurn();
-		String shield = game.processPlay("play shield");
+		String shield = gameProcessor.processPlay("play shield");
 		assertEquals("waiting shield " + player5.getName(), shield);
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
@@ -383,7 +386,7 @@ public class TestActionCards {
 		game.setCurrentPlayer(player2);
 		game.startTurn();		
 		
-		String breaklance = game.processPlay("play breaklance " + player5.getName());
+		String breaklance = gameProcessor.processPlay("play breaklance " + player5.getName());
 		
 		//test discard (none because of shield)
 		assertEquals(8, player2.getCards().size());
@@ -416,11 +419,11 @@ public class TestActionCards {
 		game.startTurn();		
 		
 		//prompt ivanhoe
-		String breaklance = game.processPlay("play breaklance " + player1.getName());
+		String breaklance = gameProcessor.processPlay("play breaklance " + player1.getName());
 		assertEquals("waiting plyivnhoe " + player1.getName() + " breaklance", breaklance);
 
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe riposte");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe riposte");
 		assertEquals("waiting ivanhoe " + player2.getName(), ivanhoe);
 		
 		//test discard 
@@ -449,7 +452,7 @@ public class TestActionCards {
 		game.setCurrentPlayer(player2);
 		game.startTurn();		
 		
-		String riposte = game.processPlay("play riposte " + player1.getName());
+		String riposte = gameProcessor.processPlay("play riposte " + player1.getName());
 		
 		//test discard
 		assertEquals(7, player2.getCards().size());
@@ -475,7 +478,7 @@ public class TestActionCards {
 		
 		game.setCurrentPlayer(player5);
 		game.startTurn();
-		String shield = game.processPlay("play shield");
+		String shield = gameProcessor.processPlay("play shield");
 		assertEquals("waiting shield " + player5.getName(), shield);
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
@@ -483,7 +486,7 @@ public class TestActionCards {
 
 		game.setCurrentPlayer(player2);
 		game.startTurn();		
-		String riposte = game.processPlay("play riposte " + player5.getName());
+		String riposte = gameProcessor.processPlay("play riposte " + player5.getName());
 		
 		//test discard (none because of shield)
 		assertEquals(8, player2.getCards().size());
@@ -519,11 +522,11 @@ public class TestActionCards {
 		game.startTurn();		
 		
 		//prompt ivanhoe
-		String riposte = game.processPlay("play riposte " + player1.getName());
+		String riposte = gameProcessor.processPlay("play riposte " + player1.getName());
 		assertEquals("waiting plyivnhoe " + player1.getName() + " riposte", riposte);
 		
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe riposte");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe riposte");
 		assertEquals("waiting ivanhoe " + player2.getName(), ivanhoe);
 		
 		//test discard
@@ -554,7 +557,7 @@ public class TestActionCards {
 		game.setCurrentPlayer(player2);
 		game.startTurn();		
 		
-		String dodge = game.processPlay("play dodge " + player1.getName() + " purple 5");
+		String dodge = gameProcessor.processPlay("play dodge " + player1.getName() + " purple 5");
 		
 		//test discard
 		assertEquals(7, player2.getCards().size());
@@ -581,7 +584,7 @@ public class TestActionCards {
 		
 		game.setCurrentPlayer(player5);
 		game.startTurn();
-		String shield = game.processPlay("play shield");
+		String shield = gameProcessor.processPlay("play shield");
 		assertEquals("waiting shield " + player5.getName(), shield);
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
@@ -589,7 +592,7 @@ public class TestActionCards {
 
 		game.setCurrentPlayer(player2);
 		game.startTurn();		
-		String dodge = game.processPlay("play dodge " + player5.getName() + " purple 5");
+		String dodge = gameProcessor.processPlay("play dodge " + player5.getName() + " purple 5");
 		
 		//test discard (none because of shield)
 		assertEquals(8, player2.getCards().size());
@@ -625,11 +628,11 @@ public class TestActionCards {
 		game.setCurrentPlayer(player2);
 		game.startTurn();		
 		
-		String dodge = game.processPlay("play dodge " + player1.getName() + " purple 5");
+		String dodge = gameProcessor.processPlay("play dodge " + player1.getName() + " purple 5");
 		assertEquals("waiting plyivnhoe " + player1.getName() + " dodge", dodge);
 		
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe dodge");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe dodge");
 		assertEquals("waiting ivanhoe " + player2.getName(), ivanhoe);
 		
 		//test discard
@@ -652,7 +655,7 @@ public class TestActionCards {
 		game.setCurrentPlayer(player3);
 		game.startTurn();		
 		game.playCard(player3.getCardFromHand(Config.YELLOW, 4));
-		String retreat = game.processPlay("play retreat yellow 4");
+		String retreat = gameProcessor.processPlay("play retreat yellow 4");
 		
 		// only one card in display
 		assertEquals("waiting " + Config.UNPLAYABLE, retreat);
@@ -668,7 +671,7 @@ public class TestActionCards {
 		game.playCard(player3.getCardFromHand(Config.YELLOW, 4));
 		assertEquals(2, player3.getDisplay().size());
 		assertEquals(8, player3.getTotalCardValue());
-		retreat = game.processPlay("play retreat yellow 4");
+		retreat = gameProcessor.processPlay("play retreat yellow 4");
 		assertEquals("waiting retreat " + player3.getName() + " " + player3.getTotalCardValue() 
 		+ " yellow 4", retreat);
 		
@@ -693,11 +696,11 @@ public class TestActionCards {
 		game.startTurn();		
 		
 		player3.addCard(new ActionCard(Config.SHIELD));
-		String shield = game.processPlay("play shield");
+		String shield = gameProcessor.processPlay("play shield");
 		assertEquals("waiting shield " + player3.getName(), shield);
 		
 		game.playCard(player3.getCardFromHand(Config.YELLOW, 4));
-		String retreat = game.processPlay("play retreat yellow 4");
+		String retreat = gameProcessor.processPlay("play retreat yellow 4");
 		
 		//test discard (none because of shield)
 		assertEquals(7, player3.getCards().size());
@@ -712,7 +715,7 @@ public class TestActionCards {
 		game.playCard(player3.getCardFromHand(Config.YELLOW, 4));
 		assertEquals(2, player3.getDisplay().size());
 		assertEquals(8, player3.getTotalCardValue());
-		retreat = game.processPlay("play retreat yellow 4");
+		retreat = gameProcessor.processPlay("play retreat yellow 4");
 		assertEquals("waiting retreat " + player3.getName() + " " + player3.getTotalCardValue() 
 		+ " yellow 4", retreat);
 		
@@ -735,7 +738,7 @@ public class TestActionCards {
 		game.setCurrentPlayer(player3);
 		game.startTurn();		
 		game.playCard(player3.getCardFromHand(Config.YELLOW, 4));
-		String retreat = game.processPlay("play retreat yellow 4");
+		String retreat = gameProcessor.processPlay("play retreat yellow 4");
 		
 		// only one card in display
 		assertEquals("waiting " + Config.UNPLAYABLE, retreat);
@@ -752,11 +755,11 @@ public class TestActionCards {
 		game.playCard(player3.getCardFromHand(Config.YELLOW, 4));
 		assertEquals(2, player3.getDisplay().size());
 		assertEquals(8, player3.getTotalCardValue());
-		String prompt = game.processPlay("play retreat yellow 4");
+		String prompt = gameProcessor.processPlay("play retreat yellow 4");
 		assertEquals("waiting plyivnhoe " + player2.getName() + " retreat", prompt);
 
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe outmaneuver");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe outmaneuver");
 		assertEquals("waiting ivanhoe " + player3.getName(), ivanhoe);
 		
 		//test discard (second colour card placed back into hand, retreat discarded)
@@ -797,7 +800,7 @@ public class TestActionCards {
 		assertEquals(2, player3.getDisplay().size());
 		assertEquals(8, player3.getTotalCardValue());
 		
-		game.processPlay("play outmaneuver");
+		gameProcessor.processPlay("play outmaneuver");
 		
 		//test discard (played card and card from display)
 		assertEquals(5, player3.getCards().size());
@@ -834,7 +837,7 @@ public class TestActionCards {
 		game.startTurn();		
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 5));
-		game.processPlay("play shield");
+		gameProcessor.processPlay("play shield");
 		assertEquals(2, player5.getDisplay().size());
 		assertEquals(9, player5.getTotalCardValue());
 
@@ -846,7 +849,7 @@ public class TestActionCards {
 		assertEquals(2, player3.getDisplay().size());
 		assertEquals(8, player3.getTotalCardValue());
 		
-		game.processPlay("play outmaneuver");
+		gameProcessor.processPlay("play outmaneuver");
 		
 		//test discard
 		assertEquals(5, player3.getCards().size());
@@ -898,11 +901,11 @@ public class TestActionCards {
 		assertEquals(2, player3.getDisplay().size());
 		assertEquals(8, player3.getTotalCardValue());
 		
-		String prompt = game.processPlay("play outmaneuver");
+		String prompt = gameProcessor.processPlay("play outmaneuver");
 		assertEquals("waiting plyivnhoe " + player2.getName() + " outmaneuver", prompt);
 
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe outmaneuver");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe outmaneuver");
 		assertEquals("waiting ivanhoe " + player3.getName(), ivanhoe);
 		
 		//test discard (played card and card from display)
@@ -954,7 +957,7 @@ public class TestActionCards {
 		assertEquals(2, player4.getDisplay().size());
 		assertEquals(8, player4.getTotalCardValue());
 		
-		game.processPlay("play charge");
+		gameProcessor.processPlay("play charge");
 		
 		//test discard (four discarded from action)
 		assertEquals(5, player4.getCards().size());
@@ -991,7 +994,7 @@ public class TestActionCards {
 		game.startTurn();		
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 5));
-		game.processPlay("play shield");
+		gameProcessor.processPlay("play shield");
 		assertEquals(2, player5.getDisplay().size());
 		assertEquals(9, player5.getTotalCardValue());
 
@@ -1001,7 +1004,7 @@ public class TestActionCards {
 		assertEquals(0, player4.getDisplay().size());
 		assertEquals(0, player4.getTotalCardValue());
 		
-		game.processPlay("play charge");
+		gameProcessor.processPlay("play charge");
 		
 		//test discard
 		assertEquals(7, player4.getCards().size());
@@ -1055,11 +1058,11 @@ public class TestActionCards {
 		assertEquals(8, player4.getTotalCardValue());
 		
 		//prompt player with ivanhoe to use it
-		String prompt = game.processPlay("play charge");
+		String prompt = gameProcessor.processPlay("play charge");
 		assertEquals("waiting plyivnhoe " + player2.getName() + " charge", prompt);
 
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe charge");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe charge");
 		assertEquals("waiting ivanhoe " + player4.getName(), ivanhoe);
 		
 		//test discard (four discarded from action)
@@ -1111,7 +1114,7 @@ public class TestActionCards {
 		assertEquals(2, player4.getDisplay().size());
 		assertEquals(8, player4.getTotalCardValue());
 		
-		game.processPlay("play countercharge");
+		gameProcessor.processPlay("play countercharge");
 		
 		//test discard
 		assertEquals(5, player4.getCards().size());
@@ -1148,7 +1151,7 @@ public class TestActionCards {
 		game.startTurn();		
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 5));
-		game.processPlay("play shield");
+		gameProcessor.processPlay("play shield");
 		assertEquals(2, player5.getDisplay().size());
 		assertEquals(9, player5.getTotalCardValue());
 
@@ -1158,7 +1161,7 @@ public class TestActionCards {
 		assertEquals(0, player4.getDisplay().size());
 		assertEquals(0, player4.getTotalCardValue());
 		
-		game.processPlay("play countercharge");
+		gameProcessor.processPlay("play countercharge");
 		
 		//test discard
 		assertEquals(7, player4.getCards().size());
@@ -1212,11 +1215,11 @@ public class TestActionCards {
 		assertEquals(8, player4.getTotalCardValue());
 		
 		//prompt player with ivanhoe to play it
-		String prompt = game.processPlay("play countercharge");
+		String prompt = gameProcessor.processPlay("play countercharge");
 		assertEquals("waiting plyivnhoe " + player2.getName() + " countercharge", prompt);
 
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe countercharge");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe countercharge");
 		assertEquals("waiting ivanhoe " + player4.getName(), ivanhoe);
 				
 		//test discard
@@ -1270,7 +1273,7 @@ public class TestActionCards {
 		assertEquals(3, player4.getDisplay().size());
 		assertEquals(14, player4.getTotalCardValue());
 		
-		game.processPlay("play disgrace");
+		gameProcessor.processPlay("play disgrace");
 		
 		//test discard
 		assertEquals(4, player4.getCards().size());
@@ -1309,7 +1312,7 @@ public class TestActionCards {
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 4));
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 5));
 		game.playCard(player5.getCardFromHand(Config.MAIDEN, 6));
-		game.processPlay("play shield");
+		gameProcessor.processPlay("play shield");
 
 		assertEquals(3, player5.getDisplay().size());
 		assertEquals(15, player5.getTotalCardValue());
@@ -1322,7 +1325,7 @@ public class TestActionCards {
 		assertEquals(2, player4.getDisplay().size());
 		assertEquals(10, player4.getTotalCardValue());
 		
-		game.processPlay("play disgrace");
+		gameProcessor.processPlay("play disgrace");
 		
 		//test discard
 		assertEquals(5, player4.getCards().size());
@@ -1376,11 +1379,11 @@ public class TestActionCards {
 		assertEquals(3, player4.getDisplay().size());
 		assertEquals(14, player4.getTotalCardValue());
 		
-		String prompt = game.processPlay("play disgrace");
+		String prompt = gameProcessor.processPlay("play disgrace");
 		assertEquals("waiting plyivnhoe " + player1.getName() + " disgrace", prompt);
 
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe disgrace");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe disgrace");
 		assertEquals("waiting ivanhoe " + player4.getName(), ivanhoe);
 				
 		//test discard
@@ -1423,7 +1426,7 @@ public class TestActionCards {
 		assertEquals(3, player5.getDisplay().size());
 		assertEquals(13, player5.getTotalCardValue());
 
-		game.processPlay("play adapt");
+		gameProcessor.processPlay("play adapt");
 		
 		//test discard
 		assertEquals(4, player5.getCards().size());
@@ -1461,8 +1464,8 @@ public class TestActionCards {
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 5));
 		assertEquals(3, player5.getDisplay().size());
 		assertEquals(13, player5.getTotalCardValue());
-		game.processPlay("play shield");
-		game.processPlay("play adapt");
+		gameProcessor.processPlay("play shield");
+		gameProcessor.processPlay("play adapt");
 		
 		//test discard
 		assertEquals(3, player5.getCards().size());
@@ -1502,11 +1505,11 @@ public class TestActionCards {
 		assertEquals(13, player5.getTotalCardValue());
 
 		// player with card is prompted to play ivanhoe
-		String prompt = game.processPlay("play adapt ");
+		String prompt = gameProcessor.processPlay("play adapt ");
 		assertEquals("waiting plyivnhoe " + player1.getName() + " adapt", prompt);
 		
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe adapt");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe adapt");
 		assertEquals("waiting ivanhoe " + player5.getName(), ivanhoe);
 		
 		//test discard (both adapt and ivanhoe should be discarded)
@@ -1542,9 +1545,9 @@ public class TestActionCards {
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 5));
 		assertEquals(3, player5.getDisplay().size());
 		assertEquals(13, player5.getTotalCardValue());
-		game.processPlay("play stunned " + player1.getName());
+		gameProcessor.processPlay("play stunned " + player1.getName());
 		assertTrue(player1.isStunned());
-		game.processPlay("play outwit purple 4 " + player1.getName() + " stunned 0");
+		gameProcessor.processPlay("play outwit purple 4 " + player1.getName() + " stunned 0");
 		
 		//test discard
 		assertEquals(3, player5.getCards().size());
@@ -1584,12 +1587,12 @@ public class TestActionCards {
 		assertEquals(3, player5.getDisplay().size());
 		assertEquals(13, player5.getTotalCardValue());
 		
-		game.processPlay("play stunned " + player1.getName());
+		gameProcessor.processPlay("play stunned " + player1.getName());
 		assertTrue(player1.isStunned());
 		
-		game.processPlay("play shield");
+		gameProcessor.processPlay("play shield");
 		assertTrue(player5.hasShield());
-		game.processPlay("play outwit shield 0 " + player1.getName() + " stunned 0");
+		gameProcessor.processPlay("play outwit shield 0 " + player1.getName() + " stunned 0");
 		
 		//test discard 
 		assertEquals(2, player5.getCards().size());
@@ -1633,11 +1636,11 @@ public class TestActionCards {
 		assertEquals(13, player5.getTotalCardValue());
 
 		//player with ivanhoe is prompted
-		String prompt = game.processPlay("play outwit purple 4 " + player1.getName() + " purple 5");
+		String prompt = gameProcessor.processPlay("play outwit purple 4 " + player1.getName() + " purple 5");
 		assertEquals("waiting plyivnhoe " + player1.getName() + " outwit", prompt);
 
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe outwit");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe outwit");
 		assertEquals("waiting ivanhoe " + player5.getName(), ivanhoe);
 		
 		//test discard
@@ -1669,12 +1672,12 @@ public class TestActionCards {
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 5));
 		assertEquals(3, player5.getDisplay().size());
 		assertEquals(13, player5.getTotalCardValue());
-		game.processPlay("play stunned " + player1.getName());
+		gameProcessor.processPlay("play stunned " + player1.getName());
 		assertTrue(player1.isStunned());
 		
 		game.setCurrentPlayer(player1);
 		game.startTurn();		
-		String stunned = game.processPlay("play purple 4");
+		String stunned = gameProcessor.processPlay("play purple 4");
 		// after one play, stunned message is sent to client
 		// client sends back end turn
 		assertEquals("stn purple_4", stunned);
@@ -1696,7 +1699,7 @@ public class TestActionCards {
 		game.setCurrentPlayer(player1);
 		game.startTurn();	
 		player1.addCard(new ActionCard(Config.SHIELD));
-		game.processPlay("play shield");
+		gameProcessor.processPlay("play shield");
 		assertTrue(player1.hasShield());
 		game.playCard(player1.getCardFromHand(Config.PURPLE, 4));
 		
@@ -1707,12 +1710,12 @@ public class TestActionCards {
 		game.playCard(player5.getCardFromHand(Config.PURPLE, 5));
 		assertEquals(3, player5.getDisplay().size());
 		assertEquals(13, player5.getTotalCardValue());
-		game.processPlay("play stunned " + player1.getName());
+		gameProcessor.processPlay("play stunned " + player1.getName());
 		assertTrue(player1.isStunned());
 		
 		game.setCurrentPlayer(player1);
 		game.startTurn();		
-		String stunned = game.processPlay("play purple 4");
+		String stunned = gameProcessor.processPlay("play purple 4");
 		// after one play, stunned message is sent to client
 		// client sends back end turn
 		
@@ -1739,16 +1742,16 @@ public class TestActionCards {
 		assertEquals(13, player5.getTotalCardValue());
 		
 		//prompt player with ivanhoe to use card
-		String prompt = game.processPlay("play stunned " + player1.getName());
+		String prompt = gameProcessor.processPlay("play stunned " + player1.getName());
 		assertFalse(player1.isStunned());
 		
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe stunned");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe stunned");
 		assertEquals("waiting ivanhoe " + player5.getName(), ivanhoe);
 		
 		game.setCurrentPlayer(player1);
 		game.startTurn();		
-		String stunned = game.processPlay("play purple 4");
+		String stunned = gameProcessor.processPlay("play purple 4");
 		// after one play, stunned message is sent to client
 		// client sends back end turn
 		assertNotEquals("stn purple_4", stunned);
@@ -1784,11 +1787,11 @@ public class TestActionCards {
 		assertEquals(13, player5.getTotalCardValue());
 
 		// player with card is prompted to play ivanhoe
-		String prompt = game.processPlay("play adapt ");
+		String prompt = gameProcessor.processPlay("play adapt ");
 		assertEquals("waiting plyivnhoe " + player1.getName() + " adapt", prompt);
 		
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play adapt " + Config.IVANHOE_DECLINED);
+		String ivanhoe = gameProcessor.processPlay("play adapt " + Config.IVANHOE_DECLINED);
 		
 		//test discard
 		assertEquals(4, player5.getCards().size());
@@ -1824,14 +1827,14 @@ public class TestActionCards {
 		assertEquals(13, player5.getTotalCardValue());
 		
 		//shielded
-		game.processPlay("play shield");
+		gameProcessor.processPlay("play shield");
 		
 		// player with card is prompted to play ivanhoe
-		String prompt = game.processPlay("play adapt ");
+		String prompt = gameProcessor.processPlay("play adapt ");
 		assertEquals("waiting plyivnhoe " + player1.getName() + " adapt", prompt);
 		
 		// player chooses to play ivanhoe
-		String ivanhoe = game.processPlay("play ivanhoe adapt");
+		String ivanhoe = gameProcessor.processPlay("play ivanhoe adapt");
 		assertEquals("waiting ivanhoe " + player5.getName(), ivanhoe);
 		
 		//test discard (both adapt and ivanhoe are discarded)

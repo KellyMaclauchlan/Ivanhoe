@@ -20,7 +20,6 @@ public class MainscreenTest extends FestSwingJUnitTestCase  {
 
 	@Override
 	protected void onSetUp() {
-		// TODO Auto-generated method stub
 		editor = new FrameFixture(robot(), createNewEditor());
 	    editor.show();
 	  }
@@ -42,44 +41,42 @@ public class MainscreenTest extends FestSwingJUnitTestCase  {
 		Icon old= editor.button("card2").target.getIcon();
 		editor.button("leftArrow").click();
 		assertTrue(editor.button("card3").target.getIcon().equals(old));
-		//assertTrue(true);
-		//fail("Not yet implemented");
+
 	}
 	@Test
 	public void testRightArrow() {
 		Icon old= editor.button("card2").target.getIcon();
 		editor.button("rightArrow").click();
 		assertTrue(editor.button("card1").target.getIcon().equals(old));
-		//assertTrue(true);
-		//fail("Not yet implemented");
 	}
+	
 	@Test
 	public void testWithdrawClick() {
 		editor.radioButton("player1name").target.setSelected(true);
 		editor.button("withdraw").click();
 		assertFalse(editor.radioButton("player1name").target.isSelected());
-		//assertTrue(true);
-		//fail("Not yet implemented");
 	}
+	
 	@Test
 	public void testEndTurnClick() {
 		editor.radioButton("player1name").target.setSelected(true);
 		editor.button("endTurn").click();
 		assertFalse(editor.radioButton("player1name").target.isSelected());
-		//assertTrue(true);
-		//fail("Not yet implemented");
 	}
+	
 	@Test
 	public void testCardClick() {
 		editor.button("card2").click();
 		assertEquals(editor.label("deck").target.getText(),"1");
 	}
+	
 	@Test
 	public void testPlayCardClick() {
 		editor.button("card2").click();
 		editor.button("playCard").click();
 		assertEquals(editor.label("text").target.getText(),"played 1");
 	}
+	
 	@Test
 	public void testCardDescriptionClick() {
 		editor.button("card2").click();
