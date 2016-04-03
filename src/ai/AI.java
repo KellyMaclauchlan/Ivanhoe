@@ -23,13 +23,13 @@ public class AI extends Player implements Subject{
 	
 	public Strategy getStrategy(){return strategy;}
 	
-	public AI(Strategy s){
+	public AI(Strategy s, String name){
 		this.strategy = s;
-		//this.strategy.setName(this.getName());
+		System.out.println("AI of type: " + strategy);
+		this.name = name;
 	}
 	
 	public void processInput(String msg){
-		//System.out.println("AI received: " + msg);
 		if(msg.contains(Config.HAND)){
 			strategy.processPlayerName(msg);
 		}

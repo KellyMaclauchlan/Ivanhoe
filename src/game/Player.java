@@ -28,7 +28,7 @@ public class Player {
 	}
 	
 	public Player(){
-		this.name = "AI";
+		//this.name = "AI";
 		currentTokens = new ArrayList<>();
 		display = new ArrayList<>();
 		front = new ArrayList<>();

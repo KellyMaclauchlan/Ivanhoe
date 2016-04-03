@@ -10,6 +10,7 @@ import java.util.Random;
 import org.apache.log4j.Logger;
 
 import ai.AI;
+import ai.Strategy;
 import ai.StrategyPlayAll;
 import ai.StrategyWithdraw;
 import config.Config;
@@ -164,19 +165,24 @@ public class Server implements Runnable, Observer {
 	/* Creates the correct number of AIs that the first player has specified */
 	public void produceAI(int a){
 		Random rand = new Random();
-		int dd = 0;
+		Strategy s;
 		for(int i = 0; i < a; i++){
 			int r = rand.nextInt(2) + 1;
 			if(r == 1 ){
-				ai = new AI(new StrategyPlayAll("AI" + dd));
+				//ai = new AI(new StrategyPlayAll("AI" + i));
+				s = new StrategyPlayAll("AI" + i);
+				ai = new AI(s, s.getName());
 			}
 			else if(r == 2){
-				ai = new AI(new StrategyWithdraw("AI" + dd));
+				//ai = new AI(new StrategyWithdraw("AI" + i));
+				s = new StrategyWithdraw("AI" + i);
+				ai = new AI(s, s.getName());
 			}
-			ai.setName("AI" + dd);
+			//ai.setName("AI" + i);
 			ai.registerObserver(this);
 			aiPlayers.add(ai);
 			game.joinGame(ai);
+			System.out.println("AI name: " + ai.getName());
 		}
 	}
 	

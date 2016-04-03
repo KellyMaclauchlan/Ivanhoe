@@ -67,8 +67,8 @@ public class TestAI {
 		
 		//server = new Server();
 		game = new GameEngine();
-		withdraw = new AI(new StrategyWithdraw("Withdraw"));
-		playAll = new AI(new StrategyPlayAll("PlayAll"));
+		//withdraw = new AI(new StrategyWithdraw("Withdraw"));
+		//playAll = new AI(new StrategyPlayAll("PlayAll"));
 		
 		//game = server.getGame();
 		

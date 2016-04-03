@@ -19,6 +19,8 @@ public interface Strategy{
 	public void setCurrentPlayer(boolean p);
 	public boolean getCurrentPlayer();
 	
+	public String getName();
+	
 	public void tokenChoice(ArrayList<String> tokens);
 	
 	public String processInput(String msg);
