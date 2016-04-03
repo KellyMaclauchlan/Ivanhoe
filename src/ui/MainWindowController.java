@@ -149,8 +149,8 @@ public class MainWindowController implements Observer, Subject{
 	}
 	public String getNumberOfAIFromPlayer() {
 		int numPlayers = numberOfPlayers;
-		ArrayList<String> nums= new ArrayList<String>();
-		for(int i=0;i<=numPlayers;i++){
+		ArrayList<String> nums = new ArrayList<String>();
+		for(int i = 0; i <= numPlayers; i++){
 			nums.add(Integer.toString(i));			
 		}
 		String[] possibilities= new String[nums.size()];
@@ -221,11 +221,11 @@ public class MainWindowController implements Observer, Subject{
 	public void cantPlayCardPopup(){ JOptionPane.showMessageDialog(null, "You cannot play that card.");}
 	public void automaticWithdrawPopup(){ JOptionPane.showMessageDialog(null, "You cannot play any cards, you have automatically withdrawn from the tournament.");}
 	public void showWaiting(){
-		this.waitingPopUp= new WaitingPopUp();
+		this.waitingPopUp = new WaitingPopUp();
 		this.waitingPopUp.setVisible(true);
 	};
 	public void hideWaitng(){ 
-		if(this.waitingPopUp!=null)
+		if(this.waitingPopUp != null)
 			this.waitingPopUp.dispose();
 		};
 	public String playerPickToken(){
@@ -266,7 +266,7 @@ public class MainWindowController implements Observer, Subject{
 	//asks user if they would like to play ivanhoe to stop the action card returns true our false 
 	public Boolean playIvanhoe(String name){
 			int result =JOptionPane.showConfirmDialog(null, 
-				   "Do you want to use Ivanhoe to stop the "+name+" card?",null, JOptionPane.YES_NO_OPTION);
+				   "Do you want to use Ivanhoe to stop the " + name + " card?", null, JOptionPane.YES_NO_OPTION);
 		if(result == JOptionPane.OK_OPTION) {
 			for (int i = 0; i < playerCards.size(); i++) {
 				if (playerCards.get(i).getType().equals(Config.IVANHOE)) {
@@ -279,16 +279,16 @@ public class MainWindowController implements Observer, Subject{
 	}
 	
 	public String playerPickCardFromDisplay(String name){
-		int player=this.playerNames.indexOf(name);
-		String result="";
-		ArrayList<String> info= new ArrayList<String>();
+		int player = this.playerNames.indexOf(name);
+		String result = "";
+		ArrayList<String> info = new ArrayList<String>();
 
-		int i=0;
+		int i = 0;
 		for(Card c : this.playedCards.get(player)){
 			i++;
-			info.add(i+". "+c.getCardDescription());
+			info.add(i + ". " + c.getCardDescription());
 		}
-		String[] possibilities= new String[info.size()];
+		String[] possibilities = new String[info.size()];
 		info.toArray(possibilities);
 		String s = (String)JOptionPane.showInputDialog(
                 null,
@@ -300,7 +300,7 @@ public class MainWindowController implements Observer, Subject{
                 info.get(0));
 		for(Card c : this.playedCards.get(player)){
 			if(s.contains(c.getCardDescription())){
-				return c.getType()+" "+c.getValue();
+				return c.getType() + " " + c.getValue();
 			}
 		}
 		return result;
@@ -308,19 +308,19 @@ public class MainWindowController implements Observer, Subject{
 	public String playerPickCardForOutwit(String name){
 		int player = this.playerNames.indexOf(name);
 		String result = "";
-		ArrayList<String> info= new ArrayList<String>();
-		int i=0;
+		ArrayList<String> info = new ArrayList<String>();
+		int i = 0;
 		for(Card c : this.playedCards.get(player)){
 			i++;
-			info.add(i+". "+c.getCardDescription());
+			info.add(i + ". " + c.getCardDescription());
 		}
 		if(window.getShield(player).isVisible()){
 			i++;
-			info.add(i+". "+Config.SHIELD);
+			info.add(i + ". " + Config.SHIELD);
 		}
 		if(window.getStun(player).isVisible()){
 			i++;
-			info.add(i+". "+Config.STUNNED);
+			info.add(i + ". " + Config.STUNNED);
 		}
 		String[] possibilities= new String[info.size()];
 		info.toArray(possibilities);
@@ -346,10 +346,10 @@ public class MainWindowController implements Observer, Subject{
 			}				
 		} 
 		if(s.contains(Config.SHIELD)){
-			return Config.SHIELD+" 0";
+			return Config.SHIELD + " 0";
 		}
 		if(s.contains(Config.STUNNED)){
-			return Config.STUNNED+" 0";
+			return Config.STUNNED + " 0";
 		}
 		return s;
 	}
@@ -398,7 +398,7 @@ public class MainWindowController implements Observer, Subject{
 	}
 
 	private void addDescription() {
-		String info= this.playerCards.get(window.getLastCard() + moved).getCardDescription();
+		String info = this.playerCards.get(window.getLastCard() + moved).getCardDescription();
 		window.getCardTextLabel().setText(info);
 	}
 	/* Add card to Player's hand */
@@ -475,13 +475,12 @@ public class MainWindowController implements Observer, Subject{
 	public void startRound() {
 		for(int i = 0; i < this.totalPlayers; i++){
 			setScore(i,0);			
-			this.playedCards.get(i).clear();
-			//this.playedCards.set(i, new ArrayList<Card>());						
+			this.playedCards.get(i).clear();					
 			this.window.addPlayedCard(i, Config.IMG_BACK);
 			this.window.getPlayedCards(i).setEnabled(true);
-			//log.info("Player " + this.playedCards.get(i) + "started their round");
+			log.info("Player " + this.playedCards.get(i) + "started their round");
 		}
-		for(int i=0;i<5;i++){
+		for(int i = 0; i < 5; i++){
 			this.window.setStun(i, false);
 			this.window.setShield(i, false);
 		}
@@ -520,7 +519,7 @@ public class MainWindowController implements Observer, Subject{
 		log.info("Adding " + Config.tokenStrings.get(token) + " token");
 	}
 	public void playerWithdraws(String name){
-		int player=this.playerNames.indexOf(name);
+		int player = this.playerNames.indexOf(name);
 		window.getPlayerPoints(player).setText("0");
 		window.getPlayedCards(player).setEnabled(false);
 		
