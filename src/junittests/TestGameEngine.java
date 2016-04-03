@@ -14,11 +14,13 @@ import game.ActionCard;
 import game.Card;
 import game.ColourCard;
 import game.GameEngine;
+import game.GameProcessor;
 import game.Player;
 import game.SupportCard;
 
 public class TestGameEngine {
 	GameEngine game;
+	GameProcessor gameProcessor;
 	Player player1;
 	Player player2;
 	Player player3;
@@ -34,7 +36,9 @@ public class TestGameEngine {
 	public void setUp(){
 		System.out.println("@Before: TestGameEngine");
 		
-		game = new GameEngine();
+		gameProcessor = new GameProcessor();
+		game = gameProcessor.getGame();
+		
 		player1 = new Player("Katie");
 		player2 = new Player("Brit");
 		player3 = new Player("Kelly");
@@ -131,7 +135,7 @@ public class TestGameEngine {
 	public void testStartTournament(){
 		System.out.println("@Test: Start Tournament");
 		game.startGame();
-		game.processInput(Config.START_TOURNAMENT);
+		gameProcessor.processStartTournament();
 		assertTrue(game.getStart());
 	}
 	
@@ -271,9 +275,9 @@ public class TestGameEngine {
 		player5.chooseTournamentColour(Config.BLUE);
     	game.setCurrentPlayer(player5);
     	game.startTurn();
-    	String maiden1 = game.processPlay("play maiden 6");
+    	String maiden1 = gameProcessor.processPlay("play maiden 6");
     	assertEquals("waiting maiden_6", maiden1);
-    	String maiden2 = game.processPlay("play maiden 6");
+    	String maiden2 = gameProcessor.processPlay("play maiden 6");
     	assertEquals(Config.WAITING + " " + Config.UNPLAYABLE, maiden2);
     	int numberOfMaidens = 0;
     	for (Card c: player5.getDisplay()) {
@@ -301,12 +305,12 @@ public class TestGameEngine {
 		game.endTurn();
 		game.startTurn();
 		game.withdraw();
-		String purpleWin = game.processEndTurn();
+		String purpleWin = gameProcessor.processEndTurn();
 		assertEquals(player1.getName(), game.getCurrentPlayer().getName());
 		
 		assertEquals(player5.getName() + " points " + player5.getTotalCardValue() + " " + Config.WITHDRAW 
 				+ " " + player1.getName() + " " + Config.PURPLE_WIN + " " + game.getCurrentPlayer().getName(), purpleWin);
-		String processPurpleWin = game.processPurpleWin(Config.PURPLE_WIN + " " + Config.RED);
+		String processPurpleWin = gameProcessor.processPurpleWin(Config.PURPLE_WIN + " " + Config.RED);
 		assertEquals(player1.getName() + " points " + player1.getTotalCardValue() + " " + Config.WITHDRAW 
 				+ " " + player2.getName() + " " + game.getTournamentColour() + " " + Config.TOURNAMENT_WINNER 
 				+ " " + player1.getName(), processPurpleWin);
@@ -324,10 +328,10 @@ public class TestGameEngine {
 		assertTrue(player2.getCurrentTokens().contains(Config.RED));
     	game.setCurrentPlayer(player2);
     	game.startTurn();
-    	game.processPlay("play maiden 6");
-    	String withdraw = game.processWithdraw(Config.WITHDRAW);
+    	gameProcessor.processPlay("play maiden 6");
+    	String withdraw = gameProcessor.processWithdraw(Config.WITHDRAW);
     	assertEquals(Config.MAIDEN, withdraw);
-    	withdraw = game.processWithdraw("maiden red");
+    	withdraw = gameProcessor.processWithdraw("maiden red");
     	assertEquals("maiden red", withdraw);
     	assertFalse(player2.getCurrentTokens().contains(Config.RED));
 	}

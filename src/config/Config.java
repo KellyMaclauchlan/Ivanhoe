@@ -20,6 +20,7 @@ public class Config {
 	
 	/* Generic message */
 	public static final String OUTPUT = "output";
+	public static final String INPUT = "input";
 	
 	/* Client's joining a game */
 	public static final String CLIENT_START = "client";
