@@ -20,7 +20,7 @@ import game.ColourCard;
 
 public class PopupTest extends FestSwingJUnitTestCase  {
 	private FrameFixture editor;
-	public static ArrayList<Card>cards;
+	public static ArrayList<Card>cards; 
 	
 
 	@Override
