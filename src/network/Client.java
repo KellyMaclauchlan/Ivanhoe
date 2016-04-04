@@ -50,9 +50,8 @@ public class Client implements Runnable, Observer {
 		getWindow().registerObserver(this);
 		guiProcessor = new GUIProcessor(this);
 		clientProcessor = new ClientProcessor(this);
-		String ipAndPort = getWindow().getIPPortFromPlayer();
-		String seperate[] = ipAndPort.split(" ");
-		this.successConnect = this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
+		String ip = getWindow().getIPPortFromPlayer();
+		this.successConnect = this.connectToServer(ip, Config.DEFAULT_PORT);
 		setActionCardArraylist();
 	}
 	
