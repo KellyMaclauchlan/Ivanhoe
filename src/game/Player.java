@@ -136,15 +136,18 @@ public class Player {
 	public void removeFromDisplay(Card card) {
 		int i = 0;
 		if (display.size() != 0) {
-			for (i = 0; i < display.size(); i ++) {
+			for (i = 0; i < display.size(); i++) {
 				if (card.getType().equals(display.get(i).getType()) && (card.getValue() == display.get(i).getValue())) {
+					display.remove(i);
 					break;
+					//break;
 				}
 			}
-			if (i < display.size()) {
+			/*if (i < display.size()) {
 				display.remove(i);
-			}
+			}*/
 		}
+		setTotalCardValue();
 	}
 	
 	public void removeFromFront(Card card) {

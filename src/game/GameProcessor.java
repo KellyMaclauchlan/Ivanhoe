@@ -255,9 +255,9 @@ public class GameProcessor {
 			if (card.getType().equals(Config.UNHORSE)) {
 				output += processUnhorse(card, input);
 			} else if (card.getType().equals(Config.CHANGEWEAPON)) {
-					output += processChangeWeapon(card, input); //output = waiting <card played> <colour chosen>
+					output += processChangeWeapon(card, input); 
 				} else if (card.getType().equals(Config.DROPWEAPON)) {
-					output += processDropWeapon(card, input); //output = waiting <card played> green
+					output += processDropWeapon(card, input);
 				} else if (card.getType().equals(Config.BREAKLANCE)) {
 					output += processBreaklance(card, input);
 				} else if (card.getType().equals(Config.RIPOSTE)) {
