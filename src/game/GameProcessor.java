@@ -77,6 +77,7 @@ public class GameProcessor {
 			//prompt first player to start their turn
 			//pick tokens happens automatically 
 			game.startGame();
+			
 			output += Config.HAND + " ";
 			for (Player p: game.getPlayers()) {
 				output += " " + Config.PLAYER_NAME + " " + p.getName() + " " + Config.PLAYER_CARDS; 
@@ -493,10 +494,5 @@ public class GameProcessor {
 			}
 		}
 		return output;
-	}
-
-
-	public void joinGame(Player player) {
-		game.joinGame(player);
 	}
 }

@@ -39,19 +39,22 @@ public class Client implements Runnable, Observer {
 	private String thisPlayerName = null;
 	private boolean ivanhoePrompted = false;
 	private GUIProcessor guiProcessor;
-	private InputProcessor inputProcessor;
+	private ClientProcessor clientProcessor;
 
+	/* Used for testing the strings sent from the server to the client */
+	public String testMessages() {return testing;}
+	public boolean getSuccessConnect(){return this.successConnect;}
+	
 	public Client(){
 		setWindow(new MainWindowController());
 		getWindow().registerObserver(this);
 		guiProcessor = new GUIProcessor(this);
-		inputProcessor = new InputProcessor(this);
+		clientProcessor = new ClientProcessor(this);
 		String ipAndPort = getWindow().getIPPortFromPlayer();
 		String seperate[] = ipAndPort.split(" ");
 		this.successConnect = this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
 		setActionCardArraylist();
 	}
-	
 	/* Constructor used for Testing */
 	public Client(String ip, int port){
 		this.successConnect = this.connectToServer(ip, port);
@@ -82,10 +85,34 @@ public class Client implements Runnable, Observer {
 	}
 
 	public int getID(){return this.id;}
-	/* Used for testing the strings sent from the server to the client */
-	public String testMessages() {return testing;}
-	public boolean getSuccessConnect(){return this.successConnect;}
 
+	/* GETTERS */
+	public MainWindowController getWindow() {return window;}
+	public ArrayList<String> getHand() {return hand;}
+	public String getThisPlayerName() {return thisPlayerName;}
+	public String getCurrPlayer() {return currPlayer;}
+	public String[] getOptions() {return options;}
+	public boolean isIvanhoePrompted() {return ivanhoePrompted;}
+	public boolean isPurpleChosen() {return purpleChosen;}
+	public String getOutput() {return output;}
+	public GUIProcessor getProcessor() {return guiProcessor;}
+	
+	/* SETTERS */
+	public void setWindow(MainWindowController window) {this.window = window;}
+	public void setHand(ArrayList<String> hand) {this.hand = hand;}
+	public void setThisPlayerName(String thisPlayerName) {this.thisPlayerName = thisPlayerName;}
+	public void setCurrPlayer(String currPlayer) {this.currPlayer = currPlayer;}
+	public void setOptions(String[] options) {this.options = options;}
+	public void setPurpleChosen(boolean purpleChosen) {this.purpleChosen = purpleChosen;}
+	public void setProcessor(GUIProcessor processor) {this.guiProcessor = processor;}
+	public String setOutput(String output) {
+		this.output = output;
+		return output;
+	}
+	public void setIvanhoePrompted(boolean ivanhoePrompted) {
+		this.ivanhoePrompted = ivanhoePrompted;
+	}
+	
 	/* Used for Testing to check when the Client connects to the server */
 	public boolean connectToServer(String serverIP, int serverPort) {
 		log.info(id + ":Establishing connection. Please wait... ");
@@ -166,14 +193,13 @@ public class Client implements Runnable, Observer {
 	/* Handles all the input and output to and from the server */
 	public void handle(String msg) throws IOException {
 		String send = Config.OUTPUT;
-		System.out.println("Message received: " + msg);
 		log.info("Message Received: " + msg);
-		
+
 		if (msg.contains("input")) {
 	   		// do nothing and wait for more players to arrive 
 		} else {
 			testing = msg;
-			send = inputProcessor.processInput(msg);
+			send = clientProcessor.processInput(msg);
 
 			log.info("Information sent to server: " + send);
 			outStream.write(send);
@@ -222,6 +248,7 @@ public class Client implements Runnable, Observer {
 			displayText = msg;
 		}
 		getWindow().setTextDisplay(displayText + "\n");
+
 	}
 
 	private String playACard() {
@@ -246,6 +273,7 @@ public class Client implements Runnable, Observer {
 		getWindow().setScore(getWindow().getCurrPlayer(), getWindow().getScore(getWindow().getCurrPlayer()) + getWindow().getLastCard().getValue());
 		return getOutput();
 	}
+
 	
 	public Card getCardFromTypeValue(String type, String value){
 		setOutput("");
@@ -427,78 +455,5 @@ public class Client implements Runnable, Observer {
 			return c;
 		}
 		return new Card();
-	}
-
-	public MainWindowController getWindow() {
-		return window;
-	}
-
-	public void setWindow(MainWindowController window) {
-		this.window = window;
-	}
-
-	public ArrayList<String> getHand() {
-		return hand;
-	}
-
-	public void setHand(ArrayList<String> hand) {
-		this.hand = hand;
-	}
-
-	public String getThisPlayerName() {
-		return thisPlayerName;
-	}
-
-	public void setThisPlayerName(String thisPlayerName) {
-		this.thisPlayerName = thisPlayerName;
-	}
-
-	public String getCurrPlayer() {
-		return currPlayer;
-	}
-
-	public void setCurrPlayer(String currPlayer) {
-		this.currPlayer = currPlayer;
-	}
-
-	public String[] getOptions() {
-		return options;
-	}
-
-	public void setOptions(String[] options) {
-		this.options = options;
-	}
-
-	public boolean isIvanhoePrompted() {
-		return ivanhoePrompted;
-	}
-
-	public void setIvanhoePrompted(boolean ivanhoePrompted) {
-		this.ivanhoePrompted = ivanhoePrompted;
-	}
-
-	public boolean isPurpleChosen() {
-		return purpleChosen;
-	}
-
-	public void setPurpleChosen(boolean purpleChosen) {
-		this.purpleChosen = purpleChosen;
-	}
-
-	public String getOutput() {
-		return output;
-	}
-
-	public String setOutput(String output) {
-		this.output = output;
-		return output;
-	}
-
-	public GUIProcessor getProcessor() {
-		return guiProcessor;
-	}
-
-	public void setProcessor(GUIProcessor processor) {
-		this.guiProcessor = processor;
 	}
 }

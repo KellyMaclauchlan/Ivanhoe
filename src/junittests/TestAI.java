@@ -67,9 +67,13 @@ public class TestAI {
 		
 		//server = new Server();
 		game = new GameEngine();
-		withdraw = new AI(new StrategyWithdraw("Withdraw"));
-		playAll = new AI(new StrategyPlayAll("PlayAll"));
 		
+		Strategy s = new StrategyWithdraw("AI" + 1);
+		withdraw = new AI(s, s.getName());
+		
+		
+		s = new StrategyPlayAll("AI" + 2);
+		playAll = new AI(s, s.getName());
 		//game = server.getGame();
 		
 		game.joinGame(withdraw);
@@ -190,6 +194,7 @@ public class TestAI {
 		
 		String message = Config.COLOUR + " " + Config.YELLOW;
 		playAll.getStrategy().setCurrentPlayer(true);
+		playAll.getStrategy().setStarted(true);
 		String compare = playAll.getStrategy().processPlay(message);
 		
 		assertEquals(Config.WITHDRAW, compare);

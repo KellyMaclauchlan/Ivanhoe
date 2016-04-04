@@ -10,12 +10,13 @@ import java.util.Random;
 import org.apache.log4j.Logger;
 
 import ai.AI;
+import ai.Strategy;
 import ai.StrategyPlayAll;
 import ai.StrategyWithdraw;
 import config.Config;
 import config.Observer;
 import game.GameEngine;
-import game.InputProcessor;
+import game.ServerProcessor;
 
 public class Server implements Runnable, Observer {
 	private int numPlayers = 0;
@@ -23,12 +24,13 @@ public class Server implements Runnable, Observer {
 	private ServerSocket server = null;
 	private HashMap<Integer, ServerThread> clients;
 	private Logger log = Logger.getLogger("Server");
-	private InputProcessor game;
+	private ServerProcessor game;
 	private boolean minPlayers = false;
 	private boolean maxPlayers = false; 
 	private ArrayList<String> names = new ArrayList<String>();
 	private AI ai;
 	private ArrayList<AI> aiPlayers = new ArrayList<AI>();
+	//private HashMap<String, AI> aiPlayers;
 	
 	private String send = Config.OUTPUT;
 
@@ -38,7 +40,7 @@ public class Server implements Runnable, Observer {
 	
 	public boolean testMaxPlayers(){return maxPlayers;}
 	public boolean testMinPlayers(){return minPlayers;}
-	public InputProcessor getGame(){return game;}
+	public ServerProcessor getGame(){return game;}
 	
 	public void runServer(int port) {
 		try{
@@ -52,7 +54,7 @@ public class Server implements Runnable, Observer {
 		}
 	}
 	public void start() {
-		game = new InputProcessor();
+		game = new ServerProcessor();
 		log.info("Game has started");
 		if(thread == null){
 			thread = new Thread(this);
@@ -116,21 +118,20 @@ public class Server implements Runnable, Observer {
 	}
 	public void handle(int id, String msg) {
 		log.info("Message Received: " + msg);
-		System.out.println("Message Received: " + msg);
-		
+
 		/* Server receives message that client has quit */
 		if (msg.contains(Config.QUIT) || msg.equals(null)) {
 			log.info(String.format("Removing Client: %d", id));
 			if (clients.containsKey(id)) {
 				remove(id);
 			} 
-				if (msg != null) {
+			if (msg != null) {
 				String[] quitmsg = msg.split(" ");
 				String name = quitmsg[1];
 				msg = Config.PLAYER_LEFT + " " + name;
-				send = game.processInput(msg);
+				game.processInput(msg);
 			}
-			processInput(id, send);
+			sendAllClients(msg);
 		}
 		
 		/* When a client first connects, it checks to see if this is the first client */
@@ -165,26 +166,21 @@ public class Server implements Runnable, Observer {
 	/* Creates the correct number of AIs that the first player has specified */
 	public void produceAI(int a){
 		Random rand = new Random();
-		int dd = 0;
+		Strategy s;
 		for(int i = 0; i < a; i++){
 			int r = rand.nextInt(2) + 1;
 			if(r == 1 ){
-				ai = new AI(new StrategyPlayAll("AI" + dd));
+				s = new StrategyPlayAll("AI" + i);
+				ai = new AI(s, s.getName());
 			}
 			else if(r == 2){
-				ai = new AI(new StrategyWithdraw("AI" + dd));
+				s = new StrategyWithdraw("AI" + i);
+				ai = new AI(s, s.getName());
 			}
-			ai.setName("AI" + dd);
 			ai.registerObserver(this);
 			aiPlayers.add(ai);
-			game.joinGame(ai);
-		}
-	}
-	
-	/* Sends the game engine messages to the AI */
-	public void sendToAI(String msg){
-		for(AI i : aiPlayers){
-			i.processInput(msg);
+			String join = Config.JOIN + " " + ai.getName();
+			game.processInput(join);
 		}
 	}
 	
@@ -236,6 +232,13 @@ public class Server implements Runnable, Observer {
 		}
 	}
 	
+	/* Sends the game engine messages to the AI */
+	public void sendToAI(String msg){
+		for(int i = 0; i < aiPlayers.size(); i++){
+			aiPlayers.get(i).processInput(msg);
+		}
+	}
+	
 	/* Figures out whether to send the message to all the clients or just one */
 	public void processInput(int id, String send){
 		
@@ -256,6 +259,7 @@ public class Server implements Runnable, Observer {
 		
 		else if(send.contains(Config.HAND)){
 			sendAllClients(send);
+			//sendToAI(send);
 		}
 		
 		else if(send.contains(Config.NEED_PLAYERS)){
@@ -268,14 +272,17 @@ public class Server implements Runnable, Observer {
 
 		else if (send.contains(Config.PLAY)){
 			sendAllClients(send);
+			//sendToAI(send);
 		}
 		
 		else if (send.contains(Config.WAITING)){
 			sendAllClients(send);
+			//sendToAI(send);
 		}
 		
 		else if(send.contains(Config.POINTS)){
 			sendAllClients(send);
+			//sendToAI(send);
 		} 
 		else if(send.contains(Config.IS_STUNNED)) {
 			send1Client(id, send);
@@ -285,6 +292,7 @@ public class Server implements Runnable, Observer {
 		
 		else{
 			sendAllClients(send);
+			//sendToAI(send);
 		}
 	}
 

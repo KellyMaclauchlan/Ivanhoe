@@ -13,7 +13,7 @@ Do this from multiple terminal windows to use multiple clients
 
 You will first be prompted for the ip and port of the machine the server is running. (ie: localhost 3000)
 
-The first player in the game will then be prompted the number of players and then asked to enter their name. 
+The first player in the game will then be prompted the number of players, number of AIs and then asked to enter their name. 
 
 If you are not the first player you will just be prompted the server ip and port and your name.
 
@@ -38,10 +38,6 @@ At the end of each tournament, all players are notified of the winner and the wi
 
 At the end of a game, the winner is announced to all players.
 
-Known issues:
-
-
-
 AI Strategies:
 	1) Withdraw AI : this AI essentially withdraws after every play. The AI, if it is the first player, will choose the tournament colour based on 
 					 its first coloured card in its hand and play that card. After it will withdraw after every turn
@@ -50,5 +46,9 @@ AI Strategies:
 					 if the AI has no cards to play it will withdraw
 					 Sometimes, the AI will choose the tournament colour based on the tokens it will need, however does not have the cards needed and will then withdraw. This is one of the bugs with the AI that was unsolvable. 
 ***in regards to action cards, the AI do not play any action cards 
+
+Known issues:
+- when playing with more than 1 AI, the AI will play correctly except when the player gets to choose the tournament colour
+		-> for some reason only one of the AIs receives the right cards and the others do not 
 
 

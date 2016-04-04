@@ -11,9 +11,6 @@ import game.Player;
 public class StrategyWithdraw implements Strategy{
 	/* This strategy will withdraw no matter what */
 	
-	
-	/* PROBLEM: Class fails when the actual player has nothing to play */
-	
 	private Logger log = Logger.getLogger("AI");
 	private ArrayList<Card> hand = new ArrayList<Card>();
 	private String output = "result";
@@ -32,6 +29,8 @@ public class StrategyWithdraw implements Strategy{
 	public void setToPlay(Card c){toPlay = c;}
 	public Card getToPlay(){return toPlay;}
 	
+	public String getName(){return name;}
+	
 	public StrategyWithdraw(String n){
 		log.info("New AI of type 'Withdraw' has been created");
 		this.name = n;
@@ -41,11 +40,11 @@ public class StrategyWithdraw implements Strategy{
 	 * It will choose the first coloured card in its hand */
 	public String startTournament() {
 		for(int i = 0; i < hand.size(); i++){
-			if(hand.get(i).getValue() == 0 || hand.get(i).getType().equals(Config.SQUIRE) || 
-					hand.get(i).getType().equals(Config.MAIDEN)){
+			if(this.hand.get(i).getValue() == 0 || this.hand.get(i).getType().equals(Config.SQUIRE) || 
+					this.hand.get(i).getType().equals(Config.MAIDEN)){
 				continue;
 			}else{
-				output = hand.get(i).getType();
+				output = this.hand.get(i).getType();
 				tournamentColour = output;
 				break;
 			}
@@ -56,19 +55,17 @@ public class StrategyWithdraw implements Strategy{
 	/* If the AI is the first player of the tournament (chose the tournament colour), then it will play 
 	 * the first card in its hand, else it will automatically withdraw */
 	public String playACard() {
-		if(started){
+		if(this.started){
 			for(int i = 0; i < hand.size(); i++){
-				if(hand.get(i).getValue() == 0 || hand.get(i).getType().equals(Config.SQUIRE) || 
-						hand.get(i).getType().equals(Config.MAIDEN)){
+				if(this.hand.get(i).getValue() == 0 || this.hand.get(i).getType().equals(Config.SQUIRE) || 
+						this.hand.get(i).getType().equals(Config.MAIDEN)){
 					continue;
 				}else{
-					toPlay = hand.get(i);
+					toPlay = this.hand.get(i);
 					String type = toPlay.getType();
 					int value = toPlay.getValue();
-					
-					//output = Config.PLAY + " " +  hand.get(i).getType() + " " + hand.get(i).getValue();
 					output = Config.PLAY + " " + type + " " + value;
-					hand.remove(i);
+					this.hand.remove(i);
 					break;
 				}
 			}
@@ -80,14 +77,13 @@ public class StrategyWithdraw implements Strategy{
 
 	/* Saves the AI's hand to an ArrayList */
 	public void getHand(ArrayList<Card> c) {
-		hand = c;
+		this.hand = c;
 	}
 	
 	/* Handles what the server has sent from the Game Engine and processes
 	 * what the AI will send back to the server */
 	public String processInput(String msg){
 		log.info("AI has received: " + msg);
-
 		/* Determines who's turn it is */
 		 if (msg.contains(Config.TURN)){
 			output = processPlayerTurn(msg);
@@ -111,7 +107,7 @@ public class StrategyWithdraw implements Strategy{
 				this.currentPlayer = false;
 				this.setStarted(false);
 			}else{
-				output = "result";
+				output = Config.OUTPUT;
 			}
 		}
 		return output;
@@ -134,7 +130,7 @@ public class StrategyWithdraw implements Strategy{
 					Card newCard = new Card();
 					newCard.setType(value[0]);
 					newCard.setValue(Integer.parseInt(value[1]));
-					hand.add(newCard);					
+					this.hand.add(newCard);					
 				}
 			}
 		}

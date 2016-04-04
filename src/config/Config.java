@@ -52,7 +52,7 @@ public class Config {
 	
 	/* Playing a round */
 	public static final String PLAY = "play"; 
-	public static final String UNPLAYABLE = "NOPE";
+	public static final String UNPLAYABLE = "invalid";
 	public static final String HAND = "hand";
 	public static final String TURN = "turn";
 	

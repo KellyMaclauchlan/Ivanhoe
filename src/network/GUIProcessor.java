@@ -140,7 +140,7 @@ public class GUIProcessor {
 				}
 			}
 		}
-		client.logActivity(msg);
+		client.logActivity(client.getCurrPlayer() + " played a card");
 		return client.getOutput();
 	}
 	
@@ -391,8 +391,8 @@ public class GUIProcessor {
 					client.logActivity(client.getCurrPlayer() + " has ended their turn");
 				}
 				else if (msg.contains(Config.WITHDRAW)){
-					client.setCurrPlayer(nextPlayerName);
 					client.logActivity(client.getCurrPlayer() + " has ended their turn \nand withdrawn from the \ntournament\n");
+					client.setCurrPlayer(nextPlayerName);
 				}
 				
 				if (client.getWindow().getPlayerNum() == currentPlayer){

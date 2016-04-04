@@ -127,15 +127,15 @@ public class MainWindow extends JFrame implements Subject {
 		leftClick = false;
 		testing = true;
 		setUpScreen(this.getContentPane());
-		//this.pack();
-		this.hasTokens=new boolean[5][5];
+
+		this.hasTokens = new boolean[5][5];
 		for (int i = 0; i < 5; i++){
 			for (int j = 0; j < 5; j++){
-				this.hasTokens[i][j]=false;
+				this.hasTokens[i][j] = false;
 			}
 		}
-		close=false;
-		int fontsize=17;
+		close = false;
+		int fontsize = 17;
 		this.endTurnButton.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
 		this.withdrawButton.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
 		this.playCardButton.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
@@ -423,16 +423,15 @@ public class MainWindow extends JFrame implements Subject {
 	}
  	
  	public void selectCard(int i){
- 		lastCard=i;	
+ 		lastCard = i;	
  		deck.setText(lastCard + "");
  		this.notifyObservers(Config.DESCRIPTION);
  		if(testing){
- 			this.textDisplay.setText("card "+i);
+ 			this.textDisplay.setText("card " + i);
  		}
  	}
  	protected void playCardClicked() {
 		this.textDisplay.setText("played " + lastCard + "");
-		//this.testLable.setText("played "+this.lastCard+"");
 	}
  	
 
@@ -484,7 +483,7 @@ public class MainWindow extends JFrame implements Subject {
  	
  	public void setToken(int player,int token,String pic){
 		this.tokens[player][token].setIcon(ResourceLoader.loadImage(pic));
-		this.hasTokens[player][token]=true;
+		this.hasTokens[player][token] = true;
 	}
  	
  	public void setShield(int player,boolean toggle){
