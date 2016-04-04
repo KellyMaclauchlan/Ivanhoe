@@ -11,7 +11,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	TestGameEngine.class, 
 	TestScenarios.class, 
 	TestActionCards.class, 
-	//TestAI.class, 
+	TestAI.class, 
 	TestMainWindowController.class  })
 public class AllTests {
 

@@ -70,7 +70,6 @@ public class StrategyPlayAll implements Strategy{
 	public StrategyPlayAll(String n){
 		log.info("New AI of type 'Play All' has been created");
 		this.name = n;
-		System.out.println("Play All: " + name);
 	}
 
 	public String startTournament() {
@@ -191,7 +190,6 @@ public class StrategyPlayAll implements Strategy{
 	public String playACard() {
 		//Card toPlay; 
 		
-		System.out.println("tournamentColour: " + tournamentColour);
 		if(highestTotalValue <= this.currentPoints || !this.started){
 			
 			if(tournamentColour.equals(Config.RED)){
@@ -323,12 +321,6 @@ public class StrategyPlayAll implements Strategy{
 		
 		// reset the hand variable because we no longer need it 
 		hand.clear();
-		System.out.println("Red: " + red);
-		System.out.println("Blue: " + blue);
-		System.out.println("Purple: " + purple);
-		System.out.println("Yellow: " + yellow);
-		System.out.println("Green: " + green);
-		System.out.println("Support: " + supporter);
 	}
 	
 	public void addNewCard(String card){
@@ -376,7 +368,6 @@ public class StrategyPlayAll implements Strategy{
 	public String processInput(String msg){
 		log.info("AI has received: " + msg);
 
-		System.out.println("Play all: " + msg);
 		/* Determines who's turn it is */
 		 if (msg.contains(Config.TURN)){
 			output = processPlayerTurn(msg);
@@ -401,12 +392,10 @@ public class StrategyPlayAll implements Strategy{
 				output = Config.OUTPUT;
 			}
 		}
-		 System.out.println("Play sending: " + output);
 		return output;
 	}
 	
 	public void processPlayerName(String msg){
-		System.out.println(msg);
 		msg = msg.substring(10);
 		String name[] = msg.split("name");
 		String card[];
@@ -458,7 +447,6 @@ public class StrategyPlayAll implements Strategy{
 	}
 	
 	public String processPlay(String msg){
-		System.out.println("colour");
 		String input[] = msg.split(" ");
 		tournamentColour = input[1];
 		

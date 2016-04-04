@@ -29,12 +29,12 @@ public class TestActionCards {
 	
 	@BeforeClass
 	public static void BeforeClass(){
-		System.out.println("@BeforeClass: TestGameEngine");
+		System.out.println("@BeforeClass: TestActionCards");
 	}
 	
 	@Before
 	public void setUp(){
-		System.out.println("@Before: TestGameEngine");
+		System.out.println("@Before: TestActionCards");
 		gameProcessor = new GameProcessor();
 		game = gameProcessor.getGame();
 		

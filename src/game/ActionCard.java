@@ -122,16 +122,17 @@ public class ActionCard extends Card {
 			}
 		}
 		for (Player p: game.getActionablePlayers()) {
-			if (p.getDisplay().size() > 1) {
 				for (int i = 0; i < p.getDisplay().size(); i++) {
-					Card card = p.getDisplay().get(i);
-					if (card.getValue() == lowestValue) {
-						p.removeFromDisplay(card);
-						game.discard(card);
+					if (p.getDisplay().size() > 1) {
+						Card card = p.getDisplay().get(i);
+						if (card.getValue() == lowestValue) {
+							p.removeFromDisplay(card);
+							game.discard(card);
+							i--;
+						}
 					}
 				}
 				p.setTotalCardValue();
-			}
 		}
 	}
 	
@@ -146,19 +147,20 @@ public class ActionCard extends Card {
 			}
 		}
 		for (Player p: game.getActionablePlayers()) {
-			if (p.getDisplay().size() > 1) {
+
 				for (int i = 0; i < p.getDisplay().size(); i++) {
-					Card card = p.getDisplay().get(i);
-					if (card.getValue() == highestValue) {
-						p.removeFromDisplay(card);
-						game.discard(card);
+					if (p.getDisplay().size() > 1) {
+						Card card = p.getDisplay().get(i);
+						if (card.getValue() == highestValue) {
+							p.removeFromDisplay(card);
+							game.discard(card);
+							i--;
+						}
 					}
-				}
 				p.setTotalCardValue();
 			}
 		}
 	}
-	
 	
 	public void playDisgrace(GameEngine game) {
 		// discard all supporters from every player's display

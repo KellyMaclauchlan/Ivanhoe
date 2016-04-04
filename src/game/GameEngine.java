@@ -238,7 +238,7 @@ public class GameEngine {
 	public Player getNext() {
 		int index = 0;
 		for (int i = 0; i < players.size(); i++) {
-			if (players.get(i) == currentPlayer) {
+			if (players.get(i).getName().equals(currentPlayer.getName())) {
 				if (i == players.size()-1) {
 					index = 0;
 				} else {
