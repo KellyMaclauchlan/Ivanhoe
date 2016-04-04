@@ -55,6 +55,7 @@ public class Client implements Runnable, Observer {
 		this.successConnect = this.connectToServer(seperate[0], Integer.parseInt(seperate[1]));
 		setActionCardArraylist();
 	}
+	
 	/* Constructor used for Testing */
 	public Client(String ip, int port){
 		this.successConnect = this.connectToServer(ip, port);
@@ -64,6 +65,7 @@ public class Client implements Runnable, Observer {
 	public void addToHand(String cardString) {
 		hand.add(cardString);
 	}
+	
 	public void setActionCardArraylist(){
 		this.actioncards.add(Config.KNOCKDOWN);
 		this.actioncards.add(Config.RIPOSTE);
@@ -84,9 +86,8 @@ public class Client implements Runnable, Observer {
 		this.actioncards.add(Config.ADAPT);
 	}
 
-	public int getID(){return this.id;}
-
 	/* GETTERS */
+	public int getID(){return this.id;}
 	public MainWindowController getWindow() {return window;}
 	public ArrayList<String> getHand() {return hand;}
 	public String getThisPlayerName() {return thisPlayerName;}
@@ -194,7 +195,7 @@ public class Client implements Runnable, Observer {
 	public void handle(String msg) throws IOException {
 		String send = Config.OUTPUT;
 		log.info("Message Received: " + msg);
-
+		
 		if (msg.contains("input")) {
 	   		// do nothing and wait for more players to arrive 
 		} else {
@@ -214,6 +215,7 @@ public class Client implements Runnable, Observer {
 		setOutput(Config.OUTPUT);
 	}
 
+	/* Receives messages from its respective Subject (MainWindowController) */
 	public void update(String message) {
 		String send = Config.FROMUPDATE;
 		if(message.contains(Config.PLAYEDCARD)){
@@ -230,7 +232,7 @@ public class Client implements Runnable, Observer {
 			send = " " + Config.END_TURN;
 		}
 		
-		//process subject's notify to send to server 
+		//process subject's notify and passes it along to the server 
 		try {
 			this.handle(send);
 		} catch (IOException e) {
@@ -251,6 +253,7 @@ public class Client implements Runnable, Observer {
 
 	}
 
+	/* Plays the card sent from the MainWindowController */
 	private String playACard() {
 		while(this.playedCards == null){}
 		if(playedCards.equalsIgnoreCase(Config.WITHDRAW)){
@@ -274,7 +277,7 @@ public class Client implements Runnable, Observer {
 		return getOutput();
 	}
 
-	
+	/* Converts the string images to the actual JPG file */
 	public Card getCardFromTypeValue(String type, String value){
 		setOutput("");
 		String info = "";

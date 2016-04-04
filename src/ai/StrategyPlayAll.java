@@ -24,7 +24,7 @@ public class StrategyPlayAll implements Strategy{
 	private int currentPoints = 0;
 	private int highestTotalValue = 0;
 	
-	// number of each colour cards
+	// number of each coloured cards
 	private int red = 0;
 	private int blue = 0;
 	private int purple = 0;
@@ -32,9 +32,11 @@ public class StrategyPlayAll implements Strategy{
 	private int green = 0;
 	private int supporter = 0;
 	
+	// checks for the maiden card played twice in a tournament
 	private boolean playedMaiden = false; 
 	
 	// what tokens the AI has
+	private ArrayList<String> currentTokens = new ArrayList<String>();
 	private boolean redToken = false;
 	private boolean blueToken = false;
 	private boolean purpleToken = false;
@@ -51,7 +53,7 @@ public class StrategyPlayAll implements Strategy{
 	private ArrayList<Card> supportCards = new ArrayList<Card>();
 	private ArrayList<Card> actionCards = new ArrayList<Card>();
 	
-	private ArrayList<String> currentTokens = new ArrayList<String>();
+	// used to determine what choice of tournament colour to choose or the token needed 
 	private String bestColourChoice = Config.GREEN;
 	
 	private Card toPlay;
@@ -72,6 +74,7 @@ public class StrategyPlayAll implements Strategy{
 		this.name = n;
 	}
 
+	/* Chooses the tournament color if the AI gets the choice */
 	public String startTournament() {
 		if(this.red >= 2){
 			output = Config.RED;
@@ -95,8 +98,8 @@ public class StrategyPlayAll implements Strategy{
 		return output;
 	}
 	
-	// called every time the AI receives something from the server to update the tokens of the player
-	// used because the strategy has no knowledge of the player class 
+	/* Called every time the AI receives something from the server to update the tokens of the player
+	*  used because the strategy has no knowledge of the player class */ 
 	public void tokenChoice(ArrayList<String> tokens){
 		this.currentTokens = tokens; 
 		int tokenIndex = 0;
@@ -144,6 +147,7 @@ public class StrategyPlayAll implements Strategy{
 		}
 	}
 
+	/* Adds a token to the boolean array keeping track of what tokens the AI has */
 	public void addToken(){
 		if(tournamentColour.equals(Config.RED)){
 			this.redToken = true;
@@ -155,6 +159,7 @@ public class StrategyPlayAll implements Strategy{
 			if(this.purpleToken){
 				int tokenIndex = 0;
 				
+				// loops through the boolean array looking for the next token needed 
 				for(boolean b : booleanTokens){
 					if(!b){
 						tokenIndex++;
@@ -186,9 +191,9 @@ public class StrategyPlayAll implements Strategy{
 			this.greenToken = true;
 		}
 	}
-		
+	
+	/* Plays a card depending on the tournament colour and the number of coloured cards available */
 	public String playACard() {
-		//Card toPlay; 
 		
 		if(highestTotalValue <= this.currentPoints || !this.started){
 			
@@ -254,6 +259,7 @@ public class StrategyPlayAll implements Strategy{
 		return output;
 	}
 	
+	/* Only plays a supporter if there are no more coloured cards avaliable to play */
 	public String playSupporter(){
 		if(this.supportCards.size() != 0){
 			toPlay = supportCards.get(0);
@@ -271,6 +277,8 @@ public class StrategyPlayAll implements Strategy{
 		return output;
 	}
 	
+	/* When playing a supporter, checks to see if a Maiden was played and ensures that the AI cann't play
+	 * another Maiden in the same tournament */
 	public boolean checkPlayedMaiden(Card toPlay){
 		String type = toPlay.getType();
 		if(type.equals(Config.MAIDEN) && !playedMaiden){
@@ -284,6 +292,7 @@ public class StrategyPlayAll implements Strategy{
 		}
 	}
 
+	/* Receives the AI's hand from the server and sorts the hand into their colours */
 	public void getHand(ArrayList<Card> c) {
 		this.hand = c;
 		
@@ -323,6 +332,7 @@ public class StrategyPlayAll implements Strategy{
 		hand.clear();
 	}
 	
+	/* Adds a new picked up card to the AI's hand */
 	public void addNewCard(String card){
 		String[] input = card.split("_");
 		String type = input[0];
@@ -365,6 +375,7 @@ public class StrategyPlayAll implements Strategy{
 		}
 	}
 	
+	/* Proesses all messages sent from the Server */
 	public String processInput(String msg){
 		log.info("AI has received: " + msg);
 
@@ -508,5 +519,6 @@ public class StrategyPlayAll implements Strategy{
 	public void resetVariables(){
 		this.started = false;
 		this.currentPlayer = false;
+		this.playedMaiden = false;
 	}
 }
