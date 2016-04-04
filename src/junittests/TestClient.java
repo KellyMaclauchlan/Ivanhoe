@@ -107,10 +107,10 @@ public class TestClient {
 		System.out.println("@Test: testMessage1");
 		assertTrue(c1); 
 		
-		String message = Config.FIRSTPLAYER;
+		String message = Config.OUTPUT;
 		int id = client1.getID();
 		server.handle(id, message);
-		assertEquals(message, client1.testMessages());
+		assertEquals(Config.FIRSTPLAYER, client1.testMessages());
 	}
 	
 	@Test
