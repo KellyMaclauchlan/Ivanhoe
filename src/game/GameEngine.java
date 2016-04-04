@@ -1,4 +1,4 @@
-package game;
+	package game;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +15,7 @@ public class GameEngine {
 	private ArrayList<Card> discardPile;
 	private Player currentPlayer;
 	private int turnNumber = 0;
-	private boolean choosePurple = false;
+	private boolean choosePurple = false; 
 		
 	/* Testing variables */
 	private boolean startTournament = false; 
@@ -25,477 +25,36 @@ public class GameEngine {
 	private String round = "round";
 	private boolean testCurrPlayer = false; 
 	
-	public boolean getStart(){return startTournament;}
+	/* Testing functions */
+	public boolean getStart(){return isStartTournament();}
 	public boolean getJoined(){return joined;}
 	public String getSupporters(){return supporters;}
 	public boolean getToken(){return token;}
 	public String getRound(){return round;}
 	public boolean checkCurrPlayer(){return testCurrPlayer;}
-	
+	public ArrayList<Card> getDiscardPile() {return discardPile;}
 	
 	public GameEngine() {
 		players = new ArrayList<>();
 		discardPile = new ArrayList<>();
 	}
-	
-	public String processInput(String input) {
-		String output = "input";
-			// input = start <number of players>
-			if (input.contains(Config.START)) {
-				output = processStart(input); // output = prompt join OR output = max 5 (if number of players is too high)
-			// input = join <player name>
-			} else if (input.contains(Config.JOIN)) {
-				output = processJoin(input); // output = need players OR output = hand name <player name> cards <type_value> <type_value> ...
 
-			}else if (input.contains(Config.DUPLICATE)){
-				output = Config.DUPLICATE;
-				
-			// input = begin tournament	
-			} else if (input.contains(Config.START_TOURNAMENT)) {	
-				output = processStartTournament(); // output = purple <player name> turn <player name> (first turn) <card picked up> 
-														// OR output = turn <player name> <card picked up> (subsequent turns)
-			// input = colour <colour>	
-			} else if (input.contains(Config.COLOUR_PICKED)) {
-				output = processColourPicked(input); // output = play <colour picked>
-			// input = play red 4 (can be continued on input at a time for as many cards as available)
-			//OR IF action card, input = play action param_1 ... param_n depending on action
-			// talked to Kelly about this. Can get popups where necessary and append variables necessary for action cards to card play string
-			} else if (input.contains(Config.PLAY)) {
-				output = processPlay(input); // output = waiting <card played> OR output = waiting <unplayable>
-											// KATIE TO DO: If output = stunned <card played> then send me end turn
-			// input = end turn
-			} else if (input.contains(Config.END_TURN)) {
-					output = processEndTurn(); // output = <player name> points <player points> [continue OR withdraw] <next player> <card picked up>
-										// IF tournament is won, add: <colour> winner <winner name> 
-												// OR IF tournament is won and tournamentColour is purple, add: purple win <winner name>  
-												// IF game is won, add: game winner <winner name>
-												
-			// input = purple_win <colour>
-			} else if (input.contains(Config.PURPLE_WIN)) {
-				output = processPurpleWin(input); // output = same as a normal tournament win of any colour
-			// input = withdraw
-			} else if (input.contains(Config.WITHDRAW)) {
-				output = processWithdraw(input);
-					// see above: only change is that the player has chosen to withdraw instead of being forced
-			}
-		return output;
-	}
-	
-	
-	public String processWithdraw(String input) {
-		String output = "input";
-		for (Card c: currentPlayer.getDisplay()) {
-			if (c.getType().equals(Config.MAIDEN)) {
-				output = Config.MAIDEN;
-				currentPlayer.removeFromDisplay(c);
-				return output;
-			}
-		}
-		if (!input.equals(Config.WITHDRAW)) {
-			String[] colourInput = input.split(" ");
-			if (colourInput[1].equals(currentPlayer.getName())) {
-				withdraw();	
-				output = processEndTurn();
-			}
-			else {
-				for (Player p: players) {
-					if (p.getName().equals(colourInput[1])) {
-						return output;
-					} 
-				}
-				String colour = colourInput[1];
-				currentPlayer.removeToken(colour);
-				for (String token: currentPlayer.getCurrentTokens()) {
-				}
-				output = Config.MAIDEN + " " + colour;
-			}
-		}
-		else {
-			withdraw();	
-			output = processEndTurn();
-		}
-		return output;
-	}
-	
-	public String processStart(String input) {
-		String output;
-
-		String[] start = input.split(" ");
-		numPlayers = Integer.valueOf(start[1]);
-		if (numPlayers > Config.MAX_PLAYERS) {
-			output = Config.MAX;
-		} else {
-			output = Config.PROMPT_JOIN;
-		}
-		return output;
-	}
-	
-	public String processJoin(String input) {
-		String output = "";
-		String name = input.replace("join ", "");
-		Player player = new Player(name);
-		joinGame(player);
-		if (players.size() < numPlayers) 
-			output = Config.NEED_PLAYERS;
-		else if (players.size() == numPlayers) {
-			//prompt first player to start their turn
-			//pick tokens happens automatically 
-			startGame();
-			output += Config.HAND + " ";
-			for (Player p: players) {
-				output += " " + Config.PLAYER_NAME + " " + p.getName() + " " + Config.PLAYER_CARDS; 
-				for (Card c: p.getCards()) {
-					output += " " + c.getType() + "_" + c.getValue();
-				}
-			}					
-		}
-		return output;
-	}
-	
-	public String processStartTournament() {
-		String output = "";
-		Card picked = pickupCard();
-		String purple;
-		int nonAction = 0;
-		for (Card c: currentPlayer.getCards()) {
-			if (!c.getCardType().equals(Config.ACTION)) {
-				nonAction ++;
-			}
-		}
-		if (nonAction == 0) {
-			currentPlayer = getNext();
-		}
-		for (Player p: players) {
-			if (p.getStartTokenColour() == Config.PURPLE) {
-				purple = p.getName();
-				output = Config.PICKED_PURPLE + " " + purple + " " 
-						+ Config.TURN + " " + currentPlayer.getName() 
-						+ " " + picked.getType() + "_" + picked.getValue();
-			} else {
-				output = Config.TURN + " " + currentPlayer.getName()
-				+ " " + picked.getType() + "_" + picked.getValue();
-			}
-		}
-		startTournament = true;
-		return output;
-	}
-	
-	public String processColourPicked(String input) {
-		String output;
-		String[] pick = input.split(" ");
-		String colour = pick[1];
-		currentPlayer.chooseTournamentColour(colour);
-		startTurn();
-		output = Config.COLOUR + " " + colour;
-		return output;
-	}
-	
-	public String processPlay(String input) {
-		String output = Config.WAITING;
-		String[] play = input.split(" ");
-		String type = play[1];
-		String value = "0";
-		if (play.length > 2) {
-			value = play[2];
-		}
-		Card card = null;
-		boolean hasMaiden = false;
-		for (Card c: currentPlayer.getCards()) {
-			if (type.equals(c.getType()) && value.equals(Integer.toString(c.getValue()))
-					|| (type.equals(c.getType()) && c.getCardType().equals(Config.ACTION))) {
-				card = c;
-			}
-		}
-		if (card.getType().equals(tournamentColour) 
-				|| card.getCardType().equals(Config.SUPPORT)) {
-			if (tournamentColour.equals(Config.GREEN) && card.getValue() > 1) {
-				card.setValue(1);
-			}
-			
-			if (card.getType().equals(Config.MAIDEN)) {
-					for (Card c: currentPlayer.getDisplay()) {
-						if (c.getType().equals(Config.MAIDEN)) {
-							hasMaiden = true;
-							output += " " + Config.UNPLAYABLE;
-						}
-					}
-				}
-			if (!hasMaiden) {
-				playCard(card);
-				if (currentPlayer.isStunned()) {
-						output = Config.IS_STUNNED;
-				}
-				output += " " + type + "_" + value;
-			}
-		} else if (card.getCardType().equals(Config.ACTION)) {
-			output += processActionCard((ActionCard) card, input);
-			discard(card);
-		} else {
-			output += " " + Config.UNPLAYABLE;
-		}
-		
-		output.replace("  ", " ");
-		output.trim();
-		return output; 
-	}
-	
-	public String processActionCard(ActionCard card, String input) {
-		String output = " ";
-		String[] cardString = input.split(" ");
-		if (card.getType().equals(Config.UNHORSE)) {
-			//input = play unhorse <colour>
-			String colour = cardString[2];
-			if (tournamentColour.equals(Config.PURPLE)) { 
-				card.playUnhorse(this, colour);		
-				output += Config.UNHORSE + " " + colour; //output = waiting <card played> <colour chosen>
-			} else {
-				output += Config.UNPLAYABLE;
-			}
-		} else if (card.getType().equals(Config.CHANGEWEAPON)) {
-				//input = play changeweapon <colour>
-				String colour = cardString[2];
-				if (tournamentColour.equals(Config.RED) 
-						|| tournamentColour.equals(Config.BLUE) 
-						|| tournamentColour.equals(Config.YELLOW)) {
-					card.playChangeWeapon(this, colour);
-				}
-				output += Config.CHANGEWEAPON + " " + colour; //output = waiting <card played> <colour chosen>
-			} else if (card.getType().equals(Config.DROPWEAPON)) {
-				//input = play dropweapon
-				if (tournamentColour.equals(Config.RED) 
-						|| tournamentColour.equals(Config.BLUE) 
-						|| tournamentColour.equals(Config.YELLOW)) {
-					card.playDropWeapon(this);
-				}
-				output += Config.DROPWEAPON + " " + Config.GREEN; //output = waiting <card played> green
-			} else if (card.getType().equals(Config.BREAKLANCE)) {
-				//input = play breaklance <player name> 
-				String playerName = cardString[2];
-				Player player = getPlayerByName(playerName);
-				if ((player.getDisplay().size() < 2) || player.hasShield()) {
-					output += Config.UNPLAYABLE;
-				} else {
-					card.playBreakLance(player);
-					output += Config.BREAKLANCE + " ";
-					output += Config.DISPLAY + " ";
-					output += Config.PLAYER_NAME + " " + playerName + " " + player.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
-	
-						for (Card c: player.getDisplay()) {
-							output += c.getType() + " " + c.getValue(); 
-						}
-				}
-
-				//output = waiting <card played> display name <player> <player score> cards <display card> <display card> ...
-			} else if (card.getType().equals(Config.RIPOSTE)) {
-				//input = play riposte <player name>
-				String playerName = cardString[2];
-				Player player = getPlayerByName(playerName);
-				if ((player.getDisplay().size() < 2) || player.hasShield()){
-					output += Config.UNPLAYABLE;
-				} else {
-					Card cardToSteal = card.playRiposte(player);
-					if (cardToSteal != null) {
-						currentPlayer.addToDisplay(cardToSteal);
-						currentPlayer.setTotalCardValue();
-					}
-	
-					
-						output += Config.RIPOSTE + " " + playerName + " " + player.getTotalCardValue() + " "
-						+ cardToSteal.getType() + " " + cardToSteal.getValue()  + " " 
-								+ currentPlayer.getName()  + " " + currentPlayer.getTotalCardValue();
-				}
-				//output = waiting <card played> <player stolen from> <player total> <card stolen> <player added to> <player value>
-			} else if (card.getType().equals(Config.DODGE)) {
-				// input = play dodge <player name> <card type> <card value>
-
-				String playerName = cardString[2];
-				String type = cardString[3];
-				String value = cardString[4];
-				Player player = getPlayerByName(playerName);
-				if ((player.getDisplay().size() < 2) || player.hasShield()){
-					output += Config.UNPLAYABLE;
-				} else {
-				for (Card c: player.getDisplay()) {
-					if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
-						card.playDodge(player, c);
-						player.setTotalCardValue();
-						break;
-					}
-				}
-					output += Config.DODGE + " " + playerName + " " + player.getTotalCardValue() + " " + type + " " + value;
-				}
-				//output = waiting <card played> <player discarded from> <score> <card discarded> 
-			} else if (card.getType().equals(Config.RETREAT)) {
-				// input = play retreat <card type> <card value>
-				String type = cardString[2];
-				String value = cardString[3];
-				Card cardToRetreat = null;
-				for (Card c: currentPlayer.getDisplay()) {
-					if (c.getType().equals(type) && Integer.toString(c.getValue()).equals(value)) {
-						cardToRetreat = c;
-						break;
-					}
-				}
-				if (currentPlayer.getDisplay().size() < 2) {
-					output += Config.UNPLAYABLE;
-				} else {
-					card.playRetreat(this, cardToRetreat);
-					output += Config.RETREAT + " " + currentPlayer.getName() + " " + currentPlayer.getTotalCardValue() + " " + type + " " + value;
-				}
-				//output = waiting <card played> <currentPlayerName> <score> <card removed from display and put back into hand>
-			} else if (card.getType().equals(Config.KNOCKDOWN)) {
-				// input = play knockdown <player name>
-				
-
-				String playerName = cardString[2];
-				Player player = getPlayerByName(playerName);
-				if (player.hasShield()) {
-					output += Config.UNPLAYABLE;
-				}
-				else {
-				Card cardToSteal = card.playKnockDown(this, player);
-				output += Config.KNOCKDOWN + " " + playerName + " " + cardToSteal.getType() + " " + cardToSteal.getValue();
-				}
-				//output = waiting <card played> <player chosen> (Just remove the first card from that player's hand)
-			} else if (card.getType().equals(Config.OUTMANEUVER)) {
-				// input = play outmaneuver
-				
-				card.playOutmaneuver(this);
-				output += Config.OUTMANEUVER + " " + updateDisplays();
-				//output = waiting <card played> <current player name> (remove the last card from all other displays that don't have a shield card)
-			} else if (card.getType().equals(Config.CHARGE)) {
-				// input = play charge
-				card.playCharge(this);
-				output += Config.CHARGE + " " + updateDisplays();
-				//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
-			} else if (card.getType().equals(Config.COUNTERCHARGE)) {
-				// input = play countercharge
-				card.playCounterCharge(this);
-				output += Config.COUNTERCHARGE + " " + updateDisplays();
-				//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
-			} else if (card.getType().equals(Config.DISGRACE)) {
-				//input = play disgrace
-				card.playDisgrace(this);
-				output += Config.DISGRACE + " "  + updateDisplays();
-				//output = waiting <card played> <current player name> (can you remove all support cards from everyone but the current player here?) 
-			} else if (card.getType().equals(Config.ADAPT)) {
-				card.playAdapt(this);
-				output +=  Config.ADAPT + " " + updateDisplays();
-				//output = waiting <card played> name <opponent 1 name> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
-			} else if (card.getType().equals(Config.OUTWIT)) {
-				String playerCardType = cardString[2];
-				String playerCardValue = cardString[3];
-				String opponentName = cardString[4];
-				String opponentCardType = cardString[5];
-				String opponentCardValue = cardString[6];
-				Player opponent = getPlayerByName(opponentName);
-				Card playerCard = new Card(playerCardType, Integer.parseInt(playerCardValue));
-				Card opponentCard = new Card(opponentCardType, Integer.parseInt(opponentCardValue));
-				card.playOutwit(this, opponent, opponentCard, playerCard);
-				currentPlayer.setTotalCardValue();
-				opponent.setTotalCardValue();
-				output += Config.OUTWIT + " " + playerCardType + " " + playerCardValue 
-						+ " " + opponentName + " " + opponentCardType + " " + opponentCardValue;
-			} else if (card.getType().equals(Config.SHIELD)) {
-				card.playShield(this, card);
-				output += Config.SHIELD + " " + currentPlayer.getName();
-			} else if (card.getType().equals(Config.STUNNED)) {
-				String playerName = cardString[2];
-				Player player = getPlayerByName(playerName);
-				card.playStunned(player, card);
-				output += Config.STUNNED + " " + playerName;
-			} else if (card.getType().equals(Config.IVANHOE)) {
-				//TO DO
-			}
-		return output;
-	}
-	
-	public String updateDisplays() {
-		String output = Config.DISPLAY + " ";
-		for (Player p: players) {
-			p.setTotalCardValue();
-			output += Config.PLAYER_NAME + " " + p.getName() + " " + p.getTotalCardValue() + " " + Config.PLAYER_CARDS + " ";
-			//if (!p.getName().equals(currentPlayer.getName())) {
-				for (Card c: p.getDisplay()) {
-					output += c.getType() + "_" + c.getValue() + " ";
-				//}
-			}
-		}
-		return output;
-		//output += <player name> <score> cards <display card 1> <display card 2> <opponenent 2 name> <display card 1>... for all opponents
-	}
-
-	//TO DO: Change back to ArrayList if this does not work
 	public ArrayList<Player> getActionablePlayers() {
+		// get players that can be affected by action cards
 		ArrayList<Player> actionable = new ArrayList<>();
 		for (Player p: players) {
 			actionable.add(p);
 		}
-		for (Player p: actionable) {
-			for (Card c: p.getFront()) {
+		for (int i = 0; i < actionable.size(); i++) {
+			for (Card c: actionable.get(i).getFront()) {
 				if (c.getType().equals(Config.SHIELD)) {
-					actionable.remove(p);
+					actionable.remove(i);
+					break;
 				}
 			}
 		}
 		return actionable;
 	}
- 	public String processPurpleWin(String input) {
-		String output;
-		String[] purpleWin = input.split(" ");
-		String chosenColour = purpleWin[2];
-		if (chosenColour.equals(Config.PURPLE)) {
-			choosePurple = true;
-		}
-		setTournamentColour(chosenColour);
-		output = processEndTurn();
-		return output;
-	}
-	
-	public String processEndTurn() {
-		String output = currentPlayer.getName() + " " + Config.POINTS + " " + currentPlayer.getTotalCardValue();
-		Player prevPlayer = currentPlayer;
-		endTurn();
-		String withdraw = Config.CONTINUE;
-		if (prevPlayer.hasWithdrawn()) {
-			withdraw = Config.WITHDRAW;
-		}
-
-		output += " " + withdraw + " " + currentPlayer.getName();
-		startTurn();
-		String status = null;
-		if (tournamentColour != null) {
-			for (Player p: players) {
-				if (p.isWinner() && tournamentColour.equals(Config.PURPLE) && !choosePurple) {
-					status = " " + Config.PURPLE_WIN + " " + p.getName();
-					currentPlayer = p;
-					p.resetTotalCardValue();
-					
-				}
-				else if (p.isWinner() && (!tournamentColour.equals(Config.PURPLE) || choosePurple)) {
-					currentPlayer = p;
-					announceWinner();
-					arrangePlayers();
-					resetPlayers();
-					status = " " + getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
-					currentPlayer = p;
-				}
-				if (p.isGameWinner()) {
-					output = " " + Config.GAME_WINNER + " " + p.getName();
-					currentPlayer = p;
-				}
-				
-			}
-		}
-		if (status == null){
-			Card picked = pickupCard();
-			status = " " + picked.getType() + "_" + picked.getValue();
-		}
-		
-		output += status;
-		return output;
-	}
-	
 	public void joinGame(Player player) {
 		players.add(player);
 		joined = true;
@@ -617,7 +176,7 @@ public class GameEngine {
 		// play a specific card for current player, handle based on card rules
 		if (card.getCardType().equals(Config.COLOUR) || card.getCardType().equals(Config.SUPPORT)) {
 			currentPlayer.addToDisplay(card);
-		} 
+		}
 		//remove card from player hand
 		currentPlayer.removeCard(card);
 		//add card to where it should be added (display, front, discard)
@@ -676,10 +235,10 @@ public class GameEngine {
 		currentPlayer = getNext();
 	}
 	
-	private Player getNext() {
+	public Player getNext() {
 		int index = 0;
 		for (int i = 0; i < players.size(); i++) {
-			if (players.get(i) == currentPlayer) {
+			if (players.get(i).getName().equals(currentPlayer.getName())) {
 				if (i == players.size()-1) {
 					index = 0;
 				} else {
@@ -705,10 +264,10 @@ public class GameEngine {
 		Player winner = currentPlayer;
 		currentPlayer.setWinner(true);
 		if (tournamentColour != null) {
-			if ((choosePurple && (!currentPlayer.getCurrentTokens().contains(Config.PURPLE))) || (!tournamentColour.equals(Config.PURPLE))
+			if ((chosePurple() && (!currentPlayer.getCurrentTokens().contains(Config.PURPLE))) || (!tournamentColour.equals(Config.PURPLE))
 				&& (!currentPlayer.getCurrentTokens().contains(tournamentColour))) {
 				currentPlayer.addToken(tournamentColour);
-				choosePurple = false;
+				setChoosePurple(false);
 			}
 		}
 		if ((numPlayers <= 3) && (winner.getCurrentTokens().size() == 5)) {
@@ -904,7 +463,18 @@ public class GameEngine {
 		drawDeck.add(new ActionCard(Config.STUNNED));
 		drawDeck.add(new ActionCard(Config.IVANHOE));
 
-
+	}
+	public boolean isStartTournament() {
+		return startTournament;
+	}
+	public void setStartTournament(boolean startTournament) {
+		this.startTournament = startTournament;
+	}
+	public boolean chosePurple() {
+		return choosePurple;
+	}
+	public void setChoosePurple(boolean choosePurple) {
+		this.choosePurple = choosePurple;
 	}
 
 
