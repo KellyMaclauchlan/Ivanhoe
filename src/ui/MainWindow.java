@@ -423,11 +423,10 @@ public class MainWindow extends JFrame implements Subject {
 	}
  	
  	public void selectCard(int i){
- 		lastCard = i;	
- 		deck.setText(lastCard + "");
+ 		lastCard = i;
  		this.notifyObservers(Config.DESCRIPTION);
  		if(testing){
- 			this.textDisplay.setText("card " + i);
+ 			this.textDisplay.setText("card "+lastCard + "");
  		}
  	}
  	protected void playCardClicked() {
