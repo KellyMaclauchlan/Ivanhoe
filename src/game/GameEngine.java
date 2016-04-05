@@ -233,6 +233,9 @@ public class GameEngine {
 			}
 		}
 		currentPlayer = getNext();
+		while (currentPlayer.hasWithdrawn()) {
+			currentPlayer = getNext();
+		}
 	}
 	
 	public Player getNext() {
