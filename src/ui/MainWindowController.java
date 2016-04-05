@@ -132,7 +132,7 @@ public class MainWindowController implements Observer, Subject{
 	}
 	
 	/* Popups */
-	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter your IP address and Port ie: localhost 3000");}
+	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter the server's IP address: ");}
 	public String getNumberOfPlayersFromPlayer() {
 		String[] possibilities= {"2","3","4","5"};
 		String s = (String)JOptionPane.showInputDialog(

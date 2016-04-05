@@ -20,7 +20,10 @@ public class AI extends Player implements Subject{
 		this.name = name;
 	}
 	
+	/* Receives messages from the Server just like a client does */
 	public void processInput(String msg){
+
+		/* When the AI receives its cards */
 		if(msg.contains(Config.HAND)){
 			this.strategy.processPlayerName(msg);
 		}
@@ -29,16 +32,19 @@ public class AI extends Player implements Subject{
 			// do nothing 
 			
 		}else{
+			// sends the message from the server to the appropriate strategy
 			output = this.strategy.processInput(msg);
 			giveTokens2Strategy();
 			notifyObservers(output);
 		}
 	}
 	
+	/* Sends the player's list of tokens each time for strategy purposes */
 	public void giveTokens2Strategy(){
 		this.strategy.tokenChoice(currentTokens);
 	}
 
+	/* Observer Pattern to communicate with the Server */
 	public void registerObserver(Observer observer) {
 		this.observers.add(observer);
 	}

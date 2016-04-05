@@ -86,7 +86,7 @@ public class TestClient {
 		assertTrue(server.testMinPlayers());
 	}
 	
-	@Test
+	//@Test
 	public void testMaxClients(){
 		System.out.println("@Test: TestMaxClients");
 		assertTrue(c1);
