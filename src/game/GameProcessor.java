@@ -23,7 +23,7 @@ public class GameProcessor {
 	public String processWithdraw(String input) {
 		String output = Config.INPUT;
 		for (Card c: game.getCurrentPlayer().getDisplay()) {
-			if (c.getType().equals(Config.MAIDEN)) {
+			if (c.getType().equals(Config.MAIDEN) && !game.getCurrentPlayer().getCurrentTokens().isEmpty()) {
 				output = Config.MAIDEN;
 				game.getCurrentPlayer().removeFromDisplay(c);
 				return output;
