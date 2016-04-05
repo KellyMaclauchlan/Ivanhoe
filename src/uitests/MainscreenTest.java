@@ -67,7 +67,7 @@ public class MainscreenTest extends FestSwingJUnitTestCase  {
 	@Test
 	public void testCardClick() {
 		editor.button("card6").click();
-		assertEquals(editor.label("deck").target.getText(),"5");
+		assertEquals(editor.label("text").target.getText(),"card 5");
 	}
 	
 	@Test
