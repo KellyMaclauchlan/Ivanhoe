@@ -45,11 +45,12 @@ public class StrategyWithdraw implements Strategy{
 				continue;
 			}else{
 				output = this.hand.get(i).getType();
+				this.setStarted(true);
 				tournamentColour = output;
 				break;
 			}
 		}
-		return output;
+		return tournamentColour;
 	}
 
 	/* If the AI is the first player of the tournament (chose the tournament colour), then it will play 
@@ -100,7 +101,9 @@ public class StrategyWithdraw implements Strategy{
 		}
 		
 		/* When you are not the current player, you are notified when another player
-		 * plays a card*/
+		 * plays a card
+		 * If you are the current player, you receive waiting <card played> to notify you
+		 * that the game engine has received the card you played */
 		else if(msg.contains(Config.WAITING)){
 			if(currentPlayer){
 				output = Config.END_TURN;
@@ -169,18 +172,37 @@ public class StrategyWithdraw implements Strategy{
 	public String processContinueWithdraw(String msg) {
 		String[] input = msg.split(" ");
 		
-		if(!msg.contains(Config.TOURNAMENT_WINNER)){
-			if(input[4].equals(this.name)){
-				this.currentPlayer = true;
-				output = playACard();
-			}else{
-				this.currentPlayer = false;
+		if(msg.contains(Config.PURPLE_WIN)){
+			if(input[7].equals(this.name)){
+				output = Config.PURPLE_WIN + " " + Config.PURPLE;
+			}
+			else{
 				output = Config.OUTPUT;
 			}
+			
 		}else{
-			output = Config.OUTPUT;
+			if(msg.contains(Config.TOURNAMENT_WINNER)){
+				if(input[4].equals(this.name)){
+					output = startTournament();
+				}
+				else{
+					output = Config.OUTPUT;
+				}
+			}
+			
+			if(!msg.contains(Config.TOURNAMENT_WINNER)){
+				if(input[4].equals(this.name)){
+					this.currentPlayer = true;
+					output = playACard();
+				}else{
+					this.currentPlayer = false;
+					output = Config.OUTPUT;
+				}
+			} 
+			else{
+				output = Config.OUTPUT;
+			}
 		}
-		
 		return output;
 	}
 

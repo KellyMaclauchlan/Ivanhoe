@@ -469,6 +469,8 @@ public class StrategyPlayAll implements Strategy{
 	
 	public String processContinueWithdraw(String msg){
 		String[] input = msg.split(" ");
+		System.out.println("continue");
+		System.out.println(msg);
 		
 		if(msg.contains(Config.PURPLE_WIN) ){
 			if(input[7].equals(this.name)){
@@ -513,6 +515,7 @@ public class StrategyPlayAll implements Strategy{
 				output = Config.OUTPUT; 
 			}
 		}
+		System.out.println("output: " + output);
 		return output;
 	}
 	

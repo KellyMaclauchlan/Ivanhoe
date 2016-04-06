@@ -125,6 +125,7 @@ public class Server implements Runnable, Observer {
 	public void handle(int id, String msg) {
 		log.info("Message Received: " + msg);
 		
+		System.out.println("Server: " + msg);
 		/* Server receives message that client has quit */
 		if (msg.contains(Config.QUIT) || msg.equals(null)) {
 			log.info(String.format("Removing Client: %d", id));
@@ -165,6 +166,7 @@ public class Server implements Runnable, Observer {
 		else {
 			send = game.processInput(msg);
 			processInput(id, send);
+			System.out.println("From game: " + send);
 			sendToAI(send);
 		}
 	}
@@ -174,7 +176,8 @@ public class Server implements Runnable, Observer {
 		Random rand = new Random();
 		Strategy s;
 		for(int i = 0; i < a; i++){
-			int r = rand.nextInt(2) + 1;
+			//int r = rand.nextInt(2) + 1;
+			int r = 1;
 			if(r == 1 ){
 				s = new StrategyPlayAll("AI" + i);
 				ai = new AI(s, s.getName());
@@ -248,7 +251,6 @@ public class Server implements Runnable, Observer {
 	
 	/* Figures out whether to send the message to all the clients or just one */
 	public void processInput(int id, String send){
-		
 		if(send.contains(Config.PROMPT_JOIN)){
 			send1Client(id, send);
 		}
