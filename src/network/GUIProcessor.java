@@ -53,7 +53,6 @@ public class GUIProcessor {
 		
 		client.getWindow().showWindow();
 		if (msg.contains(Config.PICKED_PURPLE)){
-			
 				if (input[3].equalsIgnoreCase(client.getWindow().getPlayerName())){
 					client.getWindow().startTurn();
 					String value[] = input[4].split("_");
