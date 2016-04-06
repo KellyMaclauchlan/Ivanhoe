@@ -51,7 +51,6 @@ Known issues:
 - when playing with more than 1 AI, the AI will play correctly except when the player gets to choose the tournament colour
 		-> for some reason only one of the AIs receives the right cards and the others do not 
 - also when playing with more than 1 AI, occassionally, the game will return an infinite loop of messages that renders the game unplayable
-- losing a token when a maiden is played sometimes works with more than 2 players
 
 ** All functionality works perfectly with 2 players, or 1 player and 1 AI
 
