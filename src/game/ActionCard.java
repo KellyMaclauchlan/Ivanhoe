@@ -162,7 +162,6 @@ public class ActionCard extends Card {
 		}
 	}
 	
-	
 	public void playDisgrace(GameEngine game) {
 		// discard all supporters from every player's display
 		for (Player p: game.getActionablePlayers()) {

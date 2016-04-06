@@ -33,12 +33,16 @@ public class TestScenarios {
 		
 	@BeforeClass
 	public static void BeforeClass(){
-		System.out.println("@BeforeClass: TestGameEngine");
+		System.out.println("@BeforeClass: TestScenarios");
 	}
 	
 	@Before
 	public void setUp(){
+<<<<<<< HEAD
 		System.out.println("@Before: TestGameEngine");
+=======
+		System.out.println("@Before: TestScenarios");
+>>>>>>> 266aae073c495b1836e36d7b38aaacb2714a0e3d
 		processor = new GameProcessor();
 		game = processor.getGame();
 		player1 = new Player("Katie");
@@ -140,6 +144,7 @@ public class TestScenarios {
 	}
 	
 	/* Scenario Testing */
+<<<<<<< HEAD
 	@Test
 	public void testPlayerCannotStart() {
 		System.out.println("Test: Starting player cannot start tournament");
@@ -196,6 +201,82 @@ public class TestScenarios {
     	
     	// player 2 does not have more points than player 1
     	assertFalse(game.getCurrentPlayer().getTotalCardValue() > player1.getTotalCardValue());
+=======
+	@Test
+	public void testPlayerCannotStart() {
+		System.out.println("Test: Starting player cannot start tournament");
+	   	//give player1 all action cards
+		ArrayList<Card> player1Cards = new ArrayList<>();
+    	player1Cards.add(new ActionCard(Config.UNHORSE));
+    	player1Cards.add(new ActionCard(Config.BREAKLANCE));
+    	player1Cards.add(new ActionCard(Config.RIPOSTE));
+    	player1Cards.add(new ActionCard(Config.CHANGEWEAPON));
+    	player1Cards.add(new ActionCard(Config.DODGE));
+    	player1Cards.add(new ActionCard(Config.OUTWIT));
+    	player1Cards.add(new ActionCard(Config.RIPOSTE));
+    	player1Cards.add(new ActionCard(Config.STUNNED));
+    	player1.setCards(player1Cards);
+    	game.removeAllFromDeck(player1Cards);
+    	
+    	//player can only pick up an action card
+    	game.setDrawDeck(player1Cards);
+    	
+    	game.setCurrentPlayer(player1);
+		assertEquals(player1.getName(), game.getCurrentPlayer().getName());	
+		
+		//starting tournament moves to the next player if the first cannot play
+		processor.processStartTournament();
+		
+		//player 1 has no playable cards and has been automatically withdrawn
+		assertNotEquals(player1.getName(), game.getCurrentPlayer().getName());	
+		assertEquals(player2.getName(), game.getCurrentPlayer().getName());
+	}
+	
+	@Test
+	public void testTotalValue(){
+		System.out.println("@Test: trying to play an insufficient number of cards to become the leader on my turn");
+		
+		game.setCurrentPlayer(player2);
+		Card toPlay = player2.getCardFromHand(Config.RED, 5);
+    	game.playCard(toPlay);
+    	assertEquals(Config.RED, toPlay.getType());
+    	assertEquals(5, toPlay.getValue());
+    	
+    	//test the current player's total card value and that it is greater than the value of the other player
+    	assertEquals(5, game.getCurrentPlayer().getTotalCardValue());
+    	assertEquals(0, player1.getTotalCardValue());
+    	assertEquals(0, player3.getTotalCardValue());
+    	assertEquals(0, player4.getTotalCardValue());
+    	assertEquals(0, player5.getTotalCardValue());
+    	
+    	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player1.getTotalCardValue());
+>>>>>>> 266aae073c495b1836e36d7b38aaacb2714a0e3d
+    	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player3.getTotalCardValue());
+    	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player4.getTotalCardValue());
+    	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player5.getTotalCardValue());
+    	
+<<<<<<< HEAD
+    	//player 2 ends their turn
+    	game.endTurn();
+    	
+    	//player 2 was automatically withdrawn
+    	assertTrue(player1.hasWithdrawn());
+    	
+	}
+	
+	@Test
+	public void testInvalidCards() {
+=======
+>>>>>>> 266aae073c495b1836e36d7b38aaacb2714a0e3d
+		
+		game.setCurrentPlayer(player1);
+		toPlay = player1.getCardFromHand(Config.RED, 3);
+    	game.playCard(toPlay);
+    	assertEquals(Config.RED, toPlay.getType());
+    	assertEquals(3, toPlay.getValue());
+    	
+    	// player 2 does not have more points than player 1
+    	assertFalse(game.getCurrentPlayer().getTotalCardValue() > player1.getTotalCardValue());
     	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player3.getTotalCardValue());
     	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player4.getTotalCardValue());
     	assertTrue(game.getCurrentPlayer().getTotalCardValue() > player5.getTotalCardValue());
@@ -210,7 +291,8 @@ public class TestScenarios {
 	
 	@Test
 	public void testInvalidCards() {
-		
+		System.out.println("@Test: trying to play invalid cards");
+
 		player1.chooseTournamentColour(Config.RED);
 		game.setCurrentPlayer(player1);
 		game.startTurn();
@@ -245,6 +327,11 @@ public class TestScenarios {
 	
 	@Test
 	public void testEndOfDeck() {
+<<<<<<< HEAD
+=======
+		System.out.println("@Test: coming to end of the deck");
+
+>>>>>>> 266aae073c495b1836e36d7b38aaacb2714a0e3d
 		player1.chooseTournamentColour(Config.RED);
 		game.setCurrentPlayer(player1);
 		game.startTurn();
@@ -270,8 +357,13 @@ public class TestScenarios {
 
 	@Test
 	public void testChargeGreenOneCard() {
+<<<<<<< HEAD
 		
 		
+=======
+		System.out.println("@Test: using 'Charge' in a green tournament with every player with only green 1s: one card must remain");
+
+>>>>>>> 266aae073c495b1836e36d7b38aaacb2714a0e3d
 		//player 4 plays 1 green 1
 		player4.chooseTournamentColour(Config.GREEN);
 
@@ -347,7 +439,12 @@ public class TestScenarios {
 	
 	@Test
 	public void testOneCardRemains() {
+<<<<<<< HEAD
 		
+=======
+		System.out.println("@Test: other example of overriding rule: at least one card must remain");
+
+>>>>>>> 266aae073c495b1836e36d7b38aaacb2714a0e3d
 		//player 2 has 1 card in their display
 		player2.chooseTournamentColour(Config.YELLOW);
 		game.setCurrentPlayer(player2);
@@ -376,6 +473,7 @@ public class TestScenarios {
 		assertEquals(Config.YELLOW, game.getTournamentColour()); 
 		
 		game.playCard(player1.getCardFromHand(Config.YELLOW, 3));
+<<<<<<< HEAD
 		
 		//action cards that cannot be played with only one card in the display and return unplayable messages
 		String unplayable = processor.processPlay("play breaklance " + player2.getName());
@@ -395,6 +493,27 @@ public class TestScenarios {
 		assertEquals(4, player2.getTotalCardValue());
 		assertEquals(3, player1.getTotalCardValue());
 		
+=======
+		
+		//action cards that cannot be played with only one card in the display and return unplayable messages
+		String unplayable = processor.processPlay("play breaklance " + player2.getName());
+		assertEquals("waiting " + Config.UNPLAYABLE, unplayable);
+
+		unplayable = processor.processPlay("play riposte " + player2.getName());
+		assertEquals("waiting " + Config.UNPLAYABLE, unplayable);
+		
+		unplayable = processor.processPlay("play dodge " + player2.getName() + " yellow 4");
+		assertEquals("waiting " + Config.UNPLAYABLE, unplayable);
+		
+		unplayable = processor.processPlay("play retreat yellow 3");
+		assertEquals("waiting " + Config.UNPLAYABLE, unplayable);
+
+		//action cards that cards do not return unplayable but does not change current scores
+		unplayable = processor.processPlay("play outmaneuver");
+		assertEquals(4, player2.getTotalCardValue());
+		assertEquals(3, player1.getTotalCardValue());
+		
+>>>>>>> 266aae073c495b1836e36d7b38aaacb2714a0e3d
 		unplayable = processor.processPlay("play charge");
 		assertEquals(4, player2.getTotalCardValue());
 		assertEquals(3, player1.getTotalCardValue());		

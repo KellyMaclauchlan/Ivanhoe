@@ -125,7 +125,7 @@ public class ClientProcessor {
 		} else if (msg.contains(Config.MAIDEN) && !msg.contains(Config.PLAY) && !msg.contains(Config.HAND) && !msg.contains("_") && !msg.contains(Config.WAITING)) {
 			String tokenToRemove = null;
 			String[] input = msg.split(" ");
-			if (msg.equals(Config.MAIDEN)) {			
+			if (msg.equals(Config.MAIDEN)) {
 				tokenToRemove = client.getWindow().playerPickTokenRemove();
 				client.setOutput(Config.WITHDRAW + " " + tokenToRemove);
 			} else {

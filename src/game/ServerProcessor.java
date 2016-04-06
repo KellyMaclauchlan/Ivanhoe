@@ -6,6 +6,7 @@ public class ServerProcessor {
 private GameProcessor gameProcessor = new GameProcessor();
 
 	public String processInput(String input) {
+		
 		String output = Config.INPUT;
 			if (input.contains(Config.START)) {
 				output = gameProcessor.processStart(input); 

@@ -120,7 +120,7 @@ public class MainWindowController implements Observer, Subject{
 			this.playerScores.add(0);
 		}
 		for(j=i;j<5;j++){
-			this.window.getPlayerCards(j).setEnabled(false);
+			this.window.hidePlayer(j);
 		}
 		log.info("Total number of players is: " + i);
 	}
@@ -132,7 +132,7 @@ public class MainWindowController implements Observer, Subject{
 	}
 	
 	/* Popups */
-	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter your IP address and Port ie: localhost 3000");}
+	public String getIPPortFromPlayer(){return JOptionPane.showInputDialog("Enter the server's IP address: ");}
 	public String getNumberOfPlayersFromPlayer() {
 		String[] possibilities= {"2","3","4","5"};
 		String s = (String)JOptionPane.showInputDialog(

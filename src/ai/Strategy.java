@@ -5,7 +5,7 @@ import game.Card;
 import game.Player;
 
 public interface Strategy{
-
+	/* AI Strategy Interface */
 	public String startTournament();
 	public String playACard();
 	

@@ -84,8 +84,6 @@ public class TestMainWindowController {
 		int old = controller.getPlayerCardSize();
 		controller.playCard();
 		controller.removeCard(card);
-		System.out.println(old);
-		System.out.println(controller.getPlayerCardSize());
 		assertEquals(controller.getPlayerCardSize(),old-1);
 		
 	}

@@ -23,7 +23,7 @@ public class GameProcessor {
 	public String processWithdraw(String input) {
 		String output = Config.INPUT;
 		for (Card c: game.getCurrentPlayer().getDisplay()) {
-			if (c.getType().equals(Config.MAIDEN)) {
+			if (c.getType().equals(Config.MAIDEN) /*&& !game.getCurrentPlayer().getCurrentTokens().isEmpty()*/) {
 				output = Config.MAIDEN;
 				game.getCurrentPlayer().removeFromDisplay(c);
 				return output;
@@ -197,7 +197,7 @@ public class GameProcessor {
 		String[] purpleWin = input.split(" ");
 		String chosenColour = purpleWin[2];
 		if (chosenColour.equals(Config.PURPLE)) {
-			game.setChoosePurple(true);;
+			game.setChoosePurple(true);
 		}
 		game.setTournamentColour(chosenColour);
 		output = processEndTurn();
@@ -219,20 +219,22 @@ public class GameProcessor {
 			for (Player p: game.getPlayers()) {
 				if (p.isWinner() && game.getTournamentColour().equals(Config.PURPLE) && !game.chosePurple()) {
 					status = " " + Config.PURPLE_WIN + " " + p.getName();
-					game.setCurrentPlayer(p);;
+					game.setCurrentPlayer(p);
 					p.resetTotalCardValue();
+					game.setPurpleWin(true);
 				}
 				else if (p.isWinner() && (!game.getTournamentColour().equals(Config.PURPLE) || game.chosePurple())) {
-					game.setCurrentPlayer(p);;
+					game.setCurrentPlayer(p);
 					game.announceWinner();
 					game.arrangePlayers();
 					game.resetPlayers();
 					status = " " + game.getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
-					game.setCurrentPlayer(p);;
+					game.setCurrentPlayer(p);
+					game.setPurpleWin(false);
 				}
 				if (p.isGameWinner()) {
 					output = " " + Config.GAME_WINNER + " " + p.getName();
-					game.setCurrentPlayer(p);;
+					game.setCurrentPlayer(p);
 				}
 			}
 		}

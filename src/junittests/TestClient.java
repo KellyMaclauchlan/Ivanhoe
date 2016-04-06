@@ -86,7 +86,7 @@ public class TestClient {
 		assertTrue(server.testMinPlayers());
 	}
 	
-	@Test
+	//@Test
 	public void testMaxClients(){
 		System.out.println("@Test: TestMaxClients");
 		assertTrue(c1);
@@ -95,7 +95,7 @@ public class TestClient {
 		assertTrue(c4);
 		assertTrue(c5);
 		
-		client6 = new Client();
+		client6 = new Client("127.0.0.1", 3000);
 		c6 = client6.getSuccessConnect();
 		assertFalse(c6);
 		
@@ -107,10 +107,10 @@ public class TestClient {
 		System.out.println("@Test: testMessage1");
 		assertTrue(c1); 
 		
-		String message = Config.FIRSTPLAYER;
+		String message = Config.OUTPUT;
 		int id = client1.getID();
 		server.handle(id, message);
-		assertEquals(message, client1.testMessages());
+		assertEquals(Config.FIRSTPLAYER, client1.testMessages());
 	}
 	
 	@Test

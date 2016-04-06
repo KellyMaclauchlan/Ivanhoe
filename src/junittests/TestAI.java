@@ -197,7 +197,7 @@ public class TestAI {
 		playAll.getStrategy().setStarted(true);
 		String compare = playAll.getStrategy().processPlay(message);
 		
-		assertEquals(Config.WITHDRAW, compare);
+		assertEquals(Config.END_TURN, compare);
 	}
 
 }

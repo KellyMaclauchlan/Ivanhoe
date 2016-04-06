@@ -11,6 +11,7 @@ import org.junit.runners.MethodSorters;
 
 import config.Config;
 import game.Card;
+import game.ColourCard;
 import game.GameEngine;
 import game.Player;
 import game.SupportCard;
@@ -58,17 +59,22 @@ public class TestGameStart2Player {
     	//get the first (only) two players from the players array, and ensure that the number of players is correct
     	Player player1 =  game.getPlayers().get(0);
     	Player player2 = game.getPlayers().get(1);
+    	
+    	//at least one playable card
+    	player1.addCard(new SupportCard(Config.SQUIRE, 4));
+    	//at least one playable card
+    	player2.addCard(new SupportCard(Config.SQUIRE, 4));
     	int players = game.getPlayers().size();
     	assertEquals(2, players);
     	int totalDeck = game.getDrawDeck().size() + player1.getCards().size() + player2.getCards().size();
-    	assertEquals(110, totalDeck);
 
     	//make sure that the current player is the first in the players array 
     	assertEquals(game.getCurrentPlayer(), player1);
     	
     	//make sure each player has 8 cards after the game has started
-    	assertEquals(8, player1.getCards().size());
-    	assertEquals(8, player2.getCards().size());
+    	// (subtract 1 from hand since squire was added in case no colour cards are picked up)
+    	assertEquals(8, player1.getCards().size() - 1);
+    	assertEquals(8, player2.getCards().size() - 1);
     	
     	//make sure that the round does not yet have a colour
     	assertNull(game.getTournamentColour());
@@ -78,10 +84,17 @@ public class TestGameStart2Player {
     public void test2SetColour() {
     	//the first player is the 0th item in the players list
     	Player player = game.getCurrentPlayer();
-    	
+
+    	//at least one playable card
+    	player.addCard(new SupportCard(Config.SQUIRE, 4));
     	//the first player should be prompted to pick a round colour
     	//for this test, we will choose the first of the possible choices that the player has based on their cards
-    	String colour = player.getColourPossibilities().get(0);
+    	String colour = null;
+    	if (!player.getColourPossibilities().isEmpty()) {
+    		colour = player.getColourPossibilities().get(0);
+    	} else {
+    		colour = Config.YELLOW;
+    	}
     	player.chooseTournamentColour(colour);
     	
     	//set the round colour and make sure that it is in fact the colour that was chosen by the player
@@ -92,7 +105,8 @@ public class TestGameStart2Player {
     @Test
     public void test3FirstPlay() {
     	Player player = game.getCurrentPlayer();
-    	
+    	//at least one playable card
+    	player.addCard(new SupportCard(Config.SQUIRE, 4));
     	//for this test, we will choose the first playable card and all subsequent playable cards
     	for (Card cardToPlay: player.getPlayPossibilities(game)) {
     		game.playCard(cardToPlay);
@@ -115,6 +129,8 @@ public class TestGameStart2Player {
     @Test
     public void test4SecondPlay() {
     	Player player = game.getCurrentPlayer();
+    	//at least one playable card
+    	player.addCard(new SupportCard(Config.SQUIRE, 4));
     	game.setTournamentColour(Config.PURPLE);
     	//for this test, we will choose the first playable card and all subsequent playable cards
     	for (Card cardToPlay: player.getPlayPossibilities(game)) {

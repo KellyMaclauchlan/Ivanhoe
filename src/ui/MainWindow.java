@@ -423,11 +423,10 @@ public class MainWindow extends JFrame implements Subject {
 	}
  	
  	public void selectCard(int i){
- 		lastCard = i;	
- 		deck.setText(lastCard + "");
+ 		lastCard = i;
  		this.notifyObservers(Config.DESCRIPTION);
  		if(testing){
- 			this.textDisplay.setText("card " + i);
+ 			this.textDisplay.setText("card "+lastCard + "");
  		}
  	}
  	protected void playCardClicked() {
@@ -510,6 +509,14 @@ public class MainWindow extends JFrame implements Subject {
 		this.withdrawButton.setEnabled(false);
 		this.endTurnButton.setEnabled(false);
 		this.playCardButton.setEnabled(false);
+	}
+	public void hidePlayer(int i){
+		this.playedCards[i].setVisible(false);
+		for(int j = 0; j < 5; j++){
+			this.tokens[i][j].setVisible(false);
+		}
+		this.playerNames[i].setVisible(false);
+		this.playerPoints[i].setVisible(false);
 	}
 	public void setup2(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
