@@ -16,6 +16,7 @@ public class GameEngine {
 	private Player currentPlayer;
 	private int turnNumber = 0;
 	private boolean choosePurple = false; 
+	private boolean purpleWin = false;
 		
 	/* Testing variables */
 	private boolean startTournament = false; 
@@ -233,8 +234,10 @@ public class GameEngine {
 			}
 		}
 		currentPlayer = getNext();
-		while (currentPlayer.hasWithdrawn()) {
-			currentPlayer = getNext();
+		if (!purpleWin) {
+			while (currentPlayer.hasWithdrawn()) {
+				currentPlayer = getNext();
+			}
 		}
 	}
 	
@@ -478,6 +481,12 @@ public class GameEngine {
 	}
 	public void setChoosePurple(boolean choosePurple) {
 		this.choosePurple = choosePurple;
+	}
+	public boolean isPurpleWin() {
+		return purpleWin;
+	}
+	public void setPurpleWin(boolean purpleWin) {
+		this.purpleWin = purpleWin;
 	}
 
 

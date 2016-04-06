@@ -219,20 +219,22 @@ public class GameProcessor {
 			for (Player p: game.getPlayers()) {
 				if (p.isWinner() && game.getTournamentColour().equals(Config.PURPLE) && !game.chosePurple()) {
 					status = " " + Config.PURPLE_WIN + " " + p.getName();
-					game.setCurrentPlayer(p);;
+					game.setCurrentPlayer(p);
 					p.resetTotalCardValue();
+					game.setPurpleWin(true);
 				}
 				else if (p.isWinner() && (!game.getTournamentColour().equals(Config.PURPLE) || game.chosePurple())) {
-					game.setCurrentPlayer(p);;
+					game.setCurrentPlayer(p);
 					game.announceWinner();
 					game.arrangePlayers();
 					game.resetPlayers();
 					status = " " + game.getTournamentColour() + " " + Config.TOURNAMENT_WINNER + " " + p.getName();
-					game.setCurrentPlayer(p);;
+					game.setCurrentPlayer(p);
+					game.setPurpleWin(false);
 				}
 				if (p.isGameWinner()) {
 					output = " " + Config.GAME_WINNER + " " + p.getName();
-					game.setCurrentPlayer(p);;
+					game.setCurrentPlayer(p);
 				}
 			}
 		}
