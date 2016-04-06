@@ -1,0 +1,499 @@
+2016-Apr-02 23:21:46 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:21:46 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:21:46 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:21:46 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:21:46 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:21:46 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:21:46 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:21:46 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:21:46 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:21:46 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:21:46 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:21:46 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:23:08 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:23:08 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:23:08 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:23:08 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:23:08 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:23:08 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:23:08 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:23:08 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:23:08 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:23:08 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:23:08 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:23:08 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:27:30 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:27:34 INFO  AI:349 - AI has received: pickedpurple Brit turn AI0 maiden_6
+@2016-Apr-02 23:27:34 INFO  AI:349 - AI has received: colour purple
+@2016-Apr-02 23:27:34 INFO  AI:349 - AI has received: waiting purple_5
+@2016-Apr-02 23:27:34 INFO  AI:349 - AI has received: waiting purple_7
+@2016-Apr-02 23:27:34 INFO  AI:349 - AI has received: waiting squire_3
+@2016-Apr-02 23:27:34 INFO  AI:349 - AI has received: waiting squire_2
+@2016-Apr-02 23:27:34 INFO  AI:349 - AI has received: waiting maiden_6
+@2016-Apr-02 23:27:34 INFO  AI:349 - AI has received: AI0 points 23 continue Brit blue_2
+@2016-Apr-02 23:27:50 INFO  AI:349 - AI has received: 
+@2016-Apr-02 23:28:43 INFO  AI:36 - New AI of type 'Withdraw' has been created
+@2016-Apr-02 23:28:46 INFO  AI:89 - AI has received: pickedpurple Brit turn AI0 squire_2
+@2016-Apr-02 23:28:46 INFO  AI:89 - AI has received: colour yellow
+@2016-Apr-02 23:28:46 INFO  AI:89 - AI has received: waiting yellow_2
+@2016-Apr-02 23:28:46 INFO  AI:89 - AI has received: AI0 points 2 continue Brit riposte_0
+@2016-Apr-02 23:28:49 INFO  AI:89 - AI has received: waiting NOPE
+@2016-Apr-02 23:28:54 INFO  AI:89 - AI has received: waiting squire_3
+@2016-Apr-02 23:29:37 INFO  AI:89 - AI has received: Brit points 3 continue AI0 red_4
+@2016-Apr-02 23:29:37 INFO  AI:89 - AI has received: AI0 points 2 withdraw Brit yellow winner Brit
+@2016-Apr-02 23:29:38 INFO  AI:89 - AI has received: turn Brit blue_3
+@2016-Apr-02 23:29:40 INFO  AI:89 - AI has received: colour blue
+@2016-Apr-02 23:29:42 INFO  AI:89 - AI has received: waiting blue_5
+@2016-Apr-02 23:29:45 INFO  AI:89 - AI has received: waiting blue_3
+@2016-Apr-02 23:29:49 INFO  AI:89 - AI has received: Brit points 8 continue AI0 squire_3
+@2016-Apr-02 23:29:49 INFO  AI:89 - AI has received: AI0 points 0 withdraw Brit blue winner Brit
+@2016-Apr-02 23:29:49 INFO  AI:89 - AI has received: turn Brit blue_2
+@2016-Apr-02 23:29:53 INFO  AI:89 - AI has received: colour purple
+@2016-Apr-02 23:29:56 INFO  AI:89 - AI has received: waiting purple_7
+@2016-Apr-02 23:29:57 INFO  AI:89 - AI has received: Brit points 7 continue AI0 countercharge_0
+@2016-Apr-02 23:29:57 INFO  AI:89 - AI has received: AI0 points 0 withdraw Brit win purple Brit
+@2016-Apr-02 23:29:58 INFO  AI:89 - AI has received: Brit points 0 withdraw AI0 purple winner Brit
+@2016-Apr-02 23:29:58 INFO  AI:89 - AI has received: turn Brit blue_3
+@2016-Apr-02 23:30:00 INFO  AI:89 - AI has received: colour green
+@2016-Apr-02 23:30:21 INFO  AI:89 - AI has received: duplicate
+@2016-Apr-02 23:30:23 INFO  AI:89 - AI has received: duplicate
+@2016-Apr-02 23:30:52 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:30:52 INFO  AI:68 - New AI of type 'Play All' has been created
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: pickedpurple Brit turn AI0 red_4
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: colour red
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting red_4
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting squire_2
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting maiden_6
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: AI0 points 12 continue AI0 blue_3
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: AI0 points 12 continue AI0 blue_3
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting maiden_6
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting squire_2
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting red_4
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: colour red
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: pickedpurple Brit turn AI0 red_4
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: colour red
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: colour red
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting red_5
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting red_5
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting red_3
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting red_3
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting squire_3
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: waiting squire_3
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: AI0 points 11 continue Brit countercharge_0
+@2016-Apr-02 23:30:55 INFO  AI:349 - AI has received: AI0 points 11 continue Brit countercharge_0
+@2016-Apr-02 23:31:37 INFO  AI:349 - AI has received: waiting countercharge disply name AI0 6 cards red_4 squire_2 name AI0 11 cards red_5 red_3 squire_3 name Brit 0 cards 
+@2016-Apr-02 23:31:37 INFO  AI:349 - AI has received: waiting countercharge disply name AI0 6 cards red_4 squire_2 name AI0 11 cards red_5 red_3 squire_3 name Brit 0 cards 
+@2016-Apr-02 23:31:45 INFO  AI:349 - AI has received: waiting riposte AI0 8 squire 3 Brit 3
+@2016-Apr-02 23:31:45 INFO  AI:349 - AI has received: waiting riposte AI0 8 squire 3 Brit 3
+@2016-Apr-02 23:31:52 INFO  AI:349 - AI has received: waiting squire_3
+@2016-Apr-02 23:31:52 INFO  AI:349 - AI has received: waiting squire_3
+@2016-Apr-02 23:32:02 INFO  AI:349 - AI has received: waiting red_3
+@2016-Apr-02 23:32:02 INFO  AI:349 - AI has received: waiting red_3
+@2016-Apr-02 23:32:05 INFO  AI:349 - AI has received: waiting squire_2
+@2016-Apr-02 23:32:05 INFO  AI:349 - AI has received: waiting squire_2
+@2016-Apr-02 23:32:07 INFO  AI:349 - AI has received: waiting squire_2
+@2016-Apr-02 23:32:07 INFO  AI:349 - AI has received: waiting squire_2
+@2016-Apr-02 23:32:09 INFO  AI:349 - AI has received: Brit points 13 continue AI0 yellow_4
+@2016-Apr-02 23:32:09 INFO  AI:349 - AI has received: AI0 points 6 withdraw AI0 purple_5
+@2016-Apr-02 23:32:09 INFO  AI:349 - AI has received: AI0 points 6 withdraw AI0 purple_5
+@2016-Apr-02 23:32:09 INFO  AI:349 - AI has received: Brit points 13 continue AI0 yellow_4
+@2016-Apr-02 23:32:09 INFO  AI:349 - AI has received: AI0 points 8 withdraw Brit red winner Brit
+@2016-Apr-02 23:32:09 INFO  AI:349 - AI has received: AI0 points 8 withdraw Brit red winner Brit
+@2016-Apr-02 23:32:09 INFO  AI:349 - AI has received: turn Brit yellow_3
+@2016-Apr-02 23:32:09 INFO  AI:349 - AI has received: turn Brit yellow_3
+@2016-Apr-02 23:32:13 INFO  AI:349 - AI has received: colour yellow
+@2016-Apr-02 23:32:13 INFO  AI:349 - AI has received: colour yellow
+@2016-Apr-02 23:32:15 INFO  AI:349 - AI has received: waiting yellow_3
+@2016-Apr-02 23:32:15 INFO  AI:349 - AI has received: waiting yellow_3
+@2016-Apr-02 23:32:16 INFO  AI:349 - AI has received: Brit points 3 continue AI0 blue_4
+@2016-Apr-02 23:32:16 INFO  AI:349 - AI has received: AI0 points 0 withdraw AI0 red_4
+@2016-Apr-02 23:32:16 INFO  AI:349 - AI has received: AI0 points 0 withdraw AI0 red_4
+@2016-Apr-02 23:32:16 INFO  AI:349 - AI has received: Brit points 3 continue AI0 blue_4
+@2016-Apr-02 23:32:16 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit yellow winner Brit
+@2016-Apr-02 23:32:16 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit yellow winner Brit
+@2016-Apr-02 23:32:17 INFO  AI:349 - AI has received: turn Brit maiden_6
+@2016-Apr-02 23:32:17 INFO  AI:349 - AI has received: turn Brit maiden_6
+@2016-Apr-02 23:32:23 INFO  AI:349 - AI has received: colour red
+@2016-Apr-02 23:32:23 INFO  AI:349 - AI has received: colour red
+@2016-Apr-02 23:32:25 INFO  AI:349 - AI has received: waiting maiden_6
+@2016-Apr-02 23:32:25 INFO  AI:349 - AI has received: waiting maiden_6
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 6 continue AI0 outwit_0
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit red winner Brit
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit red winner Brit
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 6 continue AI0 outwit_0
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 shield_0
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit yellow_2
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit yellow_2
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 shield_0
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 purple_3
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit squire_3
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit squire_3
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 purple_3
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 green_1
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit green_1
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 0 withdraw Brit green_1
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 green_1
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 maiden_6
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: waiting maiden_6
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 6 withdraw Brit red_3
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 6 withdraw Brit red_3
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: waiting maiden_6
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 maiden_6
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: waiting
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 riposte_0
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 6 withdraw Brit purple_4
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 6 withdraw Brit purple_4
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 riposte_0
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 blue_2
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 6 withdraw Brit squire_2
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: AI0 points 6 withdraw Brit squire_2
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 blue_2
+@2016-Apr-02 23:32:26 INFO  AI:349 - AI has received: Brit points 0 withdraw AI0 maiden_6
+@2016-Apr-04 01:29:59 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:29:59 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:29:59 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:29:59 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:29:59 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:29:59 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:29:59 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:29:59 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:29:59 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:29:59 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:29:59 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:29:59 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:30:29 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:30:29 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:30:29 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:30:29 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:30:29 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:30:29 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:30:29 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:30:29 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:30:29 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:30:29 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:30:29 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:30:29 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:07 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:07 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:07 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:07 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:07 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:07 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:42 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:43 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:43 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:43 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:43 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:43 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:43 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:43 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:43 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:43 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:31:43 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:31:43 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:33:50 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:33:50 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:33:50 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:33:50 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:33:50 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:33:50 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:33:50 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:33:50 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:33:50 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:33:50 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:33:50 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:33:50 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:35 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:35 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:35 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:35 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:35 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:35 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:35 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:35 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:35 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:35 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:35 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:35 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:52 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:52 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:52 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:52 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:52 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:52 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:52 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:52 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:52 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:52 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:36:52 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:36:52 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:19 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:19 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:19 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:19 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:19 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:19 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:19 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:19 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:19 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:19 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:19 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:19 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:47 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:47 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:47 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:47 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:47 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:47 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:47 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:47 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:47 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:47 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 01:54:47 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 01:54:47 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:18:32 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:18:32 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:18:32 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:18:32 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:18:32 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:18:32 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:18:32 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:18:32 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:18:32 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:18:32 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:18:32 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:18:32 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:20:37 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:20:37 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:20:37 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:20:37 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:20:37 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:20:37 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:20:37 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:20:37 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:20:37 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:20:37 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:20:37 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:20:37 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:21:14 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:21:14 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:21:14 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:21:14 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:21:14 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:21:14 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:21:14 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:21:14 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:21:14 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:21:14 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:21:14 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:21:14 INFO  AI:71 - New AI of type 'Play All' has been created
+@2016-Apr-04 12:21:51 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:21:54 INFO  AI:86 - AI has received: pickedpurple AI0 turn Brit purple_3
+@2016-Apr-04 12:21:55 INFO  AI:86 - AI has received: colour blue
+@2016-Apr-04 12:21:58 INFO  AI:86 - AI has received: waiting blue_3
+@2016-Apr-04 12:22:02 INFO  AI:86 - AI has received: waiting blue_4
+@2016-Apr-04 12:22:04 INFO  AI:86 - AI has received: Brit points 7 continue AI0 red_4
+@2016-Apr-04 12:22:04 INFO  AI:86 - AI has received: AI0 points 0 withdraw Brit blue winner Brit
+@2016-Apr-04 12:22:04 INFO  AI:86 - AI has received: turn Brit blue_4
+@2016-Apr-04 12:22:06 INFO  AI:86 - AI has received: colour green
+@2016-Apr-04 12:22:09 INFO  AI:86 - AI has received: waiting squire_2
+@2016-Apr-04 12:22:10 INFO  AI:86 - AI has received: Brit points 1 continue AI0 disgrace_0
+@2016-Apr-04 12:22:10 INFO  AI:86 - AI has received: AI0 points 0 withdraw Brit green winner Brit
+@2016-Apr-04 12:22:10 INFO  AI:86 - AI has received: turn Brit squire_2
+@2016-Apr-04 12:24:48 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-04 12:24:49 INFO  AI:86 - AI has received: need players
+@2016-Apr-04 12:25:04 INFO  AI:86 - AI has received: pickedpurple Katie turn AI0 red_3
+@2016-Apr-04 12:25:04 INFO  AI:86 - AI has received: colour purple
+@2016-Apr-04 12:25:04 INFO  AI:86 - AI has received: waiting purple_3
+@2016-Apr-04 12:25:04 INFO  AI:86 - AI has received: AI0 points 3 continue Brit maiden_6
+@2016-Apr-04 12:25:05 INFO  AI:86 - AI has received: pickedpurple Katie turn Brit green_1
+@2016-Apr-04 12:25:12 INFO  AI:86 - AI has received: waiting purple_4
+@2016-Apr-04 12:25:15 INFO  AI:86 - AI has received: Brit points 4 continue Katie blue_4
+@2016-Apr-04 12:25:20 INFO  AI:86 - AI has received: waiting purple_4
+@2016-Apr-04 12:25:22 INFO  AI:86 - AI has received: waiting squire_2
+@2016-Apr-04 12:25:22 INFO  AI:86 - AI has received: Katie points 6 continue AI0 red_4
+@2016-Apr-04 12:25:22 INFO  AI:86 - AI has received: AI0 points 3 withdraw Brit yellow_3
+@2016-Apr-04 12:25:30 INFO  AI:86 - AI has received: waiting maiden_6
+@2016-Apr-04 12:25:32 INFO  AI:86 - AI has received: Brit points 10 continue Katie purple_7
+@2016-Apr-04 12:25:36 INFO  AI:86 - AI has received: Katie points 6 withdraw AI0 win purple AI0
+@2016-Apr-04 12:25:36 INFO  AI:86 - AI has received: AI0 points 0 withdraw Brit win purple Brit
+@2016-Apr-04 12:25:39 INFO  AI:86 - AI has received: Brit points 0 withdraw Katie purple winner AI0
+@2016-Apr-04 12:25:39 INFO  AI:86 - AI has received: turn AI0 blue_2
+@2016-Apr-04 12:25:39 INFO  AI:86 - AI has received: colour green
+@2016-Apr-04 12:25:39 INFO  AI:86 - AI has received: waiting green_1
+@2016-Apr-04 12:25:39 INFO  AI:86 - AI has received: AI0 points 1 continue Brit squire_2
+@2016-Apr-04 12:25:39 INFO  AI:86 - AI has received: turn Brit dropweapon_0
+@2016-Apr-05 16:06:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:06:07 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:06:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:06:07 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:06:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:06:07 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:06:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:06:07 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:06:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:06:07 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:06:07 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:06:07 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:33 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:33 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:33 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:33 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:33 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:33 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:33 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:33 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:33 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:33 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:33 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:33 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:51 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:51 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:51 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:51 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:51 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:51 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:51 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:51 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:51 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:51 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:08:51 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:08:51 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 16:10:33 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 16:10:37 INFO  AI:86 - AI has received: pickedpurple AI0 turn Brit yellow_3
+@2016-Apr-05 16:10:41 INFO  AI:86 - AI has received: colour yellow
+@2016-Apr-05 16:11:34 INFO  AI:86 - AI has received: waiting yellow_3
+@2016-Apr-05 16:11:36 INFO  AI:86 - AI has received: waiting invalid
+@2016-Apr-05 16:11:42 INFO  AI:86 - AI has received: Brit points 3 continue AI0 red_4
+@2016-Apr-05 16:11:42 INFO  AI:86 - AI has received: AI0 points 0 withdraw Brit yellow winner Brit
+@2016-Apr-05 16:11:43 INFO  AI:86 - AI has received: turn Brit squire_3
+@2016-Apr-05 16:11:58 INFO  AI:86 - AI has received: colour green
+@2016-Apr-05 16:12:04 INFO  AI:86 - AI has received: waiting green_1
+@2016-Apr-05 16:12:07 INFO  AI:86 - AI has received: waiting green_1
+@2016-Apr-05 16:12:08 INFO  AI:86 - AI has received: Brit points 2 continue AI0 blue_5
+@2016-Apr-05 16:12:08 INFO  AI:86 - AI has received: AI0 points 0 withdraw Brit green winner Brit
+@2016-Apr-05 16:12:09 INFO  AI:86 - AI has received: turn Brit yellow_2
+@2016-Apr-05 16:12:15 INFO  AI:86 - AI has received: colour yellow
+@2016-Apr-05 20:02:00 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 20:02:06 INFO  AI:380 - AI has received: pickedpurple AI0 turn Player1 stunned_0
+@2016-Apr-05 20:02:10 INFO  AI:380 - AI has received: colour blue
+@2016-Apr-05 20:02:13 INFO  AI:380 - AI has received: waiting blue_4
+@2016-Apr-05 20:02:16 INFO  AI:380 - AI has received: waiting blue_4
+@2016-Apr-05 20:02:17 INFO  AI:380 - AI has received: Player1 points 8 continue AI0 maiden_6
+@2016-Apr-05 20:02:17 INFO  AI:380 - AI has received: waiting blue_2
+@2016-Apr-05 20:02:17 INFO  AI:380 - AI has received: waiting blue_3
+@2016-Apr-05 20:02:17 INFO  AI:380 - AI has received: waiting blue_3
+@2016-Apr-05 20:02:17 INFO  AI:380 - AI has received: waiting squire_3
+@2016-Apr-05 20:02:17 INFO  AI:380 - AI has received: waiting maiden_6
+@2016-Apr-05 20:02:17 INFO  AI:380 - AI has received: AI0 points 17 continue Player1 green_1
+@2016-Apr-05 20:02:26 INFO  AI:380 - AI has received: Player1 points 8 withdraw AI0 squire_2
+@2016-Apr-05 20:02:26 INFO  AI:380 - AI has received: waiting squire_2
+@2016-Apr-05 20:04:11 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 20:04:14 INFO  AI:380 - AI has received: pickedpurple Player1 turn AI0 red_3
+@2016-Apr-05 20:04:14 INFO  AI:380 - AI has received: colour red
+@2016-Apr-05 20:04:14 INFO  AI:380 - AI has received: waiting red_4
+@2016-Apr-05 20:04:14 INFO  AI:380 - AI has received: waiting red_3
+@2016-Apr-05 20:04:14 INFO  AI:380 - AI has received: waiting red_3
+@2016-Apr-05 20:04:14 INFO  AI:380 - AI has received: waiting squire_3
+@2016-Apr-05 20:04:14 INFO  AI:380 - AI has received: waiting squire_2
+@2016-Apr-05 20:04:14 INFO  AI:380 - AI has received: AI0 points 15 continue Player1 green_1
+@2016-Apr-05 20:04:22 INFO  AI:380 - AI has received: Player1 points 0 withdraw AI0 red_4
+@2016-Apr-05 20:04:22 INFO  AI:380 - AI has received: waiting red_4
+@2016-Apr-05 20:05:39 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 20:05:42 INFO  AI:380 - AI has received: pickedpurple AI0 turn Player1 shield_0
+@2016-Apr-05 20:05:46 INFO  AI:380 - AI has received: colour yellow
+@2016-Apr-05 20:05:49 INFO  AI:380 - AI has received: waiting yellow_4
+@2016-Apr-05 20:05:52 INFO  AI:380 - AI has received: waiting yellow_3
+@2016-Apr-05 20:05:53 INFO  AI:380 - AI has received: Player1 points 7 continue AI0 blue_4
+@2016-Apr-05 20:05:53 INFO  AI:380 - AI has received: waiting yellow_3
+@2016-Apr-05 20:05:53 INFO  AI:380 - AI has received: waiting squire_2
+@2016-Apr-05 20:05:53 INFO  AI:380 - AI has received: AI0 points 5 withdraw Player1 yellow winner Player1
+@2016-Apr-05 20:05:53 INFO  AI:380 - AI has received: turn Player1 green_1
+@2016-Apr-05 20:05:59 INFO  AI:380 - AI has received: colour green
+@2016-Apr-05 20:06:02 INFO  AI:380 - AI has received: waiting green_1
+@2016-Apr-05 20:06:04 INFO  AI:380 - AI has received: waiting green_1
+@2016-Apr-05 20:06:05 INFO  AI:380 - AI has received: Player1 points 2 continue AI0 maiden_6
+@2016-Apr-05 20:06:05 INFO  AI:380 - AI has received: waiting green_1
+@2016-Apr-05 20:06:05 INFO  AI:380 - AI has received: waiting maiden_6
+@2016-Apr-05 20:06:05 INFO  AI:380 - AI has received: AI0 points 2 withdraw Player1 green winner Player1
+@2016-Apr-05 20:06:06 INFO  AI:380 - AI has received: turn Player1 squire_3
+@2016-Apr-05 20:06:08 INFO  AI:380 - AI has received: colour red
+@2016-Apr-05 20:06:10 INFO  AI:380 - AI has received: waiting red_4
+@2016-Apr-05 20:06:13 INFO  AI:380 - AI has received: Player1 points 4 continue AI0 yellow_3
+@2016-Apr-05 20:06:13 INFO  AI:380 - AI has received: AI0 points 0 withdraw Player1 red winner Player1
+@2016-Apr-05 20:06:14 INFO  AI:380 - AI has received: turn Player1 yellow_2
+@2016-Apr-05 20:06:17 INFO  AI:380 - AI has received: colour purple
+@2016-Apr-05 20:06:20 INFO  AI:380 - AI has received: waiting squire_3
+@2016-Apr-05 20:06:21 INFO  AI:380 - AI has received: Player1 points 3 continue AI0 purple_4
+@2016-Apr-05 20:06:21 INFO  AI:380 - AI has received: waiting purple_7
+@2016-Apr-05 20:06:21 INFO  AI:380 - AI has received: waiting purple_4
+@2016-Apr-05 20:06:21 INFO  AI:380 - AI has received: AI0 points 11 continue Player1 blue_3
+@2016-Apr-05 20:06:31 INFO  AI:380 - AI has received: Player1 points 3 withdraw AI0 win purple AI0
+@2016-Apr-05 20:13:40 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 20:13:44 INFO  AI:86 - AI has received: pickedpurple Player1 turn AI0 yellow_3
+@2016-Apr-05 20:13:44 INFO  AI:86 - AI has received: colour purple
+@2016-Apr-05 20:13:44 INFO  AI:86 - AI has received: waiting purple_7
+@2016-Apr-05 20:13:44 INFO  AI:86 - AI has received: AI0 points 7 continue Player1 red_4
+@2016-Apr-05 20:13:48 INFO  AI:86 - AI has received: Player1 points 0 withdraw AI0 win purple AI0
+@2016-Apr-05 20:13:48 INFO  AI:86 - AI has received: AI0 points 0 withdraw Player1 win purple AI0
+@2016-Apr-05 20:27:49 INFO  AI:73 - New AI of type 'Play All' has been created
+@2016-Apr-05 20:27:52 INFO  AI:380 - AI has received: pickedpurple Player1 turn AI0 red_4
+@2016-Apr-05 20:27:52 INFO  AI:380 - AI has received: colour red
+@2016-Apr-05 20:27:52 INFO  AI:380 - AI has received: waiting red_3
+@2016-Apr-05 20:27:52 INFO  AI:380 - AI has received: waiting red_4
+@2016-Apr-05 20:27:52 INFO  AI:380 - AI has received: waiting red_4
+@2016-Apr-05 20:27:52 INFO  AI:380 - AI has received: waiting squire_2
+@2016-Apr-05 20:27:52 INFO  AI:380 - AI has received: waiting squire_2
+@2016-Apr-05 20:27:52 INFO  AI:380 - AI has received: AI0 points 15 continue Player1 blue_5
+@2016-Apr-05 20:27:58 INFO  AI:380 - AI has received: Player1 points 0 withdraw AI0 blue_3
+@2016-Apr-05 20:28:42 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 20:28:46 INFO  AI:86 - AI has received: pickedpurple brit turn AI0 dodge_0
+@2016-Apr-05 20:28:46 INFO  AI:86 - AI has received: colour purple
+@2016-Apr-05 20:28:46 INFO  AI:86 - AI has received: waiting purple_3
+@2016-Apr-05 20:28:46 INFO  AI:86 - AI has received: AI0 points 3 continue brit blue_3
+@2016-Apr-05 20:28:52 INFO  AI:86 - AI has received: waiting purple_7
+@2016-Apr-05 20:28:53 INFO  AI:86 - AI has received: brit points 7 continue AI0 blue_4
+@2016-Apr-05 20:28:53 INFO  AI:86 - AI has received: AI0 points 3 withdraw brit win purple brit
+@2016-Apr-05 20:30:25 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 20:30:29 INFO  AI:86 - AI has received: pickedpurple Brit turn AI0 squire_2
+@2016-Apr-05 20:30:29 INFO  AI:86 - AI has received: colour yellow
+@2016-Apr-05 20:30:30 INFO  AI:86 - AI has received: waiting yellow_3
+@2016-Apr-05 20:30:30 INFO  AI:86 - AI has received: AI0 points 3 continue Brit green_1
+@2016-Apr-05 20:30:35 INFO  AI:86 - AI has received: waiting yellow_2
+@2016-Apr-05 20:30:36 INFO  AI:86 - AI has received: Brit points 2 withdraw AI0 yellow winner AI0
+@2016-Apr-05 20:30:36 INFO  AI:86 - AI has received: turn AI0 riposte_0
+@2016-Apr-05 20:30:36 INFO  AI:86 - AI has received: colour purple
+@2016-Apr-05 20:30:36 INFO  AI:86 - AI has received: waiting purple_4
+@2016-Apr-05 20:30:36 INFO  AI:86 - AI has received: AI0 points 4 continue Brit purple_5
+@2016-Apr-05 20:30:41 INFO  AI:86 - AI has received: waiting maiden_6
+@2016-Apr-05 20:30:43 INFO  AI:86 - AI has received: Brit points 6 continue AI0 yellow_3
+@2016-Apr-05 20:30:43 INFO  AI:86 - AI has received: AI0 points 4 withdraw Brit win purple Brit
+@2016-Apr-05 20:31:11 INFO  AI:35 - New AI of type 'Withdraw' has been created
+@2016-Apr-05 20:31:13 INFO  AI:86 - AI has received: pickedpurple brit turn AI0 squire_3
+@2016-Apr-05 20:31:13 INFO  AI:86 - AI has received: colour green
+@2016-Apr-05 20:31:13 INFO  AI:86 - AI has received: waiting green_1
+@2016-Apr-05 20:31:13 INFO  AI:86 - AI has received: AI0 points 1 continue brit blue_3
+@2016-Apr-05 20:31:20 INFO  AI:86 - AI has received: waiting green_1
+@2016-Apr-05 20:31:22 INFO  AI:86 - AI has received: waiting squire_2
+@2016-Apr-05 20:31:23 INFO  AI:86 - AI has received: brit points 2 continue AI0 squire_2
+@2016-Apr-05 20:31:23 INFO  AI:86 - AI has received: AI0 points 1 withdraw brit maiden_6
+@
