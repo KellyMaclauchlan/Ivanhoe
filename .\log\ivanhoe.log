@@ -1146,4 +1146,1009 @@
 @2016-Apr-06 00:53:43 INFO  GUI:479 - Player []started their round
 @2016-Apr-06 00:53:43 INFO  GUI:408 - Adding new card
 @2016-Apr-06 00:53:44 INFO  GUI:195 - Tournament colour has been set to blue
+@2016-Apr-06 01:03:22 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-06 01:03:22 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:23 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:24 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:03:24 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:03:24 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:03:26 INFO  GUI:195 - Tournament colour has been set to blue
+@2016-Apr-06 01:03:27 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:04:45 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:04:46 INFO  GUI:492 - Played card blue 3
+@2016-Apr-06 01:04:46 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:04:46 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:04:47 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:04:47 INFO  GUI:432 - Player [game.ColourCard@63562ade] added game.ColourCard@63562ade to their hand
+@2016-Apr-06 01:04:47 INFO  GUI:432 - Player [game.ColourCard@336533f2] added game.ColourCard@336533f2 to their hand
+@2016-Apr-06 01:04:47 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:04:47 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:05:27 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:28 INFO  GUI:492 - Played card blue 2
+@2016-Apr-06 01:05:29 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:05:29 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:05:29 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:29 INFO  GUI:432 - Player [game.ColourCard@63562ade, game.ColourCard@41e5a9d5] added game.ColourCard@41e5a9d5 to their hand
+@2016-Apr-06 01:05:29 INFO  GUI:432 - Player [game.ColourCard@336533f2, game.ColourCard@7b35865] added game.ColourCard@7b35865 to their hand
+@2016-Apr-06 01:05:29 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-06 01:05:29 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:29 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:05:29 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:05:29 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:05:34 INFO  GUI:453 - Player has withdrawed
+@2016-Apr-06 01:05:34 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:34 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:34 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:34 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:34 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:34 INFO  GUI:517 - Adding icons/blue_full.png token
+@2016-Apr-06 01:05:34 INFO  GUI:517 - Adding icons/blue_full.png token
+@2016-Apr-06 01:05:34 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:34 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:34 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:34 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:35 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:05:36 INFO  GUI:195 - Tournament colour has been set to purple
+@2016-Apr-06 01:05:36 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:37 INFO  GUI:492 - Played card purple 5
+@2016-Apr-06 01:05:38 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:05:38 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:05:38 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:38 INFO  GUI:432 - Player [game.ColourCard@12029f82] added game.ColourCard@12029f82 to their hand
+@2016-Apr-06 01:05:38 INFO  GUI:432 - Player [game.ColourCard@3a012865] added game.ColourCard@3a012865 to their hand
+@2016-Apr-06 01:05:38 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:05:38 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:05:39 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-06 01:05:39 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:39 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:05:42 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:43 INFO  GUI:492 - Played card purple 5
+@2016-Apr-06 01:05:44 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:05:44 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:05:44 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:44 INFO  GUI:432 - Player [game.ColourCard@5e19e8a2] added game.ColourCard@5e19e8a2 to their hand
+@2016-Apr-06 01:05:44 INFO  GUI:432 - Player [game.ColourCard@2d723e81] added game.ColourCard@2d723e81 to their hand
+@2016-Apr-06 01:05:44 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:44 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:05:44 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:05:45 INFO  GUI:492 - Played card purple 3
+@2016-Apr-06 01:05:46 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:05:46 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:05:46 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:46 INFO  GUI:432 - Player [game.ColourCard@2d723e81, game.ColourCard@7658e933] added game.ColourCard@7658e933 to their hand
+@2016-Apr-06 01:05:46 INFO  GUI:432 - Player [game.ColourCard@5e19e8a2, game.ColourCard@5ef4d286] added game.ColourCard@5ef4d286 to their hand
+@2016-Apr-06 01:05:46 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-06 01:05:46 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:47 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:05:47 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:05:47 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:05:49 INFO  GUI:453 - Player has withdrawed
+@2016-Apr-06 01:05:49 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:05:51 INFO  GUI:240 - the player picked purple
+@2016-Apr-06 01:05:51 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:51 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:51 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:51 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:51 INFO  GUI:517 - Adding icons/purple_full.png token
+@2016-Apr-06 01:05:51 INFO  GUI:517 - Adding icons/purple_full.png token
+@2016-Apr-06 01:05:52 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:52 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:52 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:52 INFO  GUI:479 - Player []started their round
+@2016-Apr-06 01:05:52 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:05:53 INFO  GUI:195 - Tournament colour has been set to yellow
+@2016-Apr-06 01:27:39 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-06 01:27:39 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-06 01:27:39 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:39 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:40 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:40 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:40 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:40 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:41 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:41 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:41 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:41 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:42 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:42 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:42 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:42 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:43 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:43 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:47 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:27:47 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:27:47 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:49 INFO  GUI:195 - Tournament colour has been set to blue
+@2016-Apr-06 01:27:50 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:27:51 INFO  GUI:492 - Played card blue 5
+@2016-Apr-06 01:27:53 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:27:53 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:27:53 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:27:54 INFO  GUI:432 - Player [game.ColourCard@5b5aae69] added game.ColourCard@5b5aae69 to their hand
+@2016-Apr-06 01:27:54 INFO  GUI:432 - Player [game.ColourCard@68c3c7c0] added game.ColourCard@68c3c7c0 to their hand
+@2016-Apr-06 01:27:55 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-06 01:27:55 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:27:56 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:27:57 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:27:57 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:27:57 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:27:58 INFO  GUI:492 - Played card maiden 6
+@2016-Apr-06 01:28:00 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:28:00 INFO  GUI:424 - Card removed
+@2016-Apr-06 01:28:00 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:28:01 INFO  GUI:432 - Player [game.SupportCard@1c2e976e] added game.SupportCard@1c2e976e to their hand
+@2016-Apr-06 01:28:01 INFO  GUI:432 - Player [game.SupportCard@7f354178] added game.SupportCard@7f354178 to their hand
+@2016-Apr-06 01:28:02 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-06 01:28:02 INFO  GUI:395 - Updated Subjects
+@2016-Apr-06 01:28:02 INFO  GUI:408 - Adding new card
+@2016-Apr-06 01:28:04 INFO  GUI:511 - Cards have been reset
+@2016-Apr-06 01:28:04 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:28:27 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-07 10:28:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:28:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:28:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:28:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:28:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:28:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:28:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:28:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:28:28 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:28:34 INFO  GUI:432 - Player [game.ColourCard@72bd13d4] added game.ColourCard@72bd13d4 to their hand
+@2016-Apr-07 10:28:36 INFO  GUI:432 - Player [game.ColourCard@72bd13d4, game.ColourCard@2ce3955a] added game.ColourCard@2ce3955a to their hand
+@2016-Apr-07 10:28:37 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:29:23 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:30:33 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:30:34 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:30:34 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:30:34 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:30:34 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:30:34 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:30:34 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:30:34 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:30:34 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:30:34 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:30:55 INFO  GUI:432 - Player [game.ColourCard@70bab00] added game.ColourCard@70bab00 to their hand
+@2016-Apr-07 10:31:03 INFO  GUI:432 - Player [game.ColourCard@70bab00, game.ColourCard@644025e8] added game.ColourCard@644025e8 to their hand
+@2016-Apr-07 10:31:10 INFO  GUI:432 - Player [game.ColourCard@38623379] added game.ColourCard@38623379 to their hand
+@2016-Apr-07 10:31:11 INFO  GUI:432 - Player [game.ColourCard@38623379, game.ColourCard@5aede734] added game.ColourCard@5aede734 to their hand
+@2016-Apr-07 10:31:12 INFO  GUI:432 - Player [game.ColourCard@38623379, game.ColourCard@5aede734, game.SupportCard@4cc50703] added game.SupportCard@4cc50703 to their hand
+@2016-Apr-07 10:31:14 INFO  GUI:432 - Player [game.ColourCard@38623379, game.ColourCard@5aede734, game.SupportCard@4cc50703, game.SupportCard@7668785] added game.SupportCard@7668785 to their hand
+@2016-Apr-07 10:31:14 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:31:18 INFO  GUI:453 - Player has withdrawed
+@2016-Apr-07 10:31:18 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:31:28 INFO  GUI:432 - Player [game.ColourCard@70bab00, game.ColourCard@644025e8, game.SupportCard@5677c376] added game.SupportCard@5677c376 to their hand
+@2016-Apr-07 10:31:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:31:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:31:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:31:29 INFO  GUI:517 - Adding icons/red_full.png token
+@2016-Apr-07 10:31:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:31:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:31:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:37:01 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:37:01 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:01 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:01 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:01 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:02 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:02 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:02 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:02 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:02 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:37:13 INFO  GUI:432 - Player [game.ColourCard@169cb9ad] added game.ColourCard@169cb9ad to their hand
+@2016-Apr-07 10:37:17 INFO  GUI:432 - Player [game.ColourCard@169cb9ad, game.ColourCard@4225adf3] added game.ColourCard@4225adf3 to their hand
+@2016-Apr-07 10:37:19 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:23 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:37:28 INFO  GUI:492 - Played card purple 5
+@2016-Apr-07 10:37:29 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:37:29 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:37:29 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:37:29 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:33 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:37:34 INFO  GUI:492 - Played card breaklance 0
+@2016-Apr-07 10:37:46 INFO  GUI:216 - Player picked was kelly
+@2016-Apr-07 10:37:47 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:37:47 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:37:47 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:37:47 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:37:51 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:37:52 INFO  GUI:492 - Played card maiden 6
+@2016-Apr-07 10:37:53 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:37:53 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:37:53 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:37:53 INFO  GUI:432 - Player [game.SupportCard@6ab56658] added game.SupportCard@6ab56658 to their hand
+@2016-Apr-07 10:37:54 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:37:54 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:37:56 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 10:37:56 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:38:03 INFO  GUI:439 - Cards are being displayed
+@2016-Apr-07 10:38:03 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:38:08 INFO  GUI:439 - Cards are being displayed
+@2016-Apr-07 10:38:08 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:38:15 INFO  GUI:432 - Player [game.ColourCard@4b6f024f] added game.ColourCard@4b6f024f to their hand
+@2016-Apr-07 10:38:21 INFO  GUI:432 - Player [game.ColourCard@4b6f024f, game.SupportCard@1c5b1c8] added game.SupportCard@1c5b1c8 to their hand
+@2016-Apr-07 10:38:31 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:38:31 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:38:31 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:38:31 INFO  GUI:517 - Adding icons/blue_full.png token
+@2016-Apr-07 10:38:31 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:38:32 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:38:32 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:38:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:38:41 INFO  GUI:195 - Tournament colour has been set to purple
+@2016-Apr-07 10:38:41 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:38:43 INFO  GUI:492 - Played card purple 5
+@2016-Apr-07 10:38:43 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:38:43 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:38:43 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:38:43 INFO  GUI:432 - Player [game.ColourCard@b6a086e] added game.ColourCard@b6a086e to their hand
+@2016-Apr-07 10:38:44 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:38:44 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:38:44 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:38:45 INFO  GUI:492 - Played card purple 5
+@2016-Apr-07 10:38:45 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:38:45 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:38:45 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:38:45 INFO  GUI:432 - Player [game.ColourCard@b6a086e, game.ColourCard@6941bd86] added game.ColourCard@6941bd86 to their hand
+@2016-Apr-07 10:38:46 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:38:46 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:38:46 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:38:47 INFO  GUI:492 - Played card purple 4
+@2016-Apr-07 10:38:47 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:38:47 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:38:47 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:38:47 INFO  GUI:432 - Player [game.ColourCard@b6a086e, game.ColourCard@6941bd86, game.ColourCard@7b33b10c] added game.ColourCard@7b33b10c to their hand
+@2016-Apr-07 10:38:48 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:38:48 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:38:49 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 10:38:49 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:40:57 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:42:08 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-07 10:42:08 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:08 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:08 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:08 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:08 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:08 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:08 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:09 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:42:15 INFO  GUI:432 - Player [game.ColourCard@682c9c43] added game.ColourCard@682c9c43 to their hand
+@2016-Apr-07 10:42:17 INFO  GUI:432 - Player [game.ColourCard@682c9c43, game.ColourCard@287f1eac] added game.ColourCard@287f1eac to their hand
+@2016-Apr-07 10:42:17 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:20 INFO  GUI:453 - Player has withdrawed
+@2016-Apr-07 10:42:20 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:42:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:42:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:42:29 INFO  GUI:517 - Adding icons/purple_full.png token
+@2016-Apr-07 10:42:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:42:29 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:42:33 INFO  GUI:432 - Player [game.ColourCard@817e893] added game.ColourCard@817e893 to their hand
+@2016-Apr-07 10:42:34 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:35 INFO  GUI:453 - Player has withdrawed
+@2016-Apr-07 10:42:35 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:42:35 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:42:35 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:42:35 INFO  GUI:517 - Adding icons/blue_full.png token
+@2016-Apr-07 10:42:35 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:42:35 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:42:39 INFO  GUI:432 - Player [game.ColourCard@2864b3d9] added game.ColourCard@2864b3d9 to their hand
+@2016-Apr-07 10:42:39 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:42:46 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:42:52 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:42:53 INFO  GUI:492 - Played card maiden 6
+@2016-Apr-07 10:42:54 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:42:54 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:42:54 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:42:54 INFO  GUI:432 - Player [game.SupportCard@1939628a] added game.SupportCard@1939628a to their hand
+@2016-Apr-07 10:42:55 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:42:55 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:42:55 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:42:58 INFO  GUI:439 - Cards are being displayed
+@2016-Apr-07 10:42:58 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:43:02 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:43:03 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:43:06 INFO  GUI:492 - Played card riposte 0
+@2016-Apr-07 10:43:08 INFO  GUI:216 - Player picked was Katie
+@2016-Apr-07 10:43:09 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:43:09 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:43:09 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:43:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:43:15 INFO  GUI:453 - Player has withdrawed
+@2016-Apr-07 10:43:15 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:43:37 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:05 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-07 10:44:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:06 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:06 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:06 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:06 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:06 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:07 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:10 INFO  GUI:195 - Tournament colour has been set to purple
+@2016-Apr-07 10:44:11 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:12 INFO  GUI:492 - Played card purple 4
+@2016-Apr-07 10:44:13 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:13 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:13 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:13 INFO  GUI:432 - Player [game.ColourCard@78a9e3a] added game.ColourCard@78a9e3a to their hand
+@2016-Apr-07 10:44:13 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 10:44:13 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:14 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:14 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:16 INFO  GUI:240 - the player picked purple
+@2016-Apr-07 10:44:16 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:16 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:16 INFO  GUI:517 - Adding icons/purple_full.png token
+@2016-Apr-07 10:44:17 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:17 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:17 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:19 INFO  GUI:195 - Tournament colour has been set to red
+@2016-Apr-07 10:44:20 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:20 INFO  GUI:492 - Played card red 4
+@2016-Apr-07 10:44:21 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:21 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:21 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:21 INFO  GUI:432 - Player [game.ColourCard@5d227713] added game.ColourCard@5d227713 to their hand
+@2016-Apr-07 10:44:22 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 10:44:22 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:22 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:22 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:23 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:23 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:23 INFO  GUI:517 - Adding icons/red_full.png token
+@2016-Apr-07 10:44:23 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:23 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:25 INFO  GUI:195 - Tournament colour has been set to blue
+@2016-Apr-07 10:44:26 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:26 INFO  GUI:492 - Played card blue 3
+@2016-Apr-07 10:44:27 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:27 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:27 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:27 INFO  GUI:432 - Player [game.ColourCard@395539b0] added game.ColourCard@395539b0 to their hand
+@2016-Apr-07 10:44:28 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 10:44:28 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:28 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:28 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:30 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:30 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:30 INFO  GUI:517 - Adding icons/blue_full.png token
+@2016-Apr-07 10:44:31 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:31 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:31 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:35 INFO  GUI:195 - Tournament colour has been set to yellow
+@2016-Apr-07 10:44:36 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:37 INFO  GUI:492 - Played card yellow 3
+@2016-Apr-07 10:44:37 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:37 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:37 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:38 INFO  GUI:432 - Player [game.ColourCard@db60326] added game.ColourCard@db60326 to their hand
+@2016-Apr-07 10:44:38 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 10:44:38 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:38 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:38 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:40 INFO  GUI:517 - Adding icons/yellow_full.png token
+@2016-Apr-07 10:44:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:44:40 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:44:43 INFO  GUI:195 - Tournament colour has been set to green
+@2016-Apr-07 10:44:44 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:45 INFO  GUI:492 - Played card green 1
+@2016-Apr-07 10:44:45 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:45 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:45 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:45 INFO  GUI:432 - Player [game.ColourCard@10bfc918] added game.ColourCard@10bfc918 to their hand
+@2016-Apr-07 10:44:46 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:44:46 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:44:46 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 10:44:46 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:44:49 INFO  GUI:517 - Adding icons/green_full.png token
+@2016-Apr-07 10:45:00 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 10:48:20 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:21 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:22 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:23 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:48:23 INFO  GUI:418 - Card removed
+@2016-Apr-07 10:48:24 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:25 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:48:25 INFO  GUI:432 - Player [game.ColourCard@36a5cabc] added game.ColourCard@36a5cabc to their hand
+@2016-Apr-07 10:48:25 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:30 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:30 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:48:30 INFO  GUI:492 - Played card purple 4
+@2016-Apr-07 10:48:30 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:48:30 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:48:30 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:48:30 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:48:30 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:48:30 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:51:02 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:02 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:03 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:04 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:04 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:04 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:04 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:04 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:04 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:04 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:05 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:06 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:06 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:51:06 INFO  GUI:418 - Card removed
+@2016-Apr-07 10:51:07 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:07 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:07 INFO  GUI:432 - Player [game.ColourCard@36a5cabc] added game.ColourCard@36a5cabc to their hand
+@2016-Apr-07 10:51:08 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:09 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:14 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:14 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:14 INFO  GUI:492 - Played card purple 4
+@2016-Apr-07 10:51:14 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:51:14 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:51:15 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:15 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:51:15 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:51:15 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:51:25 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:26 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:29 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:29 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:51:29 INFO  GUI:418 - Card removed
+@2016-Apr-07 10:51:30 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:30 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:30 INFO  GUI:432 - Player [game.ColourCard@42530531] added game.ColourCard@42530531 to their hand
+@2016-Apr-07 10:51:31 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:32 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:36 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:36 INFO  GUI:408 - Adding new card
+@2016-Apr-07 10:51:36 INFO  GUI:492 - Played card purple 4
+@2016-Apr-07 10:51:36 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 10:51:36 INFO  GUI:424 - Card removed
+@2016-Apr-07 10:51:37 INFO  GUI:125 - Total number of players is: 3
+@2016-Apr-07 10:51:37 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:51:37 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 10:51:37 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:07:28 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-07 11:07:28 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:07:28 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:07:28 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:07:28 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:07:28 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:07:28 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:07:28 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:07:28 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:07:29 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:07:29 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:07:34 INFO  GUI:195 - Tournament colour has been set to blue
+@2016-Apr-07 11:07:35 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:07:36 INFO  GUI:492 - Played card blue 2
+@2016-Apr-07 11:07:36 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:07:36 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:07:37 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:07:37 INFO  GUI:432 - Player [game.ColourCard@3baa6b48] added game.ColourCard@3baa6b48 to their hand
+@2016-Apr-07 11:07:37 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:07:37 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:07:37 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:07:38 INFO  GUI:492 - Played card blue 4
+@2016-Apr-07 11:07:38 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:07:38 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:07:38 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:07:39 INFO  GUI:432 - Player [game.ColourCard@3baa6b48, game.ColourCard@4b7429fb] added game.ColourCard@4b7429fb to their hand
+@2016-Apr-07 11:07:39 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:07:39 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:07:40 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:07:40 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:07:56 INFO  GUI:432 - Player [game.SupportCard@94f94] added game.SupportCard@94f94 to their hand
+@2016-Apr-07 11:07:59 INFO  GUI:432 - Player [game.SupportCard@94f94, game.SupportCard@41d41fbe] added game.SupportCard@41d41fbe to their hand
+@2016-Apr-07 11:08:01 INFO  GUI:432 - Player [game.SupportCard@94f94, game.SupportCard@41d41fbe, game.SupportCard@14084a08] added game.SupportCard@14084a08 to their hand
+@2016-Apr-07 11:08:01 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:08:01 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:08:02 INFO  GUI:517 - Adding icons/blue_full.png token
+@2016-Apr-07 11:08:02 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:08:02 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:08:02 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:08:12 INFO  GUI:195 - Tournament colour has been set to green
+@2016-Apr-07 11:08:13 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:14 INFO  GUI:492 - Played card green 1
+@2016-Apr-07 11:08:14 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:08:14 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:08:14 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:14 INFO  GUI:432 - Player [game.ColourCard@4121c227] added game.ColourCard@4121c227 to their hand
+@2016-Apr-07 11:08:15 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:08:15 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:08:15 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:08:15 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:19 INFO  GUI:432 - Player [game.ColourCard@5f29ee8c] added game.ColourCard@5f29ee8c to their hand
+@2016-Apr-07 11:08:22 INFO  GUI:432 - Player [game.ColourCard@5f29ee8c, game.ColourCard@4d5d4832] added game.ColourCard@4d5d4832 to their hand
+@2016-Apr-07 11:08:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:08:25 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:27 INFO  GUI:492 - Played card green 1
+@2016-Apr-07 11:08:27 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:08:27 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:08:27 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:27 INFO  GUI:432 - Player [game.ColourCard@4121c227, game.ColourCard@5f5d0d7a] added game.ColourCard@5f5d0d7a to their hand
+@2016-Apr-07 11:08:28 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:08:28 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:08:28 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:29 INFO  GUI:492 - Played card green 1
+@2016-Apr-07 11:08:29 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:08:29 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:08:29 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:29 INFO  GUI:432 - Player [game.ColourCard@4121c227, game.ColourCard@5f5d0d7a, game.ColourCard@13d3b832] added game.ColourCard@13d3b832 to their hand
+@2016-Apr-07 11:08:30 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:08:30 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:08:30 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:08:30 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:46 INFO  GUI:432 - Player [game.ColourCard@5eb43dea] added game.ColourCard@5eb43dea to their hand
+@2016-Apr-07 11:08:47 INFO  GUI:432 - Player [game.ColourCard@47c5c978] added game.ColourCard@47c5c978 to their hand
+@2016-Apr-07 11:08:53 INFO  GUI:432 - Player [game.ColourCard@47c5c978, game.ColourCard@6273e14e] added game.ColourCard@6273e14e to their hand
+@2016-Apr-07 11:08:53 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:08:56 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:57 INFO  GUI:492 - Played card squire 2
+@2016-Apr-07 11:08:58 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:08:58 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:08:58 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:08:58 INFO  GUI:432 - Player [game.ColourCard@5eb43dea, game.SupportCard@14d7acd] added game.SupportCard@14d7acd to their hand
+@2016-Apr-07 11:08:58 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:08:58 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:09:00 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:09:00 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:14:23 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-07 11:14:23 INFO  GUI:125 - Total number of players is: 2
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:23 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:24 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:14:24 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:14:24 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:31 INFO  GUI:195 - Tournament colour has been set to blue
+@2016-Apr-07 11:14:33 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:14:34 INFO  GUI:492 - Played card blue 3
+@2016-Apr-07 11:14:34 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:14:34 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:14:34 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:14:34 INFO  GUI:432 - Player [game.ColourCard@19d71027] added game.ColourCard@19d71027 to their hand
+@2016-Apr-07 11:14:34 INFO  GUI:432 - Player [game.ColourCard@3168b726] added game.ColourCard@3168b726 to their hand
+@2016-Apr-07 11:14:35 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:14:35 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:14:36 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:14:36 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:14:36 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:14:40 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:14:41 INFO  GUI:492 - Played card blue 4
+@2016-Apr-07 11:14:42 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:14:42 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:14:42 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:14:42 INFO  GUI:432 - Player [game.ColourCard@3d7d028] added game.ColourCard@3d7d028 to their hand
+@2016-Apr-07 11:14:42 INFO  GUI:432 - Player [game.ColourCard@d919fe9] added game.ColourCard@d919fe9 to their hand
+@2016-Apr-07 11:14:42 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:14:42 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:14:42 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:14:44 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:14:55 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:14:57 INFO  GUI:492 - Played card riposte 0
+@2016-Apr-07 11:15:00 INFO  GUI:216 - Player picked was Brit
+@2016-Apr-07 11:15:00 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:00 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:00 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:00 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:15:10 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:15:10 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:10 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:15:13 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:14 INFO  GUI:492 - Played card squire 3
+@2016-Apr-07 11:15:14 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:14 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:14 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:14 INFO  GUI:432 - Player [game.ColourCard@19d71027, game.SupportCard@33f870be] added game.SupportCard@33f870be to their hand
+@2016-Apr-07 11:15:14 INFO  GUI:432 - Player [game.ColourCard@3168b726, game.SupportCard@3eb4e94c] added game.SupportCard@3eb4e94c to their hand
+@2016-Apr-07 11:15:15 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:15 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:15 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:16 INFO  GUI:492 - Played card blue 4
+@2016-Apr-07 11:15:17 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:17 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:17 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:17 INFO  GUI:432 - Player [game.ColourCard@19d71027, game.SupportCard@33f870be, game.ColourCard@26bcf7be] added game.ColourCard@26bcf7be to their hand
+@2016-Apr-07 11:15:17 INFO  GUI:432 - Player [game.ColourCard@3168b726, game.SupportCard@3eb4e94c, game.ColourCard@6ece0c3] added game.ColourCard@6ece0c3 to their hand
+@2016-Apr-07 11:15:17 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:17 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:17 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:15:17 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:17 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:15:19 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:21 INFO  GUI:492 - Played card riposte 0
+@2016-Apr-07 11:15:22 INFO  GUI:216 - Player picked was Brit
+@2016-Apr-07 11:15:22 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:22 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:22 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:23 INFO  GUI:432 - Player [game.ColourCard@d919fe9, game.ColourCard@e7b3dcf] added game.ColourCard@e7b3dcf to their hand
+@2016-Apr-07 11:15:23 INFO  GUI:432 - Player [game.ColourCard@3d7d028, game.ColourCard@da255ac] added game.ColourCard@da255ac to their hand
+@2016-Apr-07 11:15:23 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:23 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:27 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:45 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:46 INFO  GUI:492 - Played card disgrace 0
+@2016-Apr-07 11:15:47 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:47 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:47 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:47 INFO  GUI:432 - Player [game.ColourCard@4bc4594b] added game.ColourCard@4bc4594b to their hand
+@2016-Apr-07 11:15:47 INFO  GUI:432 - Player [game.ColourCard@28ca0080] added game.ColourCard@28ca0080 to their hand
+@2016-Apr-07 11:15:47 INFO  GUI:432 - Player [game.ColourCard@3486e26b] added game.ColourCard@3486e26b to their hand
+@2016-Apr-07 11:15:47 INFO  GUI:432 - Player [game.ColourCard@31c5fef3] added game.ColourCard@31c5fef3 to their hand
+@2016-Apr-07 11:15:47 INFO  GUI:432 - Player [game.ColourCard@3486e26b, game.ColourCard@154739f] added game.ColourCard@154739f to their hand
+@2016-Apr-07 11:15:47 INFO  GUI:432 - Player [game.ColourCard@31c5fef3, game.ColourCard@b782b5] added game.ColourCard@b782b5 to their hand
+@2016-Apr-07 11:15:48 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:48 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:49 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:15:49 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:49 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:15:51 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:52 INFO  GUI:492 - Played card squire 2
+@2016-Apr-07 11:15:53 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:53 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:53 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:53 INFO  GUI:432 - Player [game.ColourCard@4bc4594b, game.SupportCard@a56ad3] added game.SupportCard@a56ad3 to their hand
+@2016-Apr-07 11:15:53 INFO  GUI:432 - Player [game.ColourCard@28ca0080, game.SupportCard@3b6b9d39] added game.SupportCard@3b6b9d39 to their hand
+@2016-Apr-07 11:15:53 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:53 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:53 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:54 INFO  GUI:492 - Played card squire 3
+@2016-Apr-07 11:15:55 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:55 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:55 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:55 INFO  GUI:432 - Player [game.ColourCard@4bc4594b, game.SupportCard@a56ad3, game.SupportCard@7822c813] added game.SupportCard@7822c813 to their hand
+@2016-Apr-07 11:15:55 INFO  GUI:432 - Player [game.ColourCard@28ca0080, game.SupportCard@3b6b9d39, game.SupportCard@61a40590] added game.SupportCard@61a40590 to their hand
+@2016-Apr-07 11:15:55 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:15:55 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:15:56 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:15:56 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:15:56 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:15:56 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:15:56 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:15:56 INFO  GUI:517 - Adding icons/blue_full.png token
+@2016-Apr-07 11:15:56 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:15:56 INFO  GUI:517 - Adding icons/blue_full.png token
+@2016-Apr-07 11:15:57 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:15:57 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:15:57 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:15:57 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:15:57 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:15:59 INFO  GUI:195 - Tournament colour has been set to red
+@2016-Apr-07 11:16:00 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:01 INFO  GUI:492 - Played card red 3
+@2016-Apr-07 11:16:02 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:02 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:02 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:02 INFO  GUI:432 - Player [game.ColourCard@8840864] added game.ColourCard@8840864 to their hand
+@2016-Apr-07 11:16:02 INFO  GUI:432 - Player [game.ColourCard@a7346e9] added game.ColourCard@a7346e9 to their hand
+@2016-Apr-07 11:16:02 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:02 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:03 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:04 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:05 INFO  GUI:492 - Played card red 3
+@2016-Apr-07 11:16:05 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:05 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:05 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:05 INFO  GUI:432 - Player [game.ColourCard@a7346e9, game.ColourCard@469f781c] added game.ColourCard@469f781c to their hand
+@2016-Apr-07 11:16:05 INFO  GUI:432 - Player [game.ColourCard@8840864, game.ColourCard@14ed9315] added game.ColourCard@14ed9315 to their hand
+@2016-Apr-07 11:16:06 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:06 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:06 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:16:06 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:06 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:16:10 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:12 INFO  GUI:453 - Player has withdrawed
+@2016-Apr-07 11:16:12 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:13 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:13 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:13 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:13 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:13 INFO  GUI:517 - Adding icons/red_full.png token
+@2016-Apr-07 11:16:13 INFO  GUI:517 - Adding icons/red_full.png token
+@2016-Apr-07 11:16:13 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:13 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:13 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:13 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:13 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:16:17 INFO  GUI:195 - Tournament colour has been set to green
+@2016-Apr-07 11:16:17 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:18 INFO  GUI:492 - Played card green 1
+@2016-Apr-07 11:16:19 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:19 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:19 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:19 INFO  GUI:432 - Player [game.ColourCard@2d213bd9] added game.ColourCard@2d213bd9 to their hand
+@2016-Apr-07 11:16:19 INFO  GUI:432 - Player [game.ColourCard@4a8a3ee3] added game.ColourCard@4a8a3ee3 to their hand
+@2016-Apr-07 11:16:19 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:19 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:20 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:16:20 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:20 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:16:26 INFO  GUI:453 - Player has withdrawed
+@2016-Apr-07 11:16:26 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:26 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:26 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:27 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:27 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:27 INFO  GUI:517 - Adding icons/green_full.png token
+@2016-Apr-07 11:16:27 INFO  GUI:517 - Adding icons/green_full.png token
+@2016-Apr-07 11:16:27 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:27 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:27 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:27 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:27 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:16:28 INFO  GUI:195 - Tournament colour has been set to green
+@2016-Apr-07 11:16:29 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:30 INFO  GUI:492 - Played card green 1
+@2016-Apr-07 11:16:31 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:31 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:31 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:31 INFO  GUI:432 - Player [game.ColourCard@19bc9cd2] added game.ColourCard@19bc9cd2 to their hand
+@2016-Apr-07 11:16:31 INFO  GUI:432 - Player [game.ColourCard@a477738] added game.ColourCard@a477738 to their hand
+@2016-Apr-07 11:16:31 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:31 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:32 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:34 INFO  GUI:492 - Played card green 1
+@2016-Apr-07 11:16:34 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:34 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:34 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:34 INFO  GUI:432 - Player [game.ColourCard@19bc9cd2, game.ColourCard@6d960c46] added game.ColourCard@6d960c46 to their hand
+@2016-Apr-07 11:16:34 INFO  GUI:432 - Player [game.ColourCard@a477738, game.ColourCard@4c890df9] added game.ColourCard@4c890df9 to their hand
+@2016-Apr-07 11:16:35 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:35 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:35 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:16:35 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:36 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:16:37 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:38 INFO  GUI:492 - Played card green 1
+@2016-Apr-07 11:16:38 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:38 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:38 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:38 INFO  GUI:432 - Player [game.ColourCard@4de526fd] added game.ColourCard@4de526fd to their hand
+@2016-Apr-07 11:16:38 INFO  GUI:432 - Player [game.ColourCard@138ca61b] added game.ColourCard@138ca61b to their hand
+@2016-Apr-07 11:16:39 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:39 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:40 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:16:40 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:40 INFO  GUI:517 - Adding icons/green_full.png token
+@2016-Apr-07 11:16:40 INFO  GUI:517 - Adding icons/green_full.png token
+@2016-Apr-07 11:16:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:40 INFO  GUI:479 - Player []started their round
+@2016-Apr-07 11:16:41 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:16:45 INFO  GUI:195 - Tournament colour has been set to yellow
+@2016-Apr-07 11:16:45 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:46 INFO  GUI:492 - Played card yellow 3
+@2016-Apr-07 11:16:47 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:47 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:47 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:47 INFO  GUI:432 - Player [game.ColourCard@7691e08c] added game.ColourCard@7691e08c to their hand
+@2016-Apr-07 11:16:47 INFO  GUI:432 - Player [game.ColourCard@1feb11b] added game.ColourCard@1feb11b to their hand
+@2016-Apr-07 11:16:47 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:47 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:47 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:16:47 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:48 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:16:49 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:50 INFO  GUI:492 - Played card yellow 4
+@2016-Apr-07 11:16:51 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:51 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:51 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:51 INFO  GUI:432 - Player [game.ColourCard@1bb593a3] added game.ColourCard@1bb593a3 to their hand
+@2016-Apr-07 11:16:51 INFO  GUI:432 - Player [game.ColourCard@6b35de8d] added game.ColourCard@6b35de8d to their hand
+@2016-Apr-07 11:16:51 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:51 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:51 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:52 INFO  GUI:492 - Played card yellow 3
+@2016-Apr-07 11:16:53 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:53 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:53 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:53 INFO  GUI:432 - Player [game.ColourCard@1bb593a3, game.ColourCard@3589b2b2] added game.ColourCard@3589b2b2 to their hand
+@2016-Apr-07 11:16:53 INFO  GUI:432 - Player [game.ColourCard@6b35de8d, game.ColourCard@7ae07d22] added game.ColourCard@7ae07d22 to their hand
+@2016-Apr-07 11:16:53 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:16:53 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:16:54 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:16:54 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:16:54 INFO  GUI:408 - Adding new card
+@2016-Apr-07 11:16:56 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:17:00 INFO  GUI:492 - Played card riposte 0
+@2016-Apr-07 11:17:01 INFO  GUI:216 - Player picked was Brit
+@2016-Apr-07 11:17:02 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:17:02 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:17:02 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:17:02 INFO  GUI:432 - Player [game.ColourCard@7691e08c, game.ColourCard@e5e3edf] added game.ColourCard@e5e3edf to their hand
+@2016-Apr-07 11:17:02 INFO  GUI:432 - Player [game.ColourCard@1feb11b, game.ColourCard@709e817c] added game.ColourCard@709e817c to their hand
+@2016-Apr-07 11:17:02 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:17:02 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:17:08 INFO  GUI:439 - Cards are being displayed
+@2016-Apr-07 11:17:08 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:17:10 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:17:11 INFO  GUI:492 - Played card adapt 0
+@2016-Apr-07 11:17:12 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:17:12 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:17:12 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:17:12 INFO  GUI:432 - Player [game.ColourCard@7022d951] added game.ColourCard@7022d951 to their hand
+@2016-Apr-07 11:17:12 INFO  GUI:432 - Player [game.ColourCard@5ace7d5c] added game.ColourCard@5ace7d5c to their hand
+@2016-Apr-07 11:17:12 INFO  GUI:432 - Player [game.ColourCard@7ede6eab] added game.ColourCard@7ede6eab to their hand
+@2016-Apr-07 11:17:12 INFO  GUI:432 - Player [game.ColourCard@4f8937] added game.ColourCard@4f8937 to their hand
+@2016-Apr-07 11:17:12 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:17:12 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:17:41 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:17:46 INFO  GUI:492 - Played card outwit 0
+@2016-Apr-07 11:17:48 INFO  GUI:216 - Player picked was Brit
+@2016-Apr-07 11:17:49 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:17:49 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:17:49 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:17:49 INFO  GUI:432 - Player [game.ColourCard@7ede6eab, game.ColourCard@7225c693] added game.ColourCard@7225c693 to their hand
+@2016-Apr-07 11:17:49 INFO  GUI:432 - Player [game.ColourCard@4f8937, game.ColourCard@18ef03ba] added game.ColourCard@18ef03ba to their hand
+@2016-Apr-07 11:17:49 INFO  GUI:432 - Player [game.ColourCard@1e4cbb9d] added game.ColourCard@1e4cbb9d to their hand
+@2016-Apr-07 11:17:49 INFO  GUI:432 - Player [game.ColourCard@5db95816] added game.ColourCard@5db95816 to their hand
+@2016-Apr-07 11:17:49 INFO  GUI:511 - Cards have been reset
+@2016-Apr-07 11:17:49 INFO  GUI:424 - Card removed
+@2016-Apr-07 11:17:50 INFO  GUI:446 - Player has ended their turn
+@2016-Apr-07 11:17:50 INFO  GUI:395 - Updated Subjects
+@2016-Apr-07 11:17:50 INFO  GUI:408 - Adding new card
 @

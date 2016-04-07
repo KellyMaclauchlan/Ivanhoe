@@ -241,6 +241,16 @@ public class GameEngine {
 		}
 	}
 	
+	public void endTurnTest() {
+		for (Player p: players) {
+			if ((currentPlayer.getTotalCardValue() <= p.getTotalCardValue()) 
+					&& (!currentPlayer.getName().equals(p.getName()))) {
+				withdraw();
+			}
+		}
+		currentPlayer = getNext();
+	}
+	
 	public Player getNext() {
 		int index = 0;
 		for (int i = 0; i < players.size(); i++) {

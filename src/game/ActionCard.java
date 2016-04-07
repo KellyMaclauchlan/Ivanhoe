@@ -62,7 +62,6 @@ public class ActionCard extends Card {
 		Card cardToSteal = null;
 		if (!player.hasShield()) {
 			cardToSteal = player.getDisplay().get(player.getDisplay().size() - 1);
-			System.out.println("STEALING: " + cardToSteal.getType());
 			player.removeFromDisplay(cardToSteal);
 			player.setTotalCardValue();
 		}

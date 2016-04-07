@@ -6096,4 +6096,300 @@
 @2016-Apr-06 00:53:44 INFO  Server:126 - Message Received: output
 @2016-Apr-06 00:53:48 INFO  Server:126 - Message Received: null
 @2016-Apr-06 00:53:49 INFO  Server:126 - Message Received: null
+@2016-Apr-06 01:02:56 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-06 01:02:56 INFO  Server:58 - Game has started
+@2016-Apr-06 01:02:56 INFO  Server:61 - New ServerThread created
+@2016-Apr-06 01:02:56 INFO  Server:70 - Waiting for Clients
+@2016-Apr-06 01:03:08 INFO  Server:81 - Client accepted: Socket[addr=/127.0.0.1,port=54439,localport=3000]
+@2016-Apr-06 01:03:08 INFO  Server:70 - Waiting for Clients
+@2016-Apr-06 01:03:08 INFO  Server:126 - Message Received: client
+@2016-Apr-06 01:03:09 INFO  Server:126 - Message Received: start 2 0
+@2016-Apr-06 01:03:10 INFO  Server:126 - Message Received: join Brit
+@2016-Apr-06 01:03:10 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:03:21 INFO  Server:81 - Client accepted: Socket[addr=/127.0.0.1,port=54440,localport=3000]
+@2016-Apr-06 01:03:21 INFO  Server:70 - Waiting for Clients
+@2016-Apr-06 01:03:21 INFO  Server:126 - Message Received: client
+@2016-Apr-06 01:03:22 INFO  Server:126 - Message Received: join Katie
+@2016-Apr-06 01:03:24 INFO  Server:126 - Message Received: begin tournament
+@2016-Apr-06 01:03:24 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:03:24 INFO  Server:126 - Message Received: begin tournament
+@2016-Apr-06 01:03:26 INFO  Server:126 - Message Received: colour blue
+@2016-Apr-06 01:03:26 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:03:26 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:04:47 INFO  Server:126 - Message Received: play blue 3
+@2016-Apr-06 01:04:47 INFO  Server:126 - Message Received: cards_small/simpleCards11.jpg
+@2016-Apr-06 01:04:47 INFO  Server:126 - Message Received: cards_small/simpleCards11.jpg
+@2016-Apr-06 01:05:29 INFO  Server:126 - Message Received: play blue 2
+@2016-Apr-06 01:05:29 INFO  Server:126 - Message Received: cards_small/simpleCards10.jpg
+@2016-Apr-06 01:05:29 INFO  Server:126 - Message Received: end
+@2016-Apr-06 01:05:29 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:05:29 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:05:29 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:05:34 INFO  Server:126 - Message Received: withdraw
+@2016-Apr-06 01:05:34 INFO  Server:126 - Message Received: begin tournament
+@2016-Apr-06 01:05:34 INFO  Server:126 - Message Received: begin tournament
+@2016-Apr-06 01:05:34 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:05:36 INFO  Server:126 - Message Received: colour purple
+@2016-Apr-06 01:05:36 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:05:36 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:05:38 INFO  Server:126 - Message Received: play purple 5
+@2016-Apr-06 01:05:38 INFO  Server:126 - Message Received: cards_small/simpleCards16.jpg
+@2016-Apr-06 01:05:39 INFO  Server:126 - Message Received: cards_small/simpleCards16.jpg
+@2016-Apr-06 01:05:39 INFO  Server:126 - Message Received: end
+@2016-Apr-06 01:05:39 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:05:39 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:05:44 INFO  Server:126 - Message Received: play purple 5
+@2016-Apr-06 01:05:44 INFO  Server:126 - Message Received: cards_small/simpleCards16.jpg
+@2016-Apr-06 01:05:44 INFO  Server:126 - Message Received: cards_small/simpleCards16.jpg
+@2016-Apr-06 01:05:46 INFO  Server:126 - Message Received: play purple 3
+@2016-Apr-06 01:05:46 INFO  Server:126 - Message Received: cards_small/simpleCards14.jpg
+@2016-Apr-06 01:05:46 INFO  Server:126 - Message Received: end
+@2016-Apr-06 01:05:47 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:05:47 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:05:47 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:05:49 INFO  Server:126 - Message Received: withdraw
+@2016-Apr-06 01:05:49 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:05:51 INFO  Server:126 - Message Received: win purple purple
+@2016-Apr-06 01:05:51 INFO  Server:126 - Message Received: begin tournament
+@2016-Apr-06 01:05:52 INFO  Server:126 - Message Received: begin tournament
+@2016-Apr-06 01:05:52 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:05:53 INFO  Server:126 - Message Received: colour yellow
+@2016-Apr-06 01:05:53 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:05:53 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:05:55 INFO  Server:126 - Message Received: null
+@2016-Apr-06 01:06:04 INFO  Server:126 - Message Received: null
+@2016-Apr-06 01:26:47 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-06 01:26:47 INFO  Server:58 - Game has started
+@2016-Apr-06 01:26:47 INFO  Server:61 - New ServerThread created
+@2016-Apr-06 01:26:47 INFO  Server:70 - Waiting for Clients
+@2016-Apr-06 01:27:12 INFO  Server:81 - Client accepted: Socket[addr=/127.0.0.1,port=54774,localport=3000]
+@2016-Apr-06 01:27:12 INFO  Server:70 - Waiting for Clients
+@2016-Apr-06 01:27:12 INFO  Server:126 - Message Received: client
+@2016-Apr-06 01:27:13 INFO  Server:126 - Message Received: start 2 0
+@2016-Apr-06 01:27:14 INFO  Server:126 - Message Received: join BRit
+@2016-Apr-06 01:27:14 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:27:37 INFO  Server:81 - Client accepted: Socket[addr=/127.0.0.1,port=54776,localport=3000]
+@2016-Apr-06 01:27:37 INFO  Server:70 - Waiting for Clients
+@2016-Apr-06 01:27:37 INFO  Server:126 - Message Received: client
+@2016-Apr-06 01:27:39 INFO  Server:126 - Message Received: join Katie
+@2016-Apr-06 01:27:47 INFO  Server:126 - Message Received: begin tournament
+@2016-Apr-06 01:27:47 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:27:47 INFO  Server:126 - Message Received: begin tournament
+@2016-Apr-06 01:27:49 INFO  Server:126 - Message Received: colour blue
+@2016-Apr-06 01:27:49 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:27:49 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:27:53 INFO  Server:126 - Message Received: play blue 5
+@2016-Apr-06 01:27:54 INFO  Server:126 - Message Received: cards_small/simpleCards13.jpg
+@2016-Apr-06 01:27:55 INFO  Server:126 - Message Received: end
+@2016-Apr-06 01:27:56 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:27:57 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:27:57 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:28:00 INFO  Server:126 - Message Received: play maiden 6
+@2016-Apr-06 01:28:01 INFO  Server:126 - Message Received: cards_small/simpleCards2.jpg
+@2016-Apr-06 01:28:02 INFO  Server:126 - Message Received: end
+@2016-Apr-06 01:28:02 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:28:04 INFO  Server:126 - Message Received: output
+@2016-Apr-06 01:28:04 INFO  Server:126 - Message Received: result
+@2016-Apr-06 01:28:04 INFO  Server:126 - Message Received: null
+@2016-Apr-06 01:28:06 INFO  Server:126 - Message Received: null
+@2016-Apr-07 10:23:30 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 10:23:30 INFO  Server:58 - Game has started
+@2016-Apr-07 10:23:30 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 10:23:30 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:23:47 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 10:23:47 INFO  Server:58 - Game has started
+@2016-Apr-07 10:23:47 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 10:23:47 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:24:06 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 10:24:06 INFO  Server:58 - Game has started
+@2016-Apr-07 10:24:06 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 10:24:06 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:24:40 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 10:24:40 INFO  Server:58 - Game has started
+@2016-Apr-07 10:24:40 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 10:24:40 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:26:12 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 10:26:12 INFO  Server:58 - Game has started
+@2016-Apr-07 10:26:12 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 10:26:12 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:35:11 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 10:35:11 INFO  Server:58 - Game has started
+@2016-Apr-07 10:35:11 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 10:35:11 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 10:35:11 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:35:11 ERROR Server:52 - java.net.BindException: Address already in use
+@2016-Apr-07 10:35:11 INFO  Server:80 - Client accepted: Socket[addr=/127.0.0.1,port=49227,localport=3000]
+@2016-Apr-07 10:35:11 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: client
+@2016-Apr-07 10:35:11 INFO  Server:80 - Client accepted: Socket[addr=/127.0.0.1,port=49228,localport=3000]
+@2016-Apr-07 10:35:11 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: client
+@2016-Apr-07 10:35:11 INFO  Server:80 - Client accepted: Socket[addr=/127.0.0.1,port=49229,localport=3000]
+@2016-Apr-07 10:35:11 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: client
+@2016-Apr-07 10:35:11 INFO  Server:80 - Client accepted: Socket[addr=/127.0.0.1,port=49230,localport=3000]
+@2016-Apr-07 10:35:11 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: client
+@2016-Apr-07 10:35:11 INFO  Server:80 - Client accepted: Socket[addr=/127.0.0.1,port=49231,localport=3000]
+@2016-Apr-07 10:35:11 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: client
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: output
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: prompt join
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: prompt join
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: prompt join
+@2016-Apr-07 10:35:11 INFO  Server:125 - Message Received: prompt join
+@2016-Apr-07 11:03:47 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 11:03:47 INFO  Server:58 - Game has started
+@2016-Apr-07 11:03:47 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 11:03:47 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 11:13:09 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 11:13:09 INFO  Server:58 - Game has started
+@2016-Apr-07 11:13:09 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 11:13:09 INFO  Server:70 - Waiting for Clients
+@2016-Apr-07 11:13:49 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 11:13:49 INFO  Server:58 - Game has started
+@2016-Apr-07 11:13:49 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 11:13:49 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 11:13:53 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 11:13:53 ERROR Server:52 - java.net.BindException: Address already in use
+@2016-Apr-07 11:14:04 INFO  Server:80 - Client accepted: Socket[addr=/127.0.0.1,port=49273,localport=3000]
+@2016-Apr-07 11:14:04 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 11:14:04 INFO  Server:125 - Message Received: client
+@2016-Apr-07 11:14:07 INFO  Server:125 - Message Received: start 2 0
+@2016-Apr-07 11:14:08 INFO  Server:125 - Message Received: join Brit
+@2016-Apr-07 11:14:08 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:14:21 INFO  Server:80 - Client accepted: Socket[addr=/127.0.0.1,port=49274,localport=3000]
+@2016-Apr-07 11:14:21 INFO  Server:69 - Waiting for Clients
+@2016-Apr-07 11:14:21 INFO  Server:125 - Message Received: client
+@2016-Apr-07 11:14:23 INFO  Server:125 - Message Received: join Katie
+@2016-Apr-07 11:14:24 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:14:24 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:14:24 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:14:31 INFO  Server:125 - Message Received: colour blue
+@2016-Apr-07 11:14:31 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:14:31 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:14:34 INFO  Server:125 - Message Received: play blue 3
+@2016-Apr-07 11:14:34 INFO  Server:125 - Message Received: cards_small/simpleCards11.jpg
+@2016-Apr-07 11:14:35 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:14:36 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:14:36 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:14:36 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:14:42 INFO  Server:125 - Message Received: play blue 4
+@2016-Apr-07 11:14:42 INFO  Server:125 - Message Received: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:14:42 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:15:00 INFO  Server:125 - Message Received: play riposte Brit
+@2016-Apr-07 11:15:02 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:15:10 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:15:10 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:15:10 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:15:14 INFO  Server:125 - Message Received: play squire 3
+@2016-Apr-07 11:15:14 INFO  Server:125 - Message Received: cards_small/simpleCards1.jpg
+@2016-Apr-07 11:15:15 INFO  Server:125 - Message Received: cards_small/simpleCards1.jpg
+@2016-Apr-07 11:15:17 INFO  Server:125 - Message Received: play blue 4
+@2016-Apr-07 11:15:17 INFO  Server:125 - Message Received: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:17 INFO  Server:125 - Message Received: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:17 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:15:17 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:15:17 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:15:22 INFO  Server:125 - Message Received: play riposte Brit
+@2016-Apr-07 11:15:23 INFO  Server:125 - Message Received: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:23 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:15:47 INFO  Server:125 - Message Received: play disgrace
+@2016-Apr-07 11:15:47 INFO  Server:125 - Message Received: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:48 INFO  Server:125 - Message Received: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:49 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:15:49 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:15:49 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:15:53 INFO  Server:125 - Message Received: play squire 2
+@2016-Apr-07 11:15:53 INFO  Server:125 - Message Received: cards_small/simpleCards.jpg
+@2016-Apr-07 11:15:53 INFO  Server:125 - Message Received: cards_small/simpleCards.jpg
+@2016-Apr-07 11:15:55 INFO  Server:125 - Message Received: play squire 3
+@2016-Apr-07 11:15:55 INFO  Server:125 - Message Received: cards_small/simpleCards1.jpg
+@2016-Apr-07 11:15:55 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:15:56 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:15:56 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:15:56 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:15:57 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:15:59 INFO  Server:125 - Message Received: colour red
+@2016-Apr-07 11:15:59 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:15:59 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:02 INFO  Server:125 - Message Received: play red 3
+@2016-Apr-07 11:16:02 INFO  Server:125 - Message Received: cards_small/simpleCards7.jpg
+@2016-Apr-07 11:16:02 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:05 INFO  Server:125 - Message Received: play red 3
+@2016-Apr-07 11:16:05 INFO  Server:125 - Message Received: cards_small/simpleCards7.jpg
+@2016-Apr-07 11:16:06 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:06 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:16:06 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:16:06 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:16:12 INFO  Server:125 - Message Received: withdraw
+@2016-Apr-07 11:16:13 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:16:13 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:16:13 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:17 INFO  Server:125 - Message Received: colour green
+@2016-Apr-07 11:16:17 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:17 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:19 INFO  Server:125 - Message Received: play green 1
+@2016-Apr-07 11:16:19 INFO  Server:125 - Message Received: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:19 INFO  Server:125 - Message Received: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:20 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:16:20 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:16:20 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:16:26 INFO  Server:125 - Message Received: withdraw
+@2016-Apr-07 11:16:27 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:16:27 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:16:27 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:28 INFO  Server:125 - Message Received: colour green
+@2016-Apr-07 11:16:28 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:28 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:31 INFO  Server:125 - Message Received: play green 1
+@2016-Apr-07 11:16:31 INFO  Server:125 - Message Received: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:31 INFO  Server:125 - Message Received: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:34 INFO  Server:125 - Message Received: play green 1
+@2016-Apr-07 11:16:34 INFO  Server:125 - Message Received: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:35 INFO  Server:125 - Message Received: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:35 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:16:35 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:16:36 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:16:38 INFO  Server:125 - Message Received: play green 1
+@2016-Apr-07 11:16:38 INFO  Server:125 - Message Received: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:39 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:40 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:16:40 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:16:40 INFO  Server:125 - Message Received: begin tournament
+@2016-Apr-07 11:16:40 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:45 INFO  Server:125 - Message Received: colour yellow
+@2016-Apr-07 11:16:45 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:45 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:47 INFO  Server:125 - Message Received: play yellow 3
+@2016-Apr-07 11:16:47 INFO  Server:125 - Message Received: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:16:47 INFO  Server:125 - Message Received: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:16:47 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:16:47 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:16:48 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:16:51 INFO  Server:125 - Message Received: play yellow 4
+@2016-Apr-07 11:16:51 INFO  Server:125 - Message Received: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:16:51 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:16:53 INFO  Server:125 - Message Received: play yellow 3
+@2016-Apr-07 11:16:53 INFO  Server:125 - Message Received: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:16:53 INFO  Server:125 - Message Received: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:16:54 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:16:54 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:16:54 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:17:02 INFO  Server:125 - Message Received: play riposte Brit
+@2016-Apr-07 11:17:02 INFO  Server:125 - Message Received: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:17:02 INFO  Server:125 - Message Received: output
+@2016-Apr-07 11:17:12 INFO  Server:125 - Message Received: play adapt
+@2016-Apr-07 11:17:12 INFO  Server:125 - Message Received: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:17:12 INFO  Server:125 - Message Received: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:17:49 INFO  Server:125 - Message Received: play outwit yellow 3 Brit yellow 4
+@2016-Apr-07 11:17:49 INFO  Server:125 - Message Received: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:17:49 INFO  Server:125 - Message Received: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:17:50 INFO  Server:125 - Message Received: end
+@2016-Apr-07 11:17:50 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:17:50 INFO  Server:125 - Message Received: result
+@2016-Apr-07 11:21:03 INFO  Server:46 - Binding to port 3000, please wait...
+@2016-Apr-07 11:21:03 INFO  Server:58 - Game has started
+@2016-Apr-07 11:21:03 INFO  Server:61 - New ServerThread created
+@2016-Apr-07 11:21:03 INFO  Server:69 - Waiting for Clients
 @

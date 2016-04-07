@@ -2527,4 +2527,2028 @@
 @2016-Apr-06 00:53:44 INFO  Client:196 - Message Received: input
 @2016-Apr-06 00:53:44 INFO  ClientThread:52 - input
 @2016-Apr-06 00:53:44 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:03:08 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-06 01:03:08 INFO  Client:124 - 54439: Connected to server: localhost/127.0.0.1
+@2016-Apr-06 01:03:08 INFO  Client:125 - 54439: Connected to portid: 54439
+@2016-Apr-06 01:03:08 INFO  Client:141 - Initializing buffers
+@2016-Apr-06 01:03:08 INFO  Client:147 - New ClientThread has started
+@2016-Apr-06 01:03:08 INFO  ClientThread:48 - Client Thread 54439 running.
+@2016-Apr-06 01:03:08 INFO  Client:128 - Client has started
+@2016-Apr-06 01:03:08 INFO  ClientThread:52 - firstplayer
+@2016-Apr-06 01:03:08 INFO  Client:196 - Message Received: firstplayer
+@2016-Apr-06 01:03:09 INFO  Client:204 - Information sent to server: start 2 0
+@2016-Apr-06 01:03:09 INFO  ClientThread:52 - prompt join
+@2016-Apr-06 01:03:09 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-06 01:03:10 INFO  Client:204 - Information sent to server: join Brit
+@2016-Apr-06 01:03:10 INFO  ClientThread:52 - need players
+@2016-Apr-06 01:03:10 INFO  Client:196 - Message Received: need players
+@2016-Apr-06 01:03:10 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:03:10 INFO  ClientThread:52 - input
+@2016-Apr-06 01:03:10 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:03:21 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-06 01:03:21 INFO  Client:124 - 54440: Connected to server: localhost/127.0.0.1
+@2016-Apr-06 01:03:21 INFO  Client:125 - 54440: Connected to portid: 54440
+@2016-Apr-06 01:03:21 INFO  Client:141 - Initializing buffers
+@2016-Apr-06 01:03:21 INFO  Client:147 - New ClientThread has started
+@2016-Apr-06 01:03:21 INFO  ClientThread:48 - Client Thread 54440 running.
+@2016-Apr-06 01:03:21 INFO  Client:128 - Client has started
+@2016-Apr-06 01:03:21 INFO  ClientThread:52 - prompt join
+@2016-Apr-06 01:03:21 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-06 01:03:22 INFO  Client:204 - Information sent to server: join Katie
+@2016-Apr-06 01:03:22 INFO  ClientThread:52 - hand  name Katie cards blue_2 squire_2 disgrace_0 purple_5 blue_3 squire_3 yellow_2 green_1 name Brit cards red_5 purple_3 green_1 purple_5 red_3 squire_3 charge_0 green_1
+@2016-Apr-06 01:03:22 INFO  ClientThread:52 - hand  name Katie cards blue_2 squire_2 disgrace_0 purple_5 blue_3 squire_3 yellow_2 green_1 name Brit cards red_5 purple_3 green_1 purple_5 red_3 squire_3 charge_0 green_1
+@2016-Apr-06 01:03:22 INFO  Client:196 - Message Received: hand  name Katie cards blue_2 squire_2 disgrace_0 purple_5 blue_3 squire_3 yellow_2 green_1 name Brit cards red_5 purple_3 green_1 purple_5 red_3 squire_3 charge_0 green_1
+@2016-Apr-06 01:03:22 INFO  Client:196 - Message Received: hand  name Katie cards blue_2 squire_2 disgrace_0 purple_5 blue_3 squire_3 yellow_2 green_1 name Brit cards red_5 purple_3 green_1 purple_5 red_3 squire_3 charge_0 green_1
+@2016-Apr-06 01:03:24 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-06 01:03:24 INFO  ClientThread:52 - pickedpurple Brit turn Katie green_1
+@2016-Apr-06 01:03:24 INFO  Client:196 - Message Received: pickedpurple Brit turn Katie green_1
+@2016-Apr-06 01:03:24 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:03:24 INFO  ClientThread:52 - input
+@2016-Apr-06 01:03:24 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:03:24 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-06 01:03:24 INFO  ClientThread:52 - input
+@2016-Apr-06 01:03:24 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:03:24 INFO  ClientThread:52 - pickedpurple Brit turn Katie yellow_3
+@2016-Apr-06 01:03:24 INFO  Client:196 - Message Received: pickedpurple Brit turn Katie yellow_3
+@2016-Apr-06 01:03:26 INFO  Client:204 - Information sent to server: colour blue
+@2016-Apr-06 01:03:26 INFO  ClientThread:52 - colour blue
+@2016-Apr-06 01:03:26 INFO  ClientThread:52 - colour blue
+@2016-Apr-06 01:03:26 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-06 01:03:26 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-06 01:03:26 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:03:26 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:03:26 INFO  ClientThread:52 - input
+@2016-Apr-06 01:03:26 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:03:26 INFO  ClientThread:52 - input
+@2016-Apr-06 01:03:26 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:03:26 INFO  ClientThread:52 - input
+@2016-Apr-06 01:03:26 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:03:26 INFO  ClientThread:52 - input
+@2016-Apr-06 01:03:26 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:04:47 INFO  Client:196 - Message Received: play blue 3
+@2016-Apr-06 01:04:47 INFO  Client:204 - Information sent to server: play blue 3
+@2016-Apr-06 01:04:47 INFO  ClientThread:52 - waiting blue_3
+@2016-Apr-06 01:04:47 INFO  ClientThread:52 - waiting blue_3
+@2016-Apr-06 01:04:47 INFO  Client:196 - Message Received: waiting blue_3
+@2016-Apr-06 01:04:47 INFO  Client:196 - Message Received: waiting blue_3
+@2016-Apr-06 01:04:47 INFO  Client:204 - Information sent to server: cards_small/simpleCards11.jpg
+@2016-Apr-06 01:04:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:04:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:04:47 INFO  Client:204 - Information sent to server: cards_small/simpleCards11.jpg
+@2016-Apr-06 01:04:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:04:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:04:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:04:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:04:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:04:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: play blue 2
+@2016-Apr-06 01:05:29 INFO  Client:204 - Information sent to server: play blue 2
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - waiting blue_2
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: waiting blue_2
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - waiting blue_2
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: waiting blue_2
+@2016-Apr-06 01:05:29 INFO  Client:204 - Information sent to server: cards_small/simpleCards10.jpg
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received:  end
+@2016-Apr-06 01:05:29 INFO  Client:204 - Information sent to server: end
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - Katie points 5 continue Brit riposte_0
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: Katie points 5 continue Brit riposte_0
+@2016-Apr-06 01:05:29 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:29 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - Katie points 5 continue Brit riposte_0
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: Katie points 5 continue Brit riposte_0
+@2016-Apr-06 01:05:29 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:29 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:29 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:34 INFO  Client:196 - Message Received:  withdraw
+@2016-Apr-06 01:05:34 INFO  Client:204 - Information sent to server: withdraw
+@2016-Apr-06 01:05:34 INFO  ClientThread:52 - Brit points 0 withdraw Katie blue winner Katie
+@2016-Apr-06 01:05:34 INFO  Client:196 - Message Received: Brit points 0 withdraw Katie blue winner Katie
+@2016-Apr-06 01:05:34 INFO  ClientThread:52 - Brit points 0 withdraw Katie blue winner Katie
+@2016-Apr-06 01:05:34 INFO  Client:196 - Message Received: Brit points 0 withdraw Katie blue winner Katie
+@2016-Apr-06 01:05:34 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-06 01:05:34 INFO  ClientThread:52 - turn Katie blue_5
+@2016-Apr-06 01:05:34 INFO  Client:196 - Message Received: turn Katie blue_5
+@2016-Apr-06 01:05:34 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-06 01:05:34 INFO  ClientThread:52 - turn Katie yellow_2
+@2016-Apr-06 01:05:34 INFO  Client:196 - Message Received: turn Katie yellow_2
+@2016-Apr-06 01:05:34 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:05:34 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:34 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:36 INFO  Client:204 - Information sent to server: colour purple
+@2016-Apr-06 01:05:36 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:36 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:36 INFO  ClientThread:52 - colour purple
+@2016-Apr-06 01:05:36 INFO  Client:196 - Message Received: colour purple
+@2016-Apr-06 01:05:36 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:05:36 INFO  ClientThread:52 - colour purple
+@2016-Apr-06 01:05:36 INFO  Client:196 - Message Received: colour purple
+@2016-Apr-06 01:05:36 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:05:36 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:36 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:36 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:36 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:36 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:36 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:36 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:36 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:38 INFO  Client:196 - Message Received: play purple 5
+@2016-Apr-06 01:05:38 INFO  Client:204 - Information sent to server: play purple 5
+@2016-Apr-06 01:05:38 INFO  ClientThread:52 - waiting purple_5
+@2016-Apr-06 01:05:38 INFO  ClientThread:52 - waiting purple_5
+@2016-Apr-06 01:05:38 INFO  Client:196 - Message Received: waiting purple_5
+@2016-Apr-06 01:05:38 INFO  Client:196 - Message Received: waiting purple_5
+@2016-Apr-06 01:05:38 INFO  Client:204 - Information sent to server: cards_small/simpleCards16.jpg
+@2016-Apr-06 01:05:38 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:38 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:38 INFO  Client:204 - Information sent to server: cards_small/simpleCards16.jpg
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received:  end
+@2016-Apr-06 01:05:39 INFO  Client:204 - Information sent to server: end
+@2016-Apr-06 01:05:39 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:39 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:39 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:39 INFO  ClientThread:52 - Katie points 5 continue Brit outmaneuver_0
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received: Katie points 5 continue Brit outmaneuver_0
+@2016-Apr-06 01:05:39 INFO  ClientThread:52 - Katie points 5 continue Brit outmaneuver_0
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received: Katie points 5 continue Brit outmaneuver_0
+@2016-Apr-06 01:05:39 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:05:39 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:39 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:05:39 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:39 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:39 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:39 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:44 INFO  Client:196 - Message Received: play purple 5
+@2016-Apr-06 01:05:44 INFO  Client:204 - Information sent to server: play purple 5
+@2016-Apr-06 01:05:44 INFO  ClientThread:52 - waiting purple_5
+@2016-Apr-06 01:05:44 INFO  Client:196 - Message Received: waiting purple_5
+@2016-Apr-06 01:05:44 INFO  ClientThread:52 - waiting purple_5
+@2016-Apr-06 01:05:44 INFO  Client:196 - Message Received: waiting purple_5
+@2016-Apr-06 01:05:44 INFO  Client:204 - Information sent to server: cards_small/simpleCards16.jpg
+@2016-Apr-06 01:05:44 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:44 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:44 INFO  Client:204 - Information sent to server: cards_small/simpleCards16.jpg
+@2016-Apr-06 01:05:44 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:44 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:44 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:44 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:44 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:44 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:46 INFO  Client:196 - Message Received: play purple 3
+@2016-Apr-06 01:05:46 INFO  Client:204 - Information sent to server: play purple 3
+@2016-Apr-06 01:05:46 INFO  ClientThread:52 - waiting purple_3
+@2016-Apr-06 01:05:46 INFO  Client:196 - Message Received: waiting purple_3
+@2016-Apr-06 01:05:46 INFO  ClientThread:52 - waiting purple_3
+@2016-Apr-06 01:05:46 INFO  Client:196 - Message Received: waiting purple_3
+@2016-Apr-06 01:05:46 INFO  Client:204 - Information sent to server: cards_small/simpleCards14.jpg
+@2016-Apr-06 01:05:46 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:46 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:46 INFO  Client:196 - Message Received:  end
+@2016-Apr-06 01:05:46 INFO  Client:204 - Information sent to server: end
+@2016-Apr-06 01:05:46 INFO  ClientThread:52 - Brit points 8 continue Katie purple_4
+@2016-Apr-06 01:05:46 INFO  Client:196 - Message Received: Brit points 8 continue Katie purple_4
+@2016-Apr-06 01:05:47 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:05:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:47 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:05:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:47 INFO  ClientThread:52 - Brit points 8 continue Katie purple_4
+@2016-Apr-06 01:05:47 INFO  Client:196 - Message Received: Brit points 8 continue Katie purple_4
+@2016-Apr-06 01:05:47 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:05:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:49 INFO  Client:196 - Message Received:  withdraw
+@2016-Apr-06 01:05:49 INFO  Client:204 - Information sent to server: withdraw
+@2016-Apr-06 01:05:49 INFO  ClientThread:52 - Katie points 5 withdraw Brit win purple Brit
+@2016-Apr-06 01:05:49 INFO  Client:196 - Message Received: Katie points 5 withdraw Brit win purple Brit
+@2016-Apr-06 01:05:49 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:05:49 INFO  ClientThread:52 - Katie points 5 withdraw Brit win purple Brit
+@2016-Apr-06 01:05:49 INFO  Client:196 - Message Received: Katie points 5 withdraw Brit win purple Brit
+@2016-Apr-06 01:05:49 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:49 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:51 INFO  Client:204 - Information sent to server: win purple purple
+@2016-Apr-06 01:05:51 INFO  ClientThread:52 - Brit points 0 withdraw Katie purple winner Brit
+@2016-Apr-06 01:05:51 INFO  Client:196 - Message Received: Brit points 0 withdraw Katie purple winner Brit
+@2016-Apr-06 01:05:51 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:51 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:51 INFO  ClientThread:52 - Brit points 0 withdraw Katie purple winner Brit
+@2016-Apr-06 01:05:51 INFO  Client:196 - Message Received: Brit points 0 withdraw Katie purple winner Brit
+@2016-Apr-06 01:05:51 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-06 01:05:51 INFO  ClientThread:52 - turn Brit yellow_3
+@2016-Apr-06 01:05:51 INFO  Client:196 - Message Received: turn Brit yellow_3
+@2016-Apr-06 01:05:51 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-06 01:05:52 INFO  ClientThread:52 - turn Brit yellow_3
+@2016-Apr-06 01:05:52 INFO  Client:196 - Message Received: turn Brit yellow_3
+@2016-Apr-06 01:05:52 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:05:52 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:52 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:53 INFO  Client:204 - Information sent to server: colour yellow
+@2016-Apr-06 01:05:53 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:53 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:53 INFO  ClientThread:52 - colour yellow
+@2016-Apr-06 01:05:53 INFO  Client:196 - Message Received: colour yellow
+@2016-Apr-06 01:05:53 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:05:53 INFO  ClientThread:52 - colour yellow
+@2016-Apr-06 01:05:53 INFO  Client:196 - Message Received: colour yellow
+@2016-Apr-06 01:05:53 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:05:53 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:53 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:53 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:53 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:53 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:53 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:05:53 INFO  ClientThread:52 - input
+@2016-Apr-06 01:05:53 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:12 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-06 01:27:12 INFO  Client:124 - 54774: Connected to server: localhost/127.0.0.1
+@2016-Apr-06 01:27:12 INFO  Client:125 - 54774: Connected to portid: 54774
+@2016-Apr-06 01:27:12 INFO  Client:141 - Initializing buffers
+@2016-Apr-06 01:27:12 INFO  Client:147 - New ClientThread has started
+@2016-Apr-06 01:27:12 INFO  ClientThread:48 - Client Thread 54774 running.
+@2016-Apr-06 01:27:12 INFO  Client:128 - Client has started
+@2016-Apr-06 01:27:12 INFO  ClientThread:52 - firstplayer
+@2016-Apr-06 01:27:12 INFO  Client:196 - Message Received: firstplayer
+@2016-Apr-06 01:27:13 INFO  Client:204 - Information sent to server: start 2 0
+@2016-Apr-06 01:27:13 INFO  ClientThread:52 - prompt join
+@2016-Apr-06 01:27:13 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-06 01:27:14 INFO  Client:204 - Information sent to server: join BRit
+@2016-Apr-06 01:27:14 INFO  ClientThread:52 - need players
+@2016-Apr-06 01:27:14 INFO  Client:196 - Message Received: need players
+@2016-Apr-06 01:27:14 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:27:14 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:14 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:37 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-06 01:27:37 INFO  Client:124 - 54776: Connected to server: localhost/127.0.0.1
+@2016-Apr-06 01:27:37 INFO  Client:125 - 54776: Connected to portid: 54776
+@2016-Apr-06 01:27:37 INFO  Client:141 - Initializing buffers
+@2016-Apr-06 01:27:37 INFO  Client:147 - New ClientThread has started
+@2016-Apr-06 01:27:37 INFO  ClientThread:48 - Client Thread 54776 running.
+@2016-Apr-06 01:27:37 INFO  Client:128 - Client has started
+@2016-Apr-06 01:27:37 INFO  ClientThread:52 - prompt join
+@2016-Apr-06 01:27:37 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-06 01:27:39 INFO  Client:204 - Information sent to server: join Katie
+@2016-Apr-06 01:27:39 INFO  ClientThread:52 - hand  name Katie cards yellow_3 adapt_0 riposte_0 squire_2 blue_5 yellow_2 countercharge_0 outmaneuver_0 name BRit cards red_3 purple_4 purple_5 blue_3 red_3 squire_3 maiden_6 shield_0
+@2016-Apr-06 01:27:39 INFO  Client:196 - Message Received: hand  name Katie cards yellow_3 adapt_0 riposte_0 squire_2 blue_5 yellow_2 countercharge_0 outmaneuver_0 name BRit cards red_3 purple_4 purple_5 blue_3 red_3 squire_3 maiden_6 shield_0
+@2016-Apr-06 01:27:39 INFO  ClientThread:52 - hand  name Katie cards yellow_3 adapt_0 riposte_0 squire_2 blue_5 yellow_2 countercharge_0 outmaneuver_0 name BRit cards red_3 purple_4 purple_5 blue_3 red_3 squire_3 maiden_6 shield_0
+@2016-Apr-06 01:27:39 INFO  Client:196 - Message Received: hand  name Katie cards yellow_3 adapt_0 riposte_0 squire_2 blue_5 yellow_2 countercharge_0 outmaneuver_0 name BRit cards red_3 purple_4 purple_5 blue_3 red_3 squire_3 maiden_6 shield_0
+@2016-Apr-06 01:27:47 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-06 01:27:47 INFO  ClientThread:52 - pickedpurple BRit turn Katie green_1
+@2016-Apr-06 01:27:47 INFO  Client:196 - Message Received: pickedpurple BRit turn Katie green_1
+@2016-Apr-06 01:27:47 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:27:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:47 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-06 01:27:47 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:47 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:47 INFO  ClientThread:52 - pickedpurple BRit turn Katie purple_5
+@2016-Apr-06 01:27:47 INFO  Client:196 - Message Received: pickedpurple BRit turn Katie purple_5
+@2016-Apr-06 01:27:49 INFO  Client:204 - Information sent to server: colour blue
+@2016-Apr-06 01:27:49 INFO  ClientThread:52 - colour blue
+@2016-Apr-06 01:27:49 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-06 01:27:49 INFO  ClientThread:52 - colour blue
+@2016-Apr-06 01:27:49 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-06 01:27:49 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:27:49 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:27:49 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:49 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:49 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:49 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:49 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:49 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:49 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:49 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:53 INFO  Client:196 - Message Received: play blue 5
+@2016-Apr-06 01:27:53 INFO  Client:204 - Information sent to server: play blue 5
+@2016-Apr-06 01:27:53 INFO  ClientThread:52 - waiting blue_5
+@2016-Apr-06 01:27:53 INFO  ClientThread:52 - waiting blue_5
+@2016-Apr-06 01:27:53 INFO  Client:196 - Message Received: waiting blue_5
+@2016-Apr-06 01:27:53 INFO  Client:196 - Message Received: waiting blue_5
+@2016-Apr-06 01:27:54 INFO  Client:204 - Information sent to server: cards_small/simpleCards13.jpg
+@2016-Apr-06 01:27:54 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:54 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:55 INFO  Client:196 - Message Received:  end
+@2016-Apr-06 01:27:55 INFO  Client:204 - Information sent to server: end
+@2016-Apr-06 01:27:55 INFO  ClientThread:52 - Katie points 5 continue BRit squire_2
+@2016-Apr-06 01:27:55 INFO  Client:196 - Message Received: Katie points 5 continue BRit squire_2
+@2016-Apr-06 01:27:56 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:27:56 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:56 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:57 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:27:57 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:57 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:57 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:57 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:57 INFO  ClientThread:52 - Katie points 5 continue BRit squire_2
+@2016-Apr-06 01:27:57 INFO  Client:196 - Message Received: Katie points 5 continue BRit squire_2
+@2016-Apr-06 01:27:57 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:27:57 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:57 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:57 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:57 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:57 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:57 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:27:57 INFO  ClientThread:52 - input
+@2016-Apr-06 01:27:57 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:28:00 INFO  Client:196 - Message Received: play maiden 6
+@2016-Apr-06 01:28:00 INFO  Client:204 - Information sent to server: play maiden 6
+@2016-Apr-06 01:28:00 INFO  ClientThread:52 - waiting maiden_6
+@2016-Apr-06 01:28:00 INFO  Client:196 - Message Received: waiting maiden_6
+@2016-Apr-06 01:28:00 INFO  ClientThread:52 - waiting maiden_6
+@2016-Apr-06 01:28:00 INFO  Client:196 - Message Received: waiting maiden_6
+@2016-Apr-06 01:28:01 INFO  Client:204 - Information sent to server: cards_small/simpleCards2.jpg
+@2016-Apr-06 01:28:01 INFO  ClientThread:52 - input
+@2016-Apr-06 01:28:01 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:28:02 INFO  Client:196 - Message Received:  end
+@2016-Apr-06 01:28:02 INFO  Client:204 - Information sent to server: end
+@2016-Apr-06 01:28:02 INFO  ClientThread:52 - BRit points 6 continue Katie purple_4
+@2016-Apr-06 01:28:02 INFO  Client:196 - Message Received: BRit points 6 continue Katie purple_4
+@2016-Apr-06 01:28:02 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:28:02 INFO  ClientThread:52 - input
+@2016-Apr-06 01:28:02 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:28:04 INFO  Client:204 - Information sent to server: output
+@2016-Apr-06 01:28:04 INFO  ClientThread:52 - input
+@2016-Apr-06 01:28:04 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:28:04 INFO  ClientThread:52 - input
+@2016-Apr-06 01:28:04 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:28:04 INFO  ClientThread:52 - BRit points 6 continue Katie purple_4
+@2016-Apr-06 01:28:04 INFO  Client:196 - Message Received: BRit points 6 continue Katie purple_4
+@2016-Apr-06 01:28:04 INFO  Client:204 - Information sent to server: result
+@2016-Apr-06 01:28:04 INFO  ClientThread:52 - input
+@2016-Apr-06 01:28:04 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:28:04 INFO  ClientThread:52 - input
+@2016-Apr-06 01:28:04 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:28:04 INFO  ClientThread:52 - input
+@2016-Apr-06 01:28:04 INFO  Client:196 - Message Received: input
+@2016-Apr-06 01:28:04 INFO  ClientThread:52 - input
+@2016-Apr-06 01:28:04 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:17 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:28:17 INFO  Client:124 - 49216: Connected to server: /172.17.57.196
+@2016-Apr-07 10:28:17 INFO  Client:125 - 49216: Connected to portid: 49216
+@2016-Apr-07 10:28:17 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:28:17 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:28:17 INFO  ClientThread:48 - Client Thread 49216 running.
+@2016-Apr-07 10:28:17 INFO  Client:128 - Client has started
+@2016-Apr-07 10:28:17 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 10:28:17 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 10:28:27 INFO  Client:204 - Information sent to server: join Brit
+@2016-Apr-07 10:28:27 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:27 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:27 INFO  ClientThread:52 - hand  name Katie cards green_1 purple_3 green_1 red_4 blue_4 outwit_0 yellow_4 blue_3 name Brit cards purple_5 yellow_2 maiden_6 red_3 red_4 squire_3 yellow_4 squire_3
+@2016-Apr-07 10:28:27 INFO  Client:196 - Message Received: hand  name Katie cards green_1 purple_3 green_1 red_4 blue_4 outwit_0 yellow_4 blue_3 name Brit cards purple_5 yellow_2 maiden_6 red_3 red_4 squire_3 yellow_4 squire_3
+@2016-Apr-07 10:28:28 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:28:28 INFO  ClientThread:52 - pickedpurple Brit turn Katie purple_3
+@2016-Apr-07 10:28:28 INFO  Client:196 - Message Received: pickedpurple Brit turn Katie purple_3
+@2016-Apr-07 10:28:28 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:28:28 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:32 INFO  ClientThread:52 - colour blue
+@2016-Apr-07 10:28:32 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-07 10:28:32 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:28:32 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:32 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:32 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:32 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:34 INFO  ClientThread:52 - waiting blue_4
+@2016-Apr-07 10:28:34 INFO  Client:196 - Message Received: waiting blue_4
+@2016-Apr-07 10:28:34 INFO  Client:204 - Information sent to server: cards_small/simpleCards12.jpg
+@2016-Apr-07 10:28:34 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:34 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:36 INFO  ClientThread:52 - waiting blue_3
+@2016-Apr-07 10:28:36 INFO  Client:196 - Message Received: waiting blue_3
+@2016-Apr-07 10:28:36 INFO  Client:204 - Information sent to server: cards_small/simpleCards11.jpg
+@2016-Apr-07 10:28:36 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:36 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:37 INFO  ClientThread:52 - Katie points 7 continue Brit red_3
+@2016-Apr-07 10:28:37 INFO  Client:196 - Message Received: Katie points 7 continue Brit red_3
+@2016-Apr-07 10:28:37 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:28:37 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:37 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:28:37 INFO  ClientThread:52 - input
+@2016-Apr-07 10:28:37 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:29:12 INFO  ClientThread:52 - left Katie
+@2016-Apr-07 10:29:12 INFO  Client:196 - Message Received: left Katie
+@2016-Apr-07 10:29:15 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:29:15 INFO  ClientThread:52 - input
+@2016-Apr-07 10:29:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:29:23 INFO  Client:196 - Message Received: quit
+@2016-Apr-07 10:29:23 INFO  Client:204 - Information sent to server: quit Brit
+@2016-Apr-07 10:30:31 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:30:31 INFO  Client:124 - 49217: Connected to server: /172.17.57.196
+@2016-Apr-07 10:30:31 INFO  Client:125 - 49217: Connected to portid: 49217
+@2016-Apr-07 10:30:31 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:30:31 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:30:31 INFO  ClientThread:48 - Client Thread 49217 running.
+@2016-Apr-07 10:30:31 INFO  Client:128 - Client has started
+@2016-Apr-07 10:30:31 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 10:30:31 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 10:30:33 INFO  Client:204 - Information sent to server: join Brit
+@2016-Apr-07 10:30:33 INFO  ClientThread:52 - input
+@2016-Apr-07 10:30:33 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:30:33 INFO  ClientThread:52 - hand  name kelly cards blue_4 red_4 red_4 green_1 green_1 purple_4 squire_3 squire_2 name Katie cards squire_2 squire_2 purple_3 blue_5 yellow_4 yellow_2 red_3 purple_5 name Brit cards green_1 squire_2 squire_3 green_1 red_4 blue_2 yellow_3 red_3
+@2016-Apr-07 10:30:33 INFO  Client:196 - Message Received: hand  name kelly cards blue_4 red_4 red_4 green_1 green_1 purple_4 squire_3 squire_2 name Katie cards squire_2 squire_2 purple_3 blue_5 yellow_4 yellow_2 red_3 purple_5 name Brit cards green_1 squire_2 squire_3 green_1 red_4 blue_2 yellow_3 red_3
+@2016-Apr-07 10:30:34 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:30:34 INFO  ClientThread:52 - pickedpurple Brit turn kelly charge_0
+@2016-Apr-07 10:30:34 INFO  Client:196 - Message Received: pickedpurple Brit turn kelly charge_0
+@2016-Apr-07 10:30:35 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:30:35 INFO  ClientThread:52 - input
+@2016-Apr-07 10:30:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:30:35 INFO  ClientThread:52 - input
+@2016-Apr-07 10:30:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:30:52 INFO  ClientThread:52 - colour red
+@2016-Apr-07 10:30:52 INFO  Client:196 - Message Received: colour red
+@2016-Apr-07 10:30:52 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:30:52 INFO  ClientThread:52 - input
+@2016-Apr-07 10:30:52 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:30:52 INFO  ClientThread:52 - input
+@2016-Apr-07 10:30:52 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:30:52 INFO  ClientThread:52 - input
+@2016-Apr-07 10:30:52 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:30:55 INFO  ClientThread:52 - waiting red_4
+@2016-Apr-07 10:30:55 INFO  Client:196 - Message Received: waiting red_4
+@2016-Apr-07 10:30:55 INFO  Client:204 - Information sent to server: cards_small/simpleCards8.jpg
+@2016-Apr-07 10:30:55 INFO  ClientThread:52 - input
+@2016-Apr-07 10:30:55 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:30:56 INFO  ClientThread:52 - input
+@2016-Apr-07 10:30:56 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:30:56 INFO  ClientThread:52 - input
+@2016-Apr-07 10:30:56 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:03 INFO  ClientThread:52 - waiting red_4
+@2016-Apr-07 10:31:03 INFO  Client:196 - Message Received: waiting red_4
+@2016-Apr-07 10:31:03 INFO  Client:204 - Information sent to server: cards_small/simpleCards8.jpg
+@2016-Apr-07 10:31:03 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:03 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:03 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:03 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:03 INFO  ClientThread:52 - kelly points 8 continue Katie red_3
+@2016-Apr-07 10:31:03 INFO  Client:196 - Message Received: kelly points 8 continue Katie red_3
+@2016-Apr-07 10:31:03 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:31:03 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:03 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:03 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:03 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:04 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:04 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:04 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:04 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:10 INFO  ClientThread:52 - waiting red_3
+@2016-Apr-07 10:31:10 INFO  Client:196 - Message Received: waiting red_3
+@2016-Apr-07 10:31:10 INFO  Client:204 - Information sent to server: cards_small/simpleCards7.jpg
+@2016-Apr-07 10:31:10 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:10 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:10 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:10 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:10 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:10 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:11 INFO  ClientThread:52 - waiting red_3
+@2016-Apr-07 10:31:11 INFO  Client:196 - Message Received: waiting red_3
+@2016-Apr-07 10:31:11 INFO  Client:204 - Information sent to server: cards_small/simpleCards7.jpg
+@2016-Apr-07 10:31:11 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:11 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:11 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:11 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:11 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:11 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:12 INFO  ClientThread:52 - waiting squire_2
+@2016-Apr-07 10:31:12 INFO  Client:196 - Message Received: waiting squire_2
+@2016-Apr-07 10:31:12 INFO  Client:204 - Information sent to server: cards_small/simpleCards.jpg
+@2016-Apr-07 10:31:12 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:12 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:12 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:14 INFO  ClientThread:52 - waiting squire_2
+@2016-Apr-07 10:31:14 INFO  Client:196 - Message Received: waiting squire_2
+@2016-Apr-07 10:31:14 INFO  Client:204 - Information sent to server: cards_small/simpleCards.jpg
+@2016-Apr-07 10:31:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:14 INFO  ClientThread:52 - Katie points 10 continue Brit green_1
+@2016-Apr-07 10:31:14 INFO  Client:196 - Message Received: Katie points 10 continue Brit green_1
+@2016-Apr-07 10:31:14 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:31:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:18 INFO  Client:196 - Message Received:  withdraw
+@2016-Apr-07 10:31:18 INFO  Client:204 - Information sent to server: withdraw
+@2016-Apr-07 10:31:18 INFO  ClientThread:52 - Brit points 0 withdraw kelly squire_3
+@2016-Apr-07 10:31:18 INFO  Client:196 - Message Received: Brit points 0 withdraw kelly squire_3
+@2016-Apr-07 10:31:18 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:31:18 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:18 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:18 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:18 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:18 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:18 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:28 INFO  ClientThread:52 - waiting squire_3
+@2016-Apr-07 10:31:28 INFO  Client:196 - Message Received: waiting squire_3
+@2016-Apr-07 10:31:28 INFO  Client:204 - Information sent to server: cards_small/simpleCards1.jpg
+@2016-Apr-07 10:31:28 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:29 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:29 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:29 INFO  ClientThread:52 - kelly points 11 continue Katie red winner Katie
+@2016-Apr-07 10:31:29 INFO  Client:196 - Message Received: kelly points 11 continue Katie red winner Katie
+@2016-Apr-07 10:31:29 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:31:29 INFO  ClientThread:52 - turn Katie red_5
+@2016-Apr-07 10:31:29 INFO  Client:196 - Message Received: turn Katie red_5
+@2016-Apr-07 10:31:29 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:31:29 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:29 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:29 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:29 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:30 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:30 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:34 INFO  ClientThread:52 - colour yellow
+@2016-Apr-07 10:31:34 INFO  Client:196 - Message Received: colour yellow
+@2016-Apr-07 10:31:34 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:31:34 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:34 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:31:34 INFO  ClientThread:52 - input
+@2016-Apr-07 10:31:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:35:11 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:35:11 INFO  Client:124 - 49227: Connected to server: /127.0.0.1
+@2016-Apr-07 10:35:11 INFO  Client:125 - 49227: Connected to portid: 49227
+@2016-Apr-07 10:35:11 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:35:11 INFO  ClientThread:48 - Client Thread 49227 running.
+@2016-Apr-07 10:35:11 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:35:11 INFO  Client:128 - Client has started
+@2016-Apr-07 10:35:11 INFO  ClientThread:52 - firstplayer
+@2016-Apr-07 10:35:11 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:35:11 INFO  Client:196 - Message Received: firstplayer
+@2016-Apr-07 10:35:11 INFO  Client:124 - 49228: Connected to server: /127.0.0.1
+@2016-Apr-07 10:35:11 INFO  Client:125 - 49228: Connected to portid: 49228
+@2016-Apr-07 10:35:11 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:35:11 INFO  ClientThread:48 - Client Thread 49228 running.
+@2016-Apr-07 10:35:11 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:35:11 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 10:35:11 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 10:35:11 INFO  Client:128 - Client has started
+@2016-Apr-07 10:35:11 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:35:11 INFO  Client:124 - 49229: Connected to server: /127.0.0.1
+@2016-Apr-07 10:35:11 INFO  Client:125 - 49229: Connected to portid: 49229
+@2016-Apr-07 10:35:11 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:35:11 INFO  ClientThread:48 - Client Thread 49229 running.
+@2016-Apr-07 10:35:11 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:35:11 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 10:35:11 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 10:35:11 INFO  Client:128 - Client has started
+@2016-Apr-07 10:35:11 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:35:11 INFO  Client:124 - 49230: Connected to server: /127.0.0.1
+@2016-Apr-07 10:35:11 INFO  Client:125 - 49230: Connected to portid: 49230
+@2016-Apr-07 10:35:11 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:35:11 INFO  ClientThread:48 - Client Thread 49230 running.
+@2016-Apr-07 10:35:11 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:35:11 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 10:35:11 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 10:35:11 INFO  Client:128 - Client has started
+@2016-Apr-07 10:35:11 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:35:11 INFO  Client:124 - 49231: Connected to server: /127.0.0.1
+@2016-Apr-07 10:35:11 INFO  Client:125 - 49231: Connected to portid: 49231
+@2016-Apr-07 10:35:11 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:35:11 INFO  ClientThread:48 - Client Thread 49231 running.
+@2016-Apr-07 10:35:11 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:35:11 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 10:35:11 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 10:35:11 INFO  Client:128 - Client has started
+@2016-Apr-07 10:36:59 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:36:59 INFO  Client:124 - 49242: Connected to server: /172.17.57.196
+@2016-Apr-07 10:36:59 INFO  Client:125 - 49242: Connected to portid: 49242
+@2016-Apr-07 10:36:59 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:36:59 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:36:59 INFO  ClientThread:48 - Client Thread 49242 running.
+@2016-Apr-07 10:36:59 INFO  Client:128 - Client has started
+@2016-Apr-07 10:36:59 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 10:36:59 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 10:37:01 INFO  Client:204 - Information sent to server: join Brit
+@2016-Apr-07 10:37:01 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:01 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:01 INFO  ClientThread:52 - hand  name Katie cards red_4 red_4 squire_3 blue_3 purple_4 green_1 squire_2 blue_2 name Brit cards yellow_3 maiden_6 yellow_3 purple_4 breaklance_0 purple_5 yellow_2 red_3 name kelly cards red_3 squire_2 squire_2 knockdown_0 red_4 squire_3 blue_4 red_3
+@2016-Apr-07 10:37:01 INFO  Client:196 - Message Received: hand  name Katie cards red_4 red_4 squire_3 blue_3 purple_4 green_1 squire_2 blue_2 name Brit cards yellow_3 maiden_6 yellow_3 purple_4 breaklance_0 purple_5 yellow_2 red_3 name kelly cards red_3 squire_2 squire_2 knockdown_0 red_4 squire_3 blue_4 red_3
+@2016-Apr-07 10:37:03 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:37:03 INFO  ClientThread:52 - pickedpurple kelly turn Katie purple_4
+@2016-Apr-07 10:37:03 INFO  Client:196 - Message Received: pickedpurple kelly turn Katie purple_4
+@2016-Apr-07 10:37:03 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:37:03 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:03 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:03 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:03 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:09 INFO  ClientThread:52 - colour blue
+@2016-Apr-07 10:37:09 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-07 10:37:09 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:37:09 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:09 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:09 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:09 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:09 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:09 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:13 INFO  ClientThread:52 - waiting blue_2
+@2016-Apr-07 10:37:13 INFO  Client:196 - Message Received: waiting blue_2
+@2016-Apr-07 10:37:13 INFO  Client:204 - Information sent to server: cards_small/simpleCards10.jpg
+@2016-Apr-07 10:37:13 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:13 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:13 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:13 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:13 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:13 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:17 INFO  ClientThread:52 - waiting blue_3
+@2016-Apr-07 10:37:17 INFO  Client:196 - Message Received: waiting blue_3
+@2016-Apr-07 10:37:17 INFO  Client:204 - Information sent to server: cards_small/simpleCards11.jpg
+@2016-Apr-07 10:37:17 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:17 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:18 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:18 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:18 INFO  ClientThread:52 - Katie points 5 continue Brit purple_5
+@2016-Apr-07 10:37:18 INFO  Client:196 - Message Received: Katie points 5 continue Brit purple_5
+@2016-Apr-07 10:37:19 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:37:19 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:19 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:19 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:29 INFO  Client:196 - Message Received: play purple 5
+@2016-Apr-07 10:37:29 INFO  Client:204 - Information sent to server: play purple 5
+@2016-Apr-07 10:37:29 INFO  ClientThread:52 - waiting invalid
+@2016-Apr-07 10:37:29 INFO  Client:196 - Message Received: waiting invalid
+@2016-Apr-07 10:37:32 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:37:32 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:32 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:47 INFO  Client:196 - Message Received: play breaklance kelly
+@2016-Apr-07 10:37:47 INFO  Client:204 - Information sent to server: play breaklance kelly
+@2016-Apr-07 10:37:47 INFO  ClientThread:52 - waiting invalid
+@2016-Apr-07 10:37:47 INFO  Client:196 - Message Received: waiting invalid
+@2016-Apr-07 10:37:49 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:37:49 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:53 INFO  Client:196 - Message Received: play maiden 6
+@2016-Apr-07 10:37:53 INFO  Client:204 - Information sent to server: play maiden 6
+@2016-Apr-07 10:37:53 INFO  ClientThread:52 - waiting maiden_6
+@2016-Apr-07 10:37:53 INFO  Client:196 - Message Received: waiting maiden_6
+@2016-Apr-07 10:37:54 INFO  Client:204 - Information sent to server: cards_small/simpleCards2.jpg
+@2016-Apr-07 10:37:54 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:54 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:54 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:54 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:54 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:54 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:56 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 10:37:56 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 10:37:56 INFO  ClientThread:52 - Brit points 6 continue kelly blue_3
+@2016-Apr-07 10:37:56 INFO  Client:196 - Message Received: Brit points 6 continue kelly blue_3
+@2016-Apr-07 10:37:57 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:37:57 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:57 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:57 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:57 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:37:57 INFO  ClientThread:52 - input
+@2016-Apr-07 10:37:57 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:14 INFO  ClientThread:52 - waiting blue_3
+@2016-Apr-07 10:38:14 INFO  Client:196 - Message Received: waiting blue_3
+@2016-Apr-07 10:38:15 INFO  Client:204 - Information sent to server: cards_small/simpleCards11.jpg
+@2016-Apr-07 10:38:15 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:15 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:16 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:16 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:21 INFO  ClientThread:52 - waiting squire_3
+@2016-Apr-07 10:38:21 INFO  Client:196 - Message Received: waiting squire_3
+@2016-Apr-07 10:38:21 INFO  Client:204 - Information sent to server: cards_small/simpleCards1.jpg
+@2016-Apr-07 10:38:21 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:21 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:22 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:22 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:22 INFO  ClientThread:52 - kelly points 6 withdraw Katie purple_3
+@2016-Apr-07 10:38:22 INFO  Client:196 - Message Received: kelly points 6 withdraw Katie purple_3
+@2016-Apr-07 10:38:22 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:38:22 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:22 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:22 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:31 INFO  ClientThread:52 - Katie points 5 withdraw Brit blue winner Brit
+@2016-Apr-07 10:38:31 INFO  Client:196 - Message Received: Katie points 5 withdraw Brit blue winner Brit
+@2016-Apr-07 10:38:31 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:38:31 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:31 INFO  ClientThread:52 - turn Brit yellow_3
+@2016-Apr-07 10:38:31 INFO  Client:196 - Message Received: turn Brit yellow_3
+@2016-Apr-07 10:38:41 INFO  Client:204 - Information sent to server: colour purple
+@2016-Apr-07 10:38:41 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:41 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:41 INFO  ClientThread:52 - colour purple
+@2016-Apr-07 10:38:41 INFO  Client:196 - Message Received: colour purple
+@2016-Apr-07 10:38:41 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:38:41 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:41 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:41 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:41 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:41 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:41 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:43 INFO  Client:196 - Message Received: play purple 5
+@2016-Apr-07 10:38:43 INFO  Client:204 - Information sent to server: play purple 5
+@2016-Apr-07 10:38:43 INFO  ClientThread:52 - waiting purple_5
+@2016-Apr-07 10:38:43 INFO  Client:196 - Message Received: waiting purple_5
+@2016-Apr-07 10:38:44 INFO  Client:204 - Information sent to server: cards_small/simpleCards16.jpg
+@2016-Apr-07 10:38:44 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:44 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:44 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:44 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:44 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:44 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:45 INFO  Client:196 - Message Received: play purple 5
+@2016-Apr-07 10:38:45 INFO  Client:204 - Information sent to server: play purple 5
+@2016-Apr-07 10:38:45 INFO  ClientThread:52 - waiting purple_5
+@2016-Apr-07 10:38:45 INFO  Client:196 - Message Received: waiting purple_5
+@2016-Apr-07 10:38:46 INFO  Client:204 - Information sent to server: cards_small/simpleCards16.jpg
+@2016-Apr-07 10:38:46 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:46 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:46 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:46 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:46 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:46 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:47 INFO  Client:196 - Message Received: play purple 4
+@2016-Apr-07 10:38:47 INFO  Client:204 - Information sent to server: play purple 4
+@2016-Apr-07 10:38:47 INFO  ClientThread:52 - waiting purple_4
+@2016-Apr-07 10:38:47 INFO  Client:196 - Message Received: waiting purple_4
+@2016-Apr-07 10:38:48 INFO  Client:204 - Information sent to server: cards_small/simpleCards15.jpg
+@2016-Apr-07 10:38:48 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:48 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:48 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:48 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:48 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:48 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:49 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 10:38:49 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 10:38:49 INFO  ClientThread:52 - Brit points 14 continue kelly red_3
+@2016-Apr-07 10:38:49 INFO  Client:196 - Message Received: Brit points 14 continue kelly red_3
+@2016-Apr-07 10:38:49 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:38:49 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:49 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:38:49 INFO  ClientThread:52 - input
+@2016-Apr-07 10:38:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:39:32 INFO  ClientThread:52 - left Katie
+@2016-Apr-07 10:39:32 INFO  Client:196 - Message Received: left Katie
+@2016-Apr-07 10:40:55 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:40:55 INFO  ClientThread:52 - input
+@2016-Apr-07 10:40:55 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:40:55 INFO  ClientThread:52 - input
+@2016-Apr-07 10:40:55 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:40:57 INFO  Client:196 - Message Received: quit
+@2016-Apr-07 10:40:57 INFO  Client:204 - Information sent to server: quit Brit
+@2016-Apr-07 10:41:43 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:42:03 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:42:03 INFO  Client:124 - 49244: Connected to server: /172.17.57.196
+@2016-Apr-07 10:42:03 INFO  Client:125 - 49244: Connected to portid: 49244
+@2016-Apr-07 10:42:03 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:42:03 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:42:03 INFO  ClientThread:48 - Client Thread 49244 running.
+@2016-Apr-07 10:42:03 INFO  Client:128 - Client has started
+@2016-Apr-07 10:42:03 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 10:42:03 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 10:42:08 INFO  Client:204 - Information sent to server: join brit
+@2016-Apr-07 10:42:08 INFO  ClientThread:52 - hand  name Katie cards squire_2 green_1 squire_3 purple_5 red_5 purple_4 squire_2 breaklance_0 name brit cards purple_4 maiden_6 yellow_2 adapt_0 outmaneuver_0 yellow_3 yellow_3 blue_3
+@2016-Apr-07 10:42:08 INFO  Client:196 - Message Received: hand  name Katie cards squire_2 green_1 squire_3 purple_5 red_5 purple_4 squire_2 breaklance_0 name brit cards purple_4 maiden_6 yellow_2 adapt_0 outmaneuver_0 yellow_3 yellow_3 blue_3
+@2016-Apr-07 10:42:09 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:42:09 INFO  ClientThread:52 - pickedpurple brit turn Katie blue_4
+@2016-Apr-07 10:42:09 INFO  Client:196 - Message Received: pickedpurple brit turn Katie blue_4
+@2016-Apr-07 10:42:09 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:42:09 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:09 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:14 INFO  ClientThread:52 - colour purple
+@2016-Apr-07 10:42:14 INFO  Client:196 - Message Received: colour purple
+@2016-Apr-07 10:42:14 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:42:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:15 INFO  ClientThread:52 - waiting purple_4
+@2016-Apr-07 10:42:15 INFO  Client:196 - Message Received: waiting purple_4
+@2016-Apr-07 10:42:15 INFO  Client:204 - Information sent to server: cards_small/simpleCards15.jpg
+@2016-Apr-07 10:42:15 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:15 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:17 INFO  ClientThread:52 - waiting purple_5
+@2016-Apr-07 10:42:17 INFO  Client:196 - Message Received: waiting purple_5
+@2016-Apr-07 10:42:17 INFO  Client:204 - Information sent to server: cards_small/simpleCards16.jpg
+@2016-Apr-07 10:42:17 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:17 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:17 INFO  ClientThread:52 - Katie points 9 continue brit riposte_0
+@2016-Apr-07 10:42:17 INFO  Client:196 - Message Received: Katie points 9 continue brit riposte_0
+@2016-Apr-07 10:42:17 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:42:17 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:17 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:20 INFO  Client:196 - Message Received:  withdraw
+@2016-Apr-07 10:42:20 INFO  Client:204 - Information sent to server: withdraw
+@2016-Apr-07 10:42:20 INFO  ClientThread:52 - brit points 0 withdraw Katie win purple Katie
+@2016-Apr-07 10:42:20 INFO  Client:196 - Message Received: brit points 0 withdraw Katie win purple Katie
+@2016-Apr-07 10:42:20 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:42:20 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:20 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:29 INFO  ClientThread:52 - Katie points 0 withdraw brit purple winner Katie
+@2016-Apr-07 10:42:29 INFO  Client:196 - Message Received: Katie points 0 withdraw brit purple winner Katie
+@2016-Apr-07 10:42:29 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:42:29 INFO  ClientThread:52 - turn Katie blue_3
+@2016-Apr-07 10:42:29 INFO  Client:196 - Message Received: turn Katie blue_3
+@2016-Apr-07 10:42:29 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:42:29 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:29 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:31 INFO  ClientThread:52 - colour blue
+@2016-Apr-07 10:42:31 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-07 10:42:31 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:42:31 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:31 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:33 INFO  ClientThread:52 - waiting blue_4
+@2016-Apr-07 10:42:33 INFO  Client:196 - Message Received: waiting blue_4
+@2016-Apr-07 10:42:33 INFO  Client:204 - Information sent to server: cards_small/simpleCards12.jpg
+@2016-Apr-07 10:42:33 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:33 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:33 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:33 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:33 INFO  ClientThread:52 - Katie points 4 continue brit blue_3
+@2016-Apr-07 10:42:33 INFO  Client:196 - Message Received: Katie points 4 continue brit blue_3
+@2016-Apr-07 10:42:34 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:42:34 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:34 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:35 INFO  Client:196 - Message Received:  withdraw
+@2016-Apr-07 10:42:35 INFO  Client:204 - Information sent to server: withdraw
+@2016-Apr-07 10:42:35 INFO  ClientThread:52 - brit points 0 withdraw Katie blue winner Katie
+@2016-Apr-07 10:42:35 INFO  Client:196 - Message Received: brit points 0 withdraw Katie blue winner Katie
+@2016-Apr-07 10:42:35 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:42:35 INFO  ClientThread:52 - turn Katie green_1
+@2016-Apr-07 10:42:35 INFO  Client:196 - Message Received: turn Katie green_1
+@2016-Apr-07 10:42:35 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:42:35 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:37 INFO  ClientThread:52 - colour red
+@2016-Apr-07 10:42:37 INFO  Client:196 - Message Received: colour red
+@2016-Apr-07 10:42:37 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:42:37 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:37 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:37 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:37 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:39 INFO  ClientThread:52 - waiting red_5
+@2016-Apr-07 10:42:39 INFO  Client:196 - Message Received: waiting red_5
+@2016-Apr-07 10:42:39 INFO  Client:204 - Information sent to server: cards_small/simpleCards9.jpg
+@2016-Apr-07 10:42:39 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:39 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:39 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:39 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:39 INFO  ClientThread:52 - Katie points 5 continue brit red_3
+@2016-Apr-07 10:42:39 INFO  Client:196 - Message Received: Katie points 5 continue brit red_3
+@2016-Apr-07 10:42:39 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:42:39 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:39 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:39 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:39 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:54 INFO  Client:196 - Message Received: play maiden 6
+@2016-Apr-07 10:42:54 INFO  Client:204 - Information sent to server: play maiden 6
+@2016-Apr-07 10:42:54 INFO  ClientThread:52 - waiting maiden_6
+@2016-Apr-07 10:42:54 INFO  Client:196 - Message Received: waiting maiden_6
+@2016-Apr-07 10:42:55 INFO  Client:204 - Information sent to server: cards_small/simpleCards2.jpg
+@2016-Apr-07 10:42:55 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:55 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:42:55 INFO  ClientThread:52 - input
+@2016-Apr-07 10:42:55 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:43:09 INFO  Client:196 - Message Received: play riposte Katie
+@2016-Apr-07 10:43:09 INFO  Client:204 - Information sent to server: play riposte Katie
+@2016-Apr-07 10:43:09 INFO  ClientThread:52 - waiting invalid
+@2016-Apr-07 10:43:09 INFO  Client:196 - Message Received: waiting invalid
+@2016-Apr-07 10:43:11 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:43:11 INFO  ClientThread:52 - input
+@2016-Apr-07 10:43:11 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:43:15 INFO  Client:196 - Message Received:  withdraw
+@2016-Apr-07 10:43:15 INFO  Client:204 - Information sent to server: withdraw
+@2016-Apr-07 10:43:15 INFO  ClientThread:52 - maiden
+@2016-Apr-07 10:43:15 INFO  Client:196 - Message Received: maiden
+@2016-Apr-07 10:43:37 INFO  Client:196 - Message Received: quit
+@2016-Apr-07 10:43:37 INFO  Client:204 - Information sent to server: quit brit
+@2016-Apr-07 10:44:03 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 10:44:03 INFO  Client:124 - 49245: Connected to server: /172.17.57.196
+@2016-Apr-07 10:44:03 INFO  Client:125 - 49245: Connected to portid: 49245
+@2016-Apr-07 10:44:03 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 10:44:03 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 10:44:03 INFO  ClientThread:48 - Client Thread 49245 running.
+@2016-Apr-07 10:44:03 INFO  Client:128 - Client has started
+@2016-Apr-07 10:44:03 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 10:44:03 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 10:44:05 INFO  Client:204 - Information sent to server: join Brit
+@2016-Apr-07 10:44:05 INFO  ClientThread:52 - hand  name Brit cards green_1 blue_2 yellow_3 disgrace_0 red_4 purple_4 squire_3 green_1 name Katie cards purple_4 red_4 squire_3 yellow_2 green_1 squire_2 blue_4 squire_2
+@2016-Apr-07 10:44:05 INFO  Client:196 - Message Received: hand  name Brit cards green_1 blue_2 yellow_3 disgrace_0 red_4 purple_4 squire_3 green_1 name Katie cards purple_4 red_4 squire_3 yellow_2 green_1 squire_2 blue_4 squire_2
+@2016-Apr-07 10:44:07 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:44:07 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:07 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:07 INFO  ClientThread:52 - pickedpurple Katie turn Brit outwit_0
+@2016-Apr-07 10:44:07 INFO  Client:196 - Message Received: pickedpurple Katie turn Brit outwit_0
+@2016-Apr-07 10:44:10 INFO  Client:204 - Information sent to server: colour purple
+@2016-Apr-07 10:44:11 INFO  ClientThread:52 - colour purple
+@2016-Apr-07 10:44:11 INFO  Client:196 - Message Received: colour purple
+@2016-Apr-07 10:44:11 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:11 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:11 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:11 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:11 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:13 INFO  Client:196 - Message Received: play purple 4
+@2016-Apr-07 10:44:13 INFO  Client:204 - Information sent to server: play purple 4
+@2016-Apr-07 10:44:13 INFO  ClientThread:52 - waiting purple_4
+@2016-Apr-07 10:44:13 INFO  Client:196 - Message Received: waiting purple_4
+@2016-Apr-07 10:44:13 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 10:44:13 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 10:44:14 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:14 INFO  ClientThread:52 - Brit points 4 continue Katie red_3
+@2016-Apr-07 10:44:14 INFO  Client:196 - Message Received: Brit points 4 continue Katie red_3
+@2016-Apr-07 10:44:14 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:44:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:14 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:14 INFO  ClientThread:52 - Katie points 0 withdraw Brit win purple Brit
+@2016-Apr-07 10:44:14 INFO  Client:196 - Message Received: Katie points 0 withdraw Brit win purple Brit
+@2016-Apr-07 10:44:16 INFO  Client:204 - Information sent to server: win purple purple
+@2016-Apr-07 10:44:16 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:16 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:16 INFO  ClientThread:52 - Brit points 0 withdraw Katie purple winner Brit
+@2016-Apr-07 10:44:16 INFO  Client:196 - Message Received: Brit points 0 withdraw Katie purple winner Brit
+@2016-Apr-07 10:44:16 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:44:16 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:16 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:16 INFO  ClientThread:52 - turn Brit yellow_3
+@2016-Apr-07 10:44:16 INFO  Client:196 - Message Received: turn Brit yellow_3
+@2016-Apr-07 10:44:19 INFO  Client:204 - Information sent to server: colour red
+@2016-Apr-07 10:44:19 INFO  ClientThread:52 - colour red
+@2016-Apr-07 10:44:19 INFO  Client:196 - Message Received: colour red
+@2016-Apr-07 10:44:19 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:19 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:19 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:21 INFO  Client:196 - Message Received: play red 4
+@2016-Apr-07 10:44:21 INFO  Client:204 - Information sent to server: play red 4
+@2016-Apr-07 10:44:21 INFO  ClientThread:52 - waiting red_4
+@2016-Apr-07 10:44:21 INFO  Client:196 - Message Received: waiting red_4
+@2016-Apr-07 10:44:22 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 10:44:22 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 10:44:22 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:22 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:22 INFO  ClientThread:52 - Brit points 4 continue Katie green_1
+@2016-Apr-07 10:44:22 INFO  Client:196 - Message Received: Brit points 4 continue Katie green_1
+@2016-Apr-07 10:44:22 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:44:22 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:22 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:22 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:23 INFO  ClientThread:52 - Katie points 0 withdraw Brit red winner Brit
+@2016-Apr-07 10:44:23 INFO  Client:196 - Message Received: Katie points 0 withdraw Brit red winner Brit
+@2016-Apr-07 10:44:23 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:44:23 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:23 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:23 INFO  ClientThread:52 - turn Brit blue_3
+@2016-Apr-07 10:44:23 INFO  Client:196 - Message Received: turn Brit blue_3
+@2016-Apr-07 10:44:25 INFO  Client:204 - Information sent to server: colour blue
+@2016-Apr-07 10:44:25 INFO  ClientThread:52 - colour blue
+@2016-Apr-07 10:44:25 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-07 10:44:25 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:25 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:25 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:25 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:25 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:27 INFO  Client:196 - Message Received: play blue 3
+@2016-Apr-07 10:44:27 INFO  Client:204 - Information sent to server: play blue 3
+@2016-Apr-07 10:44:27 INFO  ClientThread:52 - waiting blue_3
+@2016-Apr-07 10:44:27 INFO  Client:196 - Message Received: waiting blue_3
+@2016-Apr-07 10:44:28 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 10:44:28 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 10:44:28 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:28 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:28 INFO  ClientThread:52 - Brit points 3 continue Katie squire_2
+@2016-Apr-07 10:44:28 INFO  Client:196 - Message Received: Brit points 3 continue Katie squire_2
+@2016-Apr-07 10:44:28 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:44:28 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:28 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:28 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:30 INFO  ClientThread:52 - Katie points 0 withdraw Brit blue winner Brit
+@2016-Apr-07 10:44:30 INFO  Client:196 - Message Received: Katie points 0 withdraw Brit blue winner Brit
+@2016-Apr-07 10:44:30 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:44:30 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:30 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:31 INFO  ClientThread:52 - turn Brit changeweapon_0
+@2016-Apr-07 10:44:31 INFO  Client:196 - Message Received: turn Brit changeweapon_0
+@2016-Apr-07 10:44:35 INFO  Client:204 - Information sent to server: colour yellow
+@2016-Apr-07 10:44:35 INFO  ClientThread:52 - colour yellow
+@2016-Apr-07 10:44:35 INFO  Client:196 - Message Received: colour yellow
+@2016-Apr-07 10:44:35 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:35 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:36 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:37 INFO  Client:196 - Message Received: play yellow 3
+@2016-Apr-07 10:44:37 INFO  Client:204 - Information sent to server: play yellow 3
+@2016-Apr-07 10:44:37 INFO  ClientThread:52 - waiting yellow_3
+@2016-Apr-07 10:44:37 INFO  Client:196 - Message Received: waiting yellow_3
+@2016-Apr-07 10:44:38 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 10:44:38 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 10:44:38 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:38 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:38 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:38 INFO  ClientThread:52 - Brit points 3 continue Katie green_1
+@2016-Apr-07 10:44:38 INFO  Client:196 - Message Received: Brit points 3 continue Katie green_1
+@2016-Apr-07 10:44:38 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:44:38 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:38 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:38 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:38 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:38 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:38 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:40 INFO  ClientThread:52 - Katie points 0 withdraw Brit yellow winner Brit
+@2016-Apr-07 10:44:40 INFO  Client:196 - Message Received: Katie points 0 withdraw Brit yellow winner Brit
+@2016-Apr-07 10:44:40 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 10:44:40 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:40 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:40 INFO  ClientThread:52 - turn Brit riposte_0
+@2016-Apr-07 10:44:40 INFO  Client:196 - Message Received: turn Brit riposte_0
+@2016-Apr-07 10:44:43 INFO  Client:204 - Information sent to server: colour green
+@2016-Apr-07 10:44:43 INFO  ClientThread:52 - colour green
+@2016-Apr-07 10:44:43 INFO  Client:196 - Message Received: colour green
+@2016-Apr-07 10:44:43 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:43 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:43 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:43 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:43 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:45 INFO  Client:196 - Message Received: play green 1
+@2016-Apr-07 10:44:45 INFO  Client:204 - Information sent to server: play green 1
+@2016-Apr-07 10:44:45 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 10:44:45 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 10:44:46 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 10:44:46 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:46 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:46 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 10:44:46 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 10:44:46 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:46 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:46 INFO  ClientThread:52 - Brit points 1 continue Katie adapt_0
+@2016-Apr-07 10:44:46 INFO  Client:196 - Message Received: Brit points 1 continue Katie adapt_0
+@2016-Apr-07 10:44:46 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 10:44:46 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:46 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:46 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:46 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:49 INFO  ClientThread:52 -  game winner Brit green winner Brit
+@2016-Apr-07 10:44:49 INFO  Client:196 - Message Received:  game winner Brit green winner Brit
+@2016-Apr-07 10:44:57 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 10:44:57 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:57 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:44:57 INFO  ClientThread:52 - input
+@2016-Apr-07 10:44:57 INFO  Client:196 - Message Received: input
+@2016-Apr-07 10:45:00 INFO  Client:196 - Message Received: quit
+@2016-Apr-07 10:45:00 INFO  Client:204 - Information sent to server: quit Brit
+@2016-Apr-07 10:45:00 INFO  ClientThread:52 - 
+@2016-Apr-07 10:45:00 INFO  Client:196 - Message Received: null
+@2016-Apr-07 11:06:19 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 11:06:19 INFO  Client:124 - 49272: Connected to server: /172.17.57.196
+@2016-Apr-07 11:06:19 INFO  Client:125 - 49272: Connected to portid: 49272
+@2016-Apr-07 11:06:19 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 11:06:19 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 11:06:19 INFO  ClientThread:48 - Client Thread 49272 running.
+@2016-Apr-07 11:06:19 INFO  Client:128 - Client has started
+@2016-Apr-07 11:06:19 INFO  ClientThread:52 - firstplayer
+@2016-Apr-07 11:06:19 INFO  Client:196 - Message Received: firstplayer
+@2016-Apr-07 11:06:25 INFO  Client:204 - Information sent to server: start 2 0
+@2016-Apr-07 11:06:25 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 11:06:25 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 11:06:31 INFO  Client:204 - Information sent to server: join Brit
+@2016-Apr-07 11:06:32 INFO  ClientThread:52 - need players
+@2016-Apr-07 11:06:32 INFO  Client:196 - Message Received: need players
+@2016-Apr-07 11:06:32 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:06:32 INFO  ClientThread:52 - input
+@2016-Apr-07 11:06:32 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:28 INFO  ClientThread:52 - hand  name Brit cards blue_4 green_1 green_1 green_1 red_3 blue_2 yellow_3 purple_7 name kelly cards green_1 squire_3 green_1 red_3 squire_3 green_1 yellow_2 purple_4
+@2016-Apr-07 11:07:28 INFO  Client:196 - Message Received: hand  name Brit cards blue_4 green_1 green_1 green_1 red_3 blue_2 yellow_3 purple_7 name kelly cards green_1 squire_3 green_1 red_3 squire_3 green_1 yellow_2 purple_4
+@2016-Apr-07 11:07:29 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:07:29 INFO  ClientThread:52 - pickedpurple kelly turn Brit purple_5
+@2016-Apr-07 11:07:29 INFO  Client:196 - Message Received: pickedpurple kelly turn Brit purple_5
+@2016-Apr-07 11:07:34 INFO  Client:204 - Information sent to server: colour blue
+@2016-Apr-07 11:07:34 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:34 INFO  ClientThread:52 - colour blue
+@2016-Apr-07 11:07:34 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-07 11:07:34 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:07:34 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:34 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:36 INFO  Client:196 - Message Received: play blue 2
+@2016-Apr-07 11:07:36 INFO  Client:204 - Information sent to server: play blue 2
+@2016-Apr-07 11:07:37 INFO  ClientThread:52 - waiting blue_2
+@2016-Apr-07 11:07:37 INFO  Client:196 - Message Received: waiting blue_2
+@2016-Apr-07 11:07:37 INFO  Client:204 - Information sent to server: cards_small/simpleCards10.jpg
+@2016-Apr-07 11:07:37 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:37 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:37 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:37 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:38 INFO  Client:196 - Message Received: play blue 4
+@2016-Apr-07 11:07:38 INFO  Client:204 - Information sent to server: play blue 4
+@2016-Apr-07 11:07:38 INFO  ClientThread:52 - waiting blue_4
+@2016-Apr-07 11:07:38 INFO  Client:196 - Message Received: waiting blue_4
+@2016-Apr-07 11:07:39 INFO  Client:204 - Information sent to server: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:07:39 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:39 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:39 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:39 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:40 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:07:40 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:07:40 INFO  ClientThread:52 - Brit points 6 continue kelly squire_2
+@2016-Apr-07 11:07:40 INFO  Client:196 - Message Received: Brit points 6 continue kelly squire_2
+@2016-Apr-07 11:07:40 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:07:40 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:40 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:40 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:40 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:56 INFO  ClientThread:52 - waiting squire_3
+@2016-Apr-07 11:07:56 INFO  Client:196 - Message Received: waiting squire_3
+@2016-Apr-07 11:07:56 INFO  Client:204 - Information sent to server: cards_small/simpleCards1.jpg
+@2016-Apr-07 11:07:56 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:56 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:58 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:58 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:07:59 INFO  ClientThread:52 - waiting squire_3
+@2016-Apr-07 11:07:59 INFO  Client:196 - Message Received: waiting squire_3
+@2016-Apr-07 11:07:59 INFO  Client:204 - Information sent to server: cards_small/simpleCards1.jpg
+@2016-Apr-07 11:07:59 INFO  ClientThread:52 - input
+@2016-Apr-07 11:07:59 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:00 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:00 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:01 INFO  ClientThread:52 - waiting squire_2
+@2016-Apr-07 11:08:01 INFO  Client:196 - Message Received: waiting squire_2
+@2016-Apr-07 11:08:01 INFO  Client:204 - Information sent to server: cards_small/simpleCards.jpg
+@2016-Apr-07 11:08:01 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:01 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:01 INFO  ClientThread:52 - kelly points 8 continue Brit blue winner Brit
+@2016-Apr-07 11:08:01 INFO  Client:196 - Message Received: kelly points 8 continue Brit blue winner Brit
+@2016-Apr-07 11:08:02 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:08:02 INFO  ClientThread:52 - turn Brit squire_2
+@2016-Apr-07 11:08:02 INFO  Client:196 - Message Received: turn Brit squire_2
+@2016-Apr-07 11:08:12 INFO  Client:204 - Information sent to server: colour green
+@2016-Apr-07 11:08:12 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:12 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:12 INFO  ClientThread:52 - colour green
+@2016-Apr-07 11:08:12 INFO  Client:196 - Message Received: colour green
+@2016-Apr-07 11:08:12 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:08:12 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:12 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:14 INFO  Client:196 - Message Received: play green 1
+@2016-Apr-07 11:08:14 INFO  Client:204 - Information sent to server: play green 1
+@2016-Apr-07 11:08:14 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:08:14 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:08:15 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:08:15 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:15 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:15 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:08:15 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:08:15 INFO  ClientThread:52 - Brit points 1 continue kelly blue_3
+@2016-Apr-07 11:08:15 INFO  Client:196 - Message Received: Brit points 1 continue kelly blue_3
+@2016-Apr-07 11:08:15 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:08:15 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:15 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:19 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:08:19 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:08:19 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:08:19 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:20 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:20 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:22 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:08:22 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:08:22 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:08:22 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:22 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:23 INFO  ClientThread:52 - kelly points 2 continue Brit purple_3
+@2016-Apr-07 11:08:23 INFO  Client:196 - Message Received: kelly points 2 continue Brit purple_3
+@2016-Apr-07 11:08:23 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:08:23 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:23 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:23 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:23 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:23 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:23 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:27 INFO  Client:196 - Message Received: play green 1
+@2016-Apr-07 11:08:27 INFO  Client:204 - Information sent to server: play green 1
+@2016-Apr-07 11:08:27 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:08:27 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:08:28 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:08:28 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:28 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:29 INFO  Client:196 - Message Received: play green 1
+@2016-Apr-07 11:08:29 INFO  Client:204 - Information sent to server: play green 1
+@2016-Apr-07 11:08:29 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:08:29 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:08:30 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:08:30 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:30 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:30 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:30 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:30 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:08:30 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:08:30 INFO  ClientThread:52 - Brit points 3 continue kelly countercharge_0
+@2016-Apr-07 11:08:30 INFO  Client:196 - Message Received: Brit points 3 continue kelly countercharge_0
+@2016-Apr-07 11:08:30 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:08:30 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:30 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:30 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:30 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:46 INFO  ClientThread:52 - waiting countercharge disply name Brit 1 cards green_1 name kelly 1 cards green_1 
+@2016-Apr-07 11:08:46 INFO  Client:196 - Message Received: waiting countercharge disply name Brit 1 cards green_1 name kelly 1 cards green_1 
+@2016-Apr-07 11:08:47 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:08:47 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:47 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:47 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:47 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:53 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:08:53 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:08:53 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:08:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:53 INFO  ClientThread:52 - kelly points 2 continue Brit red_4
+@2016-Apr-07 11:08:53 INFO  Client:196 - Message Received: kelly points 2 continue Brit red_4
+@2016-Apr-07 11:08:53 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:08:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:58 INFO  Client:196 - Message Received: play squire 2
+@2016-Apr-07 11:08:58 INFO  Client:204 - Information sent to server: play squire 2
+@2016-Apr-07 11:08:58 INFO  ClientThread:52 - waiting squire_2
+@2016-Apr-07 11:08:58 INFO  Client:196 - Message Received: waiting squire_2
+@2016-Apr-07 11:08:58 INFO  Client:204 - Information sent to server: cards_small/simpleCards.jpg
+@2016-Apr-07 11:08:58 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:58 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:08:58 INFO  ClientThread:52 - input
+@2016-Apr-07 11:08:58 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:09:00 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:09:00 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:09:00 INFO  ClientThread:52 - Brit points 2 withdraw kelly blue_4
+@2016-Apr-07 11:09:00 INFO  Client:196 - Message Received: Brit points 2 withdraw kelly blue_4
+@2016-Apr-07 11:09:00 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:09:00 INFO  ClientThread:52 - input
+@2016-Apr-07 11:09:00 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:09:00 INFO  ClientThread:52 - input
+@2016-Apr-07 11:09:00 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:04 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 11:14:04 INFO  Client:124 - 49273: Connected to server: localhost/127.0.0.1
+@2016-Apr-07 11:14:04 INFO  Client:125 - 49273: Connected to portid: 49273
+@2016-Apr-07 11:14:04 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 11:14:04 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 11:14:04 INFO  ClientThread:48 - Client Thread 49273 running.
+@2016-Apr-07 11:14:04 INFO  Client:128 - Client has started
+@2016-Apr-07 11:14:04 INFO  ClientThread:52 - firstplayer
+@2016-Apr-07 11:14:04 INFO  Client:196 - Message Received: firstplayer
+@2016-Apr-07 11:14:07 INFO  Client:204 - Information sent to server: start 2 0
+@2016-Apr-07 11:14:07 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 11:14:07 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 11:14:08 INFO  Client:204 - Information sent to server: join Brit
+@2016-Apr-07 11:14:08 INFO  ClientThread:52 - need players
+@2016-Apr-07 11:14:08 INFO  Client:196 - Message Received: need players
+@2016-Apr-07 11:14:08 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:14:08 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:08 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:21 INFO  Client:118 - 0:Establishing connection. Please wait... 
+@2016-Apr-07 11:14:21 INFO  Client:124 - 49274: Connected to server: localhost/127.0.0.1
+@2016-Apr-07 11:14:21 INFO  Client:125 - 49274: Connected to portid: 49274
+@2016-Apr-07 11:14:21 INFO  Client:141 - Initializing buffers
+@2016-Apr-07 11:14:21 INFO  Client:147 - New ClientThread has started
+@2016-Apr-07 11:14:21 INFO  ClientThread:48 - Client Thread 49274 running.
+@2016-Apr-07 11:14:21 INFO  Client:128 - Client has started
+@2016-Apr-07 11:14:21 INFO  ClientThread:52 - prompt join
+@2016-Apr-07 11:14:21 INFO  Client:196 - Message Received: prompt join
+@2016-Apr-07 11:14:23 INFO  Client:204 - Information sent to server: join Katie
+@2016-Apr-07 11:14:23 INFO  ClientThread:52 - hand  name Brit cards purple_5 red_5 purple_7 blue_4 yellow_4 yellow_3 squire_3 blue_3 name Katie cards riposte_0 green_1 disgrace_0 green_1 blue_4 green_1 adapt_0 red_3
+@2016-Apr-07 11:14:23 INFO  ClientThread:52 - hand  name Brit cards purple_5 red_5 purple_7 blue_4 yellow_4 yellow_3 squire_3 blue_3 name Katie cards riposte_0 green_1 disgrace_0 green_1 blue_4 green_1 adapt_0 red_3
+@2016-Apr-07 11:14:23 INFO  Client:196 - Message Received: hand  name Brit cards purple_5 red_5 purple_7 blue_4 yellow_4 yellow_3 squire_3 blue_3 name Katie cards riposte_0 green_1 disgrace_0 green_1 blue_4 green_1 adapt_0 red_3
+@2016-Apr-07 11:14:23 INFO  Client:196 - Message Received: hand  name Brit cards purple_5 red_5 purple_7 blue_4 yellow_4 yellow_3 squire_3 blue_3 name Katie cards riposte_0 green_1 disgrace_0 green_1 blue_4 green_1 adapt_0 red_3
+@2016-Apr-07 11:14:24 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:14:24 INFO  ClientThread:52 - pickedpurple Katie turn Brit squire_2
+@2016-Apr-07 11:14:24 INFO  Client:196 - Message Received: pickedpurple Katie turn Brit squire_2
+@2016-Apr-07 11:14:24 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:14:24 INFO  ClientThread:52 - pickedpurple Katie turn Brit maiden_6
+@2016-Apr-07 11:14:24 INFO  Client:196 - Message Received: pickedpurple Katie turn Brit maiden_6
+@2016-Apr-07 11:14:24 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:14:24 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:24 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:31 INFO  Client:204 - Information sent to server: colour blue
+@2016-Apr-07 11:14:31 INFO  ClientThread:52 - colour blue
+@2016-Apr-07 11:14:31 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-07 11:14:31 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:14:31 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:31 INFO  ClientThread:52 - colour blue
+@2016-Apr-07 11:14:31 INFO  Client:196 - Message Received: colour blue
+@2016-Apr-07 11:14:31 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:14:31 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:31 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:31 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:31 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:34 INFO  Client:196 - Message Received: play blue 3
+@2016-Apr-07 11:14:34 INFO  Client:204 - Information sent to server: play blue 3
+@2016-Apr-07 11:14:34 INFO  ClientThread:52 - waiting blue_3
+@2016-Apr-07 11:14:34 INFO  ClientThread:52 - waiting blue_3
+@2016-Apr-07 11:14:34 INFO  Client:196 - Message Received: waiting blue_3
+@2016-Apr-07 11:14:34 INFO  Client:196 - Message Received: waiting blue_3
+@2016-Apr-07 11:14:34 INFO  Client:204 - Information sent to server: cards_small/simpleCards11.jpg
+@2016-Apr-07 11:14:34 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:35 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:14:35 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:35 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:35 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:36 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:14:36 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:14:36 INFO  ClientThread:52 - Brit points 3 continue Katie green_1
+@2016-Apr-07 11:14:36 INFO  Client:196 - Message Received: Brit points 3 continue Katie green_1
+@2016-Apr-07 11:14:36 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:14:36 INFO  ClientThread:52 - Brit points 3 continue Katie green_1
+@2016-Apr-07 11:14:36 INFO  Client:196 - Message Received: Brit points 3 continue Katie green_1
+@2016-Apr-07 11:14:36 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:36 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:14:36 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:36 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:36 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:42 INFO  Client:196 - Message Received: play blue 4
+@2016-Apr-07 11:14:42 INFO  Client:204 - Information sent to server: play blue 4
+@2016-Apr-07 11:14:42 INFO  ClientThread:52 - waiting blue_4
+@2016-Apr-07 11:14:42 INFO  ClientThread:52 - waiting blue_4
+@2016-Apr-07 11:14:42 INFO  Client:196 - Message Received: waiting blue_4
+@2016-Apr-07 11:14:42 INFO  Client:196 - Message Received: waiting blue_4
+@2016-Apr-07 11:14:42 INFO  Client:204 - Information sent to server: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:14:42 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:42 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:42 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:14:42 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:42 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:42 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:42 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:14:42 INFO  ClientThread:52 - input
+@2016-Apr-07 11:14:42 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:00 INFO  Client:196 - Message Received: play riposte Brit
+@2016-Apr-07 11:15:00 INFO  Client:204 - Information sent to server: play riposte Brit
+@2016-Apr-07 11:15:00 INFO  ClientThread:52 - waiting invalid
+@2016-Apr-07 11:15:00 INFO  Client:196 - Message Received: waiting invalid
+@2016-Apr-07 11:15:02 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:15:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:10 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:15:10 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:15:10 INFO  ClientThread:52 - Katie points 4 continue Brit stunned_0
+@2016-Apr-07 11:15:10 INFO  Client:196 - Message Received: Katie points 4 continue Brit stunned_0
+@2016-Apr-07 11:15:10 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:15:10 INFO  ClientThread:52 - Katie points 4 continue Brit stunned_0
+@2016-Apr-07 11:15:10 INFO  Client:196 - Message Received: Katie points 4 continue Brit stunned_0
+@2016-Apr-07 11:15:10 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:10 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:10 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:15:10 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:10 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:10 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:10 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:10 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:10 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:14 INFO  Client:196 - Message Received: play squire 3
+@2016-Apr-07 11:15:14 INFO  Client:204 - Information sent to server: play squire 3
+@2016-Apr-07 11:15:14 INFO  ClientThread:52 - waiting squire_3
+@2016-Apr-07 11:15:14 INFO  Client:196 - Message Received: waiting squire_3
+@2016-Apr-07 11:15:14 INFO  ClientThread:52 - waiting squire_3
+@2016-Apr-07 11:15:14 INFO  Client:196 - Message Received: waiting squire_3
+@2016-Apr-07 11:15:14 INFO  Client:204 - Information sent to server: cards_small/simpleCards1.jpg
+@2016-Apr-07 11:15:14 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:14 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:15 INFO  Client:204 - Information sent to server: cards_small/simpleCards1.jpg
+@2016-Apr-07 11:15:15 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:15 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:15 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:15 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: play blue 4
+@2016-Apr-07 11:15:17 INFO  Client:204 - Information sent to server: play blue 4
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - waiting blue_4
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: waiting blue_4
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - waiting blue_4
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: waiting blue_4
+@2016-Apr-07 11:15:17 INFO  Client:204 - Information sent to server: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:17 INFO  Client:204 - Information sent to server: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:15:17 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - Brit points 10 continue Katie red_3
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: Brit points 10 continue Katie red_3
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - Brit points 10 continue Katie red_3
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: Brit points 10 continue Katie red_3
+@2016-Apr-07 11:15:17 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:17 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:22 INFO  Client:196 - Message Received: play riposte Brit
+@2016-Apr-07 11:15:22 INFO  Client:204 - Information sent to server: play riposte Brit
+@2016-Apr-07 11:15:22 INFO  ClientThread:52 - waiting riposte Brit 6 blue 4 Katie 8
+@2016-Apr-07 11:15:22 INFO  ClientThread:52 - waiting riposte Brit 6 blue 4 Katie 8
+@2016-Apr-07 11:15:22 INFO  Client:196 - Message Received: waiting riposte Brit 6 blue 4 Katie 8
+@2016-Apr-07 11:15:22 INFO  Client:196 - Message Received: waiting riposte Brit 6 blue 4 Katie 8
+@2016-Apr-07 11:15:23 INFO  Client:204 - Information sent to server: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:23 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:23 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:23 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:15:23 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:23 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:23 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:23 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:23 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:23 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:47 INFO  Client:196 - Message Received: play disgrace
+@2016-Apr-07 11:15:47 INFO  Client:204 - Information sent to server: play disgrace
+@2016-Apr-07 11:15:47 INFO  ClientThread:52 - waiting disgrace disply name Brit 3 cards blue_3 name Katie 8 cards blue_4 blue_4 
+@2016-Apr-07 11:15:47 INFO  Client:196 - Message Received: waiting disgrace disply name Brit 3 cards blue_3 name Katie 8 cards blue_4 blue_4 
+@2016-Apr-07 11:15:47 INFO  ClientThread:52 - waiting disgrace disply name Brit 3 cards blue_3 name Katie 8 cards blue_4 blue_4 
+@2016-Apr-07 11:15:47 INFO  Client:196 - Message Received: waiting disgrace disply name Brit 3 cards blue_3 name Katie 8 cards blue_4 blue_4 
+@2016-Apr-07 11:15:47 INFO  Client:204 - Information sent to server: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:47 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:47 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:48 INFO  Client:204 - Information sent to server: cards_small/simpleCards12.jpg
+@2016-Apr-07 11:15:48 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:48 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:48 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:48 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:48 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:48 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:49 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:15:49 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:15:49 INFO  ClientThread:52 - Katie points 8 continue Brit squire_3
+@2016-Apr-07 11:15:49 INFO  ClientThread:52 - Katie points 8 continue Brit squire_3
+@2016-Apr-07 11:15:49 INFO  Client:196 - Message Received: Katie points 8 continue Brit squire_3
+@2016-Apr-07 11:15:49 INFO  Client:196 - Message Received: Katie points 8 continue Brit squire_3
+@2016-Apr-07 11:15:49 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:15:49 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:49 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:15:49 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:49 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:49 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:53 INFO  Client:196 - Message Received: play squire 2
+@2016-Apr-07 11:15:53 INFO  Client:204 - Information sent to server: play squire 2
+@2016-Apr-07 11:15:53 INFO  ClientThread:52 - waiting squire_2
+@2016-Apr-07 11:15:53 INFO  Client:196 - Message Received: waiting squire_2
+@2016-Apr-07 11:15:53 INFO  ClientThread:52 - waiting squire_2
+@2016-Apr-07 11:15:53 INFO  Client:196 - Message Received: waiting squire_2
+@2016-Apr-07 11:15:53 INFO  Client:204 - Information sent to server: cards_small/simpleCards.jpg
+@2016-Apr-07 11:15:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:53 INFO  Client:204 - Information sent to server: cards_small/simpleCards.jpg
+@2016-Apr-07 11:15:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:55 INFO  Client:196 - Message Received: play squire 3
+@2016-Apr-07 11:15:55 INFO  Client:204 - Information sent to server: play squire 3
+@2016-Apr-07 11:15:55 INFO  ClientThread:52 - waiting squire_3
+@2016-Apr-07 11:15:55 INFO  Client:196 - Message Received: waiting squire_3
+@2016-Apr-07 11:15:55 INFO  ClientThread:52 - waiting squire_3
+@2016-Apr-07 11:15:55 INFO  Client:196 - Message Received: waiting squire_3
+@2016-Apr-07 11:15:55 INFO  Client:204 - Information sent to server: cards_small/simpleCards1.jpg
+@2016-Apr-07 11:15:55 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:55 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:55 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:15:55 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:55 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:55 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:55 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:55 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:55 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:56 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:15:56 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:15:56 INFO  ClientThread:52 - Brit points 8 withdraw Katie blue winner Katie
+@2016-Apr-07 11:15:56 INFO  Client:196 - Message Received: Brit points 8 withdraw Katie blue winner Katie
+@2016-Apr-07 11:15:56 INFO  ClientThread:52 - Brit points 8 withdraw Katie blue winner Katie
+@2016-Apr-07 11:15:56 INFO  Client:196 - Message Received: Brit points 8 withdraw Katie blue winner Katie
+@2016-Apr-07 11:15:56 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:15:56 INFO  ClientThread:52 - turn Katie outwit_0
+@2016-Apr-07 11:15:56 INFO  Client:196 - Message Received: turn Katie outwit_0
+@2016-Apr-07 11:15:56 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:15:56 INFO  ClientThread:52 - turn Katie purple_5
+@2016-Apr-07 11:15:56 INFO  Client:196 - Message Received: turn Katie purple_5
+@2016-Apr-07 11:15:57 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:15:57 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:57 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:59 INFO  Client:204 - Information sent to server: colour red
+@2016-Apr-07 11:15:59 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:59 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:59 INFO  ClientThread:52 - colour red
+@2016-Apr-07 11:15:59 INFO  Client:196 - Message Received: colour red
+@2016-Apr-07 11:15:59 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:15:59 INFO  ClientThread:52 - colour red
+@2016-Apr-07 11:15:59 INFO  Client:196 - Message Received: colour red
+@2016-Apr-07 11:15:59 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:15:59 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:59 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:59 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:59 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:59 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:59 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:15:59 INFO  ClientThread:52 - input
+@2016-Apr-07 11:15:59 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:02 INFO  Client:196 - Message Received: play red 3
+@2016-Apr-07 11:16:02 INFO  Client:204 - Information sent to server: play red 3
+@2016-Apr-07 11:16:02 INFO  ClientThread:52 - waiting red_3
+@2016-Apr-07 11:16:02 INFO  Client:196 - Message Received: waiting red_3
+@2016-Apr-07 11:16:02 INFO  ClientThread:52 - waiting red_3
+@2016-Apr-07 11:16:02 INFO  Client:196 - Message Received: waiting red_3
+@2016-Apr-07 11:16:02 INFO  Client:204 - Information sent to server: cards_small/simpleCards7.jpg
+@2016-Apr-07 11:16:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:02 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:05 INFO  Client:196 - Message Received: play red 3
+@2016-Apr-07 11:16:05 INFO  Client:204 - Information sent to server: play red 3
+@2016-Apr-07 11:16:05 INFO  ClientThread:52 - waiting red_3
+@2016-Apr-07 11:16:05 INFO  Client:196 - Message Received: waiting red_3
+@2016-Apr-07 11:16:05 INFO  ClientThread:52 - waiting red_3
+@2016-Apr-07 11:16:05 INFO  Client:196 - Message Received: waiting red_3
+@2016-Apr-07 11:16:05 INFO  Client:204 - Information sent to server: cards_small/simpleCards7.jpg
+@2016-Apr-07 11:16:05 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:05 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:06 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:06 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:06 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:06 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:16:06 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:16:06 INFO  ClientThread:52 - Katie points 6 continue Brit purple_4
+@2016-Apr-07 11:16:06 INFO  ClientThread:52 - Katie points 6 continue Brit purple_4
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received: Katie points 6 continue Brit purple_4
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received: Katie points 6 continue Brit purple_4
+@2016-Apr-07 11:16:06 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:06 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:06 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:06 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:06 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:06 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:06 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:12 INFO  Client:196 - Message Received:  withdraw
+@2016-Apr-07 11:16:12 INFO  Client:204 - Information sent to server: withdraw
+@2016-Apr-07 11:16:12 INFO  ClientThread:52 - Brit points 0 withdraw Katie red winner Katie
+@2016-Apr-07 11:16:12 INFO  Client:196 - Message Received: Brit points 0 withdraw Katie red winner Katie
+@2016-Apr-07 11:16:12 INFO  ClientThread:52 - Brit points 0 withdraw Katie red winner Katie
+@2016-Apr-07 11:16:12 INFO  Client:196 - Message Received: Brit points 0 withdraw Katie red winner Katie
+@2016-Apr-07 11:16:13 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:16:13 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:16:13 INFO  ClientThread:52 - turn Katie riposte_0
+@2016-Apr-07 11:16:13 INFO  Client:196 - Message Received: turn Katie riposte_0
+@2016-Apr-07 11:16:13 INFO  ClientThread:52 - turn Katie squire_2
+@2016-Apr-07 11:16:13 INFO  Client:196 - Message Received: turn Katie squire_2
+@2016-Apr-07 11:16:13 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:13 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:13 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:17 INFO  Client:204 - Information sent to server: colour green
+@2016-Apr-07 11:16:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:17 INFO  ClientThread:52 - colour green
+@2016-Apr-07 11:16:17 INFO  ClientThread:52 - colour green
+@2016-Apr-07 11:16:17 INFO  Client:196 - Message Received: colour green
+@2016-Apr-07 11:16:17 INFO  Client:196 - Message Received: colour green
+@2016-Apr-07 11:16:17 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:17 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:17 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:17 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:19 INFO  Client:196 - Message Received: play green 1
+@2016-Apr-07 11:16:19 INFO  Client:204 - Information sent to server: play green 1
+@2016-Apr-07 11:16:19 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:16:19 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:16:19 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:16:19 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:16:19 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:19 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:19 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:19 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:19 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:19 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:19 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:20 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:16:20 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:16:20 INFO  ClientThread:52 - Katie points 1 continue Brit red_3
+@2016-Apr-07 11:16:20 INFO  ClientThread:52 - Katie points 1 continue Brit red_3
+@2016-Apr-07 11:16:20 INFO  Client:196 - Message Received: Katie points 1 continue Brit red_3
+@2016-Apr-07 11:16:20 INFO  Client:196 - Message Received: Katie points 1 continue Brit red_3
+@2016-Apr-07 11:16:20 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:20 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:20 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:20 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:20 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:20 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:20 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:20 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:20 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:20 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:26 INFO  Client:196 - Message Received:  withdraw
+@2016-Apr-07 11:16:26 INFO  Client:204 - Information sent to server: withdraw
+@2016-Apr-07 11:16:26 INFO  ClientThread:52 - Brit points 0 withdraw Katie green winner Katie
+@2016-Apr-07 11:16:26 INFO  Client:196 - Message Received: Brit points 0 withdraw Katie green winner Katie
+@2016-Apr-07 11:16:26 INFO  ClientThread:52 - Brit points 0 withdraw Katie green winner Katie
+@2016-Apr-07 11:16:26 INFO  Client:196 - Message Received: Brit points 0 withdraw Katie green winner Katie
+@2016-Apr-07 11:16:27 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:16:27 INFO  ClientThread:52 - turn Katie squire_3
+@2016-Apr-07 11:16:27 INFO  Client:196 - Message Received: turn Katie squire_3
+@2016-Apr-07 11:16:27 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:16:27 INFO  ClientThread:52 - turn Katie blue_4
+@2016-Apr-07 11:16:27 INFO  Client:196 - Message Received: turn Katie blue_4
+@2016-Apr-07 11:16:27 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:27 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:27 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:28 INFO  Client:204 - Information sent to server: colour green
+@2016-Apr-07 11:16:28 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:28 INFO  ClientThread:52 - colour green
+@2016-Apr-07 11:16:28 INFO  Client:196 - Message Received: colour green
+@2016-Apr-07 11:16:28 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:28 INFO  ClientThread:52 - colour green
+@2016-Apr-07 11:16:28 INFO  Client:196 - Message Received: colour green
+@2016-Apr-07 11:16:28 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:28 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:28 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:28 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:28 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:28 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:31 INFO  Client:196 - Message Received: play green 1
+@2016-Apr-07 11:16:31 INFO  Client:204 - Information sent to server: play green 1
+@2016-Apr-07 11:16:31 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:16:31 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:16:31 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:16:31 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:16:31 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:31 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:31 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:31 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:31 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:31 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:31 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:34 INFO  Client:196 - Message Received: play green 1
+@2016-Apr-07 11:16:34 INFO  Client:204 - Information sent to server: play green 1
+@2016-Apr-07 11:16:34 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:16:34 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:16:34 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:16:34 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:16:34 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:34 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:34 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:35 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:35 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:35 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:35 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:35 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:16:35 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:16:35 INFO  ClientThread:52 - Katie points 2 continue Brit green_1
+@2016-Apr-07 11:16:35 INFO  Client:196 - Message Received: Katie points 2 continue Brit green_1
+@2016-Apr-07 11:16:35 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:35 INFO  ClientThread:52 - Katie points 2 continue Brit green_1
+@2016-Apr-07 11:16:35 INFO  Client:196 - Message Received: Katie points 2 continue Brit green_1
+@2016-Apr-07 11:16:35 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:35 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:36 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:36 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:36 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:36 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:36 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:38 INFO  Client:196 - Message Received: play green 1
+@2016-Apr-07 11:16:38 INFO  Client:204 - Information sent to server: play green 1
+@2016-Apr-07 11:16:38 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:16:38 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:16:38 INFO  ClientThread:52 - waiting green_1
+@2016-Apr-07 11:16:38 INFO  Client:196 - Message Received: waiting green_1
+@2016-Apr-07 11:16:38 INFO  Client:204 - Information sent to server: cards_small/simpleCards3.jpg
+@2016-Apr-07 11:16:38 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:38 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:39 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:39 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:39 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:39 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:39 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:39 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:39 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:40 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:16:40 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:16:40 INFO  ClientThread:52 - Brit points 1 withdraw Katie green winner Katie
+@2016-Apr-07 11:16:40 INFO  ClientThread:52 - Brit points 1 withdraw Katie green winner Katie
+@2016-Apr-07 11:16:40 INFO  Client:196 - Message Received: Brit points 1 withdraw Katie green winner Katie
+@2016-Apr-07 11:16:40 INFO  Client:196 - Message Received: Brit points 1 withdraw Katie green winner Katie
+@2016-Apr-07 11:16:40 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:16:40 INFO  ClientThread:52 - turn Katie green_1
+@2016-Apr-07 11:16:40 INFO  Client:196 - Message Received: turn Katie green_1
+@2016-Apr-07 11:16:40 INFO  Client:204 - Information sent to server: begin tournament
+@2016-Apr-07 11:16:40 INFO  ClientThread:52 - turn Katie yellow_3
+@2016-Apr-07 11:16:40 INFO  Client:196 - Message Received: turn Katie yellow_3
+@2016-Apr-07 11:16:40 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:40 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:40 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:45 INFO  Client:204 - Information sent to server: colour yellow
+@2016-Apr-07 11:16:45 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:45 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:45 INFO  ClientThread:52 - colour yellow
+@2016-Apr-07 11:16:45 INFO  Client:196 - Message Received: colour yellow
+@2016-Apr-07 11:16:45 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:45 INFO  ClientThread:52 - colour yellow
+@2016-Apr-07 11:16:45 INFO  Client:196 - Message Received: colour yellow
+@2016-Apr-07 11:16:45 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:45 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:45 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:45 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:45 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:45 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:45 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:45 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:45 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: play yellow 3
+@2016-Apr-07 11:16:47 INFO  Client:204 - Information sent to server: play yellow 3
+@2016-Apr-07 11:16:47 INFO  ClientThread:52 - waiting yellow_3
+@2016-Apr-07 11:16:47 INFO  ClientThread:52 - waiting yellow_3
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: waiting yellow_3
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: waiting yellow_3
+@2016-Apr-07 11:16:47 INFO  Client:204 - Information sent to server: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:16:47 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:47 INFO  Client:204 - Information sent to server: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:16:47 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:47 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:47 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:16:47 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:16:47 INFO  ClientThread:52 - Katie points 3 continue Brit red_4
+@2016-Apr-07 11:16:47 INFO  ClientThread:52 - Katie points 3 continue Brit red_4
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: Katie points 3 continue Brit red_4
+@2016-Apr-07 11:16:47 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: Katie points 3 continue Brit red_4
+@2016-Apr-07 11:16:47 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:47 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:48 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:48 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:48 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:48 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:48 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:48 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:48 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:51 INFO  Client:196 - Message Received: play yellow 4
+@2016-Apr-07 11:16:51 INFO  Client:204 - Information sent to server: play yellow 4
+@2016-Apr-07 11:16:51 INFO  ClientThread:52 - waiting yellow_4
+@2016-Apr-07 11:16:51 INFO  ClientThread:52 - waiting yellow_4
+@2016-Apr-07 11:16:51 INFO  Client:196 - Message Received: waiting yellow_4
+@2016-Apr-07 11:16:51 INFO  Client:196 - Message Received: waiting yellow_4
+@2016-Apr-07 11:16:51 INFO  Client:204 - Information sent to server: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:16:51 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:51 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:51 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:16:51 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:51 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:51 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:51 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:51 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:51 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:53 INFO  Client:196 - Message Received: play yellow 3
+@2016-Apr-07 11:16:53 INFO  Client:204 - Information sent to server: play yellow 3
+@2016-Apr-07 11:16:53 INFO  ClientThread:52 - waiting yellow_3
+@2016-Apr-07 11:16:53 INFO  Client:196 - Message Received: waiting yellow_3
+@2016-Apr-07 11:16:53 INFO  ClientThread:52 - waiting yellow_3
+@2016-Apr-07 11:16:53 INFO  Client:196 - Message Received: waiting yellow_3
+@2016-Apr-07 11:16:53 INFO  Client:204 - Information sent to server: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:16:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:53 INFO  Client:204 - Information sent to server: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:16:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:53 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:53 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:54 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:16:54 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:16:54 INFO  ClientThread:52 - Brit points 7 continue Katie ivanhoe_0
+@2016-Apr-07 11:16:54 INFO  Client:196 - Message Received: Brit points 7 continue Katie ivanhoe_0
+@2016-Apr-07 11:16:54 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:54 INFO  ClientThread:52 - Brit points 7 continue Katie ivanhoe_0
+@2016-Apr-07 11:16:54 INFO  Client:196 - Message Received: Brit points 7 continue Katie ivanhoe_0
+@2016-Apr-07 11:16:54 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:54 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:54 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:16:54 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:54 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:54 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:54 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:16:54 INFO  ClientThread:52 - input
+@2016-Apr-07 11:16:54 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:02 INFO  Client:196 - Message Received: play riposte Brit
+@2016-Apr-07 11:17:02 INFO  Client:204 - Information sent to server: play riposte Brit
+@2016-Apr-07 11:17:02 INFO  ClientThread:52 - waiting riposte Brit 4 yellow 3 Katie 6
+@2016-Apr-07 11:17:02 INFO  ClientThread:52 - waiting riposte Brit 4 yellow 3 Katie 6
+@2016-Apr-07 11:17:02 INFO  Client:196 - Message Received: waiting riposte Brit 4 yellow 3 Katie 6
+@2016-Apr-07 11:17:02 INFO  Client:196 - Message Received: waiting riposte Brit 4 yellow 3 Katie 6
+@2016-Apr-07 11:17:02 INFO  Client:204 - Information sent to server: cards_small/simpleCards5.jpg
+@2016-Apr-07 11:17:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:02 INFO  Client:204 - Information sent to server: output
+@2016-Apr-07 11:17:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:02 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:02 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:12 INFO  Client:196 - Message Received: play adapt
+@2016-Apr-07 11:17:12 INFO  Client:204 - Information sent to server: play adapt
+@2016-Apr-07 11:17:12 INFO  ClientThread:52 - waiting adapt disply name Katie 3 cards yellow_3 name Brit 4 cards yellow_4 
+@2016-Apr-07 11:17:12 INFO  Client:196 - Message Received: waiting adapt disply name Katie 3 cards yellow_3 name Brit 4 cards yellow_4 
+@2016-Apr-07 11:17:12 INFO  ClientThread:52 - waiting adapt disply name Katie 3 cards yellow_3 name Brit 4 cards yellow_4 
+@2016-Apr-07 11:17:12 INFO  Client:196 - Message Received: waiting adapt disply name Katie 3 cards yellow_3 name Brit 4 cards yellow_4 
+@2016-Apr-07 11:17:12 INFO  Client:204 - Information sent to server: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:17:12 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:12 INFO  Client:204 - Information sent to server: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:17:12 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:12 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:12 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:12 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:49 INFO  Client:196 - Message Received: play outwit yellow 3 Brit yellow 4
+@2016-Apr-07 11:17:49 INFO  Client:204 - Information sent to server: play outwit yellow 3 Brit yellow 4
+@2016-Apr-07 11:17:49 INFO  ClientThread:52 - waiting outwit yellow 3 Brit yellow 4
+@2016-Apr-07 11:17:49 INFO  ClientThread:52 - waiting outwit yellow 3 Brit yellow 4
+@2016-Apr-07 11:17:49 INFO  Client:196 - Message Received: waiting outwit yellow 3 Brit yellow 4
+@2016-Apr-07 11:17:49 INFO  Client:196 - Message Received: waiting outwit yellow 3 Brit yellow 4
+@2016-Apr-07 11:17:49 INFO  Client:204 - Information sent to server: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:17:49 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:49 INFO  Client:204 - Information sent to server: cards_small/simpleCards6.jpg
+@2016-Apr-07 11:17:49 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:49 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:49 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:49 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:50 INFO  Client:196 - Message Received:  end
+@2016-Apr-07 11:17:50 INFO  Client:204 - Information sent to server: end
+@2016-Apr-07 11:17:50 INFO  ClientThread:52 - Katie points 4 continue Brit red_3
+@2016-Apr-07 11:17:50 INFO  Client:196 - Message Received: Katie points 4 continue Brit red_3
+@2016-Apr-07 11:17:50 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:17:50 INFO  ClientThread:52 - Katie points 4 continue Brit red_3
+@2016-Apr-07 11:17:50 INFO  Client:196 - Message Received: Katie points 4 continue Brit red_3
+@2016-Apr-07 11:17:50 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:50 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:50 INFO  Client:204 - Information sent to server: result
+@2016-Apr-07 11:17:50 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:50 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:50 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:50 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:17:50 INFO  ClientThread:52 - input
+@2016-Apr-07 11:17:50 INFO  Client:196 - Message Received: input
+@2016-Apr-07 11:20:27 INFO  ClientThread:52 - 
+@2016-Apr-07 11:20:27 INFO  ClientThread:52 - 
+@2016-Apr-07 11:20:27 INFO  Client:196 - Message Received: null
+@2016-Apr-07 11:20:27 INFO  Client:196 - Message Received: null
 @

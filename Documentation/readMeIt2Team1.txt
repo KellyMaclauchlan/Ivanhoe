@@ -11,11 +11,11 @@ Once the server is running, run the client file from a terminal window by typing
 
 Do this from multiple terminal windows to use multiple clients
 
-You will first be prompted for the ip and port of the machine the server is running. (ie: localhost 3000)
+You will first be prompted for the ip of the machine the server is running. (ie: localhost)
 
 The first player in the game will then be prompted the number of players, number of AIs and then asked to enter their name. 
 
-If you are not the first player you will just be prompted the server ip and port and your name.
+If you are not the first player you will just be prompted the server ip and your name.
 
 Once a sufficient amount of players has joined the game, the game engine will randomly generate who has picked a purple token and then will 
 notify every client who picked purple and who the first player is. 
@@ -26,7 +26,7 @@ To play a card:
 - after you have selected your card, press the 'play card' button 
 - after playing all the cards you would like in that round, click 'end turn' to announce to all other players that you have finished your turn 
 - you will then see your played cards as well as the number of points that you have accumulated 
-- Click on a player’s display to see their played cards
+- click on a player’s display to see their played cards
 
 There is an option to withdraw at your end turn if you do not have enough valid cards for that tournament and/or round.
 
@@ -40,7 +40,9 @@ At the end of a game, the winner is announced to all players.
 
 AI Strategies:
 	1) Withdraw AI : this AI essentially withdraws after every play. The AI, if it is the first player, will choose the tournament colour based on 
-					 its first coloured card in its hand and play that card. After it will withdraw after every turn
+					 its first coloured card in its hand and play that card. After it will withdraw after every turn. If the AI happens to win a tournament
+					 it will again choose the tournament colour based on it's first coloured card, play that particular card and end its turn. It will then
+					 withdraw when it becomes its turn again. 
 	2) Play All AI : this AI will choose the tournament colour based on the number of coloured cards it has or by which token it needs.
 					 the AI will play all of its cards that it can possibly play and then end its turn
 					 if the AI has no cards to play it will withdraw
@@ -52,5 +54,5 @@ Known issues:
 		-> for some reason only one of the AIs receives the right cards and the others do not 
 - also when playing with more than 1 AI, occassionally, the game will return an infinite loop of messages that renders the game unplayable
 
-** All functionality works perfectly with 2 players, or 1 player and 1 AI
+** All functionality works perfectly with 1 player and 1 AI
 

@@ -164,22 +164,22 @@ public class TestGameEngine {
 		
 		game.startTurn();
 		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(0));
-		game.endTurn();
+		game.endTurnTest();
 		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(1));
-		game.endTurn();
+		game.endTurnTest();
 		game.startTurn();
 		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(2));
-		game.endTurn();
+		game.endTurnTest();
 		game.startTurn();
 		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(3));
-		game.endTurn();
+		game.endTurnTest();
 		game.startTurn();
 		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(4));
-		game.endTurn();
+		game.endTurnTest();
 		// last player, moves back to first
 		game.startTurn();
 		assertTrue(game.getCurrentPlayer() == game.getPlayers().get(0));
-		game.endTurn();
+		game.endTurnTest();
 	}
 	
 	@Test
@@ -223,7 +223,7 @@ public class TestGameEngine {
     	assertEquals(0, player4.getTotalCardValue());
     	assertEquals(0, player5.getTotalCardValue());
     	
-    	game.endTurn();
+    	game.endTurnTest();
     	// end of player 1's turn
     	
     	game.setCurrentPlayer(player2);
@@ -237,7 +237,7 @@ public class TestGameEngine {
     	assertEquals(0, player4.getTotalCardValue());
     	assertEquals(0, player5.getTotalCardValue());
     	
-    	game.endTurn();
+    	game.endTurnTest();
     	// end of player 2's turn 
     	
     	game.setCurrentPlayer(player3);
@@ -251,7 +251,7 @@ public class TestGameEngine {
     	assertEquals(0, player4.getTotalCardValue());
     	assertEquals(0, player5.getTotalCardValue());
     	
-    	game.endTurn();
+    	game.endTurnTest();
     	// end of player 3's turn
     	
     	game.setCurrentPlayer(player4);
@@ -265,7 +265,7 @@ public class TestGameEngine {
     	assertEquals(0, player3.getTotalCardValue());
     	assertEquals(0, player5.getTotalCardValue());
     	
-    	game.endTurn();
+    	game.endTurnTest();
     	//end of player 4's turn
     	
     	game.setCurrentPlayer(player5);
@@ -279,7 +279,7 @@ public class TestGameEngine {
     	assertEquals(0, player3.getTotalCardValue());
     	assertEquals(0, player4.getTotalCardValue());
     	
-    	game.endTurn();
+    	game.endTurnTest();
     	// end of player 5's turn
     	
     	// player 1 is the one player left in the tournament
@@ -328,7 +328,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
 		
     	pickup = new ColourCard(Config.GREEN, 1);
-    	game.endTurn();
+    	game.endTurnTest();
     	
     	//Start of player 2's turn
 		game.setCurrentPlayer(player2);
@@ -353,7 +353,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
     	
     	pickup = new ColourCard(Config.BLUE, 4);
-    	game.endTurn();
+    	game.endTurnTest();
     	
     	//Start of player 3's turn 
     	game.setCurrentPlayer(player3);
@@ -369,7 +369,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
     	
     	pickup = new ColourCard(Config.PURPLE, 7);
-    	game.endTurn();
+    	game.endTurnTest();
     	
     	// start of player 4's turn
     	game.setCurrentPlayer(player4);
@@ -385,7 +385,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
     	
     	pickup = new SupportCard(Config.MAIDEN, 6);
-    	game.endTurn();
+    	game.endTurnTest();
     	
     	// Start of player 5's turn
     	game.setCurrentPlayer(player5);
@@ -401,7 +401,7 @@ public class TestGameEngine {
     	assertEquals(0, player4.getTotalCardValue());
     	
     	pickup = new SupportCard(Config.SQUIRE, 4);
-    	game.endTurn();
+    	game.endTurnTest();
     	// end of player 5's turn
     	
     	// back to player 1's turn
@@ -421,7 +421,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
     	
     	pickup = new ColourCard(Config.BLUE, 4);
-    	game.endTurn();
+    	game.endTurnTest();
     	// end of player 1's turn
     	
     	game.setCurrentPlayer(player2);
@@ -436,7 +436,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
     	
     	pickup = new ColourCard(Config.GREEN, 1);
-    	game.endTurn();
+    	game.endTurnTest();
     	
     	game.setCurrentPlayer(player1);
 		game.startTurn();
@@ -483,7 +483,7 @@ public class TestGameEngine {
     	assertEquals(0, player3.getTotalCardValue());
     	assertEquals(0, player4.getTotalCardValue());
     	assertEquals(0, player5.getTotalCardValue());
-    	game.endTurn();
+    	game.endTurnTest();
     	
 	}
 	
@@ -520,7 +520,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
 		
     	pickup = new ColourCard(Config.GREEN, 1);
-    	game.endTurn();
+    	//game.endTurnTest();
     	
     	//Start of player 2's turn
 		game.setCurrentPlayer(player2);
@@ -545,7 +545,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
     	
     	pickup = new SupportCard(Config.SQUIRE, 3);
-    	game.endTurn();
+    	game.endTurnTest();
     	
     	//Start of player 3's turn 
     	game.setCurrentPlayer(player3);
@@ -557,7 +557,7 @@ public class TestGameEngine {
 		assertEquals(Config.SQUIRE, toPlay.getType());
 		assertEquals(3, toPlay.getValue());
 		game.playCard(toPlay);
-		game.endTurn();
+		game.endTurnTest();
     	
     	assertEquals(5, player1.getTotalCardValue());
     	assertEquals(5, player2.getTotalCardValue());
@@ -566,7 +566,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
     	
     	pickup = new ColourCard(Config.SQUIRE, 3);
-    	game.endTurn();
+    	game.endTurnTest();
     	
     	// start of player 4's turn
     	game.setCurrentPlayer(player4);
@@ -579,7 +579,7 @@ public class TestGameEngine {
 		assertEquals(3, toPlay.getValue());
 		game.playCard(toPlay);
 		
-		game.endTurn();    	
+		game.endTurnTest();    	
     	
     	assertEquals(3, player4.getTotalCardValue());
     	assertEquals(5, player1.getTotalCardValue());
@@ -588,7 +588,7 @@ public class TestGameEngine {
     	assertEquals(0, player5.getTotalCardValue());
     	
     	pickup = new SupportCard(Config.SQUIRE, 2);
-    	game.endTurn();
+    	game.endTurnTest();
     	
     	// Start of player 5's turn
     	game.setCurrentPlayer(player5);
@@ -613,7 +613,7 @@ public class TestGameEngine {
     	assertEquals(3, player4.getTotalCardValue());
     	
     	pickup = new SupportCard(Config.SQUIRE, 4);
-    	game.endTurn();
+    	game.endTurnTest();
     	// end of player 5's turn
     	
     	// back to player 1's turn
@@ -633,7 +633,7 @@ public class TestGameEngine {
     	assertEquals(9, player5.getTotalCardValue());
     	
     	pickup = new ColourCard(Config.BLUE, 4);
-    	game.endTurn();
+    	game.endTurnTest();
     	// end of player 1's turn
  
 	}
@@ -711,13 +711,13 @@ public class TestGameEngine {
     	game.setCurrentPlayer(player2);
     	game.startTurn();
 		game.withdraw();
-		game.endTurn();
+		game.endTurnTest();
 		game.startTurn();
 		game.withdraw();
-		game.endTurn();
+		game.endTurnTest();
 		game.startTurn();
 		game.withdraw();
-		game.endTurn();
+		game.endTurnTest();
 		game.startTurn();
 		game.withdraw();
 		String purpleWin = gameProcessor.processEndTurn();
