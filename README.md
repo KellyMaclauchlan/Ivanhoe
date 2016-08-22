@@ -1,21 +1,25 @@
 # Ivanhoe
 Ivanhoe card game
 Video of game play: 
+
 https://www.youtube.com/watch?v=xGhA-HlHu4M&feature=youtu.be
+
 Game description: 
+
 https://boardgamegeek.com/boardgame/883/ivanhoe
+
 This was our semester long project which we got the opportunity to work in a group of 3 people
 
 Features:
 
-Waiting for More Players Notification
-Tournament Colour Options (depending on the cards in your hand and if you are choosen to be the first player)
-Background colour (changes to the current tournament colour)
-Action Log (all players are logged so opponents can know what is going on)
-Inactive Player's Cards are Greyed Out
-Card Description When Clicked
-Example of All Action Cards and Supporter Cards
-Token Choice When Winning a Purple Tournament
+- Waiting for More Players Notification
+- Tournament Colour Options (depending on the cards in your hand and if you are choosen to be the first player)
+- Background colour (changes to the current tournament colour)
+- Action Log (all players are logged so opponents can know what is going on)
+- Inactive Player's Cards are Greyed Out
+- Card Description When Clicked
+- Example of All Action Cards and Supporter Cards
+- Token Choice When Winning a Purple Tournament
 
 Read me for the second iteration of Ivanhoe by :
 Katherine Beltran 
@@ -58,14 +62,19 @@ At the end of each tournament, all players are notified of the winner and the wi
 At the end of a game, the winner is announced to all players.
 
 AI Strategies:
+
 	1) Withdraw AI : this AI essentially withdraws after every play. The AI, if it is the first player, will choose the tournament colour based on 
+	
 					 its first coloured card in its hand and play that card. After it will withdraw after every turn. If the AI happens to win a tournament
 					 it will again choose the tournament colour based on it's first coloured card, play that particular card and end its turn. It will then
 					 withdraw when it becomes its turn again. 
+	
 	2) Play All AI : this AI will choose the tournament colour based on the number of coloured cards it has or by which token it needs.
+	
 					 the AI will play all of its cards that it can possibly play and then end its turn
 					 if the AI has no cards to play it will withdraw
 					 Sometimes, the AI will choose the tournament colour based on the tokens it will need, however does not have the cards needed and will then withdraw. This is one of the bugs with the AI that was unsolvable. 
+					 
 ***in regards to action cards, the AI do not play any action cards 
 
 Known issues:
