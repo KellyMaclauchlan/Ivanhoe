@@ -1,5 +1,22 @@
 # Ivanhoe
 Ivanhoe card game
+Video of game play: 
+https://www.youtube.com/watch?v=xGhA-HlHu4M&feature=youtu.be
+Game description: 
+https://boardgamegeek.com/boardgame/883/ivanhoe
+This was our semester long project which we got the opportunity to work in a group of 3 people
+
+Features:
+
+Waiting for More Players Notification
+Tournament Colour Options (depending on the cards in your hand and if you are choosen to be the first player)
+Background colour (changes to the current tournament colour)
+Action Log (all players are logged so opponents can know what is going on)
+Inactive Player's Cards are Greyed Out
+Card Description When Clicked
+Example of All Action Cards and Supporter Cards
+Token Choice When Winning a Purple Tournament
+
 Read me for the second iteration of Ivanhoe by :
 Katherine Beltran 
 Kelly Maclauchlan 
