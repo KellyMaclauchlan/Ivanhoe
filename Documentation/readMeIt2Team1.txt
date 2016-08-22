@@ -1,7 +1,7 @@
 Read me for the second iteration of Ivanhoe by :
-Katherine Beltran 100939080
-Kelly Maclauchlan 100927176
-Brittany Veinot	100954695
+Katherine Beltran 
+Kelly Maclauchlan 
+Brittany Veinot	
 
 In our zipped file, you will find a 'client.jar' file and a ‘server.jar’ file that you will be able to run in any terminal window.
 
